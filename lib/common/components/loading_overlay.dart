@@ -43,11 +43,11 @@ class LoadingOverlayAlt extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: AppPalette.black.black50,
                   ),
-                  child: const Column(
+                  child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      DefaultCircularProgressIndicator(),
-                      SizedBox(
+                      const DefaultCircularProgressIndicator(),
+                      const SizedBox(
                         height: 14,
                       ),
                       DefaultText(
@@ -55,7 +55,7 @@ class LoadingOverlayAlt extends StatelessWidget {
                         fontSize: 14,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.w700,
-                        color: AppPalette.white,
+                        color: AppPalette.white.white,
                       ),
                     ],
                   ),

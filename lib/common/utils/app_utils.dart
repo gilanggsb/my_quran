@@ -8,7 +8,7 @@ class AppUtils {
       SnackBar(
         content: DefaultText(
           message,
-          color: AppPalette.white,
+          color: AppPalette.white.white,
         ),
       ),
     );

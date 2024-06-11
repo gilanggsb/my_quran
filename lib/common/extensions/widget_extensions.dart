@@ -12,7 +12,7 @@ extension WidgetExtension on Widget {
         child: this,
       );
 
-  Widget onTap(Function() function) => GestureDetector(
+  Widget onTap(Function() function) => InkWell(
         onTap: function,
         child: this,
       );

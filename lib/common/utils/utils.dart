@@ -7,3 +7,4 @@ export 'bloc_observer.dart';
 export 'theme_cubit/theme.dart';
 export 'usecase.dart';
 export 'app_text_theme_extensions.dart';
+export 'app_assets.dart';

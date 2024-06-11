@@ -11,7 +11,7 @@ abstract class AppPalette {
   static const Color lightRed = Color(0xFFFA9884);
   static const Color cream = Color(0xFFFFE5CA);
   static const Color lightCream = Color.fromRGBO(255, 243, 226, 1);
-  static const Color white = Color(0xFFFFFFFF);
+  // static const Color white = Color(0xFFFFFFFF);
   static const Color lightYellow = Color(0xFFFFF8E7);
   static const Color transparent = Colors.transparent;
 
@@ -25,13 +25,18 @@ abstract class AppPalette {
   static const grey = _GreyColors();
   static const gradient = _GradientColors();
   static const black = _BlackColors();
+  static const white = _WhiteColors();
 }
 
 class _GreyColors {
   const _GreyColors();
+  final grey60 = const Color(0xAA292C29);
+}
 
-  final grey50 = const Color(0xFFFAFAFA);
-  final grey100 = const Color(0xFFF5F5F5);
+class _WhiteColors {
+  const _WhiteColors();
+  final white = const Color(0xFFFFFFFF);
+  final white50 = const Color(0xAAFFFFFF);
 }
 
 class _GradientColors {
