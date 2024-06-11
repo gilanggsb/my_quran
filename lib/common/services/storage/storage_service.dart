@@ -7,6 +7,8 @@ abstract class StorageService {
   Future<String?> get(StorageKeys key);
   Future<void> save({required StorageKeys key, required String value});
   Future<void> erase();
+  Future<String?> getCurrentTheme();
+  Future<void> switchTheme(bool value);
 }
 
 class StorageServiceImpl extends StorageService {
@@ -51,5 +53,15 @@ class StorageServiceImpl extends StorageService {
   Future<void> erase() async {
     Logger.logInfo("StorageService \nMethod : erase all data");
     await storage.erase();
+  }
+
+  @override
+  Future<String?> getCurrentTheme() async {
+    return await get(StorageKeys.theme);
+  }
+
+  @override
+  Future<void> switchTheme(bool value) async {
+    return await save(key: StorageKeys.theme, value: value ? "dark" : "light");
   }
 }

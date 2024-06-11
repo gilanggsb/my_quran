@@ -24,12 +24,12 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: DefaultText(
         title ?? '',
-        color: AppColors.white,
+        style: context.textThemeExt.headlineMedium,
+        color: context.colorsExt.text,
       ),
       leading: leading,
       centerTitle: centerTitle ?? false,
-      elevation: 1,
-      backgroundColor: AppColors.primary,
+      backgroundColor: AppPalette.transparent,
       actions: actions,
       bottom: bottom,
     );

@@ -18,6 +18,7 @@ class InjectorService {
   Future<void> setupLocator({bool isTesting = false}) async {
     //feature
     homeInjection();
+    themeInjection();
     //service
     serviceInjection(isTesting: isTesting);
     //module

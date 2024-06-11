@@ -19,11 +19,8 @@ class SplashScreen extends StatelessWidget {
       body: Center(
         child: GradientText(
           'MY QURAN',
-          style: AppStyle.boldTextStyle(
-            fontSize: 36,
-            letterSpacing: 4,
-          ),
-          gradient: AppColors.primaryLinearGradient,
+          style: context.textThemeExt.headlineLarge,
+          gradient: AppPalette.gradient.primary,
         ),
       ),
     );

@@ -86,7 +86,7 @@ class DefaultTextField extends StatelessWidget {
               AppStyle.regularTextStyle(
                 fontSize: 20.sp,
               ),
-          cursorColor: AppColors.black,
+          cursorColor: AppPalette.black.black50,
           controller: controller,
           focusNode: focusNode,
           onChanged: onChanged,
@@ -111,26 +111,26 @@ class DefaultTextField extends StatelessWidget {
                   right: 34,
                 ),
             focusedBorder: focusedBorder,
-            fillColor: filledColor ?? AppColors.primaryLight,
-            focusColor: focusColor ?? AppColors.primaryLight,
+            fillColor: filledColor ?? AppPalette.primaryLight,
+            focusColor: focusColor ?? AppPalette.primaryLight,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(6.r)),
               borderSide: const BorderSide(
-                color: AppColors.primaryLight,
+                color: AppPalette.primaryLight,
               ),
             ),
             enabledBorder: enabledBorder ??
                 OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.r)),
                   borderSide: BorderSide(
-                    color: enabledBorderColor ?? AppColors.primaryLight,
+                    color: enabledBorderColor ?? AppPalette.primaryLight,
                   ),
                 ),
             disabledBorder: disabledBorder ??
                 OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.r)),
                   borderSide: BorderSide(
-                    color: disabledBorderColor ?? AppColors.primaryLight,
+                    color: disabledBorderColor ?? AppPalette.primaryLight,
                   ),
                 ),
           ),

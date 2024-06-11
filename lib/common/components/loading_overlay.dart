@@ -41,7 +41,7 @@ class LoadingOverlayAlt extends StatelessWidget {
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: AppColors.black,
+                    color: AppPalette.black.black50,
                   ),
                   child: const Column(
                     mainAxisSize: MainAxisSize.min,
@@ -55,7 +55,7 @@ class LoadingOverlayAlt extends StatelessWidget {
                         fontSize: 14,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.w700,
-                        color: AppColors.white,
+                        color: AppPalette.white,
                       ),
                     ],
                   ),
@@ -72,7 +72,7 @@ class LoadingOverlayAlt extends StatelessWidget {
 //   return showModalBottomSheet(
 //     isScrollControlled: true,
 //     context: globalContext!,
-//     backgroundColor: bgColor ?? AppColors.background,
+//     backgroundColor: bgColor ?? AppPalette.background,
 //     builder: (BuildContext builderContext) => LoadingOverlayAlt(
 //       child: SingleChildScrollView(
 //         child: widget,

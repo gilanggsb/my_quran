@@ -101,7 +101,7 @@ class DefaultText extends StatelessWidget {
           Flexible(
             child: Text(
               "${enableIndentForFirstCharacter ? '\t' : ''}$text",
-              style: style ?? generateTextStyle(context),
+              style: generateTextStyle(context),
               textAlign: textAlign,
               key: key,
               locale: locale,
@@ -123,11 +123,11 @@ class DefaultText extends StatelessWidget {
   }
 
   TextStyle generateTextStyle(BuildContext context) {
-    return const TextStyle().copyWith(
+    return (style ?? context.textThemeExt.bodyLarge).copyWith(
       textBaseline: textBaseline,
       background: textBackground,
       backgroundColor: backgroundColor,
-      color: color ?? AppColors.black,
+      color: color ?? context.colorsExt.text,
       debugLabel: debugLabel,
       decoration: decoration,
       decorationColor: decorationColor,

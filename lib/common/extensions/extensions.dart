@@ -7,4 +7,5 @@ export 'map_extensions.dart';
 export 'num_extensions.dart';
 export 'object_extensions.dart';
 export 'string_extensions.dart';
+export 'theme_data_extensions.dart';
 export 'widget_extensions.dart';
