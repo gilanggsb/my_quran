@@ -12,12 +12,22 @@ const bodyTab = [
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
+  void openDrawer() => Scaffold.of(globalContext).openDrawer();
+
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
-      appBar: const DefaultAppBar(
+      appBar: DefaultAppBar(
         title: 'Al Quran',
+        leading: IconButton(
+          onPressed: openDrawer,
+          icon: Icon(
+            Icons.menu,
+            color: context.colorsExt.text,
+          ),
+        ),
       ),
+      drawer: const HomeDrawer(),
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
