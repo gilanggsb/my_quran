@@ -12,17 +12,18 @@ class InjectorService {
 
   static Future<void> create({bool isTesting = false}) async {
     const injectorService = InjectorService();
+    await GetStorage.init();
     await injectorService.setupLocator(isTesting: isTesting);
   }
 
   Future<void> setupLocator({bool isTesting = false}) async {
-    //feature
-    homeInjection();
-    themeInjection();
-    //service
-    serviceInjection(isTesting: isTesting);
     //module
     moduleInjection(isTesting: isTesting);
+    //service
+    serviceInjection(isTesting: isTesting);
+    //feature
+    themeInjection();
+    homeInjection();
   }
 
   void serviceInjection({bool isTesting = false}) {
@@ -34,7 +35,7 @@ class InjectorService {
     );
     if (!isTesting) {
       getIt.registerLazySingleton<StorageService>(
-        () => StorageServiceImpl(getIt()),
+        () => StorageServiceImpl(getIt<GetStorage>()),
       );
     }
     getIt.registerLazySingleton<NetworkService>(

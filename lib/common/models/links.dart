@@ -12,7 +12,8 @@ Links linksFromJson(String str) => Links.fromJson(json.decode(str));
 
 String linksToJson(Links data) => json.encode(data.toJson());
 
-@freezed
+@Freezed(fromJson: false)
+@JsonSerializable(fieldRename: FieldRename.snake)
 class Links with _$Links {
     const factory Links({
         String? first,

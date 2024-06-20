@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_quran/common/common.dart';
 
 class QuranNumber extends StatelessWidget {
+  final String? number;
   const QuranNumber({
     super.key,
+    required this.number,
   });
 
   @override
@@ -20,8 +22,8 @@ class QuranNumber extends StatelessWidget {
             height: 38.sp,
             imageType: ImageType.asset,
           ),
-          const Center(
-            child: DefaultText('1'),
+          Center(
+            child: DefaultText(number ?? ''),
           )
         ],
       ),

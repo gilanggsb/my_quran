@@ -3,8 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_quran/common/common.dart';
 
 class QuranTitle extends StatelessWidget {
+  final String? title;
+  final String? subTitle;
+  final String? titleAr;
   const QuranTitle({
     super.key,
+    this.title,
+    this.titleAr,
+    this.subTitle,
   });
 
   @override
@@ -12,43 +18,30 @@ class QuranTitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            DefaultText(
-              'Al-Fatihah',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w600,
-            ),
-            Row(
-              children: [
-                DefaultText(
-                  'MEKKAH',
-                  fontSize: 14.sp,
-                  color: context.colorsExt.textLight,
-                  fontWeight: FontWeight.w100,
-                ),
-                DefaultText(
-                  ' • ',
-                  fontSize: 14.sp,
-                  color: context.colorsExt.textLight,
-                  fontWeight: FontWeight.w100,
-                ),
-                DefaultText(
-                  '7 AYAT',
-                  fontSize: 14.sp,
-                  color: context.colorsExt.textLight,
-                  fontWeight: FontWeight.w100,
-                ),
-              ],
-            ),
-          ],
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              DefaultText(
+                title ?? '',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+              ),
+              DefaultText(
+                subTitle ?? '',
+                fontSize: 14.sp,
+                color: context.colorsExt.textLight,
+                fontWeight: FontWeight.w100,
+              ),
+            ],
+          ),
         ),
+        24.widthBox,
         DefaultText(
-          'الفاتحة',
-          fontSize: 20.sp,
+          titleAr ?? '',
+          fontSize: 18.sp,
           fontWeight: FontWeight.w600,
-        )
+        ),
       ],
     );
   }

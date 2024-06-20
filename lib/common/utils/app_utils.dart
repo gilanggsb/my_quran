@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_quran/common/common.dart';
+import 'package:path_provider/path_provider.dart';
 
 class AppUtils {
   static void showSnackBar(BuildContext context, String message) {
@@ -35,5 +38,21 @@ class AppUtils {
         );
 
     return result;
+  }
+
+  static Future<String> getFilePath(String filename) async {
+    Directory? dir;
+    try {
+      if (Platform.isIOS) {
+        dir = await getApplicationDocumentsDirectory(); // for iOS
+        return "${dir.path}/$filename";
+      }
+      dir = Directory('/storage/emulated/0/Download/'); // for android
+      if (!await dir.exists()) dir = (await getExternalStorageDirectory())!;
+      return "${dir.path}$filename";
+    } catch (err) {
+      debugPrint("Cannot get download folder path $err");
+    }
+    return '';
   }
 }

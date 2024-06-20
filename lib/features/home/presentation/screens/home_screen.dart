@@ -10,8 +10,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<HomeBloc>(
-      create: (context) => getIt.get<HomeBloc>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => getIt.get<HomeBloc>()),
+        BlocProvider(create: (context) => getIt.get<SurahCubit>()),
+        BlocProvider(create: (context) => getIt.get<JuzCubit>()),
+      ],
       child: const HomeView(),
     );
   }

@@ -3,93 +3,59 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:my_quran/common/common.dart';
 
-abstract class ApiService {
-  Future<BaseResponse<T>> get<T>(
-    String endpoints,
-    T Function(Object?) fromJsonT, {
-    Map<String, dynamic> queryParams,
-  });
-  Future<BaseResponse<T>> post<T>(
-    String endpoints,
-    Map<String, dynamic> body,
-    T Function(Object?) fromJsonT,
-  );
-  Future<BaseResponse<T>> formData<T>(
-    String url,
-    UploadFormDataModel uploadFormData, {
-    String? dataKey,
-    required T Function(Object?) fromJsonT,
-  });
-}
-
 class ApiServiceImpl extends ApiService {
   final Dio dio;
   final bool isTesting;
   final NetworkService connection = getIt<NetworkService>();
 
   ApiServiceImpl({required this.dio, this.isTesting = false}) {
-    initDIO();
+    init();
   }
 
-  void initDIO() {
+  void init() {
     dio.options.baseUrl = URL.base;
     dio.options.connectTimeout = const Duration(milliseconds: 5000);
     dio.interceptors.add(const CustomInterceptors());
-    if (!isTesting) {
-      dio.interceptors.add(
-        PrettyDioLogger(
-          requestHeader: true,
-          requestBody: true,
-        ),
-      );
-    }
-    dio.interceptors.add(CurlLoggerDioInterceptor(printOnSuccess: true));
   }
 
-  BaseResponse<T> parseResponse<T>(
-      Response response, T Function(Object?) fromJsonT) {
-    try {
-      final BaseResponse<T> baseResponse =
-          BaseResponse.fromJson(response.data, fromJsonT);
-      // if (baseResponse.status == 200) {
-      return baseResponse;
-      // }
-      // throw ServerFailure(baseResponse.msg);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  Dio _getDioWithOptionalLogger(bool addLogger) {
+    if (!addLogger) return dio;
 
-  dynamic parseError(DioException e) {
-    if (e.type == DioExceptionType.badResponse) {
-      BadResponse badResponse = BadResponse.fromJson(e.response?.data);
-      throw ServerException(badResponse.message ?? '');
-    }
-    if (e.type == DioExceptionType.connectionTimeout) {
-      throw const ServerFailure('check your connection');
-    }
+    final Dio dioClone = Dio(dio.options);
+    dioClone.interceptors.addAll(dio.interceptors);
+    dioClone.interceptors.add(CurlLoggerDioInterceptor(printOnSuccess: true));
 
-    if (e.type == DioExceptionType.receiveTimeout) {
-      throw const ServerFailure('unable to connect to the server');
-    }
+    if (isTesting) return dioClone;
 
-    if (e.type == DioExceptionType.unknown) {
-      throw const ServerFailure('Something went wrong');
-    }
+    dioClone.interceptors.add(PrettyDioLogger(
+      requestHeader: true,
+      requestBody: true,
+    ));
+
+    return dioClone;
   }
 
   @override
-  Future<BaseResponse<T>> post<T>(String endpoints, Map<String, dynamic> body,
-      T Function(Object?) fromJsonT) async {
+  Future<BaseResponse<T>> post<T>(
+    String path, {
+    required Map<String, dynamic> body,
+    required FromJsonT<T> fromJsonT,
+    Map<String, dynamic>? pathParams,
+    Options? options,
+    bool addLogger = false,
+  }) async {
     try {
       if (!(await connection.hasConnection)) {
         throw const ServerFailure("check your connection");
       }
-      final Response response =
-          await dio.post(endpoints, data: jsonEncode(body));
-      return parseResponse(response, fromJsonT);
+
+      final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
+
+      final Response response = await _getDioWithOptionalLogger(addLogger)
+          .post(finalPath, data: jsonEncode(body));
+      return NetworkingUtils.parseResponse(response, fromJsonT);
     } on DioException catch (e) {
-      return parseError(e);
+      return NetworkingUtils.parseError(e);
     } catch (e) {
       rethrow;
     }
@@ -97,55 +63,143 @@ class ApiServiceImpl extends ApiService {
 
   @override
   Future<BaseResponse<T>> get<T>(
-    String endpoints,
-    T Function(Object?) fromJsonT, {
+    String path, {
+    required FromJsonT<T> fromJsonT,
+    Map<String, dynamic>? pathParams,
     Map<String, dynamic>? queryParams,
+    Options? options,
+    bool addLogger = false,
   }) async {
     try {
       if (!(await connection.hasConnection)) {
         throw const ServerFailure("check your connection");
       }
-      final Response response =
-          await dio.get(endpoints, queryParameters: queryParams);
-      return parseResponse(response, fromJsonT);
+
+      final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
+
+      final Response response = await _getDioWithOptionalLogger(addLogger)
+          .get(finalPath, queryParameters: queryParams);
+      return NetworkingUtils.parseResponse(response, fromJsonT);
     } on DioException catch (e) {
-      return parseError(e);
+      return NetworkingUtils.parseError(e);
     } catch (e) {
       rethrow;
     }
   }
 
   @override
-  Future<BaseResponse<T>> formData<T>(
-    String url,
-    UploadFormDataModel uploadFormData, {
-    String? dataKey,
-    required T Function(Object?) fromJsonT,
+  Future<BaseResponse<T>> delete<T>(
+    String path, {
+    required FromJsonT<T> fromJsonT,
+    Map<String, dynamic>? pathParams,
+    Map<String, dynamic>? queryParams,
+    Options? options,
+    bool addLogger = false,
   }) async {
     try {
-      FormData formData = FormData.fromMap({
-        uploadFormData.fileKey: MultipartFile.fromBytes(
-          uploadFormData.fileBytes,
-          filename: uploadFormData.fileName,
-          contentType: uploadFormData.contentType,
-        ),
-        ...uploadFormData.data,
-      });
+      if (!(await connection.hasConnection)) {
+        throw const ServerFailure("check your connection");
+      }
 
-      final Map<String, dynamic> headers = {
-        'Content-Type': 'multipart/form-data'
-      };
+      final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
-      final Response response = await dio.post(
-        url,
-        data: formData,
-        options: Options(
-          headers: headers,
-        ),
+      final Response response =
+          await _getDioWithOptionalLogger(addLogger).delete(
+        finalPath,
+        queryParameters: queryParams,
+        options: options,
       );
-      return parseResponse(response, fromJsonT);
+      return NetworkingUtils.parseResponse(response, fromJsonT);
     } on DioException catch (e) {
-      return parseError(e);
+      return NetworkingUtils.parseError(e);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<BaseResponse<T>> put<T>(
+    String path, {
+    required Map<String, dynamic> body,
+    required FromJsonT<T> fromJsonT,
+    Map<String, dynamic>? pathParams,
+    Options? options,
+    bool addLogger = false,
+  }) async {
+    try {
+      if (!(await connection.hasConnection)) {
+        throw const ServerFailure("check your connection");
+      }
+      final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
+
+      final Response response = await _getDioWithOptionalLogger(addLogger).put(
+        finalPath,
+        data: jsonEncode(body),
+        options: options,
+      );
+      return NetworkingUtils.parseResponse(response, fromJsonT);
+    } on DioException catch (e) {
+      return NetworkingUtils.parseError(e);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<BaseResponse<T>> uploadFormData<T>(
+    String path, {
+    required FormData formData,
+    required FromJsonT<T> fromJsonT,
+    Map<String, dynamic>? pathParams,
+    Options? options,
+    bool addLogger = false,
+  }) async {
+    try {
+      if (!(await connection.hasConnection)) {
+        throw const ServerFailure("check your connection");
+      }
+      final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
+      final Response response = await _getDioWithOptionalLogger(addLogger).post(
+        finalPath,
+        options: options?.copyWith(contentType: 'multipart/form-data'),
+        data: formData,
+      );
+      return NetworkingUtils.parseResponse(response, fromJsonT);
+    } on DioException catch (e) {
+      return NetworkingUtils.parseError(e);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<Response> downloadFile(
+    DownloadFile downloadFile, {
+    bool addLogger = false,
+  }) async {
+    try {
+      String path = await AppUtils.getFilePath(downloadFile.fileNameWithExt);
+      final Response response =
+          await _getDioWithOptionalLogger(addLogger).download(
+        downloadFile.fullFileUrl,
+        path,
+        onReceiveProgress: (receivedBytes, totalBytes) {
+          if (totalBytes <= 0) return;
+          final percentage =
+              (receivedBytes / totalBytes * 100).toStringAsFixed(0);
+          final progress = receivedBytes / totalBytes;
+          final DownloadProgress downloadProgress = DownloadProgress(
+            percentage: percentage,
+            progress: progress,
+            receivedBytes: receivedBytes,
+            totalBytes: totalBytes,
+          );
+          downloadFile.downloadProgress(downloadProgress);
+        },
+      );
+      return response;
+    } on DioException catch (e) {
+      return NetworkingUtils.parseError(e);
     } catch (e) {
       rethrow;
     }

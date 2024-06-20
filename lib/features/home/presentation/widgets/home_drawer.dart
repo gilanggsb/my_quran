@@ -35,6 +35,18 @@ class HomeDrawer extends StatelessWidget {
               final isDarkTheme = themeCubit.isDarkTheme;
               return SwitchListTile(
                 value: isDarkTheme,
+                trackColor: WidgetStateProperty.resolveWith((states) {
+                  if (states.contains(WidgetState.selected)) {
+                    return context.colorsExt.primary;
+                  }
+                  return null;
+                }),
+                trackOutlineColor: WidgetStateProperty.resolveWith((states) {
+                  if (!states.contains(WidgetState.selected)) {
+                    return context.colorsExt.primary;
+                  }
+                  return null;
+                }),
                 secondary: Icon(
                   isDarkTheme ? Icons.mode_night : Icons.light_mode,
                   color: context.colorsExt.text,

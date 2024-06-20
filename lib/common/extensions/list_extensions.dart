@@ -1,5 +1,7 @@
+import 'package:my_quran/common/common.dart';
+
 extension ListExt on List {
-  List<T> toResponseList<T>(T Function(Map<String, dynamic> json) fromJsonT) {
+  List<T> toResponseList<T>(FromJsonT<T> fromJsonT) {
     List<T> value = <T>[];
     forEach((element) {
       value.add(fromJsonT(element));
