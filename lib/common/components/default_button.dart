@@ -61,7 +61,7 @@ class DefaultButton extends StatelessWidget {
               textAlign: textAlign,
               fontSize: fontSize ?? 16,
               fontWeight: fontWeight ?? FontWeight.w700,
-              color: fontColor ?? AppPalette.white,
+              color: fontColor ?? AppPalette.white.white,
             ),
       ),
     );

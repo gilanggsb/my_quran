@@ -34,13 +34,15 @@ class AppStyle {
     primaryLight: AppPalette.primaryLight,
     background: AppPalette.background,
     text: AppPalette.primary,
+    textLight: AppPalette.grey.grey60,
   );
 
   static final darkAppColors = AppColorsExtension(
     primary: AppPalette.primary,
     primaryLight: AppPalette.primaryLight,
     background: AppPalette.black.black50,
-    text: AppPalette.white,
+    text: AppPalette.white.white,
+    textLight: AppPalette.white.white50,
   );
 
   static TextStyle regularTextStyle({
@@ -200,77 +202,77 @@ class _TextTheme {
 
   final AppTextThemeExtension darkTextTheme = AppTextThemeExtension(
     displayLarge: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 57.0,
       fontWeight: FontWeight.bold,
     ),
     displayMedium: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 45.0,
       fontWeight: FontWeight.bold,
     ),
     displaySmall: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 36.0,
       fontWeight: FontWeight.bold,
     ),
     headlineLarge: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
     ),
     headlineMedium: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 28.0,
       fontWeight: FontWeight.w500,
     ),
     headlineSmall: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 24.0,
       fontWeight: FontWeight.normal,
     ),
     titleLarge: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 22.0,
       fontWeight: FontWeight.normal,
     ),
     titleMedium: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
     ),
     titleSmall: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
     ),
     bodyLarge: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 16.0,
       fontWeight: FontWeight.normal,
     ),
     bodyMedium: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
     ),
     bodySmall: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
     ),
     labelLarge: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
     ),
     labelMedium: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
     ),
     labelSmall: baseTextStyle.copyWith(
-      color: AppPalette.white,
+      color: AppPalette.white.white,
       fontSize: 11.0,
       fontWeight: FontWeight.normal,
     ),

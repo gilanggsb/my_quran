@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:my_quran/common/common.dart';
 
 class CustomInterceptors extends Interceptor {
   const CustomInterceptors();
@@ -8,7 +7,7 @@ class CustomInterceptors extends Interceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
-    options.headers['Authorization'] = 'Bearer ${Config.authorization}';
+    // options.headers['Authorization'] = 'Bearer ${Config.authorization}';
 
     return super.onRequest(options, handler);
   }

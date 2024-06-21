@@ -6,6 +6,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     required this.primaryLight,
     required this.background,
     required this.text,
+    required this.textLight,
     r,
   });
 
@@ -13,6 +14,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   final Color primaryLight;
   final Color background;
   final Color text;
+  final Color textLight;
 
   @override
   ThemeExtension<AppColorsExtension> copyWith({
@@ -20,12 +22,14 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     Color? primaryLight,
     Color? background,
     Color? text,
+    Color? textLight,
   }) {
     return AppColorsExtension(
       primary: primary ?? this.primary,
       primaryLight: primaryLight ?? this.primaryLight,
       background: background ?? this.background,
       text: text ?? this.text,
+      textLight: textLight ?? this.textLight,
     );
   }
 
@@ -43,6 +47,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       primaryLight: Color.lerp(primaryLight, other.primaryLight, t)!,
       background: Color.lerp(background, other.background, t)!,
       text: Color.lerp(text, other.text, t)!,
+      textLight: Color.lerp(textLight, other.textLight, t)!,
     );
   }
 }

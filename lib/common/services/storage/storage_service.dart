@@ -1,15 +1,7 @@
 import 'package:get_storage/get_storage.dart';
 import 'package:my_quran/common/common.dart';
 
-abstract class StorageService {
-  Future<bool> containsKey(StorageKeys key);
-  Future<void> remove(StorageKeys key);
-  Future<String?> get(StorageKeys key);
-  Future<void> save({required StorageKeys key, required String value});
-  Future<void> erase();
-  Future<String?> getCurrentTheme();
-  Future<void> switchTheme(bool value);
-}
+abstract class StorageService extends BaseStorageService {}
 
 class StorageServiceImpl extends StorageService {
   final GetStorage storage;

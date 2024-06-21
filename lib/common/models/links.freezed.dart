@@ -14,10 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Links _$LinksFromJson(Map<String, dynamic> json) {
-  return _Links.fromJson(json);
-}
-
 /// @nodoc
 mixin _$Links {
   String? get first => throw _privateConstructorUsedError;
@@ -125,12 +121,9 @@ class __$$LinksImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createFactory: false)
 class _$LinksImpl implements _Links {
   const _$LinksImpl({this.first, this.last, this.prev, this.next});
-
-  factory _$LinksImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LinksImplFromJson(json);
 
   @override
   final String? first;
@@ -182,8 +175,6 @@ abstract class _Links implements Links {
       final String? last,
       final dynamic prev,
       final String? next}) = _$LinksImpl;
-
-  factory _Links.fromJson(Map<String, dynamic> json) = _$LinksImpl.fromJson;
 
   @override
   String? get first;

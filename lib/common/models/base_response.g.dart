@@ -11,13 +11,18 @@ BaseResponse<T> _$BaseResponseFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     BaseResponse<T>(
+      status: json['status'] as bool?,
+      message: json['message'] as String?,
+      request: json['request'] == null
+          ? null
+          : Request.fromJson(json['request'] as Map<String, dynamic>),
+      info: json['info'] == null
+          ? null
+          : Info.fromJson(json['info'] as Map<String, dynamic>),
+      paging: json['paging'] == null
+          ? null
+          : Paging.fromJson(json['paging'] as Map<String, dynamic>),
       data: _$nullableGenericFromJson(json['data'], fromJsonT),
-      links: json['links'] == null
-          ? null
-          : Links.fromJson(json['links'] as Map<String, dynamic>),
-      meta: json['meta'] == null
-          ? null
-          : Meta.fromJson(json['meta'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$BaseResponseToJson<T>(
@@ -25,9 +30,12 @@ Map<String, dynamic> _$BaseResponseToJson<T>(
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
+      'request': instance.request,
+      'info': instance.info,
+      'paging': instance.paging,
       'data': _$nullableGenericToJson(instance.data, toJsonT),
-      'links': instance.links,
-      'meta': instance.meta,
     };
 
 T? _$nullableGenericFromJson<T>(

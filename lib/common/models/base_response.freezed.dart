@@ -16,9 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BaseResponse<T> {
+  bool? get status => throw _privateConstructorUsedError;
+  String? get message => throw _privateConstructorUsedError;
+  Request? get request => throw _privateConstructorUsedError;
+  Info? get info => throw _privateConstructorUsedError;
+  Paging? get paging => throw _privateConstructorUsedError;
   T? get data => throw _privateConstructorUsedError;
-  Links? get links => throw _privateConstructorUsedError;
-  Meta? get meta => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BaseResponseCopyWith<T, BaseResponse<T>> get copyWith =>
@@ -31,10 +34,17 @@ abstract class $BaseResponseCopyWith<T, $Res> {
           BaseResponse<T> value, $Res Function(BaseResponse<T>) then) =
       _$BaseResponseCopyWithImpl<T, $Res, BaseResponse<T>>;
   @useResult
-  $Res call({T? data, Links? links, Meta? meta});
+  $Res call(
+      {bool? status,
+      String? message,
+      Request? request,
+      Info? info,
+      Paging? paging,
+      T? data});
 
-  $LinksCopyWith<$Res>? get links;
-  $MetaCopyWith<$Res>? get meta;
+  $RequestCopyWith<$Res>? get request;
+  $InfoCopyWith<$Res>? get info;
+  $PagingCopyWith<$Res>? get paging;
 }
 
 /// @nodoc
@@ -50,47 +60,74 @@ class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? status = freezed,
+    Object? message = freezed,
+    Object? request = freezed,
+    Object? info = freezed,
+    Object? paging = freezed,
     Object? data = freezed,
-    Object? links = freezed,
-    Object? meta = freezed,
   }) {
     return _then(_value.copyWith(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      request: freezed == request
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as Request?,
+      info: freezed == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as Info?,
+      paging: freezed == paging
+          ? _value.paging
+          : paging // ignore: cast_nullable_to_non_nullable
+              as Paging?,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T?,
-      links: freezed == links
-          ? _value.links
-          : links // ignore: cast_nullable_to_non_nullable
-              as Links?,
-      meta: freezed == meta
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as Meta?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $LinksCopyWith<$Res>? get links {
-    if (_value.links == null) {
+  $RequestCopyWith<$Res>? get request {
+    if (_value.request == null) {
       return null;
     }
 
-    return $LinksCopyWith<$Res>(_value.links!, (value) {
-      return _then(_value.copyWith(links: value) as $Val);
+    return $RequestCopyWith<$Res>(_value.request!, (value) {
+      return _then(_value.copyWith(request: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $MetaCopyWith<$Res>? get meta {
-    if (_value.meta == null) {
+  $InfoCopyWith<$Res>? get info {
+    if (_value.info == null) {
       return null;
     }
 
-    return $MetaCopyWith<$Res>(_value.meta!, (value) {
-      return _then(_value.copyWith(meta: value) as $Val);
+    return $InfoCopyWith<$Res>(_value.info!, (value) {
+      return _then(_value.copyWith(info: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PagingCopyWith<$Res>? get paging {
+    if (_value.paging == null) {
+      return null;
+    }
+
+    return $PagingCopyWith<$Res>(_value.paging!, (value) {
+      return _then(_value.copyWith(paging: value) as $Val);
     });
   }
 }
@@ -103,12 +140,20 @@ abstract class _$$BaseResponseImplCopyWith<T, $Res>
       __$$BaseResponseImplCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({T? data, Links? links, Meta? meta});
+  $Res call(
+      {bool? status,
+      String? message,
+      Request? request,
+      Info? info,
+      Paging? paging,
+      T? data});
 
   @override
-  $LinksCopyWith<$Res>? get links;
+  $RequestCopyWith<$Res>? get request;
   @override
-  $MetaCopyWith<$Res>? get meta;
+  $InfoCopyWith<$Res>? get info;
+  @override
+  $PagingCopyWith<$Res>? get paging;
 }
 
 /// @nodoc
@@ -122,23 +167,38 @@ class __$$BaseResponseImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? status = freezed,
+    Object? message = freezed,
+    Object? request = freezed,
+    Object? info = freezed,
+    Object? paging = freezed,
     Object? data = freezed,
-    Object? links = freezed,
-    Object? meta = freezed,
   }) {
     return _then(_$BaseResponseImpl<T>(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      request: freezed == request
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as Request?,
+      info: freezed == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as Info?,
+      paging: freezed == paging
+          ? _value.paging
+          : paging // ignore: cast_nullable_to_non_nullable
+              as Paging?,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T?,
-      links: freezed == links
-          ? _value.links
-          : links // ignore: cast_nullable_to_non_nullable
-              as Links?,
-      meta: freezed == meta
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as Meta?,
     ));
   }
 }
@@ -146,18 +206,30 @@ class __$$BaseResponseImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$BaseResponseImpl<T> implements _BaseResponse<T> {
-  const _$BaseResponseImpl({this.data, this.links, this.meta});
+  const _$BaseResponseImpl(
+      {this.status,
+      this.message,
+      this.request,
+      this.info,
+      this.paging,
+      this.data});
 
   @override
+  final bool? status;
+  @override
+  final String? message;
+  @override
+  final Request? request;
+  @override
+  final Info? info;
+  @override
+  final Paging? paging;
+  @override
   final T? data;
-  @override
-  final Links? links;
-  @override
-  final Meta? meta;
 
   @override
   String toString() {
-    return 'BaseResponse<$T>(data: $data, links: $links, meta: $meta)';
+    return 'BaseResponse<$T>(status: $status, message: $message, request: $request, info: $info, paging: $paging, data: $data)';
   }
 
   @override
@@ -165,14 +237,17 @@ class _$BaseResponseImpl<T> implements _BaseResponse<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BaseResponseImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data) &&
-            (identical(other.links, links) || other.links == links) &&
-            (identical(other.meta, meta) || other.meta == meta));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.request, request) || other.request == request) &&
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.paging, paging) || other.paging == paging) &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(data), links, meta);
+  int get hashCode => Object.hash(runtimeType, status, message, request, info,
+      paging, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -184,16 +259,25 @@ class _$BaseResponseImpl<T> implements _BaseResponse<T> {
 
 abstract class _BaseResponse<T> implements BaseResponse<T> {
   const factory _BaseResponse(
-      {final T? data,
-      final Links? links,
-      final Meta? meta}) = _$BaseResponseImpl<T>;
+      {final bool? status,
+      final String? message,
+      final Request? request,
+      final Info? info,
+      final Paging? paging,
+      final T? data}) = _$BaseResponseImpl<T>;
 
   @override
+  bool? get status;
+  @override
+  String? get message;
+  @override
+  Request? get request;
+  @override
+  Info? get info;
+  @override
+  Paging? get paging;
+  @override
   T? get data;
-  @override
-  Links? get links;
-  @override
-  Meta? get meta;
   @override
   @JsonKey(ignore: true)
   _$$BaseResponseImplCopyWith<T, _$BaseResponseImpl<T>> get copyWith =>

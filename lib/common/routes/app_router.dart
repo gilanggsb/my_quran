@@ -24,6 +24,21 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: HomeRoute.page,
           path: RouteName.home.pathName,
+          children: [
+            AutoRoute(
+              page: SurahRoute.page,
+              initial: true,
+              path: RouteName.homeSurahTab.pathName,
+            ),
+            AutoRoute(
+              path: RouteName.homeJuzTab.pathName,
+              page: JuzRoute.page,
+            ),
+          ],
+        ),
+        AutoRoute(
+          path: RouteName.quranDetail.pathName,
+          page: QuranDetailRoute.page,
         ),
       ];
 }

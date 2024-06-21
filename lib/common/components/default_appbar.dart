@@ -29,7 +29,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       leading: leading,
       centerTitle: centerTitle ?? false,
-      backgroundColor: AppPalette.transparent,
+      backgroundColor: context.colorsExt.background,
       actions: actions,
       bottom: bottom,
     );

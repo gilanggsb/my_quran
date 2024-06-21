@@ -1,7 +1,10 @@
 export 'bad_response.dart';
 export 'base_response.dart';
+export 'download_file.dart';
+export 'download_progress.dart';
 export 'exception.dart';
 export 'failure.dart';
+export 'info.dart';
 export 'links.dart';
-export 'upload_document_models.dart';
-export 'meta.dart';
+export 'paging.dart';
+export 'request.dart';

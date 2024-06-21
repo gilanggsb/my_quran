@@ -1,6 +1,9 @@
 enum RouteName {
   home('Home', '/home'),
-  splash('Splash', '/');
+  homeJuzTab('Home Juz Tab', 'juz-tab'),
+  homeSurahTab('Home Surah Tab', 'surah-tab'),
+  quranDetail('Quran Detail', '/quran-detail'),
+  splash('Splash', '/splash');
 
   final String name;
   final String pathName;

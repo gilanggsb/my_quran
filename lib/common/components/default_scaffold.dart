@@ -6,6 +6,7 @@ class DefaultScaffold extends StatelessWidget {
   final Color? bgBodyColor;
   final PreferredSizeWidget? appBar;
   final Widget? bottomNavBar;
+  final Widget? drawer;
   final void Function(bool)? onPopInvoked;
   final FloatingActionButton? floatingActionButton;
   final EdgeInsets? bodyPadding;
@@ -31,6 +32,7 @@ class DefaultScaffold extends StatelessWidget {
     this.didUpdateWidget,
     this.didChangeDependencies,
     this.canPop = true,
+    this.drawer,
   });
 
   @override
@@ -45,6 +47,7 @@ class DefaultScaffold extends StatelessWidget {
         onDispose: onDispose,
         child: Scaffold(
           appBar: appBar,
+          drawer: drawer,
           floatingActionButton: floatingActionButton,
           floatingActionButtonLocation: floatingActionButtonLocation,
           backgroundColor: bgBodyColor ?? context.theme.appColors.background,
