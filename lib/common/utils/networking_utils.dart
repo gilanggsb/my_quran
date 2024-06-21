@@ -8,7 +8,7 @@ abstract class NetworkingUtils {
     if (pathParams == null) return url;
 
     pathParams.forEach((key, value) {
-      url = url.replaceAll('{$key}', value.toString());
+      url = "$url/$value";
     });
     return url;
   }

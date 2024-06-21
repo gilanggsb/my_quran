@@ -24,6 +24,7 @@ class InjectorService {
     //feature
     themeInjection();
     homeInjection();
+    quranInjection();
   }
 
   void serviceInjection({bool isTesting = false}) {

@@ -45,9 +45,9 @@ class ApiServiceImpl extends ApiService {
     bool addLogger = false,
   }) async {
     try {
-      if (!(await connection.hasConnection)) {
-        throw const ServerFailure("check your connection");
-      }
+      // if (!(await connection.hasConnection)) {
+      //   throw const ServerFailure("Check your connection");
+      // }
 
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
@@ -71,9 +71,9 @@ class ApiServiceImpl extends ApiService {
     bool addLogger = false,
   }) async {
     try {
-      if (!(await connection.hasConnection)) {
-        throw const ServerFailure("check your connection");
-      }
+      // if (!(await connection.hasConnection)) {
+      //   throw const ServerFailure("Check your connection");
+      // }
 
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
@@ -97,9 +97,9 @@ class ApiServiceImpl extends ApiService {
     bool addLogger = false,
   }) async {
     try {
-      if (!(await connection.hasConnection)) {
-        throw const ServerFailure("check your connection");
-      }
+      // if (!(await connection.hasConnection)) {
+      //   throw const ServerFailure("Check your connection");
+      // }
 
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
@@ -127,9 +127,9 @@ class ApiServiceImpl extends ApiService {
     bool addLogger = false,
   }) async {
     try {
-      if (!(await connection.hasConnection)) {
-        throw const ServerFailure("check your connection");
-      }
+      // if (!(await connection.hasConnection)) {
+      //   throw const ServerFailure("Check your connection");
+      // }
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
       final Response response = await _getDioWithOptionalLogger(addLogger).put(
@@ -155,9 +155,9 @@ class ApiServiceImpl extends ApiService {
     bool addLogger = false,
   }) async {
     try {
-      if (!(await connection.hasConnection)) {
-        throw const ServerFailure("check your connection");
-      }
+      // if (!(await connection.hasConnection)) {
+      //   throw const ServerFailure("Check your connection");
+      // }
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
       final Response response = await _getDioWithOptionalLogger(addLogger).post(
         finalPath,

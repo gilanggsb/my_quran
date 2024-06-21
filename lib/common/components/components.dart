@@ -11,3 +11,4 @@ export 'loading_overlay.dart';
 export 'my_tootip.dart';
 export 'stateful_wrapper_component.dart';
 export 'widget_size.dart';
+export 'snackbar_widget.dart';
