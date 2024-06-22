@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 // THIS CLASS IS TO COMMUNICATE WITH NATIVE
 class NativeChannelServices {

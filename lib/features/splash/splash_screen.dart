@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:my_quran/common/common.dart';
+import '../../common/common.dart';
 
 @RoutePage()
 class SplashScreen extends StatelessWidget {

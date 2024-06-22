@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:my_quran/common/common.dart';
+import 'common/common.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 

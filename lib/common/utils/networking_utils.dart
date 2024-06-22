@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 abstract class NetworkingUtils {
   static String applyPathParams(String url, Map<String, dynamic>? pathParams) {

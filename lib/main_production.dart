@@ -1,5 +1,5 @@
-import 'package:my_quran/app.dart';
-import 'package:my_quran/bootstrap.dart';
+import 'app.dart';
+import 'bootstrap.dart';
 
 void main() {
   bootstrap(() => const App());

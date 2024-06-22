@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_quran/common/common.dart';
+import '../../../../common/common.dart';
 
 class QuranTitle extends StatelessWidget {
   final String? title;

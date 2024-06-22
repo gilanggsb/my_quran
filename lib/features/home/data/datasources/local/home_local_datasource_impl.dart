@@ -1,4 +1,4 @@
-import 'package:my_quran/features/home/data/data.dart';
+import '../../data.dart';
 
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
   // final [StorageService] service;

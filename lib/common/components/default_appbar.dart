@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DefaultAppBar({

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart' as cm;
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 class DefaultImage extends StatelessWidget {
   final String imageUrl;

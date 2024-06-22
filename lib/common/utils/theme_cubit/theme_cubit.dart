@@ -3,7 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:my_quran/common/common.dart';
+import '../../common.dart';
 
 part 'theme_cubit.freezed.dart';
 part 'theme_state.dart';

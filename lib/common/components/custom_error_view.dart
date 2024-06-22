@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 class CustomErrorView extends StatelessWidget {
   final FlutterErrorDetails? flutterErrorDetails;

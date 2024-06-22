@@ -1,5 +1,5 @@
-import 'package:my_quran/common/common.dart';
-import 'package:my_quran/features/home/home.dart';
+import '../../../../common/common.dart';
+import '../../home.dart';
 
 void homeInjection() {
   //bloc

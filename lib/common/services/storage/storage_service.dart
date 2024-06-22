@@ -1,5 +1,5 @@
 import 'package:get_storage/get_storage.dart';
-import 'package:my_quran/common/common.dart';
+import '../../common.dart';
 
 abstract class StorageService extends BaseStorageService {}
 

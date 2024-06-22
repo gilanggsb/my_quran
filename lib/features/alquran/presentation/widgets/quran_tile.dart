@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_quran/common/common.dart';
-import 'package:my_quran/features/features.dart';
+import '../../../../common/common.dart';
+import '../../../features.dart';
 
 class QuranTile extends StatelessWidget {
   final String? number;

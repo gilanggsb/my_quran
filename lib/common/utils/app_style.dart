@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 class AppStyle {
   static final textTheme = _TextTheme();

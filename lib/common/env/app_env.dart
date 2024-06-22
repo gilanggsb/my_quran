@@ -1,4 +1,4 @@
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 class Env {
   static late final String baseUrl;
