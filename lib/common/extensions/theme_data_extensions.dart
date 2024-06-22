@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 extension AppThemeExtension on ThemeData {
   /// Usage example: Theme.of(context).appColors;

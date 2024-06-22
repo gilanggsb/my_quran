@@ -1,5 +1,5 @@
-import 'package:my_quran/features/home/data/data.dart';
-import 'package:my_quran/features/home/domain/domain.dart';
+import '../data.dart';
+import '../../domain/domain.dart';
 
 class HomeRepositoryImpl extends HomeRepository {
   final HomeLocalDataSource localDataSource;

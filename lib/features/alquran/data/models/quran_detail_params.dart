@@ -1,4 +1,4 @@
-import 'package:my_quran/features/features.dart';
+import '../../../features.dart';
 
 class QuranDetailParams {
   final AyahsThroughoutPagination? ayahsThroughoutPagination;

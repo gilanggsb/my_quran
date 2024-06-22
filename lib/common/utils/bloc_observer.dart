@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 class MyBlocObserver extends BlocObserver {
   @override

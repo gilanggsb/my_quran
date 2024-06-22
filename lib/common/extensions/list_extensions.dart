@@ -1,4 +1,4 @@
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 extension ListExt on List {
   List<T> toResponseList<T>(FromJsonT<T> fromJsonT) {

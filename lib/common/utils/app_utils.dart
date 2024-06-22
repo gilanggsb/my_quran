@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AppUtils {

@@ -1,5 +1,5 @@
 import 'package:envied/envied.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 part 'env_production.g.dart';
 

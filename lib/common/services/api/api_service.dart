@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:my_quran/common/common.dart';
+import '../../common.dart';
 
 class ApiServiceImpl extends ApiService {
   final Dio dio;

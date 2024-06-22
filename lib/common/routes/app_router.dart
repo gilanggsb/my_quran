@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 import 'package:flutter/material.dart';
 
 GlobalKey<NavigatorState> globalNavigatorKey = GlobalKey<NavigatorState>();

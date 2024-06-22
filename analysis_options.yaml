@@ -24,9 +24,10 @@ analyzer:
     avoid_classes_with_only_static_members: error
     # sort_pub_dependencies: error
     use_key_in_widget_constructors: error
-    always_use_package_imports: error
+    # always_use_package_imports: error
     sort_constructors_first: error
     prefer_const_constructors: error
+    prefer_relative_imports: error
 
 
 linter:
@@ -45,7 +46,8 @@ linter:
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
     # - always_declare_return_types
     # - always_require_non_null_named_parameters
-    - always_use_package_imports
+    # - always_use_package_imports
+    - prefer_relative_imports
     - annotate_overrides
     - avoid_classes_with_only_static_members: false
     - sort_pub_dependencies: true

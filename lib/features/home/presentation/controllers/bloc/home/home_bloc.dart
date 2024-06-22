@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_quran/common/common.dart';
-import 'package:my_quran/features/home/domain/domain.dart';
+import '../../../../../../common/common.dart';
+import '../../../../domain/domain.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

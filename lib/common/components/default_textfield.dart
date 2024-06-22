@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 class DefaultTextField extends StatelessWidget {
   final TextEditingController controller;

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_quran/common/common.dart';
+import '../common.dart';
 
 part 'base_response.freezed.dart';
 part 'base_response.g.dart';

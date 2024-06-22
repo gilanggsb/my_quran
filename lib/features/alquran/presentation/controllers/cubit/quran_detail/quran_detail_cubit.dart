@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_quran/common/common.dart';
-import 'package:my_quran/features/features.dart';
+import '../../../../../../common/common.dart';
+import '../../../../../features.dart';
 
 part 'quran_detail_state.dart';
 part 'quran_detail_cubit.freezed.dart';

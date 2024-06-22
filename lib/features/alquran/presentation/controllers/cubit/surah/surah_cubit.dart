@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_quran/features/features.dart';
+import '../../../../../features.dart';
 
-import 'package:my_quran/common/common.dart';
+import '../../../../../../common/common.dart';
 
 part 'surah_state.dart';
 part 'surah_cubit.freezed.dart';

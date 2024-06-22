@@ -1,5 +1,5 @@
-import 'package:my_quran/common/common.dart';
-import 'package:my_quran/features/features.dart';
+import '../../../../common/common.dart';
+import '../../../features.dart';
 
 class GetAyahsThroughout
     extends UseCase<BaseResponse<List<Ayah>?>, AyahsThroughoutPagination> {
