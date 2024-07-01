@@ -31,7 +31,8 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
       final response = await service.get<List<Surah>>(
         URL.quranSurahAll,
         fromJsonT: (json) => List<Surah>.from(
-            (json as List).map((element) => Surah.fromJson(element))),
+          (json as List).map((element) => Surah.fromJson(element)),
+        ),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -71,7 +72,8 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
       final response = await service.get<List<Juz>>(
         URL.quranJuzAll,
         fromJsonT: (json) => List<Juz>.from(
-            (json as List).map((element) => Juz.fromJson(element))),
+          (json as List).map((element) => Juz.fromJson(element)),
+        ),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -92,7 +94,8 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
         URL.quranAyahJuz,
         pathParams: {"juz": juzNumber},
         fromJsonT: (json) => List<Ayah>.from(
-            (json as List).map((element) => Ayah.fromJson(element))),
+          (json as List).map((element) => Ayah.fromJson(element)),
+        ),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -113,7 +116,8 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
         URL.quranAyahBrowse,
         queryParams: pagination.toJson(),
         fromJsonT: (json) => List<Ayah>.from(
-            (json as List).map((element) => Ayah.fromJson(element))),
+          (json as List).map((element) => Ayah.fromJson(element)),
+        ),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -129,13 +133,15 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
 
   @override
   Future<BaseResponse<List<Ayah>?>> getAyahsThroughout(
-      AyahsThroughoutPagination ayahsThroughout) async {
+    AyahsThroughoutPagination ayahsThroughout,
+  ) async {
     try {
       final response = await service.get<List<Ayah>>(
         URL.quranAyah,
         pathParams: ayahsThroughout.toJson(),
         fromJsonT: (json) => List<Ayah>.from(
-            (json as List).map((element) => Ayah.fromJson(element))),
+          (json as List).map((element) => Ayah.fromJson(element)),
+        ),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -148,4 +154,42 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
       throw e.toString();
     }
   }
+
+  @override
+  Future<BaseResponse<List<Ayah>?>> getFullAyahs(
+    AyahsThroughoutPagination ayahsThroughout,
+  ) async {
+    try {
+      int nextAyahPagination = ayahsThroughout.maxAyat ?? 100;
+      AyahsThroughoutPagination ayahsPagination = ayahsThroughout;
+      final fullAyahs = <Ayah>[];
+      BaseResponse<List<Ayah>?> finalRes =
+          await getAyahsThroughout(ayahsThroughout);
+
+      for (int i = 0; i < nextAyahPagination; i++) {
+        final response = await getAyahsThroughout(ayahsPagination);
+        ayahsPagination = ayahsPagination.copyWith(
+          ayat: "${ayahsPagination.ayat!.parseInt + 10}",
+        );
+
+        if ((response.data ?? []).isEmpty) {
+          break;
+        }
+
+        fullAyahs.addAll(response.data ?? []);
+      }
+
+      finalRes = finalRes.copyWith(data: fullAyahs);
+      return finalRes;
+    } on BadResponse catch (badResponse) {
+      throw '${badResponse.message}';
+    } on String catch (_) {
+      rethrow;
+    } on ServerFailure catch (e) {
+      throw e.message;
+    } catch (e) {
+      throw e.toString();
+    }
+  }
+
 }

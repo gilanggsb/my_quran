@@ -17,7 +17,7 @@ class NativeChannelServices {
   }
 
   static Future<dynamic> getDataFromNative(String route,
-      {dynamic value1, dynamic value2}) async {
+      {dynamic value1, dynamic value2,}) async {
     final dynamic data = await _channel.invokeMethod('getDataFromNative', {
       'key': route,
       'value1': jsonEncode(value1),

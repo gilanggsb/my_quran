@@ -11,8 +11,11 @@ class QuranDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<QuranDetailCubit>(
-      create: (context) => getIt.get<QuranDetailCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => getIt.get<QuranDetailCubit>()),
+        // BlocProvider(create: (context) => getIt.get<JumpAyahCubit>()),
+      ],
       child: QuranDetailView(
         params: params,
       ),

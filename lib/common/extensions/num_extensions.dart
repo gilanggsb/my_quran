@@ -1,6 +1,7 @@
 import 'dart:math' as math;
-import 'package:intl/intl.dart' as intl;
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart' as intl;
 
 extension NumExt on num {
   /// Does it contain [other]

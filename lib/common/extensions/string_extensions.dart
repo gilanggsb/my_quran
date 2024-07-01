@@ -13,7 +13,8 @@ final formats = [
   DateFormat("d MMMM yyyy"),
   DateFormat("dd MMM yyyy"),
   DateFormat(
-      "yyyy-MM-ddTHH:mm:ss.SSSSSS"), // Correct format for your specific date string
+    "yyyy-MM-ddTHH:mm:ss.SSSSSS",
+  ), // Correct format for your specific date string
 ];
 
 extension StringExtension on String {

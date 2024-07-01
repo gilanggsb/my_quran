@@ -41,7 +41,15 @@ class QuranRepositoryImpl extends QuranRepository {
 
   @override
   Future<BaseResponse<List<Ayah>?>> getAyahsThroughout(
-      AyahsThroughoutPagination ayahsThroughout) async {
+    AyahsThroughoutPagination ayahsThroughout,
+  ) async {
     return await remoteDataSource.getAyahsThroughout(ayahsThroughout);
+  }
+
+  @override
+  Future<BaseResponse<List<Ayah>?>> getFullAyahs(
+    AyahsThroughoutPagination ayahsThroughout,
+  ) async {
+    return await remoteDataSource.getFullAyahs(ayahsThroughout);
   }
 }

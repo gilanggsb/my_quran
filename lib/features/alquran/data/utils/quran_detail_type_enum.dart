@@ -1,0 +1,4 @@
+enum QuranDetailTypeEnum {
+  byJuzs,
+  bySurahs,
+}

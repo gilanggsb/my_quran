@@ -135,7 +135,7 @@ class _TextTheme {
   _TextTheme();
 
   static TextStyle get baseTextStyle =>
-      GoogleFonts.poppins(color: AppPalette.primary);
+      GoogleFonts.notoSans(color: AppPalette.primary);
 
   final AppTextThemeExtension lightTextTheme = AppTextThemeExtension(
     displayLarge: baseTextStyle.copyWith(

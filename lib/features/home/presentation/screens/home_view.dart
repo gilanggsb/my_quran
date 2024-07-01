@@ -88,7 +88,7 @@ class HomeView extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      ).paddingAll(16),
     );
   }
 }

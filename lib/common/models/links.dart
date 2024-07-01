@@ -2,8 +2,9 @@
 //
 //     final links = linksFromJson(jsonString);
 
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
+
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'links.freezed.dart';
 part 'links.g.dart';

@@ -52,7 +52,7 @@ class DefaultScaffold extends StatelessWidget {
           floatingActionButtonLocation: floatingActionButtonLocation,
           backgroundColor: bgBodyColor ?? context.theme.appColors.background,
           body: Container(
-            padding: bodyPadding ?? const EdgeInsets.all(16),
+            // padding: bodyPadding ?? const EdgeInsets.all(16),
             child: body,
           ),
           bottomNavigationBar: bottomNavBar,

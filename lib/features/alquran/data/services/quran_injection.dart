@@ -17,6 +17,15 @@ void quranInjection() {
     () => QuranDetailCubit(
       getAyahsThroughout: getIt(),
       getAyahsJuz: getIt(),
+      getFullAyahs: getIt(),
+    ),
+  );
+  getIt.registerFactory<JumpAyahCubit>(
+    () => JumpAyahCubit(
+      getSurahs: getIt(),
+      getJuzs: getIt(),
+      getFullAyahs: getIt(),
+      getAyahsJuz: getIt(),
     ),
   );
   //repository
@@ -71,6 +80,11 @@ void quranInjection() {
   );
   getIt.registerLazySingleton<GetAyahsThroughout>(
     () => GetAyahsThroughout(
+      repository: getIt(),
+    ),
+  );
+  getIt.registerLazySingleton<GetFullAyahs>(
+    () => GetFullAyahs(
       repository: getIt(),
     ),
   );

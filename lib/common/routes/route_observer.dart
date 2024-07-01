@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import '../common.dart';
 import 'package:flutter/material.dart';
+
+import '../common.dart';
 
 class RouterObserver extends AutoRouterObserver {
   @override

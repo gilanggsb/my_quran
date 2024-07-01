@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../../features.dart';
 
 import '../../../../../../common/common.dart';
+import '../../../../../features.dart';
 
-part 'surah_state.dart';
 part 'surah_cubit.freezed.dart';
+part 'surah_state.dart';
 
 class SurahCubit extends Cubit<SurahState> {
   final GetSurahs getSurahs;

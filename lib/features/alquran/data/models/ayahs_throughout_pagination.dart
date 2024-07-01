@@ -2,8 +2,9 @@
 //
 //     final ayahsThroughoutPagination = ayahsThroughoutPaginationFromJson(jsonString);
 
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
+
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'ayahs_throughout_pagination.freezed.dart';
 part 'ayahs_throughout_pagination.g.dart';
@@ -20,6 +21,7 @@ class AyahsThroughoutPagination with _$AyahsThroughoutPagination {
     String? surat,
     String? ayat,
     String? panjang,
+    int? maxAyat,
   }) = _AyahsThroughoutPagination;
 
   factory AyahsThroughoutPagination.fromJson(Map<String, dynamic> json) =>

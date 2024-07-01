@@ -2,8 +2,9 @@
 //
 //     final surah = surahFromJson(jsonString);
 
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
+
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'surah.freezed.dart';
 part 'surah.g.dart';
@@ -33,4 +34,12 @@ class Surah with _$Surah {
   }) = _Surah;
 
   factory Surah.fromJson(Map<String, dynamic> json) => _$SurahFromJson(json);
+}
+
+extension SurahExt on Surah {
+  String get translateRevelationId => revelationId == null
+      ? ''
+      : revelationId!.contains('Madaniyyah')
+          ? 'Madinah'
+          : 'Mekkah';
 }

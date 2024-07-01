@@ -44,7 +44,7 @@ class _GradientColors {
   final primary = const LinearGradient(colors: [
     AppPalette.primaryLight,
     AppPalette.primary,
-  ]);
+  ],);
 }
 
 class _BlackColors {

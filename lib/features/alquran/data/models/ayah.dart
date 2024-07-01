@@ -2,8 +2,9 @@
 //
 //     final ayah = ayahFromJson(jsonString);
 
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
+
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'ayah.freezed.dart';
 part 'ayah.g.dart';

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../common/common.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+
+import '../../../../common/common.dart';
 
 class LastReadSurahBanner extends StatelessWidget {
   const LastReadSurahBanner({

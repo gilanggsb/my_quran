@@ -32,7 +32,7 @@ class CustomErrorView extends StatelessWidget {
                   child: DefaultText(
                     'An error has ocurred now. The error will be reviewed and correted by our team. Thank you for your patience.',
                   ),
-                )
+                ),
             ],
           ),
         ),
