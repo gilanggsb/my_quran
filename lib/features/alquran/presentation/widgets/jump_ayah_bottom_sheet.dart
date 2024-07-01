@@ -12,13 +12,9 @@ class JumpAyahBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scrollManager = quranDetailCubit.scrollManager;
-    final currentAyah = scrollManager?.getCurrentItem();
-
     return BlocProvider(
       create: (context) => getIt.get<JumpAyahCubit>()
         ..init(
-          ayah: currentAyah,
           params: quranDetailCubit.paramsData,
           ayahs: quranDetailCubit.ayahs,
         ),
@@ -83,7 +79,10 @@ class JumpAyahBottomSheet extends StatelessWidget {
                               arabic: ayah.arab,
                               isPreview: true,
                             ),
-                            onTap: () => scrollManager?.scrollToModel(ayah),
+                            onTap: () {
+                              BottomSheetManager.closeCurrentBottomSheet();
+                              quranDetailCubit.jumpToAyah(index);
+                            },
                           ).paddingSymmetric(horizontal: 10);
                         },
                       ),

@@ -15,7 +15,6 @@ void quranInjection() {
   );
   getIt.registerFactory<QuranDetailCubit>(
     () => QuranDetailCubit(
-      getAyahsThroughout: getIt(),
       getAyahsJuz: getIt(),
       getFullAyahs: getIt(),
     ),

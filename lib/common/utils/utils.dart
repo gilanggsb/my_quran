@@ -10,5 +10,5 @@ export 'bottom_sheet_manager.dart';
 export 'networking_utils.dart';
 export 'scroll_manager.dart';
 export 'theme_cubit/theme.dart';
-export 'typedef.dart';
+export 'typedefs.dart';
 export 'usecase.dart';

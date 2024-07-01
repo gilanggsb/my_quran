@@ -31,7 +31,6 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
   }) : super(const JumpAyahState.initial());
 
   void init({
-    Ayah? ayah,
     QuranDetailParams? params,
     List<Ayah>? ayahs,
   }) async {
@@ -45,9 +44,11 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
       ]);
 
       if (isSurahsType) {
-        setCurrentSurah(ayah: ayah);
+        setCurrentSurah(
+          surahNumber: paramsData?.ayahsThroughoutPagination?.surat?.parseInt,
+        );
       } else {
-        setCurrentJuz(ayah: ayah);
+        setCurrentJuz(juzNumber: paramsData?.juzNumber);
       }
       emit(const JumpAyahState.loaded());
       _getFullAyahs();
@@ -78,11 +79,11 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
       }
 
       final ayahsPagination = paramsData?.ayahsThroughoutPagination
-          ?.copyWith(surat: currentSurah!.number);
+          ?.copyWith(surat: currentSurah?.number);
       final response = await getFullAyahs(ayahsPagination!);
+
       ayahs = response.data ?? [];
     } finally {
-      Logger.logInfo("ayahs ${ayahs.length}");
       emit(const JumpAyahState.loaded());
     }
   }

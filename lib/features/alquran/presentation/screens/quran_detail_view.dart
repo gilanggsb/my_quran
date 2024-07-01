@@ -3,6 +3,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scrollview_observer/scrollview_observer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../common/common.dart';
@@ -47,44 +48,37 @@ class QuranDetailView extends StatelessWidget {
       onDispose: context.read<QuranDetailCubit>().dispose,
       body: BlocBuilder<QuranDetailCubit, QuranDetailState>(
         builder: (context, state) {
-          final scrollManager = quranDetailCubit.scrollManager;
           final isLoading = state.whenOrNull(loading: () => true) ?? false;
           final isLoadingRetrieveMoreData =
               state.whenOrNull(loadingMoreData: () => true) ?? false;
           final ayahs =
               isLoading ? BoneMockData.fakeAyahs : quranDetailCubit.ayahs;
+          final sliverCtx = quranDetailCubit.sliverContext;
 
-          if (!isLoading) {
-            scrollManager?.registerItems(ayahs);
-          }
+          return ListViewObserver(
+            controller: quranDetailCubit.observerController,
+            sliverListContexts: () => [
+              if (sliverCtx != null) sliverCtx,
+            ],
+            child: CustomScrollView(
+              controller: quranDetailCubit.scrollController,
+              slivers: [
+                Skeletonizer.sliver(
+                  enabled: isLoading,
+                  child: SliverList.separated(
+                    itemCount:
+                        ayahs.length + (isLoadingRetrieveMoreData ? 1 : 0),
+                    separatorBuilder: (_, indx) => 8.heightBox,
+                    itemBuilder: (BuildContext ctx, int index) {
+                      if (sliverCtx != ctx) {
+                        quranDetailCubit.sliverContext = ctx;
+                      }
+                      final ayah = ayahs[index];
+                      final surah = surahCubit.surahs.firstWhereOrNull(
+                        (surah) => surah.number == ayah.surah,
+                      );
 
-          return CustomScrollView(
-            controller: scrollManager?.scrollController,
-            slivers: [
-              Skeletonizer.sliver(
-                enabled: isLoading,
-                child: SliverList.separated(
-                  itemCount: ayahs.length + (isLoadingRetrieveMoreData ? 1 : 0),
-                  separatorBuilder: (_, indx) => 8.heightBox,
-                  itemBuilder: (BuildContext context, int index) {
-                    // loading widget when load more data
-                    if (index >= ayahs.length && !isLoading) {
-                      return const Center(
-                        child: DefaultCircularProgressIndicator(),
-                      ).paddingOnly(top: 12);
-                    }
-
-                    final ayah = ayahs[index];
-                    final surah = surahCubit.surahs.firstWhereOrNull(
-                      (surah) => surah.number == ayah.surah,
-                    );
-
-                    return WidgetSize(
-                      onChange: (Size size) {
-                        scrollManager?.updateItemHeight(index, size.height);
-                      },
-                      child: Column(
-                        key: Key("${surah?.nameId}${ayah.ayah}"),
+                      return Column(
                         children: [
                           if (ayah.ayah == '1' && !isLoading)
                             QuranHeaderAyah(surah: surah),
@@ -97,12 +91,12 @@ class QuranDetailView extends StatelessWidget {
                             ),
                           ).paddingSymmetric(horizontal: 8),
                         ],
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),
