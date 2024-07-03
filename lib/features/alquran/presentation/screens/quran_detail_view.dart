@@ -42,10 +42,7 @@ class QuranDetailView extends StatelessWidget {
           ),
         ),
       ),
-      onInit: () {
-        context.read<QuranDetailCubit>().getData(params);
-      },
-      onDispose: context.read<QuranDetailCubit>().dispose,
+      onInit: () => context.read<QuranDetailCubit>().init(params),
       body: BlocBuilder<QuranDetailCubit, QuranDetailState>(
         builder: (context, state) {
           final isLoading = state.whenOrNull(loading: () => true) ?? false;

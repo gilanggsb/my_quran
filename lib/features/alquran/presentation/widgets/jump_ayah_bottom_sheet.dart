@@ -25,6 +25,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
           final jumpAyahTitle = jumpAyahCubit.jumpAyahTitle;
           final ayahs =
               isLoading ? BoneMockData.fakeAyahs : jumpAyahCubit.ayahs;
+
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -41,7 +42,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
                           color: context.colorsExt.text,
                         ),
                         DefaultText(
-                          jumpAyahTitle,
+                          isLoading ? BoneMock.name : jumpAyahTitle,
                           fontSize: 20.sp,
                           color: context.colorsExt.text,
                         ),
@@ -51,7 +52,9 @@ class JumpAyahBottomSheet extends StatelessWidget {
                           color: context.colorsExt.text,
                         ),
                       ],
-                    ).paddingAll(8),
+                    )
+                        .paddingAll(8)
+                        .onTap(() => showBottomSheetSearchSurahOrJuz(context)),
                   ),
                   Divider(
                     thickness: 2,
@@ -79,10 +82,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
                               arabic: ayah.arab,
                               isPreview: true,
                             ),
-                            onTap: () {
-                              BottomSheetManager.closeCurrentBottomSheet();
-                              quranDetailCubit.jumpToAyah(index);
-                            },
+                            onTap: () => onSurahTap(index, ayah, jumpAyahCubit),
                           ).paddingSymmetric(horizontal: 10);
                         },
                       ),
@@ -93,6 +93,24 @@ class JumpAyahBottomSheet extends StatelessWidget {
             ],
           );
         },
+      ),
+    );
+  }
+
+  void onSurahTap(int index, Ayah ayah, JumpAyahCubit jumpAyahCubit) {
+    BottomSheetManager.closeCurrentBottomSheet();
+    final newParams = jumpAyahCubit.getNewParamsData(ayah);
+    quranDetailCubit.jumpToAyah(
+      ayahsIndex: index,
+      params: newParams,
+    );
+  }
+
+  void showBottomSheetSearchSurahOrJuz(BuildContext context) {
+    BottomSheetManager.showCustomBottomSheet(
+      height: context.getHeight * 0.4,
+      child: SearchSurahOrJuzBottomSheet(
+        jumpAyahCubit: context.read<JumpAyahCubit>(),
       ),
     );
   }

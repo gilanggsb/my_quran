@@ -21,6 +21,7 @@ mixin _$JumpAyahState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function() searchingSurahOrJuz,
     required TResult Function(String message) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$JumpAyahState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function()? searchingSurahOrJuz,
     TResult? Function(String message)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$JumpAyahState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function()? searchingSurahOrJuz,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$JumpAyahState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
     required TResult Function(_Failed value) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$JumpAyahState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult? Function(_Failed value)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$JumpAyahState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) =>
@@ -127,6 +133,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function() searchingSurahOrJuz,
     required TResult Function(String message) failed,
   }) {
     return initial();
@@ -138,6 +145,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function()? searchingSurahOrJuz,
     TResult? Function(String message)? failed,
   }) {
     return initial?.call();
@@ -149,6 +157,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function()? searchingSurahOrJuz,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -164,6 +173,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
     required TResult Function(_Failed value) failed,
   }) {
     return initial(this);
@@ -175,6 +185,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult? Function(_Failed value)? failed,
   }) {
     return initial?.call(this);
@@ -186,6 +197,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -241,6 +253,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function() searchingSurahOrJuz,
     required TResult Function(String message) failed,
   }) {
     return loading();
@@ -252,6 +265,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function()? searchingSurahOrJuz,
     TResult? Function(String message)? failed,
   }) {
     return loading?.call();
@@ -263,6 +277,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function()? searchingSurahOrJuz,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -278,6 +293,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
     required TResult Function(_Failed value) failed,
   }) {
     return loading(this);
@@ -289,6 +305,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult? Function(_Failed value)? failed,
   }) {
     return loading?.call(this);
@@ -300,6 +317,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -355,6 +373,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function() searchingSurahOrJuz,
     required TResult Function(String message) failed,
   }) {
     return loaded();
@@ -366,6 +385,7 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function()? searchingSurahOrJuz,
     TResult? Function(String message)? failed,
   }) {
     return loaded?.call();
@@ -377,6 +397,7 @@ class _$LoadedImpl implements _Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function()? searchingSurahOrJuz,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -392,6 +413,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
     required TResult Function(_Failed value) failed,
   }) {
     return loaded(this);
@@ -403,6 +425,7 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult? Function(_Failed value)? failed,
   }) {
     return loaded?.call(this);
@@ -414,6 +437,7 @@ class _$LoadedImpl implements _Loaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -426,6 +450,127 @@ class _$LoadedImpl implements _Loaded {
 
 abstract class _Loaded implements JumpAyahState {
   const factory _Loaded() = _$LoadedImpl;
+}
+
+/// @nodoc
+abstract class _$$SearchingSurahOrJuzImplCopyWith<$Res> {
+  factory _$$SearchingSurahOrJuzImplCopyWith(_$SearchingSurahOrJuzImpl value,
+          $Res Function(_$SearchingSurahOrJuzImpl) then) =
+      __$$SearchingSurahOrJuzImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SearchingSurahOrJuzImplCopyWithImpl<$Res>
+    extends _$JumpAyahStateCopyWithImpl<$Res, _$SearchingSurahOrJuzImpl>
+    implements _$$SearchingSurahOrJuzImplCopyWith<$Res> {
+  __$$SearchingSurahOrJuzImplCopyWithImpl(_$SearchingSurahOrJuzImpl _value,
+      $Res Function(_$SearchingSurahOrJuzImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SearchingSurahOrJuzImpl implements _SearchingSurahOrJuz {
+  const _$SearchingSurahOrJuzImpl();
+
+  @override
+  String toString() {
+    return 'JumpAyahState.searchingSurahOrJuz()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchingSurahOrJuzImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() searchingSurahOrJuz,
+    required TResult Function(String message) failed,
+  }) {
+    return searchingSurahOrJuz();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loaded,
+    TResult? Function()? searchingSurahOrJuz,
+    TResult? Function(String message)? failed,
+  }) {
+    return searchingSurahOrJuz?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? searchingSurahOrJuz,
+    TResult Function(String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (searchingSurahOrJuz != null) {
+      return searchingSurahOrJuz();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return searchingSurahOrJuz(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return searchingSurahOrJuz?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (searchingSurahOrJuz != null) {
+      return searchingSurahOrJuz(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchingSurahOrJuz implements JumpAyahState {
+  const factory _SearchingSurahOrJuz() = _$SearchingSurahOrJuzImpl;
 }
 
 /// @nodoc
@@ -495,6 +640,7 @@ class _$FailedImpl implements _Failed {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function() searchingSurahOrJuz,
     required TResult Function(String message) failed,
   }) {
     return failed(message);
@@ -506,6 +652,7 @@ class _$FailedImpl implements _Failed {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function()? searchingSurahOrJuz,
     TResult? Function(String message)? failed,
   }) {
     return failed?.call(message);
@@ -517,6 +664,7 @@ class _$FailedImpl implements _Failed {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function()? searchingSurahOrJuz,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -532,6 +680,7 @@ class _$FailedImpl implements _Failed {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
     required TResult Function(_Failed value) failed,
   }) {
     return failed(this);
@@ -543,6 +692,7 @@ class _$FailedImpl implements _Failed {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult? Function(_Failed value)? failed,
   }) {
     return failed?.call(this);
@@ -554,6 +704,7 @@ class _$FailedImpl implements _Failed {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {

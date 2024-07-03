@@ -10,4 +10,16 @@ class QuranDetailParams {
     this.ayahsThroughoutPagination,
     this.juzNumber,
   });
+
+  QuranDetailParams copyWith({
+    AyahsThroughoutPagination? ayahsThroughoutPagination,
+    int? juzNumber,
+    QuranDetailTypeEnum? detailType,
+  }) =>
+      QuranDetailParams(
+        ayahsThroughoutPagination:
+            ayahsThroughoutPagination ?? this.ayahsThroughoutPagination,
+        juzNumber: juzNumber ?? this.juzNumber,
+        detailType: detailType ?? this.detailType,
+      );
 }

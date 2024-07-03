@@ -15,6 +15,7 @@ class BottomSheetManager {
     Clip? clipBehavior,
     bool isDismissible = true,
     bool enableDrag = true,
+    double? height,
   }) {
     _showBottomSheet(
       context: context,
@@ -24,6 +25,7 @@ class BottomSheetManager {
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
+      height: height,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -35,8 +37,11 @@ class BottomSheetManager {
             ).paddingAll(16),
           if (message != null) DefaultText(message).paddingAll(16),
           if (actions != null)
-            ButtonBar(
-              children: actions,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ButtonBar(
+                children: actions,
+              ),
             ),
         ],
       ),
@@ -54,6 +59,7 @@ class BottomSheetManager {
     Clip? clipBehavior,
     bool isDismissible = true,
     bool enableDrag = true,
+    double? height,
   }) {
     _showBottomSheet(
       context: context,
@@ -63,6 +69,7 @@ class BottomSheetManager {
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
+      height: height,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -97,6 +104,7 @@ class BottomSheetManager {
     Clip? clipBehavior,
     bool isDismissible = true,
     bool enableDrag = true,
+    double? height,
   }) {
     _showBottomSheet(
       context: context,
@@ -106,7 +114,11 @@ class BottomSheetManager {
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
-      child: child,
+      height: height,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: child,
+      ),
     );
   }
 
@@ -119,6 +131,7 @@ class BottomSheetManager {
     Clip? clipBehavior,
     bool isDismissible = true,
     bool enableDrag = true,
+    double? height,
   }) {
     showModalBottomSheet(
       context: context ?? globalContext,
@@ -131,7 +144,11 @@ class BottomSheetManager {
       builder: (BuildContext context) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
-          child: SizedBox(width: globalContext.getWidth, child: child),
+          child: SizedBox(
+            height: height,
+            width: globalContext.getWidth,
+            child: child,
+          ),
         );
       },
     );

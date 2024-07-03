@@ -5,5 +5,6 @@ class JumpAyahState with _$JumpAyahState {
   const factory JumpAyahState.initial() = _Initial;
   const factory JumpAyahState.loading() = _Loading;
   const factory JumpAyahState.loaded() = _Loaded;
+  const factory JumpAyahState.searchingSurahOrJuz() = _SearchingSurahOrJuz;
   const factory JumpAyahState.failed(String message) = _Failed;
 }

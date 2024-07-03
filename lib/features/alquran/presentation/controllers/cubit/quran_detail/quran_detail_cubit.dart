@@ -32,17 +32,20 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     required this.getFullAyahs,
   }) : super(const QuranDetailState.initial());
 
-  void getData(QuranDetailParams params) async {
-    paramsData = params;
+  void init(QuranDetailParams params) async {
     initController();
-    if (!params.juzNumber.isNull) {
+    getAyahs(params);
+  }
+
+  Future<void> getAyahs(QuranDetailParams params) async {
+    paramsData = params;
+    if (!isSurahsType) {
       await _getAyahsJuzData(params.juzNumber!);
+      return;
     }
 
-    if (!params.ayahsThroughoutPagination.isNull) {
-      ayahsPagination = params.ayahsThroughoutPagination;
-      _getFullAyahs();
-    }
+    ayahsPagination = params.ayahsThroughoutPagination;
+    await _getFullAyahs();
   }
 
   void initController() {
@@ -51,20 +54,22 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     );
   }
 
-  void jumpToAyah(int index) {
+  void jumpToAyah({QuranDetailParams? params, required int ayahsIndex}) async {
+    if (params != null) {
+      ayahs = [];
+      paramsData = params;
+      await getAyahs(params);
+    }
+
     observerController.animateTo(
       sliverContext: sliverContext,
-      index: index,
+      index: ayahsIndex,
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
   }
 
-  void dispose() {
-    observerController.controller?.dispose();
-  }
-
-  void _getFullAyahs() async {
+  Future<void> _getFullAyahs() async {
     try {
       emit(const QuranDetailState.loading());
 
@@ -94,4 +99,13 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     return surahCubit.surahs
         .firstWhereOrNull((surah) => surah.number == ayah.surah);
   }
+
+  @override
+  Future<void> close() {
+    observerController.controller?.dispose();
+    return super.close();
+  }
+
+  bool get isSurahsType =>
+      paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
 }

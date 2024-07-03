@@ -212,6 +212,10 @@ extension StringExtension on String {
     }
     return defaultDate;
   }
+
+  bool isStringContains(String comparedString, {bool? defaultValue}) {
+    return toLowerCase().contains(comparedString);
+  }
 }
 
 extension StringExt on String? {
@@ -228,5 +232,9 @@ extension StringExt on String? {
   /// ```
   bool get isNull {
     return this == null;
+  }
+
+  bool isStringContains(String comparedString, {bool? defaultValue}) {
+    return (this ?? '').toLowerCase.call().contains(comparedString);
   }
 }

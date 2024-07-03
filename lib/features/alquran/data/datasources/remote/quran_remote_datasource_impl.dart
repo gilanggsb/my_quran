@@ -156,40 +156,36 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
   }
 
   @override
-  Future<BaseResponse<List<Ayah>?>> getFullAyahs(
+Future<BaseResponse<List<Ayah>?>> getFullAyahs(
     AyahsThroughoutPagination ayahsThroughout,
   ) async {
     try {
       int nextAyahPagination = ayahsThroughout.maxAyat ?? 100;
       AyahsThroughoutPagination ayahsPagination = ayahsThroughout;
       final fullAyahs = <Ayah>[];
-      BaseResponse<List<Ayah>?> finalRes =
-          await getAyahsThroughout(ayahsThroughout);
 
       for (int i = 0; i < nextAyahPagination; i++) {
         final response = await getAyahsThroughout(ayahsPagination);
-        ayahsPagination = ayahsPagination.copyWith(
-          ayat: "${ayahsPagination.ayat!.parseInt + 10}",
-        );
 
         if ((response.data ?? []).isEmpty) {
           break;
         }
 
         fullAyahs.addAll(response.data ?? []);
+        ayahsPagination = ayahsPagination.copyWith(
+          ayat: "${ayahsPagination.ayat!.parseInt + 30}",
+        );
       }
 
-      finalRes = finalRes.copyWith(data: fullAyahs);
-      return finalRes;
+      return BaseResponse(data: fullAyahs);
     } on BadResponse catch (badResponse) {
       throw '${badResponse.message}';
-    } on String catch (_) {
-      rethrow;
     } on ServerFailure catch (e) {
       throw e.message;
     } catch (e) {
       throw e.toString();
     }
   }
+
 
 }
