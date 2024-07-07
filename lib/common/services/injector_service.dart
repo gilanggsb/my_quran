@@ -2,8 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import '../common.dart';
+
 import '../../features/features.dart';
+import '../common.dart';
 
 final GetIt getIt = GetIt.instance;
 

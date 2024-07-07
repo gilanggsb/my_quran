@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
+
 import '../../../../common/common.dart';
 import '../../../features.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 @RoutePage(name: 'JuzRoute')
 class JuzTab extends StatelessWidget {
@@ -20,26 +21,30 @@ class JuzTab extends StatelessWidget {
       builder: (context, state) {
         final juzCubit = context.read<JuzCubit>();
         final isLoading = state.whenOrNull(loading: () => true) ?? false;
-        final juzs = juzCubit.juzs;
+        final juzs = isLoading ? BoneMockData.fakeJuzs : juzCubit.juzs;
         return RefreshIndicator(
-          color: context.colorsExt.primary,
+          color: context.getColorExt(AppColorType.primary),
           onRefresh: () async => juzCubit.getData(),
           child: Skeletonizer(
             enabled: isLoading,
             child: ListView.builder(
-              itemCount: isLoading ? 10 : juzs.length,
+              itemCount: juzs.length,
               itemBuilder: (context, index) {
-                final juz = juzs.isNotEmpty ? juzs[index] : null;
+                final juz = juzs[index];
                 return QuranTile(
-                  number: juz?.number ?? '',
-                  title: juz?.name ?? '',
+                  quran: Quran(
+                    number: juz.number,
+                    title: juz.name,
+                    subtitle: "${juz.nameStartId} • ${juz.nameEndId}",
+                  ),
                   onTap: () => context.pushRoute(
                     QuranDetailRoute(
-                        params: QuranDetailParams(
-                      juzNumber: juz?.number?.tryParseInt,
-                    )),
+                      params: QuranDetailParams(
+                        juzNumber: juz.number?.tryParseInt,
+                        detailType: QuranDetailTypeEnum.byJuzs,
+                      ),
+                    ),
                   ),
-                  subTitle: "${juz?.nameStartId} • ${juz?.nameEndId}",
                 );
               },
             ),

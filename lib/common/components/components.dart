@@ -9,6 +9,6 @@ export 'default_textfield.dart';
 export 'gradient_text.dart';
 export 'loading_overlay.dart';
 export 'my_tootip.dart';
+export 'snackbar_widget.dart';
 export 'stateful_wrapper_component.dart';
 export 'widget_size.dart';
-export 'snackbar_widget.dart';

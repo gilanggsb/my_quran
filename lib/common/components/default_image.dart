@@ -24,7 +24,7 @@ class DefaultImage extends StatelessWidget {
     required this.imageUrl,
     this.cacheKey,
     required this.width,
-    required this.height,
+    this.height,
     this.cacheManagerKey,
     this.staleImagePeriod,
     this.alignment,

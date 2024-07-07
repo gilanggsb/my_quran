@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../common.dart';
 
 class LoadingOverlayAlt extends StatelessWidget {
@@ -55,7 +56,7 @@ class LoadingOverlayAlt extends StatelessWidget {
                         fontSize: 14,
                         decoration: TextDecoration.none,
                         fontWeight: FontWeight.w700,
-                        color: AppPalette.white.white,
+                        color: AppPalette.white.base,
                       ),
                     ],
                   ),

@@ -2,8 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../common.dart';
 import 'package:path_provider/path_provider.dart';
+
+import '../common.dart';
 
 class AppUtils {
   static void showSnackBar(BuildContext context, String message) {
@@ -11,14 +12,14 @@ class AppUtils {
       SnackBar(
         content: DefaultText(
           message,
-          color: AppPalette.white.white,
+          color: AppPalette.white.base,
         ),
       ),
     );
   }
 
   static void copyLink(
-      BuildContext context, String data, String successMessage) {
+      BuildContext context, String data, String successMessage,) {
     Clipboard.setData(ClipboardData(text: data)).then((_) {
       showSnackBar(context, successMessage);
     });

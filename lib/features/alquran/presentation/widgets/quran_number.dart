@@ -24,7 +24,7 @@ class QuranNumber extends StatelessWidget {
           ),
           Center(
             child: DefaultText(number ?? ''),
-          )
+          ),
         ],
       ),
     );

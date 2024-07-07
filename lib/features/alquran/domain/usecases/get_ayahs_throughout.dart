@@ -8,6 +8,7 @@ class GetAyahsThroughout
   GetAyahsThroughout({required this.repository});
   @override
   Future<BaseResponse<List<Ayah>?>> call(
-          AyahsThroughoutPagination params) async =>
+    AyahsThroughoutPagination params,
+  ) async =>
       repository.getAyahsThroughout(params);
 }

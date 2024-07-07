@@ -13,7 +13,8 @@ final formats = [
   DateFormat("d MMMM yyyy"),
   DateFormat("dd MMM yyyy"),
   DateFormat(
-      "yyyy-MM-ddTHH:mm:ss.SSSSSS"), // Correct format for your specific date string
+    "yyyy-MM-ddTHH:mm:ss.SSSSSS",
+  ), // Correct format for your specific date string
 ];
 
 extension StringExtension on String {
@@ -211,6 +212,10 @@ extension StringExtension on String {
     }
     return defaultDate;
   }
+
+  bool isStringContains(String comparedString, {bool? defaultValue}) {
+    return toLowerCase().contains(comparedString);
+  }
 }
 
 extension StringExt on String? {
@@ -227,5 +232,9 @@ extension StringExt on String? {
   /// ```
   bool get isNull {
     return this == null;
+  }
+
+  bool isStringContains(String comparedString, {bool? defaultValue}) {
+    return (this ?? '').toLowerCase.call().contains(comparedString);
   }
 }

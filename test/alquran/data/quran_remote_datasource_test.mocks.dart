@@ -219,4 +219,31 @@ class MockQuranRemoteDataSource extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>);
+
+  @override
+  _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>> getFullAyahs(
+          _i3.AyahsThroughoutPagination? ayahsThroughout) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getFullAyahs,
+          [ayahsThroughout],
+        ),
+        returnValue: _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
+            _FakeBaseResponse_0<List<_i3.Ayah>?>(
+          this,
+          Invocation.method(
+            #getFullAyahs,
+            [ayahsThroughout],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
+                _FakeBaseResponse_0<List<_i3.Ayah>?>(
+          this,
+          Invocation.method(
+            #getFullAyahs,
+            [ayahsThroughout],
+          ),
+        )),
+      ) as _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>);
 }

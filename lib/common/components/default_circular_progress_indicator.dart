@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../common.dart';
 
 class DefaultCircularProgressIndicator extends StatelessWidget {
@@ -17,14 +18,14 @@ class DefaultCircularProgressIndicator extends StatelessWidget {
     this.semanticsLabel,
     this.strokeWidth = 4.0,
     this.semanticsValue,
-    this.color = AppPalette.primary,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
     return CircularProgressIndicator(
       backgroundColor: backgroundColor,
-      color: color,
+      color: color ?? AppPalette.primary.base,
       semanticsLabel: semanticsLabel,
       semanticsValue: semanticsValue,
       strokeWidth: strokeWidth,

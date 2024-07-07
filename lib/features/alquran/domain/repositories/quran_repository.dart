@@ -11,4 +11,7 @@ abstract class QuranRepository {
   Future<BaseResponse<List<Ayah>?>> getAyahsThroughout(
     AyahsThroughoutPagination ayahsThroughout,
   );
+  Future<BaseResponse<List<Ayah>?>> getFullAyahs(
+    AyahsThroughoutPagination ayahsThroughout,
+  );
 }

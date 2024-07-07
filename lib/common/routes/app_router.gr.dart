@@ -18,7 +18,7 @@ import 'package:my_quran/features/alquran/presentation/screens/quran_detail_scre
 import 'package:my_quran/features/alquran/presentation/screens/surah_tab.dart'
     as _i6;
 import 'package:my_quran/features/features.dart' as _i9;
-import 'package:my_quran/features/home/presentation/screens/home_screen.dart'
+import 'package:my_quran/features/quran/presentation/screens/home/home_screen.dart'
     as _i1;
 import 'package:my_quran/features/splash/splash_screen.dart' as _i5;
 

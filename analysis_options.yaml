@@ -47,12 +47,19 @@ linter:
     # - always_declare_return_types
     # - always_require_non_null_named_parameters
     # - always_use_package_imports
+    - avoid_relative_lib_imports
+    - require_trailing_commas
     - prefer_relative_imports
     - annotate_overrides
+    - use_rethrow_when_possible
+    - enable_null_safety
+    - prefer_final_fields
+    - avoid_unstable_final_fields
     - avoid_classes_with_only_static_members: false
     - sort_pub_dependencies: true
     - use_key_in_widget_constructors: true
     - prefer_const_constructors: true
+    - directives_ordering
     # Conflicts with the convention used by flutter, which puts `Key key`
     # and `@required Widget child` last.
     - always_put_required_named_parameters_first: false

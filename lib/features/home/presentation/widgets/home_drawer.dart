@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../common/common.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -10,7 +11,7 @@ class HomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: context.colorsExt.background,
+      backgroundColor: context.getColorExt(AppColorType.background),
       // Add a ListView to the drawer. This ensures the user can scroll
       // through the options in the drawer if there isn't enough vertical
       // space to fit everything.
@@ -21,7 +22,7 @@ class HomeDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(
               Icons.bookmark,
-              color: context.colorsExt.text,
+              color: context.getColorExt(AppColorType.text),
             ),
             title: const DefaultText('Bookmark'),
             onTap: () {
@@ -37,19 +38,20 @@ class HomeDrawer extends StatelessWidget {
                 value: isDarkTheme,
                 trackColor: WidgetStateProperty.resolveWith((states) {
                   if (states.contains(WidgetState.selected)) {
-                    return context.colorsExt.primary;
+                    return context.getColorExt(AppColorType.primary);
                   }
                   return null;
                 }),
                 trackOutlineColor: WidgetStateProperty.resolveWith((states) {
                   if (!states.contains(WidgetState.selected)) {
-                    return context.colorsExt.primary;
+                    return context.getColorExt(AppColorType.primary);
                   }
                   return null;
                 }),
+                activeColor: context.getColorExt(AppColorType.background),
                 secondary: Icon(
                   isDarkTheme ? Icons.mode_night : Icons.light_mode,
-                  color: context.colorsExt.text,
+                  color: context.getColorExt(AppColorType.text),
                 ),
                 title: const DefaultText('Theme'),
                 onChanged: (data) => themeCubit.switchTheme(),

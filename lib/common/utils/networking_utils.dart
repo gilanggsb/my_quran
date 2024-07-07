@@ -8,7 +8,9 @@ abstract class NetworkingUtils {
     if (pathParams == null) return url;
 
     pathParams.forEach((key, value) {
-      url = "$url/$value";
+      if (value != null) {
+        url = "$url/$value";
+      }
     });
     return url;
   }
@@ -31,7 +33,9 @@ abstract class NetworkingUtils {
   }
 
   static BaseResponse<T> parseResponse<T>(
-      Response response, FromJsonT<T> fromJsonT) {
+    Response response,
+    FromJsonT<T> fromJsonT,
+  ) {
     try {
       final BaseResponse<T> baseResponse =
           BaseResponse.fromJson(response.data, fromJsonT);

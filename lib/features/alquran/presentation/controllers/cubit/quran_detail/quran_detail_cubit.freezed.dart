@@ -20,6 +20,7 @@ mixin _$QuranDetailState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadingMoreData,
     required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) =>
@@ -28,6 +29,7 @@ mixin _$QuranDetailState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadingMoreData,
     TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) =>
@@ -36,6 +38,7 @@ mixin _$QuranDetailState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadingMoreData,
     TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
@@ -45,6 +48,7 @@ mixin _$QuranDetailState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingMoreData value) loadingMoreData,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) =>
@@ -53,6 +57,7 @@ mixin _$QuranDetailState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingMoreData value)? loadingMoreData,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) =>
@@ -61,6 +66,7 @@ mixin _$QuranDetailState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingMoreData value)? loadingMoreData,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
@@ -104,12 +110,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'QuranDetailState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'QuranDetailState.initial'));
   }
 
   @override
@@ -126,6 +138,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadingMoreData,
     required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) {
@@ -137,6 +150,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadingMoreData,
     TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) {
@@ -148,6 +162,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadingMoreData,
     TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
@@ -163,6 +178,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingMoreData value) loadingMoreData,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) {
@@ -174,6 +190,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingMoreData value)? loadingMoreData,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) {
@@ -185,6 +202,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingMoreData value)? loadingMoreData,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
@@ -218,12 +236,18 @@ class __$$LoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
+class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   const _$LoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'QuranDetailState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'QuranDetailState.loading'));
   }
 
   @override
@@ -240,6 +264,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadingMoreData,
     required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) {
@@ -251,6 +276,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadingMoreData,
     TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) {
@@ -262,6 +288,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadingMoreData,
     TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
@@ -277,6 +304,7 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingMoreData value) loadingMoreData,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) {
@@ -288,6 +316,7 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingMoreData value)? loadingMoreData,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) {
@@ -299,6 +328,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingMoreData value)? loadingMoreData,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
@@ -312,6 +342,135 @@ class _$LoadingImpl implements _Loading {
 
 abstract class _Loading implements QuranDetailState {
   const factory _Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingMoreDataImplCopyWith<$Res> {
+  factory _$$LoadingMoreDataImplCopyWith(_$LoadingMoreDataImpl value,
+          $Res Function(_$LoadingMoreDataImpl) then) =
+      __$$LoadingMoreDataImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingMoreDataImplCopyWithImpl<$Res>
+    extends _$QuranDetailStateCopyWithImpl<$Res, _$LoadingMoreDataImpl>
+    implements _$$LoadingMoreDataImplCopyWith<$Res> {
+  __$$LoadingMoreDataImplCopyWithImpl(
+      _$LoadingMoreDataImpl _value, $Res Function(_$LoadingMoreDataImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingMoreDataImpl
+    with DiagnosticableTreeMixin
+    implements _LoadingMoreData {
+  const _$LoadingMoreDataImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'QuranDetailState.loadingMoreData()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'QuranDetailState.loadingMoreData'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingMoreDataImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loadingMoreData,
+    required TResult Function() loaded,
+    required TResult Function(String message) failed,
+  }) {
+    return loadingMoreData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loadingMoreData,
+    TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
+  }) {
+    return loadingMoreData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loadingMoreData,
+    TResult Function()? loaded,
+    TResult Function(String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (loadingMoreData != null) {
+      return loadingMoreData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingMoreData value) loadingMoreData,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return loadingMoreData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingMoreData value)? loadingMoreData,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return loadingMoreData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingMoreData value)? loadingMoreData,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (loadingMoreData != null) {
+      return loadingMoreData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingMoreData implements QuranDetailState {
+  const factory _LoadingMoreData() = _$LoadingMoreDataImpl;
 }
 
 /// @nodoc
@@ -332,12 +491,18 @@ class __$$LoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadedImpl implements _Loaded {
+class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   const _$LoadedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'QuranDetailState.loaded()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'QuranDetailState.loaded'));
   }
 
   @override
@@ -354,6 +519,7 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadingMoreData,
     required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) {
@@ -365,6 +531,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadingMoreData,
     TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) {
@@ -376,6 +543,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadingMoreData,
     TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
@@ -391,6 +559,7 @@ class _$LoadedImpl implements _Loaded {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingMoreData value) loadingMoreData,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) {
@@ -402,6 +571,7 @@ class _$LoadedImpl implements _Loaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingMoreData value)? loadingMoreData,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) {
@@ -413,6 +583,7 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingMoreData value)? loadingMoreData,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
@@ -461,15 +632,23 @@ class __$$FailedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FailedImpl implements _Failed {
+class _$FailedImpl with DiagnosticableTreeMixin implements _Failed {
   const _$FailedImpl(this.message);
 
   @override
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'QuranDetailState.failed(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'QuranDetailState.failed'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -494,6 +673,7 @@ class _$FailedImpl implements _Failed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() loadingMoreData,
     required TResult Function() loaded,
     required TResult Function(String message) failed,
   }) {
@@ -505,6 +685,7 @@ class _$FailedImpl implements _Failed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? loadingMoreData,
     TResult? Function()? loaded,
     TResult? Function(String message)? failed,
   }) {
@@ -516,6 +697,7 @@ class _$FailedImpl implements _Failed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? loadingMoreData,
     TResult Function()? loaded,
     TResult Function(String message)? failed,
     required TResult orElse(),
@@ -531,6 +713,7 @@ class _$FailedImpl implements _Failed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_LoadingMoreData value) loadingMoreData,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Failed value) failed,
   }) {
@@ -542,6 +725,7 @@ class _$FailedImpl implements _Failed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_LoadingMoreData value)? loadingMoreData,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Failed value)? failed,
   }) {
@@ -553,6 +737,7 @@ class _$FailedImpl implements _Failed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_LoadingMoreData value)? loadingMoreData,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),

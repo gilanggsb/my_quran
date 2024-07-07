@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'common/common.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'common/common.dart';
+import 'features/features.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -13,8 +15,14 @@ class App extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
-        return BlocProvider(
-          create: (context) => getIt.get<ThemeCubit>()..initialization(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt.get<ThemeCubit>()..initialization(),
+            ),
+            BlocProvider(create: (context) => getIt.get<SurahCubit>()),
+            BlocProvider(create: (context) => getIt.get<JuzCubit>()),
+          ],
           child: BlocBuilder<ThemeCubit, ThemeState>(
             builder: (context, state) {
               ThemeMode themeMode = context.read<ThemeCubit>().themeMode;

@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:ui' as ui show ViewPadding;
+
+import 'package:flutter/material.dart';
 
 extension WidgetExtension on Widget {
   Widget paddingAll(double padding) => Padding(

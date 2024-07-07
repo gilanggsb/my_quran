@@ -30,7 +30,7 @@ class ApiServiceImpl extends ApiService {
     dioClone.interceptors.add(PrettyDioLogger(
       requestHeader: true,
       requestBody: true,
-    ));
+    ),);
 
     return dioClone;
   }

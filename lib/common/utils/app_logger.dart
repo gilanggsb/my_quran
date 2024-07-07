@@ -74,8 +74,8 @@ class Logger {
   }
 
   static void logCustom(String message, String colorCode,
-      {StackTrace? stackTrace}) {
+      {StackTrace? stackTrace,}) {
     debugPrint(message,
-        level: LogLevel.custom, customColor: colorCode, stackTrace: stackTrace);
+        level: LogLevel.custom, customColor: colorCode, stackTrace: stackTrace,);
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../common/common.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+
+import '../../../../common/common.dart';
 
 class LastReadSurahBanner extends StatelessWidget {
   const LastReadSurahBanner({
@@ -41,7 +42,7 @@ class LastReadSurahBanner extends StatelessWidget {
                       8.widthBox,
                       DefaultText(
                         'Terakhir Dibaca',
-                        color: AppPalette.white.white,
+                        color: AppPalette.white.base,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
@@ -55,13 +56,13 @@ class LastReadSurahBanner extends StatelessWidget {
                       children: [
                         DefaultText(
                           'Al-Fatihah',
-                          color: AppPalette.white.white,
+                          color: AppPalette.white.base,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
                         DefaultText(
                           'Ayat No: 1',
-                          color: AppPalette.white.white,
+                          color: AppPalette.white.base,
                           fontWeight: FontWeight.w300,
                           fontSize: 16,
                         ),

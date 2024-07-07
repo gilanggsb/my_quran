@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
+
 import '../../../../common/common.dart';
 import '../../../features.dart';
 
 class QuranTile extends StatelessWidget {
-  final String? number;
-  final String? title;
-  final String? subTitle;
-  final String? titleAr;
+  final Quran? quran;
   final Widget? rightIcon;
   final VoidCallback? onTap;
   const QuranTile({
     super.key,
-    this.number,
-    this.title,
-    this.titleAr,
-    this.subTitle,
+    this.quran,
     this.rightIcon,
     this.onTap,
   });
@@ -23,13 +18,18 @@ class QuranTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      splashColor: context.colorsExt.primary,
-      leading: QuranNumber(number: number),
+      splashColor: context.getColorExt(AppColorType.primary),
       onTap: onTap,
-      title: QuranTitle(
-        title: title,
-        titleAr: titleAr,
-        subTitle: subTitle,
+      title: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          QuranNumber(number: quran?.number),
+          8.widthBox,
+          Expanded(
+            child: QuranTitle(quran: quran),
+          ),
+        ],
       ),
       trailing: rightIcon,
     );

@@ -24,6 +24,7 @@ mixin _$AyahsThroughoutPagination {
   String? get surat => throw _privateConstructorUsedError;
   String? get ayat => throw _privateConstructorUsedError;
   String? get panjang => throw _privateConstructorUsedError;
+  int? get maxAyat => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +38,7 @@ abstract class $AyahsThroughoutPaginationCopyWith<$Res> {
           $Res Function(AyahsThroughoutPagination) then) =
       _$AyahsThroughoutPaginationCopyWithImpl<$Res, AyahsThroughoutPagination>;
   @useResult
-  $Res call({String? surat, String? ayat, String? panjang});
+  $Res call({String? surat, String? ayat, String? panjang, int? maxAyat});
 }
 
 /// @nodoc
@@ -57,6 +58,7 @@ class _$AyahsThroughoutPaginationCopyWithImpl<$Res,
     Object? surat = freezed,
     Object? ayat = freezed,
     Object? panjang = freezed,
+    Object? maxAyat = freezed,
   }) {
     return _then(_value.copyWith(
       surat: freezed == surat
@@ -71,6 +73,10 @@ class _$AyahsThroughoutPaginationCopyWithImpl<$Res,
           ? _value.panjang
           : panjang // ignore: cast_nullable_to_non_nullable
               as String?,
+      maxAyat: freezed == maxAyat
+          ? _value.maxAyat
+          : maxAyat // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -84,7 +90,7 @@ abstract class _$$AyahsThroughoutPaginationImplCopyWith<$Res>
       __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? surat, String? ayat, String? panjang});
+  $Res call({String? surat, String? ayat, String? panjang, int? maxAyat});
 }
 
 /// @nodoc
@@ -103,6 +109,7 @@ class __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>
     Object? surat = freezed,
     Object? ayat = freezed,
     Object? panjang = freezed,
+    Object? maxAyat = freezed,
   }) {
     return _then(_$AyahsThroughoutPaginationImpl(
       surat: freezed == surat
@@ -117,6 +124,10 @@ class __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>
           ? _value.panjang
           : panjang // ignore: cast_nullable_to_non_nullable
               as String?,
+      maxAyat: freezed == maxAyat
+          ? _value.maxAyat
+          : maxAyat // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -124,7 +135,8 @@ class __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AyahsThroughoutPaginationImpl implements _AyahsThroughoutPagination {
-  const _$AyahsThroughoutPaginationImpl({this.surat, this.ayat, this.panjang});
+  const _$AyahsThroughoutPaginationImpl(
+      {this.surat, this.ayat, this.panjang, this.maxAyat});
 
   factory _$AyahsThroughoutPaginationImpl.fromJson(Map<String, dynamic> json) =>
       _$$AyahsThroughoutPaginationImplFromJson(json);
@@ -135,10 +147,12 @@ class _$AyahsThroughoutPaginationImpl implements _AyahsThroughoutPagination {
   final String? ayat;
   @override
   final String? panjang;
+  @override
+  final int? maxAyat;
 
   @override
   String toString() {
-    return 'AyahsThroughoutPagination(surat: $surat, ayat: $ayat, panjang: $panjang)';
+    return 'AyahsThroughoutPagination(surat: $surat, ayat: $ayat, panjang: $panjang, maxAyat: $maxAyat)';
   }
 
   @override
@@ -148,12 +162,13 @@ class _$AyahsThroughoutPaginationImpl implements _AyahsThroughoutPagination {
             other is _$AyahsThroughoutPaginationImpl &&
             (identical(other.surat, surat) || other.surat == surat) &&
             (identical(other.ayat, ayat) || other.ayat == ayat) &&
-            (identical(other.panjang, panjang) || other.panjang == panjang));
+            (identical(other.panjang, panjang) || other.panjang == panjang) &&
+            (identical(other.maxAyat, maxAyat) || other.maxAyat == maxAyat));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, surat, ayat, panjang);
+  int get hashCode => Object.hash(runtimeType, surat, ayat, panjang, maxAyat);
 
   @JsonKey(ignore: true)
   @override
@@ -174,7 +189,8 @@ abstract class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
   const factory _AyahsThroughoutPagination(
       {final String? surat,
       final String? ayat,
-      final String? panjang}) = _$AyahsThroughoutPaginationImpl;
+      final String? panjang,
+      final int? maxAyat}) = _$AyahsThroughoutPaginationImpl;
 
   factory _AyahsThroughoutPagination.fromJson(Map<String, dynamic> json) =
       _$AyahsThroughoutPaginationImpl.fromJson;
@@ -185,6 +201,8 @@ abstract class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
   String? get ayat;
   @override
   String? get panjang;
+  @override
+  int? get maxAyat;
   @override
   @JsonKey(ignore: true)
   _$$AyahsThroughoutPaginationImplCopyWith<_$AyahsThroughoutPaginationImpl>

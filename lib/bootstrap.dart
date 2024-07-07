@@ -1,9 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'common/common.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+
+import 'common/common.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   runZonedGuarded<Future<void>>(
@@ -17,7 +18,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
           DeviceOrientation.portraitUp,
           DeviceOrientation.portraitDown,
         ]),
-        InjectorService.create()
+        InjectorService.create(),
       ].wait;
 
       runApp(await builder());
