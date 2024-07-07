@@ -15,6 +15,7 @@ class BottomSheetManager {
     Clip? clipBehavior,
     bool isDismissible = true,
     bool enableDrag = true,
+    bool? showDragHandle,
     double? height,
   }) {
     _showBottomSheet(
@@ -26,6 +27,7 @@ class BottomSheetManager {
       isDismissible: isDismissible,
       enableDrag: enableDrag,
       height: height,
+      showDragHandle: showDragHandle,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -59,6 +61,7 @@ class BottomSheetManager {
     Clip? clipBehavior,
     bool isDismissible = true,
     bool enableDrag = true,
+    bool? showDragHandle,
     double? height,
   }) {
     _showBottomSheet(
@@ -69,6 +72,7 @@ class BottomSheetManager {
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
+      showDragHandle: showDragHandle,
       height: height,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -104,6 +108,7 @@ class BottomSheetManager {
     Clip? clipBehavior,
     bool isDismissible = true,
     bool enableDrag = true,
+    bool? showDragHandle,
     double? height,
   }) {
     _showBottomSheet(
@@ -114,6 +119,7 @@ class BottomSheetManager {
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
+      showDragHandle: showDragHandle,
       height: height,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -131,12 +137,14 @@ class BottomSheetManager {
     Clip? clipBehavior,
     bool isDismissible = true,
     bool enableDrag = true,
+    bool? showDragHandle = true,
     double? height,
   }) {
     showModalBottomSheet(
       context: context ?? globalContext,
       isScrollControlled: isScrollControlled,
-      backgroundColor: backgroundColor ?? globalContext.colorsExt.background,
+      backgroundColor:
+          backgroundColor ?? globalContext.getColorExt(AppColorType.background),
       shape: shape,
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
@@ -147,7 +155,21 @@ class BottomSheetManager {
           child: SizedBox(
             height: height,
             width: globalContext.getWidth,
-            child: child,
+            child: Column(
+              children: [
+                if (showDragHandle ?? true)
+                  Container(
+                    margin: const EdgeInsets.only(top: 10),
+                    color: context.getColorExt(AppColorType.primary),
+                    height: 4.sp,
+                    width: context.getWidth * 0.1,
+                  ),
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: child,
+                ),
+              ],
+            ),
           ),
         );
       },

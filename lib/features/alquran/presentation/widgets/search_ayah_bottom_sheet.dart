@@ -21,18 +21,38 @@ class SearchSurahOrJuzBottomSheet extends StatelessWidget {
             SliverToBoxAdapter(
               child: 12.heightBox,
             ),
-            SliverToBoxAdapter(
-              child: SearchBar(
-                padding: WidgetStateProperty.all(
-                  const EdgeInsets.symmetric(horizontal: 18),
+            SliverAppBar(
+              pinned: true,
+              leading: Icon(
+                Icons.search,
+                color: context.isLightTheme
+                    ? context.getColorExt(AppColorType.text)
+                    : context.getColorExt(AppColorType.background),
+              ),
+              backgroundColor: Colors.transparent,
+              flexibleSpace: DefaultTextField(
+                prefix: 32.widthBox,
+                hintTextStyle: AppStyle.text(
+                  fontColor: context.isLightTheme
+                      ? context.getColorExt(AppColorType.text)
+                      : context.getColorExt(AppColorType.background),
                 ),
-                leading: const Icon(Icons.search),
+                textStyle: AppStyle.text(
+                  fontColor: context.isLightTheme
+                      ? context.getColorExt(AppColorType.text)
+                      : context.getColorExt(AppColorType.background),
+                ),
+                hintText: 'Search ${isSurahType ? "Surah" : "Juz"}',
                 controller: jumpAyahCubit.searchController,
                 onChanged: jumpAyahCubit.filterSurahOrJuz,
-                trailing: [
-                  const Icon(Icons.clear)
-                      .onTap(jumpAyahCubit.clearfilterSurahOrJuz),
-                ],
+                suffix: jumpAyahCubit.searchController.text.isEmpty
+                    ? null
+                    : Icon(
+                        Icons.clear,
+                        color: context.isLightTheme
+                            ? context.getColorExt(AppColorType.text)
+                            : context.getColorExt(AppColorType.background),
+                      ).onTap(jumpAyahCubit.clearfilterSurahOrJuz),
               ),
             ),
             SliverToBoxAdapter(

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../common/common.dart';
 import '../../../features.dart';
 
@@ -30,7 +31,7 @@ class HomeView extends StatelessWidget {
           onPressed: openDrawer,
           icon: Icon(
             Icons.menu,
-            color: context.colorsExt.text,
+            color: context.getColorExt(AppColorType.text),
           ),
         ),
       ),

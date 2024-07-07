@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../common/common.dart';
 
 class TabContainer extends StatelessWidget {
@@ -26,7 +27,9 @@ class TabContainer extends StatelessWidget {
           ),
           Divider(
             color:
-                isActive ? context.colorsExt.primary : AppPalette.transparent,
+                isActive
+                ? context.getColorExt(AppColorType.primary)
+                : AppPalette.transparent,
           ),
         ],
       ).onTap(onTap),

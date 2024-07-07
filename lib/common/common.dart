@@ -5,4 +5,5 @@ export 'extensions/extensions.dart';
 export 'models/models.dart';
 export 'routes/routes.dart';
 export 'services/services.dart';
+export 'styles/styles.dart';
 export 'utils/utils.dart';

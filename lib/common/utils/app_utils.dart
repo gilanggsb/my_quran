@@ -12,7 +12,7 @@ class AppUtils {
       SnackBar(
         content: DefaultText(
           message,
-          color: AppPalette.white.white,
+          color: AppPalette.white.base,
         ),
       ),
     );

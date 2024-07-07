@@ -23,11 +23,11 @@ class QuranHeaderAyah extends StatelessWidget {
           fontSize: 20.sp,
           textAlign: TextAlign.center,
           fontWeight: FontWeight.w600,
-          color: context.colorsExt.text,
+          color: context.getColorExt(AppColorType.text),
         ),
         6.heightBox,
         Container(
-          color: context.colorsExt.primary,
+          color: context.getColorExt(AppColorType.primary),
           width: context.getWidth,
           padding: const EdgeInsets.symmetric(vertical: 12),
           child: Row(

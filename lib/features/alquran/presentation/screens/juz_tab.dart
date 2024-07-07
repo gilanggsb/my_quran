@@ -23,7 +23,7 @@ class JuzTab extends StatelessWidget {
         final isLoading = state.whenOrNull(loading: () => true) ?? false;
         final juzs = isLoading ? BoneMockData.fakeJuzs : juzCubit.juzs;
         return RefreshIndicator(
-          color: context.colorsExt.primary,
+          color: context.getColorExt(AppColorType.primary),
           onRefresh: () async => juzCubit.getData(),
           child: Skeletonizer(
             enabled: isLoading,

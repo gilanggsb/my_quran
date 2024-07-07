@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../common.dart';
 
 class DefaultText extends StatelessWidget {
@@ -127,7 +128,7 @@ class DefaultText extends StatelessWidget {
       textBaseline: textBaseline,
       background: textBackground,
       backgroundColor: backgroundColor,
-      color: color ?? context.colorsExt.text,
+      color: color ?? context.getColorExt(AppColorType.text),
       debugLabel: debugLabel,
       decoration: decoration,
       decorationColor: decorationColor,

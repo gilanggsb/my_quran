@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../common/common.dart';
 import '../../../features.dart';
 
@@ -17,7 +18,7 @@ class QuranTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      splashColor: context.colorsExt.primary,
+      splashColor: context.getColorExt(AppColorType.primary),
       onTap: onTap,
       title: Row(
         mainAxisSize: MainAxisSize.min,

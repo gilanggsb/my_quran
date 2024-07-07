@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../common.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -25,11 +26,11 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: DefaultText(
         title ?? '',
         style: context.textThemeExt.headlineMedium,
-        color: context.colorsExt.text,
+        color: context.getColorExt(AppColorType.text),
       ),
       leading: leading,
       centerTitle: centerTitle ?? false,
-      backgroundColor: context.colorsExt.background,
+      backgroundColor: context.getColorExt(AppColorType.background),
       actions: actions,
       bottom: bottom,
     );

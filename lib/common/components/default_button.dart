@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../common.dart';
 
 class DefaultButton extends StatelessWidget {
@@ -49,7 +50,8 @@ class DefaultButton extends StatelessWidget {
             padding ?? const EdgeInsets.symmetric(vertical: 12, horizontal: 30),
         decoration: boxDecoration ??
             BoxDecoration(
-              color: backgroundColor ?? context.colorsExt.primary,
+              color:
+                  backgroundColor ?? context.getColorExt(AppColorType.primary),
               border: Border.all(color: borderColor ?? AppPalette.transparent),
               borderRadius: BorderRadius.circular(borderRadius ?? 10),
               boxShadow: boxShadow,
@@ -61,7 +63,7 @@ class DefaultButton extends StatelessWidget {
               textAlign: textAlign,
               fontSize: fontSize ?? 16,
               fontWeight: fontWeight ?? FontWeight.w700,
-              color: fontColor ?? AppPalette.white.white,
+              color: fontColor ?? AppPalette.white.base,
             ),
       ),
     );

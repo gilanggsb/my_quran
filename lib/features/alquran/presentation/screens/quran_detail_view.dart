@@ -25,7 +25,7 @@ class QuranDetailView extends StatelessWidget {
         actions: [
           DefaultImage(
             imageUrl: AppAssets.icJumpTo,
-            color: context.colorsExt.text,
+            color: context.getColorExt(AppColorType.text),
             width: 26.sp,
             height: 26.sp,
             imageType: ImageType.asset,
@@ -37,7 +37,7 @@ class QuranDetailView extends StatelessWidget {
           onPressed: context.back,
           icon: Icon(
             Icons.chevron_left,
-            color: context.colorsExt.text,
+            color: context.getColorExt(AppColorType.text),
             size: 32,
           ),
         ),

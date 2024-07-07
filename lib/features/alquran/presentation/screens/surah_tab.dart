@@ -24,7 +24,7 @@ class SurahTab extends StatelessWidget {
         final surahs = isLoading ? BoneMockData.fakeSurahs : surahCubit.surahs;
         return RefreshIndicator(
           onRefresh: () async => surahCubit.getData(),
-          color: context.colorsExt.primary,
+          color: context.getColorExt(AppColorType.primary),
           child: Skeletonizer(
             enabled: isLoading,
             child: ListView.builder(

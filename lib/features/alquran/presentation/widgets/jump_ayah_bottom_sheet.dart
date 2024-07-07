@@ -39,17 +39,17 @@ class JumpAyahBottomSheet extends StatelessWidget {
                         IconButton(
                           onPressed: jumpAyahCubit.next,
                           icon: const Icon(Icons.chevron_left),
-                          color: context.colorsExt.text,
+                          color: context.getColorExt(AppColorType.text),
                         ),
                         DefaultText(
                           isLoading ? BoneMock.name : jumpAyahTitle,
                           fontSize: 20.sp,
-                          color: context.colorsExt.text,
+                          color: context.getColorExt(AppColorType.text),
                         ),
                         IconButton(
                           onPressed: jumpAyahCubit.prev,
                           icon: const Icon(Icons.chevron_right),
-                          color: context.colorsExt.text,
+                          color: context.getColorExt(AppColorType.text),
                         ),
                       ],
                     )
@@ -58,7 +58,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
                   ),
                   Divider(
                     thickness: 2,
-                    color: context.colorsExt.primary,
+                    color: context.getColorExt(AppColorType.primary),
                   ),
                 ],
               ),

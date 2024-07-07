@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../common.dart';
 
 class DefaultScaffold extends StatelessWidget {
@@ -50,7 +51,8 @@ class DefaultScaffold extends StatelessWidget {
           drawer: drawer,
           floatingActionButton: floatingActionButton,
           floatingActionButtonLocation: floatingActionButtonLocation,
-          backgroundColor: bgBodyColor ?? context.theme.appColors.background,
+          backgroundColor:
+              bgBodyColor ?? context.getColorExt(AppColorType.background),
           body: Container(
             // padding: bodyPadding ?? const EdgeInsets.all(16),
             child: body,
