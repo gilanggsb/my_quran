@@ -38,6 +38,22 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
     surahs = response.data ?? [];
   }
 
+  Future<void> onDetailPress(QuranDetailMenu menu) async {
+    switch (menu.getType()) {
+      case QuranDetailMenuType.copy:
+        copyAyah();
+        break;
+      default:
+    }
+  }
+
+  Future<void> copyAyah() async {
+    BottomSheetManager.closeCurrentBottomSheet();
+    final copySurahData =
+        '${currentAyah?.arab}\n${currentAyah?.latin}\n${currentAyah?.text}';
+    AppUtils.copyLink(data: copySurahData, successMessage: 'Success copy ayah');
+  }
+
   Surah? get surah =>
       surahs.firstWhereOrNull((surah) => surah.number == currentAyah?.surah);
 

@@ -29,7 +29,7 @@ class DetailAyahBottomSheet extends StatelessWidget {
           final isLoading = state.whenOrNull(loading: () => true) ?? false;
           final detailAyahCubit = context.read<DetailAyahCubit>();
           final surah = detailAyahCubit.surah;
-          final title = "QS. ${surah?.nameId ?? ''}: Ayat ${ayah.id ?? ''}";
+          final title = "Q.S. ${surah?.nameId ?? ''}: Ayat ${ayah.id ?? ''}";
 
           return Column(
             mainAxisSize: MainAxisSize.min,
@@ -50,16 +50,20 @@ class DetailAyahBottomSheet extends StatelessWidget {
                   ),
                 ],
               ),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: menus.length,
-                itemBuilder: (ctx, index) {
-                  final menu = menus[index];
-                  return ListTile(
-                    leading: menu.icon,
-                    title: DefaultText(menu.name),
-                  );
-                },
+              Skeletonizer(
+                enabled: isLoading,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: menus.length,
+                  itemBuilder: (ctx, index) {
+                    final menu = menus[index];
+                    return ListTile(
+                      leading: menu.icon,
+                      title: DefaultText(menu.name),
+                      onTap: () => detailAyahCubit.onDetailPress(menu),
+                    );
+                  },
+                ),
               ),
             ],
           );
@@ -78,7 +82,7 @@ final menus = [
   QuranDetailMenu(
     id: 2,
     icon: const Icon(Icons.copy),
-    name: 'Copy Surah',
+    name: 'Copy Ayah',
   ),
   QuranDetailMenu(
     id: 3,
