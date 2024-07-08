@@ -19,7 +19,10 @@ class AppUtils {
   }
 
   static void copyLink(
-      BuildContext context, String data, String successMessage,) {
+    BuildContext context,
+    String data,
+    String successMessage,
+  ) {
     Clipboard.setData(ClipboardData(text: data)).then((_) {
       showSnackBar(context, successMessage);
     });

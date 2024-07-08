@@ -17,7 +17,7 @@ extension ColorExt on Color {
               '${green.toRadixString(16).padLeft(2, '0')}'
               '${blue.toRadixString(16).padLeft(2, '0')}'
           .toUpperCase();
-          
+
   MaterialColor toMaterialColor() {
     List strengths = <double>[.05];
     Map<int, Color> swatch = {};

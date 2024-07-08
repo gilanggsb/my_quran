@@ -11,6 +11,8 @@
 import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:flutter/material.dart' as _i8;
 import 'package:my_quran/common/routes/root_wrapper.dart' as _i4;
+import 'package:my_quran/features/alquran/presentation/screens/home/home_screen.dart'
+    as _i1;
 import 'package:my_quran/features/alquran/presentation/screens/juz_tab.dart'
     as _i2;
 import 'package:my_quran/features/alquran/presentation/screens/quran_detail_screen.dart'
@@ -18,8 +20,6 @@ import 'package:my_quran/features/alquran/presentation/screens/quran_detail_scre
 import 'package:my_quran/features/alquran/presentation/screens/surah_tab.dart'
     as _i6;
 import 'package:my_quran/features/features.dart' as _i9;
-import 'package:my_quran/features/quran/presentation/screens/home/home_screen.dart'
-    as _i1;
 import 'package:my_quran/features/splash/splash_screen.dart' as _i5;
 
 abstract class $AppRouter extends _i7.RootStackRouter {

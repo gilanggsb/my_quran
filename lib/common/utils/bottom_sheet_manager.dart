@@ -152,24 +152,29 @@ class BottomSheetManager {
       builder: (BuildContext context) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
-          child: SizedBox(
-            height: height,
-            width: globalContext.getWidth,
-            child: Column(
-              children: [
-                if (showDragHandle ?? true)
-                  Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    color: context.getColorExt(AppColorType.primary),
-                    height: 4.sp,
-                    width: context.getWidth * 0.1,
-                  ),
-                Flexible(
-                  fit: FlexFit.tight,
-                  child: child,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: height ?? constraints.maxHeight * 0.9,
                 ),
-              ],
-            ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (showDragHandle ?? true)
+                      Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        color: context.getColorExt(AppColorType.primary),
+                        height: 4.sp,
+                        width: context.getWidth * 0.1,
+                      ),
+                    Flexible(
+                      child: child,
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
         );
       },

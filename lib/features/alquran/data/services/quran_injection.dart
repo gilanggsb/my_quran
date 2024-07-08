@@ -19,6 +19,11 @@ void quranInjection() {
       getFullAyahs: getIt(),
     ),
   );
+  getIt.registerFactory<DetailAyahCubit>(
+    () => DetailAyahCubit(
+      getSurahs: getIt(),
+    ),
+  );
   getIt.registerFactory<JumpAyahCubit>(
     () => JumpAyahCubit(
       getSurahs: getIt(),

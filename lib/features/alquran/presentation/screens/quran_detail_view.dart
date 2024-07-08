@@ -17,11 +17,12 @@ class QuranDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     final quranDetailCubit = context.read<QuranDetailCubit>();
     final surahCubit = quranDetailCubit.surahCubit;
+    final isSurahsType = params.detailType == QuranDetailTypeEnum.bySurahs;
     globalContext = context;
 
     return DefaultScaffold(
       appBar: DefaultAppBar(
-        title: 'Detail',
+        title: isSurahsType ? 'Surah' : 'Juz',
         actions: [
           DefaultImage(
             imageUrl: AppAssets.icJumpTo,
@@ -86,6 +87,8 @@ class QuranDetailView extends StatelessWidget {
                               title: ayah.latin,
                               subtitle: ayah.text,
                             ),
+                            onTap: () =>
+                                showBottomSheetDetailAyah(context, ayah),
                           ).paddingSymmetric(horizontal: 8),
                         ],
                       );
@@ -102,8 +105,19 @@ class QuranDetailView extends StatelessWidget {
 
   void showBottomSheetJumpToAyah(BuildContext context) {
     BottomSheetManager.showCustomBottomSheet(
+      height: context.getHeight * 0.5,
       child: JumpAyahBottomSheet(
         quranDetailCubit: context.read<QuranDetailCubit>(),
+      ),
+    );
+  }
+
+  void showBottomSheetDetailAyah(BuildContext context, Ayah ayah) {
+    BottomSheetManager.showCustomBottomSheet(
+      isScrollControlled: true,
+      child: DetailAyahBottomSheet(
+        quranDetailCubit: context.read<QuranDetailCubit>(),
+        ayah: ayah,
       ),
     );
   }
