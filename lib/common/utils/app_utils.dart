@@ -7,13 +7,11 @@ import 'package:path_provider/path_provider.dart';
 import '../common.dart';
 
 class AppUtils {
-  static void copyLink(
-    {
+  static void copyLink({
     required String data,
     required String successMessage,
     BuildContext? context,
-  }
-  ) {
+  }) {
     Clipboard.setData(ClipboardData(text: data)).then((_) {
       SnackbarManager.showSuccessSnackbar(message: successMessage);
     });

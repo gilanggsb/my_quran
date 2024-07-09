@@ -5,6 +5,7 @@
 import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:isar/isar.dart';
 
 part 'surah.freezed.dart';
 part 'surah.g.dart';
@@ -13,9 +14,12 @@ Surah surahFromJson(String str) => Surah.fromJson(json.decode(str));
 
 String surahToJson(Surah data) => json.encode(data.toJson());
 
-@Freezed(fromJson: false)
+@Freezed(fromJson: false, toJson: false)
 @JsonSerializable(fieldRename: FieldRename.snake)
+@Collection(ignore: {'copyWith'})
 class Surah with _$Surah {
+  ///Don't Forget below line
+  const Surah._();
   const factory Surah({
     String? audioUrl,
     String? nameEn,
@@ -33,7 +37,11 @@ class Surah with _$Surah {
     String? translationId,
   }) = _Surah;
 
+  Id get isarId => Isar.autoIncrement;
+
   factory Surah.fromJson(Map<String, dynamic> json) => _$SurahFromJson(json);
+
+  toJson() => _$SurahToJson(this);
 }
 
 extension SurahExt on Surah {

@@ -30,7 +30,7 @@ extension QuranDetailMenuExt on QuranDetailMenu {
         return QuranDetailMenuType.bookmark;
       case 4:
       default:
-        return QuranDetailMenuType.play;
+        return QuranDetailMenuType.lastread;
     }
   }
 }

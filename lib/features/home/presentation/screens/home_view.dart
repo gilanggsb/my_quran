@@ -16,9 +16,10 @@ class HomeView extends StatelessWidget {
 
   void openDrawer() => Scaffold.of(globalContext).openDrawer();
 
-  void init() {
-    globalContext.read<SurahCubit>().getData();
-    globalContext.read<JuzCubit>().getData();
+  void init(BuildContext context) {
+    context.read<HomeBloc>().add(const HomeEvent.getData());
+    context.read<SurahCubit>().getData();
+    context.read<JuzCubit>().getData();
   }
 
   @override
@@ -35,7 +36,7 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
-      onInit: init,
+      onInit: () => init(context),
       drawer: const HomeDrawer(),
       body: Column(
         mainAxisSize: MainAxisSize.min,

@@ -7,3 +7,5 @@ typedef FromJsonT<T> = T Function(dynamic);
 /// non-nullable can still be used with `!` and `?`
 /// to support older versions of the API as well.
 T? ambiguate<T>(T? value) => value;
+
+typedef Identifier<T> = int Function(T);

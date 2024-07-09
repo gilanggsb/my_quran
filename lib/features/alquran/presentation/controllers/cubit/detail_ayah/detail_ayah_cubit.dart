@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:collection/collection.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../../common/common.dart';
@@ -10,8 +10,11 @@ part 'detail_ayah_state.dart';
 
 class DetailAyahCubit extends Cubit<DetailAyahState> {
   final GetSurahs getSurahs;
-  DetailAyahCubit({required this.getSurahs})
-      : super(const DetailAyahState.initial());
+  final SaveLastReadAyah saveLastReadAyah;
+  DetailAyahCubit({
+    required this.getSurahs,
+    required this.saveLastReadAyah,
+  }) : super(const DetailAyahState.initial());
   Ayah? currentAyah;
   List<Surah> surahs = [];
   QuranDetailParams? params;
@@ -40,10 +43,25 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
 
   Future<void> onDetailPress(QuranDetailMenu menu) async {
     switch (menu.getType()) {
+      case QuranDetailMenuType.lastread:
+        saveAyah();
+        break;
       case QuranDetailMenuType.copy:
         copyAyah();
         break;
       default:
+    }
+  }
+
+  Future<void> saveAyah() async {
+    try {
+      BottomSheetManager.closeCurrentBottomSheet();
+      globalContext.read<HomeBloc>().add(const HomeEvent.getData());
+      LastReadAyah lastReadAyah = LastReadAyah(ayah: currentAyah, surah: surah);
+      await saveLastReadAyah(lastReadAyah);
+      SnackbarManager.showSuccessSnackbar(message: 'Success mark to last read');
+    } catch (e) {
+      Logger.logError(e.toString());
     }
   }
 
