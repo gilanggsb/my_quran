@@ -37,7 +37,7 @@ class SurahTab extends StatelessWidget {
                     title: surah.nameId,
                     titleAr: surah.nameShort,
                     subtitle:
-                        '${surah.revelationId} • ${surah.numberOfVerses} Ayat',
+                        '${surah.translateRevelationId} • ${surah.numberOfVerses} Ayat',
                   ),
                   rightIcon: QuranStatus(
                     onTap: () {},

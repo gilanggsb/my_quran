@@ -15,16 +15,17 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
     required this.getSurahs,
     required this.saveLastReadAyah,
   }) : super(const DetailAyahState.initial());
+
   Ayah? currentAyah;
   List<Surah> surahs = [];
-  QuranDetailParams? params;
+  QuranDetailParams? paramsData;
 
   void init({
     QuranDetailParams? params,
     Ayah? ayah,
   }) async {
     currentAyah = ayah;
-    params = params;
+    paramsData = params;
     try {
       emit(const DetailAyahState.loading());
       await _getSurahs();
@@ -55,8 +56,6 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
 
   Future<void> saveAyah() async {
     try {
-      BottomSheetManager.closeCurrentBottomSheet();
-      globalContext.read<HomeBloc>().add(const HomeEvent.getData());
       LastReadAyah lastReadAyah = LastReadAyah(ayah: currentAyah, surah: surah);
       await saveLastReadAyah(lastReadAyah);
       SnackbarManager.showSuccessSnackbar(message: 'Success mark to last read');
@@ -66,14 +65,35 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
   }
 
   Future<void> copyAyah() async {
-    BottomSheetManager.closeCurrentBottomSheet();
     final copySurahData =
         '${currentAyah?.arab}\n${currentAyah?.latin}\n${currentAyah?.text}';
     AppUtils.copyLink(data: copySurahData, successMessage: 'Success copy ayah');
   }
 
+  QuranDetailParams getParamsDataReadAsSurah() {
+    final pagination = AyahsThroughoutPagination(
+      ayat: "1",
+      surat: paramsData?.lastReadAyah?.surah?.number,
+      panjang: "10",
+    );
+    return QuranDetailParams(
+      ayahsThroughoutPagination: pagination,
+      detailType: QuranDetailTypeEnum.bySurahs,
+      lastReadAyah: paramsData?.lastReadAyah,
+    );
+  }
+
+  QuranDetailParams getParamsDataReadAsJuz() {
+    return QuranDetailParams(
+      juzNumber: paramsData?.lastReadAyah?.ayah?.juz?.parseInt,
+      detailType: QuranDetailTypeEnum.byJuzs,
+      lastReadAyah: paramsData?.lastReadAyah,
+    );
+  }
+
   Surah? get surah =>
       surahs.firstWhereOrNull((surah) => surah.number == currentAyah?.surah);
 
-  bool get isSurahType => params?.detailType == QuranDetailTypeEnum.bySurahs;
+  bool get isSurahType =>
+      paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
 }

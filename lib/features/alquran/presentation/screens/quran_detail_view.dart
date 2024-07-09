@@ -22,7 +22,7 @@ class QuranDetailView extends StatelessWidget {
 
     return DefaultScaffold(
       appBar: DefaultAppBar(
-        title: isSurahsType ? 'Surah' : 'Juz',
+        title: isSurahsType ? 'Surat' : 'Juz',
         actions: [
           DefaultImage(
             imageUrl: AppAssets.icJumpTo,
@@ -116,7 +116,7 @@ class QuranDetailView extends StatelessWidget {
     BottomSheetManager.showCustomBottomSheet(
       isScrollControlled: true,
       child: DetailAyahBottomSheet(
-        quranDetailCubit: context.read<QuranDetailCubit>(),
+        quranDetailParams: context.read<QuranDetailCubit>().paramsData,
         ayah: ayah,
       ),
     );

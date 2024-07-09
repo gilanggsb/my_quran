@@ -11,6 +11,19 @@ class LastReadSurahBanner extends StatelessWidget {
     super.key,
   });
 
+  void onBannerTap(LastReadAyah? lastReadAyah) {
+    final params = QuranDetailParams(
+      detailType: QuranDetailTypeEnum.bySurahs,
+      lastReadAyah: lastReadAyah,
+    );
+    BottomSheetManager.showCustomBottomSheet(
+      child: DetailAyahBottomSheet(
+        quranDetailParams: params,
+        ayah: lastReadAyah?.ayah,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Skeletonizer(
@@ -80,7 +93,7 @@ class LastReadSurahBanner extends StatelessWidget {
                           ),
                         ),
                       ],
-                    ),
+                    ).onTap(() => onBannerTap(lastReadAyah)),
                   );
                 },
               ),

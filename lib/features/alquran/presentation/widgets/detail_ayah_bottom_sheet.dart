@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,12 +10,39 @@ import '../../../features.dart';
 class DetailAyahBottomSheet extends StatelessWidget {
   const DetailAyahBottomSheet({
     super.key,
-    required this.quranDetailCubit,
-    required this.ayah,
+    this.quranDetailParams,
+    this.ayah,
   });
 
-  final QuranDetailCubit quranDetailCubit;
-  final Ayah ayah;
+  final QuranDetailParams? quranDetailParams;
+  final Ayah? ayah;
+
+  Future<void> onDetailMenuTap(
+    BuildContext context,
+    QuranDetailMenu menu,
+  ) async {
+    final detailAyahCubit = context.read<DetailAyahCubit>();
+    BottomSheetManager.closeCurrentBottomSheet();
+    switch (menu.getType()) {
+      case QuranDetailMenuType.lastread:
+        detailAyahCubit.saveAyah().then((a) {
+          context.read<HomeBloc>().add(const HomeEvent.getData());
+        });
+        break;
+      case QuranDetailMenuType.copy:
+        detailAyahCubit.copyAyah();
+        break;
+      case QuranDetailMenuType.readAsSurah:
+        final paramsData = detailAyahCubit.getParamsDataReadAsSurah();
+        context.pushRoute(QuranDetailRoute(params: paramsData));
+        break;
+      case QuranDetailMenuType.readAsJuz:
+        final paramsData = detailAyahCubit.getParamsDataReadAsJuz();
+        context.pushRoute(QuranDetailRoute(params: paramsData));
+        break;
+      default:
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +50,16 @@ class DetailAyahBottomSheet extends StatelessWidget {
       create: (context) => getIt.get<DetailAyahCubit>()
         ..init(
           ayah: ayah,
-          params: quranDetailCubit.paramsData,
+          params: quranDetailParams,
         ),
       child: BlocBuilder<DetailAyahCubit, DetailAyahState>(
         builder: (context, state) {
           final isLoading = state.whenOrNull(loading: () => true) ?? false;
           final detailAyahCubit = context.read<DetailAyahCubit>();
           final surah = detailAyahCubit.surah;
-          final title = "Q.S. ${surah?.nameId ?? ''}: Ayat ${ayah.id ?? ''}";
+          final title = "QS. ${surah?.nameId ?? ''}: Ayat ${ayah?.ayah ?? ''}";
+          final currentMenus =
+              quranDetailParams?.lastReadAyah != null ? readAyahAsmenus : menus;
 
           return Column(
             mainAxisSize: MainAxisSize.min,
@@ -54,13 +84,13 @@ class DetailAyahBottomSheet extends StatelessWidget {
                 enabled: isLoading,
                 child: ListView.builder(
                   shrinkWrap: true,
-                  itemCount: menus.length,
+                  itemCount: currentMenus.length,
                   itemBuilder: (ctx, index) {
-                    final menu = menus[index];
+                    final menu = currentMenus[index];
                     return ListTile(
                       leading: menu.icon,
                       title: DefaultText(menu.name),
-                      onTap: () => detailAyahCubit.onDetailPress(menu),
+                      onTap: () => onDetailMenuTap(context, menu),
                     );
                   },
                 ),
@@ -75,23 +105,36 @@ class DetailAyahBottomSheet extends StatelessWidget {
 
 final menus = [
   QuranDetailMenu(
-    id: 1,
+    id: QuranDetailMenuType.play.id,
     icon: const Icon(Icons.play_arrow_rounded),
     name: 'Play Murottal',
   ),
   QuranDetailMenu(
-    id: 2,
+    id: QuranDetailMenuType.copy.id,
     icon: const Icon(Icons.copy),
     name: 'Copy Ayah',
   ),
   QuranDetailMenu(
-    id: 3,
+    id: QuranDetailMenuType.bookmark.id,
     icon: const Icon(Icons.bookmark),
-    name: 'Add to bookmark',
+    name: 'Tambahkan ke bookmark',
   ),
   QuranDetailMenu(
-    id: 4,
+    id: QuranDetailMenuType.lastread.id,
     icon: const Icon(Icons.link),
-    name: 'Mark as last read',
+    name: 'Tandai sebagai terakhir di baca',
+  ),
+];
+
+final readAyahAsmenus = [
+  QuranDetailMenu(
+    id: QuranDetailMenuType.readAsSurah.id,
+    icon: const Icon(Icons.auto_stories),
+    name: 'Baca sebagai surat',
+  ),
+  QuranDetailMenu(
+    id: QuranDetailMenuType.readAsJuz.id,
+    icon: const Icon(Icons.chrome_reader_mode),
+    name: 'Baca sebagai jus',
   ),
 ];

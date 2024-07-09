@@ -13,24 +13,32 @@ class QuranDetailMenu {
 }
 
 enum QuranDetailMenuType {
-  play,
-  copy,
-  bookmark,
-  lastread,
+  play(1),
+  copy(2),
+  bookmark(3),
+  lastread(4),
+  readAsSurah(5),
+  readAsJuz(6);
+
+  final int id;
+  const QuranDetailMenuType(this.id);
 }
 
 extension QuranDetailMenuExt on QuranDetailMenu {
   QuranDetailMenuType getType() {
     switch (id) {
-      case 1:
-        return QuranDetailMenuType.play;
       case 2:
         return QuranDetailMenuType.copy;
       case 3:
         return QuranDetailMenuType.bookmark;
       case 4:
-      default:
         return QuranDetailMenuType.lastread;
+      case 5:
+        return QuranDetailMenuType.readAsSurah;
+      case 6:
+        return QuranDetailMenuType.readAsJuz;
+      default:
+        return QuranDetailMenuType.play;
     }
   }
 }
