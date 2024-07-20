@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,33 +17,6 @@ class DetailAyahBottomSheet extends StatelessWidget {
 
   final QuranDetailParams? quranDetailParams;
   final Ayah? ayah;
-
-  Future<void> onDetailMenuTap(
-    BuildContext context,
-    QuranDetailMenu menu,
-  ) async {
-    final detailAyahCubit = context.read<DetailAyahCubit>();
-    BottomSheetManager.closeCurrentBottomSheet();
-    switch (menu.getType()) {
-      case QuranDetailMenuType.lastread:
-        detailAyahCubit.saveAyah().then((a) {
-          context.read<HomeBloc>().add(const HomeEvent.getData());
-        });
-        break;
-      case QuranDetailMenuType.copy:
-        detailAyahCubit.copyAyah();
-        break;
-      case QuranDetailMenuType.readAsSurah:
-        final paramsData = detailAyahCubit.getParamsDataReadAsSurah();
-        context.pushRoute(QuranDetailRoute(params: paramsData));
-        break;
-      case QuranDetailMenuType.readAsJuz:
-        final paramsData = detailAyahCubit.getParamsDataReadAsJuz();
-        context.pushRoute(QuranDetailRoute(params: paramsData));
-        break;
-      default:
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +73,51 @@ class DetailAyahBottomSheet extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  Future<void> onDetailMenuTap(
+    BuildContext context,
+    QuranDetailMenu menu,
+  ) async {
+    final detailAyahCubit = context.read<DetailAyahCubit>();
+    BottomSheetManager.closeCurrentBottomSheet();
+    switch (menu.getType()) {
+      case QuranDetailMenuType.lastread:
+        detailAyahCubit.saveAyah().then((a) {
+          globalContext.read<HomeBloc>().add(const HomeEvent.getData());
+        });
+        break;
+      case QuranDetailMenuType.copy:
+        detailAyahCubit.copyAyah();
+        break;
+      case QuranDetailMenuType.play:
+        playAyah(
+          params: detailAyahCubit.paramsData,
+          ayah: detailAyahCubit.currentAyah,
+        );
+        break;
+      case QuranDetailMenuType.readAsSurah:
+        final paramsData = detailAyahCubit.getParamsDataReadAsSurah();
+        context.pushRoute(QuranDetailRoute(params: paramsData));
+        break;
+      case QuranDetailMenuType.readAsJuz:
+        final paramsData = detailAyahCubit.getParamsDataReadAsJuz();
+        context.pushRoute(QuranDetailRoute(params: paramsData));
+        break;
+      default:
+    }
+  }
+
+  void playAyah({QuranDetailParams? params, Ayah? ayah}) async {
+    Logger.logInfo("CEKKK sebelum $params");
+    if (params == null) return;
+    final ayahUrl = params.lastReadAyah?.ayah?.audio ?? ayah?.audio ?? '';
+    Logger.logInfo("CEKKK $ayahUrl");
+    // final AudioPlayer audioPlayer = AudioPlayer();
+    // await audioPlayer.setSourceUrl(ayahUrl);
+    BottomSheetManager.showCustomBottomSheet(
+      child: AyahPlayerBottomSheet(audioSource: UrlSource(ayahUrl)),
     );
   }
 }

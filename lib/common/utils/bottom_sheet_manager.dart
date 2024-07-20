@@ -128,6 +128,42 @@ class BottomSheetManager {
     );
   }
 
+  static void showPersistentBottomSheet({
+    BuildContext? context,
+    required Widget child,
+    Color? backgroundColor,
+    bool enableDrag = true,
+  }) {
+    Scaffold.of(context ?? globalContext).showBottomSheet(
+      (BuildContext context) {
+        return Container(
+          color: backgroundColor ??
+              globalContext.getColorExt(AppColorType.background),
+          child: SafeArea(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (enableDrag)
+                  Container(
+                    margin: const EdgeInsets.only(top: 10),
+                    color: context.getColorExt(AppColorType.primary),
+                    height: 4.sp,
+                    width: context.getWidth * 0.1,
+                  ),
+                Flexible(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: child,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   static void _showBottomSheet({
     BuildContext? context,
     required Widget child,

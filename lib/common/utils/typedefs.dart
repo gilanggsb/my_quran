@@ -1,3 +1,5 @@
+import 'dart:async';
+
 typedef FromJsonT<T> = T Function(dynamic);
 
 /// This allows a value of type T or T?
@@ -9,3 +11,4 @@ typedef FromJsonT<T> = T Function(dynamic);
 T? ambiguate<T>(T? value) => value;
 
 typedef Identifier<T> = int Function(T);
+typedef FutureCallback = FutureOr<void> Function();

@@ -26,6 +26,7 @@ class InjectorService {
     themeInjection();
     homeInjection();
     quranInjection();
+    audioPlayerInjection();
   }
 
   void serviceInjection({bool isTesting = false}) {

@@ -48,7 +48,11 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     }
 
     if (params.lastReadAyah != null) {
-      paramsData = params.copyWith(lastReadAyah: const LastReadAyah());
+      paramsData = QuranDetailParams(
+        detailType: params.detailType,
+        ayahsThroughoutPagination: params.ayahsThroughoutPagination,
+        juzNumber: params.juzNumber,
+      );
       jumpToAyah(lastReadAyah: params.lastReadAyah);
     }
   }
@@ -76,12 +80,12 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
           )
         : ayahsIndex;
 
-    await Future.delayed(const Duration(milliseconds: 200));
+    await Future.delayed(const Duration(milliseconds: 150));
 
     observerController.animateTo(
       sliverContext: sliverContext,
       index: ayahIndex,
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 200),
       curve: Curves.easeInOut,
     );
   }

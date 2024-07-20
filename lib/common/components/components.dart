@@ -1,3 +1,4 @@
+export 'audio_player/audio_player.dart';
 export 'custom_error_view.dart';
 export 'default_appbar.dart';
 export 'default_button.dart';
