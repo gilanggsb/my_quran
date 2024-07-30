@@ -22,7 +22,6 @@ class PlayerWidget extends StatelessWidget {
             builder: (context, state) {
               final playerWidgetCubit = context.read<PlayerWidgetCubit>();
               final isLoading = state.whenOrNull(loading: () => true) ?? false;
-              Logger.logInfo("CEKKK $isLoading");
               final showPlayer =
                   playerWidgetCubit.showPlayer && !isBottomSheetShown;
               final sliderValue = playerWidgetCubit.sliderValue;

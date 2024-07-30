@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -92,10 +91,7 @@ class DetailAyahBottomSheet extends StatelessWidget {
         detailAyahCubit.copyAyah();
         break;
       case QuranDetailMenuType.play:
-        playAyah(
-          params: detailAyahCubit.paramsData,
-          ayah: detailAyahCubit.currentAyah,
-        );
+        detailAyahCubit.playAyah();
         break;
       case QuranDetailMenuType.readAsSurah:
         final paramsData = detailAyahCubit.getParamsDataReadAsSurah();
@@ -109,24 +105,18 @@ class DetailAyahBottomSheet extends StatelessWidget {
     }
   }
 
-  void playAyah({QuranDetailParams? params, Ayah? ayah}) async {
-    if (params == null) return;
-    final ayahUrl = params.lastReadAyah?.ayah?.audio ?? ayah?.audio ?? '';
-    globalContext.read<PlayerWidgetCubit>().play(source: UrlSource(ayahUrl));
-    globalContext.read<PlayerWidgetCubit>().showPlayerWidget();
-  }
 }
 
 final menus = [
-  // QuranDetailMenu(
-  //   id: QuranDetailMenuType.play.id,
-  //   icon: const Icon(Icons.play_arrow_rounded),
-  //   name: 'Play Murottal',
-  // ),
+  QuranDetailMenu(
+    id: QuranDetailMenuType.play.id,
+    icon: const Icon(Icons.play_arrow_rounded),
+    name: 'Play Ayat',
+  ),
   QuranDetailMenu(
     id: QuranDetailMenuType.copy.id,
     icon: const Icon(Icons.copy),
-    name: 'Copy Ayah',
+    name: 'Copy Ayat',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.bookmark.id,

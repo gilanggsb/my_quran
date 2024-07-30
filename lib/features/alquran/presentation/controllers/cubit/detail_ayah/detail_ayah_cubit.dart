@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -89,6 +90,17 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
       detailType: QuranDetailTypeEnum.byJuzs,
       lastReadAyah: paramsData?.lastReadAyah,
     );
+  }
+
+  void playAyah() {
+    if (paramsData == null) return;
+    final ayah = paramsData!.lastReadAyah?.ayah ?? currentAyah;
+    final ayahUrl = ayah?.audio ?? '';
+    globalContext.read<PlayerWidgetCubit>().playTrack(
+          source: UrlSource(ayahUrl),
+          newTitle: surah?.nameId,
+          newSubTitle: 'Ayat : ${ayah?.ayah ?? '0'}',
+        );
   }
 
   Surah? get surah =>
