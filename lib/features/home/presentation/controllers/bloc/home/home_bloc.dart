@@ -2,38 +2,32 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../../../common/common.dart';
-import '../../../../domain/domain.dart';
 
+import '../../../../../../common/common.dart';
+import '../../../../../features.dart';
+
+part 'home_bloc.freezed.dart';
 part 'home_event.dart';
 part 'home_state.dart';
-part 'home_bloc.freezed.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeRepository repository;
-  int counter = 0;
-  HomeBloc({required this.repository}) : super(const _Initial()) {
-    on<HomeEvent>(_getData);
-    on<_Increment>(_increment);
-    on<_Decrement>(_decrement);
+  final GetLastReadAyah getLastReadAyah;
+  LastReadAyah? lastReadAyah;
+  HomeBloc({required this.getLastReadAyah, required this.repository})
+      : super(const _Initial()) {
+    on<_GetData>(_getData);
   }
 
   void initialization() {}
 
-  FutureOr<void> _increment(_Increment event, emit) {
-    emit(const HomeState.loading());
-    counter += 1;
-    emit(HomeState.loaded(counter));
-  }
-
-  FutureOr<void> _decrement(_Decrement event, emit) {
-    emit(const HomeState.loading());
-    counter -= 1;
-    emit(HomeState.loaded(counter));
-  }
-
   FutureOr<void> _getData(event, emit) async {
-    try {} on ServerFailure catch (e) {
+    try {
+      emit(const HomeState.loading());
+      await Future.delayed(const Duration(seconds: 1));
+      lastReadAyah = await getLastReadAyah(const NoParams());
+      emit(const HomeState.loaded());
+    } on ServerFailure catch (e) {
       _emitFailed(emit, e.message);
     } catch (e) {
       _emitFailed(emit, e.toString());

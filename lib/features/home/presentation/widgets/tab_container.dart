@@ -26,8 +26,7 @@ class TabContainer extends StatelessWidget {
             fontSize: 16.sp,
           ),
           Divider(
-            color:
-                isActive
+            color: isActive
                 ? context.getColorExt(AppColorType.primary)
                 : AppPalette.transparent,
           ),

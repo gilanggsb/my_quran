@@ -45,6 +45,7 @@ class QuranHeaderAyah extends StatelessWidget {
                   surah?.translateRevelationId ?? '',
                   textAlign: TextAlign.center,
                   fontSize: 14.sp,
+                  color: AppPalette.white.base,
                 ),
               ),
               Stack(
@@ -64,6 +65,7 @@ class QuranHeaderAyah extends StatelessWidget {
                       child: DefaultText(
                         surah?.translationId ?? '',
                         textAlign: TextAlign.center,
+                        color: AppPalette.white.base,
                       ),
                     ),
                   ),
@@ -76,10 +78,12 @@ class QuranHeaderAyah extends StatelessWidget {
                     DefaultText(
                       surah?.numberOfVerses ?? '',
                       fontSize: 14.sp,
+                      color: AppPalette.white.base,
                     ),
                     DefaultText(
                       'Ayat',
                       fontSize: 14.sp,
+                      color: AppPalette.white.base,
                     ),
                   ],
                 ),

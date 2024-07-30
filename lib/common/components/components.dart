@@ -1,3 +1,4 @@
+export 'audio_player/audio_player.dart';
 export 'custom_error_view.dart';
 export 'default_appbar.dart';
 export 'default_button.dart';
@@ -9,6 +10,7 @@ export 'default_textfield.dart';
 export 'gradient_text.dart';
 export 'loading_overlay.dart';
 export 'my_tootip.dart';
+export 'slider_container.dart';
 export 'snackbar_widget.dart';
 export 'stateful_wrapper_component.dart';
 export 'widget_size.dart';

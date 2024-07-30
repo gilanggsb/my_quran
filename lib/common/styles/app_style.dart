@@ -30,12 +30,23 @@ class AppStyle {
         AppColorType.primary: AppPalette.primary.base,
         AppColorType.primaryLight: AppPalette.primary.light,
         AppColorType.background:
-            isLight ? AppPalette.background.base : AppPalette.black.black50,
+            isLight ? AppPalette.background.base : AppPalette.background.dark,
         AppColorType.text:
             isLight ? AppPalette.primary.base : AppPalette.white.base,
         AppColorType.textLight: AppPalette.white.white50,
         AppColorType.textDark: AppPalette.grey.grey60,
         AppColorType.transparent: AppPalette.transparent,
+        AppColorType.grey60: AppPalette.grey.grey60,
+        AppColorType.black50: AppPalette.black.black50,
+        AppColorType.black200: AppPalette.black.black200,
+        AppColorType.whiteBase: AppPalette.white.base,
+        AppColorType.white50: AppPalette.white.white50,
+        AppColorType.greenBase: AppPalette.green.base,
+        AppColorType.redBase: AppPalette.red.base,
+        AppColorType.redLight: AppPalette.red.light,
+        AppColorType.blueBase: AppPalette.blue.base,
+        AppColorType.darkBlue: AppPalette.blue.darkBlue,
+        AppColorType.dustBlue: AppPalette.blue.dustBlue,
       },
     );
   }

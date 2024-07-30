@@ -27,10 +27,12 @@ class ApiServiceImpl extends ApiService {
 
     if (isTesting) return dioClone;
 
-    dioClone.interceptors.add(PrettyDioLogger(
-      requestHeader: true,
-      requestBody: true,
-    ),);
+    dioClone.interceptors.add(
+      PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+      ),
+    );
 
     return dioClone;
   }

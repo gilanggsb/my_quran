@@ -52,9 +52,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
                           color: context.getColorExt(AppColorType.text),
                         ),
                       ],
-                    )
-                        .paddingAll(8)
-                        .onTap(() => showBottomSheetSearchSurahOrJuz(context)),
+                    ).onTap(() => showBottomSheetSearchSurahOrJuz(context)),
                   ),
                   Divider(
                     thickness: 2,

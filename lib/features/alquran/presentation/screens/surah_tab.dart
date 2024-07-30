@@ -37,11 +37,11 @@ class SurahTab extends StatelessWidget {
                     title: surah.nameId,
                     titleAr: surah.nameShort,
                     subtitle:
-                        '${surah.revelationId} • ${surah.numberOfVerses} Ayat',
+                        '${surah.translateRevelationId} • ${surah.numberOfVerses} Ayat',
                   ),
-                  rightIcon: QuranStatus(
-                    onTap: () {},
-                  ),
+                  // rightIcon: QuranStatus(
+                  //   onTap: () {},
+                  // ),
                   onTap: () {
                     final pagination = AyahsThroughoutPagination(
                       ayat: "1",

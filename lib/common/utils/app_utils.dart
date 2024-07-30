@@ -7,21 +7,13 @@ import 'package:path_provider/path_provider.dart';
 import '../common.dart';
 
 class AppUtils {
-  static void showSnackBar(BuildContext context, String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: DefaultText(
-          message,
-          color: AppPalette.white.base,
-        ),
-      ),
-    );
-  }
-
-  static void copyLink(
-      BuildContext context, String data, String successMessage,) {
+  static void copyLink({
+    required String data,
+    required String successMessage,
+    BuildContext? context,
+  }) {
     Clipboard.setData(ClipboardData(text: data)).then((_) {
-      showSnackBar(context, successMessage);
+      SnackbarManager.showSuccessSnackbar(message: successMessage);
     });
   }
 

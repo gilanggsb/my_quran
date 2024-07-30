@@ -6,6 +6,7 @@ void homeInjection() {
   getIt.registerFactory<HomeBloc>(
     () => HomeBloc(
       repository: getIt(),
+      getLastReadAyah: getIt(),
     ),
   );
   //repository

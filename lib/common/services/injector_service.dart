@@ -26,6 +26,7 @@ class InjectorService {
     themeInjection();
     homeInjection();
     quranInjection();
+    audioPlayerInjection();
   }
 
   void serviceInjection({bool isTesting = false}) {
@@ -43,6 +44,11 @@ class InjectorService {
     getIt.registerLazySingleton<NetworkService>(
       () => NetworkServiceImpl(getIt(), isTesting: isTesting),
     );
+    getIt.registerSingletonAsync<IsarService>(() async {
+      IsarService db = IsarServiceImpl();
+      await db.init();
+      return db;
+    });
   }
 
   void moduleInjection({bool isTesting = false}) {

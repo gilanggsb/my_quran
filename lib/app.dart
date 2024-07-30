@@ -22,6 +22,7 @@ class App extends StatelessWidget {
             ),
             BlocProvider(create: (context) => getIt.get<SurahCubit>()),
             BlocProvider(create: (context) => getIt.get<JuzCubit>()),
+            BlocProvider(create: (context) => getIt.get<PlayerWidgetCubit>()),
           ],
           child: BlocBuilder<ThemeCubit, ThemeState>(
             builder: (context, state) {
@@ -39,7 +40,14 @@ class App extends StatelessWidget {
                     );
                   };
                   return SafeArea(
-                    child: LoadingOverlayAlt(child: child ?? const SizedBox()),
+                    child: LoadingOverlayAlt(
+                      child: Stack(
+                        children: [
+                          child ?? const SizedBox(),
+                          const PlayerWidget(),
+                        ],
+                      ),
+                    ),
                   );
                 },
                 routerConfig: appRouter.config(

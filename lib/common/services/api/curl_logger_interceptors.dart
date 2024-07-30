@@ -34,7 +34,8 @@ class CurlLoggerDioInterceptor extends Interceptor {
       Logger.logApi(_cURLRepresentation(requestOptions));
     } catch (err) {
       Logger.logApi(
-          'unable to create a CURL representation of the requestOptions',);
+        'unable to create a CURL representation of the requestOptions',
+      );
     }
   }
 

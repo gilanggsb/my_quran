@@ -52,4 +52,14 @@ class QuranRepositoryImpl extends QuranRepository {
   ) async {
     return await remoteDataSource.getFullAyahs(ayahsThroughout);
   }
+
+  @override
+  Future<LastReadAyah?> getLastReadAyah() async {
+    return await localDataSource.getLastReadAyah();
+  }
+
+  @override
+  Future<void> saveLastReadAyah(LastReadAyah lastRead) async {
+    return await localDataSource.saveLastReadAyah(lastRead);
+  }
 }

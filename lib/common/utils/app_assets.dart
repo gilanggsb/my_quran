@@ -11,4 +11,5 @@ abstract class AppAssets {
   static get quranBanner => 'quran_banner'.toPng;
   static get titleHeaderOrnament => 'title_header_ornament'.toPng;
   static get headerOrnament => 'header_ornament'.toPng;
+  static get musicDiscAnim => 'music_disc_anim'.toJson;
 }
