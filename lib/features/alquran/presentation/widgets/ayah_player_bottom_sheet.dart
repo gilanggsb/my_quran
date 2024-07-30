@@ -17,11 +17,11 @@ class AyahPlayerBottomSheet extends StatelessWidget {
       create: (_) => getIt.get<PlayerWidgetCubit>()
         ..init()
         ..play(source: audioSource),
-      child: Column(
+      child: const Column(
         children: [
-          const Text('asdasd'),
+          Text('asdasd'),
           PlayerWidget(
-            source: audioSource,
+              // source: audioSource,
           ),
         ],
       ),

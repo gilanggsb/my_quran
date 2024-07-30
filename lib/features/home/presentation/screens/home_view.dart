@@ -66,7 +66,7 @@ class HomeView extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     SizedBox(
-                      height: 35.sp,
+                      height: 40.sp,
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: bodyTab.length,

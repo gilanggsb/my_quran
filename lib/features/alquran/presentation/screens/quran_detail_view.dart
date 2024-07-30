@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -24,15 +23,14 @@ class QuranDetailView extends StatelessWidget {
       appBar: DefaultAppBar(
         title: isSurahsType ? 'Surat' : 'Juz',
         actions: [
-          DefaultImage(
-            imageUrl: AppAssets.icJumpTo,
-            color: context.getColorExt(AppColorType.text),
-            width: 26.sp,
-            height: 26.sp,
-            imageType: ImageType.asset,
-          ).paddingSymmetric(horizontal: 12).onTap(
-                () => showBottomSheetJumpToAyah(context),
-              ),
+          IconButton(
+            onPressed: () => showBottomSheetDetailQuran(context),
+            icon: Icon(
+              Icons.menu,
+              color: context.getColorExt(AppColorType.text),
+              size: 32,
+            ),
+          ),
         ],
         leading: IconButton(
           onPressed: context.back,
@@ -105,7 +103,7 @@ class QuranDetailView extends StatelessWidget {
 
   void showBottomSheetJumpToAyah(BuildContext context) {
     BottomSheetManager.showCustomBottomSheet(
-      height: context.getHeight * 0.5,
+      context: context,
       child: JumpAyahBottomSheet(
         quranDetailCubit: context.read<QuranDetailCubit>(),
       ),
@@ -114,10 +112,21 @@ class QuranDetailView extends StatelessWidget {
 
   void showBottomSheetDetailAyah(BuildContext context, Ayah ayah) {
     BottomSheetManager.showCustomBottomSheet(
+      context: context,
       isScrollControlled: true,
       child: DetailAyahBottomSheet(
         quranDetailParams: context.read<QuranDetailCubit>().paramsData,
         ayah: ayah,
+      ),
+    );
+  }
+
+  void showBottomSheetDetailQuran(BuildContext context) {
+    BottomSheetManager.showCustomBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      child: QuranDetailMenuBottomSheet(
+        quranDetailCubit: context.read<QuranDetailCubit>(),
       ),
     );
   }

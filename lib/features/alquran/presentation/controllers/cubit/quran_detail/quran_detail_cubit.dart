@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -119,6 +120,19 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
   Surah? findSurah(Ayah ayah) {
     return surahCubit.surahs
         .firstWhereOrNull((surah) => surah.number == ayah.surah);
+  }
+
+  Surah? get surah => findSurah(ayahs.first);
+
+  void playSurah() {
+    final ayahUrl = surah?.audioUrl;
+    if (ayahUrl == null) return;
+    globalContext.read<PlayerWidgetCubit>().playTrack(
+          source: UrlSource(ayahUrl),
+          newTitle: surah?.nameId,
+          newSubTitle:
+              '${surah?.translateRevelationId} • ${surah?.numberOfVerses} Ayat',
+        );
   }
 
   @override

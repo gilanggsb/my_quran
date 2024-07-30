@@ -110,24 +110,19 @@ class DetailAyahBottomSheet extends StatelessWidget {
   }
 
   void playAyah({QuranDetailParams? params, Ayah? ayah}) async {
-    Logger.logInfo("CEKKK sebelum $params");
     if (params == null) return;
     final ayahUrl = params.lastReadAyah?.ayah?.audio ?? ayah?.audio ?? '';
-    Logger.logInfo("CEKKK $ayahUrl");
-    // final AudioPlayer audioPlayer = AudioPlayer();
-    // await audioPlayer.setSourceUrl(ayahUrl);
-    BottomSheetManager.showCustomBottomSheet(
-      child: AyahPlayerBottomSheet(audioSource: UrlSource(ayahUrl)),
-    );
+    globalContext.read<PlayerWidgetCubit>().play(source: UrlSource(ayahUrl));
+    globalContext.read<PlayerWidgetCubit>().showPlayerWidget();
   }
 }
 
 final menus = [
-  QuranDetailMenu(
-    id: QuranDetailMenuType.play.id,
-    icon: const Icon(Icons.play_arrow_rounded),
-    name: 'Play Murottal',
-  ),
+  // QuranDetailMenu(
+  //   id: QuranDetailMenuType.play.id,
+  //   icon: const Icon(Icons.play_arrow_rounded),
+  //   name: 'Play Murottal',
+  // ),
   QuranDetailMenu(
     id: QuranDetailMenuType.copy.id,
     icon: const Icon(Icons.copy),

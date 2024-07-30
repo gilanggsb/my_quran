@@ -1,4 +1,3 @@
-// Define an enum for the color types
 enum AppColorType {
   primary,
   primaryLight,
@@ -7,4 +6,15 @@ enum AppColorType {
   textLight,
   textDark,
   transparent,
+  grey60,
+  black50,
+  black200,
+  whiteBase,
+  white50,
+  greenBase,
+  redBase,
+  redLight,
+  blueBase,
+  darkBlue,
+  dustBlue,
 }

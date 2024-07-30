@@ -18,7 +18,9 @@ enum QuranDetailMenuType {
   bookmark(3),
   lastread(4),
   readAsSurah(5),
-  readAsJuz(6);
+  readAsJuz(6),
+  tafseer(7),
+  jumpToAyah(8);
 
   final int id;
   const QuranDetailMenuType(this.id);
@@ -37,6 +39,10 @@ extension QuranDetailMenuExt on QuranDetailMenu {
         return QuranDetailMenuType.readAsSurah;
       case 6:
         return QuranDetailMenuType.readAsJuz;
+      case 7:
+        return QuranDetailMenuType.tafseer;
+      case 8:
+        return QuranDetailMenuType.jumpToAyah;
       default:
         return QuranDetailMenuType.play;
     }

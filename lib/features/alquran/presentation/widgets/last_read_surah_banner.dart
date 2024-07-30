@@ -12,6 +12,7 @@ class LastReadSurahBanner extends StatelessWidget {
   });
 
   void onBannerTap(LastReadAyah? lastReadAyah) {
+    if (lastReadAyah == null) return;
     final params = QuranDetailParams(
       detailType: QuranDetailTypeEnum.bySurahs,
       lastReadAyah: lastReadAyah,
@@ -19,7 +20,7 @@ class LastReadSurahBanner extends StatelessWidget {
     BottomSheetManager.showCustomBottomSheet(
       child: DetailAyahBottomSheet(
         quranDetailParams: params,
-        ayah: lastReadAyah?.ayah,
+        ayah: lastReadAyah.ayah,
       ),
     );
   }
@@ -78,13 +79,13 @@ class LastReadSurahBanner extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               DefaultText(
-                                lastReadAyah?.surah?.nameId ?? 'Al-Fatihah',
+                                lastReadAyah?.surah?.nameId ?? '-',
                                 color: AppPalette.white.base,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
                               ),
                               DefaultText(
-                                'Ayat No: ${lastReadAyah?.ayah?.ayah}',
+                                'Ayat No: ${lastReadAyah?.ayah?.ayah ?? '-'}',
                                 color: AppPalette.white.base,
                                 fontWeight: FontWeight.w300,
                                 fontSize: 16,

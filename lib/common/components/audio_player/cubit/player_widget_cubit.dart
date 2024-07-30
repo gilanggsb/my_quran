@@ -11,6 +11,10 @@ part 'player_widget_state.dart';
 
 class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
   PlayerWidgetCubit() : super(const PlayerWidgetState.initial());
+  bool showPlayer = false;
+  bool isInitialized = false;
+  String title = '';
+  String subTitle = '';
   AudioPlayer audioPlayer = AudioPlayer();
   PlayerState playerState = PlayerState.stopped;
   Duration? duration;
@@ -39,6 +43,7 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
           (value) => position = value,
         );
     _initStreams();
+    isInitialized = true;
     emit(const PlayerWidgetState.loaded());
     // resume();
   }
@@ -54,7 +59,10 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
   }
 
   Future<void> play({Source? source}) async {
-    changeAudioState(() async {
+    if (!isInitialized) {
+      init();
+    }
+    await changeAudioState(() async {
       if (source != null) {
         audioPlayer.setSource(source);
         await audioPlayer.play(source);
@@ -88,13 +96,77 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
     });
   }
 
+  Future<void> playTrack({
+    Source? source,
+    String? newTitle,
+    String? newSubTitle,
+  }) async {
+    emit(const PlayerWidgetState.loading());
+    showPlayerWidget();
+    setInformation(newTitle: newTitle, newSubTitle: newSubTitle);
+    await play(source: source);
+    emit(const PlayerWidgetState.loaded());
+  }
+
+  Future<void> showPlayerWidget() async {
+    if (showPlayer) return;
+    changeAudioState(() {
+      showPlayer = true;
+    });
+  }
+
+  Future<void> hidePlayerWidget() async {
+    if (!showPlayer) return;
+    changeAudioState(() {
+      showPlayer = false;
+    });
+  }
+
+  Future<void> closePlayerWdget() async {
+    changeAudioState(() {
+      showPlayer = false;
+      resetState();
+    });
+  }
+
+  double get sliderValue {
+    final finPosition = position?.inMilliseconds ?? 0;
+    final finDuration = duration?.inMilliseconds ?? 0;
+    return (position != null &&
+            duration != null &&
+            finPosition > 0 &&
+            finPosition < finDuration)
+        ? finPosition / finDuration
+        : 0.0;
+  }
+
+  void setInformation({String? newTitle, String? newSubTitle}) async {
+    changeAudioState(() {
+      title = newTitle ?? '';
+      subTitle = newSubTitle ?? '';
+    });
+  }
+
   @override
   Future<void> close() {
+    resetState();
+    return super.close();
+  }
+
+  void resetState() {
     durationSubscription?.cancel();
     positionSubscription?.cancel();
     playerCompleteSubscription?.cancel();
     playerStateChangeSubscription?.cancel();
-    return super.close();
+    changeAudioState(() {
+      showPlayer = false;
+      isInitialized = false;
+      title = '';
+      subTitle = '';
+      duration = null;
+      position = null;
+      playerState = PlayerState.stopped;
+    });
   }
 
   void _initStreams() {
@@ -119,7 +191,7 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
     });
   }
 
-  void changeAudioState(FutureCallback callback) async {
+  FutureOr<void> changeAudioState(FutureCallback callback) async {
     emit(const PlayerWidgetState.updateAudio());
     await callback();
     emit(const PlayerWidgetState.loaded());

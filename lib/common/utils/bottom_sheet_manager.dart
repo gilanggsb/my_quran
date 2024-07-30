@@ -4,6 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../common.dart';
 
 class BottomSheetManager {
+  static final ValueNotifier<bool> isBottomSheetShownNotifier =
+      ValueNotifier(false);
+
   static void showSimpleBottomSheet({
     BuildContext? context,
     String? title,
@@ -17,7 +20,9 @@ class BottomSheetManager {
     bool enableDrag = true,
     bool? showDragHandle,
     double? height,
+    VoidCallback? onClose,
   }) {
+    isBottomSheetShownNotifier.value = true;
     _showBottomSheet(
       context: context,
       isScrollControlled: isScrollControlled,
@@ -28,6 +33,7 @@ class BottomSheetManager {
       enableDrag: enableDrag,
       height: height,
       showDragHandle: showDragHandle,
+      onClose: onClose,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -63,7 +69,9 @@ class BottomSheetManager {
     bool enableDrag = true,
     bool? showDragHandle,
     double? height,
+    VoidCallback? onClose,
   }) {
+    isBottomSheetShownNotifier.value = true;
     _showBottomSheet(
       context: context,
       isScrollControlled: isScrollControlled,
@@ -74,6 +82,7 @@ class BottomSheetManager {
       enableDrag: enableDrag,
       showDragHandle: showDragHandle,
       height: height,
+      onClose: onClose,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -110,7 +119,9 @@ class BottomSheetManager {
     bool enableDrag = true,
     bool? showDragHandle,
     double? height,
+    VoidCallback? onClose,
   }) {
+    isBottomSheetShownNotifier.value = true;
     _showBottomSheet(
       context: context,
       isScrollControlled: isScrollControlled,
@@ -121,6 +132,7 @@ class BottomSheetManager {
       enableDrag: enableDrag,
       showDragHandle: showDragHandle,
       height: height,
+      onClose: onClose,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: child,
@@ -133,35 +145,45 @@ class BottomSheetManager {
     required Widget child,
     Color? backgroundColor,
     bool enableDrag = true,
+    VoidCallback? onClose,
   }) {
-    Scaffold.of(context ?? globalContext).showBottomSheet(
-      (BuildContext context) {
-        return Container(
-          color: backgroundColor ??
-              globalContext.getColorExt(AppColorType.background),
-          child: SafeArea(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (enableDrag)
-                  Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    color: context.getColorExt(AppColorType.primary),
-                    height: 4.sp,
-                    width: context.getWidth * 0.1,
-                  ),
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: child,
-                  ),
+    isBottomSheetShownNotifier.value = true;
+    Scaffold.of(context ?? globalContext)
+        .showBottomSheet(
+          (BuildContext context) {
+            return Container(
+              color: backgroundColor ??
+                  globalContext.getColorExt(AppColorType.background),
+              child: SafeArea(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (enableDrag)
+                      Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        color: context.getColorExt(AppColorType.primary),
+                        height: 4.sp,
+                        width: context.getWidth * 0.1,
+                      ),
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: child,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
+              ),
+            );
+          },
+        )
+        .closed
+        .then((_) {
+          isBottomSheetShownNotifier.value = false;
+          if (onClose != null) {
+            onClose();
+          }
+        });
   }
 
   static void _showBottomSheet({
@@ -175,7 +197,8 @@ class BottomSheetManager {
     bool enableDrag = true,
     bool? showDragHandle = true,
     double? height,
-  }) {
+    VoidCallback? onClose,
+}) {
     showModalBottomSheet(
       context: context ?? globalContext,
       isScrollControlled: isScrollControlled,
@@ -185,6 +208,7 @@ class BottomSheetManager {
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
+      useRootNavigator: true,
       builder: (BuildContext context) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
@@ -214,10 +238,19 @@ class BottomSheetManager {
           ),
         );
       },
-    );
+    ).whenComplete(() {
+      isBottomSheetShownNotifier.value = false;
+      onClose?.call();
+    });
   }
+
 
   static void closeCurrentBottomSheet({BuildContext? context}) {
     Navigator.pop(context ?? globalContext);
+    // isBottomSheetShownNotifier.value = false;
+  }
+
+  static bool isBottomSheetShown() {
+    return isBottomSheetShownNotifier.value;
   }
 }
