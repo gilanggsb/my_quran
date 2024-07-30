@@ -24,11 +24,12 @@ mixin _$Ayah {
   String? get id => throw _privateConstructorUsedError;
   String? get juz => throw _privateConstructorUsedError;
   String? get latin => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
+  dynamic get notes => throw _privateConstructorUsedError;
   String? get page => throw _privateConstructorUsedError;
   String? get surah => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
-  String? get theme => throw _privateConstructorUsedError;
+  bool? get isLastRead => throw _privateConstructorUsedError;
+  dynamic get theme => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,11 +50,12 @@ abstract class $AyahCopyWith<$Res> {
       String? id,
       String? juz,
       String? latin,
-      String? notes,
+      dynamic notes,
       String? page,
       String? surah,
       String? text,
-      String? theme});
+      bool? isLastRead,
+      dynamic theme});
 }
 
 /// @nodoc
@@ -81,6 +83,7 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
     Object? page = freezed,
     Object? surah = freezed,
     Object? text = freezed,
+    Object? isLastRead = freezed,
     Object? theme = freezed,
   }) {
     return _then(_value.copyWith(
@@ -119,7 +122,7 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
       notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -132,10 +135,14 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
+      isLastRead: freezed == isLastRead
+          ? _value.isLastRead
+          : isLastRead // ignore: cast_nullable_to_non_nullable
+              as bool?,
       theme: freezed == theme
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -156,11 +163,12 @@ abstract class _$$AyahImplCopyWith<$Res> implements $AyahCopyWith<$Res> {
       String? id,
       String? juz,
       String? latin,
-      String? notes,
+      dynamic notes,
       String? page,
       String? surah,
       String? text,
-      String? theme});
+      bool? isLastRead,
+      dynamic theme});
 }
 
 /// @nodoc
@@ -185,6 +193,7 @@ class __$$AyahImplCopyWithImpl<$Res>
     Object? page = freezed,
     Object? surah = freezed,
     Object? text = freezed,
+    Object? isLastRead = freezed,
     Object? theme = freezed,
   }) {
     return _then(_$AyahImpl(
@@ -223,7 +232,7 @@ class __$$AyahImplCopyWithImpl<$Res>
       notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -236,17 +245,21 @@ class __$$AyahImplCopyWithImpl<$Res>
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
+      isLastRead: freezed == isLastRead
+          ? _value.isLastRead
+          : isLastRead // ignore: cast_nullable_to_non_nullable
+              as bool?,
       theme: freezed == theme
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable(createFactory: false)
-class _$AyahImpl extends _Ayah {
+class _$AyahImpl implements _Ayah {
   const _$AyahImpl(
       {this.arab,
       this.asbab,
@@ -260,8 +273,8 @@ class _$AyahImpl extends _Ayah {
       this.page,
       this.surah,
       this.text,
-      this.theme})
-      : super._();
+      this.isLastRead,
+      this.theme});
 
   @override
   final String? arab;
@@ -280,7 +293,7 @@ class _$AyahImpl extends _Ayah {
   @override
   final String? latin;
   @override
-  final String? notes;
+  final dynamic notes;
   @override
   final String? page;
   @override
@@ -288,11 +301,13 @@ class _$AyahImpl extends _Ayah {
   @override
   final String? text;
   @override
-  final String? theme;
+  final bool? isLastRead;
+  @override
+  final dynamic theme;
 
   @override
   String toString() {
-    return 'Ayah(arab: $arab, asbab: $asbab, audio: $audio, ayah: $ayah, hizb: $hizb, id: $id, juz: $juz, latin: $latin, notes: $notes, page: $page, surah: $surah, text: $text, theme: $theme)';
+    return 'Ayah(arab: $arab, asbab: $asbab, audio: $audio, ayah: $ayah, hizb: $hizb, id: $id, juz: $juz, latin: $latin, notes: $notes, page: $page, surah: $surah, text: $text, isLastRead: $isLastRead, theme: $theme)';
   }
 
   @override
@@ -308,17 +323,33 @@ class _$AyahImpl extends _Ayah {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.juz, juz) || other.juz == juz) &&
             (identical(other.latin, latin) || other.latin == latin) &&
-            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.surah, surah) || other.surah == surah) &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.theme, theme) || other.theme == theme));
+            (identical(other.isLastRead, isLastRead) ||
+                other.isLastRead == isLastRead) &&
+            const DeepCollectionEquality().equals(other.theme, theme));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, arab, asbab, audio, ayah, hizb,
-      id, juz, latin, notes, page, surah, text, theme);
+  int get hashCode => Object.hash(
+      runtimeType,
+      arab,
+      asbab,
+      audio,
+      ayah,
+      hizb,
+      id,
+      juz,
+      latin,
+      const DeepCollectionEquality().hash(notes),
+      page,
+      surah,
+      text,
+      isLastRead,
+      const DeepCollectionEquality().hash(theme));
 
   @JsonKey(ignore: true)
   @override
@@ -334,7 +365,7 @@ class _$AyahImpl extends _Ayah {
   }
 }
 
-abstract class _Ayah extends Ayah {
+abstract class _Ayah implements Ayah {
   const factory _Ayah(
       {final String? arab,
       final String? asbab,
@@ -344,12 +375,12 @@ abstract class _Ayah extends Ayah {
       final String? id,
       final String? juz,
       final String? latin,
-      final String? notes,
+      final dynamic notes,
       final String? page,
       final String? surah,
       final String? text,
-      final String? theme}) = _$AyahImpl;
-  const _Ayah._() : super._();
+      final bool? isLastRead,
+      final dynamic theme}) = _$AyahImpl;
 
   @override
   String? get arab;
@@ -368,7 +399,7 @@ abstract class _Ayah extends Ayah {
   @override
   String? get latin;
   @override
-  String? get notes;
+  dynamic get notes;
   @override
   String? get page;
   @override
@@ -376,7 +407,9 @@ abstract class _Ayah extends Ayah {
   @override
   String? get text;
   @override
-  String? get theme;
+  bool? get isLastRead;
+  @override
+  dynamic get theme;
   @override
   @JsonKey(ignore: true)
   _$$AyahImplCopyWith<_$AyahImpl> get copyWith =>

@@ -1,5 +1,4 @@
 import 'package:get_storage/get_storage.dart';
-
 import '../../common.dart';
 
 abstract class StorageService extends BaseStorageService {}

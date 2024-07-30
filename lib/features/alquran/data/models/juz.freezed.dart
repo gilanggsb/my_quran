@@ -243,7 +243,7 @@ class __$$JuzImplCopyWithImpl<$Res> extends _$JuzCopyWithImpl<$Res, _$JuzImpl>
 
 /// @nodoc
 @JsonSerializable(createFactory: false)
-class _$JuzImpl extends _Juz {
+class _$JuzImpl implements _Juz {
   const _$JuzImpl(
       {this.ayatArab,
       this.ayatIndo,
@@ -257,8 +257,7 @@ class _$JuzImpl extends _Juz {
       this.surahIdEnd,
       this.surahIdStart,
       this.verseEnd,
-      this.verseStart})
-      : super._();
+      this.verseStart});
 
   @override
   final String? ayatArab;
@@ -355,7 +354,7 @@ class _$JuzImpl extends _Juz {
   }
 }
 
-abstract class _Juz extends Juz {
+abstract class _Juz implements Juz {
   const factory _Juz(
       {final String? ayatArab,
       final String? ayatIndo,
@@ -370,7 +369,6 @@ abstract class _Juz extends Juz {
       final String? surahIdStart,
       final String? verseEnd,
       final String? verseStart}) = _$JuzImpl;
-  const _Juz._() : super._();
 
   @override
   String? get ayatArab;

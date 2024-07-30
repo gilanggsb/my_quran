@@ -31,6 +31,7 @@ mixin _$Surah {
   String? get translationEn => throw _privateConstructorUsedError;
   String? get translationId => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SurahCopyWith<Surah> get copyWith => throw _privateConstructorUsedError;
 }
@@ -258,8 +259,8 @@ class __$$SurahImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-class _$SurahImpl extends _Surah {
+@JsonSerializable(createFactory: false)
+class _$SurahImpl implements _Surah {
   const _$SurahImpl(
       {this.audioUrl,
       this.nameEn,
@@ -274,8 +275,7 @@ class _$SurahImpl extends _Surah {
       this.sequence,
       this.tafsir,
       this.translationEn,
-      this.translationId})
-      : super._();
+      this.translationId});
 
   @override
   final String? audioUrl;
@@ -342,6 +342,7 @@ class _$SurahImpl extends _Surah {
                 other.translationId == translationId));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -365,9 +366,16 @@ class _$SurahImpl extends _Surah {
   @pragma('vm:prefer-inline')
   _$$SurahImplCopyWith<_$SurahImpl> get copyWith =>
       __$$SurahImplCopyWithImpl<_$SurahImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SurahImplToJson(
+      this,
+    );
+  }
 }
 
-abstract class _Surah extends Surah {
+abstract class _Surah implements Surah {
   const factory _Surah(
       {final String? audioUrl,
       final String? nameEn,
@@ -383,7 +391,6 @@ abstract class _Surah extends Surah {
       final String? tafsir,
       final String? translationEn,
       final String? translationId}) = _$SurahImpl;
-  const _Surah._() : super._();
 
   @override
   String? get audioUrl;

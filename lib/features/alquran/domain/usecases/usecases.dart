@@ -4,7 +4,5 @@ export 'get_ayahs_throughout.dart';
 export 'get_full_ayahs.dart';
 export 'get_juz.dart';
 export 'get_juzs.dart';
-export 'get_last_read_ayah.dart';
 export 'get_surah.dart';
 export 'get_surahs.dart';
-export 'save_last_read_ayah.dart';

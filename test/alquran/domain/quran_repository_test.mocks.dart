@@ -245,25 +245,4 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
           ),
         )),
       ) as _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>);
-
-  @override
-  _i4.Future<_i3.LastReadAyah?> getLastReadAyah() => (super.noSuchMethod(
-        Invocation.method(
-          #getLastReadAyah,
-          [],
-        ),
-        returnValue: _i4.Future<_i3.LastReadAyah?>.value(),
-        returnValueForMissingStub: _i4.Future<_i3.LastReadAyah?>.value(),
-      ) as _i4.Future<_i3.LastReadAyah?>);
-
-  @override
-  _i4.Future<void> saveLastReadAyah(_i3.LastReadAyah? lastRead) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #saveLastReadAyah,
-          [lastRead],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
 }

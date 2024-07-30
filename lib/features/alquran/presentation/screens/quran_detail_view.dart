@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -16,21 +17,21 @@ class QuranDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     final quranDetailCubit = context.read<QuranDetailCubit>();
     final surahCubit = quranDetailCubit.surahCubit;
-    final isSurahsType = params.detailType == QuranDetailTypeEnum.bySurahs;
     globalContext = context;
 
     return DefaultScaffold(
       appBar: DefaultAppBar(
-        title: isSurahsType ? 'Surat' : 'Juz',
+        title: 'Detail',
         actions: [
-          IconButton(
-            onPressed: () => showBottomSheetDetailQuran(context),
-            icon: Icon(
-              Icons.menu,
-              color: context.getColorExt(AppColorType.text),
-              size: 32,
-            ),
-          ),
+          DefaultImage(
+            imageUrl: AppAssets.icJumpTo,
+            color: context.getColorExt(AppColorType.text),
+            width: 26.sp,
+            height: 26.sp,
+            imageType: ImageType.asset,
+          ).paddingSymmetric(horizontal: 12).onTap(
+                () => showBottomSheetJumpToAyah(context),
+              ),
         ],
         leading: IconButton(
           onPressed: context.back,
@@ -85,8 +86,6 @@ class QuranDetailView extends StatelessWidget {
                               title: ayah.latin,
                               subtitle: ayah.text,
                             ),
-                            onTap: () =>
-                                showBottomSheetDetailAyah(context, ayah),
                           ).paddingSymmetric(horizontal: 8),
                         ],
                       );
@@ -103,29 +102,7 @@ class QuranDetailView extends StatelessWidget {
 
   void showBottomSheetJumpToAyah(BuildContext context) {
     BottomSheetManager.showCustomBottomSheet(
-      context: context,
       child: JumpAyahBottomSheet(
-        quranDetailCubit: context.read<QuranDetailCubit>(),
-      ),
-    );
-  }
-
-  void showBottomSheetDetailAyah(BuildContext context, Ayah ayah) {
-    BottomSheetManager.showCustomBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      child: DetailAyahBottomSheet(
-        quranDetailParams: context.read<QuranDetailCubit>().paramsData,
-        ayah: ayah,
-      ),
-    );
-  }
-
-  void showBottomSheetDetailQuran(BuildContext context) {
-    BottomSheetManager.showCustomBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      child: QuranDetailMenuBottomSheet(
         quranDetailCubit: context.read<QuranDetailCubit>(),
       ),
     );

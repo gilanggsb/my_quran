@@ -156,7 +156,7 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
   }
 
   @override
-  Future<BaseResponse<List<Ayah>?>> getFullAyahs(
+Future<BaseResponse<List<Ayah>?>> getFullAyahs(
     AyahsThroughoutPagination ayahsThroughout,
   ) async {
     try {
@@ -186,4 +186,6 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
       throw e.toString();
     }
   }
+
+
 }

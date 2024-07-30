@@ -19,12 +19,6 @@ void quranInjection() {
       getFullAyahs: getIt(),
     ),
   );
-  getIt.registerFactory<DetailAyahCubit>(
-    () => DetailAyahCubit(
-      getSurahs: getIt(),
-      saveLastReadAyah: getIt(),
-    ),
-  );
   getIt.registerFactory<JumpAyahCubit>(
     () => JumpAyahCubit(
       getSurahs: getIt(),
@@ -48,9 +42,8 @@ void quranInjection() {
   );
   getIt.registerLazySingleton<QuranLocalDataSource>(
     () => QuranLocalDataSourceImpl(
-      localDBService: getIt(),
-      storageService: getIt(),
-    ),
+        // service: getIt(),
+        ),
   );
 
   //usecase
@@ -91,16 +84,6 @@ void quranInjection() {
   );
   getIt.registerLazySingleton<GetFullAyahs>(
     () => GetFullAyahs(
-      repository: getIt(),
-    ),
-  );
-  getIt.registerLazySingleton<GetLastReadAyah>(
-    () => GetLastReadAyah(
-      repository: getIt(),
-    ),
-  );
-  getIt.registerLazySingleton<SaveLastReadAyah>(
-    () => SaveLastReadAyah(
       repository: getIt(),
     ),
   );

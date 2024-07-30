@@ -3,12 +3,10 @@ import '../../../features.dart';
 class QuranDetailParams {
   final AyahsThroughoutPagination? ayahsThroughoutPagination;
   final int? juzNumber;
-  final LastReadAyah? lastReadAyah;
   final QuranDetailTypeEnum detailType;
 
   QuranDetailParams({
     required this.detailType,
-    this.lastReadAyah,
     this.ayahsThroughoutPagination,
     this.juzNumber,
   });
@@ -16,7 +14,6 @@ class QuranDetailParams {
   QuranDetailParams copyWith({
     AyahsThroughoutPagination? ayahsThroughoutPagination,
     int? juzNumber,
-    LastReadAyah? lastReadAyah,
     QuranDetailTypeEnum? detailType,
   }) =>
       QuranDetailParams(
@@ -24,6 +21,5 @@ class QuranDetailParams {
             ayahsThroughoutPagination ?? this.ayahsThroughoutPagination,
         juzNumber: juzNumber ?? this.juzNumber,
         detailType: detailType ?? this.detailType,
-        lastReadAyah: lastReadAyah ?? this.lastReadAyah,
       );
 }

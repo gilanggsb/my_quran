@@ -22,17 +22,6 @@ extension WidgetExtension on Widget {
         onLongPress: function,
         child: this,
       );
-
-  Widget color(Color color) => Container(
-        color: color,
-        child: this,
-      );
-
-  Align align(Alignment alignment) => Align(
-        alignment: alignment,
-        child: this,
-      );
-
   Padding paddingOnly({
     double left = 0.0,
     double top = 0.0,
