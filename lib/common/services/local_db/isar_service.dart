@@ -47,6 +47,13 @@ class IsarServiceImpl extends IsarService {
       await getCollection<T>().put(data);
     });
   }
+  
+  @override
+  Future<void> writeAll<T>(List<T> data) async {
+    await isar.writeTxn(() async {
+      await getCollection<T>().putAll(data);
+    });
+  }
 
   @override
   Future<T?> read<T>(int id) async {

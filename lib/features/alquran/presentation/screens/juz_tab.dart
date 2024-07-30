@@ -22,6 +22,13 @@ class JuzTab extends StatelessWidget {
         final juzCubit = context.read<JuzCubit>();
         final isLoading = state.whenOrNull(loading: () => true) ?? false;
         final juzs = isLoading ? BoneMockData.fakeJuzs : juzCubit.juzs;
+        final failedMessage = state.whenOrNull(failed: (data) => data);
+        if (failedMessage != null) {
+          return EmptyStateWidget(
+            title: 'Gagal memuat data',
+            message: failedMessage,
+          );
+        }
         return RefreshIndicator(
           color: context.getColorExt(AppColorType.primary),
           onRefresh: () async => juzCubit.getData(),

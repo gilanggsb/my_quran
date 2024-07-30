@@ -11,12 +11,24 @@ class QuranRepositoryImpl extends QuranRepository {
 
   @override
   Future<BaseResponse<Surah?>> getSurah(int surahNumber) async {
+    final cachedSurah = await localDataSource.getCachedSurah(surahNumber);
+    if (cachedSurah != null) {
+      return BaseResponse(status: true, data: cachedSurah);
+    }
+
     return await remoteDataSource.getSurah(surahNumber);
   }
 
   @override
   Future<BaseResponse<List<Surah>?>> getSurahs() async {
-    return await remoteDataSource.getSurahs();
+    final cachedSurahs = await localDataSource.getCachedSurahs();
+    if (cachedSurahs.isNotEmpty) {
+      return BaseResponse(status: true, data: cachedSurahs);
+    }
+
+    final response = await remoteDataSource.getSurahs();
+    localDataSource.cacheSurahs(response.data ?? []);
+    return response;
   }
 
   @override
@@ -31,12 +43,24 @@ class QuranRepositoryImpl extends QuranRepository {
 
   @override
   Future<BaseResponse<Juz?>> getJuz(int juzNumber) async {
+    final cachedJuz = await localDataSource.getCachedJuz(juzNumber);
+    if (cachedJuz != null) {
+      return BaseResponse(status: true, data: cachedJuz);
+    }
+
     return await remoteDataSource.getJuz(juzNumber);
   }
 
   @override
   Future<BaseResponse<List<Juz>?>> getJuzs() async {
-    return await remoteDataSource.getJuzs();
+    final cachedJuzs = await localDataSource.getCachedJuzs();
+    if (cachedJuzs.isNotEmpty) {
+      return BaseResponse(status: true, data: cachedJuzs);
+    }
+
+    final response = await remoteDataSource.getJuzs();
+    localDataSource.cacheJuzs(response.data ?? []);
+    return response;
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../common.dart';
 
 part 'base_response.freezed.dart';

@@ -5,6 +5,7 @@ import '../../common.dart';
 abstract class LocalDBService {
   Future<T?> init<T>();
   Future<void> write<T>(T data);
+  Future<void> writeAll<T>(List<T> data);
   Future<T?> read<T>(int id);
   Future<List<T>> readAll<T>();
   Future<void> update<T>(T data);

@@ -22,6 +22,14 @@ class SurahTab extends StatelessWidget {
         final surahCubit = context.read<SurahCubit>();
         final isLoading = state.whenOrNull(loading: () => true) ?? false;
         final surahs = isLoading ? BoneMockData.fakeSurahs : surahCubit.surahs;
+        final failedMessage = state.whenOrNull(failed: (data) => data);
+        if (failedMessage != null) {
+          return EmptyStateWidget(
+            title: 'Gagal memuat data',
+            message: failedMessage,
+          );
+        }
+
         return RefreshIndicator(
           onRefresh: () async => surahCubit.getData(),
           color: context.getColorExt(AppColorType.primary),
