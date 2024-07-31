@@ -16,21 +16,28 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Ayah {
+  String? get id => throw _privateConstructorUsedError;
   String? get arab => throw _privateConstructorUsedError;
   String? get asbab => throw _privateConstructorUsedError;
   String? get audio => throw _privateConstructorUsedError;
-  String? get ayah => throw _privateConstructorUsedError;
-  String? get hizb => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get juz => throw _privateConstructorUsedError;
+  String? get ayah =>
+      throw _privateConstructorUsedError; // Original string representation
+  int? get ayahInt =>
+      throw _privateConstructorUsedError; // Numerical representation
+  String? get juz =>
+      throw _privateConstructorUsedError; // Original string representation
+  int? get juzInt =>
+      throw _privateConstructorUsedError; // Numerical representation
+  String? get surah =>
+      throw _privateConstructorUsedError; // Original string representation
+  int? get surahInt =>
+      throw _privateConstructorUsedError; // Numerical representation
   String? get latin => throw _privateConstructorUsedError;
   String? get notes => throw _privateConstructorUsedError;
   String? get page => throw _privateConstructorUsedError;
-  String? get surah => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
   String? get theme => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AyahCopyWith<Ayah> get copyWith => throw _privateConstructorUsedError;
 }
@@ -41,17 +48,19 @@ abstract class $AyahCopyWith<$Res> {
       _$AyahCopyWithImpl<$Res, Ayah>;
   @useResult
   $Res call(
-      {String? arab,
+      {String? id,
+      String? arab,
       String? asbab,
       String? audio,
       String? ayah,
-      String? hizb,
-      String? id,
+      int? ayahInt,
       String? juz,
+      int? juzInt,
+      String? surah,
+      int? surahInt,
       String? latin,
       String? notes,
       String? page,
-      String? surah,
       String? text,
       String? theme});
 }
@@ -69,21 +78,27 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? arab = freezed,
     Object? asbab = freezed,
     Object? audio = freezed,
     Object? ayah = freezed,
-    Object? hizb = freezed,
-    Object? id = freezed,
+    Object? ayahInt = freezed,
     Object? juz = freezed,
+    Object? juzInt = freezed,
+    Object? surah = freezed,
+    Object? surahInt = freezed,
     Object? latin = freezed,
     Object? notes = freezed,
     Object? page = freezed,
-    Object? surah = freezed,
     Object? text = freezed,
     Object? theme = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       arab: freezed == arab
           ? _value.arab
           : arab // ignore: cast_nullable_to_non_nullable
@@ -100,18 +115,26 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
           ? _value.ayah
           : ayah // ignore: cast_nullable_to_non_nullable
               as String?,
-      hizb: freezed == hizb
-          ? _value.hizb
-          : hizb // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+      ayahInt: freezed == ayahInt
+          ? _value.ayahInt
+          : ayahInt // ignore: cast_nullable_to_non_nullable
+              as int?,
       juz: freezed == juz
           ? _value.juz
           : juz // ignore: cast_nullable_to_non_nullable
               as String?,
+      juzInt: freezed == juzInt
+          ? _value.juzInt
+          : juzInt // ignore: cast_nullable_to_non_nullable
+              as int?,
+      surah: freezed == surah
+          ? _value.surah
+          : surah // ignore: cast_nullable_to_non_nullable
+              as String?,
+      surahInt: freezed == surahInt
+          ? _value.surahInt
+          : surahInt // ignore: cast_nullable_to_non_nullable
+              as int?,
       latin: freezed == latin
           ? _value.latin
           : latin // ignore: cast_nullable_to_non_nullable
@@ -123,10 +146,6 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
       page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as String?,
-      surah: freezed == surah
-          ? _value.surah
-          : surah // ignore: cast_nullable_to_non_nullable
               as String?,
       text: freezed == text
           ? _value.text
@@ -148,17 +167,19 @@ abstract class _$$AyahImplCopyWith<$Res> implements $AyahCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? arab,
+      {String? id,
+      String? arab,
       String? asbab,
       String? audio,
       String? ayah,
-      String? hizb,
-      String? id,
+      int? ayahInt,
       String? juz,
+      int? juzInt,
+      String? surah,
+      int? surahInt,
       String? latin,
       String? notes,
       String? page,
-      String? surah,
       String? text,
       String? theme});
 }
@@ -173,21 +194,27 @@ class __$$AyahImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? arab = freezed,
     Object? asbab = freezed,
     Object? audio = freezed,
     Object? ayah = freezed,
-    Object? hizb = freezed,
-    Object? id = freezed,
+    Object? ayahInt = freezed,
     Object? juz = freezed,
+    Object? juzInt = freezed,
+    Object? surah = freezed,
+    Object? surahInt = freezed,
     Object? latin = freezed,
     Object? notes = freezed,
     Object? page = freezed,
-    Object? surah = freezed,
     Object? text = freezed,
     Object? theme = freezed,
   }) {
     return _then(_$AyahImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       arab: freezed == arab
           ? _value.arab
           : arab // ignore: cast_nullable_to_non_nullable
@@ -204,18 +231,26 @@ class __$$AyahImplCopyWithImpl<$Res>
           ? _value.ayah
           : ayah // ignore: cast_nullable_to_non_nullable
               as String?,
-      hizb: freezed == hizb
-          ? _value.hizb
-          : hizb // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+      ayahInt: freezed == ayahInt
+          ? _value.ayahInt
+          : ayahInt // ignore: cast_nullable_to_non_nullable
+              as int?,
       juz: freezed == juz
           ? _value.juz
           : juz // ignore: cast_nullable_to_non_nullable
               as String?,
+      juzInt: freezed == juzInt
+          ? _value.juzInt
+          : juzInt // ignore: cast_nullable_to_non_nullable
+              as int?,
+      surah: freezed == surah
+          ? _value.surah
+          : surah // ignore: cast_nullable_to_non_nullable
+              as String?,
+      surahInt: freezed == surahInt
+          ? _value.surahInt
+          : surahInt // ignore: cast_nullable_to_non_nullable
+              as int?,
       latin: freezed == latin
           ? _value.latin
           : latin // ignore: cast_nullable_to_non_nullable
@@ -227,10 +262,6 @@ class __$$AyahImplCopyWithImpl<$Res>
       page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as String?,
-      surah: freezed == surah
-          ? _value.surah
-          : surah // ignore: cast_nullable_to_non_nullable
               as String?,
       text: freezed == text
           ? _value.text
@@ -245,24 +276,28 @@ class __$$AyahImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable(createFactory: false)
+
 class _$AyahImpl extends _Ayah {
   const _$AyahImpl(
-      {this.arab,
+      {this.id,
+      this.arab,
       this.asbab,
       this.audio,
       this.ayah,
-      this.hizb,
-      this.id,
+      this.ayahInt,
       this.juz,
+      this.juzInt,
+      this.surah,
+      this.surahInt,
       this.latin,
       this.notes,
       this.page,
-      this.surah,
       this.text,
       this.theme})
       : super._();
 
+  @override
+  final String? id;
   @override
   final String? arab;
   @override
@@ -271,12 +306,22 @@ class _$AyahImpl extends _Ayah {
   final String? audio;
   @override
   final String? ayah;
+// Original string representation
   @override
-  final String? hizb;
-  @override
-  final String? id;
+  final int? ayahInt;
+// Numerical representation
   @override
   final String? juz;
+// Original string representation
+  @override
+  final int? juzInt;
+// Numerical representation
+  @override
+  final String? surah;
+// Original string representation
+  @override
+  final int? surahInt;
+// Numerical representation
   @override
   final String? latin;
   @override
@@ -284,15 +329,13 @@ class _$AyahImpl extends _Ayah {
   @override
   final String? page;
   @override
-  final String? surah;
-  @override
   final String? text;
   @override
   final String? theme;
 
   @override
   String toString() {
-    return 'Ayah(arab: $arab, asbab: $asbab, audio: $audio, ayah: $ayah, hizb: $hizb, id: $id, juz: $juz, latin: $latin, notes: $notes, page: $page, surah: $surah, text: $text, theme: $theme)';
+    return 'Ayah(id: $id, arab: $arab, asbab: $asbab, audio: $audio, ayah: $ayah, ayahInt: $ayahInt, juz: $juz, juzInt: $juzInt, surah: $surah, surahInt: $surahInt, latin: $latin, notes: $notes, page: $page, text: $text, theme: $theme)';
   }
 
   @override
@@ -300,57 +343,56 @@ class _$AyahImpl extends _Ayah {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AyahImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.arab, arab) || other.arab == arab) &&
             (identical(other.asbab, asbab) || other.asbab == asbab) &&
             (identical(other.audio, audio) || other.audio == audio) &&
             (identical(other.ayah, ayah) || other.ayah == ayah) &&
-            (identical(other.hizb, hizb) || other.hizb == hizb) &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.ayahInt, ayahInt) || other.ayahInt == ayahInt) &&
             (identical(other.juz, juz) || other.juz == juz) &&
+            (identical(other.juzInt, juzInt) || other.juzInt == juzInt) &&
+            (identical(other.surah, surah) || other.surah == surah) &&
+            (identical(other.surahInt, surahInt) ||
+                other.surahInt == surahInt) &&
             (identical(other.latin, latin) || other.latin == latin) &&
             (identical(other.notes, notes) || other.notes == notes) &&
             (identical(other.page, page) || other.page == page) &&
-            (identical(other.surah, surah) || other.surah == surah) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.theme, theme) || other.theme == theme));
   }
 
-  @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, arab, asbab, audio, ayah, hizb,
-      id, juz, latin, notes, page, surah, text, theme);
+  int get hashCode => Object.hash(runtimeType, id, arab, asbab, audio, ayah,
+      ayahInt, juz, juzInt, surah, surahInt, latin, notes, page, text, theme);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AyahImplCopyWith<_$AyahImpl> get copyWith =>
       __$$AyahImplCopyWithImpl<_$AyahImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AyahImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _Ayah extends Ayah {
   const factory _Ayah(
-      {final String? arab,
+      {final String? id,
+      final String? arab,
       final String? asbab,
       final String? audio,
       final String? ayah,
-      final String? hizb,
-      final String? id,
+      final int? ayahInt,
       final String? juz,
+      final int? juzInt,
+      final String? surah,
+      final int? surahInt,
       final String? latin,
       final String? notes,
       final String? page,
-      final String? surah,
       final String? text,
       final String? theme}) = _$AyahImpl;
   const _Ayah._() : super._();
 
+  @override
+  String? get id;
   @override
   String? get arab;
   @override
@@ -359,20 +401,22 @@ abstract class _Ayah extends Ayah {
   String? get audio;
   @override
   String? get ayah;
-  @override
-  String? get hizb;
-  @override
-  String? get id;
-  @override
+  @override // Original string representation
+  int? get ayahInt;
+  @override // Numerical representation
   String? get juz;
-  @override
+  @override // Original string representation
+  int? get juzInt;
+  @override // Numerical representation
+  String? get surah;
+  @override // Original string representation
+  int? get surahInt;
+  @override // Numerical representation
   String? get latin;
   @override
   String? get notes;
   @override
   String? get page;
-  @override
-  String? get surah;
   @override
   String? get text;
   @override

@@ -9,4 +9,10 @@ abstract class QuranLocalDataSource {
   Future<void> cacheJuzs(List<Juz> juzs);
   Future<List<Juz>> getCachedJuzs();
   Future<Juz?> getCachedJuz(int juzNumber);
+  Future<void> cacheAyahs(List<Ayah> ayahs);
+  Future<List<Ayah>> getCachedAyahs(AyahPagination pagination);
+  Future<List<Ayah>> getCachedAyahsJuz(int juzNumber);
+  Future<List<Ayah>> getCachedAyahsThroughout(
+    AyahsThroughoutPagination ayahsThroughout,
+  );
 }

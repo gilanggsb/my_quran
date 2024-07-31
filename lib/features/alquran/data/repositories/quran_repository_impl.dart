@@ -33,12 +33,28 @@ class QuranRepositoryImpl extends QuranRepository {
 
   @override
   Future<BaseResponse<List<Ayah>?>> getAyahs(AyahPagination pagination) async {
-    return await remoteDataSource.getAyahs(pagination);
+    final cachedAyahs = await localDataSource.getCachedAyahs(pagination);
+    if (cachedAyahs.isNotEmpty) {
+      return BaseResponse(status: true, data: cachedAyahs);
+    }
+
+    final response = await remoteDataSource.getAyahs(pagination);
+    localDataSource.cacheAyahs(response.data ?? []);
+    return response;
   }
 
   @override
   Future<BaseResponse<List<Ayah>?>> getAyahsJuz(int juzNumber) async {
-    return await remoteDataSource.getAyahsJuz(juzNumber);
+    final cachedAyahsJuz = await localDataSource.getCachedAyahsJuz(juzNumber);
+
+    Logger.logInfo("IS FUUL AYAH ${cachedAyahsJuz.isNotEmpty}");
+    if (cachedAyahsJuz.isNotEmpty) {
+      return BaseResponse(status: true, data: cachedAyahsJuz);
+    }
+
+    final response = await remoteDataSource.getAyahsJuz(juzNumber);
+    localDataSource.cacheAyahs(response.data ?? []);
+    return response;
   }
 
   @override
@@ -67,14 +83,35 @@ class QuranRepositoryImpl extends QuranRepository {
   Future<BaseResponse<List<Ayah>?>> getAyahsThroughout(
     AyahsThroughoutPagination ayahsThroughout,
   ) async {
-    return await remoteDataSource.getAyahsThroughout(ayahsThroughout);
+    final cachedAyahs =
+        await localDataSource.getCachedAyahsThroughout(ayahsThroughout);
+    if (cachedAyahs.isNotEmpty) {
+      return BaseResponse(status: true, data: cachedAyahs);
+    }
+
+    final response = await remoteDataSource.getAyahsThroughout(ayahsThroughout);
+    localDataSource.cacheAyahs(response.data ?? []);
+    return response;
   }
 
   @override
   Future<BaseResponse<List<Ayah>?>> getFullAyahs(
     AyahsThroughoutPagination ayahsThroughout,
   ) async {
-    return await remoteDataSource.getFullAyahs(ayahsThroughout);
+    final surah = await getSurah(ayahsThroughout.surat?.parseInt ?? 0);
+    final totalSurah = surah.data?.numberOfVerses?.parseInt ?? 3;
+    final mappedAyahsThroughout =
+        ayahsThroughout.copyWith(maxAyat: totalSurah, panjang: "$totalSurah");
+    final cachedAyahs =
+        await localDataSource.getCachedAyahsThroughout(mappedAyahsThroughout);
+
+    if (cachedAyahs.isNotEmpty) {
+      return BaseResponse(status: true, data: cachedAyahs);
+    }
+
+    final response = await remoteDataSource.getFullAyahs(mappedAyahsThroughout);
+    localDataSource.cacheAyahs(response.data ?? []);
+    return response;
   }
 
   @override

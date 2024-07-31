@@ -16,22 +16,69 @@ class Ayah with _$Ayah {
   const Ayah._();
 
   const factory Ayah({
+    String? id,
     String? arab,
     String? asbab,
     String? audio,
-    String? ayah,
-    String? hizb,
-    String? id,
-    String? juz,
+    String? ayah, // Original string representation
+    int? ayahInt, // Numerical representation
+    String? juz, // Original string representation
+    int? juzInt, // Numerical representation
+    String? surah, // Original string representation
+    int? surahInt, // Numerical representation
     String? latin,
     String? notes,
     String? page,
-    String? surah,
     String? text,
     String? theme,
   }) = _Ayah;
 
   Id get isarId => Isar.autoIncrement;
 
-  factory Ayah.fromJson(Map<String, dynamic> json) => _$AyahFromJson(json);
+  // Custom fromJson to handle both string and int parsing
+  factory Ayah.fromJson(Map<String, dynamic> json) {
+    // Attempt to parse integer values from string fields, fallback to null if parsing fails
+    int? parseStringToInt(String? value) {
+      if (value == null) return null;
+      return int.tryParse(value);
+    }
+
+    return Ayah(
+      arab: json['arab'] as String?,
+      id: json['id'] as String?,
+      asbab: json['asbab'] as String?,
+      audio: json['audio'] as String?,
+      ayah: json['ayah'] as String?,
+      ayahInt: parseStringToInt(json['ayah']),
+      juz: json['juz'] as String?,
+      juzInt: parseStringToInt(json['juz']),
+      surah: json['surah'] as String?,
+      surahInt: parseStringToInt(json['surah']),
+      latin: json['latin'] as String?,
+      notes: json['notes'] as String?,
+      page: json['page'] as String?,
+      text: json['text'] as String?,
+      theme: json['theme'] as String?,
+    );
+  }
+
+  // Custom toJson to ensure both string and int representations are included
+  @override
+  // ignore: override_on_non_overriding_member
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'arab': arab,
+      'asbab': asbab,
+      'audio': audio,
+      'ayah': ayah,
+      'juz': juz,
+      'surah': surah,
+      'latin': latin,
+      'notes': notes,
+      'page': page,
+      'text': text,
+      'theme': theme,
+    };
+  }
 }

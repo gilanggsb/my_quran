@@ -2,6 +2,8 @@
 //
 //     final ayahsThroughoutPagination = ayahsThroughoutPaginationFromJson(jsonString);
 
+// ignore_for_file: invalid_annotation_target
+
 import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -21,6 +23,7 @@ class AyahsThroughoutPagination with _$AyahsThroughoutPagination {
     String? surat,
     String? ayat,
     String? panjang,
+    @JsonKey(includeToJson: false)
     int? maxAyat,
   }) = _AyahsThroughoutPagination;
 
