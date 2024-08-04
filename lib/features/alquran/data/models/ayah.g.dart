@@ -37,48 +37,63 @@ const AyahSchema = CollectionSchema(
       name: r'ayah',
       type: IsarType.string,
     ),
-    r'hizb': PropertySchema(
+    r'ayahInt': PropertySchema(
       id: 4,
-      name: r'hizb',
-      type: IsarType.string,
+      name: r'ayahInt',
+      type: IsarType.long,
     ),
     r'id': PropertySchema(
       id: 5,
       name: r'id',
       type: IsarType.string,
     ),
-    r'juz': PropertySchema(
+    r'idInt': PropertySchema(
       id: 6,
+      name: r'idInt',
+      type: IsarType.long,
+    ),
+    r'juz': PropertySchema(
+      id: 7,
       name: r'juz',
       type: IsarType.string,
     ),
+    r'juzInt': PropertySchema(
+      id: 8,
+      name: r'juzInt',
+      type: IsarType.long,
+    ),
     r'latin': PropertySchema(
-      id: 7,
+      id: 9,
       name: r'latin',
       type: IsarType.string,
     ),
     r'notes': PropertySchema(
-      id: 8,
+      id: 10,
       name: r'notes',
       type: IsarType.string,
     ),
     r'page': PropertySchema(
-      id: 9,
+      id: 11,
       name: r'page',
       type: IsarType.string,
     ),
     r'surah': PropertySchema(
-      id: 10,
+      id: 12,
       name: r'surah',
       type: IsarType.string,
     ),
+    r'surahInt': PropertySchema(
+      id: 13,
+      name: r'surahInt',
+      type: IsarType.long,
+    ),
     r'text': PropertySchema(
-      id: 11,
+      id: 14,
       name: r'text',
       type: IsarType.string,
     ),
     r'theme': PropertySchema(
-      id: 12,
+      id: 15,
       name: r'theme',
       type: IsarType.string,
     )
@@ -123,12 +138,6 @@ int _ayahEstimateSize(
   }
   {
     final value = object.ayah;
-    if (value != null) {
-      bytesCount += 3 + value.length * 3;
-    }
-  }
-  {
-    final value = object.hizb;
     if (value != null) {
       bytesCount += 3 + value.length * 3;
     }
@@ -194,15 +203,18 @@ void _ayahSerialize(
   writer.writeString(offsets[1], object.asbab);
   writer.writeString(offsets[2], object.audio);
   writer.writeString(offsets[3], object.ayah);
-  writer.writeString(offsets[4], object.hizb);
+  writer.writeLong(offsets[4], object.ayahInt);
   writer.writeString(offsets[5], object.id);
-  writer.writeString(offsets[6], object.juz);
-  writer.writeString(offsets[7], object.latin);
-  writer.writeString(offsets[8], object.notes);
-  writer.writeString(offsets[9], object.page);
-  writer.writeString(offsets[10], object.surah);
-  writer.writeString(offsets[11], object.text);
-  writer.writeString(offsets[12], object.theme);
+  writer.writeLong(offsets[6], object.idInt);
+  writer.writeString(offsets[7], object.juz);
+  writer.writeLong(offsets[8], object.juzInt);
+  writer.writeString(offsets[9], object.latin);
+  writer.writeString(offsets[10], object.notes);
+  writer.writeString(offsets[11], object.page);
+  writer.writeString(offsets[12], object.surah);
+  writer.writeLong(offsets[13], object.surahInt);
+  writer.writeString(offsets[14], object.text);
+  writer.writeString(offsets[15], object.theme);
 }
 
 Ayah _ayahDeserialize(
@@ -216,15 +228,18 @@ Ayah _ayahDeserialize(
     asbab: reader.readStringOrNull(offsets[1]),
     audio: reader.readStringOrNull(offsets[2]),
     ayah: reader.readStringOrNull(offsets[3]),
-    hizb: reader.readStringOrNull(offsets[4]),
+    ayahInt: reader.readLongOrNull(offsets[4]),
     id: reader.readStringOrNull(offsets[5]),
-    juz: reader.readStringOrNull(offsets[6]),
-    latin: reader.readStringOrNull(offsets[7]),
-    notes: reader.readStringOrNull(offsets[8]),
-    page: reader.readStringOrNull(offsets[9]),
-    surah: reader.readStringOrNull(offsets[10]),
-    text: reader.readStringOrNull(offsets[11]),
-    theme: reader.readStringOrNull(offsets[12]),
+    idInt: reader.readLongOrNull(offsets[6]),
+    juz: reader.readStringOrNull(offsets[7]),
+    juzInt: reader.readLongOrNull(offsets[8]),
+    latin: reader.readStringOrNull(offsets[9]),
+    notes: reader.readStringOrNull(offsets[10]),
+    page: reader.readStringOrNull(offsets[11]),
+    surah: reader.readStringOrNull(offsets[12]),
+    surahInt: reader.readLongOrNull(offsets[13]),
+    text: reader.readStringOrNull(offsets[14]),
+    theme: reader.readStringOrNull(offsets[15]),
   );
   return object;
 }
@@ -245,15 +260,15 @@ P _ayahDeserializeProp<P>(
     case 3:
       return (reader.readStringOrNull(offset)) as P;
     case 4:
-      return (reader.readStringOrNull(offset)) as P;
+      return (reader.readLongOrNull(offset)) as P;
     case 5:
       return (reader.readStringOrNull(offset)) as P;
     case 6:
-      return (reader.readStringOrNull(offset)) as P;
+      return (reader.readLongOrNull(offset)) as P;
     case 7:
       return (reader.readStringOrNull(offset)) as P;
     case 8:
-      return (reader.readStringOrNull(offset)) as P;
+      return (reader.readLongOrNull(offset)) as P;
     case 9:
       return (reader.readStringOrNull(offset)) as P;
     case 10:
@@ -261,6 +276,12 @@ P _ayahDeserializeProp<P>(
     case 11:
       return (reader.readStringOrNull(offset)) as P;
     case 12:
+      return (reader.readStringOrNull(offset)) as P;
+    case 13:
+      return (reader.readLongOrNull(offset)) as P;
+    case 14:
+      return (reader.readStringOrNull(offset)) as P;
+    case 15:
       return (reader.readStringOrNull(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -929,146 +950,70 @@ extension AyahQueryFilter on QueryBuilder<Ayah, Ayah, QFilterCondition> {
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbIsNull() {
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> ayahIntIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
-        property: r'hizb',
+        property: r'ayahInt',
       ));
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbIsNotNull() {
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> ayahIntIsNotNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNotNull(
-        property: r'hizb',
+        property: r'ayahInt',
       ));
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbEqualTo(
-    String? value, {
-    bool caseSensitive = true,
-  }) {
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> ayahIntEqualTo(int? value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'hizb',
+        property: r'ayahInt',
         value: value,
-        caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbGreaterThan(
-    String? value, {
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> ayahIntGreaterThan(
+    int? value, {
     bool include = false,
-    bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
         include: include,
-        property: r'hizb',
+        property: r'ayahInt',
         value: value,
-        caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbLessThan(
-    String? value, {
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> ayahIntLessThan(
+    int? value, {
     bool include = false,
-    bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.lessThan(
         include: include,
-        property: r'hizb',
+        property: r'ayahInt',
         value: value,
-        caseSensitive: caseSensitive,
       ));
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbBetween(
-    String? lower,
-    String? upper, {
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> ayahIntBetween(
+    int? lower,
+    int? upper, {
     bool includeLower = true,
     bool includeUpper = true,
-    bool caseSensitive = true,
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.between(
-        property: r'hizb',
+        property: r'ayahInt',
         lower: lower,
         includeLower: includeLower,
         upper: upper,
         includeUpper: includeUpper,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbStartsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.startsWith(
-        property: r'hizb',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbEndsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.endsWith(
-        property: r'hizb',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbContains(String value,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.contains(
-        property: r'hizb',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbMatches(String pattern,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.matches(
-        property: r'hizb',
-        wildcard: pattern,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbIsEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'hizb',
-        value: '',
-      ));
-    });
-  }
-
-  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> hizbIsNotEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        property: r'hizb',
-        value: '',
       ));
     });
   }
@@ -1213,6 +1158,74 @@ extension AyahQueryFilter on QueryBuilder<Ayah, Ayah, QFilterCondition> {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'id',
         value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'idInt',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'idInt',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntEqualTo(int? value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'idInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntGreaterThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'idInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntLessThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'idInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntBetween(
+    int? lower,
+    int? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'idInt',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
       ));
     });
   }
@@ -1409,6 +1422,74 @@ extension AyahQueryFilter on QueryBuilder<Ayah, Ayah, QFilterCondition> {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'juz',
         value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> juzIntIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'juzInt',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> juzIntIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'juzInt',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> juzIntEqualTo(int? value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'juzInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> juzIntGreaterThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'juzInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> juzIntLessThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'juzInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> juzIntBetween(
+    int? lower,
+    int? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'juzInt',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
       ));
     });
   }
@@ -1989,6 +2070,74 @@ extension AyahQueryFilter on QueryBuilder<Ayah, Ayah, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> surahIntIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'surahInt',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> surahIntIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'surahInt',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> surahIntEqualTo(int? value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'surahInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> surahIntGreaterThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'surahInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> surahIntLessThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'surahInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> surahIntBetween(
+    int? lower,
+    int? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'surahInt',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+
   QueryBuilder<Ayah, Ayah, QAfterFilterCondition> textIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
@@ -2331,15 +2480,15 @@ extension AyahQuerySortBy on QueryBuilder<Ayah, Ayah, QSortBy> {
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByHizb() {
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByAyahInt() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'hizb', Sort.asc);
+      return query.addSortBy(r'ayahInt', Sort.asc);
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByHizbDesc() {
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByAyahIntDesc() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'hizb', Sort.desc);
+      return query.addSortBy(r'ayahInt', Sort.desc);
     });
   }
 
@@ -2355,6 +2504,18 @@ extension AyahQuerySortBy on QueryBuilder<Ayah, Ayah, QSortBy> {
     });
   }
 
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByIdInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'idInt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByIdIntDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'idInt', Sort.desc);
+    });
+  }
+
   QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByJuz() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'juz', Sort.asc);
@@ -2364,6 +2525,18 @@ extension AyahQuerySortBy on QueryBuilder<Ayah, Ayah, QSortBy> {
   QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByJuzDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'juz', Sort.desc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByJuzInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'juzInt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByJuzIntDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'juzInt', Sort.desc);
     });
   }
 
@@ -2412,6 +2585,18 @@ extension AyahQuerySortBy on QueryBuilder<Ayah, Ayah, QSortBy> {
   QueryBuilder<Ayah, Ayah, QAfterSortBy> sortBySurahDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'surah', Sort.desc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortBySurahInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'surahInt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortBySurahIntDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'surahInt', Sort.desc);
     });
   }
 
@@ -2489,15 +2674,15 @@ extension AyahQuerySortThenBy on QueryBuilder<Ayah, Ayah, QSortThenBy> {
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByHizb() {
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByAyahInt() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'hizb', Sort.asc);
+      return query.addSortBy(r'ayahInt', Sort.asc);
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByHizbDesc() {
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByAyahIntDesc() {
     return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'hizb', Sort.desc);
+      return query.addSortBy(r'ayahInt', Sort.desc);
     });
   }
 
@@ -2510,6 +2695,18 @@ extension AyahQuerySortThenBy on QueryBuilder<Ayah, Ayah, QSortThenBy> {
   QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByIdDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.desc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByIdInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'idInt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByIdIntDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'idInt', Sort.desc);
     });
   }
 
@@ -2534,6 +2731,18 @@ extension AyahQuerySortThenBy on QueryBuilder<Ayah, Ayah, QSortThenBy> {
   QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByJuzDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'juz', Sort.desc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByJuzInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'juzInt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByJuzIntDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'juzInt', Sort.desc);
     });
   }
 
@@ -2582,6 +2791,18 @@ extension AyahQuerySortThenBy on QueryBuilder<Ayah, Ayah, QSortThenBy> {
   QueryBuilder<Ayah, Ayah, QAfterSortBy> thenBySurahDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'surah', Sort.desc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenBySurahInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'surahInt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenBySurahIntDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'surahInt', Sort.desc);
     });
   }
 
@@ -2639,10 +2860,9 @@ extension AyahQueryWhereDistinct on QueryBuilder<Ayah, Ayah, QDistinct> {
     });
   }
 
-  QueryBuilder<Ayah, Ayah, QDistinct> distinctByHizb(
-      {bool caseSensitive = true}) {
+  QueryBuilder<Ayah, Ayah, QDistinct> distinctByAyahInt() {
     return QueryBuilder.apply(this, (query) {
-      return query.addDistinctBy(r'hizb', caseSensitive: caseSensitive);
+      return query.addDistinctBy(r'ayahInt');
     });
   }
 
@@ -2653,10 +2873,22 @@ extension AyahQueryWhereDistinct on QueryBuilder<Ayah, Ayah, QDistinct> {
     });
   }
 
+  QueryBuilder<Ayah, Ayah, QDistinct> distinctByIdInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'idInt');
+    });
+  }
+
   QueryBuilder<Ayah, Ayah, QDistinct> distinctByJuz(
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'juz', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QDistinct> distinctByJuzInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'juzInt');
     });
   }
 
@@ -2685,6 +2917,12 @@ extension AyahQueryWhereDistinct on QueryBuilder<Ayah, Ayah, QDistinct> {
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'surah', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QDistinct> distinctBySurahInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'surahInt');
     });
   }
 
@@ -2734,9 +2972,9 @@ extension AyahQueryProperty on QueryBuilder<Ayah, Ayah, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Ayah, String?, QQueryOperations> hizbProperty() {
+  QueryBuilder<Ayah, int?, QQueryOperations> ayahIntProperty() {
     return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'hizb');
+      return query.addPropertyName(r'ayahInt');
     });
   }
 
@@ -2746,9 +2984,21 @@ extension AyahQueryProperty on QueryBuilder<Ayah, Ayah, QQueryProperty> {
     });
   }
 
+  QueryBuilder<Ayah, int?, QQueryOperations> idIntProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'idInt');
+    });
+  }
+
   QueryBuilder<Ayah, String?, QQueryOperations> juzProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'juz');
+    });
+  }
+
+  QueryBuilder<Ayah, int?, QQueryOperations> juzIntProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'juzInt');
     });
   }
 
@@ -2776,6 +3026,12 @@ extension AyahQueryProperty on QueryBuilder<Ayah, Ayah, QQueryProperty> {
     });
   }
 
+  QueryBuilder<Ayah, int?, QQueryOperations> surahIntProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'surahInt');
+    });
+  }
+
   QueryBuilder<Ayah, String?, QQueryOperations> textProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'text');
@@ -2794,51 +3050,39 @@ extension AyahQueryProperty on QueryBuilder<Ayah, Ayah, QQueryProperty> {
 // **************************************************************************
 
 Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah(
+      id: json['id'] as String?,
+      idInt: (json['id_int'] as num?)?.toInt(),
       arab: json['arab'] as String?,
       asbab: json['asbab'] as String?,
       audio: json['audio'] as String?,
       ayah: json['ayah'] as String?,
-      hizb: json['hizb'] as String?,
-      id: json['id'] as String?,
+      ayahInt: (json['ayah_int'] as num?)?.toInt(),
       juz: json['juz'] as String?,
+      juzInt: (json['juz_int'] as num?)?.toInt(),
+      surah: json['surah'] as String?,
+      surahInt: (json['surah_int'] as num?)?.toInt(),
       latin: json['latin'] as String?,
       notes: json['notes'] as String?,
       page: json['page'] as String?,
-      surah: json['surah'] as String?,
       text: json['text'] as String?,
       theme: json['theme'] as String?,
     );
 
 Map<String, dynamic> _$AyahToJson(Ayah instance) => <String, dynamic>{
+      'id': instance.id,
+      'id_int': instance.idInt,
       'arab': instance.arab,
       'asbab': instance.asbab,
       'audio': instance.audio,
       'ayah': instance.ayah,
-      'hizb': instance.hizb,
-      'id': instance.id,
+      'ayah_int': instance.ayahInt,
       'juz': instance.juz,
+      'juz_int': instance.juzInt,
+      'surah': instance.surah,
+      'surah_int': instance.surahInt,
       'latin': instance.latin,
       'notes': instance.notes,
       'page': instance.page,
-      'surah': instance.surah,
-      'text': instance.text,
-      'theme': instance.theme,
-    };
-
-Map<String, dynamic> _$$AyahImplToJson(_$AyahImpl instance) =>
-    <String, dynamic>{
-      'isarId': instance.isarId,
-      'arab': instance.arab,
-      'asbab': instance.asbab,
-      'audio': instance.audio,
-      'ayah': instance.ayah,
-      'hizb': instance.hizb,
-      'id': instance.id,
-      'juz': instance.juz,
-      'latin': instance.latin,
-      'notes': instance.notes,
-      'page': instance.page,
-      'surah': instance.surah,
       'text': instance.text,
       'theme': instance.theme,
     };

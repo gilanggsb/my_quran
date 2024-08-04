@@ -27,6 +27,7 @@ class InjectorService {
     homeInjection();
     quranInjection();
     audioPlayerInjection();
+    bookmarkInjection();
   }
 
   void serviceInjection({bool isTesting = false}) {

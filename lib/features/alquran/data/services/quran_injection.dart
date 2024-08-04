@@ -104,4 +104,9 @@ void quranInjection() {
       repository: getIt(),
     ),
   );
+  getIt.registerLazySingleton<GetAyah>(
+    () => GetAyah(
+      repository: getIt(),
+    ),
+  );
 }

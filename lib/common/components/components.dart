@@ -7,6 +7,7 @@ export 'default_image.dart';
 export 'default_scaffold.dart';
 export 'default_text.dart';
 export 'default_textfield.dart';
+export 'empty_state.dart';
 export 'gradient_text.dart';
 export 'loading_overlay.dart';
 export 'my_tootip.dart';

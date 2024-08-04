@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+
 import '../common.dart';
 
 abstract class NetworkingUtils {
@@ -54,15 +55,7 @@ abstract class NetworkingUtils {
       case DioExceptionType.badResponse:
         // Assuming e.response?.data is in a JSON format that matches your BadResponse model
         if (e.response?.data != null) {
-          try {
-            BadResponse badResponse = BadResponse.fromJson(e.response?.data);
-            throw badResponse; // Return the BadResponse object
-          } on BadResponse catch (_) {
-            rethrow; // Return the BadResponse object
-          } catch (error) {
-            // If parsing fails, throw a generic error
-            throw 'Failed to parse error response';
-          }
+          throw parseBadResponse(e);
         } else {
           throw 'Server responded with an error but no data was received';
         }
@@ -91,6 +84,26 @@ abstract class NetworkingUtils {
 
       default:
         throw 'An unexpected error occurred. Please try again.';
+    }
+  }
+
+  static dynamic parseBadResponse(DioException e) {
+    try {
+      if (e.response?.statusCode == 522) {
+        throw BadResponse(
+          error: true,
+          message:
+              'Connection timed out. Please check your internet connection and try again.',
+        );
+      }
+
+      BadResponse badResponse = BadResponse.fromJson(e.response?.data);
+      throw badResponse; // Return the BadResponse object
+    } on BadResponse catch (_) {
+      rethrow; // Return the BadResponse object
+    } catch (error) {
+      // If parsing fails, throw a generic error
+      throw 'Failed to parse error response';
     }
   }
 }

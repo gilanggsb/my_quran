@@ -93,7 +93,7 @@ class DefaultText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Row(
         mainAxisSize: MainAxisSize.min,

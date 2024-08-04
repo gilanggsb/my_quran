@@ -1,3 +1,4 @@
+export 'get_ayah.dart';
 export 'get_ayahs.dart';
 export 'get_ayahs_juz.dart';
 export 'get_ayahs_throughout.dart';

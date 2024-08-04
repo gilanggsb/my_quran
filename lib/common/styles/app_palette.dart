@@ -18,12 +18,22 @@ abstract class AppPalette {
 class _Primary {
   const _Primary();
   final Color base = const Color(0xFFDA8856);
-  final Color light = const Color(0xFFFFBF8A);
+  final Color light = const Color(0xFFE5A578);
+  final Color light1 = const Color(0xFFF0C29A);
+  final Color light2 = const Color(0xFFFBDFBC);
+  final Color light3 = const Color(0xFFFDECD3);
+  final Color light4 = const Color(0xFFFEF9EA);
+  final Color dark = const Color(0xFFB06C45);
+  final Color dark1 = const Color(0xFF8C5636);
+  final Color dark2 = const Color(0xFF6D4328);
+  final Color dark3 = const Color(0xFF4F301D);
+  final Color dark4 = const Color(0xFF331F12);
 }
 
 class _GreyColors {
   const _GreyColors();
   final grey60 = const Color(0xAA292C29);
+  final grey40 = const Color(0x66292C29);
 }
 
 class _WhiteColors {
@@ -51,12 +61,15 @@ class _BlackColors {
 class _GreenColors {
   const _GreenColors();
   final base = Colors.green;
+  final light = const Color(0xFFA5D6A7);
+  final dark = const Color(0xFF388E3C);
 }
 
 class _RedColors {
   const _RedColors();
   final base = const Color(0xFFFA0000);
   final light = const Color(0xFFFA9884);
+  final dark = const Color(0xFFC62828);
 }
 
 class _BlueColors {

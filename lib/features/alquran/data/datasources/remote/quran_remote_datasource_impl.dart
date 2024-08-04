@@ -162,10 +162,15 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
     try {
       int nextAyahPagination = ayahsThroughout.maxAyat ?? 100;
       AyahsThroughoutPagination ayahsPagination = ayahsThroughout;
+
       final fullAyahs = <Ayah>[];
 
       for (int i = 0; i < nextAyahPagination; i++) {
-        final response = await getAyahsThroughout(ayahsPagination);
+        final response = await getAyahsThroughout(
+          ayahsPagination.copyWith(
+            panjang: nextAyahPagination >= 30 ? "30" : ayahsPagination.panjang,
+          ),
+        );
 
         if ((response.data ?? []).isEmpty) {
           break;

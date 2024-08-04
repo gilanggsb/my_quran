@@ -21,5 +21,4 @@ Map<String, dynamic> _$$AyahsThroughoutPaginationImplToJson(
       'surat': instance.surat,
       'ayat': instance.ayat,
       'panjang': instance.panjang,
-      'maxAyat': instance.maxAyat,
     };

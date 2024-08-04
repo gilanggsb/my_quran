@@ -93,9 +93,20 @@ class DetailAyahBottomSheet extends StatelessWidget {
       case QuranDetailMenuType.play:
         detailAyahCubit.playAyah();
         break;
+      case QuranDetailMenuType.bookmark:
+        BottomSheetManager.showCustomBottomSheet(
+          padding: const EdgeInsets.all(8),
+          child: BookmarkCategoryBottomSheet(
+            ayah: detailAyahCubit.currentAyah,
+          ),
+        );
+        break;
       case QuranDetailMenuType.readAsSurah:
-        final paramsData = detailAyahCubit.getParamsDataReadAsSurah();
-        context.pushRoute(QuranDetailRoute(params: paramsData));
+        detailAyahCubit.getParamsDataReadAsSurah().then(
+              (paramsData) =>
+                  context.pushRoute(QuranDetailRoute(params: paramsData)),
+            );
+        // context.pushRoute(QuranDetailRoute(params: paramsData));
         break;
       case QuranDetailMenuType.readAsJuz:
         final paramsData = detailAyahCubit.getParamsDataReadAsJuz();
@@ -104,7 +115,6 @@ class DetailAyahBottomSheet extends StatelessWidget {
       default:
     }
   }
-
 }
 
 final menus = [

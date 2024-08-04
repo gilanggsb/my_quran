@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../common.dart';
 
 abstract class SnackBarWidget {
@@ -6,6 +7,7 @@ abstract class SnackBarWidget {
   static void _showSnackBar(
     String message,
     Color backgroundColor, {
+    TextStyle? textStyle,
     Duration? duration,
     SnackBarAction? action,
     BuildContext? context,
@@ -16,7 +18,10 @@ abstract class SnackBarWidget {
     double? elevation,
   }) {
     final snackBar = SnackBar(
-      content: Text(message),
+      content: DefaultText(
+        message,
+        style: textStyle,
+      ),
       backgroundColor: backgroundColor,
       behavior: behavior ?? SnackBarBehavior.floating,
       duration: duration ?? const Duration(seconds: 4),
@@ -34,12 +39,17 @@ abstract class SnackBarWidget {
     String message, {
     BuildContext? context,
   }) {
-    _showSnackBar(context: context, message, Colors.green);
+    _showSnackBar(context: context, message, AppPalette.green.base);
   }
 
   // Public method for showing a failed snack bar
   static void showFailed(String message, {BuildContext? context}) {
-    _showSnackBar(context: context, message, Colors.red);
+    _showSnackBar(
+      context: context,
+      message,
+      Colors.red,
+      textStyle: AppStyle.text().copyWith(color: AppPalette.white.base),
+    );
   }
 
   // Public method for showing a neutral snack bar
@@ -47,7 +57,7 @@ abstract class SnackBarWidget {
     String message, {
     BuildContext? context,
   }) {
-    _showSnackBar(context: context, message, Colors.grey);
+    _showSnackBar(context: context, message, AppPalette.grey.grey60);
   }
 
   // Public method for showing a custom snack bar

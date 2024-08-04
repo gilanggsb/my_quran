@@ -5,6 +5,7 @@ import '../../common.dart';
 abstract class LocalDBService {
   Future<T?> init<T>();
   Future<void> write<T>(T data);
+  Future<void> writeAll<T>(List<T> data);
   Future<T?> read<T>(int id);
   Future<List<T>> readAll<T>();
   Future<void> update<T>(T data);
@@ -15,4 +16,5 @@ abstract class LocalDBService {
 
 abstract class IsarService extends LocalDBService {
   IsarCollection<T> getCollection<T>();
+  Future<T> writeTXN<T>(Future<T> Function() callback, {bool silent = false});
 }
