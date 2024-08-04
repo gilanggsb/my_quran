@@ -7,11 +7,13 @@ class BookmarkTile extends StatelessWidget {
     super.key,
     this.title,
     required this.subtitle,
-    required this.onPress,
+    this.onPress,
+    this.onDeletePress,
   });
   final String? title;
   final String subtitle;
-  final VoidCallback onPress;
+  final VoidCallback? onPress;
+  final VoidCallback? onDeletePress;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,10 @@ class BookmarkTile extends StatelessWidget {
         fontSize: 18,
       ),
       subtitle: DefaultText(subtitle),
+      trailing: IconButton(
+        icon: const Icon(Icons.delete),
+        onPressed: onDeletePress,
+      ),
     );
   }
 }

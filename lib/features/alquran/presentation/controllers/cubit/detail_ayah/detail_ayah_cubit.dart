@@ -106,7 +106,6 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
   }
 
   Surah? get surah => findSurah(currentAyah?.surah);
-  // surahs.firstWhereOrNull((surah) => surah.number == currentAyah?.surah);
 
   Surah? findSurah(String? surahId) =>
       surahs.firstWhereOrNull((surah) => surah.number == surahId);

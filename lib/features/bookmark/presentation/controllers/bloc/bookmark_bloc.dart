@@ -13,12 +13,15 @@ part 'bookmark_state.dart';
 class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
   GetBookmarks getBookmarks;
   GetAyah getAyah;
+  DeleteBookmark deleteBookmark;
   BookmarkBloc({
     required this.getBookmarks,
     required this.getAyah,
+    required this.deleteBookmark,
   }) : super(const _Initial()) {
     on<_GetData>(_getData);
     on<_GetBookmarkDetail>(_getBookmarkDetail);
+    on<_DeleteBookmark>(_deleteBookmark);
   }
 
   List<BookmarkData> bookmarks = [];
@@ -43,14 +46,11 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
 
   Future<void> _getBookmarkDetail(_GetBookmarkDetail event, emit) async {
     try {
-      // emit(const BookmarkState.loading());
       final bookmark = event.bookmark;
       final isAyahType = bookmark?.type == BookmarkType.ayah().id;
       if (isAyahType) {
         return getAyahDetail(emit, bookmark?.dataId ?? 0);
       }
-
-      // _emitLoaded(emit);
     } on ServerFailure catch (e) {
       _emitFailed(emit, e.message);
     } catch (e) {
@@ -62,12 +62,23 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
     try {
       emit(const BookmarkState.detailAyahLoading());
       final resAyah = await getAyah(ayahId);
-      // final bookmark = event.bookmark;
       if (resAyah.data == null) {
         return _emitFailed(emit, 'Ayah not found');
       }
 
       emit(BookmarkState.detailAyahLoaded(resAyah.data));
+    } on ServerFailure catch (e) {
+      _emitFailed(emit, e.message);
+    } catch (e) {
+      _emitFailed(emit, e.toString());
+    }
+  }
+
+  Future<void> _deleteBookmark(_DeleteBookmark event, emit) async {
+    try {
+      emit(const BookmarkState.detailAyahLoading());
+      await deleteBookmark(event.bookmarkId ?? 0);
+      emit(const BookmarkState.deleteBookmarkSuccess());
     } on ServerFailure catch (e) {
       _emitFailed(emit, e.message);
     } catch (e) {

@@ -14,7 +14,12 @@ class BookmarkCategoryBottomSheet extends StatelessWidget {
 
     return BlocProvider(
       create: (context) => getIt.get<BookmarkCategoryCubit>()..getData(),
-      child: BlocBuilder<BookmarkCategoryCubit, BookmarkCategoryState>(
+      child: BlocConsumer<BookmarkCategoryCubit, BookmarkCategoryState>(
+        listener: (context, state) => state.whenOrNull(
+          failed: (message) => SnackBarWidget.showFailed(message),
+          successAddToBookmark: () =>
+              SnackBarWidget.showSuccess("Success Add to bookmark"),
+        ),
         builder: (context, state) {
           final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
           final isLoading = state.whenOrNull(loading: () => true) ?? false;

@@ -10,7 +10,10 @@ class BookmarkCategoryFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BookmarkCategoryCubit, BookmarkCategoryState>(
+    return BlocConsumer<BookmarkCategoryCubit, BookmarkCategoryState>(
+      listener: (context, state) => state.whenOrNull(
+        failed: (message) => SnackBarWidget.showFailed(message),
+      ),
       builder: (context, state) {
         final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
         final isLoading = state.whenOrNull(loading: () => true) ?? false;

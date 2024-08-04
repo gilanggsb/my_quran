@@ -20,6 +20,7 @@ mixin _$BookmarkEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(int? categoryId) getData,
+    required TResult Function(int? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$BookmarkEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(int? categoryId)? getData,
+    TResult? Function(int? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$BookmarkEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(int? categoryId)? getData,
+    TResult Function(int? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) =>
@@ -42,6 +45,7 @@ mixin _$BookmarkEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
+    required TResult Function(_DeleteBookmark value) deleteBookmark,
     required TResult Function(_GetBookmarkDetail value) getBookmarkDetail,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +53,7 @@ mixin _$BookmarkEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
+    TResult? Function(_DeleteBookmark value)? deleteBookmark,
     TResult? Function(_GetBookmarkDetail value)? getBookmarkDetail,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +61,7 @@ mixin _$BookmarkEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetData value)? getData,
+    TResult Function(_DeleteBookmark value)? deleteBookmark,
     TResult Function(_GetBookmarkDetail value)? getBookmarkDetail,
     required TResult orElse(),
   }) =>
@@ -120,6 +126,7 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(int? categoryId) getData,
+    required TResult Function(int? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) {
     return started();
@@ -130,6 +137,7 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(int? categoryId)? getData,
+    TResult? Function(int? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) {
     return started?.call();
@@ -140,6 +148,7 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(int? categoryId)? getData,
+    TResult Function(int? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -154,6 +163,7 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
+    required TResult Function(_DeleteBookmark value) deleteBookmark,
     required TResult Function(_GetBookmarkDetail value) getBookmarkDetail,
   }) {
     return started(this);
@@ -164,6 +174,7 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
+    TResult? Function(_DeleteBookmark value)? deleteBookmark,
     TResult? Function(_GetBookmarkDetail value)? getBookmarkDetail,
   }) {
     return started?.call(this);
@@ -174,6 +185,7 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetData value)? getData,
+    TResult Function(_DeleteBookmark value)? deleteBookmark,
     TResult Function(_GetBookmarkDetail value)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -255,6 +267,7 @@ class _$GetDataImpl implements _GetData {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(int? categoryId) getData,
+    required TResult Function(int? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) {
     return getData(categoryId);
@@ -265,6 +278,7 @@ class _$GetDataImpl implements _GetData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(int? categoryId)? getData,
+    TResult? Function(int? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) {
     return getData?.call(categoryId);
@@ -275,6 +289,7 @@ class _$GetDataImpl implements _GetData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(int? categoryId)? getData,
+    TResult Function(int? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -289,6 +304,7 @@ class _$GetDataImpl implements _GetData {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
+    required TResult Function(_DeleteBookmark value) deleteBookmark,
     required TResult Function(_GetBookmarkDetail value) getBookmarkDetail,
   }) {
     return getData(this);
@@ -299,6 +315,7 @@ class _$GetDataImpl implements _GetData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
+    TResult? Function(_DeleteBookmark value)? deleteBookmark,
     TResult? Function(_GetBookmarkDetail value)? getBookmarkDetail,
   }) {
     return getData?.call(this);
@@ -309,6 +326,7 @@ class _$GetDataImpl implements _GetData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetData value)? getData,
+    TResult Function(_DeleteBookmark value)? deleteBookmark,
     TResult Function(_GetBookmarkDetail value)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -325,6 +343,153 @@ abstract class _GetData implements BookmarkEvent {
   int? get categoryId;
   @JsonKey(ignore: true)
   _$$GetDataImplCopyWith<_$GetDataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteBookmarkImplCopyWith<$Res> {
+  factory _$$DeleteBookmarkImplCopyWith(_$DeleteBookmarkImpl value,
+          $Res Function(_$DeleteBookmarkImpl) then) =
+      __$$DeleteBookmarkImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int? bookmarkId});
+}
+
+/// @nodoc
+class __$$DeleteBookmarkImplCopyWithImpl<$Res>
+    extends _$BookmarkEventCopyWithImpl<$Res, _$DeleteBookmarkImpl>
+    implements _$$DeleteBookmarkImplCopyWith<$Res> {
+  __$$DeleteBookmarkImplCopyWithImpl(
+      _$DeleteBookmarkImpl _value, $Res Function(_$DeleteBookmarkImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bookmarkId = freezed,
+  }) {
+    return _then(_$DeleteBookmarkImpl(
+      bookmarkId: freezed == bookmarkId
+          ? _value.bookmarkId
+          : bookmarkId // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteBookmarkImpl implements _DeleteBookmark {
+  const _$DeleteBookmarkImpl({this.bookmarkId});
+
+  @override
+  final int? bookmarkId;
+
+  @override
+  String toString() {
+    return 'BookmarkEvent.deleteBookmark(bookmarkId: $bookmarkId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteBookmarkImpl &&
+            (identical(other.bookmarkId, bookmarkId) ||
+                other.bookmarkId == bookmarkId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, bookmarkId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteBookmarkImplCopyWith<_$DeleteBookmarkImpl> get copyWith =>
+      __$$DeleteBookmarkImplCopyWithImpl<_$DeleteBookmarkImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int? categoryId) getData,
+    required TResult Function(int? bookmarkId) deleteBookmark,
+    required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
+  }) {
+    return deleteBookmark(bookmarkId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int? categoryId)? getData,
+    TResult? Function(int? bookmarkId)? deleteBookmark,
+    TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
+  }) {
+    return deleteBookmark?.call(bookmarkId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int? categoryId)? getData,
+    TResult Function(int? bookmarkId)? deleteBookmark,
+    TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
+    required TResult orElse(),
+  }) {
+    if (deleteBookmark != null) {
+      return deleteBookmark(bookmarkId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetData value) getData,
+    required TResult Function(_DeleteBookmark value) deleteBookmark,
+    required TResult Function(_GetBookmarkDetail value) getBookmarkDetail,
+  }) {
+    return deleteBookmark(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetData value)? getData,
+    TResult? Function(_DeleteBookmark value)? deleteBookmark,
+    TResult? Function(_GetBookmarkDetail value)? getBookmarkDetail,
+  }) {
+    return deleteBookmark?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetData value)? getData,
+    TResult Function(_DeleteBookmark value)? deleteBookmark,
+    TResult Function(_GetBookmarkDetail value)? getBookmarkDetail,
+    required TResult orElse(),
+  }) {
+    if (deleteBookmark != null) {
+      return deleteBookmark(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteBookmark implements BookmarkEvent {
+  const factory _DeleteBookmark({final int? bookmarkId}) = _$DeleteBookmarkImpl;
+
+  int? get bookmarkId;
+  @JsonKey(ignore: true)
+  _$$DeleteBookmarkImplCopyWith<_$DeleteBookmarkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -410,6 +575,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(int? categoryId) getData,
+    required TResult Function(int? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) {
     return getBookmarkDetail(bookmark);
@@ -420,6 +586,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(int? categoryId)? getData,
+    TResult? Function(int? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) {
     return getBookmarkDetail?.call(bookmark);
@@ -430,6 +597,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(int? categoryId)? getData,
+    TResult Function(int? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -444,6 +612,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
+    required TResult Function(_DeleteBookmark value) deleteBookmark,
     required TResult Function(_GetBookmarkDetail value) getBookmarkDetail,
   }) {
     return getBookmarkDetail(this);
@@ -454,6 +623,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
+    TResult? Function(_DeleteBookmark value)? deleteBookmark,
     TResult? Function(_GetBookmarkDetail value)? getBookmarkDetail,
   }) {
     return getBookmarkDetail?.call(this);
@@ -464,6 +634,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetData value)? getData,
+    TResult Function(_DeleteBookmark value)? deleteBookmark,
     TResult Function(_GetBookmarkDetail value)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -491,9 +662,10 @@ mixin _$BookmarkState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function(String message) failed,
     required TResult Function() detailAyahLoading,
     required TResult Function(Ayah? ayah) detailAyahLoaded,
-    required TResult Function(String message) failed,
+    required TResult Function() deleteBookmarkSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -501,9 +673,10 @@ mixin _$BookmarkState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
     TResult? Function()? detailAyahLoading,
     TResult? Function(Ayah? ayah)? detailAyahLoaded,
-    TResult? Function(String message)? failed,
+    TResult? Function()? deleteBookmarkSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -511,9 +684,10 @@ mixin _$BookmarkState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function(String message)? failed,
     TResult Function()? detailAyahLoading,
     TResult Function(Ayah? ayah)? detailAyahLoaded,
-    TResult Function(String message)? failed,
+    TResult Function()? deleteBookmarkSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -522,9 +696,11 @@ mixin _$BookmarkState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_Error value) failed,
+    required TResult Function(_DeleteBookmarkSuccess value)
+        deleteBookmarkSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -532,9 +708,10 @@ mixin _$BookmarkState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? failed,
     TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult? Function(_Error value)? failed,
+    TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -542,9 +719,10 @@ mixin _$BookmarkState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? failed,
     TResult Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult Function(_Error value)? failed,
+    TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -609,9 +787,10 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function(String message) failed,
     required TResult Function() detailAyahLoading,
     required TResult Function(Ayah? ayah) detailAyahLoaded,
-    required TResult Function(String message) failed,
+    required TResult Function() deleteBookmarkSuccess,
   }) {
     return initial();
   }
@@ -622,9 +801,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
     TResult? Function()? detailAyahLoading,
     TResult? Function(Ayah? ayah)? detailAyahLoaded,
-    TResult? Function(String message)? failed,
+    TResult? Function()? deleteBookmarkSuccess,
   }) {
     return initial?.call();
   }
@@ -635,9 +815,10 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function(String message)? failed,
     TResult Function()? detailAyahLoading,
     TResult Function(Ayah? ayah)? detailAyahLoaded,
-    TResult Function(String message)? failed,
+    TResult Function()? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -652,9 +833,11 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_Error value) failed,
+    required TResult Function(_DeleteBookmarkSuccess value)
+        deleteBookmarkSuccess,
   }) {
     return initial(this);
   }
@@ -665,9 +848,10 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? failed,
     TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult? Function(_Error value)? failed,
+    TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
   }) {
     return initial?.call(this);
   }
@@ -678,9 +862,10 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? failed,
     TResult Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult Function(_Error value)? failed,
+    TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -735,9 +920,10 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function(String message) failed,
     required TResult Function() detailAyahLoading,
     required TResult Function(Ayah? ayah) detailAyahLoaded,
-    required TResult Function(String message) failed,
+    required TResult Function() deleteBookmarkSuccess,
   }) {
     return loading();
   }
@@ -748,9 +934,10 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
     TResult? Function()? detailAyahLoading,
     TResult? Function(Ayah? ayah)? detailAyahLoaded,
-    TResult? Function(String message)? failed,
+    TResult? Function()? deleteBookmarkSuccess,
   }) {
     return loading?.call();
   }
@@ -761,9 +948,10 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function(String message)? failed,
     TResult Function()? detailAyahLoading,
     TResult Function(Ayah? ayah)? detailAyahLoaded,
-    TResult Function(String message)? failed,
+    TResult Function()? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -778,9 +966,11 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_Error value) failed,
+    required TResult Function(_DeleteBookmarkSuccess value)
+        deleteBookmarkSuccess,
   }) {
     return loading(this);
   }
@@ -791,9 +981,10 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? failed,
     TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult? Function(_Error value)? failed,
+    TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
   }) {
     return loading?.call(this);
   }
@@ -804,9 +995,10 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? failed,
     TResult Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult Function(_Error value)? failed,
+    TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -861,9 +1053,10 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function(String message) failed,
     required TResult Function() detailAyahLoading,
     required TResult Function(Ayah? ayah) detailAyahLoaded,
-    required TResult Function(String message) failed,
+    required TResult Function() deleteBookmarkSuccess,
   }) {
     return loaded();
   }
@@ -874,9 +1067,10 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
     TResult? Function()? detailAyahLoading,
     TResult? Function(Ayah? ayah)? detailAyahLoaded,
-    TResult? Function(String message)? failed,
+    TResult? Function()? deleteBookmarkSuccess,
   }) {
     return loaded?.call();
   }
@@ -887,9 +1081,10 @@ class _$LoadedImpl implements _Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function(String message)? failed,
     TResult Function()? detailAyahLoading,
     TResult Function(Ayah? ayah)? detailAyahLoaded,
-    TResult Function(String message)? failed,
+    TResult Function()? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -904,9 +1099,11 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_Error value) failed,
+    required TResult Function(_DeleteBookmarkSuccess value)
+        deleteBookmarkSuccess,
   }) {
     return loaded(this);
   }
@@ -917,9 +1114,10 @@ class _$LoadedImpl implements _Loaded {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? failed,
     TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult? Function(_Error value)? failed,
+    TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
   }) {
     return loaded?.call(this);
   }
@@ -930,9 +1128,10 @@ class _$LoadedImpl implements _Loaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? failed,
     TResult Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult Function(_Error value)? failed,
+    TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -944,6 +1143,170 @@ class _$LoadedImpl implements _Loaded {
 
 abstract class _Loaded implements BookmarkState {
   const factory _Loaded() = _$LoadedImpl;
+}
+
+/// @nodoc
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$BookmarkStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$ErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorImpl implements _Error {
+  const _$ErrorImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'BookmarkState.failed(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function(String message) failed,
+    required TResult Function() detailAyahLoading,
+    required TResult Function(Ayah? ayah) detailAyahLoaded,
+    required TResult Function() deleteBookmarkSuccess,
+  }) {
+    return failed(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
+    TResult? Function()? detailAyahLoading,
+    TResult? Function(Ayah? ayah)? detailAyahLoaded,
+    TResult? Function()? deleteBookmarkSuccess,
+  }) {
+    return failed?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function(String message)? failed,
+    TResult Function()? detailAyahLoading,
+    TResult Function(Ayah? ayah)? detailAyahLoaded,
+    TResult Function()? deleteBookmarkSuccess,
+    required TResult orElse(),
+  }) {
+    if (failed != null) {
+      return failed(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) failed,
+    required TResult Function(_DetailAyahLoading value) detailAyahLoading,
+    required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
+    required TResult Function(_DeleteBookmarkSuccess value)
+        deleteBookmarkSuccess,
+  }) {
+    return failed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? failed,
+    TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
+    TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
+    TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? failed,
+    TResult Function(_DetailAyahLoading value)? detailAyahLoading,
+    TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
+    TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
+    required TResult orElse(),
+  }) {
+    if (failed != null) {
+      return failed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Error implements BookmarkState {
+  const factory _Error(final String message) = _$ErrorImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -987,9 +1350,10 @@ class _$DetailAyahLoadingImpl implements _DetailAyahLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function(String message) failed,
     required TResult Function() detailAyahLoading,
     required TResult Function(Ayah? ayah) detailAyahLoaded,
-    required TResult Function(String message) failed,
+    required TResult Function() deleteBookmarkSuccess,
   }) {
     return detailAyahLoading();
   }
@@ -1000,9 +1364,10 @@ class _$DetailAyahLoadingImpl implements _DetailAyahLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
     TResult? Function()? detailAyahLoading,
     TResult? Function(Ayah? ayah)? detailAyahLoaded,
-    TResult? Function(String message)? failed,
+    TResult? Function()? deleteBookmarkSuccess,
   }) {
     return detailAyahLoading?.call();
   }
@@ -1013,9 +1378,10 @@ class _$DetailAyahLoadingImpl implements _DetailAyahLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function(String message)? failed,
     TResult Function()? detailAyahLoading,
     TResult Function(Ayah? ayah)? detailAyahLoaded,
-    TResult Function(String message)? failed,
+    TResult Function()? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (detailAyahLoading != null) {
@@ -1030,9 +1396,11 @@ class _$DetailAyahLoadingImpl implements _DetailAyahLoading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_Error value) failed,
+    required TResult Function(_DeleteBookmarkSuccess value)
+        deleteBookmarkSuccess,
   }) {
     return detailAyahLoading(this);
   }
@@ -1043,9 +1411,10 @@ class _$DetailAyahLoadingImpl implements _DetailAyahLoading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? failed,
     TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult? Function(_Error value)? failed,
+    TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
   }) {
     return detailAyahLoading?.call(this);
   }
@@ -1056,9 +1425,10 @@ class _$DetailAyahLoadingImpl implements _DetailAyahLoading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? failed,
     TResult Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult Function(_Error value)? failed,
+    TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (detailAyahLoading != null) {
@@ -1154,9 +1524,10 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function(String message) failed,
     required TResult Function() detailAyahLoading,
     required TResult Function(Ayah? ayah) detailAyahLoaded,
-    required TResult Function(String message) failed,
+    required TResult Function() deleteBookmarkSuccess,
   }) {
     return detailAyahLoaded(ayah);
   }
@@ -1167,9 +1538,10 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
     TResult? Function()? detailAyahLoading,
     TResult? Function(Ayah? ayah)? detailAyahLoaded,
-    TResult? Function(String message)? failed,
+    TResult? Function()? deleteBookmarkSuccess,
   }) {
     return detailAyahLoaded?.call(ayah);
   }
@@ -1180,9 +1552,10 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function(String message)? failed,
     TResult Function()? detailAyahLoading,
     TResult Function(Ayah? ayah)? detailAyahLoaded,
-    TResult Function(String message)? failed,
+    TResult Function()? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (detailAyahLoaded != null) {
@@ -1197,9 +1570,11 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_Error value) failed,
+    required TResult Function(_DeleteBookmarkSuccess value)
+        deleteBookmarkSuccess,
   }) {
     return detailAyahLoaded(this);
   }
@@ -1210,9 +1585,10 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? failed,
     TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult? Function(_Error value)? failed,
+    TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
   }) {
     return detailAyahLoaded?.call(this);
   }
@@ -1223,9 +1599,10 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? failed,
     TResult Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult Function(_Error value)? failed,
+    TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
     if (detailAyahLoaded != null) {
@@ -1245,65 +1622,41 @@ abstract class _DetailAyahLoaded implements BookmarkState {
 }
 
 /// @nodoc
-abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
+abstract class _$$DeleteBookmarkSuccessImplCopyWith<$Res> {
+  factory _$$DeleteBookmarkSuccessImplCopyWith(
+          _$DeleteBookmarkSuccessImpl value,
+          $Res Function(_$DeleteBookmarkSuccessImpl) then) =
+      __$$DeleteBookmarkSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$BookmarkStateCopyWithImpl<$Res, _$ErrorImpl>
-    implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+class __$$DeleteBookmarkSuccessImplCopyWithImpl<$Res>
+    extends _$BookmarkStateCopyWithImpl<$Res, _$DeleteBookmarkSuccessImpl>
+    implements _$$DeleteBookmarkSuccessImplCopyWith<$Res> {
+  __$$DeleteBookmarkSuccessImplCopyWithImpl(_$DeleteBookmarkSuccessImpl _value,
+      $Res Function(_$DeleteBookmarkSuccessImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ErrorImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$ErrorImpl implements _Error {
-  const _$ErrorImpl(this.message);
-
-  @override
-  final String message;
+class _$DeleteBookmarkSuccessImpl implements _DeleteBookmarkSuccess {
+  const _$DeleteBookmarkSuccessImpl();
 
   @override
   String toString() {
-    return 'BookmarkState.failed(message: $message)';
+    return 'BookmarkState.deleteBookmarkSuccess()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorImpl &&
-            (identical(other.message, message) || other.message == message));
+            other is _$DeleteBookmarkSuccessImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -1311,11 +1664,12 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() loaded,
+    required TResult Function(String message) failed,
     required TResult Function() detailAyahLoading,
     required TResult Function(Ayah? ayah) detailAyahLoaded,
-    required TResult Function(String message) failed,
+    required TResult Function() deleteBookmarkSuccess,
   }) {
-    return failed(message);
+    return deleteBookmarkSuccess();
   }
 
   @override
@@ -1324,11 +1678,12 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
+    TResult? Function(String message)? failed,
     TResult? Function()? detailAyahLoading,
     TResult? Function(Ayah? ayah)? detailAyahLoaded,
-    TResult? Function(String message)? failed,
+    TResult? Function()? deleteBookmarkSuccess,
   }) {
-    return failed?.call(message);
+    return deleteBookmarkSuccess?.call();
   }
 
   @override
@@ -1337,13 +1692,14 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? loaded,
+    TResult Function(String message)? failed,
     TResult Function()? detailAyahLoading,
     TResult Function(Ayah? ayah)? detailAyahLoaded,
-    TResult Function(String message)? failed,
+    TResult Function()? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
-    if (failed != null) {
-      return failed(message);
+    if (deleteBookmarkSuccess != null) {
+      return deleteBookmarkSuccess();
     }
     return orElse();
   }
@@ -1354,11 +1710,13 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_Error value) failed,
+    required TResult Function(_DeleteBookmarkSuccess value)
+        deleteBookmarkSuccess,
   }) {
-    return failed(this);
+    return deleteBookmarkSuccess(this);
   }
 
   @override
@@ -1367,11 +1725,12 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? failed,
     TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult? Function(_Error value)? failed,
+    TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
   }) {
-    return failed?.call(this);
+    return deleteBookmarkSuccess?.call(this);
   }
 
   @override
@@ -1380,23 +1739,19 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? failed,
     TResult Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
-    TResult Function(_Error value)? failed,
+    TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
     required TResult orElse(),
   }) {
-    if (failed != null) {
-      return failed(this);
+    if (deleteBookmarkSuccess != null) {
+      return deleteBookmarkSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _Error implements BookmarkState {
-  const factory _Error(final String message) = _$ErrorImpl;
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _DeleteBookmarkSuccess implements BookmarkState {
+  const factory _DeleteBookmarkSuccess() = _$DeleteBookmarkSuccessImpl;
 }

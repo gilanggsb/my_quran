@@ -8,4 +8,5 @@ class BookmarkState with _$BookmarkState {
   const factory BookmarkState.failed(String message) = _Error;
   const factory BookmarkState.detailAyahLoading() = _DetailAyahLoading;
   const factory BookmarkState.detailAyahLoaded(Ayah? ayah) = _DetailAyahLoaded;
+  const factory BookmarkState.deleteBookmarkSuccess() = _DeleteBookmarkSuccess;
 }

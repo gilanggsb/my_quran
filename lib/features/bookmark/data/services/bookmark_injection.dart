@@ -7,6 +7,7 @@ void bookmarkInjection() {
     () => BookmarkBloc(
       getBookmarks: getIt(),
       getAyah: getIt(),
+      deleteBookmark: getIt(),
     ),
   );
   getIt.registerFactory<BookmarkCategoryCubit>(

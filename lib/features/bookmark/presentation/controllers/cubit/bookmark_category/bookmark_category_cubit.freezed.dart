@@ -22,6 +22,7 @@ mixin _$BookmarkCategoryState {
     required TResult Function() loading,
     required TResult Function() updateState,
     required TResult Function() loaded,
+    required TResult Function() successAddToBookmark,
     required TResult Function(String message) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +32,7 @@ mixin _$BookmarkCategoryState {
     TResult? Function()? loading,
     TResult? Function()? updateState,
     TResult? Function()? loaded,
+    TResult? Function()? successAddToBookmark,
     TResult? Function(String message)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +42,7 @@ mixin _$BookmarkCategoryState {
     TResult Function()? loading,
     TResult Function()? updateState,
     TResult Function()? loaded,
+    TResult Function()? successAddToBookmark,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) =>
@@ -49,7 +52,8 @@ mixin _$BookmarkCategoryState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_LOaded value) loaded,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
     required TResult Function(_Failed value) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -58,7 +62,8 @@ mixin _$BookmarkCategoryState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_LOaded value)? loaded,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult? Function(_Failed value)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,7 +72,8 @@ mixin _$BookmarkCategoryState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_UpdateState value)? updateState,
-    TResult Function(_LOaded value)? loaded,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) =>
@@ -135,6 +141,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function() updateState,
     required TResult Function() loaded,
+    required TResult Function() successAddToBookmark,
     required TResult Function(String message) failed,
   }) {
     return initial();
@@ -147,6 +154,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function()? updateState,
     TResult? Function()? loaded,
+    TResult? Function()? successAddToBookmark,
     TResult? Function(String message)? failed,
   }) {
     return initial?.call();
@@ -159,6 +167,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function()? updateState,
     TResult Function()? loaded,
+    TResult Function()? successAddToBookmark,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -174,7 +183,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_LOaded value) loaded,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
     required TResult Function(_Failed value) failed,
   }) {
     return initial(this);
@@ -186,7 +196,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_LOaded value)? loaded,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult? Function(_Failed value)? failed,
   }) {
     return initial?.call(this);
@@ -198,7 +209,8 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_UpdateState value)? updateState,
-    TResult Function(_LOaded value)? loaded,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -255,6 +267,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() loading,
     required TResult Function() updateState,
     required TResult Function() loaded,
+    required TResult Function() successAddToBookmark,
     required TResult Function(String message) failed,
   }) {
     return loading();
@@ -267,6 +280,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? loading,
     TResult? Function()? updateState,
     TResult? Function()? loaded,
+    TResult? Function()? successAddToBookmark,
     TResult? Function(String message)? failed,
   }) {
     return loading?.call();
@@ -279,6 +293,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? loading,
     TResult Function()? updateState,
     TResult Function()? loaded,
+    TResult Function()? successAddToBookmark,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -294,7 +309,8 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_LOaded value) loaded,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
     required TResult Function(_Failed value) failed,
   }) {
     return loading(this);
@@ -306,7 +322,8 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_LOaded value)? loaded,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult? Function(_Failed value)? failed,
   }) {
     return loading?.call(this);
@@ -318,7 +335,8 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_UpdateState value)? updateState,
-    TResult Function(_LOaded value)? loaded,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -375,6 +393,7 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function() loading,
     required TResult Function() updateState,
     required TResult Function() loaded,
+    required TResult Function() successAddToBookmark,
     required TResult Function(String message) failed,
   }) {
     return updateState();
@@ -387,6 +406,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function()? loading,
     TResult? Function()? updateState,
     TResult? Function()? loaded,
+    TResult? Function()? successAddToBookmark,
     TResult? Function(String message)? failed,
   }) {
     return updateState?.call();
@@ -399,6 +419,7 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function()? loading,
     TResult Function()? updateState,
     TResult Function()? loaded,
+    TResult Function()? successAddToBookmark,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -414,7 +435,8 @@ class _$UpdateStateImpl implements _UpdateState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_LOaded value) loaded,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
     required TResult Function(_Failed value) failed,
   }) {
     return updateState(this);
@@ -426,7 +448,8 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_LOaded value)? loaded,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult? Function(_Failed value)? failed,
   }) {
     return updateState?.call(this);
@@ -438,7 +461,8 @@ class _$UpdateStateImpl implements _UpdateState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_UpdateState value)? updateState,
-    TResult Function(_LOaded value)? loaded,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -454,25 +478,25 @@ abstract class _UpdateState implements BookmarkCategoryState {
 }
 
 /// @nodoc
-abstract class _$$LOadedImplCopyWith<$Res> {
-  factory _$$LOadedImplCopyWith(
-          _$LOadedImpl value, $Res Function(_$LOadedImpl) then) =
-      __$$LOadedImplCopyWithImpl<$Res>;
+abstract class _$$LoadedImplCopyWith<$Res> {
+  factory _$$LoadedImplCopyWith(
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LOadedImplCopyWithImpl<$Res>
-    extends _$BookmarkCategoryStateCopyWithImpl<$Res, _$LOadedImpl>
-    implements _$$LOadedImplCopyWith<$Res> {
-  __$$LOadedImplCopyWithImpl(
-      _$LOadedImpl _value, $Res Function(_$LOadedImpl) _then)
+class __$$LoadedImplCopyWithImpl<$Res>
+    extends _$BookmarkCategoryStateCopyWithImpl<$Res, _$LoadedImpl>
+    implements _$$LoadedImplCopyWith<$Res> {
+  __$$LoadedImplCopyWithImpl(
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LOadedImpl implements _LOaded {
-  const _$LOadedImpl();
+class _$LoadedImpl implements _Loaded {
+  const _$LoadedImpl();
 
   @override
   String toString() {
@@ -482,7 +506,7 @@ class _$LOadedImpl implements _LOaded {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LOadedImpl);
+        (other.runtimeType == runtimeType && other is _$LoadedImpl);
   }
 
   @override
@@ -495,6 +519,7 @@ class _$LOadedImpl implements _LOaded {
     required TResult Function() loading,
     required TResult Function() updateState,
     required TResult Function() loaded,
+    required TResult Function() successAddToBookmark,
     required TResult Function(String message) failed,
   }) {
     return loaded();
@@ -507,6 +532,7 @@ class _$LOadedImpl implements _LOaded {
     TResult? Function()? loading,
     TResult? Function()? updateState,
     TResult? Function()? loaded,
+    TResult? Function()? successAddToBookmark,
     TResult? Function(String message)? failed,
   }) {
     return loaded?.call();
@@ -519,6 +545,7 @@ class _$LOadedImpl implements _LOaded {
     TResult Function()? loading,
     TResult Function()? updateState,
     TResult Function()? loaded,
+    TResult Function()? successAddToBookmark,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -534,7 +561,8 @@ class _$LOadedImpl implements _LOaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_LOaded value) loaded,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
     required TResult Function(_Failed value) failed,
   }) {
     return loaded(this);
@@ -546,7 +574,8 @@ class _$LOadedImpl implements _LOaded {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_LOaded value)? loaded,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult? Function(_Failed value)? failed,
   }) {
     return loaded?.call(this);
@@ -558,7 +587,8 @@ class _$LOadedImpl implements _LOaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_UpdateState value)? updateState,
-    TResult Function(_LOaded value)? loaded,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -569,8 +599,136 @@ class _$LOadedImpl implements _LOaded {
   }
 }
 
-abstract class _LOaded implements BookmarkCategoryState {
-  const factory _LOaded() = _$LOadedImpl;
+abstract class _Loaded implements BookmarkCategoryState {
+  const factory _Loaded() = _$LoadedImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessAddToBookmarkImplCopyWith<$Res> {
+  factory _$$SuccessAddToBookmarkImplCopyWith(_$SuccessAddToBookmarkImpl value,
+          $Res Function(_$SuccessAddToBookmarkImpl) then) =
+      __$$SuccessAddToBookmarkImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessAddToBookmarkImplCopyWithImpl<$Res>
+    extends _$BookmarkCategoryStateCopyWithImpl<$Res,
+        _$SuccessAddToBookmarkImpl>
+    implements _$$SuccessAddToBookmarkImplCopyWith<$Res> {
+  __$$SuccessAddToBookmarkImplCopyWithImpl(_$SuccessAddToBookmarkImpl _value,
+      $Res Function(_$SuccessAddToBookmarkImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SuccessAddToBookmarkImpl implements _SuccessAddToBookmark {
+  const _$SuccessAddToBookmarkImpl();
+
+  @override
+  String toString() {
+    return 'BookmarkCategoryState.successAddToBookmark()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessAddToBookmarkImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() updateState,
+    required TResult Function() loaded,
+    required TResult Function() successAddToBookmark,
+    required TResult Function(String message) failed,
+  }) {
+    return successAddToBookmark();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? updateState,
+    TResult? Function()? loaded,
+    TResult? Function()? successAddToBookmark,
+    TResult? Function(String message)? failed,
+  }) {
+    return successAddToBookmark?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? updateState,
+    TResult Function()? loaded,
+    TResult Function()? successAddToBookmark,
+    TResult Function(String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (successAddToBookmark != null) {
+      return successAddToBookmark();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_UpdateState value) updateState,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return successAddToBookmark(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_UpdateState value)? updateState,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return successAddToBookmark?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_UpdateState value)? updateState,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (successAddToBookmark != null) {
+      return successAddToBookmark(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessAddToBookmark implements BookmarkCategoryState {
+  const factory _SuccessAddToBookmark() = _$SuccessAddToBookmarkImpl;
 }
 
 /// @nodoc
@@ -641,6 +799,7 @@ class _$FailedImpl implements _Failed {
     required TResult Function() loading,
     required TResult Function() updateState,
     required TResult Function() loaded,
+    required TResult Function() successAddToBookmark,
     required TResult Function(String message) failed,
   }) {
     return failed(message);
@@ -653,6 +812,7 @@ class _$FailedImpl implements _Failed {
     TResult? Function()? loading,
     TResult? Function()? updateState,
     TResult? Function()? loaded,
+    TResult? Function()? successAddToBookmark,
     TResult? Function(String message)? failed,
   }) {
     return failed?.call(message);
@@ -665,6 +825,7 @@ class _$FailedImpl implements _Failed {
     TResult Function()? loading,
     TResult Function()? updateState,
     TResult Function()? loaded,
+    TResult Function()? successAddToBookmark,
     TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
@@ -680,7 +841,8 @@ class _$FailedImpl implements _Failed {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_LOaded value) loaded,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
     required TResult Function(_Failed value) failed,
   }) {
     return failed(this);
@@ -692,7 +854,8 @@ class _$FailedImpl implements _Failed {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_LOaded value)? loaded,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult? Function(_Failed value)? failed,
   }) {
     return failed?.call(this);
@@ -704,7 +867,8 @@ class _$FailedImpl implements _Failed {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_UpdateState value)? updateState,
-    TResult Function(_LOaded value)? loaded,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {

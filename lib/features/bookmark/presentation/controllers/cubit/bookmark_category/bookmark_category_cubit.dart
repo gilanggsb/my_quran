@@ -92,12 +92,13 @@ class BookmarkCategoryCubit extends Cubit<BookmarkCategoryState> {
         categoryId: category?.id ?? 0,
         dataId: ayah?.idInt ?? 0,
         id: DateTime.now().microsecondsSinceEpoch,
-        title: resSurahs.data?.nameId ?? '',
+        title: "QS. ${resSurahs.data?.nameId ?? ''}: Ayat ${ayah?.ayah ?? ''}",
         subtitle: ayah?.arab,
         type: BookmarkType.ayah().id,
       );
       await addBookmark(bookmarkData);
-      _emitLoaded();
+      // _emitLoaded();
+      emit(const BookmarkCategoryState.successAddToBookmark());
     } on ServerFailure catch (e) {
       _emitFailed(e.message);
     } catch (e) {

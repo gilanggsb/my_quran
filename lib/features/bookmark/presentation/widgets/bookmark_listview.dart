@@ -22,11 +22,16 @@ class BookmarkListView extends StatelessWidget {
       },
       child: BlocConsumer<BookmarkBloc, BookmarkState>(
         listener: (context, state) {
-          final detailAyah =
-              state.whenOrNull(detailAyahLoaded: (detailAyah) => detailAyah);
-          if (detailAyah != null) {
-            return onDetailAyahLoaded(detailAyah);
-          }
+          final bookmarkBloc = context.read<BookmarkBloc>();
+
+          state.whenOrNull(
+            detailAyahLoaded: (detailAyah) => onDetailAyahLoaded(detailAyah!),
+            failed: (message) => SnackBarWidget.showFailed(message),
+            deleteBookmarkSuccess: () {
+              SnackBarWidget.showSuccess("Success delete bookmark");
+              bookmarkBloc.add(const BookmarkEvent.getData());
+            },
+          );
         },
         builder: (context, state) {
           final bookmarkBloc = context.read<BookmarkBloc>();
@@ -46,17 +51,27 @@ class BookmarkListView extends StatelessWidget {
                   )
                 : ListView.separated(
                     itemCount: bookmarks.length,
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     separatorBuilder: (context, index) => const Divider(),
                     itemBuilder: (context, index) {
                       final bookmark = bookmarks[index];
-                      return BookmarkTile(
-                        title: bookmark.title,
-                        subtitle: bookmark.subtitle ?? '',
-                        onPress: () => onBookmarkDataPress(
-                          bookmarkBloc: bookmarkBloc,
-                          bookmark: bookmark,
-                        ),
+                      return Column(
+                        children: [
+                          BookmarkTile(
+                            title: bookmark.title,
+                            subtitle: bookmark.subtitle ?? '',
+                            onPress: () => onBookmarkDataPress(
+                              bookmarkBloc: bookmarkBloc,
+                              bookmark: bookmark,
+                            ),
+                            onDeletePress: () => bookmarkBloc.add(
+                              BookmarkEvent.deleteBookmark(
+                                bookmarkId: bookmark.id,
+                              ),
+                            ),
+                          ),
+                        ],
                       );
                     },
                   ).paddingSymmetric(
@@ -68,7 +83,8 @@ class BookmarkListView extends StatelessWidget {
     );
   }
 
-  void onDetailAyahLoaded(Ayah ayah) {
+  void onDetailAyahLoaded(Ayah? ayah) {
+    if (ayah == null) return;
     final lastReadAyah = LastReadAyah(ayah: ayah);
     final params = QuranDetailParams(
       detailType: QuranDetailTypeEnum.bySurahs,

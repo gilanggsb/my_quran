@@ -64,7 +64,11 @@ class BookmarkLocalDataSourceImpl extends BookmarkLocalDataSource {
   Future<BaseResponse<bool>> deleteBookmark(int bookmarkId) async {
     try {
       final bookmarkCollection = localDBService.getCollection<BookmarkData>();
-      await bookmarkCollection.filter().idEqualTo(bookmarkId).deleteAll();
+      final deleteBookmark =
+          bookmarkCollection.filter().idEqualTo(bookmarkId).deleteAll;
+      await localDBService.writeTXN(
+        () async => await deleteBookmark(),
+      );
       return BaseResponse.success<bool>();
     } on String catch (_) {
       rethrow;
