@@ -23,4 +23,18 @@ class BaseResponse<T> with _$BaseResponse<T> {
   ) {
     return _$BaseResponseFromJson<T>(json, fromJsonT);
   }
+
+  static BaseResponse<T> success<T>({T? data, String? message}) =>
+      BaseResponse<T>(
+        data: data,
+        status: true,
+        message: "Success",
+      );
+
+  static BaseResponse<T> failed<T>({T? data, String? message}) =>
+      BaseResponse<T>(
+        data: data,
+        status: false,
+        message: message,
+      );
 }

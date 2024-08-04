@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Ayah {
   String? get id => throw _privateConstructorUsedError;
+  int? get idInt => throw _privateConstructorUsedError;
   String? get arab => throw _privateConstructorUsedError;
   String? get asbab => throw _privateConstructorUsedError;
   String? get audio => throw _privateConstructorUsedError;
@@ -49,6 +50,7 @@ abstract class $AyahCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
+      int? idInt,
       String? arab,
       String? asbab,
       String? audio,
@@ -79,6 +81,7 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
   @override
   $Res call({
     Object? id = freezed,
+    Object? idInt = freezed,
     Object? arab = freezed,
     Object? asbab = freezed,
     Object? audio = freezed,
@@ -99,6 +102,10 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
+      idInt: freezed == idInt
+          ? _value.idInt
+          : idInt // ignore: cast_nullable_to_non_nullable
+              as int?,
       arab: freezed == arab
           ? _value.arab
           : arab // ignore: cast_nullable_to_non_nullable
@@ -168,6 +175,7 @@ abstract class _$$AyahImplCopyWith<$Res> implements $AyahCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
+      int? idInt,
       String? arab,
       String? asbab,
       String? audio,
@@ -195,6 +203,7 @@ class __$$AyahImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? idInt = freezed,
     Object? arab = freezed,
     Object? asbab = freezed,
     Object? audio = freezed,
@@ -215,6 +224,10 @@ class __$$AyahImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
+      idInt: freezed == idInt
+          ? _value.idInt
+          : idInt // ignore: cast_nullable_to_non_nullable
+              as int?,
       arab: freezed == arab
           ? _value.arab
           : arab // ignore: cast_nullable_to_non_nullable
@@ -280,6 +293,7 @@ class __$$AyahImplCopyWithImpl<$Res>
 class _$AyahImpl extends _Ayah {
   const _$AyahImpl(
       {this.id,
+      this.idInt,
       this.arab,
       this.asbab,
       this.audio,
@@ -298,6 +312,8 @@ class _$AyahImpl extends _Ayah {
 
   @override
   final String? id;
+  @override
+  final int? idInt;
   @override
   final String? arab;
   @override
@@ -335,7 +351,7 @@ class _$AyahImpl extends _Ayah {
 
   @override
   String toString() {
-    return 'Ayah(id: $id, arab: $arab, asbab: $asbab, audio: $audio, ayah: $ayah, ayahInt: $ayahInt, juz: $juz, juzInt: $juzInt, surah: $surah, surahInt: $surahInt, latin: $latin, notes: $notes, page: $page, text: $text, theme: $theme)';
+    return 'Ayah(id: $id, idInt: $idInt, arab: $arab, asbab: $asbab, audio: $audio, ayah: $ayah, ayahInt: $ayahInt, juz: $juz, juzInt: $juzInt, surah: $surah, surahInt: $surahInt, latin: $latin, notes: $notes, page: $page, text: $text, theme: $theme)';
   }
 
   @override
@@ -344,6 +360,7 @@ class _$AyahImpl extends _Ayah {
         (other.runtimeType == runtimeType &&
             other is _$AyahImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.idInt, idInt) || other.idInt == idInt) &&
             (identical(other.arab, arab) || other.arab == arab) &&
             (identical(other.asbab, asbab) || other.asbab == asbab) &&
             (identical(other.audio, audio) || other.audio == audio) &&
@@ -362,8 +379,24 @@ class _$AyahImpl extends _Ayah {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, arab, asbab, audio, ayah,
-      ayahInt, juz, juzInt, surah, surahInt, latin, notes, page, text, theme);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      idInt,
+      arab,
+      asbab,
+      audio,
+      ayah,
+      ayahInt,
+      juz,
+      juzInt,
+      surah,
+      surahInt,
+      latin,
+      notes,
+      page,
+      text,
+      theme);
 
   @JsonKey(ignore: true)
   @override
@@ -375,6 +408,7 @@ class _$AyahImpl extends _Ayah {
 abstract class _Ayah extends Ayah {
   const factory _Ayah(
       {final String? id,
+      final int? idInt,
       final String? arab,
       final String? asbab,
       final String? audio,
@@ -393,6 +427,8 @@ abstract class _Ayah extends Ayah {
 
   @override
   String? get id;
+  @override
+  int? get idInt;
   @override
   String? get arab;
   @override

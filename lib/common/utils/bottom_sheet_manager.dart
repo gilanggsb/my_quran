@@ -119,6 +119,7 @@ class BottomSheetManager {
     bool enableDrag = true,
     bool? showDragHandle,
     double? height,
+    EdgeInsets? padding,
     VoidCallback? onClose,
   }) {
     isBottomSheetShownNotifier.value = true;
@@ -134,7 +135,7 @@ class BottomSheetManager {
       height: height,
       onClose: onClose,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: padding ?? const EdgeInsets.all(16.0),
         child: child,
       ),
     );
@@ -247,7 +248,6 @@ class BottomSheetManager {
 
   static void closeCurrentBottomSheet({BuildContext? context}) {
     Navigator.pop(context ?? globalContext);
-    // isBottomSheetShownNotifier.value = false;
   }
 
   static bool isBottomSheetShown() {

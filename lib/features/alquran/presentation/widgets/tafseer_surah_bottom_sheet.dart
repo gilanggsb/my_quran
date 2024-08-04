@@ -10,6 +10,7 @@ class TafseerSurahBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final surah = quranDetailCubit.surah;
+    final bgColor = context.getColorExt(AppColorType.background);
     return SizedBox(
       width: context.getWidth,
       child: CustomScrollView(
@@ -20,10 +21,12 @@ class TafseerSurahBottomSheet extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontSize: 24,
             ),
-            backgroundColor: context.getColorExt(AppColorType.background),
+            backgroundColor: bgColor,
+            shadowColor: bgColor,
+            foregroundColor: bgColor,
+            surfaceTintColor: bgColor,
             automaticallyImplyLeading: false,
             pinned: true,
-            shadowColor: context.getColorExt(AppColorType.background),
           ),
           SliverToBoxAdapter(
             child: DefaultText(

@@ -41,5 +41,9 @@ class AppRouter extends $AppRouter {
           path: RouteName.quranDetail.pathName,
           page: QuranDetailRoute.page,
         ),
+        AutoRoute(
+          path: RouteName.bookmark.pathName,
+          page: BookmarkRoute.page,
+        ),
       ];
 }

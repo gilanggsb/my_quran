@@ -140,6 +140,32 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
       ) as _i4.Future<_i2.BaseResponse<_i3.Juz?>>);
 
   @override
+  _i4.Future<_i2.BaseResponse<_i3.Ayah?>> getAyah(int? ayahId) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getAyah,
+          [ayahId],
+        ),
+        returnValue: _i4.Future<_i2.BaseResponse<_i3.Ayah?>>.value(
+            _FakeBaseResponse_0<_i3.Ayah?>(
+          this,
+          Invocation.method(
+            #getAyah,
+            [ayahId],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i4.Future<_i2.BaseResponse<_i3.Ayah?>>.value(
+                _FakeBaseResponse_0<_i3.Ayah?>(
+          this,
+          Invocation.method(
+            #getAyah,
+            [ayahId],
+          ),
+        )),
+      ) as _i4.Future<_i2.BaseResponse<_i3.Ayah?>>);
+
+  @override
   _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>> getAyahs(
           _i3.AyahPagination? pagination) =>
       (super.noSuchMethod(

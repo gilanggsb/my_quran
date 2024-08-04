@@ -47,7 +47,6 @@ class QuranRepositoryImpl extends QuranRepository {
   Future<BaseResponse<List<Ayah>?>> getAyahsJuz(int juzNumber) async {
     final cachedAyahsJuz = await localDataSource.getCachedAyahsJuz(juzNumber);
 
-    Logger.logInfo("IS FUUL AYAH ${cachedAyahsJuz.isNotEmpty}");
     if (cachedAyahsJuz.isNotEmpty) {
       return BaseResponse(status: true, data: cachedAyahsJuz);
     }
@@ -122,5 +121,11 @@ class QuranRepositoryImpl extends QuranRepository {
   @override
   Future<void> saveLastReadAyah(LastReadAyah lastRead) async {
     return await localDataSource.saveLastReadAyah(lastRead);
+  }
+
+  @override
+  Future<BaseResponse<Ayah?>> getAyah(int ayahId) async {
+    final ayah = await localDataSource.getCachedAyah(ayahId);
+    return BaseResponse.success<Ayah>(data: ayah);
   }
 }

@@ -3,6 +3,7 @@ export 'app_logger.dart';
 export 'app_utils.dart';
 export 'bloc_observer.dart';
 export 'bottom_sheet_manager.dart';
+export 'dialog_manager.dart';
 export 'networking_utils.dart';
 export 'scroll_manager.dart';
 export 'snackbar_manager.dart';

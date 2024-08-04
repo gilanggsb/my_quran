@@ -47,48 +47,53 @@ const AyahSchema = CollectionSchema(
       name: r'id',
       type: IsarType.string,
     ),
-    r'juz': PropertySchema(
+    r'idInt': PropertySchema(
       id: 6,
+      name: r'idInt',
+      type: IsarType.long,
+    ),
+    r'juz': PropertySchema(
+      id: 7,
       name: r'juz',
       type: IsarType.string,
     ),
     r'juzInt': PropertySchema(
-      id: 7,
+      id: 8,
       name: r'juzInt',
       type: IsarType.long,
     ),
     r'latin': PropertySchema(
-      id: 8,
+      id: 9,
       name: r'latin',
       type: IsarType.string,
     ),
     r'notes': PropertySchema(
-      id: 9,
+      id: 10,
       name: r'notes',
       type: IsarType.string,
     ),
     r'page': PropertySchema(
-      id: 10,
+      id: 11,
       name: r'page',
       type: IsarType.string,
     ),
     r'surah': PropertySchema(
-      id: 11,
+      id: 12,
       name: r'surah',
       type: IsarType.string,
     ),
     r'surahInt': PropertySchema(
-      id: 12,
+      id: 13,
       name: r'surahInt',
       type: IsarType.long,
     ),
     r'text': PropertySchema(
-      id: 13,
+      id: 14,
       name: r'text',
       type: IsarType.string,
     ),
     r'theme': PropertySchema(
-      id: 14,
+      id: 15,
       name: r'theme',
       type: IsarType.string,
     )
@@ -200,15 +205,16 @@ void _ayahSerialize(
   writer.writeString(offsets[3], object.ayah);
   writer.writeLong(offsets[4], object.ayahInt);
   writer.writeString(offsets[5], object.id);
-  writer.writeString(offsets[6], object.juz);
-  writer.writeLong(offsets[7], object.juzInt);
-  writer.writeString(offsets[8], object.latin);
-  writer.writeString(offsets[9], object.notes);
-  writer.writeString(offsets[10], object.page);
-  writer.writeString(offsets[11], object.surah);
-  writer.writeLong(offsets[12], object.surahInt);
-  writer.writeString(offsets[13], object.text);
-  writer.writeString(offsets[14], object.theme);
+  writer.writeLong(offsets[6], object.idInt);
+  writer.writeString(offsets[7], object.juz);
+  writer.writeLong(offsets[8], object.juzInt);
+  writer.writeString(offsets[9], object.latin);
+  writer.writeString(offsets[10], object.notes);
+  writer.writeString(offsets[11], object.page);
+  writer.writeString(offsets[12], object.surah);
+  writer.writeLong(offsets[13], object.surahInt);
+  writer.writeString(offsets[14], object.text);
+  writer.writeString(offsets[15], object.theme);
 }
 
 Ayah _ayahDeserialize(
@@ -224,15 +230,16 @@ Ayah _ayahDeserialize(
     ayah: reader.readStringOrNull(offsets[3]),
     ayahInt: reader.readLongOrNull(offsets[4]),
     id: reader.readStringOrNull(offsets[5]),
-    juz: reader.readStringOrNull(offsets[6]),
-    juzInt: reader.readLongOrNull(offsets[7]),
-    latin: reader.readStringOrNull(offsets[8]),
-    notes: reader.readStringOrNull(offsets[9]),
-    page: reader.readStringOrNull(offsets[10]),
-    surah: reader.readStringOrNull(offsets[11]),
-    surahInt: reader.readLongOrNull(offsets[12]),
-    text: reader.readStringOrNull(offsets[13]),
-    theme: reader.readStringOrNull(offsets[14]),
+    idInt: reader.readLongOrNull(offsets[6]),
+    juz: reader.readStringOrNull(offsets[7]),
+    juzInt: reader.readLongOrNull(offsets[8]),
+    latin: reader.readStringOrNull(offsets[9]),
+    notes: reader.readStringOrNull(offsets[10]),
+    page: reader.readStringOrNull(offsets[11]),
+    surah: reader.readStringOrNull(offsets[12]),
+    surahInt: reader.readLongOrNull(offsets[13]),
+    text: reader.readStringOrNull(offsets[14]),
+    theme: reader.readStringOrNull(offsets[15]),
   );
   return object;
 }
@@ -257,11 +264,11 @@ P _ayahDeserializeProp<P>(
     case 5:
       return (reader.readStringOrNull(offset)) as P;
     case 6:
-      return (reader.readStringOrNull(offset)) as P;
-    case 7:
       return (reader.readLongOrNull(offset)) as P;
-    case 8:
+    case 7:
       return (reader.readStringOrNull(offset)) as P;
+    case 8:
+      return (reader.readLongOrNull(offset)) as P;
     case 9:
       return (reader.readStringOrNull(offset)) as P;
     case 10:
@@ -269,10 +276,12 @@ P _ayahDeserializeProp<P>(
     case 11:
       return (reader.readStringOrNull(offset)) as P;
     case 12:
-      return (reader.readLongOrNull(offset)) as P;
-    case 13:
       return (reader.readStringOrNull(offset)) as P;
+    case 13:
+      return (reader.readLongOrNull(offset)) as P;
     case 14:
+      return (reader.readStringOrNull(offset)) as P;
+    case 15:
       return (reader.readStringOrNull(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -1149,6 +1158,74 @@ extension AyahQueryFilter on QueryBuilder<Ayah, Ayah, QFilterCondition> {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'id',
         value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNull(
+        property: r'idInt',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntIsNotNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(const FilterCondition.isNotNull(
+        property: r'idInt',
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntEqualTo(int? value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'idInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntGreaterThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'idInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntLessThan(
+    int? value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'idInt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterFilterCondition> idIntBetween(
+    int? lower,
+    int? upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'idInt',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
       ));
     });
   }
@@ -2427,6 +2504,18 @@ extension AyahQuerySortBy on QueryBuilder<Ayah, Ayah, QSortBy> {
     });
   }
 
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByIdInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'idInt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByIdIntDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'idInt', Sort.desc);
+    });
+  }
+
   QueryBuilder<Ayah, Ayah, QAfterSortBy> sortByJuz() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'juz', Sort.asc);
@@ -2609,6 +2698,18 @@ extension AyahQuerySortThenBy on QueryBuilder<Ayah, Ayah, QSortThenBy> {
     });
   }
 
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByIdInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'idInt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByIdIntDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'idInt', Sort.desc);
+    });
+  }
+
   QueryBuilder<Ayah, Ayah, QAfterSortBy> thenByIsarId() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isarId', Sort.asc);
@@ -2772,6 +2873,12 @@ extension AyahQueryWhereDistinct on QueryBuilder<Ayah, Ayah, QDistinct> {
     });
   }
 
+  QueryBuilder<Ayah, Ayah, QDistinct> distinctByIdInt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'idInt');
+    });
+  }
+
   QueryBuilder<Ayah, Ayah, QDistinct> distinctByJuz(
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -2877,6 +2984,12 @@ extension AyahQueryProperty on QueryBuilder<Ayah, Ayah, QQueryProperty> {
     });
   }
 
+  QueryBuilder<Ayah, int?, QQueryOperations> idIntProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'idInt');
+    });
+  }
+
   QueryBuilder<Ayah, String?, QQueryOperations> juzProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'juz');
@@ -2938,6 +3051,7 @@ extension AyahQueryProperty on QueryBuilder<Ayah, Ayah, QQueryProperty> {
 
 Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah(
       id: json['id'] as String?,
+      idInt: (json['id_int'] as num?)?.toInt(),
       arab: json['arab'] as String?,
       asbab: json['asbab'] as String?,
       audio: json['audio'] as String?,
@@ -2956,6 +3070,7 @@ Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah(
 
 Map<String, dynamic> _$AyahToJson(Ayah instance) => <String, dynamic>{
       'id': instance.id,
+      'id_int': instance.idInt,
       'arab': instance.arab,
       'asbab': instance.asbab,
       'audio': instance.audio,

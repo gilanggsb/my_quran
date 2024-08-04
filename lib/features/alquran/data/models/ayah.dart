@@ -17,6 +17,7 @@ class Ayah with _$Ayah {
 
   const factory Ayah({
     String? id,
+    int? idInt,
     String? arab,
     String? asbab,
     String? audio,
@@ -46,6 +47,7 @@ class Ayah with _$Ayah {
     return Ayah(
       arab: json['arab'] as String?,
       id: json['id'] as String?,
+      idInt: parseStringToInt(json['id']),
       asbab: json['asbab'] as String?,
       audio: json['audio'] as String?,
       ayah: json['ayah'] as String?,
@@ -63,8 +65,6 @@ class Ayah with _$Ayah {
   }
 
   // Custom toJson to ensure both string and int representations are included
-  @override
-  // ignore: override_on_non_overriding_member
   Map<String, dynamic> toJson() {
     return {
       'id': id,

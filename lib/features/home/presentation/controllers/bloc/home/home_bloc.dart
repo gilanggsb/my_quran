@@ -19,7 +19,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_GetData>(_getData);
   }
 
-  void initialization() {}
 
   FutureOr<void> _getData(event, emit) async {
     try {

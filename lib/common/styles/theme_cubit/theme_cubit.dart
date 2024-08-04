@@ -11,7 +11,7 @@ part 'theme_state.dart';
 class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit({required this.storageService})
       : super(const ThemeState.initial());
-  ThemeMode themeMode = ThemeMode.system;
+  ThemeMode themeMode = ThemeMode.dark;
   final Brightness brightness =
       SchedulerBinding.instance.platformDispatcher.platformBrightness;
   late bool isDarkTheme = brightness == Brightness.dark;

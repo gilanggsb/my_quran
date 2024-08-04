@@ -139,7 +139,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<void> cacheAyahs(List<Ayah> ayahs) async {
     try {
       for (final ayah in ayahs) {
-        final isAyahExist = await getCachedAyah(ayah.id ?? '') != null;
+        final isAyahExist = await getCachedAyah(ayah.idInt ?? 0) != null;
         if (isAyahExist) continue;
         await localDBService.write<Ayah>(ayah);
       }
@@ -152,11 +152,16 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
     }
   }
 
-  Future<Ayah?> getCachedAyah(String ayahId) async {
+  @override
+  Future<Ayah?> getCachedAyah(int ayahId) async {
     try {
       final ayahCollection = localDBService.getCollection<Ayah>();
       final ayah =
-          await ayahCollection.where().filter().idEqualTo(ayahId).findFirst();
+          await ayahCollection
+          .where()
+          .filter()
+          .idIntEqualTo(ayahId)
+          .findFirst();
       return ayah;
     } on String catch (_) {
       rethrow;

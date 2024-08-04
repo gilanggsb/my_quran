@@ -9,6 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import '../../../features/features.dart';
 import '../../common.dart';
 
+const collectionFreezed = Collection(ignore: {'copyWith'});
 class IsarServiceImpl extends IsarService {
   late Isar isar;
 
@@ -17,6 +18,8 @@ class IsarServiceImpl extends IsarService {
       AyahSchema,
       SurahSchema,
       JuzSchema,
+      BookmarkCategorySchema,
+      BookmarkDataSchema,
     ];
   }
 
@@ -95,5 +98,10 @@ class IsarServiceImpl extends IsarService {
     }
 
     await write<T>(object);
+  }
+  
+  @override
+  Future<T> writeTXN<T>(Future<T> Function() callback, {bool silent = false}) {
+    return isar.writeTxn<T>(callback, silent: silent);
   }
 }

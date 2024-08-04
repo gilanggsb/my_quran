@@ -3,6 +3,7 @@ enum RouteName {
   homeJuzTab('Home Juz Tab', 'juz-tab'),
   homeSurahTab('Home Surah Tab', 'surah-tab'),
   quranDetail('Quran Detail', '/quran-detail'),
+  bookmark('Bookmark', '/bookmark'),
   splash('Splash', '/splash');
 
   final String name;
