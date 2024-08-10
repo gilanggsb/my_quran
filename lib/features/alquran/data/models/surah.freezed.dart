@@ -31,7 +31,9 @@ mixin _$Surah {
   String? get translationEn => throw _privateConstructorUsedError;
   String? get translationId => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Surah
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SurahCopyWith<Surah> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -67,6 +69,8 @@ class _$SurahCopyWithImpl<$Res, $Val extends Surah>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Surah
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -178,6 +182,8 @@ class __$$SurahImplCopyWithImpl<$Res>
       _$SurahImpl _value, $Res Function(_$SurahImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Surah
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -360,7 +366,9 @@ class _$SurahImpl extends _Surah {
       translationEn,
       translationId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Surah
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SurahImplCopyWith<_$SurahImpl> get copyWith =>
@@ -413,8 +421,11 @@ abstract class _Surah extends Surah {
   String? get translationEn;
   @override
   String? get translationId;
+
+  /// Create a copy of Surah
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SurahImplCopyWith<_$SurahImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

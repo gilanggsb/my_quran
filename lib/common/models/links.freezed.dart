@@ -21,8 +21,12 @@ mixin _$Links {
   dynamic get prev => throw _privateConstructorUsedError;
   String? get next => throw _privateConstructorUsedError;
 
+  /// Serializes this Links to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LinksCopyWith<Links> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -44,6 +48,8 @@ class _$LinksCopyWithImpl<$Res, $Val extends Links>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -91,6 +97,8 @@ class __$$LinksImplCopyWithImpl<$Res>
       _$LinksImpl _value, $Res Function(_$LinksImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -150,12 +158,14 @@ class _$LinksImpl implements _Links {
             (identical(other.next, next) || other.next == next));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, first, last,
       const DeepCollectionEquality().hash(prev), next);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LinksImplCopyWith<_$LinksImpl> get copyWith =>
@@ -184,8 +194,11 @@ abstract class _Links implements Links {
   dynamic get prev;
   @override
   String? get next;
+
+  /// Create a copy of Links
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LinksImplCopyWith<_$LinksImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

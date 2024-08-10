@@ -27,8 +27,12 @@ mixin _$Quran {
   String? get titleAr => throw _privateConstructorUsedError;
   bool? get isPreview => throw _privateConstructorUsedError;
 
+  /// Serializes this Quran to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Quran
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $QuranCopyWith<Quran> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -56,6 +60,8 @@ class _$QuranCopyWithImpl<$Res, $Val extends Quran>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Quran
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class __$$QuranImplCopyWithImpl<$Res>
       _$QuranImpl _value, $Res Function(_$QuranImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Quran
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -205,12 +213,14 @@ class _$QuranImpl implements _Quran {
                 other.isPreview == isPreview));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, number, title, arabic, subtitle, titleAr, isPreview);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Quran
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$QuranImplCopyWith<_$QuranImpl> get copyWith =>
@@ -247,8 +257,11 @@ abstract class _Quran implements Quran {
   String? get titleAr;
   @override
   bool? get isPreview;
+
+  /// Create a copy of Quran
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$QuranImplCopyWith<_$QuranImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

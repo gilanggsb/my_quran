@@ -23,7 +23,9 @@ mixin _$BookmarkData {
   int? get type => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookmarkDataCopyWith<BookmarkData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +55,8 @@ class _$BookmarkDataCopyWithImpl<$Res, $Val extends BookmarkData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookmarkData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -117,6 +121,8 @@ class __$$BookmarkDataImplCopyWithImpl<$Res>
       _$BookmarkDataImpl _value, $Res Function(_$BookmarkDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookmarkData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -205,7 +211,9 @@ class _$BookmarkDataImpl extends _BookmarkData {
   int get hashCode =>
       Object.hash(runtimeType, title, subtitle, dataId, categoryId, type, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookmarkDataImplCopyWith<_$BookmarkDataImpl> get copyWith =>
@@ -234,8 +242,11 @@ abstract class _BookmarkData extends BookmarkData {
   int? get type;
   @override
   int? get id;
+
+  /// Create a copy of BookmarkData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookmarkDataImplCopyWith<_$BookmarkDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

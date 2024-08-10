@@ -23,8 +23,12 @@ mixin _$AyahPagination {
   int? get page => throw _privateConstructorUsedError;
   int? get length => throw _privateConstructorUsedError;
 
+  /// Serializes this AyahPagination to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AyahPagination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AyahPaginationCopyWith<AyahPagination> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$AyahPaginationCopyWithImpl<$Res, $Val extends AyahPagination>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AyahPagination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$AyahPaginationImplCopyWithImpl<$Res>
       _$AyahPaginationImpl _value, $Res Function(_$AyahPaginationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AyahPagination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,11 +140,13 @@ class _$AyahPaginationImpl implements _AyahPagination {
             (identical(other.length, length) || other.length == length));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, page, length);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AyahPagination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AyahPaginationImplCopyWith<_$AyahPaginationImpl> get copyWith =>
@@ -162,8 +172,11 @@ abstract class _AyahPagination implements AyahPagination {
   int? get page;
   @override
   int? get length;
+
+  /// Create a copy of AyahPagination
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AyahPaginationImplCopyWith<_$AyahPaginationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

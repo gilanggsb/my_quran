@@ -39,7 +39,9 @@ mixin _$Ayah {
   String? get text => throw _privateConstructorUsedError;
   String? get theme => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Ayah
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AyahCopyWith<Ayah> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -77,6 +79,8 @@ class _$AyahCopyWithImpl<$Res, $Val extends Ayah>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Ayah
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -199,6 +203,8 @@ class __$$AyahImplCopyWithImpl<$Res>
   __$$AyahImplCopyWithImpl(_$AyahImpl _value, $Res Function(_$AyahImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Ayah
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -398,7 +404,9 @@ class _$AyahImpl extends _Ayah {
       text,
       theme);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Ayah
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AyahImplCopyWith<_$AyahImpl> get copyWith =>
@@ -436,18 +444,18 @@ abstract class _Ayah extends Ayah {
   @override
   String? get audio;
   @override
-  String? get ayah;
-  @override // Original string representation
-  int? get ayahInt;
-  @override // Numerical representation
-  String? get juz;
-  @override // Original string representation
-  int? get juzInt;
-  @override // Numerical representation
-  String? get surah;
-  @override // Original string representation
-  int? get surahInt;
-  @override // Numerical representation
+  String? get ayah; // Original string representation
+  @override
+  int? get ayahInt; // Numerical representation
+  @override
+  String? get juz; // Original string representation
+  @override
+  int? get juzInt; // Numerical representation
+  @override
+  String? get surah; // Original string representation
+  @override
+  int? get surahInt; // Numerical representation
+  @override
   String? get latin;
   @override
   String? get notes;
@@ -457,8 +465,11 @@ abstract class _Ayah extends Ayah {
   String? get text;
   @override
   String? get theme;
+
+  /// Create a copy of Ayah
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AyahImplCopyWith<_$AyahImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
