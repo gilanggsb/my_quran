@@ -199,7 +199,7 @@ class BottomSheetManager {
     bool? showDragHandle = true,
     double? height,
     VoidCallback? onClose,
-}) {
+  }) {
     showModalBottomSheet(
       context: context ?? globalContext,
       isScrollControlled: isScrollControlled,
@@ -209,7 +209,7 @@ class BottomSheetManager {
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
-      useRootNavigator: true,
+      // useRootNavigator: true,
       builder: (BuildContext context) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
@@ -245,8 +245,9 @@ class BottomSheetManager {
     });
   }
 
-
   static void closeCurrentBottomSheet({BuildContext? context}) {
+    // final finalContext = context ?? globalContext;
+    // finalContext.r
     Navigator.pop(context ?? globalContext);
   }
 
