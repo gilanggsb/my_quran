@@ -53,7 +53,11 @@ class QuranTitle extends StatelessWidget {
                 DefaultText(
                   quran?.subtitle ?? '',
                   fontSize: 14.sp,
-                  color: context.getColorExt(AppColorType.textLight),
+                  color: context.getColorExt(
+                    context.isLightTheme
+                        ? AppColorType.textDark
+                        : AppColorType.textLight,
+                  ),
                   fontWeight: FontWeight.w100,
                 ),
             ],
