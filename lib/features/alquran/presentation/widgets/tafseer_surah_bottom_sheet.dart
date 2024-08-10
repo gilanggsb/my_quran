@@ -20,6 +20,7 @@ class TafseerSurahBottomSheet extends StatelessWidget {
               surah?.nameId ?? '',
               fontWeight: FontWeight.bold,
               fontSize: 24,
+              textAlign: TextAlign.center,
             ),
             backgroundColor: bgColor,
             shadowColor: bgColor,

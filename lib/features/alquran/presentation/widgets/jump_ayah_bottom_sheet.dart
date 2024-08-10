@@ -79,6 +79,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
                               number: ayah.ayah,
                               arabic: ayah.arab,
                               isPreview: true,
+                              arabicMaxLine: 1,
                             ),
                             onTap: () => onSurahTap(index, ayah, jumpAyahCubit),
                           ).paddingSymmetric(horizontal: 10);

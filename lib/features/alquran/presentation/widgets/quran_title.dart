@@ -31,7 +31,7 @@ class QuranTitle extends StatelessWidget {
                     child: DefaultText(
                       quran?.arabic ?? '',
                       fontSize: 32.sp,
-                      // maxLines: 1,
+                      maxLines: quran?.arabicMaxLine,
                       fontWeight: FontWeight.w600,
                       fontFamily: GoogleFonts.scheherazadeNew().fontFamily,
                       textHeight: 2,
