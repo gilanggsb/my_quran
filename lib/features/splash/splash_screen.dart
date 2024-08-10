@@ -8,9 +8,8 @@ class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   void checkUser() async {
-    Future.delayed(const Duration(seconds: 1), () {
-      globalContext.replaceRoute(const HomeRoute());
-    });
+    await Future.delayed(const Duration(seconds: 1));
+    if (globalContext.mounted) globalContext.replaceRoute(const HomeRoute());
   }
 
   @override
