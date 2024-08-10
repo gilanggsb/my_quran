@@ -19,8 +19,12 @@ mixin _$LastReadAyah {
   Ayah? get ayah => throw _privateConstructorUsedError;
   Surah? get surah => throw _privateConstructorUsedError;
 
+  /// Serializes this LastReadAyah to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LastReadAyah
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LastReadAyahCopyWith<LastReadAyah> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$LastReadAyahCopyWithImpl<$Res, $Val extends LastReadAyah>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LastReadAyah
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -65,6 +71,8 @@ class _$LastReadAyahCopyWithImpl<$Res, $Val extends LastReadAyah>
     ) as $Val);
   }
 
+  /// Create a copy of LastReadAyah
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AyahCopyWith<$Res>? get ayah {
@@ -77,6 +85,8 @@ class _$LastReadAyahCopyWithImpl<$Res, $Val extends LastReadAyah>
     });
   }
 
+  /// Create a copy of LastReadAyah
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SurahCopyWith<$Res>? get surah {
@@ -114,6 +124,8 @@ class __$$LastReadAyahImplCopyWithImpl<$Res>
       _$LastReadAyahImpl _value, $Res Function(_$LastReadAyahImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LastReadAyah
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -157,11 +169,13 @@ class _$LastReadAyahImpl extends _LastReadAyah {
             (identical(other.surah, surah) || other.surah == surah));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, ayah, surah);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LastReadAyah
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LastReadAyahImplCopyWith<_$LastReadAyahImpl> get copyWith =>
@@ -184,8 +198,11 @@ abstract class _LastReadAyah extends LastReadAyah {
   Ayah? get ayah;
   @override
   Surah? get surah;
+
+  /// Create a copy of LastReadAyah
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LastReadAyahImplCopyWith<_$LastReadAyahImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

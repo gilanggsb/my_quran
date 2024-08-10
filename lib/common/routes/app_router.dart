@@ -10,7 +10,7 @@ AppRouter appRouter = getIt.get<AppRouter>();
 @AutoRouterConfig(
   replaceInRouteName: 'Screen,Route',
 )
-class AppRouter extends $AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   GlobalKey<NavigatorState> get navigatorKey => globalNavigatorKey;
 

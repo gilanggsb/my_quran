@@ -18,8 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Request {
   String? get path => throw _privateConstructorUsedError;
 
+  /// Serializes this Request to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Request
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RequestCopyWith<Request> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -41,6 +45,8 @@ class _$RequestCopyWithImpl<$Res, $Val extends Request>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Request
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -73,6 +79,8 @@ class __$$RequestImplCopyWithImpl<$Res>
       _$RequestImpl _value, $Res Function(_$RequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Request
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,11 +116,13 @@ class _$RequestImpl implements _Request {
             (identical(other.path, path) || other.path == path));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, path);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Request
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RequestImplCopyWith<_$RequestImpl> get copyWith =>
@@ -131,8 +141,11 @@ abstract class _Request implements Request {
 
   @override
   String? get path;
+
+  /// Create a copy of Request
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RequestImplCopyWith<_$RequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

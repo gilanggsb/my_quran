@@ -84,6 +84,9 @@ class _$BookmarkEventCopyWithImpl<$Res, $Val extends BookmarkEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,6 +103,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -217,6 +223,8 @@ class __$$GetDataImplCopyWithImpl<$Res>
       _$GetDataImpl _value, $Res Function(_$GetDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -256,7 +264,9 @@ class _$GetDataImpl implements _GetData {
   @override
   int get hashCode => Object.hash(runtimeType, categoryId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetDataImplCopyWith<_$GetDataImpl> get copyWith =>
@@ -341,7 +351,10 @@ abstract class _GetData implements BookmarkEvent {
   const factory _GetData({final int? categoryId}) = _$GetDataImpl;
 
   int? get categoryId;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetDataImplCopyWith<_$GetDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -363,6 +376,8 @@ class __$$DeleteBookmarkImplCopyWithImpl<$Res>
       _$DeleteBookmarkImpl _value, $Res Function(_$DeleteBookmarkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -402,7 +417,9 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
   @override
   int get hashCode => Object.hash(runtimeType, bookmarkId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteBookmarkImplCopyWith<_$DeleteBookmarkImpl> get copyWith =>
@@ -488,7 +505,10 @@ abstract class _DeleteBookmark implements BookmarkEvent {
   const factory _DeleteBookmark({final int? bookmarkId}) = _$DeleteBookmarkImpl;
 
   int? get bookmarkId;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteBookmarkImplCopyWith<_$DeleteBookmarkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -512,6 +532,8 @@ class __$$GetBookmarkDetailImplCopyWithImpl<$Res>
       $Res Function(_$GetBookmarkDetailImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -525,6 +547,8 @@ class __$$GetBookmarkDetailImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BookmarkDataCopyWith<$Res>? get bookmark {
@@ -563,7 +587,9 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   @override
   int get hashCode => Object.hash(runtimeType, bookmark);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetBookmarkDetailImplCopyWith<_$GetBookmarkDetailImpl> get copyWith =>
@@ -650,7 +676,10 @@ abstract class _GetBookmarkDetail implements BookmarkEvent {
       _$GetBookmarkDetailImpl;
 
   BookmarkData? get bookmark;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookmarkEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetBookmarkDetailImplCopyWith<_$GetBookmarkDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -744,6 +773,9 @@ class _$BookmarkStateCopyWithImpl<$Res, $Val extends BookmarkState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -760,6 +792,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -893,6 +928,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1026,6 +1064,9 @@ class __$$LoadedImplCopyWithImpl<$Res>
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1162,6 +1203,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1200,7 +1243,9 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -1304,7 +1349,10 @@ abstract class _Error implements BookmarkState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1323,6 +1371,9 @@ class __$$DetailAyahLoadingImplCopyWithImpl<$Res>
   __$$DetailAyahLoadingImplCopyWithImpl(_$DetailAyahLoadingImpl _value,
       $Res Function(_$DetailAyahLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1461,6 +1512,8 @@ class __$$DetailAyahLoadedImplCopyWithImpl<$Res>
       $Res Function(_$DetailAyahLoadedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1474,6 +1527,8 @@ class __$$DetailAyahLoadedImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AyahCopyWith<$Res>? get ayah {
@@ -1511,7 +1566,9 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
   @override
   int get hashCode => Object.hash(runtimeType, ayah);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DetailAyahLoadedImplCopyWith<_$DetailAyahLoadedImpl> get copyWith =>
@@ -1616,7 +1673,10 @@ abstract class _DetailAyahLoaded implements BookmarkState {
   const factory _DetailAyahLoaded(final Ayah? ayah) = _$DetailAyahLoadedImpl;
 
   Ayah? get ayah;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DetailAyahLoadedImplCopyWith<_$DetailAyahLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1636,6 +1696,9 @@ class __$$DeleteBookmarkSuccessImplCopyWithImpl<$Res>
   __$$DeleteBookmarkSuccessImplCopyWithImpl(_$DeleteBookmarkSuccessImpl _value,
       $Res Function(_$DeleteBookmarkSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookmarkState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

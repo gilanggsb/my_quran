@@ -19,7 +19,9 @@ mixin _$BookmarkCategory {
   String? get name => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookmarkCategoryCopyWith<BookmarkCategory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$BookmarkCategoryCopyWithImpl<$Res, $Val extends BookmarkCategory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookmarkCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$BookmarkCategoryImplCopyWithImpl<$Res>
       $Res Function(_$BookmarkCategoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookmarkCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,7 +133,9 @@ class _$BookmarkCategoryImpl extends _BookmarkCategory {
   @override
   int get hashCode => Object.hash(runtimeType, name, id);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookmarkCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookmarkCategoryImplCopyWith<_$BookmarkCategoryImpl> get copyWith =>
@@ -144,8 +152,11 @@ abstract class _BookmarkCategory extends BookmarkCategory {
   String? get name;
   @override
   int? get id;
+
+  /// Create a copy of BookmarkCategory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookmarkCategoryImplCopyWith<_$BookmarkCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

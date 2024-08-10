@@ -23,7 +23,9 @@ mixin _$BaseResponse<T> {
   Paging? get paging => throw _privateConstructorUsedError;
   T? get data => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BaseResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BaseResponseCopyWith<T, BaseResponse<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +59,8 @@ class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BaseResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,6 +99,8 @@ class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
     ) as $Val);
   }
 
+  /// Create a copy of BaseResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RequestCopyWith<$Res>? get request {
@@ -107,6 +113,8 @@ class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
     });
   }
 
+  /// Create a copy of BaseResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InfoCopyWith<$Res>? get info {
@@ -119,6 +127,8 @@ class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
     });
   }
 
+  /// Create a copy of BaseResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PagingCopyWith<$Res>? get paging {
@@ -164,6 +174,8 @@ class __$$BaseResponseImplCopyWithImpl<T, $Res>
       _$BaseResponseImpl<T> _value, $Res Function(_$BaseResponseImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of BaseResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -249,7 +261,9 @@ class _$BaseResponseImpl<T> implements _BaseResponse<T> {
   int get hashCode => Object.hash(runtimeType, status, message, request, info,
       paging, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BaseResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BaseResponseImplCopyWith<T, _$BaseResponseImpl<T>> get copyWith =>
@@ -278,8 +292,11 @@ abstract class _BaseResponse<T> implements BaseResponse<T> {
   Paging? get paging;
   @override
   T? get data;
+
+  /// Create a copy of BaseResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BaseResponseImplCopyWith<T, _$BaseResponseImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

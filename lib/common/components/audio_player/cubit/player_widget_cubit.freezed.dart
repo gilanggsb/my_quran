@@ -84,6 +84,9 @@ class _$PlayerWidgetStateCopyWithImpl<$Res, $Val extends PlayerWidgetState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PlayerWidgetState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,6 +103,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PlayerWidgetState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -214,6 +220,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PlayerWidgetState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -328,6 +337,9 @@ class __$$LoadedImplCopyWithImpl<$Res>
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PlayerWidgetState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -442,6 +454,9 @@ class __$$UpdateAudioStateImplCopyWithImpl<$Res>
   __$$UpdateAudioStateImplCopyWithImpl(_$UpdateAudioStateImpl _value,
       $Res Function(_$UpdateAudioStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PlayerWidgetState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

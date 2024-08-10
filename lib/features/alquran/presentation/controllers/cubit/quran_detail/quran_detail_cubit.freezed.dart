@@ -90,6 +90,9 @@ class _$QuranDetailStateCopyWithImpl<$Res, $Val extends QuranDetailState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of QuranDetailState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -106,6 +109,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of QuranDetailState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -232,6 +238,9 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of QuranDetailState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -358,6 +367,9 @@ class __$$LoadingMoreDataImplCopyWithImpl<$Res>
   __$$LoadingMoreDataImplCopyWithImpl(
       _$LoadingMoreDataImpl _value, $Res Function(_$LoadingMoreDataImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of QuranDetailState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -487,6 +499,9 @@ class __$$LoadedImplCopyWithImpl<$Res>
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of QuranDetailState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -616,6 +631,8 @@ class __$$FailedImplCopyWithImpl<$Res>
       _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of QuranDetailState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -662,7 +679,9 @@ class _$FailedImpl with DiagnosticableTreeMixin implements _Failed {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of QuranDetailState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
@@ -753,7 +772,10 @@ abstract class _Failed implements QuranDetailState {
   const factory _Failed(final String message) = _$FailedImpl;
 
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of QuranDetailState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

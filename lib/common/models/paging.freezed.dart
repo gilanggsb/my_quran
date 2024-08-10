@@ -26,8 +26,12 @@ mixin _$Paging {
   int? get endIndex => throw _privateConstructorUsedError;
   List<int>? get pages => throw _privateConstructorUsedError;
 
+  /// Serializes this Paging to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Paging
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PagingCopyWith<Paging> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -58,6 +62,8 @@ class _$PagingCopyWithImpl<$Res, $Val extends Paging>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Paging
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -139,6 +145,8 @@ class __$$PagingImplCopyWithImpl<$Res>
       _$PagingImpl _value, $Res Function(_$PagingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Paging
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -262,7 +270,7 @@ class _$PagingImpl implements _Paging {
             const DeepCollectionEquality().equals(other._pages, _pages));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -276,7 +284,9 @@ class _$PagingImpl implements _Paging {
       endIndex,
       const DeepCollectionEquality().hash(_pages));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Paging
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PagingImplCopyWith<_$PagingImpl> get copyWith =>
@@ -320,8 +330,11 @@ abstract class _Paging implements Paging {
   int? get endIndex;
   @override
   List<int>? get pages;
+
+  /// Create a copy of Paging
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PagingImplCopyWith<_$PagingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
