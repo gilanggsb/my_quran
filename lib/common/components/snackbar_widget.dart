@@ -21,6 +21,7 @@ abstract class SnackBarWidget {
       content: DefaultText(
         message,
         style: textStyle,
+        color: textStyle?.color,
       ),
       backgroundColor: backgroundColor,
       behavior: behavior ?? SnackBarBehavior.floating,
@@ -39,7 +40,12 @@ abstract class SnackBarWidget {
     String message, {
     BuildContext? context,
   }) {
-    _showSnackBar(context: context, message, AppPalette.green.base);
+    _showSnackBar(
+      context: context,
+      message,
+      AppPalette.green.base,
+      textStyle: AppStyle.text().copyWith(color: AppPalette.white.base),
+    );
   }
 
   // Public method for showing a failed snack bar
@@ -57,7 +63,12 @@ abstract class SnackBarWidget {
     String message, {
     BuildContext? context,
   }) {
-    _showSnackBar(context: context, message, AppPalette.grey.grey60);
+    _showSnackBar(
+      context: context,
+      message,
+      AppPalette.grey.grey60,
+      textStyle: AppStyle.text().copyWith(color: AppPalette.white.base),
+    );
   }
 
   // Public method for showing a custom snack bar

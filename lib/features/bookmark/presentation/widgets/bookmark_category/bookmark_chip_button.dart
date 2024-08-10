@@ -25,7 +25,12 @@ class BookmarkChipButton extends StatelessWidget {
       inactiveColor: context.getColorExt(AppColorType.primaryDark1),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: mode.isAddMode
-          ? const Icon(Icons.add)
+          ? Icon(
+              Icons.add,
+              color: context.getColorExt(
+                AppColorType.whiteBase,
+              ),
+            )
           : Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -37,9 +42,12 @@ class BookmarkChipButton extends StatelessWidget {
                 ),
                 4.widthBox,
                 if (mode.isEditMode)
-                  const Icon(
+                  Icon(
                     Icons.close,
                     size: 18,
+                    color: context.getColorExt(
+                      AppColorType.whiteBase,
+                    ),
                   ),
               ],
             ),

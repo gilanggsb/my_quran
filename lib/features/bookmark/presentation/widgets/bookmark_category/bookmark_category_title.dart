@@ -31,6 +31,7 @@ class BookmarkCategoryTitle extends StatelessWidget {
               icon: Icon(
                 renderIcon(mode),
                 size: 18,
+                color: globalContext.getColorExt(AppColorType.text),
               ),
             ),
           ],

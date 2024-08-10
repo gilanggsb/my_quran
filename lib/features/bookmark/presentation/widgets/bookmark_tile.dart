@@ -26,7 +26,10 @@ class BookmarkTile extends StatelessWidget {
       ),
       subtitle: DefaultText(subtitle),
       trailing: IconButton(
-        icon: const Icon(Icons.delete),
+        icon: Icon(
+          Icons.delete,
+          color: context.getColorExt(AppColorType.primary),
+        ),
         onPressed: onDeletePress,
       ),
     );
