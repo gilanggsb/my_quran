@@ -84,7 +84,9 @@ class DetailAyahBottomSheet extends StatelessWidget {
     switch (menu.getType()) {
       case QuranDetailMenuType.lastread:
         detailAyahCubit.saveAyah().then((a) {
-          globalContext.read<HomeBloc>().add(const HomeEvent.getData());
+          if (globalContext.mounted) {
+            globalContext.read<HomeBloc>().add(const HomeEvent.getData());
+          }
         });
         break;
       case QuranDetailMenuType.copy:
@@ -103,8 +105,9 @@ class DetailAyahBottomSheet extends StatelessWidget {
         break;
       case QuranDetailMenuType.readAsSurah:
         detailAyahCubit.getParamsDataReadAsSurah().then(
-              (paramsData) =>
-                  context.pushRoute(QuranDetailRoute(params: paramsData)),
+              (paramsData) => context.mounted
+                  ? context.pushRoute(QuranDetailRoute(params: paramsData))
+                  : null,
             );
         // context.pushRoute(QuranDetailRoute(params: paramsData));
         break;
