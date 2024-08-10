@@ -23,6 +23,7 @@ mixin _$Quran {
   String? get number => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get arabic => throw _privateConstructorUsedError;
+  int? get arabicMaxLine => throw _privateConstructorUsedError;
   String? get subtitle => throw _privateConstructorUsedError;
   String? get titleAr => throw _privateConstructorUsedError;
   bool? get isPreview => throw _privateConstructorUsedError;
@@ -45,6 +46,7 @@ abstract class $QuranCopyWith<$Res> {
       {String? number,
       String? title,
       String? arabic,
+      int? arabicMaxLine,
       String? subtitle,
       String? titleAr,
       bool? isPreview});
@@ -68,6 +70,7 @@ class _$QuranCopyWithImpl<$Res, $Val extends Quran>
     Object? number = freezed,
     Object? title = freezed,
     Object? arabic = freezed,
+    Object? arabicMaxLine = freezed,
     Object? subtitle = freezed,
     Object? titleAr = freezed,
     Object? isPreview = freezed,
@@ -85,6 +88,10 @@ class _$QuranCopyWithImpl<$Res, $Val extends Quran>
           ? _value.arabic
           : arabic // ignore: cast_nullable_to_non_nullable
               as String?,
+      arabicMaxLine: freezed == arabicMaxLine
+          ? _value.arabicMaxLine
+          : arabicMaxLine // ignore: cast_nullable_to_non_nullable
+              as int?,
       subtitle: freezed == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -112,6 +119,7 @@ abstract class _$$QuranImplCopyWith<$Res> implements $QuranCopyWith<$Res> {
       {String? number,
       String? title,
       String? arabic,
+      int? arabicMaxLine,
       String? subtitle,
       String? titleAr,
       bool? isPreview});
@@ -133,6 +141,7 @@ class __$$QuranImplCopyWithImpl<$Res>
     Object? number = freezed,
     Object? title = freezed,
     Object? arabic = freezed,
+    Object? arabicMaxLine = freezed,
     Object? subtitle = freezed,
     Object? titleAr = freezed,
     Object? isPreview = freezed,
@@ -150,6 +159,10 @@ class __$$QuranImplCopyWithImpl<$Res>
           ? _value.arabic
           : arabic // ignore: cast_nullable_to_non_nullable
               as String?,
+      arabicMaxLine: freezed == arabicMaxLine
+          ? _value.arabicMaxLine
+          : arabicMaxLine // ignore: cast_nullable_to_non_nullable
+              as int?,
       subtitle: freezed == subtitle
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -173,6 +186,7 @@ class _$QuranImpl implements _Quran {
       {this.number,
       this.title,
       this.arabic,
+      this.arabicMaxLine,
       this.subtitle,
       this.titleAr,
       this.isPreview});
@@ -187,6 +201,8 @@ class _$QuranImpl implements _Quran {
   @override
   final String? arabic;
   @override
+  final int? arabicMaxLine;
+  @override
   final String? subtitle;
   @override
   final String? titleAr;
@@ -195,7 +211,7 @@ class _$QuranImpl implements _Quran {
 
   @override
   String toString() {
-    return 'Quran(number: $number, title: $title, arabic: $arabic, subtitle: $subtitle, titleAr: $titleAr, isPreview: $isPreview)';
+    return 'Quran(number: $number, title: $title, arabic: $arabic, arabicMaxLine: $arabicMaxLine, subtitle: $subtitle, titleAr: $titleAr, isPreview: $isPreview)';
   }
 
   @override
@@ -206,6 +222,8 @@ class _$QuranImpl implements _Quran {
             (identical(other.number, number) || other.number == number) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.arabic, arabic) || other.arabic == arabic) &&
+            (identical(other.arabicMaxLine, arabicMaxLine) ||
+                other.arabicMaxLine == arabicMaxLine) &&
             (identical(other.subtitle, subtitle) ||
                 other.subtitle == subtitle) &&
             (identical(other.titleAr, titleAr) || other.titleAr == titleAr) &&
@@ -215,8 +233,8 @@ class _$QuranImpl implements _Quran {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, number, title, arabic, subtitle, titleAr, isPreview);
+  int get hashCode => Object.hash(runtimeType, number, title, arabic,
+      arabicMaxLine, subtitle, titleAr, isPreview);
 
   /// Create a copy of Quran
   /// with the given fields replaced by the non-null parameter values.
@@ -239,6 +257,7 @@ abstract class _Quran implements Quran {
       {final String? number,
       final String? title,
       final String? arabic,
+      final int? arabicMaxLine,
       final String? subtitle,
       final String? titleAr,
       final bool? isPreview}) = _$QuranImpl;
@@ -251,6 +270,8 @@ abstract class _Quran implements Quran {
   String? get title;
   @override
   String? get arabic;
+  @override
+  int? get arabicMaxLine;
   @override
   String? get subtitle;
   @override

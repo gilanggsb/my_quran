@@ -19,6 +19,7 @@ class Quran with _$Quran {
     String? number,
     String? title,
     String? arabic,
+    int? arabicMaxLine,
     String? subtitle,
     String? titleAr,
     bool? isPreview,
