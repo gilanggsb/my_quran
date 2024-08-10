@@ -120,22 +120,34 @@ class DetailAyahBottomSheet extends StatelessWidget {
 final menus = [
   QuranDetailMenu(
     id: QuranDetailMenuType.play.id,
-    icon: const Icon(Icons.play_arrow_rounded),
+    icon: Icon(
+      Icons.play_arrow_rounded,
+      color: globalContext.getColorExt(AppColorType.primary),
+    ),
     name: 'Play Ayat',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.copy.id,
-    icon: const Icon(Icons.copy),
+    icon: Icon(
+      Icons.copy,
+      color: globalContext.getColorExt(AppColorType.primary),
+    ),
     name: 'Copy Ayat',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.bookmark.id,
-    icon: const Icon(Icons.bookmark),
+    icon: Icon(
+      Icons.bookmark,
+      color: globalContext.getColorExt(AppColorType.primary),
+    ),
     name: 'Tambahkan ke bookmark',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.lastread.id,
-    icon: const Icon(Icons.link),
+    icon: Icon(
+      Icons.link,
+      color: globalContext.getColorExt(AppColorType.primary),
+    ),
     name: 'Tandai sebagai terakhir di baca',
   ),
 ];
@@ -143,12 +155,18 @@ final menus = [
 final readAyahAsmenus = [
   QuranDetailMenu(
     id: QuranDetailMenuType.readAsSurah.id,
-    icon: const Icon(Icons.auto_stories),
+    icon: Icon(
+      Icons.auto_stories,
+      color: globalContext.getColorExt(AppColorType.primary),
+    ),
     name: 'Baca sebagai surat',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.readAsJuz.id,
-    icon: const Icon(Icons.chrome_reader_mode),
+    icon: Icon(
+      Icons.chrome_reader_mode,
+      color: globalContext.getColorExt(AppColorType.primary),
+    ),
     name: 'Baca sebagai jus',
   ),
 ];

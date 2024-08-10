@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../common.dart';
+
 class EmptyStateWidget extends StatelessWidget {
   final String title;
   final String message;
@@ -30,13 +32,13 @@ class EmptyStateWidget extends StatelessWidget {
           children: [
             icon ?? const SizedBox.shrink(),
             const SizedBox(height: 16.0),
-            Text(
+            DefaultText(
               title,
               style: titleStyle ?? Theme.of(context).textTheme.titleLarge,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8.0),
-            Text(
+            DefaultText(
               message,
               style: messageStyle ?? Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.center,
@@ -45,7 +47,7 @@ class EmptyStateWidget extends StatelessWidget {
               const SizedBox(height: 24.0),
               ElevatedButton(
                 onPressed: onButtonPressed,
-                child: Text(buttonText),
+                child: DefaultText(buttonText),
               ),
             ],
           ],

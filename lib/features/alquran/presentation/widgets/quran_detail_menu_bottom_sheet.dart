@@ -62,7 +62,7 @@ List<QuranDetailMenu> getMenus(bool isSurahType) {
       id: QuranDetailMenuType.jumpToAyah.id,
       icon: DefaultImage(
         imageUrl: AppAssets.icJumpTo,
-        color: globalContext.getColorExt(AppColorType.text),
+        color: globalContext.getColorExt(AppColorType.primary),
         width: 26.sp,
         height: 26.sp,
         imageType: ImageType.asset,
@@ -71,18 +71,20 @@ List<QuranDetailMenu> getMenus(bool isSurahType) {
     ),
     QuranDetailMenu(
       id: QuranDetailMenuType.play.id,
-      icon: const Icon(
+      icon: Icon(
         Icons.play_arrow,
         size: 30,
+        color: globalContext.getColorExt(AppColorType.primary),
       ),
       name: 'Play surat',
     ),
     if (isSurahType)
       QuranDetailMenu(
         id: QuranDetailMenuType.tafseer.id,
-        icon: const Icon(
+        icon: Icon(
           Icons.menu_book_outlined,
           size: 26,
+          color: globalContext.getColorExt(AppColorType.primary),
         ).paddingOnly(left: 4),
         name: 'Tafsir surat',
       ),
