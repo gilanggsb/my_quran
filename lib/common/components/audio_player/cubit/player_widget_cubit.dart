@@ -25,7 +25,7 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
   StreamSubscription? playerStateChangeSubscription;
 
   bool get isPlaying => playerState == PlayerState.playing;
-
+  bool get isStopped => playerState == PlayerState.stopped;
   bool get isPaused => playerState == PlayerState.paused;
 
   String get durationText => duration?.toString().split('.').first ?? '';
@@ -67,7 +67,9 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
         audioPlayer.setSource(source);
         await audioPlayer.play(source);
       } else {
-        await audioPlayer.resume();
+        isStopped
+            ? await audioPlayer.play(audioPlayer.source ?? source!)
+            : await audioPlayer.resume();
       }
 
       playerState = PlayerState.playing;

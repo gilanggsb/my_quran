@@ -111,7 +111,7 @@ class PlayerWidget extends StatelessWidget {
 
   void showBottomSheetAudioPlayerMenu() {
     BottomSheetManager.showCustomBottomSheet(
-      height: globalContext.getHeight * 0.2,
+      height: globalContext.getHeight * 0.22,
       child: const AudioPlayerMenuBottomSheet(),
     );
   }
