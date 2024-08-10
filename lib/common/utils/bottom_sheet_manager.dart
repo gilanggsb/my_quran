@@ -47,7 +47,7 @@ class BottomSheetManager {
           if (actions != null)
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ButtonBar(
+              child: OverflowBar(
                 children: actions,
               ),
             ),

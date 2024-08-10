@@ -24,60 +24,6 @@ import 'package:my_quran/features/bookmark/presentation/screens/bookmark_screen.
 import 'package:my_quran/features/features.dart' as _i10;
 import 'package:my_quran/features/splash/splash_screen.dart' as _i6;
 
-abstract class $AppRouter extends _i8.RootStackRouter {
-  $AppRouter({super.navigatorKey});
-
-  @override
-  final Map<String, _i8.PageFactory> pagesMap = {
-    BookmarkRoute.name: (routeData) {
-      return _i8.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i1.BookmarkScreen(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return _i8.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i2.HomeScreen(),
-      );
-    },
-    JuzRoute.name: (routeData) {
-      return _i8.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i3.JuzTab(),
-      );
-    },
-    QuranDetailRoute.name: (routeData) {
-      final args = routeData.argsAs<QuranDetailRouteArgs>();
-      return _i8.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i4.QuranDetailScreen(
-          key: args.key,
-          params: args.params,
-        ),
-      );
-    },
-    RootWrapper.name: (routeData) {
-      return _i8.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i8.WrappedRoute(child: const _i5.RootWrapper()),
-      );
-    },
-    SplashRoute.name: (routeData) {
-      return _i8.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i6.SplashScreen(),
-      );
-    },
-    SurahRoute.name: (routeData) {
-      return _i8.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i7.SurahTab(),
-      );
-    },
-  };
-}
-
 /// generated route for
 /// [_i1.BookmarkScreen]
 class BookmarkRoute extends _i8.PageRouteInfo<void> {
@@ -89,7 +35,12 @@ class BookmarkRoute extends _i8.PageRouteInfo<void> {
 
   static const String name = 'BookmarkRoute';
 
-  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i1.BookmarkScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -103,7 +54,12 @@ class HomeRoute extends _i8.PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i2.HomeScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -117,7 +73,12 @@ class JuzRoute extends _i8.PageRouteInfo<void> {
 
   static const String name = 'JuzRoute';
 
-  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i3.JuzTab();
+    },
+  );
 }
 
 /// generated route for
@@ -138,8 +99,16 @@ class QuranDetailRoute extends _i8.PageRouteInfo<QuranDetailRouteArgs> {
 
   static const String name = 'QuranDetailRoute';
 
-  static const _i8.PageInfo<QuranDetailRouteArgs> page =
-      _i8.PageInfo<QuranDetailRouteArgs>(name);
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<QuranDetailRouteArgs>();
+      return _i4.QuranDetailScreen(
+        key: args.key,
+        params: args.params,
+      );
+    },
+  );
 }
 
 class QuranDetailRouteArgs {
@@ -169,7 +138,12 @@ class RootWrapper extends _i8.PageRouteInfo<void> {
 
   static const String name = 'RootWrapper';
 
-  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return _i8.WrappedRoute(child: const _i5.RootWrapper());
+    },
+  );
 }
 
 /// generated route for
@@ -183,7 +157,12 @@ class SplashRoute extends _i8.PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i6.SplashScreen();
+    },
+  );
 }
 
 /// generated route for
@@ -197,5 +176,10 @@ class SurahRoute extends _i8.PageRouteInfo<void> {
 
   static const String name = 'SurahRoute';
 
-  static const _i8.PageInfo<void> page = _i8.PageInfo<void>(name);
+  static _i8.PageInfo page = _i8.PageInfo(
+    name,
+    builder: (data) {
+      return const _i7.SurahTab();
+    },
+  );
 }

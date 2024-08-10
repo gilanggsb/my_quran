@@ -29,7 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   audioplayers: ^6.0.0
-  auto_route: ^8.2.0
+  auto_route: ^9.2.0
   bloc: ^8.1.4
   cached_network_image: ^3.4.0
   collection: ^1.18.0
@@ -60,7 +60,7 @@ dependencies:
 
 dev_dependencies:
   analyzer: ^5.12.0
-  auto_route_generator: ^8.0.0
+  auto_route_generator: ^9.0.0
   bloc_test: ^9.1.7
   build_runner: ^2.4.11
   envied_generator: ^0.5.4
@@ -71,6 +71,8 @@ dev_dependencies:
   isar_generator: ^3.1.0
   json_serializable: ^6.8.0
   mockito: ^5.4.4
+dependency_overrides: 
+  analyzer: ^6.2.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

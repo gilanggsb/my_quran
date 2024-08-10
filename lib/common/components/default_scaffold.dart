@@ -40,7 +40,7 @@ class DefaultScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: canPop,
-      onPopInvoked: onPopInvoked,
+      // onPopInvoked: onPopInvoked,
       child: StatefulWrapper(
         onInit: onInit,
         didChangeDependencies: didChangeDependencies,
