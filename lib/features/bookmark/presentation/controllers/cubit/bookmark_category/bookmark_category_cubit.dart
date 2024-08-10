@@ -29,7 +29,9 @@ class BookmarkCategoryCubit extends Cubit<BookmarkCategoryState> {
     try {
       _emitLoading();
       categories = await getCategories();
-      selectedCategory = categories.first;
+      if (categories.isNotEmpty) {
+        selectedCategory = categories.first;
+      }
       _emitLoaded();
     } on ServerFailure catch (e) {
       _emitFailed(e.message);
