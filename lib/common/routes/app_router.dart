@@ -23,27 +23,32 @@ class AppRouter extends RootStackRouter {
           initial: true,
         ),
         AutoRoute(
-          page: HomeRoute.page,
-          path: RouteName.home.pathName,
+          page: RootWrapper.page,
           children: [
             AutoRoute(
-              page: SurahRoute.page,
-              initial: true,
-              path: RouteName.homeSurahTab.pathName,
+              page: HomeRoute.page,
+              path: RouteName.home.pathName,
+              children: [
+                AutoRoute(
+                  page: SurahRoute.page,
+                  initial: true,
+                  path: RouteName.homeSurahTab.pathName,
+                ),
+                AutoRoute(
+                  path: RouteName.homeJuzTab.pathName,
+                  page: JuzRoute.page,
+                ),
+              ],
             ),
             AutoRoute(
-              path: RouteName.homeJuzTab.pathName,
-              page: JuzRoute.page,
+              path: RouteName.quranDetail.pathName,
+              page: QuranDetailRoute.page,
+            ),
+            AutoRoute(
+              path: RouteName.bookmark.pathName,
+              page: BookmarkRoute.page,
             ),
           ],
-        ),
-        AutoRoute(
-          path: RouteName.quranDetail.pathName,
-          page: QuranDetailRoute.page,
-        ),
-        AutoRoute(
-          path: RouteName.bookmark.pathName,
-          page: BookmarkRoute.page,
         ),
       ];
 }
