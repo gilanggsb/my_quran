@@ -15,7 +15,7 @@ class DialogManager {
     String? barrierLabel,
     RouteSettings? routeSettings,
     TraversalEdgeBehavior? traversalEdgeBehavior,
-    bool useRootNavigator = true,
+    bool useRootNavigator = false,
     bool useSafeArea = true,
   }) {
     return _showDialog<void>(
@@ -58,7 +58,7 @@ class DialogManager {
     String? barrierLabel,
     RouteSettings? routeSettings,
     TraversalEdgeBehavior? traversalEdgeBehavior,
-    bool useRootNavigator = true,
+    bool useRootNavigator = false,
     bool useSafeArea = true,
   }) {
     return _showDialog<T>(
@@ -96,7 +96,7 @@ class DialogManager {
     String? barrierLabel,
     RouteSettings? routeSettings,
     TraversalEdgeBehavior? traversalEdgeBehavior,
-    bool useRootNavigator = true,
+    bool useRootNavigator = false,
     bool useSafeArea = true,
   }) {
     final validContext = context ?? globalContext;
@@ -165,7 +165,7 @@ class DialogManager {
     String? barrierLabel,
     RouteSettings? routeSettings,
     TraversalEdgeBehavior? traversalEdgeBehavior,
-    bool useRootNavigator = true,
+    bool useRootNavigator = false,
     bool useSafeArea = true,
   }) {
     BuildContext? validContext = context ?? globalContext;
