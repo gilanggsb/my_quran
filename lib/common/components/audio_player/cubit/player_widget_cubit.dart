@@ -125,7 +125,8 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
   }
 
   Future<void> closePlayerWdget() async {
-    changeAudioState(() {
+    changeAudioState(() async {
+      await stop();
       showPlayer = false;
       resetState();
     });
