@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,9 +11,7 @@ class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit({required this.storageService})
       : super(const ThemeState.initial());
   ThemeMode themeMode = ThemeMode.dark;
-  final Brightness brightness =
-      SchedulerBinding.instance.platformDispatcher.platformBrightness;
-  late bool isDarkTheme = brightness == Brightness.dark;
+  late bool isDarkTheme = themeMode == ThemeMode.dark;
   final StorageService storageService;
 
   void initialization() async {
