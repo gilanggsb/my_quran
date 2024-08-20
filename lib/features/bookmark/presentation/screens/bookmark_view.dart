@@ -12,6 +12,7 @@ class BookmarkView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
+      onDispose: () => controller.dispose(),
       appBar: DefaultAppBar(
         title: 'Bookmark',
         leading: IconButton(

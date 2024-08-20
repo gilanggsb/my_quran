@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -14,11 +15,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeRepository repository;
   final GetLastReadAyah getLastReadAyah;
   LastReadAyah? lastReadAyah;
+  final TextEditingController searchController = TextEditingController();
+
   HomeBloc({required this.getLastReadAyah, required this.repository})
       : super(const _Initial()) {
     on<_GetData>(_getData);
+    on<_SearchSurahJuz>(_searchSurahJuz);
   }
-
 
   FutureOr<void> _getData(event, emit) async {
     try {
@@ -32,8 +35,25 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       _emitFailed(emit, e.toString());
     }
   }
+  FutureOr<void> _searchSurahJuz(_SearchSurahJuz event, emit) async {
+    try {
+      emit(const HomeState.searching());
+      await Future.delayed(const Duration(milliseconds: 500));
+      emit(HomeState.searchedSurahJuz(event.query));
+    } on ServerFailure catch (e) {
+      _emitFailed(emit, e.message);
+    } catch (e) {
+      _emitFailed(emit, e.toString());
+    }
+  }
 
   void _emitFailed(Emitter<HomeState> emit, String message) {
     emit(HomeState.failed(message));
+  }
+
+  @override
+  Future<void> close() {
+    searchController.dispose();
+    return super.close();
   }
 }
