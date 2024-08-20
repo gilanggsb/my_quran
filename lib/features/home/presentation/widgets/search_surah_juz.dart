@@ -46,7 +46,7 @@ class SearchSurahJuz extends StatelessWidget {
                   color: context.isLightTheme
                       ? context.getColorExt(AppColorType.text)
                       : context.getColorExt(AppColorType.background),
-                ).onTap(() => homeBloc.add(const HomeEvent.searchSurahJuz(""))),
+                ).onTap(() => homeBloc.add(const HomeEvent.clearSearch())),
         );
       },
     );

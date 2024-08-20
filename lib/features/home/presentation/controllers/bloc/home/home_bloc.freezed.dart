@@ -21,6 +21,7 @@ mixin _$HomeEvent {
     required TResult Function() started,
     required TResult Function() getData,
     required TResult Function(String query) searchSurahJuz,
+    required TResult Function() clearSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$HomeEvent {
     TResult? Function()? started,
     TResult? Function()? getData,
     TResult? Function(String query)? searchSurahJuz,
+    TResult? Function()? clearSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$HomeEvent {
     TResult Function()? started,
     TResult Function()? getData,
     TResult Function(String query)? searchSurahJuz,
+    TResult Function()? clearSearch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$HomeEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
     required TResult Function(_SearchSurahJuz value) searchSurahJuz,
+    required TResult Function(_ClearSearch value) clearSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$HomeEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
     TResult? Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult? Function(_ClearSearch value)? clearSearch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$HomeEvent {
     TResult Function(_Started value)? started,
     TResult Function(_GetData value)? getData,
     TResult Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult Function(_ClearSearch value)? clearSearch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +132,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function() getData,
     required TResult Function(String query) searchSurahJuz,
+    required TResult Function() clearSearch,
   }) {
     return started();
   }
@@ -136,6 +143,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function()? getData,
     TResult? Function(String query)? searchSurahJuz,
+    TResult? Function()? clearSearch,
   }) {
     return started?.call();
   }
@@ -146,6 +154,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function()? getData,
     TResult Function(String query)? searchSurahJuz,
+    TResult Function()? clearSearch,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -160,6 +169,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
     required TResult Function(_SearchSurahJuz value) searchSurahJuz,
+    required TResult Function(_ClearSearch value) clearSearch,
   }) {
     return started(this);
   }
@@ -170,6 +180,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
     TResult? Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult? Function(_ClearSearch value)? clearSearch,
   }) {
     return started?.call(this);
   }
@@ -180,6 +191,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_GetData value)? getData,
     TResult Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult Function(_ClearSearch value)? clearSearch,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -237,6 +249,7 @@ class _$GetDataImpl implements _GetData {
     required TResult Function() started,
     required TResult Function() getData,
     required TResult Function(String query) searchSurahJuz,
+    required TResult Function() clearSearch,
   }) {
     return getData();
   }
@@ -247,6 +260,7 @@ class _$GetDataImpl implements _GetData {
     TResult? Function()? started,
     TResult? Function()? getData,
     TResult? Function(String query)? searchSurahJuz,
+    TResult? Function()? clearSearch,
   }) {
     return getData?.call();
   }
@@ -257,6 +271,7 @@ class _$GetDataImpl implements _GetData {
     TResult Function()? started,
     TResult Function()? getData,
     TResult Function(String query)? searchSurahJuz,
+    TResult Function()? clearSearch,
     required TResult orElse(),
   }) {
     if (getData != null) {
@@ -271,6 +286,7 @@ class _$GetDataImpl implements _GetData {
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
     required TResult Function(_SearchSurahJuz value) searchSurahJuz,
+    required TResult Function(_ClearSearch value) clearSearch,
   }) {
     return getData(this);
   }
@@ -281,6 +297,7 @@ class _$GetDataImpl implements _GetData {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
     TResult? Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult? Function(_ClearSearch value)? clearSearch,
   }) {
     return getData?.call(this);
   }
@@ -291,6 +308,7 @@ class _$GetDataImpl implements _GetData {
     TResult Function(_Started value)? started,
     TResult Function(_GetData value)? getData,
     TResult Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult Function(_ClearSearch value)? clearSearch,
     required TResult orElse(),
   }) {
     if (getData != null) {
@@ -376,6 +394,7 @@ class _$SearchSurahJuzImpl implements _SearchSurahJuz {
     required TResult Function() started,
     required TResult Function() getData,
     required TResult Function(String query) searchSurahJuz,
+    required TResult Function() clearSearch,
   }) {
     return searchSurahJuz(query);
   }
@@ -386,6 +405,7 @@ class _$SearchSurahJuzImpl implements _SearchSurahJuz {
     TResult? Function()? started,
     TResult? Function()? getData,
     TResult? Function(String query)? searchSurahJuz,
+    TResult? Function()? clearSearch,
   }) {
     return searchSurahJuz?.call(query);
   }
@@ -396,6 +416,7 @@ class _$SearchSurahJuzImpl implements _SearchSurahJuz {
     TResult Function()? started,
     TResult Function()? getData,
     TResult Function(String query)? searchSurahJuz,
+    TResult Function()? clearSearch,
     required TResult orElse(),
   }) {
     if (searchSurahJuz != null) {
@@ -410,6 +431,7 @@ class _$SearchSurahJuzImpl implements _SearchSurahJuz {
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
     required TResult Function(_SearchSurahJuz value) searchSurahJuz,
+    required TResult Function(_ClearSearch value) clearSearch,
   }) {
     return searchSurahJuz(this);
   }
@@ -420,6 +442,7 @@ class _$SearchSurahJuzImpl implements _SearchSurahJuz {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
     TResult? Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult? Function(_ClearSearch value)? clearSearch,
   }) {
     return searchSurahJuz?.call(this);
   }
@@ -430,6 +453,7 @@ class _$SearchSurahJuzImpl implements _SearchSurahJuz {
     TResult Function(_Started value)? started,
     TResult Function(_GetData value)? getData,
     TResult Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult Function(_ClearSearch value)? clearSearch,
     required TResult orElse(),
   }) {
     if (searchSurahJuz != null) {
@@ -449,6 +473,123 @@ abstract class _SearchSurahJuz implements HomeEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchSurahJuzImplCopyWith<_$SearchSurahJuzImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ClearSearchImplCopyWith<$Res> {
+  factory _$$ClearSearchImplCopyWith(
+          _$ClearSearchImpl value, $Res Function(_$ClearSearchImpl) then) =
+      __$$ClearSearchImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ClearSearchImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$ClearSearchImpl>
+    implements _$$ClearSearchImplCopyWith<$Res> {
+  __$$ClearSearchImplCopyWithImpl(
+      _$ClearSearchImpl _value, $Res Function(_$ClearSearchImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ClearSearchImpl implements _ClearSearch {
+  const _$ClearSearchImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.clearSearch()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClearSearchImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getData,
+    required TResult Function(String query) searchSurahJuz,
+    required TResult Function() clearSearch,
+  }) {
+    return clearSearch();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getData,
+    TResult? Function(String query)? searchSurahJuz,
+    TResult? Function()? clearSearch,
+  }) {
+    return clearSearch?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getData,
+    TResult Function(String query)? searchSurahJuz,
+    TResult Function()? clearSearch,
+    required TResult orElse(),
+  }) {
+    if (clearSearch != null) {
+      return clearSearch();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetData value) getData,
+    required TResult Function(_SearchSurahJuz value) searchSurahJuz,
+    required TResult Function(_ClearSearch value) clearSearch,
+  }) {
+    return clearSearch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetData value)? getData,
+    TResult? Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult? Function(_ClearSearch value)? clearSearch,
+  }) {
+    return clearSearch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetData value)? getData,
+    TResult Function(_SearchSurahJuz value)? searchSurahJuz,
+    TResult Function(_ClearSearch value)? clearSearch,
+    required TResult orElse(),
+  }) {
+    if (clearSearch != null) {
+      return clearSearch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ClearSearch implements HomeEvent {
+  const factory _ClearSearch() = _$ClearSearchImpl;
 }
 
 /// @nodoc

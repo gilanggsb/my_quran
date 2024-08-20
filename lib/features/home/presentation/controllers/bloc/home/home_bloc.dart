@@ -21,6 +21,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       : super(const _Initial()) {
     on<_GetData>(_getData);
     on<_SearchSurahJuz>(_searchSurahJuz);
+    on<_ClearSearch>(_clearSearch);
   }
 
   FutureOr<void> _getData(event, emit) async {
@@ -35,11 +36,25 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       _emitFailed(emit, e.toString());
     }
   }
+
   FutureOr<void> _searchSurahJuz(_SearchSurahJuz event, emit) async {
     try {
       emit(const HomeState.searching());
-      await Future.delayed(const Duration(milliseconds: 500));
+      // await Future.delayed(const Duration(milliseconds: 500));
       emit(HomeState.searchedSurahJuz(event.query));
+    } on ServerFailure catch (e) {
+      _emitFailed(emit, e.message);
+    } catch (e) {
+      _emitFailed(emit, e.toString());
+    }
+  }
+
+  FutureOr<void> _clearSearch(_ClearSearch event, emit) async {
+    try {
+      emit(const HomeState.searching());
+      // await Future.delayed(const Duration(milliseconds: 500));
+      searchController.clear();
+      emit(const HomeState.searchedSurahJuz(""));
     } on ServerFailure catch (e) {
       _emitFailed(emit, e.message);
     } catch (e) {
