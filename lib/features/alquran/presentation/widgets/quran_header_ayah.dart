@@ -36,11 +36,11 @@ class QuranHeaderAyah extends StatelessWidget {
               DefaultImage(
                 imageUrl: AppAssets.headerOrnament,
                 imageType: ImageType.asset,
-                width: 26,
+                width: 20,
                 height: 54,
               ),
               SizedBox(
-                width: context.getWidth * 0.13,
+                width: context.getWidth * 0.14,
                 child: DefaultText(
                   surah?.translateRevelationId ?? '',
                   textAlign: TextAlign.center,
@@ -93,7 +93,7 @@ class QuranHeaderAyah extends StatelessWidget {
                 child: DefaultImage(
                   imageUrl: AppAssets.headerOrnament,
                   imageType: ImageType.asset,
-                  width: 26,
+                  width: 20,
                   height: 54,
                 ),
               ),
