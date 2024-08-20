@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../common.dart';
 
 class DefaultTextField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String? hintText;
   final TextStyle? textStyle;
   final TextStyle? hintTextStyle;
@@ -46,7 +46,7 @@ class DefaultTextField extends StatelessWidget {
 
   const DefaultTextField({
     super.key,
-    required this.controller,
+    this.controller,
     this.hintText,
     this.textStyle,
     this.hintTextStyle,
@@ -97,7 +97,7 @@ class DefaultTextField extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, size) {
         TextSpan text = TextSpan(
-          text: controller.text,
+          text: controller?.text,
           style: textStyle ??
               AppStyle.text(type: TextStyleType.regular, fontSize: 16.sp),
         );

@@ -42,6 +42,8 @@ class HomeView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const LastReadSurahBanner(),
+          12.heightBox,
+          const SearchSurahJuz(),
           24.heightBox,
           Expanded(
             child: AutoTabsRouter(
