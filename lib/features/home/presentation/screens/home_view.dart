@@ -46,22 +46,10 @@ class HomeView extends StatelessWidget {
           const SearchSurahJuz(),
           24.heightBox,
           Expanded(
-            child: AutoTabsRouter(
+            child: AutoTabsRouter.tabBar(
               routes: bodyTab,
-              transitionBuilder: (context, child, animation) {
-                final double resDx =
-                    globalContext.tabsRouter.isRouteActive(JuzRoute.name)
-                        ? 1
-                        : -1;
-                return SlideTransition(
-                  position: Tween<Offset>(
-                    begin: Offset(resDx, 0),
-                    end: Offset.zero,
-                  ).animate(animation),
-                  child: child,
-                );
-              },
-              builder: (context, child) {
+              homeIndex: 0,
+              builder: (context, child, pageController) {
                 globalContext = context;
                 final tabsRouter = AutoTabsRouter.of(context);
                 return Column(
@@ -75,11 +63,12 @@ class HomeView extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           final currentTab = bodyTab[index];
+                          final isActive = pageController.index == index;
                           return TabContainer(
                             tabName:
                                 currentTab.routeName.replaceAll('Route', ''),
                             isActive:
-                                tabsRouter.isRouteActive(currentTab.routeName),
+                                isActive,
                             onTap: () => tabsRouter.setActiveIndex(index),
                           );
                         },
