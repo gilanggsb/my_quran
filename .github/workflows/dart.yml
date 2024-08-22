@@ -28,7 +28,7 @@ jobs:
         run: dart pub global activate fvm
 
       - name: Use Flutter version with FVM
-        run: fvm use 3.24.0
+        run: yes | fvm use 3.24.0
 
       - name: Cache Flutter dependencies
         uses: actions/cache@v3
