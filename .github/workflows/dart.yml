@@ -18,12 +18,21 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+        
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           flutter-version: 3.24.0
+          
       - run: flutter --version
+      
+      - name: install fvm
+        run: brew install fvm && fvm --version
+        
+      - name: activate fvm
+        run: dart pub global activate fvm
+        
       - name: pub get
         run: make pub_get
 
