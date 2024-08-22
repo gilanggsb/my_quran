@@ -30,18 +30,18 @@ jobs:
       - name: Install FVM
         run: dart pub global activate fvm
 
-      - name: Use Flutter version with FVM
-        run: yes | fvm use 3.24.0
+      # - name: Use Flutter version with FVM
+      #   run: yes | fvm use 3.24.0
 
-      - name: Cache Flutter dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            .dart_tool
-            .packages
-            pubspec.lock
-            .fvm/flutter_sdk/.pub-cache
-          key: fvm-flutter-dependencies-${{ runner.os }}-${{ hashFiles('pubspec.yaml') }}
+      # - name: Cache Flutter dependencies
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: |
+      #       .dart_tool
+      #       .packages
+      #       pubspec.lock
+      #       .fvm/flutter_sdk/.pub-cache
+      #     key: fvm-flutter-dependencies-${{ runner.os }}-${{ hashFiles('pubspec.yaml') }}
 
       - name: Install Flutter dependencies
         run: fvm flutter pub get
