@@ -1,8 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 name: Dart
 
 on:
@@ -19,33 +14,23 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v4
         
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: 3.24.0
-          
-      - run: flutter --version
-      
-      - name: install fvm
-        run: brew install fvm && fvm --version
-        
-      - name: activate fvm
-        run: dart pub global activate fvm
-        
+      - name: Install FVM
+        run: pub global activate fvm
+
+      - name: Install Flutter via FVM
+        run: fvm install 3.24.0
+
+      - name: Use Flutter version with FVM
+        run: fvm use 3.24.0
+
+      - name: Set Flutter to use FVM in this project
+        run: fvm flutter --version
+
       - name: pub get
-        run: make pub_get
+        run: fvm flutter pub get
 
-      # Uncomment this step to verify the use of 'dart format' on each commit.
-      # - name: Verify formatting
-      #   run: dart format --output=none --set-exit-if-changed .
-
-      # Consider passing '--fatal-infos' for slightly stricter analysis.
       - name: Analyze project source
-        run: dart analyze
+        run: fvm flutter analyze
 
-      # Your project will need to have tests in test/ and a dependency on
-      # package:test for this step to succeed. Note that Flutter projects will
-      # want to change this to 'flutter test'.
       - name: Run tests
-        run: dart test
+        run: fvm flutter test
