@@ -3,8 +3,6 @@ name: Dart
 on:
   push:
     branches: [ "feature/build-prod" ]
-  # pull_request:
-  #   branches: [ "main" ]
 
 jobs:
   build:
@@ -14,30 +12,35 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v4
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
+      - name: Cache FVM Flutter SDK
+        id: fvm-cache
+        uses: actions/cache@v3
         with:
-          channel: stable
-          flutter-version: 3.24.0
-          cache: true
-          # optional parameters follow
-          cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache
-          cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
-          pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache of dart pub get dependencies
-          pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
-          
-      - run: flutter --version
-        
+          path: |
+            ~/.pub-cache
+            .fvm/versions/3.24.0
+          key: fvm-flutter-${{ runner.os }}-3.24.0
+
+      - name: Install Dart SDK
+        uses: dart-lang/setup-dart@v1
+
       - name: Install FVM
         run: dart pub global activate fvm
 
       - name: Use Flutter version with FVM
-        run: yes | fvm use 3.24.0
+        run: fvm use 3.24.0
 
-      - name: Set Flutter to use FVM in this project
-        run: fvm flutter --version
+      - name: Cache Flutter dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            .dart_tool
+            .packages
+            pubspec.lock
+            .fvm/flutter_sdk/.pub-cache
+          key: fvm-flutter-dependencies-${{ runner.os }}-${{ hashFiles('pubspec.yaml') }}
 
-      - name: pub get
+      - name: Install Flutter dependencies
         run: fvm flutter pub get
 
       - name: Analyze project source
