@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 
 // Define the enum for log levels
@@ -38,8 +39,6 @@ class Logger {
         break;
       case LogLevel.custom:
         colorCode = customColor; // Use custom color
-        break;
-      default:
         break;
     }
 

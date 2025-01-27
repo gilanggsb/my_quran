@@ -36,7 +36,7 @@ class PlayerWidget extends StatelessWidget {
                   color: context.getColorExt(AppColorType.background),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: Colors.grey.withValues(alpha: 0.5),
                       spreadRadius: 1,
                       blurRadius: 0.5,
                     ),

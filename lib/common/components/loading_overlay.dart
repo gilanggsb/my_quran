@@ -33,7 +33,7 @@ class LoadingOverlayAlt extends StatelessWidget {
             if (isLoading)
               ModalBarrier(
                 dismissible: false,
-                color: Colors.black.withOpacity(0.5),
+                color: Colors.black.withValues(alpha: 0.5),
               ),
             if (isLoading)
               Center(

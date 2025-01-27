@@ -62,7 +62,7 @@ class InjectorService {
       () => Dio(),
     );
     getIt.registerLazySingleton<InternetConnectionChecker>(
-      () => InternetConnectionChecker(),
+      () => InternetConnectionChecker.createInstance(),
     );
     getIt.registerSingleton<AppRouter>(
       AppRouter(),
