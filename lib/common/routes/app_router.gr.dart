@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -28,10 +29,7 @@ import 'package:my_quran/features/splash/splash_screen.dart' as _i6;
 /// [_i1.BookmarkScreen]
 class BookmarkRoute extends _i8.PageRouteInfo<void> {
   const BookmarkRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          BookmarkRoute.name,
-          initialChildren: children,
-        );
+    : super(BookmarkRoute.name, initialChildren: children);
 
   static const String name = 'BookmarkRoute';
 
@@ -47,10 +45,7 @@ class BookmarkRoute extends _i8.PageRouteInfo<void> {
 /// [_i2.HomeScreen]
 class HomeRoute extends _i8.PageRouteInfo<void> {
   const HomeRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
+    : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
@@ -66,10 +61,7 @@ class HomeRoute extends _i8.PageRouteInfo<void> {
 /// [_i3.JuzTab]
 class JuzRoute extends _i8.PageRouteInfo<void> {
   const JuzRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          JuzRoute.name,
-          initialChildren: children,
-        );
+    : super(JuzRoute.name, initialChildren: children);
 
   static const String name = 'JuzRoute';
 
@@ -89,13 +81,10 @@ class QuranDetailRoute extends _i8.PageRouteInfo<QuranDetailRouteArgs> {
     required _i10.QuranDetailParams params,
     List<_i8.PageRouteInfo>? children,
   }) : super(
-          QuranDetailRoute.name,
-          args: QuranDetailRouteArgs(
-            key: key,
-            params: params,
-          ),
-          initialChildren: children,
-        );
+         QuranDetailRoute.name,
+         args: QuranDetailRouteArgs(key: key, params: params),
+         initialChildren: children,
+       );
 
   static const String name = 'QuranDetailRoute';
 
@@ -103,19 +92,13 @@ class QuranDetailRoute extends _i8.PageRouteInfo<QuranDetailRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<QuranDetailRouteArgs>();
-      return _i4.QuranDetailScreen(
-        key: args.key,
-        params: args.params,
-      );
+      return _i4.QuranDetailScreen(key: args.key, params: args.params);
     },
   );
 }
 
 class QuranDetailRouteArgs {
-  const QuranDetailRouteArgs({
-    this.key,
-    required this.params,
-  });
+  const QuranDetailRouteArgs({this.key, required this.params});
 
   final _i9.Key? key;
 
@@ -131,10 +114,7 @@ class QuranDetailRouteArgs {
 /// [_i5.RootWrapper]
 class RootWrapper extends _i8.PageRouteInfo<void> {
   const RootWrapper({List<_i8.PageRouteInfo>? children})
-      : super(
-          RootWrapper.name,
-          initialChildren: children,
-        );
+    : super(RootWrapper.name, initialChildren: children);
 
   static const String name = 'RootWrapper';
 
@@ -150,10 +130,7 @@ class RootWrapper extends _i8.PageRouteInfo<void> {
 /// [_i6.SplashScreen]
 class SplashRoute extends _i8.PageRouteInfo<void> {
   const SplashRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          SplashRoute.name,
-          initialChildren: children,
-        );
+    : super(SplashRoute.name, initialChildren: children);
 
   static const String name = 'SplashRoute';
 
@@ -169,10 +146,7 @@ class SplashRoute extends _i8.PageRouteInfo<void> {
 /// [_i7.SurahTab]
 class SurahRoute extends _i8.PageRouteInfo<void> {
   const SurahRoute({List<_i8.PageRouteInfo>? children})
-      : super(
-          SurahRoute.name,
-          initialChildren: children,
-        );
+    : super(SurahRoute.name, initialChildren: children);
 
   static const String name = 'SurahRoute';
 

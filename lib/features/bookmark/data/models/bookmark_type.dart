@@ -1,29 +1,31 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:isar/isar.dart';
+import 'package:hive_ce/hive.dart';
 
 part 'bookmark_type.freezed.dart';
 part 'bookmark_type.g.dart';
 
 @Freezed(fromJson: false, toJson: false)
+@HiveType(typeId: 3) // Assign a unique typeId for Hive
 @JsonSerializable(fieldRename: FieldRename.snake)
 class BookmarkType with _$BookmarkType {
-  ///Don't Forget below line
   const BookmarkType._();
+
   const factory BookmarkType({
-    String? name,
-    int? id,
+    @HiveField(0) String? name,
+    @HiveField(1) String? id,
   }) = _BookmarkType;
 
-  Id get isarId => Isar.autoIncrement;
+  // Removed Isar-specific code
+  // Id get isarId => Isar.autoIncrement;
 
   factory BookmarkType.fromJson(Map<String, dynamic> json) =>
       _$BookmarkTypeFromJson(json);
 
-  toJson() => _$BookmarkTypeToJson(this);
+  Map<String, dynamic> toJson() => _$BookmarkTypeToJson(this);
 
-  factory BookmarkType.ayah() => const BookmarkType(id: 1, name: 'Ayah');
+  factory BookmarkType.ayah() => const BookmarkType(id: "ayah", name: 'Ayah');
 }
 
 extension BookmarkTypeExtension on BookmarkType {
-  bool get isAyahType => id == 1;
+  bool get isAyahType => id == "ayah";
 }

@@ -45,8 +45,8 @@ class InjectorService {
     getIt.registerLazySingleton<NetworkService>(
       () => NetworkServiceImpl(getIt(), isTesting: isTesting),
     );
-    getIt.registerSingletonAsync<IsarService>(() async {
-      IsarService db = IsarServiceImpl();
+    getIt.registerSingletonAsync<HiveService>(() async {
+      HiveService db = HiveServiceImpl();
       await db.init();
       return db;
     });

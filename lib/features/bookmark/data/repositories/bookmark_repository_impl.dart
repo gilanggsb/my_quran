@@ -21,12 +21,12 @@ class BookmarkRepositoryImpl extends BookmarkRepository {
   }
 
   @override
-  Future<BaseResponse<bool>> deleteBookmark(int bookmarkId) {
+  Future<BaseResponse<bool>> deleteBookmark(String bookmarkId) {
     return localDataSource.deleteBookmark(bookmarkId);
   }
 
   @override
-  Future<BaseResponse<bool>> deleteBookmarkCategory(int categoryId) {
+  Future<BaseResponse<bool>> deleteBookmarkCategory(String categoryId) {
     return localDataSource.deleteBookmarkCategory(categoryId);
   }
 
@@ -36,7 +36,7 @@ class BookmarkRepositoryImpl extends BookmarkRepository {
   }
 
   @override
-  Future<BaseResponse<List<BookmarkData>>> getBookmarks(int? categoryId) {
+  Future<BaseResponse<List<BookmarkData>>> getBookmarks(String? categoryId) {
     return localDataSource.getBookmarks(categoryId);
   }
 

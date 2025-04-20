@@ -16,22 +16,32 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Juz {
+  @HiveField(0)
   String? get ayatArab => throw _privateConstructorUsedError;
+  @HiveField(1)
   String? get ayatIndo => throw _privateConstructorUsedError;
+  @HiveField(2)
   String? get ayatLatin => throw _privateConstructorUsedError;
+  @HiveField(3)
   String? get name => throw _privateConstructorUsedError;
+  @HiveField(4)
   String? get nameEndArab => throw _privateConstructorUsedError;
+  @HiveField(5)
   String? get nameEndId => throw _privateConstructorUsedError;
+  @HiveField(6)
   String? get nameStartArab => throw _privateConstructorUsedError;
+  @HiveField(7)
   String? get nameStartId => throw _privateConstructorUsedError;
+  @HiveField(8)
   String? get number => throw _privateConstructorUsedError;
+  @HiveField(9)
   String? get surahIdEnd => throw _privateConstructorUsedError;
+  @HiveField(10)
   String? get surahIdStart => throw _privateConstructorUsedError;
+  @HiveField(11)
   String? get verseEnd => throw _privateConstructorUsedError;
+  @HiveField(12)
   String? get verseStart => throw _privateConstructorUsedError;
-
-  /// Serializes this Juz to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Juz
   /// with the given fields replaced by the non-null parameter values.
@@ -45,19 +55,19 @@ abstract class $JuzCopyWith<$Res> {
       _$JuzCopyWithImpl<$Res, Juz>;
   @useResult
   $Res call(
-      {String? ayatArab,
-      String? ayatIndo,
-      String? ayatLatin,
-      String? name,
-      String? nameEndArab,
-      String? nameEndId,
-      String? nameStartArab,
-      String? nameStartId,
-      String? number,
-      String? surahIdEnd,
-      String? surahIdStart,
-      String? verseEnd,
-      String? verseStart});
+      {@HiveField(0) String? ayatArab,
+      @HiveField(1) String? ayatIndo,
+      @HiveField(2) String? ayatLatin,
+      @HiveField(3) String? name,
+      @HiveField(4) String? nameEndArab,
+      @HiveField(5) String? nameEndId,
+      @HiveField(6) String? nameStartArab,
+      @HiveField(7) String? nameStartId,
+      @HiveField(8) String? number,
+      @HiveField(9) String? surahIdEnd,
+      @HiveField(10) String? surahIdStart,
+      @HiveField(11) String? verseEnd,
+      @HiveField(12) String? verseStart});
 }
 
 /// @nodoc
@@ -152,19 +162,19 @@ abstract class _$$JuzImplCopyWith<$Res> implements $JuzCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? ayatArab,
-      String? ayatIndo,
-      String? ayatLatin,
-      String? name,
-      String? nameEndArab,
-      String? nameEndId,
-      String? nameStartArab,
-      String? nameStartId,
-      String? number,
-      String? surahIdEnd,
-      String? surahIdStart,
-      String? verseEnd,
-      String? verseStart});
+      {@HiveField(0) String? ayatArab,
+      @HiveField(1) String? ayatIndo,
+      @HiveField(2) String? ayatLatin,
+      @HiveField(3) String? name,
+      @HiveField(4) String? nameEndArab,
+      @HiveField(5) String? nameEndId,
+      @HiveField(6) String? nameStartArab,
+      @HiveField(7) String? nameStartId,
+      @HiveField(8) String? number,
+      @HiveField(9) String? surahIdEnd,
+      @HiveField(10) String? surahIdStart,
+      @HiveField(11) String? verseEnd,
+      @HiveField(12) String? verseStart});
 }
 
 /// @nodoc
@@ -250,49 +260,62 @@ class __$$JuzImplCopyWithImpl<$Res> extends _$JuzCopyWithImpl<$Res, _$JuzImpl>
 }
 
 /// @nodoc
-@JsonSerializable(createFactory: false)
+
 class _$JuzImpl extends _Juz {
   const _$JuzImpl(
-      {this.ayatArab,
-      this.ayatIndo,
-      this.ayatLatin,
-      this.name,
-      this.nameEndArab,
-      this.nameEndId,
-      this.nameStartArab,
-      this.nameStartId,
-      this.number,
-      this.surahIdEnd,
-      this.surahIdStart,
-      this.verseEnd,
-      this.verseStart})
+      {@HiveField(0) this.ayatArab,
+      @HiveField(1) this.ayatIndo,
+      @HiveField(2) this.ayatLatin,
+      @HiveField(3) this.name,
+      @HiveField(4) this.nameEndArab,
+      @HiveField(5) this.nameEndId,
+      @HiveField(6) this.nameStartArab,
+      @HiveField(7) this.nameStartId,
+      @HiveField(8) this.number,
+      @HiveField(9) this.surahIdEnd,
+      @HiveField(10) this.surahIdStart,
+      @HiveField(11) this.verseEnd,
+      @HiveField(12) this.verseStart})
       : super._();
 
   @override
+  @HiveField(0)
   final String? ayatArab;
   @override
+  @HiveField(1)
   final String? ayatIndo;
   @override
+  @HiveField(2)
   final String? ayatLatin;
   @override
+  @HiveField(3)
   final String? name;
   @override
+  @HiveField(4)
   final String? nameEndArab;
   @override
+  @HiveField(5)
   final String? nameEndId;
   @override
+  @HiveField(6)
   final String? nameStartArab;
   @override
+  @HiveField(7)
   final String? nameStartId;
   @override
+  @HiveField(8)
   final String? number;
   @override
+  @HiveField(9)
   final String? surahIdEnd;
   @override
+  @HiveField(10)
   final String? surahIdStart;
   @override
+  @HiveField(11)
   final String? verseEnd;
   @override
+  @HiveField(12)
   final String? verseStart;
 
   @override
@@ -331,7 +354,6 @@ class _$JuzImpl extends _Juz {
                 other.verseStart == verseStart));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -356,57 +378,63 @@ class _$JuzImpl extends _Juz {
   @pragma('vm:prefer-inline')
   _$$JuzImplCopyWith<_$JuzImpl> get copyWith =>
       __$$JuzImplCopyWithImpl<_$JuzImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$JuzImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _Juz extends Juz {
   const factory _Juz(
-      {final String? ayatArab,
-      final String? ayatIndo,
-      final String? ayatLatin,
-      final String? name,
-      final String? nameEndArab,
-      final String? nameEndId,
-      final String? nameStartArab,
-      final String? nameStartId,
-      final String? number,
-      final String? surahIdEnd,
-      final String? surahIdStart,
-      final String? verseEnd,
-      final String? verseStart}) = _$JuzImpl;
+      {@HiveField(0) final String? ayatArab,
+      @HiveField(1) final String? ayatIndo,
+      @HiveField(2) final String? ayatLatin,
+      @HiveField(3) final String? name,
+      @HiveField(4) final String? nameEndArab,
+      @HiveField(5) final String? nameEndId,
+      @HiveField(6) final String? nameStartArab,
+      @HiveField(7) final String? nameStartId,
+      @HiveField(8) final String? number,
+      @HiveField(9) final String? surahIdEnd,
+      @HiveField(10) final String? surahIdStart,
+      @HiveField(11) final String? verseEnd,
+      @HiveField(12) final String? verseStart}) = _$JuzImpl;
   const _Juz._() : super._();
 
   @override
+  @HiveField(0)
   String? get ayatArab;
   @override
+  @HiveField(1)
   String? get ayatIndo;
   @override
+  @HiveField(2)
   String? get ayatLatin;
   @override
+  @HiveField(3)
   String? get name;
   @override
+  @HiveField(4)
   String? get nameEndArab;
   @override
+  @HiveField(5)
   String? get nameEndId;
   @override
+  @HiveField(6)
   String? get nameStartArab;
   @override
+  @HiveField(7)
   String? get nameStartId;
   @override
+  @HiveField(8)
   String? get number;
   @override
+  @HiveField(9)
   String? get surahIdEnd;
   @override
+  @HiveField(10)
   String? get surahIdStart;
   @override
+  @HiveField(11)
   String? get verseEnd;
   @override
+  @HiveField(12)
   String? get verseStart;
 
   /// Create a copy of Juz

@@ -39,7 +39,7 @@ abstract class BoneMockData {
     10,
     const BookmarkCategory(
       name: "Doa",
-      id: 1,
+      id: "1",
     ),
   );
 
@@ -48,7 +48,7 @@ abstract class BoneMockData {
     const BookmarkData(
       title: "Terbaik",
       subtitle: "asdasd",
-      id: 1,
+      id: "1",
     ),
   );
 }

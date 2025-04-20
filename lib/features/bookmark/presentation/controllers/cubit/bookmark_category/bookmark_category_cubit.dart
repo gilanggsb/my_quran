@@ -46,7 +46,7 @@ class BookmarkCategoryCubit extends Cubit<BookmarkCategoryState> {
       await addBookmarkCategory(
         BookmarkCategory(
           name: name,
-          id: DateTime.now().millisecondsSinceEpoch,
+          id: AppUtils.generateUUIDv4(),
         ),
       );
       getData();
@@ -58,7 +58,7 @@ class BookmarkCategoryCubit extends Cubit<BookmarkCategoryState> {
     }
   }
 
-  void deleteCategory(int categoryId) async {
+  void deleteCategory(String categoryId) async {
     try {
       _emitLoading();
       await deleteBookmarkCategory(categoryId);
@@ -91,9 +91,9 @@ class BookmarkCategoryCubit extends Cubit<BookmarkCategoryState> {
         _emitFailed("Surah not found");
       }
       final bookmarkData = BookmarkData(
-        categoryId: category?.id ?? 0,
+        categoryId: category?.id ?? "0",
         dataId: ayah?.idInt ?? 0,
-        id: DateTime.now().microsecondsSinceEpoch,
+        id: AppUtils.generateUUIDv4(),
         title: "QS. ${resSurahs.data?.nameId ?? ''}: Ayat ${ayah?.ayah ?? ''}",
         subtitle: ayah?.arab,
         type: BookmarkType.ayah().id,

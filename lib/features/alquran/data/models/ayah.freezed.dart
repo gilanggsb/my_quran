@@ -16,27 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Ayah {
+  @HiveField(0)
   String? get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   int? get idInt => throw _privateConstructorUsedError;
+  @HiveField(2)
   String? get arab => throw _privateConstructorUsedError;
+  @HiveField(3)
   String? get asbab => throw _privateConstructorUsedError;
+  @HiveField(4)
   String? get audio => throw _privateConstructorUsedError;
+  @HiveField(5)
   String? get ayah =>
       throw _privateConstructorUsedError; // Original string representation
+  @HiveField(6)
   int? get ayahInt =>
       throw _privateConstructorUsedError; // Numerical representation
+  @HiveField(7)
   String? get juz =>
       throw _privateConstructorUsedError; // Original string representation
+  @HiveField(8)
   int? get juzInt =>
       throw _privateConstructorUsedError; // Numerical representation
+  @HiveField(9)
   String? get surah =>
       throw _privateConstructorUsedError; // Original string representation
+  @HiveField(10)
   int? get surahInt =>
       throw _privateConstructorUsedError; // Numerical representation
+  @HiveField(11)
   String? get latin => throw _privateConstructorUsedError;
+  @HiveField(12)
   String? get notes => throw _privateConstructorUsedError;
+  @HiveField(13)
   String? get page => throw _privateConstructorUsedError;
+  @HiveField(14)
   String? get text => throw _privateConstructorUsedError;
+  @HiveField(15)
   String? get theme => throw _privateConstructorUsedError;
 
   /// Create a copy of Ayah
@@ -51,22 +67,22 @@ abstract class $AyahCopyWith<$Res> {
       _$AyahCopyWithImpl<$Res, Ayah>;
   @useResult
   $Res call(
-      {String? id,
-      int? idInt,
-      String? arab,
-      String? asbab,
-      String? audio,
-      String? ayah,
-      int? ayahInt,
-      String? juz,
-      int? juzInt,
-      String? surah,
-      int? surahInt,
-      String? latin,
-      String? notes,
-      String? page,
-      String? text,
-      String? theme});
+      {@HiveField(0) String? id,
+      @HiveField(1) int? idInt,
+      @HiveField(2) String? arab,
+      @HiveField(3) String? asbab,
+      @HiveField(4) String? audio,
+      @HiveField(5) String? ayah,
+      @HiveField(6) int? ayahInt,
+      @HiveField(7) String? juz,
+      @HiveField(8) int? juzInt,
+      @HiveField(9) String? surah,
+      @HiveField(10) int? surahInt,
+      @HiveField(11) String? latin,
+      @HiveField(12) String? notes,
+      @HiveField(13) String? page,
+      @HiveField(14) String? text,
+      @HiveField(15) String? theme});
 }
 
 /// @nodoc
@@ -178,22 +194,22 @@ abstract class _$$AyahImplCopyWith<$Res> implements $AyahCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? id,
-      int? idInt,
-      String? arab,
-      String? asbab,
-      String? audio,
-      String? ayah,
-      int? ayahInt,
-      String? juz,
-      int? juzInt,
-      String? surah,
-      int? surahInt,
-      String? latin,
-      String? notes,
-      String? page,
-      String? text,
-      String? theme});
+      {@HiveField(0) String? id,
+      @HiveField(1) int? idInt,
+      @HiveField(2) String? arab,
+      @HiveField(3) String? asbab,
+      @HiveField(4) String? audio,
+      @HiveField(5) String? ayah,
+      @HiveField(6) int? ayahInt,
+      @HiveField(7) String? juz,
+      @HiveField(8) int? juzInt,
+      @HiveField(9) String? surah,
+      @HiveField(10) int? surahInt,
+      @HiveField(11) String? latin,
+      @HiveField(12) String? notes,
+      @HiveField(13) String? page,
+      @HiveField(14) String? text,
+      @HiveField(15) String? theme});
 }
 
 /// @nodoc
@@ -298,61 +314,77 @@ class __$$AyahImplCopyWithImpl<$Res>
 
 class _$AyahImpl extends _Ayah {
   const _$AyahImpl(
-      {this.id,
-      this.idInt,
-      this.arab,
-      this.asbab,
-      this.audio,
-      this.ayah,
-      this.ayahInt,
-      this.juz,
-      this.juzInt,
-      this.surah,
-      this.surahInt,
-      this.latin,
-      this.notes,
-      this.page,
-      this.text,
-      this.theme})
+      {@HiveField(0) this.id,
+      @HiveField(1) this.idInt,
+      @HiveField(2) this.arab,
+      @HiveField(3) this.asbab,
+      @HiveField(4) this.audio,
+      @HiveField(5) this.ayah,
+      @HiveField(6) this.ayahInt,
+      @HiveField(7) this.juz,
+      @HiveField(8) this.juzInt,
+      @HiveField(9) this.surah,
+      @HiveField(10) this.surahInt,
+      @HiveField(11) this.latin,
+      @HiveField(12) this.notes,
+      @HiveField(13) this.page,
+      @HiveField(14) this.text,
+      @HiveField(15) this.theme})
       : super._();
 
   @override
+  @HiveField(0)
   final String? id;
   @override
+  @HiveField(1)
   final int? idInt;
   @override
+  @HiveField(2)
   final String? arab;
   @override
+  @HiveField(3)
   final String? asbab;
   @override
+  @HiveField(4)
   final String? audio;
   @override
+  @HiveField(5)
   final String? ayah;
 // Original string representation
   @override
+  @HiveField(6)
   final int? ayahInt;
 // Numerical representation
   @override
+  @HiveField(7)
   final String? juz;
 // Original string representation
   @override
+  @HiveField(8)
   final int? juzInt;
 // Numerical representation
   @override
+  @HiveField(9)
   final String? surah;
 // Original string representation
   @override
+  @HiveField(10)
   final int? surahInt;
 // Numerical representation
   @override
+  @HiveField(11)
   final String? latin;
   @override
+  @HiveField(12)
   final String? notes;
   @override
+  @HiveField(13)
   final String? page;
   @override
+  @HiveField(14)
   final String? text;
   @override
+  @HiveField(15)
   final String? theme;
 
   @override
@@ -415,55 +447,71 @@ class _$AyahImpl extends _Ayah {
 
 abstract class _Ayah extends Ayah {
   const factory _Ayah(
-      {final String? id,
-      final int? idInt,
-      final String? arab,
-      final String? asbab,
-      final String? audio,
-      final String? ayah,
-      final int? ayahInt,
-      final String? juz,
-      final int? juzInt,
-      final String? surah,
-      final int? surahInt,
-      final String? latin,
-      final String? notes,
-      final String? page,
-      final String? text,
-      final String? theme}) = _$AyahImpl;
+      {@HiveField(0) final String? id,
+      @HiveField(1) final int? idInt,
+      @HiveField(2) final String? arab,
+      @HiveField(3) final String? asbab,
+      @HiveField(4) final String? audio,
+      @HiveField(5) final String? ayah,
+      @HiveField(6) final int? ayahInt,
+      @HiveField(7) final String? juz,
+      @HiveField(8) final int? juzInt,
+      @HiveField(9) final String? surah,
+      @HiveField(10) final int? surahInt,
+      @HiveField(11) final String? latin,
+      @HiveField(12) final String? notes,
+      @HiveField(13) final String? page,
+      @HiveField(14) final String? text,
+      @HiveField(15) final String? theme}) = _$AyahImpl;
   const _Ayah._() : super._();
 
   @override
+  @HiveField(0)
   String? get id;
   @override
+  @HiveField(1)
   int? get idInt;
   @override
+  @HiveField(2)
   String? get arab;
   @override
+  @HiveField(3)
   String? get asbab;
   @override
+  @HiveField(4)
   String? get audio;
   @override
+  @HiveField(5)
   String? get ayah; // Original string representation
   @override
+  @HiveField(6)
   int? get ayahInt; // Numerical representation
   @override
+  @HiveField(7)
   String? get juz; // Original string representation
   @override
+  @HiveField(8)
   int? get juzInt; // Numerical representation
   @override
+  @HiveField(9)
   String? get surah; // Original string representation
   @override
+  @HiveField(10)
   int? get surahInt; // Numerical representation
   @override
+  @HiveField(11)
   String? get latin;
   @override
+  @HiveField(12)
   String? get notes;
   @override
+  @HiveField(13)
   String? get page;
   @override
+  @HiveField(14)
   String? get text;
   @override
+  @HiveField(15)
   String? get theme;
 
   /// Create a copy of Ayah

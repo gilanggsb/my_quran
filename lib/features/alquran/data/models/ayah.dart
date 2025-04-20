@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:isar/isar.dart';
+import 'package:hive_ce/hive.dart';
 
 part 'ayah.freezed.dart';
 part 'ayah.g.dart';
@@ -9,32 +9,30 @@ part 'ayah.g.dart';
 Ayah ayahFromJson(String str) => Ayah.fromJson(json.decode(str));
 String ayahToJson(Ayah data) => json.encode(data.toJson());
 
-@Freezed(fromJson: false)
+@Freezed(fromJson: false, toJson: false)
+@HiveType(typeId: 0) // Assign a unique typeId for Hive
 @JsonSerializable(fieldRename: FieldRename.snake)
-@Collection(ignore: {'copyWith'})
 class Ayah with _$Ayah {
   const Ayah._();
 
   const factory Ayah({
-    String? id,
-    int? idInt,
-    String? arab,
-    String? asbab,
-    String? audio,
-    String? ayah, // Original string representation
-    int? ayahInt, // Numerical representation
-    String? juz, // Original string representation
-    int? juzInt, // Numerical representation
-    String? surah, // Original string representation
-    int? surahInt, // Numerical representation
-    String? latin,
-    String? notes,
-    String? page,
-    String? text,
-    String? theme,
+    @HiveField(0) String? id,
+    @HiveField(1) int? idInt,
+    @HiveField(2) String? arab,
+    @HiveField(3) String? asbab,
+    @HiveField(4) String? audio,
+    @HiveField(5) String? ayah, // Original string representation
+    @HiveField(6) int? ayahInt, // Numerical representation
+    @HiveField(7) String? juz, // Original string representation
+    @HiveField(8) int? juzInt, // Numerical representation
+    @HiveField(9) String? surah, // Original string representation
+    @HiveField(10) int? surahInt, // Numerical representation
+    @HiveField(11) String? latin,
+    @HiveField(12) String? notes,
+    @HiveField(13) String? page,
+    @HiveField(14) String? text,
+    @HiveField(15) String? theme,
   }) = _Ayah;
-
-  Id get isarId => Isar.autoIncrement;
 
   // Custom fromJson to handle both string and int parsing
   factory Ayah.fromJson(Map<String, dynamic> json) {

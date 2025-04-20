@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -47,5 +48,19 @@ class AppUtils {
       debugPrint("Cannot get download folder path $err");
     }
     return '';
+  }
+
+  static String generateUUIDv4() {
+    final random = Random.secure();
+    return '${_randomHex(random, 8)}-${_randomHex(random, 4)}-4${_randomHex(random, 3)}-${_randomHex(random, 1)}${_randomHex(random, 3)}-${_randomHex(random, 12)}';
+  }
+
+  static String _randomHex(Random random, int length) {
+    final hexChars = '0123456789abcdef';
+    final codeUnits = List.generate(length, (index) {
+      final randomIndex = random.nextInt(hexChars.length);
+      return hexChars.codeUnitAt(randomIndex);
+    });
+    return String.fromCharCodes(codeUnits);
   }
 }

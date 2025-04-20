@@ -16,19 +16,33 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Surah {
+  @HiveField(0)
   String? get audioUrl => throw _privateConstructorUsedError;
+  @HiveField(1)
   String? get nameEn => throw _privateConstructorUsedError;
+  @HiveField(2)
   String? get nameId => throw _privateConstructorUsedError;
+  @HiveField(3)
   String? get nameLong => throw _privateConstructorUsedError;
+  @HiveField(4)
   String? get nameShort => throw _privateConstructorUsedError;
+  @HiveField(5)
   String? get number => throw _privateConstructorUsedError;
+  @HiveField(6)
   String? get numberOfVerses => throw _privateConstructorUsedError;
+  @HiveField(7)
   String? get revelation => throw _privateConstructorUsedError;
+  @HiveField(8)
   String? get revelationEn => throw _privateConstructorUsedError;
+  @HiveField(9)
   String? get revelationId => throw _privateConstructorUsedError;
+  @HiveField(10)
   String? get sequence => throw _privateConstructorUsedError;
+  @HiveField(11)
   String? get tafsir => throw _privateConstructorUsedError;
+  @HiveField(12)
   String? get translationEn => throw _privateConstructorUsedError;
+  @HiveField(13)
   String? get translationId => throw _privateConstructorUsedError;
 
   /// Create a copy of Surah
@@ -43,20 +57,20 @@ abstract class $SurahCopyWith<$Res> {
       _$SurahCopyWithImpl<$Res, Surah>;
   @useResult
   $Res call(
-      {String? audioUrl,
-      String? nameEn,
-      String? nameId,
-      String? nameLong,
-      String? nameShort,
-      String? number,
-      String? numberOfVerses,
-      String? revelation,
-      String? revelationEn,
-      String? revelationId,
-      String? sequence,
-      String? tafsir,
-      String? translationEn,
-      String? translationId});
+      {@HiveField(0) String? audioUrl,
+      @HiveField(1) String? nameEn,
+      @HiveField(2) String? nameId,
+      @HiveField(3) String? nameLong,
+      @HiveField(4) String? nameShort,
+      @HiveField(5) String? number,
+      @HiveField(6) String? numberOfVerses,
+      @HiveField(7) String? revelation,
+      @HiveField(8) String? revelationEn,
+      @HiveField(9) String? revelationId,
+      @HiveField(10) String? sequence,
+      @HiveField(11) String? tafsir,
+      @HiveField(12) String? translationEn,
+      @HiveField(13) String? translationId});
 }
 
 /// @nodoc
@@ -158,20 +172,20 @@ abstract class _$$SurahImplCopyWith<$Res> implements $SurahCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? audioUrl,
-      String? nameEn,
-      String? nameId,
-      String? nameLong,
-      String? nameShort,
-      String? number,
-      String? numberOfVerses,
-      String? revelation,
-      String? revelationEn,
-      String? revelationId,
-      String? sequence,
-      String? tafsir,
-      String? translationEn,
-      String? translationId});
+      {@HiveField(0) String? audioUrl,
+      @HiveField(1) String? nameEn,
+      @HiveField(2) String? nameId,
+      @HiveField(3) String? nameLong,
+      @HiveField(4) String? nameShort,
+      @HiveField(5) String? number,
+      @HiveField(6) String? numberOfVerses,
+      @HiveField(7) String? revelation,
+      @HiveField(8) String? revelationEn,
+      @HiveField(9) String? revelationId,
+      @HiveField(10) String? sequence,
+      @HiveField(11) String? tafsir,
+      @HiveField(12) String? translationEn,
+      @HiveField(13) String? translationId});
 }
 
 /// @nodoc
@@ -267,49 +281,63 @@ class __$$SurahImplCopyWithImpl<$Res>
 
 class _$SurahImpl extends _Surah {
   const _$SurahImpl(
-      {this.audioUrl,
-      this.nameEn,
-      this.nameId,
-      this.nameLong,
-      this.nameShort,
-      this.number,
-      this.numberOfVerses,
-      this.revelation,
-      this.revelationEn,
-      this.revelationId,
-      this.sequence,
-      this.tafsir,
-      this.translationEn,
-      this.translationId})
+      {@HiveField(0) this.audioUrl,
+      @HiveField(1) this.nameEn,
+      @HiveField(2) this.nameId,
+      @HiveField(3) this.nameLong,
+      @HiveField(4) this.nameShort,
+      @HiveField(5) this.number,
+      @HiveField(6) this.numberOfVerses,
+      @HiveField(7) this.revelation,
+      @HiveField(8) this.revelationEn,
+      @HiveField(9) this.revelationId,
+      @HiveField(10) this.sequence,
+      @HiveField(11) this.tafsir,
+      @HiveField(12) this.translationEn,
+      @HiveField(13) this.translationId})
       : super._();
 
   @override
+  @HiveField(0)
   final String? audioUrl;
   @override
+  @HiveField(1)
   final String? nameEn;
   @override
+  @HiveField(2)
   final String? nameId;
   @override
+  @HiveField(3)
   final String? nameLong;
   @override
+  @HiveField(4)
   final String? nameShort;
   @override
+  @HiveField(5)
   final String? number;
   @override
+  @HiveField(6)
   final String? numberOfVerses;
   @override
+  @HiveField(7)
   final String? revelation;
   @override
+  @HiveField(8)
   final String? revelationEn;
   @override
+  @HiveField(9)
   final String? revelationId;
   @override
+  @HiveField(10)
   final String? sequence;
   @override
+  @HiveField(11)
   final String? tafsir;
   @override
+  @HiveField(12)
   final String? translationEn;
   @override
+  @HiveField(13)
   final String? translationId;
 
   @override
@@ -377,49 +405,63 @@ class _$SurahImpl extends _Surah {
 
 abstract class _Surah extends Surah {
   const factory _Surah(
-      {final String? audioUrl,
-      final String? nameEn,
-      final String? nameId,
-      final String? nameLong,
-      final String? nameShort,
-      final String? number,
-      final String? numberOfVerses,
-      final String? revelation,
-      final String? revelationEn,
-      final String? revelationId,
-      final String? sequence,
-      final String? tafsir,
-      final String? translationEn,
-      final String? translationId}) = _$SurahImpl;
+      {@HiveField(0) final String? audioUrl,
+      @HiveField(1) final String? nameEn,
+      @HiveField(2) final String? nameId,
+      @HiveField(3) final String? nameLong,
+      @HiveField(4) final String? nameShort,
+      @HiveField(5) final String? number,
+      @HiveField(6) final String? numberOfVerses,
+      @HiveField(7) final String? revelation,
+      @HiveField(8) final String? revelationEn,
+      @HiveField(9) final String? revelationId,
+      @HiveField(10) final String? sequence,
+      @HiveField(11) final String? tafsir,
+      @HiveField(12) final String? translationEn,
+      @HiveField(13) final String? translationId}) = _$SurahImpl;
   const _Surah._() : super._();
 
   @override
+  @HiveField(0)
   String? get audioUrl;
   @override
+  @HiveField(1)
   String? get nameEn;
   @override
+  @HiveField(2)
   String? get nameId;
   @override
+  @HiveField(3)
   String? get nameLong;
   @override
+  @HiveField(4)
   String? get nameShort;
   @override
+  @HiveField(5)
   String? get number;
   @override
+  @HiveField(6)
   String? get numberOfVerses;
   @override
+  @HiveField(7)
   String? get revelation;
   @override
+  @HiveField(8)
   String? get revelationEn;
   @override
+  @HiveField(9)
   String? get revelationId;
   @override
+  @HiveField(10)
   String? get sequence;
   @override
+  @HiveField(11)
   String? get tafsir;
   @override
+  @HiveField(12)
   String? get translationEn;
   @override
+  @HiveField(13)
   String? get translationId;
 
   /// Create a copy of Surah

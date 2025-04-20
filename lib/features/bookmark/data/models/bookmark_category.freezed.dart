@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BookmarkCategory {
+  @HiveField(0)
   String? get name => throw _privateConstructorUsedError;
-  int? get id => throw _privateConstructorUsedError;
+  @HiveField(1)
+  String? get id => throw _privateConstructorUsedError;
 
   /// Create a copy of BookmarkCategory
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +34,7 @@ abstract class $BookmarkCategoryCopyWith<$Res> {
           BookmarkCategory value, $Res Function(BookmarkCategory) then) =
       _$BookmarkCategoryCopyWithImpl<$Res, BookmarkCategory>;
   @useResult
-  $Res call({String? name, int? id});
+  $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
 }
 
 /// @nodoc
@@ -61,7 +63,7 @@ class _$BookmarkCategoryCopyWithImpl<$Res, $Val extends BookmarkCategory>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -74,7 +76,7 @@ abstract class _$$BookmarkCategoryImplCopyWith<$Res>
       __$$BookmarkCategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, int? id});
+  $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
 }
 
 /// @nodoc
@@ -101,7 +103,7 @@ class __$$BookmarkCategoryImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -109,12 +111,15 @@ class __$$BookmarkCategoryImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$BookmarkCategoryImpl extends _BookmarkCategory {
-  const _$BookmarkCategoryImpl({this.name, this.id}) : super._();
+  const _$BookmarkCategoryImpl({@HiveField(0) this.name, @HiveField(1) this.id})
+      : super._();
 
   @override
+  @HiveField(0)
   final String? name;
   @override
-  final int? id;
+  @HiveField(1)
+  final String? id;
 
   @override
   String toString() {
@@ -144,14 +149,17 @@ class _$BookmarkCategoryImpl extends _BookmarkCategory {
 }
 
 abstract class _BookmarkCategory extends BookmarkCategory {
-  const factory _BookmarkCategory({final String? name, final int? id}) =
-      _$BookmarkCategoryImpl;
+  const factory _BookmarkCategory(
+      {@HiveField(0) final String? name,
+      @HiveField(1) final String? id}) = _$BookmarkCategoryImpl;
   const _BookmarkCategory._() : super._();
 
   @override
+  @HiveField(0)
   String? get name;
   @override
-  int? get id;
+  @HiveField(1)
+  String? get id;
 
   /// Create a copy of BookmarkCategory
   /// with the given fields replaced by the non-null parameter values.
