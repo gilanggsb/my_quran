@@ -31,6 +31,11 @@ class InjectorService {
   }
 
   void serviceInjection({bool isTesting = false}) {
+    getIt.registerSingletonAsync<HiveService>(() async {
+      HiveService db = HiveServiceImpl();
+      await db.init();
+      return db;
+    });
     getIt.registerLazySingleton<ApiService>(
       () => ApiServiceImpl(
         dio: getIt(),
@@ -45,11 +50,6 @@ class InjectorService {
     getIt.registerLazySingleton<NetworkService>(
       () => NetworkServiceImpl(getIt(), isTesting: isTesting),
     );
-    getIt.registerSingletonAsync<HiveService>(() async {
-      HiveService db = HiveServiceImpl();
-      await db.init();
-      return db;
-    });
   }
 
   void moduleInjection({bool isTesting = false}) {

@@ -29,7 +29,6 @@ class HiveServiceImpl extends HiveService {
 
   @override
   Future<T?> init<T>() async {
-    await Hive.initFlutter();
     Hive.registerAdapter(AyahAdapter());
     Hive.registerAdapter(JuzAdapter());
     Hive.registerAdapter(SurahAdapter());
@@ -75,11 +74,12 @@ class HiveServiceImpl extends HiveService {
 
   @override
   Future<void> writeAll<T>(List<T> data) async {
-    List<Future<void>> bulkWrites = [];
+    // List<Future<void>> bulkWrites = [];
     for (var item in data) {
-      bulkWrites.add(write<T>(item)); // Assuming each model has a unique id
+      await write<T>(item);
+      // bulkWrites.add(write<T>(item)); // Assuming each model has a unique id
     }
-    await Future.wait(bulkWrites);
+    // await Future.wait(bulkWrites);
   }
 
   @override
