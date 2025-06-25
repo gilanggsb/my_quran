@@ -6,17 +6,17 @@ part of 'ayahs_throughout_pagination.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AyahsThroughoutPaginationImpl _$$AyahsThroughoutPaginationImplFromJson(
+_AyahsThroughoutPagination _$AyahsThroughoutPaginationFromJson(
   Map<String, dynamic> json,
-) => _$AyahsThroughoutPaginationImpl(
+) => _AyahsThroughoutPagination(
   surat: const StringToIntConverter().fromJson(json['surat'] as String?),
   ayat: const StringToIntConverter().fromJson(json['ayat'] as String?),
   panjang: const StringToIntConverter().fromJson(json['panjang'] as String?),
   maxAyat: (json['maxAyat'] as num?)?.toInt(),
 );
 
-Map<String, dynamic> _$$AyahsThroughoutPaginationImplToJson(
-  _$AyahsThroughoutPaginationImpl instance,
+Map<String, dynamic> _$AyahsThroughoutPaginationToJson(
+  _AyahsThroughoutPagination instance,
 ) => <String, dynamic>{
   'surat': const StringToIntConverter().toJson(instance.surat),
   'ayat': const StringToIntConverter().toJson(instance.ayat),

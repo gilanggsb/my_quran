@@ -1,13 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../common.dart';
+import '../../lib.dart';
 
 part 'base_response.freezed.dart';
 part 'base_response.g.dart';
 
-@freezed
-@JsonSerializable(genericArgumentFactories: true)
-class BaseResponse<T> with _$BaseResponse<T> {
+@customFreezed
+abstract class BaseResponse<T> with _$BaseResponse<T> {
+  @customJsonSerializable
   const factory BaseResponse({
     bool? status,
     String? message,

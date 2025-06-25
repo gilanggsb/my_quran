@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,140 +10,139 @@ part of 'request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
 
 /// @nodoc
 mixin _$Request {
-  String? get path => throw _privateConstructorUsedError;
+
+ String? get path;
+/// Create a copy of Request
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RequestCopyWith<Request> get copyWith => _$RequestCopyWithImpl<Request>(this as Request, _$identity);
 
   /// Serializes this Request to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of Request
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RequestCopyWith<Request> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Request&&(identical(other.path, path) || other.path == path));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,path);
+
+@override
+String toString() {
+  return 'Request(path: $path)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $RequestCopyWith<$Res> {
-  factory $RequestCopyWith(Request value, $Res Function(Request) then) =
-      _$RequestCopyWithImpl<$Res, Request>;
-  @useResult
-  $Res call({String? path});
+abstract mixin class $RequestCopyWith<$Res>  {
+  factory $RequestCopyWith(Request value, $Res Function(Request) _then) = _$RequestCopyWithImpl;
+@useResult
+$Res call({
+ String? path
+});
+
+
+
+
+}
+/// @nodoc
+class _$RequestCopyWithImpl<$Res>
+    implements $RequestCopyWith<$Res> {
+  _$RequestCopyWithImpl(this._self, this._then);
+
+  final Request _self;
+  final $Res Function(Request) _then;
+
+/// Create a copy of Request
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? path = freezed,}) {
+  return _then(_self.copyWith(
+path: freezed == path ? _self.path : path // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// @nodoc
+
+@customJsonSerializable
+class _Request implements Request {
+  const _Request({this.path});
+  factory _Request.fromJson(Map<String, dynamic> json) => _$RequestFromJson(json);
+
+@override final  String? path;
+
+/// Create a copy of Request
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RequestCopyWith<_Request> get copyWith => __$RequestCopyWithImpl<_Request>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$RequestToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Request&&(identical(other.path, path) || other.path == path));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,path);
+
+@override
+String toString() {
+  return 'Request(path: $path)';
+}
+
+
 }
 
 /// @nodoc
-class _$RequestCopyWithImpl<$Res, $Val extends Request> implements $RequestCopyWith<$Res> {
-  _$RequestCopyWithImpl(this._value, this._then);
+abstract mixin class _$RequestCopyWith<$Res> implements $RequestCopyWith<$Res> {
+  factory _$RequestCopyWith(_Request value, $Res Function(_Request) _then) = __$RequestCopyWithImpl;
+@override @useResult
+$Res call({
+ String? path
+});
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
 
-  /// Create a copy of Request
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? path = freezed}) {
-    return _then(
-      _value.copyWith(
-            path:
-                freezed == path
-                    ? _value.path
-                    : path // ignore: cast_nullable_to_non_nullable
-                        as String?,
-          )
-          as $Val,
-    );
-  }
+
+
 }
-
 /// @nodoc
-abstract class _$$RequestImplCopyWith<$Res> implements $RequestCopyWith<$Res> {
-  factory _$$RequestImplCopyWith(_$RequestImpl value, $Res Function(_$RequestImpl) then) =
-      __$$RequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? path});
+class __$RequestCopyWithImpl<$Res>
+    implements _$RequestCopyWith<$Res> {
+  __$RequestCopyWithImpl(this._self, this._then);
+
+  final _Request _self;
+  final $Res Function(_Request) _then;
+
+/// Create a copy of Request
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? path = freezed,}) {
+  return _then(_Request(
+path: freezed == path ? _self.path : path // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-class __$$RequestImplCopyWithImpl<$Res> extends _$RequestCopyWithImpl<$Res, _$RequestImpl>
-    implements _$$RequestImplCopyWith<$Res> {
-  __$$RequestImplCopyWithImpl(_$RequestImpl _value, $Res Function(_$RequestImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of Request
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? path = freezed}) {
-    return _then(
-      _$RequestImpl(
-        path:
-            freezed == path
-                ? _value.path
-                : path // ignore: cast_nullable_to_non_nullable
-                    as String?,
-      ),
-    );
-  }
 }
 
-/// @nodoc
-@JsonSerializable(createFactory: false)
-class _$RequestImpl implements _Request {
-  const _$RequestImpl({this.path});
-
-  @override
-  final String? path;
-
-  @override
-  String toString() {
-    return 'Request(path: $path)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RequestImpl &&
-            (identical(other.path, path) || other.path == path));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, path);
-
-  /// Create a copy of Request
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RequestImplCopyWith<_$RequestImpl> get copyWith =>
-      __$$RequestImplCopyWithImpl<_$RequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RequestImplToJson(this);
-  }
-}
-
-abstract class _Request implements Request {
-  const factory _Request({final String? path}) = _$RequestImpl;
-
-  @override
-  String? get path;
-
-  /// Create a copy of Request
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RequestImplCopyWith<_$RequestImpl> get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

@@ -6,15 +6,12 @@ part of 'info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Info _$InfoFromJson(Map<String, dynamic> json) =>
-    Info(min: (json['min'] as num?)?.toInt(), max: (json['max'] as num?)?.toInt());
+_Info _$InfoFromJson(Map<String, dynamic> json) => _Info(
+  min: (json['min'] as num?)?.toInt(),
+  max: (json['max'] as num?)?.toInt(),
+);
 
-Map<String, dynamic> _$InfoToJson(Info instance) => <String, dynamic>{
-  'min': instance.min,
-  'max': instance.max,
-};
-
-Map<String, dynamic> _$$InfoImplToJson(_$InfoImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$InfoToJson(_Info instance) => <String, dynamic>{
   'min': instance.min,
   'max': instance.max,
 };

@@ -6,7 +6,7 @@ part of 'quran.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$QuranImpl _$$QuranImplFromJson(Map<String, dynamic> json) => _$QuranImpl(
+_Quran _$QuranFromJson(Map<String, dynamic> json) => _Quran(
   number: const StringToIntConverter().fromJson(json['number'] as String?),
   title: json['title'] as String?,
   arabic: json['arabic'] as String?,
@@ -16,7 +16,7 @@ _$QuranImpl _$$QuranImplFromJson(Map<String, dynamic> json) => _$QuranImpl(
   isPreview: json['isPreview'] as bool?,
 );
 
-Map<String, dynamic> _$$QuranImplToJson(_$QuranImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$QuranToJson(_Quran instance) => <String, dynamic>{
   'number': const StringToIntConverter().toJson(instance.number),
   'title': instance.title,
   'arabic': instance.arabic,

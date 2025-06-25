@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,889 +10,262 @@ part of 'bookmark_category_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$BookmarkCategoryState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() updateState,
-    required TResult Function() loaded,
-    required TResult Function() successAddToBookmark,
-    required TResult Function(String message) failed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? updateState,
-    TResult? Function()? loaded,
-    TResult? Function()? successAddToBookmark,
-    TResult? Function(String message)? failed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? updateState,
-    TResult Function()? loaded,
-    TResult Function()? successAddToBookmark,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
-    required TResult Function(_Failed value) failed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult? Function(_Failed value)? failed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_UpdateState value)? updateState,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkCategoryState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BookmarkCategoryState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $BookmarkCategoryStateCopyWith<$Res> {
-  factory $BookmarkCategoryStateCopyWith(
-    BookmarkCategoryState value,
-    $Res Function(BookmarkCategoryState) then,
-  ) = _$BookmarkCategoryStateCopyWithImpl<$Res, BookmarkCategoryState>;
+class $BookmarkCategoryStateCopyWith<$Res>  {
+$BookmarkCategoryStateCopyWith(BookmarkCategoryState _, $Res Function(BookmarkCategoryState) __);
 }
 
-/// @nodoc
-class _$BookmarkCategoryStateCopyWithImpl<$Res, $Val extends BookmarkCategoryState>
-    implements $BookmarkCategoryStateCopyWith<$Res> {
-  _$BookmarkCategoryStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(_$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$BookmarkCategoryStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(_$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-    : super(_value, _then);
-
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-}
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
 
-  @override
-  String toString() {
-    return 'BookmarkCategoryState.initial()';
-  }
+class _Initial implements BookmarkCategoryState {
+  const _Initial();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() updateState,
-    required TResult Function() loaded,
-    required TResult Function() successAddToBookmark,
-    required TResult Function(String message) failed,
-  }) {
-    return initial();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? updateState,
-    TResult? Function()? loaded,
-    TResult? Function()? successAddToBookmark,
-    TResult? Function(String message)? failed,
-  }) {
-    return initial?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? updateState,
-    TResult Function()? loaded,
-    TResult Function()? successAddToBookmark,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_UpdateState value)? updateState,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
 }
 
-abstract class _Initial implements BookmarkCategoryState {
-  const factory _Initial() = _$InitialImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BookmarkCategoryState.initial()';
 }
 
-/// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(_$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$BookmarkCategoryStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(_$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
 
-  @override
-  String toString() {
-    return 'BookmarkCategoryState.loading()';
-  }
+class _Loading implements BookmarkCategoryState {
+  const _Loading();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() updateState,
-    required TResult Function() loaded,
-    required TResult Function() successAddToBookmark,
-    required TResult Function(String message) failed,
-  }) {
-    return loading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? updateState,
-    TResult? Function()? loaded,
-    TResult? Function()? successAddToBookmark,
-    TResult? Function(String message)? failed,
-  }) {
-    return loading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? updateState,
-    TResult Function()? loaded,
-    TResult Function()? successAddToBookmark,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_UpdateState value)? updateState,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
 }
 
-abstract class _Loading implements BookmarkCategoryState {
-  const factory _Loading() = _$LoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BookmarkCategoryState.loading()';
 }
 
-/// @nodoc
-abstract class _$$UpdateStateImplCopyWith<$Res> {
-  factory _$$UpdateStateImplCopyWith(
-    _$UpdateStateImpl value,
-    $Res Function(_$UpdateStateImpl) then,
-  ) = __$$UpdateStateImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$UpdateStateImplCopyWithImpl<$Res>
-    extends _$BookmarkCategoryStateCopyWithImpl<$Res, _$UpdateStateImpl>
-    implements _$$UpdateStateImplCopyWith<$Res> {
-  __$$UpdateStateImplCopyWithImpl(_$UpdateStateImpl _value, $Res Function(_$UpdateStateImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$UpdateStateImpl implements _UpdateState {
-  const _$UpdateStateImpl();
 
-  @override
-  String toString() {
-    return 'BookmarkCategoryState.updateState()';
-  }
+class _UpdateState implements BookmarkCategoryState {
+  const _UpdateState();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UpdateStateImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() updateState,
-    required TResult Function() loaded,
-    required TResult Function() successAddToBookmark,
-    required TResult Function(String message) failed,
-  }) {
-    return updateState();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? updateState,
-    TResult? Function()? loaded,
-    TResult? Function()? successAddToBookmark,
-    TResult? Function(String message)? failed,
-  }) {
-    return updateState?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? updateState,
-    TResult Function()? loaded,
-    TResult Function()? successAddToBookmark,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (updateState != null) {
-      return updateState();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return updateState(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return updateState?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_UpdateState value)? updateState,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (updateState != null) {
-      return updateState(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateState);
 }
 
-abstract class _UpdateState implements BookmarkCategoryState {
-  const factory _UpdateState() = _$UpdateStateImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BookmarkCategoryState.updateState()';
 }
 
-/// @nodoc
-abstract class _$$LoadedImplCopyWith<$Res> {
-  factory _$$LoadedImplCopyWith(_$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
-      __$$LoadedImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$BookmarkCategoryStateCopyWithImpl<$Res, _$LoadedImpl>
-    implements _$$LoadedImplCopyWith<$Res> {
-  __$$LoadedImplCopyWithImpl(_$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl();
 
-  @override
-  String toString() {
-    return 'BookmarkCategoryState.loaded()';
-  }
+class _Loaded implements BookmarkCategoryState {
+  const _Loaded();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadedImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() updateState,
-    required TResult Function() loaded,
-    required TResult Function() successAddToBookmark,
-    required TResult Function(String message) failed,
-  }) {
-    return loaded();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? updateState,
-    TResult? Function()? loaded,
-    TResult? Function()? successAddToBookmark,
-    TResult? Function(String message)? failed,
-  }) {
-    return loaded?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? updateState,
-    TResult Function()? loaded,
-    TResult Function()? successAddToBookmark,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return loaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return loaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_UpdateState value)? updateState,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded);
 }
 
-abstract class _Loaded implements BookmarkCategoryState {
-  const factory _Loaded() = _$LoadedImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BookmarkCategoryState.loaded()';
 }
 
-/// @nodoc
-abstract class _$$SuccessAddToBookmarkImplCopyWith<$Res> {
-  factory _$$SuccessAddToBookmarkImplCopyWith(
-    _$SuccessAddToBookmarkImpl value,
-    $Res Function(_$SuccessAddToBookmarkImpl) then,
-  ) = __$$SuccessAddToBookmarkImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$SuccessAddToBookmarkImplCopyWithImpl<$Res>
-    extends _$BookmarkCategoryStateCopyWithImpl<$Res, _$SuccessAddToBookmarkImpl>
-    implements _$$SuccessAddToBookmarkImplCopyWith<$Res> {
-  __$$SuccessAddToBookmarkImplCopyWithImpl(
-    _$SuccessAddToBookmarkImpl _value,
-    $Res Function(_$SuccessAddToBookmarkImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$SuccessAddToBookmarkImpl implements _SuccessAddToBookmark {
-  const _$SuccessAddToBookmarkImpl();
 
-  @override
-  String toString() {
-    return 'BookmarkCategoryState.successAddToBookmark()';
-  }
+class _SuccessAddToBookmark implements BookmarkCategoryState {
+  const _SuccessAddToBookmark();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessAddToBookmarkImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() updateState,
-    required TResult Function() loaded,
-    required TResult Function() successAddToBookmark,
-    required TResult Function(String message) failed,
-  }) {
-    return successAddToBookmark();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? updateState,
-    TResult? Function()? loaded,
-    TResult? Function()? successAddToBookmark,
-    TResult? Function(String message)? failed,
-  }) {
-    return successAddToBookmark?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? updateState,
-    TResult Function()? loaded,
-    TResult Function()? successAddToBookmark,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (successAddToBookmark != null) {
-      return successAddToBookmark();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return successAddToBookmark(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return successAddToBookmark?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_UpdateState value)? updateState,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (successAddToBookmark != null) {
-      return successAddToBookmark(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SuccessAddToBookmark);
 }
 
-abstract class _SuccessAddToBookmark implements BookmarkCategoryState {
-  const factory _SuccessAddToBookmark() = _$SuccessAddToBookmarkImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'BookmarkCategoryState.successAddToBookmark()';
 }
 
-/// @nodoc
-abstract class _$$FailedImplCopyWith<$Res> {
-  factory _$$FailedImplCopyWith(_$FailedImpl value, $Res Function(_$FailedImpl) then) =
-      __$$FailedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
+
 }
 
-/// @nodoc
-class __$$FailedImplCopyWithImpl<$Res>
-    extends _$BookmarkCategoryStateCopyWithImpl<$Res, _$FailedImpl>
-    implements _$$FailedImplCopyWith<$Res> {
-  __$$FailedImplCopyWithImpl(_$FailedImpl _value, $Res Function(_$FailedImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? message = null}) {
-    return _then(
-      _$FailedImpl(
-        null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                as String,
-      ),
-    );
-  }
-}
+
 
 /// @nodoc
 
-class _$FailedImpl implements _Failed {
-  const _$FailedImpl(this.message);
 
-  @override
-  final String message;
+class _Failed implements BookmarkCategoryState {
+  const _Failed(this.message);
+  
 
-  @override
-  String toString() {
-    return 'BookmarkCategoryState.failed(message: $message)';
-  }
+ final  String message;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FailedImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
+/// Create a copy of BookmarkCategoryState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$FailedCopyWith<_Failed> get copyWith => __$FailedCopyWithImpl<_Failed>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
-      __$$FailedImplCopyWithImpl<_$FailedImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() updateState,
-    required TResult Function() loaded,
-    required TResult Function() successAddToBookmark,
-    required TResult Function(String message) failed,
-  }) {
-    return failed(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? updateState,
-    TResult? Function()? loaded,
-    TResult? Function()? successAddToBookmark,
-    TResult? Function(String message)? failed,
-  }) {
-    return failed?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? updateState,
-    TResult Function()? loaded,
-    TResult Function()? successAddToBookmark,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (failed != null) {
-      return failed(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_UpdateState value) updateState,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SuccessAddToBookmark value) successAddToBookmark,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return failed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_UpdateState value)? updateState,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return failed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_UpdateState value)? updateState,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SuccessAddToBookmark value)? successAddToBookmark,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (failed != null) {
-      return failed(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Failed&&(identical(other.message, message) || other.message == message));
 }
 
-abstract class _Failed implements BookmarkCategoryState {
-  const factory _Failed(final String message) = _$FailedImpl;
 
-  String get message;
+@override
+int get hashCode => Object.hash(runtimeType,message);
 
-  /// Create a copy of BookmarkCategoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FailedImplCopyWith<_$FailedImpl> get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'BookmarkCategoryState.failed(message: $message)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$FailedCopyWith<$Res> implements $BookmarkCategoryStateCopyWith<$Res> {
+  factory _$FailedCopyWith(_Failed value, $Res Function(_Failed) _then) = __$FailedCopyWithImpl;
+@useResult
+$Res call({
+ String message
+});
+
+
+
+
+}
+/// @nodoc
+class __$FailedCopyWithImpl<$Res>
+    implements _$FailedCopyWith<$Res> {
+  __$FailedCopyWithImpl(this._self, this._then);
+
+  final _Failed _self;
+  final $Res Function(_Failed) _then;
+
+/// Create a copy of BookmarkCategoryState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+  return _then(_Failed(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

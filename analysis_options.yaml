@@ -28,7 +28,7 @@ analyzer:
     sort_constructors_first: error
     prefer_const_constructors: error
     prefer_relative_imports: error
-
+    invalid_annotation_target: ignore
 formatter:
   page_width: 100
 

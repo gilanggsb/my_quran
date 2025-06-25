@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,200 +10,189 @@ part of 'last_read.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$LastReadAyah {
-  Ayah? get ayah => throw _privateConstructorUsedError;
-  Surah? get surah => throw _privateConstructorUsedError;
+
+ Ayah? get ayah; Surah? get surah;
+/// Create a copy of LastReadAyah
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$LastReadAyahCopyWith<LastReadAyah> get copyWith => _$LastReadAyahCopyWithImpl<LastReadAyah>(this as LastReadAyah, _$identity);
 
   /// Serializes this LastReadAyah to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of LastReadAyah
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LastReadAyahCopyWith<LastReadAyah> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LastReadAyah&&(identical(other.ayah, ayah) || other.ayah == ayah)&&(identical(other.surah, surah) || other.surah == surah));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,ayah,surah);
+
+@override
+String toString() {
+  return 'LastReadAyah(ayah: $ayah, surah: $surah)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $LastReadAyahCopyWith<$Res> {
-  factory $LastReadAyahCopyWith(LastReadAyah value, $Res Function(LastReadAyah) then) =
-      _$LastReadAyahCopyWithImpl<$Res, LastReadAyah>;
-  @useResult
-  $Res call({Ayah? ayah, Surah? surah});
+abstract mixin class $LastReadAyahCopyWith<$Res>  {
+  factory $LastReadAyahCopyWith(LastReadAyah value, $Res Function(LastReadAyah) _then) = _$LastReadAyahCopyWithImpl;
+@useResult
+$Res call({
+ Ayah? ayah, Surah? surah
+});
 
-  $AyahCopyWith<$Res>? get ayah;
-  $SurahCopyWith<$Res>? get surah;
+
+$AyahCopyWith<$Res>? get ayah;$SurahCopyWith<$Res>? get surah;
+
 }
-
 /// @nodoc
-class _$LastReadAyahCopyWithImpl<$Res, $Val extends LastReadAyah>
+class _$LastReadAyahCopyWithImpl<$Res>
     implements $LastReadAyahCopyWith<$Res> {
-  _$LastReadAyahCopyWithImpl(this._value, this._then);
+  _$LastReadAyahCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final LastReadAyah _self;
+  final $Res Function(LastReadAyah) _then;
 
-  /// Create a copy of LastReadAyah
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? ayah = freezed, Object? surah = freezed}) {
-    return _then(
-      _value.copyWith(
-            ayah:
-                freezed == ayah
-                    ? _value.ayah
-                    : ayah // ignore: cast_nullable_to_non_nullable
-                        as Ayah?,
-            surah:
-                freezed == surah
-                    ? _value.surah
-                    : surah // ignore: cast_nullable_to_non_nullable
-                        as Surah?,
-          )
-          as $Val,
-    );
+/// Create a copy of LastReadAyah
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? ayah = freezed,Object? surah = freezed,}) {
+  return _then(_self.copyWith(
+ayah: freezed == ayah ? _self.ayah : ayah // ignore: cast_nullable_to_non_nullable
+as Ayah?,surah: freezed == surah ? _self.surah : surah // ignore: cast_nullable_to_non_nullable
+as Surah?,
+  ));
+}
+/// Create a copy of LastReadAyah
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AyahCopyWith<$Res>? get ayah {
+    if (_self.ayah == null) {
+    return null;
   }
 
-  /// Create a copy of LastReadAyah
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AyahCopyWith<$Res>? get ayah {
-    if (_value.ayah == null) {
-      return null;
-    }
-
-    return $AyahCopyWith<$Res>(_value.ayah!, (value) {
-      return _then(_value.copyWith(ayah: value) as $Val);
-    });
+  return $AyahCopyWith<$Res>(_self.ayah!, (value) {
+    return _then(_self.copyWith(ayah: value));
+  });
+}/// Create a copy of LastReadAyah
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SurahCopyWith<$Res>? get surah {
+    if (_self.surah == null) {
+    return null;
   }
 
-  /// Create a copy of LastReadAyah
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SurahCopyWith<$Res>? get surah {
-    if (_value.surah == null) {
-      return null;
-    }
-
-    return $SurahCopyWith<$Res>(_value.surah!, (value) {
-      return _then(_value.copyWith(surah: value) as $Val);
-    });
-  }
+  return $SurahCopyWith<$Res>(_self.surah!, (value) {
+    return _then(_self.copyWith(surah: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$LastReadAyahImplCopyWith<$Res> implements $LastReadAyahCopyWith<$Res> {
-  factory _$$LastReadAyahImplCopyWith(
-    _$LastReadAyahImpl value,
-    $Res Function(_$LastReadAyahImpl) then,
-  ) = __$$LastReadAyahImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({Ayah? ayah, Surah? surah});
-
-  @override
-  $AyahCopyWith<$Res>? get ayah;
-  @override
-  $SurahCopyWith<$Res>? get surah;
-}
-
-/// @nodoc
-class __$$LastReadAyahImplCopyWithImpl<$Res>
-    extends _$LastReadAyahCopyWithImpl<$Res, _$LastReadAyahImpl>
-    implements _$$LastReadAyahImplCopyWith<$Res> {
-  __$$LastReadAyahImplCopyWithImpl(
-    _$LastReadAyahImpl _value,
-    $Res Function(_$LastReadAyahImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of LastReadAyah
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? ayah = freezed, Object? surah = freezed}) {
-    return _then(
-      _$LastReadAyahImpl(
-        ayah:
-            freezed == ayah
-                ? _value.ayah
-                : ayah // ignore: cast_nullable_to_non_nullable
-                    as Ayah?,
-        surah:
-            freezed == surah
-                ? _value.surah
-                : surah // ignore: cast_nullable_to_non_nullable
-                    as Surah?,
-      ),
-    );
-  }
-}
 
 /// @nodoc
 @JsonSerializable(createFactory: false)
-class _$LastReadAyahImpl extends _LastReadAyah {
-  const _$LastReadAyahImpl({this.ayah, this.surah}) : super._();
 
-  @override
-  final Ayah? ayah;
-  @override
-  final Surah? surah;
+class _LastReadAyah extends LastReadAyah {
+  const _LastReadAyah({this.ayah, this.surah}): super._();
+  
 
-  @override
-  String toString() {
-    return 'LastReadAyah(ayah: $ayah, surah: $surah)';
-  }
+@override final  Ayah? ayah;
+@override final  Surah? surah;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LastReadAyahImpl &&
-            (identical(other.ayah, ayah) || other.ayah == ayah) &&
-            (identical(other.surah, surah) || other.surah == surah));
-  }
+/// Create a copy of LastReadAyah
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$LastReadAyahCopyWith<_LastReadAyah> get copyWith => __$LastReadAyahCopyWithImpl<_LastReadAyah>(this, _$identity);
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, ayah, surah);
-
-  /// Create a copy of LastReadAyah
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LastReadAyahImplCopyWith<_$LastReadAyahImpl> get copyWith =>
-      __$$LastReadAyahImplCopyWithImpl<_$LastReadAyahImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LastReadAyahImplToJson(this);
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$LastReadAyahToJson(this, );
 }
 
-abstract class _LastReadAyah extends LastReadAyah {
-  const factory _LastReadAyah({final Ayah? ayah, final Surah? surah}) = _$LastReadAyahImpl;
-  const _LastReadAyah._() : super._();
-
-  @override
-  Ayah? get ayah;
-  @override
-  Surah? get surah;
-
-  /// Create a copy of LastReadAyah
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LastReadAyahImplCopyWith<_$LastReadAyahImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LastReadAyah&&(identical(other.ayah, ayah) || other.ayah == ayah)&&(identical(other.surah, surah) || other.surah == surah));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,ayah,surah);
+
+@override
+String toString() {
+  return 'LastReadAyah(ayah: $ayah, surah: $surah)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$LastReadAyahCopyWith<$Res> implements $LastReadAyahCopyWith<$Res> {
+  factory _$LastReadAyahCopyWith(_LastReadAyah value, $Res Function(_LastReadAyah) _then) = __$LastReadAyahCopyWithImpl;
+@override @useResult
+$Res call({
+ Ayah? ayah, Surah? surah
+});
+
+
+@override $AyahCopyWith<$Res>? get ayah;@override $SurahCopyWith<$Res>? get surah;
+
+}
+/// @nodoc
+class __$LastReadAyahCopyWithImpl<$Res>
+    implements _$LastReadAyahCopyWith<$Res> {
+  __$LastReadAyahCopyWithImpl(this._self, this._then);
+
+  final _LastReadAyah _self;
+  final $Res Function(_LastReadAyah) _then;
+
+/// Create a copy of LastReadAyah
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? ayah = freezed,Object? surah = freezed,}) {
+  return _then(_LastReadAyah(
+ayah: freezed == ayah ? _self.ayah : ayah // ignore: cast_nullable_to_non_nullable
+as Ayah?,surah: freezed == surah ? _self.surah : surah // ignore: cast_nullable_to_non_nullable
+as Surah?,
+  ));
+}
+
+/// Create a copy of LastReadAyah
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AyahCopyWith<$Res>? get ayah {
+    if (_self.ayah == null) {
+    return null;
+  }
+
+  return $AyahCopyWith<$Res>(_self.ayah!, (value) {
+    return _then(_self.copyWith(ayah: value));
+  });
+}/// Create a copy of LastReadAyah
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SurahCopyWith<$Res>? get surah {
+    if (_self.surah == null) {
+    return null;
+  }
+
+  return $SurahCopyWith<$Res>(_self.surah!, (value) {
+    return _then(_self.copyWith(surah: value));
+  });
+}
+}
+
+// dart format on

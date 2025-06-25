@@ -8,7 +8,7 @@ part of 'ayah.dart';
 
 class AyahAdapter extends TypeAdapter<Ayah> {
   @override
-  final int typeId = 0;
+  final typeId = 0;
 
   @override
   Ayah read(BinaryReader reader) {
@@ -68,39 +68,15 @@ class AyahAdapter extends TypeAdapter<Ayah> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is AyahAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
+      other is AyahAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah(
-  id: const StringToIntConverter().fromJson(json['id'] as String?),
-  arab: json['arab'] as String?,
-  asbab: json['asbab'] as String?,
-  audio: json['audio'] as String?,
-  ayah: const StringToIntConverter().fromJson(json['ayah'] as String?),
-  juz: const StringToIntConverter().fromJson(json['juz'] as String?),
-  surah: const StringToIntConverter().fromJson(json['surah'] as String?),
-  latin: json['latin'] as String?,
-  notes: json['notes'] as String?,
-  page: json['page'] as String?,
-  text: json['text'] as String?,
-  theme: json['theme'] as String?,
-);
+Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah();
 
-Map<String, dynamic> _$AyahToJson(Ayah instance) => <String, dynamic>{
-  'id': const StringToIntConverter().toJson(instance.id),
-  'arab': instance.arab,
-  'asbab': instance.asbab,
-  'audio': instance.audio,
-  'ayah': const StringToIntConverter().toJson(instance.ayah),
-  'juz': const StringToIntConverter().toJson(instance.juz),
-  'surah': const StringToIntConverter().toJson(instance.surah),
-  'latin': instance.latin,
-  'notes': instance.notes,
-  'page': instance.page,
-  'text': instance.text,
-  'theme': instance.theme,
-};
+Map<String, dynamic> _$AyahToJson(Ayah instance) => <String, dynamic>{};
