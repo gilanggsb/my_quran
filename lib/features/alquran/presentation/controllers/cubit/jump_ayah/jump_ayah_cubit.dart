@@ -52,11 +52,10 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
 
       emit(const JumpAyahState.loaded());
 
-      final surahOrJuzNumber = isSurahsType
-          ? paramsData?.ayahsThroughoutPagination?.surat
-          : paramsData?.juzNumber;
+      final surahOrJuzNumber =
+          isSurahsType ? paramsData?.ayahsThroughoutPagination?.surat : paramsData?.juzNumber;
 
-      changeSurahOrJuz("$surahOrJuzNumber");
+      changeSurahOrJuz(surahOrJuzNumber);
     } on String catch (e) {
       emit(JumpAyahState.failed(e));
     } catch (e) {
@@ -80,13 +79,13 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
     try {
       emit(const JumpAyahState.loading());
       if (!isSurahsType) {
-        final response = await getAyahsJuz(currentJuz!.number!.parseInt);
+        final response = await getAyahsJuz(currentJuz!.number ?? 0);
         ayahs = response.data ?? [];
         return;
       }
 
-      final ayahsPagination = paramsData?.ayahsThroughoutPagination
-          ?.copyWith(surat: currentSurah?.number);
+      final ayahsPagination =
+          paramsData?.ayahsThroughoutPagination?.copyWith(surat: currentSurah?.number);
       final response = await getFullAyahs(ayahsPagination!);
 
       ayahs = response.data ?? [];
@@ -98,7 +97,7 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
   void setCurrentSurah({Ayah? ayah, int? surahNumber}) {
     emit(const JumpAyahState.loading());
     currentSurah = surahs.firstWhereOrNull(
-      (surah) => surah.number == (ayah?.surah ?? "$surahNumber"),
+      (surah) => surah.number == (ayah?.surah ?? surahNumber),
     );
     jumpAyahTitle = currentSurah?.nameId ?? "";
     emit(const JumpAyahState.loaded());
@@ -107,7 +106,7 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
   void setCurrentJuz({Ayah? ayah, int? juzNumber}) {
     emit(const JumpAyahState.loading());
     currentJuz = juzs.firstWhereOrNull(
-      (juz) => juz.number == (ayah?.juz ?? "$juzNumber"),
+      (juz) => juz.number == (ayah?.juz ?? juzNumber),
     );
     jumpAyahTitle = currentJuz?.name ?? "";
     emit(const JumpAyahState.loaded());
@@ -116,33 +115,27 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
   void next() {
     if (isLastPage) return;
 
-    final surahOrJuzNumber = isSurahsType
-        ? (currentSurah?.number ?? "0").parseInt + 1
-        : (currentJuz?.number ?? "0").parseInt + 1;
+    final surahOrJuzNumber =
+        isSurahsType ? (currentSurah?.number ?? 0) + 1 : (currentJuz?.number ?? 0) + 1;
 
-    changeSurahOrJuz("$surahOrJuzNumber");
+    changeSurahOrJuz(surahOrJuzNumber);
   }
 
   void prev() {
     if (isFirstPage) return;
 
-    final surahOrJuzNumber = isSurahsType
-        ? (currentSurah?.number ?? "0").parseInt - 1
-        : (currentJuz?.number ?? "0").parseInt - 1;
+    final surahOrJuzNumber =
+        isSurahsType ? (currentSurah?.number ?? 0) - 1 : (currentJuz?.number ?? 0) - 1;
 
-    changeSurahOrJuz("$surahOrJuzNumber");
+    changeSurahOrJuz(surahOrJuzNumber);
   }
 
   void filterSurahOrJuz(String text) {
     emit(const JumpAyahState.searchingSurahOrJuz());
     if (isSurahsType) {
-      tempSurahs = surahs
-          .where((surah) => surah.nameId?.isStringContains(text) ?? false)
-          .toList();
+      tempSurahs = surahs.where((surah) => surah.nameId?.isStringContains(text) ?? false).toList();
     } else {
-      tempJuzs = juzs
-          .where((juz) => juz.name?.isStringContains(text) ?? false)
-          .toList();
+      tempJuzs = juzs.where((juz) => juz.name?.isStringContains(text) ?? false).toList();
     }
     emit(const JumpAyahState.loaded());
   }
@@ -155,11 +148,11 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
     emit(const JumpAyahState.loaded());
   }
 
-  void changeSurahOrJuz(String? surahOrJuzNumber) {
+  void changeSurahOrJuz(int? surahOrJuzNumber) {
     if (isSurahsType) {
-      setCurrentSurah(surahNumber: surahOrJuzNumber!.parseInt);
+      setCurrentSurah(surahNumber: surahOrJuzNumber);
     } else {
-      setCurrentJuz(juzNumber: surahOrJuzNumber!.parseInt);
+      setCurrentJuz(juzNumber: surahOrJuzNumber);
     }
     _getFullAyahs();
   }
@@ -169,12 +162,11 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
     QuranDetailParams? newParams;
 
     if (isSurahsType) {
-      final ayahsPagination = paramsData?.ayahsThroughoutPagination
-          ?.copyWith(surat: surahOrJuzNumber);
-      newParams =
-          paramsData?.copyWith(ayahsThroughoutPagination: ayahsPagination);
+      final ayahsPagination =
+          paramsData?.ayahsThroughoutPagination?.copyWith(surat: surahOrJuzNumber);
+      newParams = paramsData?.copyWith(ayahsThroughoutPagination: ayahsPagination);
     } else {
-      newParams = paramsData?.copyWith(juzNumber: surahOrJuzNumber?.parseInt);
+      newParams = paramsData?.copyWith(juzNumber: surahOrJuzNumber);
     }
 
     return isSurahOrJuzChange(newParams) ? newParams : null;
@@ -187,16 +179,14 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
         : paramsData?.juzNumber != newParams?.juzNumber;
   }
 
-  bool get isSurahsType =>
-      paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
+  bool get isSurahsType => paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
 
   bool get isLastPage => isSurahsType
       ? surahs.lastOrNull?.number == currentSurah?.number
       : juzs.lastOrNull?.number == currentJuz?.number;
 
-  bool get isFirstPage => isSurahsType
-      ? (currentSurah?.number ?? "1").parseInt <= 1
-      : (currentJuz?.number ?? "1").parseInt <= 1;
+  bool get isFirstPage =>
+      isSurahsType ? (currentSurah?.number ?? 0) <= 1 : (currentJuz?.number ?? 0) <= 1;
 
   @override
   Future<void> close() {

@@ -127,7 +127,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'QuranDetailState.initial'));
+    properties..add(DiagnosticsProperty('type', 'QuranDetailState.initial'));
   }
 
   @override
@@ -256,7 +256,7 @@ class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'QuranDetailState.loading'));
+    properties..add(DiagnosticsProperty('type', 'QuranDetailState.loading'));
   }
 
   @override
@@ -388,7 +388,7 @@ class _$LoadingMoreDataImpl
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-        .add(DiagnosticsProperty('type', 'QuranDetailState.loadingMoreData'));
+      ..add(DiagnosticsProperty('type', 'QuranDetailState.loadingMoreData'));
   }
 
   @override
@@ -517,7 +517,7 @@ class _$LoadedImpl with DiagnosticableTreeMixin implements _Loaded {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'QuranDetailState.loaded'));
+    properties..add(DiagnosticsProperty('type', 'QuranDetailState.loaded'));
   }
 
   @override

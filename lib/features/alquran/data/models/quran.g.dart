@@ -7,7 +7,7 @@ part of 'quran.dart';
 // **************************************************************************
 
 _$QuranImpl _$$QuranImplFromJson(Map<String, dynamic> json) => _$QuranImpl(
-      number: json['number'] as String?,
+      number: const StringToIntConverter().fromJson(json['number'] as String?),
       title: json['title'] as String?,
       arabic: json['arabic'] as String?,
       arabicMaxLine: (json['arabicMaxLine'] as num?)?.toInt(),
@@ -18,7 +18,7 @@ _$QuranImpl _$$QuranImplFromJson(Map<String, dynamic> json) => _$QuranImpl(
 
 Map<String, dynamic> _$$QuranImplToJson(_$QuranImpl instance) =>
     <String, dynamic>{
-      'number': instance.number,
+      'number': const StringToIntConverter().toJson(instance.number),
       'title': instance.title,
       'arabic': instance.arabic,
       'arabicMaxLine': instance.arabicMaxLine,

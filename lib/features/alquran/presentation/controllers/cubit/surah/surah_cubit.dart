@@ -31,9 +31,7 @@ class SurahCubit extends Cubit<SurahState> {
     try {
       emit(const SurahState.loading());
       // await Future.delayed(const Duration(milliseconds: 500));
-      surahs = originSurahs
-          .where((surah) => surah.nameId.isStringContains(query))
-          .toList();
+      surahs = originSurahs.where((surah) => surah.nameId.isStringContains(query)).toList();
       emit(const SurahState.loaded());
     } on String catch (e) {
       emit(SurahState.failed(e));

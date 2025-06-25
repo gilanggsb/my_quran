@@ -1,4 +1,3 @@
-import 'package:isar/isar.dart';
 import 'package:mockito/annotations.dart';
 import 'package:my_quran/common/common.dart';
 
@@ -12,6 +11,4 @@ void main() async {
   mainHome();
 }
 
-Future<void> init() async {
-  await Isar.initializeIsarCore(download: true);
-}
+Future<void> init() async {}

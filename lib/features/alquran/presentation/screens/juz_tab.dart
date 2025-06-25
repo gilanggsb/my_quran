@@ -47,7 +47,7 @@ class JuzTab extends StatelessWidget {
                   onTap: () => context.pushRoute(
                     QuranDetailRoute(
                       params: QuranDetailParams(
-                        juzNumber: juz.number?.tryParseInt,
+                        juzNumber: juz.number,
                         detailType: QuranDetailTypeEnum.byJuzs,
                       ),
                     ),

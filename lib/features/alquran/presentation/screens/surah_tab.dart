@@ -52,9 +52,9 @@ class SurahTab extends StatelessWidget {
                   // ),
                   onTap: () {
                     final pagination = AyahsThroughoutPagination(
-                      ayat: "1",
+                      ayat: 1,
                       surat: surah.number,
-                      panjang: "10",
+                      panjang: 10,
                     );
                     context.pushRoute(
                       QuranDetailRoute(

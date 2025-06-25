@@ -70,9 +70,7 @@ class SearchSurahOrJuzBottomSheet extends StatelessWidget {
                   ),
                   onTap: () {
                     BottomSheetManager.closeCurrentBottomSheet();
-                    jumpAyahCubit.changeSurahOrJuz(
-                      isSurahType ? surah?.number : juz?.number,
-                    );
+                    jumpAyahCubit.changeSurahOrJuz(isSurahType ? surah?.number : juz?.number);
                   },
                 );
               },

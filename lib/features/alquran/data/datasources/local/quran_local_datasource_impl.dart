@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:isar/isar.dart';
+import 'package:collection/collection.dart';
 
 import '../../../../../common/common.dart';
 import '../../../../features.dart';
 
 class QuranLocalDataSourceImpl extends QuranLocalDataSource {
-  final IsarService localDBService;
+  final HiveService localDBService;
   final StorageService storageService;
   QuranLocalDataSourceImpl({
     required this.storageService,
@@ -75,11 +75,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<Surah?> getCachedSurah(int surahNumber) async {
     try {
       final surahCollection = localDBService.getCollection<Surah>();
-      final surah = await surahCollection
-          .where()
-          .filter()
-          .numberEqualTo("$surahNumber")
-          .findFirst();
+      final surah = surahCollection.values.firstWhereOrNull((e) => e.number == surahNumber);
       return surah;
     } on String catch (_) {
       rethrow;
@@ -120,11 +116,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<Juz?> getCachedJuz(int juzNumber) async {
     try {
       final juzCollection = localDBService.getCollection<Juz>();
-      final juz = await juzCollection
-          .where()
-          .filter()
-          .numberEqualTo("$juzNumber")
-          .findFirst();
+      final juz = juzCollection.values.firstWhereOrNull((e) => e.number == juzNumber);
       return juz;
     } on String catch (_) {
       rethrow;
@@ -139,7 +131,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<void> cacheAyahs(List<Ayah> ayahs) async {
     try {
       for (final ayah in ayahs) {
-        final isAyahExist = await getCachedAyah(ayah.idInt ?? 0) != null;
+        final isAyahExist = await getCachedAyah(ayah.id ?? 0) != null;
         if (isAyahExist) continue;
         await localDBService.write<Ayah>(ayah);
       }
@@ -156,12 +148,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<Ayah?> getCachedAyah(int ayahId) async {
     try {
       final ayahCollection = localDBService.getCollection<Ayah>();
-      final ayah =
-          await ayahCollection
-          .where()
-          .filter()
-          .idIntEqualTo(ayahId)
-          .findFirst();
+      final ayah = ayahCollection.values.firstWhereOrNull((e) => e.id == ayahId);
       return ayah;
     } on String catch (_) {
       rethrow;
@@ -175,12 +162,11 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   @override
   Future<List<Ayah>> getCachedAyahs(AyahPagination pagination) async {
     try {
-      final ayahCollection = localDBService.getCollection<Ayah>();
-      final ayahs = await ayahCollection
-          .filter()
-          .idEqualTo("${pagination.page}")
-          .limit(pagination.page!)
-          .findAll();
+      final ayahBox = localDBService.getCollection<Ayah>(); // Get the Hive box for Ayah
+      final ayahs = ayahBox.values
+          .where((ayah) => ayah.id == pagination.page) // Filter by id
+          .take(pagination.page ?? 0) // Limit the results based on pagination
+          .toList(); // Convert to a list
       return ayahs;
     } on String catch (_) {
       rethrow;
@@ -200,19 +186,17 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
     AyahsThroughoutPagination ayahsThroughout,
   ) async {
     try {
-      final ayahCollection = localDBService.getCollection<Ayah>();
-      final ayahs = await ayahCollection
-          .filter()
-          .surahEqualTo(ayahsThroughout.surat)
-          .ayahIntBetween(
-            ayahsThroughout.ayat!.parseInt,
-            ayahsThroughout.panjang!.parseInt,
-          )
-          .findAll();
+      final ayahBox = localDBService.getCollection<Ayah>(); // Get the Hive box for Ayah
 
-      // Logger.logInfo(
-      //   "getCachedAyahsThroughout \nlength : ${ayahs.length} \npagination : ${ayahsThroughout.toJson()}",
-      // );
+// Retrieve all Ayahs from the box
+      final allAyahs = ayahBox.values.toList();
+
+// Filter the Ayahs based on the conditions
+      final ayahs = allAyahs.where((ayah) {
+        return ayah.surah == ayahsThroughout.surat && // Assuming surahInt is the field for surah
+            (ayah.ayah ?? 0) >= (ayahsThroughout.ayat ?? 0) && // Ensure ayahInt is not null
+            (ayah.ayah ?? 0) <= (ayahsThroughout.panjang ?? 0); // Ensure ayahInt is not null
+      }).toList();
 
       return ayahs;
     } on String catch (_) {
@@ -231,8 +215,8 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
       final juz = await getCachedJuz(juzNumber);
 
       final List<Surah> surahs = [];
-      final surahIdStart = juz?.surahIdStart?.parseInt ?? 1;
-      final surahIdEnd = juz?.surahIdEnd?.parseInt ?? 2;
+      final surahIdStart = juz?.surahIdStart ?? 1;
+      final surahIdEnd = juz?.surahIdEnd ?? 2;
       for (int i = surahIdStart; i <= surahIdEnd; i++) {
         final surah = await getCachedSurah(i);
         if (surah == null) continue;
@@ -243,12 +227,13 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
 
       for (int i = 0; i < surahs.length; i++) {
         final surah = surahs[i];
-        List<Ayah> ayahs = [];
-        ayahs = await ayahCollection
-            .filter()
-            .surahEqualTo(surah.number)
-            .juzEqualTo("$juzNumber")
-            .findAll();
+        // Retrieve all Ayahs from the box
+        final allAyahs = ayahCollection.values.toList();
+
+        // Filter the Ayahs based on the surah number and juz number
+        final ayahs = allAyahs.where((ayah) {
+          return ayah.surah == surah.number && ayah.juz == juzNumber;
+        }).toList();
 
         if (ayahs.isEmpty) {
           resAyahs.clear();

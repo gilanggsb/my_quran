@@ -76,7 +76,7 @@ class QuranHeaderAyah extends StatelessWidget {
                 child: Column(
                   children: [
                     DefaultText(
-                      surah?.numberOfVerses ?? '',
+                      "${surah?.numberOfVerses ?? ''}",
                       fontSize: 14.sp,
                       color: AppPalette.white.base,
                     ),

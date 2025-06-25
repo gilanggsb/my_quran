@@ -19,24 +19,24 @@ mixin _$BookmarkEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int? categoryId) getData,
-    required TResult Function(int? bookmarkId) deleteBookmark,
+    required TResult Function(String? categoryId) getData,
+    required TResult Function(String? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int? categoryId)? getData,
-    TResult? Function(int? bookmarkId)? deleteBookmark,
+    TResult? Function(String? categoryId)? getData,
+    TResult? Function(String? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int? categoryId)? getData,
-    TResult Function(int? bookmarkId)? deleteBookmark,
+    TResult Function(String? categoryId)? getData,
+    TResult Function(String? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) =>
@@ -131,8 +131,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int? categoryId) getData,
-    required TResult Function(int? bookmarkId) deleteBookmark,
+    required TResult Function(String? categoryId) getData,
+    required TResult Function(String? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) {
     return started();
@@ -142,8 +142,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int? categoryId)? getData,
-    TResult? Function(int? bookmarkId)? deleteBookmark,
+    TResult? Function(String? categoryId)? getData,
+    TResult? Function(String? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) {
     return started?.call();
@@ -153,8 +153,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int? categoryId)? getData,
-    TResult Function(int? bookmarkId)? deleteBookmark,
+    TResult Function(String? categoryId)? getData,
+    TResult Function(String? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -212,7 +212,7 @@ abstract class _$$GetDataImplCopyWith<$Res> {
           _$GetDataImpl value, $Res Function(_$GetDataImpl) then) =
       __$$GetDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int? categoryId});
+  $Res call({String? categoryId});
 }
 
 /// @nodoc
@@ -234,7 +234,7 @@ class __$$GetDataImplCopyWithImpl<$Res>
       categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -245,7 +245,7 @@ class _$GetDataImpl implements _GetData {
   const _$GetDataImpl({this.categoryId});
 
   @override
-  final int? categoryId;
+  final String? categoryId;
 
   @override
   String toString() {
@@ -276,8 +276,8 @@ class _$GetDataImpl implements _GetData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int? categoryId) getData,
-    required TResult Function(int? bookmarkId) deleteBookmark,
+    required TResult Function(String? categoryId) getData,
+    required TResult Function(String? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) {
     return getData(categoryId);
@@ -287,8 +287,8 @@ class _$GetDataImpl implements _GetData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int? categoryId)? getData,
-    TResult? Function(int? bookmarkId)? deleteBookmark,
+    TResult? Function(String? categoryId)? getData,
+    TResult? Function(String? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) {
     return getData?.call(categoryId);
@@ -298,8 +298,8 @@ class _$GetDataImpl implements _GetData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int? categoryId)? getData,
-    TResult Function(int? bookmarkId)? deleteBookmark,
+    TResult Function(String? categoryId)? getData,
+    TResult Function(String? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -348,9 +348,9 @@ class _$GetDataImpl implements _GetData {
 }
 
 abstract class _GetData implements BookmarkEvent {
-  const factory _GetData({final int? categoryId}) = _$GetDataImpl;
+  const factory _GetData({final String? categoryId}) = _$GetDataImpl;
 
-  int? get categoryId;
+  String? get categoryId;
 
   /// Create a copy of BookmarkEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -365,7 +365,7 @@ abstract class _$$DeleteBookmarkImplCopyWith<$Res> {
           $Res Function(_$DeleteBookmarkImpl) then) =
       __$$DeleteBookmarkImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int? bookmarkId});
+  $Res call({String? bookmarkId});
 }
 
 /// @nodoc
@@ -387,7 +387,7 @@ class __$$DeleteBookmarkImplCopyWithImpl<$Res>
       bookmarkId: freezed == bookmarkId
           ? _value.bookmarkId
           : bookmarkId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -398,7 +398,7 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
   const _$DeleteBookmarkImpl({this.bookmarkId});
 
   @override
-  final int? bookmarkId;
+  final String? bookmarkId;
 
   @override
   String toString() {
@@ -430,8 +430,8 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int? categoryId) getData,
-    required TResult Function(int? bookmarkId) deleteBookmark,
+    required TResult Function(String? categoryId) getData,
+    required TResult Function(String? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) {
     return deleteBookmark(bookmarkId);
@@ -441,8 +441,8 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int? categoryId)? getData,
-    TResult? Function(int? bookmarkId)? deleteBookmark,
+    TResult? Function(String? categoryId)? getData,
+    TResult? Function(String? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) {
     return deleteBookmark?.call(bookmarkId);
@@ -452,8 +452,8 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int? categoryId)? getData,
-    TResult Function(int? bookmarkId)? deleteBookmark,
+    TResult Function(String? categoryId)? getData,
+    TResult Function(String? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) {
@@ -502,9 +502,10 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
 }
 
 abstract class _DeleteBookmark implements BookmarkEvent {
-  const factory _DeleteBookmark({final int? bookmarkId}) = _$DeleteBookmarkImpl;
+  const factory _DeleteBookmark({final String? bookmarkId}) =
+      _$DeleteBookmarkImpl;
 
-  int? get bookmarkId;
+  String? get bookmarkId;
 
   /// Create a copy of BookmarkEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -600,8 +601,8 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int? categoryId) getData,
-    required TResult Function(int? bookmarkId) deleteBookmark,
+    required TResult Function(String? categoryId) getData,
+    required TResult Function(String? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
   }) {
     return getBookmarkDetail(bookmark);
@@ -611,8 +612,8 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int? categoryId)? getData,
-    TResult? Function(int? bookmarkId)? deleteBookmark,
+    TResult? Function(String? categoryId)? getData,
+    TResult? Function(String? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
   }) {
     return getBookmarkDetail?.call(bookmark);
@@ -622,8 +623,8 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int? categoryId)? getData,
-    TResult Function(int? bookmarkId)? deleteBookmark,
+    TResult Function(String? categoryId)? getData,
+    TResult Function(String? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
   }) {

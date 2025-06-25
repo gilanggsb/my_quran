@@ -21,9 +21,12 @@ AyahsThroughoutPagination _$AyahsThroughoutPaginationFromJson(
 
 /// @nodoc
 mixin _$AyahsThroughoutPagination {
-  String? get surat => throw _privateConstructorUsedError;
-  String? get ayat => throw _privateConstructorUsedError;
-  String? get panjang => throw _privateConstructorUsedError;
+  @StringToIntConverter()
+  int? get surat => throw _privateConstructorUsedError;
+  @StringToIntConverter()
+  int? get ayat => throw _privateConstructorUsedError;
+  @StringToIntConverter()
+  int? get panjang => throw _privateConstructorUsedError;
   @JsonKey(includeToJson: false)
   int? get maxAyat => throw _privateConstructorUsedError;
 
@@ -44,9 +47,9 @@ abstract class $AyahsThroughoutPaginationCopyWith<$Res> {
       _$AyahsThroughoutPaginationCopyWithImpl<$Res, AyahsThroughoutPagination>;
   @useResult
   $Res call(
-      {String? surat,
-      String? ayat,
-      String? panjang,
+      {@StringToIntConverter() int? surat,
+      @StringToIntConverter() int? ayat,
+      @StringToIntConverter() int? panjang,
       @JsonKey(includeToJson: false) int? maxAyat});
 }
 
@@ -75,15 +78,15 @@ class _$AyahsThroughoutPaginationCopyWithImpl<$Res,
       surat: freezed == surat
           ? _value.surat
           : surat // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       ayat: freezed == ayat
           ? _value.ayat
           : ayat // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       panjang: freezed == panjang
           ? _value.panjang
           : panjang // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       maxAyat: freezed == maxAyat
           ? _value.maxAyat
           : maxAyat // ignore: cast_nullable_to_non_nullable
@@ -102,9 +105,9 @@ abstract class _$$AyahsThroughoutPaginationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? surat,
-      String? ayat,
-      String? panjang,
+      {@StringToIntConverter() int? surat,
+      @StringToIntConverter() int? ayat,
+      @StringToIntConverter() int? panjang,
       @JsonKey(includeToJson: false) int? maxAyat});
 }
 
@@ -132,15 +135,15 @@ class __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>
       surat: freezed == surat
           ? _value.surat
           : surat // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       ayat: freezed == ayat
           ? _value.ayat
           : ayat // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       panjang: freezed == panjang
           ? _value.panjang
           : panjang // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       maxAyat: freezed == maxAyat
           ? _value.maxAyat
           : maxAyat // ignore: cast_nullable_to_non_nullable
@@ -153,20 +156,23 @@ class __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AyahsThroughoutPaginationImpl implements _AyahsThroughoutPagination {
   const _$AyahsThroughoutPaginationImpl(
-      {this.surat,
-      this.ayat,
-      this.panjang,
+      {@StringToIntConverter() this.surat,
+      @StringToIntConverter() this.ayat,
+      @StringToIntConverter() this.panjang,
       @JsonKey(includeToJson: false) this.maxAyat});
 
   factory _$AyahsThroughoutPaginationImpl.fromJson(Map<String, dynamic> json) =>
       _$$AyahsThroughoutPaginationImplFromJson(json);
 
   @override
-  final String? surat;
+  @StringToIntConverter()
+  final int? surat;
   @override
-  final String? ayat;
+  @StringToIntConverter()
+  final int? ayat;
   @override
-  final String? panjang;
+  @StringToIntConverter()
+  final int? panjang;
   @override
   @JsonKey(includeToJson: false)
   final int? maxAyat;
@@ -210,9 +216,9 @@ class _$AyahsThroughoutPaginationImpl implements _AyahsThroughoutPagination {
 
 abstract class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
   const factory _AyahsThroughoutPagination(
-          {final String? surat,
-          final String? ayat,
-          final String? panjang,
+          {@StringToIntConverter() final int? surat,
+          @StringToIntConverter() final int? ayat,
+          @StringToIntConverter() final int? panjang,
           @JsonKey(includeToJson: false) final int? maxAyat}) =
       _$AyahsThroughoutPaginationImpl;
 
@@ -220,11 +226,14 @@ abstract class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
       _$AyahsThroughoutPaginationImpl.fromJson;
 
   @override
-  String? get surat;
+  @StringToIntConverter()
+  int? get surat;
   @override
-  String? get ayat;
+  @StringToIntConverter()
+  int? get ayat;
   @override
-  String? get panjang;
+  @StringToIntConverter()
+  int? get panjang;
   @override
   @JsonKey(includeToJson: false)
   int? get maxAyat;

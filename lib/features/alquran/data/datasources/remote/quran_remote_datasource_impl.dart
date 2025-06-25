@@ -168,7 +168,7 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
       for (int i = 0; i < nextAyahPagination; i++) {
         final response = await getAyahsThroughout(
           ayahsPagination.copyWith(
-            panjang: nextAyahPagination >= 30 ? "30" : ayahsPagination.panjang,
+            panjang: nextAyahPagination >= 30 ? 30 : ayahsPagination.panjang,
           ),
         );
 
@@ -178,7 +178,7 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
 
         fullAyahs.addAll(response.data ?? []);
         ayahsPagination = ayahsPagination.copyWith(
-          ayat: "${ayahsPagination.ayat!.parseInt + 30}",
+          ayat: (ayahsPagination.ayat ?? 0) + 30,
         );
       }
 

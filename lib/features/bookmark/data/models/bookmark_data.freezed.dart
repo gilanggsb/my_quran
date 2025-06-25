@@ -16,12 +16,18 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BookmarkData {
+  @HiveField(0)
   String? get title => throw _privateConstructorUsedError;
+  @HiveField(1)
   String? get subtitle => throw _privateConstructorUsedError;
+  @HiveField(2)
   int? get dataId => throw _privateConstructorUsedError;
-  int? get categoryId => throw _privateConstructorUsedError;
-  int? get type => throw _privateConstructorUsedError;
-  int? get id => throw _privateConstructorUsedError;
+  @HiveField(3)
+  String? get categoryId => throw _privateConstructorUsedError;
+  @HiveField(4)
+  String? get type => throw _privateConstructorUsedError;
+  @HiveField(5)
+  String? get id => throw _privateConstructorUsedError;
 
   /// Create a copy of BookmarkData
   /// with the given fields replaced by the non-null parameter values.
@@ -37,12 +43,12 @@ abstract class $BookmarkDataCopyWith<$Res> {
       _$BookmarkDataCopyWithImpl<$Res, BookmarkData>;
   @useResult
   $Res call(
-      {String? title,
-      String? subtitle,
-      int? dataId,
-      int? categoryId,
-      int? type,
-      int? id});
+      {@HiveField(0) String? title,
+      @HiveField(1) String? subtitle,
+      @HiveField(2) int? dataId,
+      @HiveField(3) String? categoryId,
+      @HiveField(4) String? type,
+      @HiveField(5) String? id});
 }
 
 /// @nodoc
@@ -83,15 +89,15 @@ class _$BookmarkDataCopyWithImpl<$Res, $Val extends BookmarkData>
       categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -105,12 +111,12 @@ abstract class _$$BookmarkDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? title,
-      String? subtitle,
-      int? dataId,
-      int? categoryId,
-      int? type,
-      int? id});
+      {@HiveField(0) String? title,
+      @HiveField(1) String? subtitle,
+      @HiveField(2) int? dataId,
+      @HiveField(3) String? categoryId,
+      @HiveField(4) String? type,
+      @HiveField(5) String? id});
 }
 
 /// @nodoc
@@ -149,15 +155,15 @@ class __$$BookmarkDataImplCopyWithImpl<$Res>
       categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -166,26 +172,32 @@ class __$$BookmarkDataImplCopyWithImpl<$Res>
 
 class _$BookmarkDataImpl extends _BookmarkData {
   const _$BookmarkDataImpl(
-      {this.title,
-      this.subtitle,
-      this.dataId,
-      this.categoryId,
-      this.type,
-      this.id})
+      {@HiveField(0) this.title,
+      @HiveField(1) this.subtitle,
+      @HiveField(2) this.dataId,
+      @HiveField(3) this.categoryId,
+      @HiveField(4) this.type,
+      @HiveField(5) this.id})
       : super._();
 
   @override
+  @HiveField(0)
   final String? title;
   @override
+  @HiveField(1)
   final String? subtitle;
   @override
+  @HiveField(2)
   final int? dataId;
   @override
-  final int? categoryId;
+  @HiveField(3)
+  final String? categoryId;
   @override
-  final int? type;
+  @HiveField(4)
+  final String? type;
   @override
-  final int? id;
+  @HiveField(5)
+  final String? id;
 
   @override
   String toString() {
@@ -222,26 +234,32 @@ class _$BookmarkDataImpl extends _BookmarkData {
 
 abstract class _BookmarkData extends BookmarkData {
   const factory _BookmarkData(
-      {final String? title,
-      final String? subtitle,
-      final int? dataId,
-      final int? categoryId,
-      final int? type,
-      final int? id}) = _$BookmarkDataImpl;
+      {@HiveField(0) final String? title,
+      @HiveField(1) final String? subtitle,
+      @HiveField(2) final int? dataId,
+      @HiveField(3) final String? categoryId,
+      @HiveField(4) final String? type,
+      @HiveField(5) final String? id}) = _$BookmarkDataImpl;
   const _BookmarkData._() : super._();
 
   @override
+  @HiveField(0)
   String? get title;
   @override
+  @HiveField(1)
   String? get subtitle;
   @override
+  @HiveField(2)
   int? get dataId;
   @override
-  int? get categoryId;
+  @HiveField(3)
+  String? get categoryId;
   @override
-  int? get type;
+  @HiveField(4)
+  String? get type;
   @override
-  int? get id;
+  @HiveField(5)
+  String? get id;
 
   /// Create a copy of BookmarkData
   /// with the given fields replaced by the non-null parameter values.

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../common/common.dart';
 
 class QuranNumber extends StatelessWidget {
-  final String? number;
+  final int? number;
   const QuranNumber({
     super.key,
     required this.number,
@@ -25,7 +25,7 @@ class QuranNumber extends StatelessWidget {
           ),
           Center(
             child: DefaultText(
-              number ?? '',
+              "${number ?? ''}",
               fontSize: 11.sp,
             ),
           ),

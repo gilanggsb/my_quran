@@ -1,4 +1,4 @@
-import 'package:isar/isar.dart';
+import 'package:hive_ce/hive.dart';
 
 import '../../common.dart';
 
@@ -15,6 +15,10 @@ abstract class LocalDBService {
 }
 
 abstract class IsarService extends LocalDBService {
-  IsarCollection<T> getCollection<T>();
+  // IsarCollection<T> getCollection<T>();
   Future<T> writeTXN<T>(Future<T> Function() callback, {bool silent = false});
+}
+
+abstract class HiveService extends LocalDBService {
+  Box<T> getCollection<T>();
 }

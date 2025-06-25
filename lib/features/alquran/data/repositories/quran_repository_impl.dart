@@ -97,10 +97,10 @@ class QuranRepositoryImpl extends QuranRepository {
   Future<BaseResponse<List<Ayah>?>> getFullAyahs(
     AyahsThroughoutPagination ayahsThroughout,
   ) async {
-    final surah = await getSurah(ayahsThroughout.surat?.parseInt ?? 0);
-    final totalSurah = surah.data?.numberOfVerses?.parseInt ?? 3;
+    final surah = await getSurah(ayahsThroughout.surat ?? 0);
+    final totalSurah = surah.data?.numberOfVerses ?? 3;
     final mappedAyahsThroughout =
-        ayahsThroughout.copyWith(maxAyat: totalSurah, panjang: "$totalSurah");
+        ayahsThroughout.copyWith(maxAyat: totalSurah, panjang: totalSurah);
     final cachedAyahs =
         await localDataSource.getCachedAyahsThroughout(mappedAyahsThroughout);
 

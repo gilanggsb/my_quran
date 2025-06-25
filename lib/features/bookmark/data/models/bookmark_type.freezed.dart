@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BookmarkType {
+  @HiveField(0)
   String? get name => throw _privateConstructorUsedError;
-  int? get id => throw _privateConstructorUsedError;
+  @HiveField(1)
+  String? get id => throw _privateConstructorUsedError;
 
   /// Create a copy of BookmarkType
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +34,7 @@ abstract class $BookmarkTypeCopyWith<$Res> {
           BookmarkType value, $Res Function(BookmarkType) then) =
       _$BookmarkTypeCopyWithImpl<$Res, BookmarkType>;
   @useResult
-  $Res call({String? name, int? id});
+  $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
 }
 
 /// @nodoc
@@ -61,7 +63,7 @@ class _$BookmarkTypeCopyWithImpl<$Res, $Val extends BookmarkType>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -74,7 +76,7 @@ abstract class _$$BookmarkTypeImplCopyWith<$Res>
       __$$BookmarkTypeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, int? id});
+  $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
 }
 
 /// @nodoc
@@ -101,7 +103,7 @@ class __$$BookmarkTypeImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -109,12 +111,15 @@ class __$$BookmarkTypeImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$BookmarkTypeImpl extends _BookmarkType {
-  const _$BookmarkTypeImpl({this.name, this.id}) : super._();
+  const _$BookmarkTypeImpl({@HiveField(0) this.name, @HiveField(1) this.id})
+      : super._();
 
   @override
+  @HiveField(0)
   final String? name;
   @override
-  final int? id;
+  @HiveField(1)
+  final String? id;
 
   @override
   String toString() {
@@ -143,14 +148,17 @@ class _$BookmarkTypeImpl extends _BookmarkType {
 }
 
 abstract class _BookmarkType extends BookmarkType {
-  const factory _BookmarkType({final String? name, final int? id}) =
-      _$BookmarkTypeImpl;
+  const factory _BookmarkType(
+      {@HiveField(0) final String? name,
+      @HiveField(1) final String? id}) = _$BookmarkTypeImpl;
   const _BookmarkType._() : super._();
 
   @override
+  @HiveField(0)
   String? get name;
   @override
-  int? get id;
+  @HiveField(1)
+  String? get id;
 
   /// Create a copy of BookmarkType
   /// with the given fields replaced by the non-null parameter values.

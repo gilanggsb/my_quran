@@ -77,7 +77,7 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
   Future<void> _deleteBookmark(_DeleteBookmark event, emit) async {
     try {
       emit(const BookmarkState.detailAyahLoading());
-      await deleteBookmark(event.bookmarkId ?? 0);
+      await deleteBookmark(event.bookmarkId ?? "0");
       emit(const BookmarkState.deleteBookmarkSuccess());
     } on ServerFailure catch (e) {
       _emitFailed(emit, e.message);
@@ -86,7 +86,7 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
     }
   }
 
-  Future<List<BookmarkData>> getBookmarksData({int? categoryId}) async {
+  Future<List<BookmarkData>> getBookmarksData({String? categoryId}) async {
     final resBookmarks = await getBookmarks(categoryId);
     return resBookmarks.data ?? [];
   }

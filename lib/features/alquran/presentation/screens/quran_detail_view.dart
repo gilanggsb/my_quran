@@ -45,10 +45,8 @@ class QuranDetailView extends StatelessWidget {
       body: BlocBuilder<QuranDetailCubit, QuranDetailState>(
         builder: (context, state) {
           final isLoading = state.whenOrNull(loading: () => true) ?? false;
-          final isLoadingRetrieveMoreData =
-              state.whenOrNull(loadingMoreData: () => true) ?? false;
-          final ayahs =
-              isLoading ? BoneMockData.fakeAyahs : quranDetailCubit.ayahs;
+          final isLoadingRetrieveMoreData = state.whenOrNull(loadingMoreData: () => true) ?? false;
+          final ayahs = isLoading ? BoneMockData.fakeAyahs : quranDetailCubit.ayahs;
           final sliverCtx = quranDetailCubit.sliverContext;
 
           return ListViewObserver(
@@ -62,8 +60,7 @@ class QuranDetailView extends StatelessWidget {
                 Skeletonizer.sliver(
                   enabled: isLoading,
                   child: SliverList.separated(
-                    itemCount:
-                        ayahs.length + (isLoadingRetrieveMoreData ? 1 : 0),
+                    itemCount: ayahs.length + (isLoadingRetrieveMoreData ? 1 : 0),
                     separatorBuilder: (_, indx) => 8.heightBox,
                     itemBuilder: (BuildContext ctx, int index) {
                       if (sliverCtx != ctx) {
@@ -71,13 +68,12 @@ class QuranDetailView extends StatelessWidget {
                       }
                       final ayah = ayahs[index];
                       final surah = surahCubit.surahs.firstWhereOrNull(
-                        (surah) => surah.number == ayah.surah,
+                        (surah) => surah.number == (ayah.surah ?? 0),
                       );
 
                       return Column(
                         children: [
-                          if (ayah.ayah == '1' && !isLoading)
-                            QuranHeaderAyah(surah: surah),
+                          if (ayah.ayah == 1 && !isLoading) QuranHeaderAyah(surah: surah),
                           QuranTile(
                             quran: Quran(
                               number: ayah.ayah,
@@ -85,8 +81,7 @@ class QuranDetailView extends StatelessWidget {
                               title: ayah.latin,
                               subtitle: ayah.text,
                             ),
-                            onTap: () =>
-                                showBottomSheetDetailAyah(context, ayah),
+                            onTap: () => showBottomSheetDetailAyah(context, ayah),
                           ).paddingSymmetric(horizontal: 8),
                         ],
                       );

@@ -4,7 +4,7 @@ abstract class BoneMockData {
   static final List<Ayah> fakeAyahs = List.filled(
     5,
     const Ayah(
-      ayah: "40",
+      ayah: 40,
       arab:
           "اِنَّآ اَنْذَرْنٰكُمْ عَذَابًا قَرِيْبًا ەۙ يَّوْمَ يَنْظُرُ الْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُوْلُ الْكٰفِرُ يٰلَيْتَنِيْ كُنْتُ تُرٰبًا ࣖ",
       latin:
@@ -17,18 +17,18 @@ abstract class BoneMockData {
   static final List<Surah> fakeSurahs = List.filled(
     10,
     const Surah(
-      number: "1",
+      number: 1,
       nameId: "Al-Ma'idah",
       nameShort: "المائدة",
       revelationId: "Mekkah",
-      numberOfVerses: "120",
+      numberOfVerses: 120,
     ),
   );
 
   static final List<Juz> fakeJuzs = List.filled(
     10,
     const Juz(
-      number: "1",
+      number: 1,
       name: "Juz 1",
       nameStartId: "Al-Fatihah",
       nameEndId: "Al-Baqarah",
@@ -39,7 +39,7 @@ abstract class BoneMockData {
     10,
     const BookmarkCategory(
       name: "Doa",
-      id: 1,
+      id: "1",
     ),
   );
 
@@ -48,7 +48,7 @@ abstract class BoneMockData {
     const BookmarkData(
       title: "Terbaik",
       subtitle: "asdasd",
-      id: 1,
+      id: "1",
     ),
   );
 }
