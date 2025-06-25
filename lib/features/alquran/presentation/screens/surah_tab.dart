@@ -41,7 +41,7 @@ class SurahTab extends StatelessWidget {
                 final surah = surahs[index];
                 return QuranTile(
                   quran: Quran(
-                    number: surah.number.toString(),
+                    number: surah.number,
                     title: surah.nameId,
                     titleAr: surah.nameShort,
                     subtitle:
@@ -52,9 +52,9 @@ class SurahTab extends StatelessWidget {
                   // ),
                   onTap: () {
                     final pagination = AyahsThroughoutPagination(
-                      ayat: "1",
-                      surat: surah.number.toString(),
-                      panjang: "10",
+                      ayat: 1,
+                      surat: surah.number,
+                      panjang: 10,
                     );
                     context.pushRoute(
                       QuranDetailRoute(

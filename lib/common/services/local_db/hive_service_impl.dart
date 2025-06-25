@@ -69,7 +69,7 @@ class HiveServiceImpl extends HiveService {
   @override
   Future<void> write<T>(T data) async {
     if (data is Ayah) {
-      await ayahBox.put(data.idInt ?? 0, data);
+      await ayahBox.put(data.id, data);
     } else if (data is Juz) {
       await juzBox.put(data.number, data);
     } else if (data is Surah) {
@@ -85,12 +85,12 @@ class HiveServiceImpl extends HiveService {
 
   @override
   Future<void> writeAll<T>(List<T> data) async {
-    // List<Future<void>> bulkWrites = [];
+    List<Future<void>> bulkWrites = [];
     for (var item in data) {
-      await write<T>(item);
-      // bulkWrites.add(write<T>(item)); // Assuming each model has a unique id
+      // await write<T>(item);
+      bulkWrites.add(write<T>(item)); // Assuming each model has a unique id
     }
-    // await Future.wait(bulkWrites);
+    await Future.wait(bulkWrites);
   }
 
   @override
@@ -128,13 +128,4 @@ class HiveServiceImpl extends HiveService {
 
     await write<T>(object);
   }
-
-  // @override
-  // Future<T> writeTXN<T>(
-  //   Future<T> Function() callback, {
-  //   bool silent = false,
-  // }) async {
-  //   // Hive does not have a direct equivalent for transactions, but you can use a simple approach
-  //   return await callback();
-  // }
 }

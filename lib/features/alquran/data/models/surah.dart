@@ -25,7 +25,7 @@ class Surah with _$Surah {
     @HiveField(3) String? nameLong,
     @HiveField(4) String? nameShort,
     @HiveField(5) @StringToIntConverter() int? number,
-    @HiveField(6) String? numberOfVerses,
+    @HiveField(6) @StringToIntConverter() int? numberOfVerses,
     @HiveField(7) String? revelation,
     @HiveField(8) String? revelationEn,
     @HiveField(9) String? revelationId,

@@ -4,7 +4,7 @@ abstract class BoneMockData {
   static final List<Ayah> fakeAyahs = List.filled(
     5,
     const Ayah(
-      ayah: "40",
+      ayah: 40,
       arab:
           "اِنَّآ اَنْذَرْنٰكُمْ عَذَابًا قَرِيْبًا ەۙ يَّوْمَ يَنْظُرُ الْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُوْلُ الْكٰفِرُ يٰلَيْتَنِيْ كُنْتُ تُرٰبًا ࣖ",
       latin:
@@ -21,7 +21,7 @@ abstract class BoneMockData {
       nameId: "Al-Ma'idah",
       nameShort: "المائدة",
       revelationId: "Mekkah",
-      numberOfVerses: "120",
+      numberOfVerses: 120,
     ),
   );
 

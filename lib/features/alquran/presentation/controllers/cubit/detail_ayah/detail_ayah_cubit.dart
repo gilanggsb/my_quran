@@ -74,9 +74,9 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
     Surah? surah =
         paramsData?.lastReadAyah?.surah ?? findSurah(paramsData?.lastReadAyah?.ayah?.surah);
     final pagination = AyahsThroughoutPagination(
-      ayat: "1",
-      surat: surah?.number.toString(),
-      panjang: "10",
+      ayat: 1,
+      surat: surah?.number,
+      panjang: 10,
     );
     return QuranDetailParams(
       ayahsThroughoutPagination: pagination,
@@ -87,7 +87,7 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
 
   QuranDetailParams getParamsDataReadAsJuz() {
     return QuranDetailParams(
-      juzNumber: paramsData?.lastReadAyah?.ayah?.juz?.parseInt,
+      juzNumber: paramsData?.lastReadAyah?.ayah?.juz,
       detailType: QuranDetailTypeEnum.byJuzs,
       lastReadAyah: paramsData?.lastReadAyah,
     );
@@ -106,8 +106,7 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
 
   Surah? get surah => findSurah(currentAyah?.surah);
 
-  Surah? findSurah(String? surahId) =>
-      surahs.firstWhereOrNull((surah) => surah.number == int.tryParse(surahId ?? "0"));
+  Surah? findSurah(int? surahId) => surahs.firstWhereOrNull((surah) => surah.number == surahId);
 
   bool get isSurahType => paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
 }

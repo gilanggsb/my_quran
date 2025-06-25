@@ -23,7 +23,7 @@ class SurahAdapter extends TypeAdapter<Surah> {
       nameLong: fields[3] as String?,
       nameShort: fields[4] as String?,
       number: (fields[5] as num?)?.toInt(),
-      numberOfVerses: fields[6] as String?,
+      numberOfVerses: (fields[6] as num?)?.toInt(),
       revelation: fields[7] as String?,
       revelationEn: fields[8] as String?,
       revelationId: fields[9] as String?,
@@ -90,7 +90,8 @@ Surah _$SurahFromJson(Map<String, dynamic> json) => Surah(
       nameLong: json['name_long'] as String?,
       nameShort: json['name_short'] as String?,
       number: const StringToIntConverter().fromJson(json['number'] as String?),
-      numberOfVerses: json['number_of_verses'] as String?,
+      numberOfVerses: const StringToIntConverter()
+          .fromJson(json['number_of_verses'] as String?),
       revelation: json['revelation'] as String?,
       revelationEn: json['revelation_en'] as String?,
       revelationId: json['revelation_id'] as String?,
@@ -107,7 +108,8 @@ Map<String, dynamic> _$SurahToJson(Surah instance) => <String, dynamic>{
       'name_long': instance.nameLong,
       'name_short': instance.nameShort,
       'number': const StringToIntConverter().toJson(instance.number),
-      'number_of_verses': instance.numberOfVerses,
+      'number_of_verses':
+          const StringToIntConverter().toJson(instance.numberOfVerses),
       'revelation': instance.revelation,
       'revelation_en': instance.revelationEn,
       'revelation_id': instance.revelationId,

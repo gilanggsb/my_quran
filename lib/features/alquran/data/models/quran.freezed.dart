@@ -20,7 +20,8 @@ Quran _$QuranFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Quran {
-  String? get number => throw _privateConstructorUsedError;
+  @StringToIntConverter()
+  int? get number => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get arabic => throw _privateConstructorUsedError;
   int? get arabicMaxLine => throw _privateConstructorUsedError;
@@ -43,7 +44,7 @@ abstract class $QuranCopyWith<$Res> {
       _$QuranCopyWithImpl<$Res, Quran>;
   @useResult
   $Res call(
-      {String? number,
+      {@StringToIntConverter() int? number,
       String? title,
       String? arabic,
       int? arabicMaxLine,
@@ -79,7 +80,7 @@ class _$QuranCopyWithImpl<$Res, $Val extends Quran>
       number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -116,7 +117,7 @@ abstract class _$$QuranImplCopyWith<$Res> implements $QuranCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? number,
+      {@StringToIntConverter() int? number,
       String? title,
       String? arabic,
       int? arabicMaxLine,
@@ -150,7 +151,7 @@ class __$$QuranImplCopyWithImpl<$Res>
       number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -183,7 +184,7 @@ class __$$QuranImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$QuranImpl implements _Quran {
   const _$QuranImpl(
-      {this.number,
+      {@StringToIntConverter() this.number,
       this.title,
       this.arabic,
       this.arabicMaxLine,
@@ -195,7 +196,8 @@ class _$QuranImpl implements _Quran {
       _$$QuranImplFromJson(json);
 
   @override
-  final String? number;
+  @StringToIntConverter()
+  final int? number;
   @override
   final String? title;
   @override
@@ -254,7 +256,7 @@ class _$QuranImpl implements _Quran {
 
 abstract class _Quran implements Quran {
   const factory _Quran(
-      {final String? number,
+      {@StringToIntConverter() final int? number,
       final String? title,
       final String? arabic,
       final int? arabicMaxLine,
@@ -265,7 +267,8 @@ abstract class _Quran implements Quran {
   factory _Quran.fromJson(Map<String, dynamic> json) = _$QuranImpl.fromJson;
 
   @override
-  String? get number;
+  @StringToIntConverter()
+  int? get number;
   @override
   String? get title;
   @override

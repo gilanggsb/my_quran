@@ -17,60 +17,48 @@ class AyahAdapter extends TypeAdapter<Ayah> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Ayah(
-      id: fields[0] as String?,
-      idInt: (fields[1] as num?)?.toInt(),
-      arab: fields[2] as String?,
-      asbab: fields[3] as String?,
-      audio: fields[4] as String?,
-      ayah: fields[5] as String?,
-      ayahInt: (fields[6] as num?)?.toInt(),
-      juz: fields[7] as String?,
-      juzInt: (fields[8] as num?)?.toInt(),
-      surah: fields[9] as String?,
-      surahInt: (fields[10] as num?)?.toInt(),
-      latin: fields[11] as String?,
-      notes: fields[12] as String?,
-      page: fields[13] as String?,
-      text: fields[14] as String?,
-      theme: fields[15] as String?,
+      id: (fields[0] as num?)?.toInt(),
+      arab: fields[1] as String?,
+      asbab: fields[2] as String?,
+      audio: fields[3] as String?,
+      ayah: (fields[4] as num?)?.toInt(),
+      juz: (fields[5] as num?)?.toInt(),
+      surah: (fields[6] as num?)?.toInt(),
+      latin: fields[7] as String?,
+      notes: fields[8] as String?,
+      page: fields[9] as String?,
+      text: fields[10] as String?,
+      theme: fields[11] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Ayah obj) {
     writer
-      ..writeByte(16)
+      ..writeByte(12)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.idInt)
-      ..writeByte(2)
       ..write(obj.arab)
-      ..writeByte(3)
+      ..writeByte(2)
       ..write(obj.asbab)
-      ..writeByte(4)
+      ..writeByte(3)
       ..write(obj.audio)
-      ..writeByte(5)
+      ..writeByte(4)
       ..write(obj.ayah)
-      ..writeByte(6)
-      ..write(obj.ayahInt)
-      ..writeByte(7)
+      ..writeByte(5)
       ..write(obj.juz)
-      ..writeByte(8)
-      ..write(obj.juzInt)
-      ..writeByte(9)
+      ..writeByte(6)
       ..write(obj.surah)
-      ..writeByte(10)
-      ..write(obj.surahInt)
-      ..writeByte(11)
+      ..writeByte(7)
       ..write(obj.latin)
-      ..writeByte(12)
+      ..writeByte(8)
       ..write(obj.notes)
-      ..writeByte(13)
+      ..writeByte(9)
       ..write(obj.page)
-      ..writeByte(14)
+      ..writeByte(10)
       ..write(obj.text)
-      ..writeByte(15)
+      ..writeByte(11)
       ..write(obj.theme);
   }
 
@@ -90,17 +78,13 @@ class AyahAdapter extends TypeAdapter<Ayah> {
 // **************************************************************************
 
 Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah(
-      id: json['id'] as String?,
-      idInt: (json['id_int'] as num?)?.toInt(),
+      id: const StringToIntConverter().fromJson(json['id'] as String?),
       arab: json['arab'] as String?,
       asbab: json['asbab'] as String?,
       audio: json['audio'] as String?,
-      ayah: json['ayah'] as String?,
-      ayahInt: (json['ayah_int'] as num?)?.toInt(),
-      juz: json['juz'] as String?,
-      juzInt: (json['juz_int'] as num?)?.toInt(),
-      surah: json['surah'] as String?,
-      surahInt: (json['surah_int'] as num?)?.toInt(),
+      ayah: const StringToIntConverter().fromJson(json['ayah'] as String?),
+      juz: const StringToIntConverter().fromJson(json['juz'] as String?),
+      surah: const StringToIntConverter().fromJson(json['surah'] as String?),
       latin: json['latin'] as String?,
       notes: json['notes'] as String?,
       page: json['page'] as String?,
@@ -109,17 +93,13 @@ Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah(
     );
 
 Map<String, dynamic> _$AyahToJson(Ayah instance) => <String, dynamic>{
-      'id': instance.id,
-      'id_int': instance.idInt,
+      'id': const StringToIntConverter().toJson(instance.id),
       'arab': instance.arab,
       'asbab': instance.asbab,
       'audio': instance.audio,
-      'ayah': instance.ayah,
-      'ayah_int': instance.ayahInt,
-      'juz': instance.juz,
-      'juz_int': instance.juzInt,
-      'surah': instance.surah,
-      'surah_int': instance.surahInt,
+      'ayah': const StringToIntConverter().toJson(instance.ayah),
+      'juz': const StringToIntConverter().toJson(instance.juz),
+      'surah': const StringToIntConverter().toJson(instance.surah),
       'latin': instance.latin,
       'notes': instance.notes,
       'page': instance.page,

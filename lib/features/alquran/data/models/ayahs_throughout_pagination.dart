@@ -8,6 +8,8 @@ import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../common/utils/utils.dart';
+
 part 'ayahs_throughout_pagination.freezed.dart';
 part 'ayahs_throughout_pagination.g.dart';
 
@@ -20,9 +22,9 @@ String ayahsThroughoutPaginationToJson(AyahsThroughoutPagination data) =>
 @freezed
 class AyahsThroughoutPagination with _$AyahsThroughoutPagination {
   const factory AyahsThroughoutPagination({
-    String? surat,
-    String? ayat,
-    String? panjang,
+    @StringToIntConverter() int? surat,
+    @StringToIntConverter() int? ayat,
+    @StringToIntConverter() int? panjang,
     @JsonKey(includeToJson: false)
     int? maxAyat,
   }) = _AyahsThroughoutPagination;

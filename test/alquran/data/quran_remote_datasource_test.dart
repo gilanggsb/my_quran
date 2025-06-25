@@ -120,7 +120,7 @@ void mainQuranRemoteDataSource() {
           () async {
         // arrange
         const ayahsThroghout =
-            AyahsThroughoutPagination(surat: "1", ayat: "1", panjang: "3");
+            AyahsThroughoutPagination(surat: 1, ayat: 1, panjang: 3);
         when(remoteDataSource.getAyahsThroughout(ayahsThroghout)).thenAnswer(
           (realInvocation) async => BaseResponse<List<Ayah>>.fromJson(
             ayahsThroughoutMock,
@@ -134,7 +134,7 @@ void mainQuranRemoteDataSource() {
             await remoteDataSource.getAyahsThroughout(ayahsThroghout);
         // assert
         expect(responseJuzs.data?.length, 3);
-        expect(responseJuzs.data?[1].surah, "1");
+        expect(responseJuzs.data?[1].surah, 1);
         verify(remoteDataSource.getAyahsThroughout(ayahsThroghout));
       });
 

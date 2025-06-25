@@ -118,8 +118,7 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
   }
 
   Surah? findSurah(Ayah ayah) {
-    return surahCubit.surahs
-        .firstWhereOrNull((surah) => surah.number == int.tryParse(ayah.surah ?? "0"));
+    return surahCubit.surahs.firstWhereOrNull((surah) => surah.number == (ayah.surah ?? 0));
   }
 
   Surah? get surah => findSurah(ayahs.first);

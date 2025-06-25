@@ -28,8 +28,8 @@ class Juz with _$Juz {
     @HiveField(6) String? nameStartArab,
     @HiveField(7) String? nameStartId,
     @HiveField(8) @StringToIntConverter() int? number,
-    @HiveField(9) String? surahIdEnd,
-    @HiveField(10) String? surahIdStart,
+    @HiveField(9) @StringToIntConverter() int? surahIdEnd,
+    @HiveField(10) @StringToIntConverter() int? surahIdStart,
     @HiveField(11) String? verseEnd,
     @HiveField(12) String? verseStart,
   }) = _Juz;

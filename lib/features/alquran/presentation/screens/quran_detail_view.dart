@@ -68,12 +68,12 @@ class QuranDetailView extends StatelessWidget {
                       }
                       final ayah = ayahs[index];
                       final surah = surahCubit.surahs.firstWhereOrNull(
-                        (surah) => surah.number == int.tryParse(ayah.surah ?? "0"),
+                        (surah) => surah.number == (ayah.surah ?? 0),
                       );
 
                       return Column(
                         children: [
-                          if (ayah.ayah == '1' && !isLoading) QuranHeaderAyah(surah: surah),
+                          if (ayah.ayah == 1 && !isLoading) QuranHeaderAyah(surah: surah),
                           QuranTile(
                             quran: Quran(
                               number: ayah.ayah,

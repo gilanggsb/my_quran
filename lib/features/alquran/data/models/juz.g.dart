@@ -26,8 +26,8 @@ class JuzAdapter extends TypeAdapter<Juz> {
       nameStartArab: fields[6] as String?,
       nameStartId: fields[7] as String?,
       number: (fields[8] as num?)?.toInt(),
-      surahIdEnd: fields[9] as String?,
-      surahIdStart: fields[10] as String?,
+      surahIdEnd: (fields[9] as num?)?.toInt(),
+      surahIdStart: (fields[10] as num?)?.toInt(),
       verseEnd: fields[11] as String?,
       verseStart: fields[12] as String?,
     );
@@ -90,8 +90,10 @@ Juz _$JuzFromJson(Map<String, dynamic> json) => Juz(
       nameStartArab: json['name_start_arab'] as String?,
       nameStartId: json['name_start_id'] as String?,
       number: const StringToIntConverter().fromJson(json['number'] as String?),
-      surahIdEnd: json['surah_id_end'] as String?,
-      surahIdStart: json['surah_id_start'] as String?,
+      surahIdEnd: const StringToIntConverter()
+          .fromJson(json['surah_id_end'] as String?),
+      surahIdStart: const StringToIntConverter()
+          .fromJson(json['surah_id_start'] as String?),
       verseEnd: json['verse_end'] as String?,
       verseStart: json['verse_start'] as String?,
     );
@@ -106,8 +108,9 @@ Map<String, dynamic> _$JuzToJson(Juz instance) => <String, dynamic>{
       'name_start_arab': instance.nameStartArab,
       'name_start_id': instance.nameStartId,
       'number': const StringToIntConverter().toJson(instance.number),
-      'surah_id_end': instance.surahIdEnd,
-      'surah_id_start': instance.surahIdStart,
+      'surah_id_end': const StringToIntConverter().toJson(instance.surahIdEnd),
+      'surah_id_start':
+          const StringToIntConverter().toJson(instance.surahIdStart),
       'verse_end': instance.verseEnd,
       'verse_start': instance.verseStart,
     };

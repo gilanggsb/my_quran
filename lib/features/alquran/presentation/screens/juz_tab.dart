@@ -40,7 +40,7 @@ class JuzTab extends StatelessWidget {
                 final juz = juzs[index];
                 return QuranTile(
                   quran: Quran(
-                    number: juz.number.toString(),
+                    number: juz.number,
                     title: juz.name,
                     subtitle: "${juz.nameStartId} • ${juz.nameEndId}",
                   ),

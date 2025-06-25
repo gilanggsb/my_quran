@@ -86,13 +86,13 @@ class BookmarkCategoryCubit extends Cubit<BookmarkCategoryState> {
   void addToBookmark({BookmarkCategory? category, Ayah? ayah}) async {
     try {
       _emitLoading();
-      final resSurahs = await getSurah(ayah?.surah?.parseInt ?? 0);
+      final resSurahs = await getSurah(ayah?.surah ?? 0);
       if (resSurahs.data.isNull) {
         _emitFailed("Surah not found");
       }
       final bookmarkData = BookmarkData(
         categoryId: category?.id ?? "0",
-        dataId: ayah?.idInt ?? 0,
+        dataId: ayah?.id ?? 0,
         id: AppUtils.generateUUIDv4(),
         title: "QS. ${resSurahs.data?.nameId ?? ''}: Ayat ${ayah?.ayah ?? ''}",
         subtitle: ayah?.arab,
