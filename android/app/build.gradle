@@ -1,3 +1,5 @@
+import com.android.build.OutputFile
+
 plugins {
     id "com.android.application"
     id "kotlin-android"
@@ -20,6 +22,16 @@ if (flutterVersionCode == null) {
 def flutterVersionName = localProperties.getProperty("flutter.versionName")
 if (flutterVersionName == null) {
     flutterVersionName = "1.0"
+}
+
+def dartEnvironmentVariables = []
+if (project.hasProperty('dart-defines')) {
+    dartEnvironmentVariables = project.property('dart-defines')
+        .split(',')
+        .collectEntries { entry ->
+            def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
+            [(pair.first()): pair.last()]
+        }
 }
 
 android {
@@ -50,6 +62,8 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+        buildConfigField "String", "BUILD_DATE", "\"${new Date().format("yyyy-MM-dd_HH-mm-ss")}\""
+        manifestPlaceholders += dartEnvironmentVariables
     }
 
     flavorDimensions "default"
@@ -73,15 +87,62 @@ android {
 
     buildTypes {
         release {
+            shrinkResources false
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug
+        }
+        profile {
+            shrinkResources false
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig = signingConfigs.debug
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            // Use app name instead of applicationId
+            def apkName = "my_quran" // Replace with the actual app name
+            def flavor = variant.flavorName ?: "" // Handle flavor if available
+            def buildType = variant.buildType.name // Build type (debug/release)
+            def version = variant.versionName // Version name
+            def buildDate = new Date().format("yyyyMMddHHmm") // Build date for timestamp
+
+            // ABI-specific version codes for APK splits
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
+            def abi = output.getFilter(OutputFile.ABI) // Get ABI if present
+
+            // Generate version code for ABI if needed
+            def versionCodeSuffix = abi != null ? versionCodes[abi] : ""
+
+            // Generate the new APK file name
+            def newApkName = "${apkName}${flavor ? "-${flavor}" : ""}-v${version}${abi ? "-${abi}" : ""}-${buildDate}.apk"
+            
+            outputFileName = newApkName // Assign the new APK name
         }
     }
 }
 
 flutter {
     source = "../.."
+}
+
+// Ensure that the output directory is correct for Flutter
+tasks.whenTaskAdded { task ->
+    if (task.name.contains("package")) {
+        task.doLast {
+            def outputDir = file("${buildDir}/outputs/flutter-apk/")
+            if (outputDir.exists()) {
+                outputDir.eachFile { file ->
+                    if (file.name.endsWith(".apk")) {
+                        def renamedFile = new File(outputDir, "my_quran-${file.name}")
+                        file.renameTo(renamedFile)
+                    }
+                }
+            }
+        }
+    }
 }
 
 // dependencies {
