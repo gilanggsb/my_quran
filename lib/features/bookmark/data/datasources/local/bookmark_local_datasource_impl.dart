@@ -94,8 +94,6 @@ class BookmarkLocalDataSourceImpl extends BookmarkLocalDataSource {
   Future<BaseResponse<bool>> addBookmarkCategory(
     BookmarkCategory category,
   ) async {
-    Logger.logInfo(category.toString());
-
     try {
       await localDBService.write<BookmarkCategory>(category);
       return BaseResponse.success<bool>();

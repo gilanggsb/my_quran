@@ -18,12 +18,6 @@ class SurahCubit extends Cubit<SurahState> {
       emit(const SurahState.loading());
       final response = await getSurahs(const NoParams());
       surahs = response.data ?? [];
-
-      Logger.logInfo("========================================");
-      for (Surah surah in surahs) {
-        Logger.logInfo("SURAHS ${surah.number} ${surah.nameId}");
-      }
-      Logger.logInfo("========================================");
       originSurahs = response.data ?? [];
       emit(const SurahState.loaded());
     } on String catch (e) {
