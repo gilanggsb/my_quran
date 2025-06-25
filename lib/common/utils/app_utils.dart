@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../common.dart';
@@ -64,3 +65,6 @@ class AppUtils {
     return String.fromCharCodes(codeUnits);
   }
 }
+
+const customFreezed = Freezed(fromJson: true, toJson: true, unionValueCase: FreezedUnionCase.snake);
+const customJsonSerializable = JsonSerializable();
