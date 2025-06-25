@@ -11,9 +11,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt.get<HomeBloc>(),
-      child: const HomeView(),
-    );
+    return BlocProvider(create: (context) => getIt.get<HomeBloc>(), child: const HomeView());
   }
 }

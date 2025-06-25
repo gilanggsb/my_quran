@@ -3,8 +3,7 @@ const surahsMock = {
   "request": {"path": "/quran/surat/semua"},
   "data": [
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/001.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/001.mp3",
       "name_en": "Al-Faatiha",
       "name_id": "Al-Fatihah",
       "name_long": "سُورَةُ ٱلْفَاتِحَةِ",
@@ -21,8 +20,7 @@ const surahsMock = {
       "translation_id": "Pembukaan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/002.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/002.mp3",
       "name_en": "Al-Baqara",
       "name_id": "Al-Baqarah",
       "name_long": "سورة البقرة",
@@ -39,8 +37,7 @@ const surahsMock = {
       "translation_id": "Sapi",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/003.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/003.mp3",
       "name_en": "Aal-i-Imraan",
       "name_id": "Ali 'Imran",
       "name_long": "سورة آل عمران",
@@ -57,8 +54,7 @@ const surahsMock = {
       "translation_id": "Keluarga Imran",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/004.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/004.mp3",
       "name_en": "An-Nisaa",
       "name_id": "An-Nisa'",
       "name_long": "سورة النساء",
@@ -75,8 +71,7 @@ const surahsMock = {
       "translation_id": "Wanita",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/005.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/005.mp3",
       "name_en": "Al-Maaida",
       "name_id": "Al-Ma'idah",
       "name_long": "سورة المائدة",
@@ -93,8 +88,7 @@ const surahsMock = {
       "translation_id": "Hidangan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/006.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/006.mp3",
       "name_en": "Al-An'aam",
       "name_id": "Al-An'am",
       "name_long": "سورة الأنعام",
@@ -111,8 +105,7 @@ const surahsMock = {
       "translation_id": "Binatang Ternak",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/007.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/007.mp3",
       "name_en": "Al-A'raaf",
       "name_id": "Al-A'raf",
       "name_long": "سورة الأعراف",
@@ -129,8 +122,7 @@ const surahsMock = {
       "translation_id": "Tempat Tertinggi",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/008.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/008.mp3",
       "name_en": "Al-Anfaal",
       "name_id": "Al-Anfal",
       "name_long": "سورة الأنفال",
@@ -147,8 +139,7 @@ const surahsMock = {
       "translation_id": "Rampasan Perang",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/009.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/009.mp3",
       "name_en": "At-Tawba",
       "name_id": "At-Taubah",
       "name_long": "سورة التوبة",
@@ -165,8 +156,7 @@ const surahsMock = {
       "translation_id": "Pengampunan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/010.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/010.mp3",
       "name_en": "Yunus",
       "name_id": "Yunus",
       "name_long": "سورة يونس",
@@ -183,8 +173,7 @@ const surahsMock = {
       "translation_id": "Yunus",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/011.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/011.mp3",
       "name_en": "Hud",
       "name_id": "Hud",
       "name_long": "سورة هود",
@@ -201,8 +190,7 @@ const surahsMock = {
       "translation_id": "Hud",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/012.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/012.mp3",
       "name_en": "Yusuf",
       "name_id": "Yusuf",
       "name_long": "سورة يوسف",
@@ -219,8 +207,7 @@ const surahsMock = {
       "translation_id": "Yusuf",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/013.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/013.mp3",
       "name_en": "Ar-Ra'd",
       "name_id": "Ar-Ra'd",
       "name_long": "سورة الرعد",
@@ -237,8 +224,7 @@ const surahsMock = {
       "translation_id": "Guruh",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/014.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/014.mp3",
       "name_en": "Ibrahim",
       "name_id": "Ibrahim",
       "name_long": "سورة ابراهيم",
@@ -255,8 +241,7 @@ const surahsMock = {
       "translation_id": "Ibrahim",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/015.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/015.mp3",
       "name_en": "Al-Hijr",
       "name_id": "Al-Hijr",
       "name_long": "سورة الحجر",
@@ -273,8 +258,7 @@ const surahsMock = {
       "translation_id": "Hijr",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/016.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/016.mp3",
       "name_en": "An-Nahl",
       "name_id": "An-Nahl",
       "name_long": "سورة النحل",
@@ -291,8 +275,7 @@ const surahsMock = {
       "translation_id": "Lebah",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/017.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/017.mp3",
       "name_en": "Al-Israa",
       "name_id": "Al-Isra'",
       "name_long": "سورة الإسراء",
@@ -309,8 +292,7 @@ const surahsMock = {
       "translation_id": "Memperjalankan Malam Hari",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/018.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/018.mp3",
       "name_en": "Al-Kahf",
       "name_id": "Al-Kahf",
       "name_long": "سورة الكهف",
@@ -327,8 +309,7 @@ const surahsMock = {
       "translation_id": "Goa",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/019.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/019.mp3",
       "name_en": "Maryam",
       "name_id": "Maryam",
       "name_long": "سورة مريم",
@@ -345,8 +326,7 @@ const surahsMock = {
       "translation_id": "Maryam",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/020.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/020.mp3",
       "name_en": "Taa-Haa",
       "name_id": "Taha",
       "name_long": "سورة طه",
@@ -363,8 +343,7 @@ const surahsMock = {
       "translation_id": "Taha",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/021.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/021.mp3",
       "name_en": "Al-Anbiyaa",
       "name_id": "Al-Anbiya'",
       "name_long": "سورة الأنبياء",
@@ -381,8 +360,7 @@ const surahsMock = {
       "translation_id": "Para Nabi",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/022.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/022.mp3",
       "name_en": "Al-Hajj",
       "name_id": "Al-Hajj",
       "name_long": "سورة الحج",
@@ -399,8 +377,7 @@ const surahsMock = {
       "translation_id": "Haji",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/023.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/023.mp3",
       "name_en": "Al-Muminoon",
       "name_id": "Al-Mu'minun",
       "name_long": "سورة المؤمنون",
@@ -417,8 +394,7 @@ const surahsMock = {
       "translation_id": "Orang-Orang Mukmin",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/024.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/024.mp3",
       "name_en": "An-Noor",
       "name_id": "An-Nur",
       "name_long": "سورة النور",
@@ -435,8 +411,7 @@ const surahsMock = {
       "translation_id": "Cahaya",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/025.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/025.mp3",
       "name_en": "Al-Furqaan",
       "name_id": "Al-Furqan",
       "name_long": "سورة الفرقان",
@@ -453,8 +428,7 @@ const surahsMock = {
       "translation_id": "Pembeda",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/026.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/026.mp3",
       "name_en": "Ash-Shu'araa",
       "name_id": "Asy-Syu'ara'",
       "name_long": "سورة الشعراء",
@@ -471,8 +445,7 @@ const surahsMock = {
       "translation_id": "Para Penyair",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/027.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/027.mp3",
       "name_en": "An-Naml",
       "name_id": "An-Naml",
       "name_long": "سورة النمل",
@@ -489,8 +462,7 @@ const surahsMock = {
       "translation_id": "Semut-semut",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/028.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/028.mp3",
       "name_en": "Al-Qasas",
       "name_id": "Al-Qasas",
       "name_long": "سورة القصص",
@@ -507,8 +479,7 @@ const surahsMock = {
       "translation_id": "Kisah-Kisah",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/029.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/029.mp3",
       "name_en": "Al-Ankaboot",
       "name_id": "Al-'Ankabut",
       "name_long": "سورة العنكبوت",
@@ -525,8 +496,7 @@ const surahsMock = {
       "translation_id": "Laba-Laba",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/030.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/030.mp3",
       "name_en": "Ar-Room",
       "name_id": "Ar-Rum",
       "name_long": "سورة الروم",
@@ -543,8 +513,7 @@ const surahsMock = {
       "translation_id": "Romawi",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/031.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/031.mp3",
       "name_en": "Luqman",
       "name_id": "Luqman",
       "name_long": "سورة لقمان",
@@ -561,8 +530,7 @@ const surahsMock = {
       "translation_id": "Luqman",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/032.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/032.mp3",
       "name_en": "As-Sajda",
       "name_id": "As-Sajdah",
       "name_long": "سورة السجدة",
@@ -579,8 +547,7 @@ const surahsMock = {
       "translation_id": "Sajdah",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/033.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/033.mp3",
       "name_en": "Al-Ahzaab",
       "name_id": "Al-Ahzab",
       "name_long": "سورة الأحزاب",
@@ -597,8 +564,7 @@ const surahsMock = {
       "translation_id": "Golongan Yang Bersekutu",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/034.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/034.mp3",
       "name_en": "Saba",
       "name_id": "Saba'",
       "name_long": "سورة سَبَأ",
@@ -615,8 +581,7 @@ const surahsMock = {
       "translation_id": "Saba'",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/035.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/035.mp3",
       "name_en": "Faatir",
       "name_id": "Fatir",
       "name_long": "سورة فاطر",
@@ -633,8 +598,7 @@ const surahsMock = {
       "translation_id": "Maha Pencipta",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/036.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/036.mp3",
       "name_en": "Yaseen",
       "name_id": "Yasin",
       "name_long": "سورة يس",
@@ -651,8 +615,7 @@ const surahsMock = {
       "translation_id": "Yasin",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/037.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/037.mp3",
       "name_en": "As-Saaffaat",
       "name_id": "As-Saffat",
       "name_long": "سورة الصافات",
@@ -669,8 +632,7 @@ const surahsMock = {
       "translation_id": "Barisan-Barisan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/038.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/038.mp3",
       "name_en": "Saad",
       "name_id": "Sad",
       "name_long": "سورة ص",
@@ -687,8 +649,7 @@ const surahsMock = {
       "translation_id": "Sad",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/039.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/039.mp3",
       "name_en": "Az-Zumar",
       "name_id": "Az-Zumar",
       "name_long": "سورة الزمر",
@@ -705,8 +666,7 @@ const surahsMock = {
       "translation_id": "Rombongan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/040.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/040.mp3",
       "name_en": "Ghafir",
       "name_id": "Gafir",
       "name_long": "سورة غافر",
@@ -723,8 +683,7 @@ const surahsMock = {
       "translation_id": "Maha Pengampun",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/041.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/041.mp3",
       "name_en": "Fussilat",
       "name_id": "Fussilat",
       "name_long": "سورة فصلت",
@@ -741,8 +700,7 @@ const surahsMock = {
       "translation_id": "Yang Dijelaskan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/042.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/042.mp3",
       "name_en": "Ash-Shura",
       "name_id": "Asy-Syura",
       "name_long": "سورة الشورى",
@@ -759,8 +717,7 @@ const surahsMock = {
       "translation_id": "Musyawarah",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/043.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/043.mp3",
       "name_en": "Az-Zukhruf",
       "name_id": "Az-Zukhruf",
       "name_long": "سورة الزخرف",
@@ -777,8 +734,7 @@ const surahsMock = {
       "translation_id": "Perhiasan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/044.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/044.mp3",
       "name_en": "Ad-Dukhaan",
       "name_id": "Ad-Dukhan",
       "name_long": "سورة الدخان",
@@ -795,8 +751,7 @@ const surahsMock = {
       "translation_id": "Kabut",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/045.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/045.mp3",
       "name_en": "Al-Jaathiya",
       "name_id": "Al-Jasiyah",
       "name_long": "سورة الجاثية",
@@ -813,8 +768,7 @@ const surahsMock = {
       "translation_id": "Berlutut",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/046.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/046.mp3",
       "name_en": "Al-Ahqaf",
       "name_id": "Al-Ahqaf",
       "name_long": "سورة الأحقاف",
@@ -831,8 +785,7 @@ const surahsMock = {
       "translation_id": "Bukit Pasir",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/047.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/047.mp3",
       "name_en": "Muhammad",
       "name_id": "Muhammad",
       "name_long": "سورة محمد",
@@ -849,8 +802,7 @@ const surahsMock = {
       "translation_id": "Muhammad",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/048.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/048.mp3",
       "name_en": "Al-Fath",
       "name_id": "Al-Fath",
       "name_long": "سورة الفتح",
@@ -867,8 +819,7 @@ const surahsMock = {
       "translation_id": "Kemenangan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/049.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/049.mp3",
       "name_en": "Al-Hujuraat",
       "name_id": "Al-Hujurat",
       "name_long": "سورة الحجرات",
@@ -885,8 +836,7 @@ const surahsMock = {
       "translation_id": "Kamar-Kamar",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/050.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/050.mp3",
       "name_en": "Qaaf",
       "name_id": "Qaf",
       "name_long": "سورة ق",
@@ -903,8 +853,7 @@ const surahsMock = {
       "translation_id": "Qaf",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/051.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/051.mp3",
       "name_en": "Adh-Dhaariyat",
       "name_id": "Az-Zariyat",
       "name_long": "سورة الذاريات",
@@ -921,8 +870,7 @@ const surahsMock = {
       "translation_id": "Angin yang Menerbangkan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/052.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/052.mp3",
       "name_en": "At-Tur",
       "name_id": "At-Tur",
       "name_long": "سورة الطور",
@@ -939,8 +887,7 @@ const surahsMock = {
       "translation_id": "Bukit Tursina",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/053.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/053.mp3",
       "name_en": "An-Najm",
       "name_id": "An-Najm",
       "name_long": "سورة النجم",
@@ -957,8 +904,7 @@ const surahsMock = {
       "translation_id": "Bintang",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/054.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/054.mp3",
       "name_en": "Al-Qamar",
       "name_id": "Al-Qamar",
       "name_long": "سورة القمر",
@@ -975,8 +921,7 @@ const surahsMock = {
       "translation_id": "Bulan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/055.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/055.mp3",
       "name_en": "Ar-Rahmaan",
       "name_id": "Ar-Rahman",
       "name_long": "سورة الرحمن",
@@ -993,8 +938,7 @@ const surahsMock = {
       "translation_id": "Maha Pengasih",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/056.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/056.mp3",
       "name_en": "Al-Waaqia",
       "name_id": "Al-Waqi'ah",
       "name_long": "سورة الواقعة",
@@ -1011,8 +955,7 @@ const surahsMock = {
       "translation_id": "Hari Kiamat",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/057.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/057.mp3",
       "name_en": "Al-Hadid",
       "name_id": "Al-Hadid",
       "name_long": "سورة الحديد",
@@ -1029,8 +972,7 @@ const surahsMock = {
       "translation_id": "Besi",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/058.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/058.mp3",
       "name_en": "Al-Mujaadila",
       "name_id": "Al-Mujadalah",
       "name_long": "سورة المجادلة",
@@ -1047,8 +989,7 @@ const surahsMock = {
       "translation_id": "Gugatan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/059.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/059.mp3",
       "name_en": "Al-Hashr",
       "name_id": "Al-Hasyr",
       "name_long": "سورة الحشر",
@@ -1065,8 +1006,7 @@ const surahsMock = {
       "translation_id": "Pengusiran",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/060.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/060.mp3",
       "name_en": "Al-Mumtahana",
       "name_id": "Al-Mumtahanah",
       "name_long": "سورة الممتحنة",
@@ -1083,8 +1023,7 @@ const surahsMock = {
       "translation_id": "Wanita Yang Diuji",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/061.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/061.mp3",
       "name_en": "As-Saff",
       "name_id": "As-Saff",
       "name_long": "سورة الصف",
@@ -1101,8 +1040,7 @@ const surahsMock = {
       "translation_id": "Barisan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/062.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/062.mp3",
       "name_en": "Al-Jumu'a",
       "name_id": "Al-Jumu'ah",
       "name_long": "سورة الجمعة",
@@ -1119,8 +1057,7 @@ const surahsMock = {
       "translation_id": "Jumat",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/063.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/063.mp3",
       "name_en": "Al-Munaafiqoon",
       "name_id": "Al-Munafiqun",
       "name_long": "سورة المنافقون",
@@ -1137,8 +1074,7 @@ const surahsMock = {
       "translation_id": "Orang-Orang Munafik",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/064.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/064.mp3",
       "name_en": "At-Taghaabun",
       "name_id": "At-Tagabun",
       "name_long": "سورة التغابن",
@@ -1155,8 +1091,7 @@ const surahsMock = {
       "translation_id": "Pengungkapan Kesalahan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/065.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/065.mp3",
       "name_en": "At-Talaaq",
       "name_id": "At-Talaq",
       "name_long": "سورة الطلاق",
@@ -1173,8 +1108,7 @@ const surahsMock = {
       "translation_id": "Talak",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/066.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/066.mp3",
       "name_en": "At-Tahrim",
       "name_id": "At-Tahrim",
       "name_long": "سورة التحريم",
@@ -1191,8 +1125,7 @@ const surahsMock = {
       "translation_id": "Pengharaman",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/067.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/067.mp3",
       "name_en": "Al-Mulk",
       "name_id": "Al-Mulk",
       "name_long": "سورة الملك",
@@ -1209,8 +1142,7 @@ const surahsMock = {
       "translation_id": "Kerajaan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/068.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/068.mp3",
       "name_en": "Al-Qalam",
       "name_id": "Al-Qalam",
       "name_long": "سورة القلم",
@@ -1227,8 +1159,7 @@ const surahsMock = {
       "translation_id": "Pena",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/069.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/069.mp3",
       "name_en": "Al-Haaqqa",
       "name_id": "Al-Haqqah",
       "name_long": "سورة الحاقة",
@@ -1245,8 +1176,7 @@ const surahsMock = {
       "translation_id": "Hari Kiamat",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/070.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/070.mp3",
       "name_en": "Al-Ma'aarij",
       "name_id": "Al-Ma'arij",
       "name_long": "سورة المعارج",
@@ -1263,8 +1193,7 @@ const surahsMock = {
       "translation_id": "Tempat Naik",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/071.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/071.mp3",
       "name_en": "Nooh",
       "name_id": "Nuh",
       "name_long": "سورة نوح",
@@ -1281,8 +1210,7 @@ const surahsMock = {
       "translation_id": "Nuh",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/072.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/072.mp3",
       "name_en": "Al-Jinn",
       "name_id": "Al-Jinn",
       "name_long": "سورة الجن",
@@ -1299,8 +1227,7 @@ const surahsMock = {
       "translation_id": "Jin",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/073.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/073.mp3",
       "name_en": "Al-Muzzammil",
       "name_id": "Al-Muzzammil",
       "name_long": "سورة المزمل",
@@ -1317,8 +1244,7 @@ const surahsMock = {
       "translation_id": "Orang Yang Berselimut",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/074.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/074.mp3",
       "name_en": "Al-Muddaththir",
       "name_id": "Al-Muddassir",
       "name_long": "سورة المدثر",
@@ -1335,8 +1261,7 @@ const surahsMock = {
       "translation_id": "Orang Yang Berkemul",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/075.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/075.mp3",
       "name_en": "Al-Qiyaama",
       "name_id": "Al-Qiyamah",
       "name_long": "سورة القيامة",
@@ -1353,8 +1278,7 @@ const surahsMock = {
       "translation_id": "Hari Kiamat",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/076.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/076.mp3",
       "name_en": "Al-Insaan",
       "name_id": "Al-Insan",
       "name_long": "سورة الانسان",
@@ -1371,8 +1295,7 @@ const surahsMock = {
       "translation_id": "Manusia",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/077.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/077.mp3",
       "name_en": "Al-Mursalaat",
       "name_id": "Al-Mursalat",
       "name_long": "سورة المرسلات",
@@ -1389,8 +1312,7 @@ const surahsMock = {
       "translation_id": "Malaikat Yang Diutus",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/078.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/078.mp3",
       "name_en": "An-Naba",
       "name_id": "An-Naba'",
       "name_long": "سورة النبأ",
@@ -1407,8 +1329,7 @@ const surahsMock = {
       "translation_id": "Berita Besar",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/079.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/079.mp3",
       "name_en": "An-Naazi'aat",
       "name_id": "An-Nazi'at",
       "name_long": "سورة النازعات",
@@ -1425,8 +1346,7 @@ const surahsMock = {
       "translation_id": "Malaikat Yang Mencabut",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/080.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/080.mp3",
       "name_en": "Abasa",
       "name_id": "'Abasa",
       "name_long": "سورة عبس",
@@ -1443,8 +1363,7 @@ const surahsMock = {
       "translation_id": "Bermuka Masam",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/081.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/081.mp3",
       "name_en": "At-Takwir",
       "name_id": "At-Takwir",
       "name_long": "سورة التكوير",
@@ -1461,8 +1380,7 @@ const surahsMock = {
       "translation_id": "Penggulungan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/082.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/082.mp3",
       "name_en": "Al-Infitaar",
       "name_id": "Al-Infitar",
       "name_long": "سورة الإنفطار",
@@ -1479,8 +1397,7 @@ const surahsMock = {
       "translation_id": "Terbelah",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/083.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/083.mp3",
       "name_en": "Al-Mutaffifin",
       "name_id": "Al-Mutaffifin",
       "name_long": "سورة المطففين",
@@ -1497,8 +1414,7 @@ const surahsMock = {
       "translation_id": "Orang-Orang Curang",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/084.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/084.mp3",
       "name_en": "Al-Inshiqaaq",
       "name_id": "Al-Insyiqaq",
       "name_long": "سورة الإنشقاق",
@@ -1515,8 +1431,7 @@ const surahsMock = {
       "translation_id": "Terbelah",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/085.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/085.mp3",
       "name_en": "Al-Burooj",
       "name_id": "Al-Buruj",
       "name_long": "سورة البروج",
@@ -1533,8 +1448,7 @@ const surahsMock = {
       "translation_id": "Gugusan Bintang",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/086.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/086.mp3",
       "name_en": "At-Taariq",
       "name_id": "At-Tariq",
       "name_long": "سورة الطارق",
@@ -1551,8 +1465,7 @@ const surahsMock = {
       "translation_id": "Yang Datang Di Malam Hari",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/087.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/087.mp3",
       "name_en": "Al-A'laa",
       "name_id": "Al-A'la",
       "name_long": "سورة الأعلى",
@@ -1569,8 +1482,7 @@ const surahsMock = {
       "translation_id": "Maha Tinggi",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/088.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/088.mp3",
       "name_en": "Al-Ghaashiya",
       "name_id": "Al-Gasyiyah",
       "name_long": "سورة الغاشية",
@@ -1587,8 +1499,7 @@ const surahsMock = {
       "translation_id": "Hari Kiamat",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/089.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/089.mp3",
       "name_en": "Al-Fajr",
       "name_id": "Al-Fajr",
       "name_long": "سورة الفجر",
@@ -1605,8 +1516,7 @@ const surahsMock = {
       "translation_id": "Fajar",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/090.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/090.mp3",
       "name_en": "Al-Balad",
       "name_id": "Al-Balad",
       "name_long": "سورة البلد",
@@ -1623,8 +1533,7 @@ const surahsMock = {
       "translation_id": "Negeri",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/091.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/091.mp3",
       "name_en": "Ash-Shams",
       "name_id": "Asy-Syams",
       "name_long": "سورة الشمس",
@@ -1641,8 +1550,7 @@ const surahsMock = {
       "translation_id": "Matahari",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/092.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/092.mp3",
       "name_en": "Al-Lail",
       "name_id": "Al-Lail",
       "name_long": "سورة الليل",
@@ -1659,8 +1567,7 @@ const surahsMock = {
       "translation_id": "Malam",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/093.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/093.mp3",
       "name_en": "Ad-Dhuhaa",
       "name_id": "Ad-Duha",
       "name_long": "سورة الضحى",
@@ -1677,8 +1584,7 @@ const surahsMock = {
       "translation_id": "Duha",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/094.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/094.mp3",
       "name_en": "Ash-Sharh",
       "name_id": "Asy-Syarh",
       "name_long": "سورة الشرح",
@@ -1695,8 +1601,7 @@ const surahsMock = {
       "translation_id": "Lapang",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/095.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/095.mp3",
       "name_en": "At-Tin",
       "name_id": "At-Tin",
       "name_long": "سورة التين",
@@ -1713,8 +1618,7 @@ const surahsMock = {
       "translation_id": "Buah Tin",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/096.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/096.mp3",
       "name_en": "Al-Alaq",
       "name_id": "Al-'Alaq",
       "name_long": "سورة العلق",
@@ -1731,8 +1635,7 @@ const surahsMock = {
       "translation_id": "Segumpal Darah",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/097.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/097.mp3",
       "name_en": "Al-Qadr",
       "name_id": "Al-Qadr",
       "name_long": "سورة القدر",
@@ -1749,8 +1652,7 @@ const surahsMock = {
       "translation_id": "Kemuliaan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/098.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/098.mp3",
       "name_en": "Al-Bayyina",
       "name_id": "Al-Bayyinah",
       "name_long": "سورة البينة",
@@ -1767,8 +1669,7 @@ const surahsMock = {
       "translation_id": "Bukti Nyata",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/099.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/099.mp3",
       "name_en": "Az-Zalzala",
       "name_id": "Az-Zalzalah",
       "name_long": "سورة الزلزلة",
@@ -1785,8 +1686,7 @@ const surahsMock = {
       "translation_id": "Guncangan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/100.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/100.mp3",
       "name_en": "Al-Aadiyaat",
       "name_id": "Al-'Adiyat",
       "name_long": "سورة العاديات",
@@ -1803,8 +1703,7 @@ const surahsMock = {
       "translation_id": "Kuda Yang Berlari Kencang",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/101.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/101.mp3",
       "name_en": "Al-Qaari'a",
       "name_id": "Al-Qari'ah",
       "name_long": "سورة القارعة",
@@ -1821,8 +1720,7 @@ const surahsMock = {
       "translation_id": "Hari Kiamat",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/102.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/102.mp3",
       "name_en": "At-Takaathur",
       "name_id": "At-Takasur",
       "name_long": "سورة التكاثر",
@@ -1839,8 +1737,7 @@ const surahsMock = {
       "translation_id": "Bermegah-Megahan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/103.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/103.mp3",
       "name_en": "Al-Asr",
       "name_id": "Al-'Asr",
       "name_long": "سورة العصر",
@@ -1857,8 +1754,7 @@ const surahsMock = {
       "translation_id": "Asar",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/104.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/104.mp3",
       "name_en": "Al-Humaza",
       "name_id": "Al-Humazah",
       "name_long": "سورة الهمزة",
@@ -1875,8 +1771,7 @@ const surahsMock = {
       "translation_id": "Pengumpat",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/105.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/105.mp3",
       "name_en": "Al-Fil",
       "name_id": "Al-Fil",
       "name_long": "سورة الفيل",
@@ -1893,8 +1788,7 @@ const surahsMock = {
       "translation_id": "Gajah",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/106.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/106.mp3",
       "name_en": "Quraish",
       "name_id": "Quraisy",
       "name_long": "سورة قريش",
@@ -1911,8 +1805,7 @@ const surahsMock = {
       "translation_id": "Quraisy",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/107.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/107.mp3",
       "name_en": "Al-Maa'un",
       "name_id": "Al-Ma'un",
       "name_long": "سورة الماعون",
@@ -1929,8 +1822,7 @@ const surahsMock = {
       "translation_id": "Barang Yang Berguna",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/108.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/108.mp3",
       "name_en": "Al-Kawthar",
       "name_id": "Al-Kausar",
       "name_long": "سورة الكوثر",
@@ -1947,8 +1839,7 @@ const surahsMock = {
       "translation_id": "Pemberian Yang Banyak",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/109.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/109.mp3",
       "name_en": "Al-Kaafiroon",
       "name_id": "Al-Kafirun",
       "name_long": "سورة الكافرون",
@@ -1965,8 +1856,7 @@ const surahsMock = {
       "translation_id": "Orang-Orang kafir",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/110.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/110.mp3",
       "name_en": "An-Nasr",
       "name_id": "An-Nasr",
       "name_long": "سورة النصر",
@@ -1983,8 +1873,7 @@ const surahsMock = {
       "translation_id": "Pertolongan",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/111.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/111.mp3",
       "name_en": "Al-Masad",
       "name_id": "Al-Lahab",
       "name_long": "سورة المسد",
@@ -2001,8 +1890,7 @@ const surahsMock = {
       "translation_id": "Api Yang Bergejolak",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3",
       "name_en": "Al-Ikhlaas",
       "name_id": "Al-Ikhlas",
       "name_long": "سورة الإخلاص",
@@ -2019,8 +1907,7 @@ const surahsMock = {
       "translation_id": "Ikhlas",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/113.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/113.mp3",
       "name_en": "Al-Falaq",
       "name_id": "Al-Falaq",
       "name_long": "سورة الفلق",
@@ -2037,8 +1924,7 @@ const surahsMock = {
       "translation_id": "Subuh",
     },
     {
-      "audio_url":
-          "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/114.mp3",
+      "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/114.mp3",
       "name_en": "An-Naas",
       "name_id": "An-Nas",
       "name_long": "سورة الناس",
@@ -2053,7 +1939,7 @@ const surahsMock = {
           "Surat ini terdiri atas 6 ayat, termasuk golongan surat-surat Makkiyah,  diturunkan sesudah surat Al Falaq. Nama An Naas diambil dari An Naas yang berulang kali disebut dalam surat ini yang artinya manusia.",
       "translation_en": "Mankind",
       "translation_id": "Manusia",
-    }
+    },
   ],
 };
 
@@ -2062,8 +1948,7 @@ const surahMock = {
   "request": {"path": "/quran/surat/1", "surat": "1"},
   "info": {"min": 1, "max": 114},
   "data": {
-    "audio_url":
-        "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/001.mp3",
+    "audio_url": "https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/001.mp3",
     "name_en": "Al-Faatiha",
     "name_id": "Al-Fatihah",
     "name_long": "سُورَةُ ٱلْفَاتِحَةِ",
@@ -2320,8 +2205,7 @@ const juzsMock = {
       "ayat_arab": "الر ۚ تِلْكَ آيَاتُ الْكِتَابِ وَقُرْآنٍ مُّبِينٍ",
       "ayat_indo":
           "Alif Lam Ra. (Surah) ini adalah (sebagian dari) ayat-ayat Kitab (yang sempurna) yaitu (ayat-ayat) Al-Qur'an yang memberi penjelasan.",
-      "ayat_latin":
-          "Alif-Laaam-Raa; tilka Aayaatul Kitaabi wa Qur-aa-nim Mubeen",
+      "ayat_latin": "Alif-Laaam-Raa; tilka Aayaatul Kitaabi wa Qur-aa-nim Mubeen",
       "name": "Juz 14",
       "name_end_arab": "النحل",
       "name_end_id": "An-Nahl",
@@ -2352,8 +2236,7 @@ const juzsMock = {
       "verse_start": "1",
     },
     {
-      "ayat_arab":
-          "۞ قَالَ أَلَمْ أَقُل لَّكَ إِنَّكَ لَن تَسْتَطِيعَ مَعِيَ صَبْرًا",
+      "ayat_arab": "۞ قَالَ أَلَمْ أَقُل لَّكَ إِنَّكَ لَن تَسْتَطِيعَ مَعِيَ صَبْرًا",
       "ayat_indo":
           "Dia berkata, “Bukankah sudah kukatakan kepadamu, bahwa engkau tidak akan mampu sabar bersamaku?”",
       "ayat_latin": "Qaala alam aqul laka innaka lan tastatee'a ma'iya sabraa",
@@ -2369,12 +2252,10 @@ const juzsMock = {
       "verse_start": "75",
     },
     {
-      "ayat_arab":
-          "اقْتَرَبَ لِلنَّاسِ حِسَابُهُمْ وَهُمْ فِي غَفْلَةٍ مُّعْرِضُونَ",
+      "ayat_arab": "اقْتَرَبَ لِلنَّاسِ حِسَابُهُمْ وَهُمْ فِي غَفْلَةٍ مُّعْرِضُونَ",
       "ayat_indo":
           "Telah semakin dekat kepada manusia perhitungan amal mereka, sedang mereka dalam keadaan lalai (dengan dunia), berpaling (dari akhirat).",
-      "ayat_latin":
-          "Iqtaraba linnaasi hisaa buhum wa hum fee ghaflatim mu'ridoon",
+      "ayat_latin": "Iqtaraba linnaasi hisaa buhum wa hum fee ghaflatim mu'ridoon",
       "name": "Juz 17",
       "name_end_arab": "الحج",
       "name_end_id": "Al-Hajj",
@@ -2544,8 +2425,7 @@ const juzsMock = {
     },
     {
       "ayat_arab": "۞ قَالَ فَمَا خَطْبُكُمْ أَيُّهَا الْمُرْسَلُونَ",
-      "ayat_indo":
-          "Dia (Ibrahim) berkata, “Apakah urusanmu yang penting wahai para utusan?”",
+      "ayat_indo": "Dia (Ibrahim) berkata, “Apakah urusanmu yang penting wahai para utusan?”",
       "ayat_latin": "Qaala famaa khatbukum ayyuhal mursaloon",
       "name": "Juz 27",
       "name_end_arab": "الحديد",
@@ -2577,12 +2457,10 @@ const juzsMock = {
       "verse_start": "1",
     },
     {
-      "ayat_arab":
-          "تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+      "ayat_arab": "تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
       "ayat_indo":
           "Mahasuci Allah yang menguasai (segala) kerajaan, dan Dia Mahakuasa atas segala sesuatu.",
-      "ayat_latin":
-          "Tabaarakal lazee biyadihil mulku wa huwa 'alaa kulli shai-in qadeer",
+      "ayat_latin": "Tabaarakal lazee biyadihil mulku wa huwa 'alaa kulli shai-in qadeer",
       "name": "Juz 29",
       "name_end_arab": "المرسلات",
       "name_end_id": "Al-Mursalat",
@@ -2608,7 +2486,7 @@ const juzsMock = {
       "surah_id_start": "78",
       "verse_end": "6",
       "verse_start": "1",
-    }
+    },
   ],
 };
 
@@ -2713,7 +2591,7 @@ const ayahPage1Length4Mock = {
       "surah": "1",
       "text": "Pemilik hari Pembalasan.2)",
       "theme": null,
-    }
+    },
   ],
 };
 // current length is 5 and real length is 111
@@ -2786,8 +2664,7 @@ const ayahsJuzMock = {
       "hizb": "11",
       "id": "644",
       "juz": "6",
-      "latin":
-          "Ulā'ika humul-kāfirūna ḥaqqā(n), wa a‘tadnā lil-kāfirīna ‘ażābam muhīnā(n).",
+      "latin": "Ulā'ika humul-kāfirūna ḥaqqā(n), wa a‘tadnā lil-kāfirīna ‘ażābam muhīnā(n).",
       "notes": null,
       "page": "102",
       "surah": "4",
@@ -2818,12 +2695,7 @@ const ayahsJuzMock = {
 
 const ayahsThroughoutMock = {
   "status": true,
-  "request": {
-    "path": "/quran/ayat/1/1/3",
-    "surat": "1",
-    "ayat": "1",
-    "panjang": "3",
-  },
+  "request": {"path": "/quran/ayat/1/1/3", "surat": "1", "ayat": "1", "panjang": "3"},
   "info": {
     "surat": {
       "id": 1,
@@ -2878,6 +2750,6 @@ const ayahsThroughoutMock = {
       "surah": "1",
       "text": "Yang Maha Pengasih lagi Maha Penyayang,",
       "theme": null,
-    }
+    },
   ],
 };

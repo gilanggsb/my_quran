@@ -17,10 +17,7 @@ class CurlLoggerDioInterceptor extends Interceptor {
   }
 
   @override
-  void onResponse(
-    Response response,
-    ResponseInterceptorHandler handler,
-  ) {
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
     if (printOnSuccess != null && printOnSuccess == true) {
       _renderCurlRepresentation(response.requestOptions);
     }
@@ -33,9 +30,7 @@ class CurlLoggerDioInterceptor extends Interceptor {
     try {
       Logger.logApi(_cURLRepresentation(requestOptions));
     } catch (err) {
-      Logger.logApi(
-        'unable to create a CURL representation of the requestOptions',
-      );
+      Logger.logApi('unable to create a CURL representation of the requestOptions');
     }
   }
 

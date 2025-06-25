@@ -17,9 +17,7 @@ class App extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         return MultiBlocProvider(
           providers: [
-            BlocProvider(
-              create: (context) => getIt.get<ThemeCubit>()..initialization(),
-            ),
+            BlocProvider(create: (context) => getIt.get<ThemeCubit>()..initialization()),
             BlocProvider(create: (context) => getIt.get<SurahCubit>()),
             BlocProvider(create: (context) => getIt.get<JuzCubit>()),
             BlocProvider(create: (context) => getIt.get<PlayerWidgetCubit>()),
@@ -33,26 +31,16 @@ class App extends StatelessWidget {
                 darkTheme: AppStyle.darkTheme,
                 themeMode: themeMode,
                 builder: (context, child) {
-                  ErrorWidget.builder =
-                      (FlutterErrorDetails? flutterErrorDetails) {
-                    return CustomErrorView(
-                      flutterErrorDetails: flutterErrorDetails,
-                    );
+                  ErrorWidget.builder = (FlutterErrorDetails? flutterErrorDetails) {
+                    return CustomErrorView(flutterErrorDetails: flutterErrorDetails);
                   };
                   return SafeArea(
                     child: LoadingOverlayAlt(
-                      child: Stack(
-                        children: [
-                          child ?? const SizedBox(),
-                          const PlayerWidget(),
-                        ],
-                      ),
+                      child: Stack(children: [child ?? const SizedBox(), const PlayerWidget()]),
                     ),
                   );
                 },
-                routerConfig: appRouter.config(
-                  navigatorObservers: () => [RouterObserver()],
-                ),
+                routerConfig: appRouter.config(navigatorObservers: () => [RouterObserver()]),
               );
             },
           ),

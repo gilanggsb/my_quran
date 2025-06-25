@@ -5,11 +5,7 @@ class QuranDetailMenu {
   final Widget icon;
   final String name;
 
-  QuranDetailMenu({
-    required this.id,
-    required this.icon,
-    required this.name,
-  });
+  QuranDetailMenu({required this.id, required this.icon, required this.name});
 }
 
 enum QuranDetailMenuType {

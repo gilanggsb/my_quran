@@ -6,7 +6,6 @@ class BookmarkCategoryState with _$BookmarkCategoryState {
   const factory BookmarkCategoryState.loading() = _Loading;
   const factory BookmarkCategoryState.updateState() = _UpdateState;
   const factory BookmarkCategoryState.loaded() = _Loaded;
-  const factory BookmarkCategoryState.successAddToBookmark() =
-      _SuccessAddToBookmark;
+  const factory BookmarkCategoryState.successAddToBookmark() = _SuccessAddToBookmark;
   const factory BookmarkCategoryState.failed(String message) = _Failed;
 }

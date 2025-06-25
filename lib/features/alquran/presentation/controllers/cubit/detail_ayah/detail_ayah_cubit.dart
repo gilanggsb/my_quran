@@ -12,19 +12,14 @@ part 'detail_ayah_state.dart';
 class DetailAyahCubit extends Cubit<DetailAyahState> {
   final GetSurahs getSurahs;
   final SaveLastReadAyah saveLastReadAyah;
-  DetailAyahCubit({
-    required this.getSurahs,
-    required this.saveLastReadAyah,
-  }) : super(const DetailAyahState.initial());
+  DetailAyahCubit({required this.getSurahs, required this.saveLastReadAyah})
+    : super(const DetailAyahState.initial());
 
   Ayah? currentAyah;
   List<Surah> surahs = [];
   QuranDetailParams? paramsData;
 
-  void init({
-    QuranDetailParams? params,
-    Ayah? ayah,
-  }) async {
+  void init({QuranDetailParams? params, Ayah? ayah}) async {
     currentAyah = ayah;
     paramsData = params;
     try {
@@ -73,11 +68,7 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
   Future<QuranDetailParams> getParamsDataReadAsSurah() async {
     Surah? surah =
         paramsData?.lastReadAyah?.surah ?? findSurah(paramsData?.lastReadAyah?.ayah?.surah);
-    final pagination = AyahsThroughoutPagination(
-      ayat: 1,
-      surat: surah?.number,
-      panjang: 10,
-    );
+    final pagination = AyahsThroughoutPagination(ayat: 1, surat: surah?.number, panjang: 10);
     return QuranDetailParams(
       ayahsThroughoutPagination: pagination,
       detailType: QuranDetailTypeEnum.bySurahs,
@@ -98,10 +89,10 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
     final ayah = paramsData!.lastReadAyah?.ayah ?? currentAyah;
     final ayahUrl = ayah?.audio ?? '';
     globalContext.read<PlayerWidgetCubit>().playTrack(
-          source: UrlSource(ayahUrl),
-          newTitle: surah?.nameId,
-          newSubTitle: 'Ayat : ${ayah?.ayah ?? '0'}',
-        );
+      source: UrlSource(ayahUrl),
+      newTitle: surah?.nameId,
+      newSubTitle: 'Ayat : ${ayah?.ayah ?? '0'}',
+    );
   }
 
   Surah? get surah => findSurah(currentAyah?.surah);

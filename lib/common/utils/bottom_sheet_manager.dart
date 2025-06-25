@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../common.dart';
 
 class BottomSheetManager {
-  static final ValueNotifier<bool> isBottomSheetShownNotifier =
-      ValueNotifier(false);
+  static final ValueNotifier<bool> isBottomSheetShownNotifier = ValueNotifier(false);
 
   static void showSimpleBottomSheet({
     BuildContext? context,
@@ -38,19 +37,10 @@ class BottomSheetManager {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (title != null)
-            DefaultText(
-              title,
-              fontWeight: FontWeight.bold,
-              fontSize: 18.sp,
-            ).paddingAll(16),
+            DefaultText(title, fontWeight: FontWeight.bold, fontSize: 18.sp).paddingAll(16),
           if (message != null) DefaultText(message).paddingAll(16),
           if (actions != null)
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OverflowBar(
-                children: actions,
-              ),
-            ),
+            Padding(padding: const EdgeInsets.all(8.0), child: OverflowBar(children: actions)),
         ],
       ),
     );
@@ -87,11 +77,7 @@ class BottomSheetManager {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (title != null)
-            DefaultText(
-              title,
-              fontWeight: FontWeight.bold,
-              fontSize: 18.sp,
-            ).paddingAll(16),
+            DefaultText(title, fontWeight: FontWeight.bold, fontSize: 18.sp).paddingAll(16),
           ...items.asMap().entries.map((entry) {
             int index = entry.key;
             String item = entry.value;
@@ -134,10 +120,7 @@ class BottomSheetManager {
       showDragHandle: showDragHandle,
       height: height,
       onClose: onClose,
-      child: Padding(
-        padding: padding ?? const EdgeInsets.all(16.0),
-        child: child,
-      ),
+      child: Padding(padding: padding ?? const EdgeInsets.all(16.0), child: child),
     );
   }
 
@@ -150,34 +133,26 @@ class BottomSheetManager {
   }) {
     isBottomSheetShownNotifier.value = true;
     Scaffold.of(context ?? globalContext)
-        .showBottomSheet(
-          (BuildContext context) {
-            return Container(
-              color: backgroundColor ??
-                  globalContext.getColorExt(AppColorType.background),
-              child: SafeArea(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (enableDrag)
-                      Container(
-                        margin: const EdgeInsets.only(top: 10),
-                        color: context.getColorExt(AppColorType.primary),
-                        height: 4.sp,
-                        width: context.getWidth * 0.1,
-                      ),
-                    Flexible(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: child,
-                      ),
+        .showBottomSheet((BuildContext context) {
+          return Container(
+            color: backgroundColor ?? globalContext.getColorExt(AppColorType.background),
+            child: SafeArea(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (enableDrag)
+                    Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      color: context.getColorExt(AppColorType.primary),
+                      height: 4.sp,
+                      width: context.getWidth * 0.1,
                     ),
-                  ],
-                ),
+                  Flexible(child: Padding(padding: const EdgeInsets.all(16.0), child: child)),
+                ],
               ),
-            );
-          },
-        )
+            ),
+          );
+        })
         .closed
         .then((_) {
           isBottomSheetShownNotifier.value = false;
@@ -203,8 +178,7 @@ class BottomSheetManager {
     showModalBottomSheet(
       context: context ?? globalContext,
       isScrollControlled: isScrollControlled,
-      backgroundColor:
-          backgroundColor ?? globalContext.getColorExt(AppColorType.background),
+      backgroundColor: backgroundColor ?? globalContext.getColorExt(AppColorType.background),
       shape: shape,
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
@@ -216,9 +190,7 @@ class BottomSheetManager {
           child: LayoutBuilder(
             builder: (context, constraints) {
               return ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxHeight: height ?? constraints.maxHeight * 0.9,
-                ),
+                constraints: BoxConstraints(maxHeight: height ?? constraints.maxHeight * 0.9),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -229,9 +201,7 @@ class BottomSheetManager {
                         height: 4.sp,
                         width: context.getWidth * 0.1,
                       ),
-                    Flexible(
-                      child: child,
-                    ),
+                    Flexible(child: child),
                   ],
                 ),
               );

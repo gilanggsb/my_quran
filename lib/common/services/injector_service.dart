@@ -32,15 +32,10 @@ class InjectorService {
 
   void serviceInjection({bool isTesting = false}) {
     getIt.registerLazySingleton<ApiService>(
-      () => ApiServiceImpl(
-        dio: getIt(),
-        isTesting: isTesting,
-      ),
+      () => ApiServiceImpl(dio: getIt(), isTesting: isTesting),
     );
     if (!isTesting) {
-      getIt.registerLazySingleton<StorageService>(
-        () => StorageServiceImpl(getIt<GetStorage>()),
-      );
+      getIt.registerLazySingleton<StorageService>(() => StorageServiceImpl(getIt<GetStorage>()));
     }
     getIt.registerLazySingleton<NetworkService>(
       () => NetworkServiceImpl(getIt(), isTesting: isTesting),
@@ -59,14 +54,10 @@ class InjectorService {
         return GetStorage();
       });
     }
-    getIt.registerLazySingleton<Dio>(
-      () => Dio(),
-    );
+    getIt.registerLazySingleton<Dio>(() => Dio());
     getIt.registerLazySingleton<InternetConnectionChecker>(
       () => InternetConnectionChecker.createInstance(),
     );
-    getIt.registerSingleton<AppRouter>(
-      AppRouter(),
-    );
+    getIt.registerSingleton<AppRouter>(AppRouter());
   }
 }

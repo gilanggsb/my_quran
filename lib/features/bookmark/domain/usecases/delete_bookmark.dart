@@ -6,6 +6,5 @@ class DeleteBookmark extends UseCase<BaseResponse<bool>, String> {
 
   DeleteBookmark({required this.repository});
   @override
-  Future<BaseResponse<bool>> call(String params) async =>
-      repository.deleteBookmark(params);
+  Future<BaseResponse<bool>> call(String params) async => repository.deleteBookmark(params);
 }

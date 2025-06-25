@@ -8,9 +8,7 @@ import 'package:my_quran/features/features.dart';
 import '../../main_test.mocks.dart';
 import '../home.dart';
 
-@GenerateNiceMocks([
-  MockSpec<QuranRepository>(onMissingStub: OnMissingStub.returnDefault),
-])
+@GenerateNiceMocks([MockSpec<QuranRepository>(onMissingStub: OnMissingStub.returnDefault)])
 void mainQuranRepository() {
   late MockInjectorService injector;
   late MockQuranRepository repository;
@@ -28,9 +26,7 @@ void mainQuranRepository() {
       when(repository.getSurahs()).thenAnswer(
         (realInvocation) async => BaseResponse<List<Surah>>.fromJson(
           surahsMock,
-          (json) => (json as List).toResponseList<Surah>(
-            (element) => Surah.fromJson(element),
-          ),
+          (json) => (json as List).toResponseList<Surah>((element) => Surah.fromJson(element)),
         ),
       );
       // act
@@ -43,10 +39,8 @@ void mainQuranRepository() {
     test('Should return instance of BaseResponse<Surah>', () async {
       // arrange
       when(repository.getSurah(1)).thenAnswer(
-        (realInvocation) async => BaseResponse<Surah>.fromJson(
-          surahMock,
-          (json) => Surah.fromJson(json),
-        ),
+        (realInvocation) async =>
+            BaseResponse<Surah>.fromJson(surahMock, (json) => Surah.fromJson(json)),
       );
       // act
       final responseSurahs = await repository.getSurah(1);
@@ -62,9 +56,7 @@ void mainQuranRepository() {
       when(repository.getJuzs()).thenAnswer(
         (realInvocation) async => BaseResponse<List<Juz>>.fromJson(
           juzsMock,
-          (json) => (json as List).toResponseList<Juz>(
-            (element) => Juz.fromJson(element),
-          ),
+          (json) => (json as List).toResponseList<Juz>((element) => Juz.fromJson(element)),
         ),
       );
       // act
@@ -77,10 +69,7 @@ void mainQuranRepository() {
     test('Should return instance of BaseResponse<Juz>', () async {
       // arrange
       when(repository.getJuz(1)).thenAnswer(
-        (realInvocation) async => BaseResponse<Juz>.fromJson(
-          juzMock,
-          (json) => Juz.fromJson(json),
-        ),
+        (realInvocation) async => BaseResponse<Juz>.fromJson(juzMock, (json) => Juz.fromJson(json)),
       );
       // act
       final responseJuzs = await repository.getJuz(1);
@@ -90,44 +79,36 @@ void mainQuranRepository() {
     });
   });
 
-  group(
-    'Ayah test',
-    () {
-      test('Should return instance of BaseResponse<List<Ayah>> in juz',
-          () async {
-        // arrange
-        when(repository.getAyahsJuz(1)).thenAnswer(
-          (realInvocation) async => BaseResponse<List<Ayah>>.fromJson(
-            ayahsJuzMock,
-            (json) => (json as List).toResponseList<Ayah>(
-              (element) => Ayah.fromJson(element),
-            ),
-          ),
-        );
-        // act
-        final responseJuzs = await repository.getAyahsJuz(1);
-        // assert
-        expect(responseJuzs is BaseResponse<List<Ayah>>, true);
-        verify(repository.getAyahsJuz(1));
-      });
+  group('Ayah test', () {
+    test('Should return instance of BaseResponse<List<Ayah>> in juz', () async {
+      // arrange
+      when(repository.getAyahsJuz(1)).thenAnswer(
+        (realInvocation) async => BaseResponse<List<Ayah>>.fromJson(
+          ayahsJuzMock,
+          (json) => (json as List).toResponseList<Ayah>((element) => Ayah.fromJson(element)),
+        ),
+      );
+      // act
+      final responseJuzs = await repository.getAyahsJuz(1);
+      // assert
+      expect(responseJuzs is BaseResponse<List<Ayah>>, true);
+      verify(repository.getAyahsJuz(1));
+    });
 
-      test('Should instance of BaseResponse<List<Ayah>>', () async {
-        // arrange
-        const ayahPagination = AyahPagination(length: 4, page: 1);
-        when(repository.getAyahs(ayahPagination)).thenAnswer(
-          (realInvocation) async => BaseResponse<List<Ayah>>.fromJson(
-            ayahPage1Length4Mock,
-            (json) => (json as List).toResponseList<Ayah>(
-              (element) => Ayah.fromJson(element),
-            ),
-          ),
-        );
-        // act
-        final responseJuzs = await repository.getAyahs(ayahPagination);
-        // assert
-        expect(responseJuzs is BaseResponse<List<Ayah>>, true);
-        verify(repository.getAyahs(ayahPagination));
-      });
-    },
-  );
+    test('Should instance of BaseResponse<List<Ayah>>', () async {
+      // arrange
+      const ayahPagination = AyahPagination(length: 4, page: 1);
+      when(repository.getAyahs(ayahPagination)).thenAnswer(
+        (realInvocation) async => BaseResponse<List<Ayah>>.fromJson(
+          ayahPage1Length4Mock,
+          (json) => (json as List).toResponseList<Ayah>((element) => Ayah.fromJson(element)),
+        ),
+      );
+      // act
+      final responseJuzs = await repository.getAyahs(ayahPagination);
+      // assert
+      expect(responseJuzs is BaseResponse<List<Ayah>>, true);
+      verify(repository.getAyahs(ayahPagination));
+    });
+  });
 }

@@ -15,12 +15,12 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.gr.dart"
     - "lib/l10n/messages*"
-  
-  strong-mode:
-      implicit-casts: true
-      implicit-dynamic: true
 
-  errors: 
+  strong-mode:
+    implicit-casts: true
+    implicit-dynamic: true
+
+  errors:
     avoid_classes_with_only_static_members: error
     # sort_pub_dependencies: error
     use_key_in_widget_constructors: error
@@ -29,6 +29,8 @@ analyzer:
     prefer_const_constructors: error
     prefer_relative_imports: error
 
+formatter:
+  page_width: 100
 
 linter:
   # The lint rules applied to this project can be customized in the
@@ -83,7 +85,5 @@ linter:
     - no_logic_in_create_state
     # - prefer_mixin
     # - use_enums
-    
-
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

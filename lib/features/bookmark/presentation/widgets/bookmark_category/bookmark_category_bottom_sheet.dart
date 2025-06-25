@@ -15,17 +15,16 @@ class BookmarkCategoryBottomSheet extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt.get<BookmarkCategoryCubit>()..getData(),
       child: BlocConsumer<BookmarkCategoryCubit, BookmarkCategoryState>(
-        listener: (context, state) => state.whenOrNull(
-          failed: (message) => SnackBarWidget.showFailed(message),
-          successAddToBookmark: () =>
-              SnackBarWidget.showSuccess("Success Add to bookmark"),
-        ),
+        listener:
+            (context, state) => state.whenOrNull(
+              failed: (message) => SnackBarWidget.showFailed(message),
+              successAddToBookmark: () => SnackBarWidget.showSuccess("Success Add to bookmark"),
+            ),
         builder: (context, state) {
           final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
           final isLoading = state.whenOrNull(loading: () => true) ?? false;
-          final categories = isLoading
-              ? BoneMockData.fakeCategories
-              : bookmarkCategoryCubit.categories;
+          final categories =
+              isLoading ? BoneMockData.fakeCategories : bookmarkCategoryCubit.categories;
           return CustomScrollView(
             slivers: [
               SliverAppBar(
@@ -36,10 +35,7 @@ class BookmarkCategoryBottomSheet extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ).paddingSymmetric(vertical: 10),
-                    Divider(
-                      thickness: 2,
-                      color: context.getColorExt(AppColorType.primary),
-                    ),
+                    Divider(thickness: 2, color: context.getColorExt(AppColorType.primary)),
                   ],
                 ),
                 backgroundColor: bgColor,
@@ -61,15 +57,14 @@ class BookmarkCategoryBottomSheet extends StatelessWidget {
               if (categories.isNotEmpty)
                 SliverList.separated(
                   itemCount: categories.length,
-                  separatorBuilder: (_, __) => Divider(
-                    height: 2,
-                    thickness: 0.4,
-                    color: context.getColorExt(
-                      context.isLightTheme
-                          ? AppColorType.background
-                          : AppColorType.whiteBase,
-                    ),
-                  ).paddingSymmetric(horizontal: 10),
+                  separatorBuilder:
+                      (_, _) => Divider(
+                        height: 2,
+                        thickness: 0.4,
+                        color: context.getColorExt(
+                          context.isLightTheme ? AppColorType.background : AppColorType.whiteBase,
+                        ),
+                      ).paddingSymmetric(horizontal: 10),
                   itemBuilder: (context, index) {
                     final category = categories[index];
                     final isFirstItem = index == 0;
@@ -80,16 +75,16 @@ class BookmarkCategoryBottomSheet extends StatelessWidget {
                             category: category,
                             title: "Tambah Kategori",
                             icon: Icons.add,
-                            onPress: () =>
-                                addCategoryDialog(bookmarkCategoryCubit),
+                            onPress: () => addCategoryDialog(bookmarkCategoryCubit),
                           ),
                         BookmarkCategoryTile(
                           category: category,
-                          onPress: () => addAyahToBookmark(
-                            bookmarkCategoryCubit: bookmarkCategoryCubit,
-                            category: category,
-                            ayah: ayah,
-                          ),
+                          onPress:
+                              () => addAyahToBookmark(
+                                bookmarkCategoryCubit: bookmarkCategoryCubit,
+                                category: category,
+                                ayah: ayah,
+                              ),
                         ),
                       ],
                     );
@@ -103,10 +98,7 @@ class BookmarkCategoryBottomSheet extends StatelessWidget {
   }
 
   void addCategoryDialog(BookmarkCategoryCubit bookmarkCategoryCubit) {
-    DialogManager.showInputDialog(
-      title: 'New Category',
-      onOK: bookmarkCategoryCubit.addCategory,
-    );
+    DialogManager.showInputDialog(title: 'New Category', onOK: bookmarkCategoryCubit.addCategory);
   }
 
   void addAyahToBookmark({

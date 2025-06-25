@@ -8,8 +8,7 @@ part 'theme_cubit.freezed.dart';
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit({required this.storageService})
-      : super(const ThemeState.initial());
+  ThemeCubit({required this.storageService}) : super(const ThemeState.initial());
   ThemeMode themeMode = ThemeMode.dark;
   late bool isDarkTheme = themeMode == ThemeMode.dark;
   final StorageService storageService;
@@ -20,9 +19,7 @@ class ThemeCubit extends Cubit<ThemeState> {
     if (resultTheme.isNull) {
       return;
     }
-    resultTheme == "light"
-        ? _changeTheme(isChanged: false)
-        : _changeTheme(isChanged: true);
+    resultTheme == "light" ? _changeTheme(isChanged: false) : _changeTheme(isChanged: true);
     _emitSuccess();
   }
 
@@ -39,9 +36,7 @@ class ThemeCubit extends Cubit<ThemeState> {
 
   Future<void> getCurrentTheme() async {
     String? resultTheme = await storageService.getCurrentTheme();
-    resultTheme == "light"
-        ? _changeTheme(isChanged: false)
-        : _changeTheme(isChanged: true);
+    resultTheme == "light" ? _changeTheme(isChanged: false) : _changeTheme(isChanged: true);
     _emitSuccess();
   }
 

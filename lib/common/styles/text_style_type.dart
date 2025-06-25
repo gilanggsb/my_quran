@@ -1,7 +1,1 @@
-enum TextStyleType {
-  regular,
-  medium,
-  semiBold,
-  bold,
-  thin,
-}
+enum TextStyleType { regular, medium, semiBold, bold, thin }

@@ -25,20 +25,12 @@ class QuranDetailView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () => showBottomSheetDetailQuran(context),
-            icon: Icon(
-              Icons.menu,
-              color: context.getColorExt(AppColorType.text),
-              size: 32,
-            ),
+            icon: Icon(Icons.menu, color: context.getColorExt(AppColorType.text), size: 32),
           ),
         ],
         leading: IconButton(
           onPressed: context.back,
-          icon: Icon(
-            Icons.chevron_left,
-            color: context.getColorExt(AppColorType.text),
-            size: 32,
-          ),
+          icon: Icon(Icons.chevron_left, color: context.getColorExt(AppColorType.text), size: 32),
         ),
       ),
       onInit: () => context.read<QuranDetailCubit>().init(params),
@@ -51,9 +43,7 @@ class QuranDetailView extends StatelessWidget {
 
           return ListViewObserver(
             controller: quranDetailCubit.observerController,
-            sliverListContexts: () => [
-              if (sliverCtx != null) sliverCtx,
-            ],
+            sliverListContexts: () => [if (sliverCtx != null) sliverCtx],
             child: CustomScrollView(
               controller: quranDetailCubit.scrollController,
               slivers: [
@@ -99,9 +89,7 @@ class QuranDetailView extends StatelessWidget {
   void showBottomSheetJumpToAyah(BuildContext context) {
     BottomSheetManager.showCustomBottomSheet(
       context: context,
-      child: JumpAyahBottomSheet(
-        quranDetailCubit: context.read<QuranDetailCubit>(),
-      ),
+      child: JumpAyahBottomSheet(quranDetailCubit: context.read<QuranDetailCubit>()),
     );
   }
 
@@ -120,9 +108,7 @@ class QuranDetailView extends StatelessWidget {
     BottomSheetManager.showCustomBottomSheet(
       context: context,
       isScrollControlled: true,
-      child: QuranDetailMenuBottomSheet(
-        quranDetailCubit: context.read<QuranDetailCubit>(),
-      ),
+      child: QuranDetailMenuBottomSheet(quranDetailCubit: context.read<QuranDetailCubit>()),
     );
   }
 }

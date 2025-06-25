@@ -6,6 +6,5 @@ class AddBookmark extends UseCase<BaseResponse<bool>, BookmarkData> {
 
   AddBookmark({required this.repository});
   @override
-  Future<BaseResponse<bool>> call(BookmarkData params) async =>
-      repository.addBookmark(params);
+  Future<BaseResponse<bool>> call(BookmarkData params) async => repository.addBookmark(params);
 }

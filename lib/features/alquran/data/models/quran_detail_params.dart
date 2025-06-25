@@ -18,12 +18,10 @@ class QuranDetailParams {
     int? juzNumber,
     LastReadAyah? lastReadAyah,
     QuranDetailTypeEnum? detailType,
-  }) =>
-      QuranDetailParams(
-        ayahsThroughoutPagination:
-            ayahsThroughoutPagination ?? this.ayahsThroughoutPagination,
-        juzNumber: juzNumber ?? this.juzNumber,
-        detailType: detailType ?? this.detailType,
-        lastReadAyah: lastReadAyah ?? this.lastReadAyah,
-      );
+  }) => QuranDetailParams(
+    ayahsThroughoutPagination: ayahsThroughoutPagination ?? this.ayahsThroughoutPagination,
+    juzNumber: juzNumber ?? this.juzNumber,
+    detailType: detailType ?? this.detailType,
+    lastReadAyah: lastReadAyah ?? this.lastReadAyah,
+  );
 }

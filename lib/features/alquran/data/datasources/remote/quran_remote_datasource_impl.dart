@@ -30,9 +30,8 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
     try {
       final response = await service.get<List<Surah>>(
         URL.quranSurahAll,
-        fromJsonT: (json) => List<Surah>.from(
-          (json as List).map((element) => Surah.fromJson(element)),
-        ),
+        fromJsonT:
+            (json) => List<Surah>.from((json as List).map((element) => Surah.fromJson(element))),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -71,9 +70,7 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
     try {
       final response = await service.get<List<Juz>>(
         URL.quranJuzAll,
-        fromJsonT: (json) => List<Juz>.from(
-          (json as List).map((element) => Juz.fromJson(element)),
-        ),
+        fromJsonT: (json) => List<Juz>.from((json as List).map((element) => Juz.fromJson(element))),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -93,9 +90,8 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
       final response = await service.get<List<Ayah>>(
         URL.quranAyahJuz,
         pathParams: {"juz": juzNumber},
-        fromJsonT: (json) => List<Ayah>.from(
-          (json as List).map((element) => Ayah.fromJson(element)),
-        ),
+        fromJsonT:
+            (json) => List<Ayah>.from((json as List).map((element) => Ayah.fromJson(element))),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -115,9 +111,8 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
       final response = await service.get<List<Ayah>>(
         URL.quranAyahBrowse,
         queryParams: pagination.toJson(),
-        fromJsonT: (json) => List<Ayah>.from(
-          (json as List).map((element) => Ayah.fromJson(element)),
-        ),
+        fromJsonT:
+            (json) => List<Ayah>.from((json as List).map((element) => Ayah.fromJson(element))),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -139,9 +134,8 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
       final response = await service.get<List<Ayah>>(
         URL.quranAyah,
         pathParams: ayahsThroughout.toJson(),
-        fromJsonT: (json) => List<Ayah>.from(
-          (json as List).map((element) => Ayah.fromJson(element)),
-        ),
+        fromJsonT:
+            (json) => List<Ayah>.from((json as List).map((element) => Ayah.fromJson(element))),
       );
       return response;
     } on BadResponse catch (badResponse) {
@@ -156,9 +150,7 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
   }
 
   @override
-  Future<BaseResponse<List<Ayah>?>> getFullAyahs(
-    AyahsThroughoutPagination ayahsThroughout,
-  ) async {
+  Future<BaseResponse<List<Ayah>?>> getFullAyahs(AyahsThroughoutPagination ayahsThroughout) async {
     try {
       int nextAyahPagination = ayahsThroughout.maxAyat ?? 100;
       AyahsThroughoutPagination ayahsPagination = ayahsThroughout;
@@ -177,9 +169,7 @@ class QuranRemoteDataSourceImpl extends QuranRemoteDataSource {
         }
 
         fullAyahs.addAll(response.data ?? []);
-        ayahsPagination = ayahsPagination.copyWith(
-          ayat: (ayahsPagination.ayat ?? 0) + 30,
-        );
+        ayahsPagination = ayahsPagination.copyWith(ayat: (ayahsPagination.ayat ?? 0) + 30);
       }
 
       return BaseResponse(data: fullAyahs);

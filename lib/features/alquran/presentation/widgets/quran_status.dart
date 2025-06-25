@@ -5,11 +5,7 @@ import '../../../../common/common.dart';
 class QuranStatus extends StatelessWidget {
   final bool isDownload;
   final VoidCallback onTap;
-  const QuranStatus({
-    super.key,
-    required this.onTap,
-    this.isDownload = false,
-  });
+  const QuranStatus({super.key, required this.onTap, this.isDownload = false});
 
   @override
   Widget build(BuildContext context) {

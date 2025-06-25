@@ -13,7 +13,5 @@ abstract class QuranLocalDataSource {
   Future<Ayah?> getCachedAyah(int ayahId);
   Future<List<Ayah>> getCachedAyahs(AyahPagination pagination);
   Future<List<Ayah>> getCachedAyahsJuz(int juzNumber);
-  Future<List<Ayah>> getCachedAyahsThroughout(
-    AyahsThroughoutPagination ayahsThroughout,
-  );
+  Future<List<Ayah>> getCachedAyahsThroughout(AyahsThroughoutPagination ayahsThroughout);
 }

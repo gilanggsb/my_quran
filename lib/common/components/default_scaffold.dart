@@ -51,8 +51,7 @@ class DefaultScaffold extends StatelessWidget {
           drawer: drawer,
           floatingActionButton: floatingActionButton,
           floatingActionButtonLocation: floatingActionButtonLocation,
-          backgroundColor:
-              bgBodyColor ?? context.getColorExt(AppColorType.background),
+          backgroundColor: bgBodyColor ?? context.getColorExt(AppColorType.background),
           body: Container(
             // padding: bodyPadding ?? const EdgeInsets.all(16),
             child: body,

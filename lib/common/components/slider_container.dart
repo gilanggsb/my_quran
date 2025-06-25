@@ -105,23 +105,20 @@ class _SliderContainerState extends State<SliderContainer> {
               child: AnimatedContainer(
                 duration: widget.duration ?? const Duration(milliseconds: 300),
                 height: widget.sliderHeight ?? 2,
-                color: widget.sliderColor ??
-                    context.getColorExt(AppColorType.primary),
+                color: widget.sliderColor ?? context.getColorExt(AppColorType.primary),
                 width: widget.value,
               ),
             ),
             if (_isDragging)
               Positioned(
                 left: widget.value - (widget.circleRadius ?? 10),
-                top: (widget.dragAreaHeight ?? 40) / 2 -
-                    (widget.circleRadius ?? 10),
+                top: (widget.dragAreaHeight ?? 40) / 2 - (widget.circleRadius ?? 10),
                 child: Container(
                   width: (widget.circleRadius ?? 10) * 2,
                   height: (widget.circleRadius ?? 10) * 2,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: widget.circleColor ??
-                        context.getColorExt(AppColorType.primaryLight),
+                    color: widget.circleColor ?? context.getColorExt(AppColorType.primaryLight),
                   ),
                 ),
               ),

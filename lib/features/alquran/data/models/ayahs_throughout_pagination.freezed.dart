@@ -12,10 +12,10 @@ part of 'ayahs_throughout_pagination.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
-AyahsThroughoutPagination _$AyahsThroughoutPaginationFromJson(
-    Map<String, dynamic> json) {
+AyahsThroughoutPagination _$AyahsThroughoutPaginationFromJson(Map<String, dynamic> json) {
   return _AyahsThroughoutPagination.fromJson(json);
 }
 
@@ -42,20 +42,21 @@ mixin _$AyahsThroughoutPagination {
 
 /// @nodoc
 abstract class $AyahsThroughoutPaginationCopyWith<$Res> {
-  factory $AyahsThroughoutPaginationCopyWith(AyahsThroughoutPagination value,
-          $Res Function(AyahsThroughoutPagination) then) =
-      _$AyahsThroughoutPaginationCopyWithImpl<$Res, AyahsThroughoutPagination>;
+  factory $AyahsThroughoutPaginationCopyWith(
+    AyahsThroughoutPagination value,
+    $Res Function(AyahsThroughoutPagination) then,
+  ) = _$AyahsThroughoutPaginationCopyWithImpl<$Res, AyahsThroughoutPagination>;
   @useResult
-  $Res call(
-      {@StringToIntConverter() int? surat,
-      @StringToIntConverter() int? ayat,
-      @StringToIntConverter() int? panjang,
-      @JsonKey(includeToJson: false) int? maxAyat});
+  $Res call({
+    @StringToIntConverter() int? surat,
+    @StringToIntConverter() int? ayat,
+    @StringToIntConverter() int? panjang,
+    @JsonKey(includeToJson: false) int? maxAyat,
+  });
 }
 
 /// @nodoc
-class _$AyahsThroughoutPaginationCopyWithImpl<$Res,
-        $Val extends AyahsThroughoutPagination>
+class _$AyahsThroughoutPaginationCopyWithImpl<$Res, $Val extends AyahsThroughoutPagination>
     implements $AyahsThroughoutPaginationCopyWith<$Res> {
   _$AyahsThroughoutPaginationCopyWithImpl(this._value, this._then);
 
@@ -74,24 +75,31 @@ class _$AyahsThroughoutPaginationCopyWithImpl<$Res,
     Object? panjang = freezed,
     Object? maxAyat = freezed,
   }) {
-    return _then(_value.copyWith(
-      surat: freezed == surat
-          ? _value.surat
-          : surat // ignore: cast_nullable_to_non_nullable
-              as int?,
-      ayat: freezed == ayat
-          ? _value.ayat
-          : ayat // ignore: cast_nullable_to_non_nullable
-              as int?,
-      panjang: freezed == panjang
-          ? _value.panjang
-          : panjang // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxAyat: freezed == maxAyat
-          ? _value.maxAyat
-          : maxAyat // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            surat:
+                freezed == surat
+                    ? _value.surat
+                    : surat // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            ayat:
+                freezed == ayat
+                    ? _value.ayat
+                    : ayat // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            panjang:
+                freezed == panjang
+                    ? _value.panjang
+                    : panjang // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            maxAyat:
+                freezed == maxAyat
+                    ? _value.maxAyat
+                    : maxAyat // ignore: cast_nullable_to_non_nullable
+                        as int?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -99,27 +107,27 @@ class _$AyahsThroughoutPaginationCopyWithImpl<$Res,
 abstract class _$$AyahsThroughoutPaginationImplCopyWith<$Res>
     implements $AyahsThroughoutPaginationCopyWith<$Res> {
   factory _$$AyahsThroughoutPaginationImplCopyWith(
-          _$AyahsThroughoutPaginationImpl value,
-          $Res Function(_$AyahsThroughoutPaginationImpl) then) =
-      __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>;
+    _$AyahsThroughoutPaginationImpl value,
+    $Res Function(_$AyahsThroughoutPaginationImpl) then,
+  ) = __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@StringToIntConverter() int? surat,
-      @StringToIntConverter() int? ayat,
-      @StringToIntConverter() int? panjang,
-      @JsonKey(includeToJson: false) int? maxAyat});
+  $Res call({
+    @StringToIntConverter() int? surat,
+    @StringToIntConverter() int? ayat,
+    @StringToIntConverter() int? panjang,
+    @JsonKey(includeToJson: false) int? maxAyat,
+  });
 }
 
 /// @nodoc
 class __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>
-    extends _$AyahsThroughoutPaginationCopyWithImpl<$Res,
-        _$AyahsThroughoutPaginationImpl>
+    extends _$AyahsThroughoutPaginationCopyWithImpl<$Res, _$AyahsThroughoutPaginationImpl>
     implements _$$AyahsThroughoutPaginationImplCopyWith<$Res> {
   __$$AyahsThroughoutPaginationImplCopyWithImpl(
-      _$AyahsThroughoutPaginationImpl _value,
-      $Res Function(_$AyahsThroughoutPaginationImpl) _then)
-      : super(_value, _then);
+    _$AyahsThroughoutPaginationImpl _value,
+    $Res Function(_$AyahsThroughoutPaginationImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AyahsThroughoutPagination
   /// with the given fields replaced by the non-null parameter values.
@@ -131,35 +139,42 @@ class __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>
     Object? panjang = freezed,
     Object? maxAyat = freezed,
   }) {
-    return _then(_$AyahsThroughoutPaginationImpl(
-      surat: freezed == surat
-          ? _value.surat
-          : surat // ignore: cast_nullable_to_non_nullable
-              as int?,
-      ayat: freezed == ayat
-          ? _value.ayat
-          : ayat // ignore: cast_nullable_to_non_nullable
-              as int?,
-      panjang: freezed == panjang
-          ? _value.panjang
-          : panjang // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxAyat: freezed == maxAyat
-          ? _value.maxAyat
-          : maxAyat // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+    return _then(
+      _$AyahsThroughoutPaginationImpl(
+        surat:
+            freezed == surat
+                ? _value.surat
+                : surat // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        ayat:
+            freezed == ayat
+                ? _value.ayat
+                : ayat // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        panjang:
+            freezed == panjang
+                ? _value.panjang
+                : panjang // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        maxAyat:
+            freezed == maxAyat
+                ? _value.maxAyat
+                : maxAyat // ignore: cast_nullable_to_non_nullable
+                    as int?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$AyahsThroughoutPaginationImpl implements _AyahsThroughoutPagination {
-  const _$AyahsThroughoutPaginationImpl(
-      {@StringToIntConverter() this.surat,
-      @StringToIntConverter() this.ayat,
-      @StringToIntConverter() this.panjang,
-      @JsonKey(includeToJson: false) this.maxAyat});
+  const _$AyahsThroughoutPaginationImpl({
+    @StringToIntConverter() this.surat,
+    @StringToIntConverter() this.ayat,
+    @StringToIntConverter() this.panjang,
+    @JsonKey(includeToJson: false) this.maxAyat,
+  });
 
   factory _$AyahsThroughoutPaginationImpl.fromJson(Map<String, dynamic> json) =>
       _$$AyahsThroughoutPaginationImplFromJson(json);
@@ -202,25 +217,25 @@ class _$AyahsThroughoutPaginationImpl implements _AyahsThroughoutPagination {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AyahsThroughoutPaginationImplCopyWith<_$AyahsThroughoutPaginationImpl>
-      get copyWith => __$$AyahsThroughoutPaginationImplCopyWithImpl<
-          _$AyahsThroughoutPaginationImpl>(this, _$identity);
+  _$$AyahsThroughoutPaginationImplCopyWith<_$AyahsThroughoutPaginationImpl> get copyWith =>
+      __$$AyahsThroughoutPaginationImplCopyWithImpl<_$AyahsThroughoutPaginationImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AyahsThroughoutPaginationImplToJson(
-      this,
-    );
+    return _$$AyahsThroughoutPaginationImplToJson(this);
   }
 }
 
 abstract class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
-  const factory _AyahsThroughoutPagination(
-          {@StringToIntConverter() final int? surat,
-          @StringToIntConverter() final int? ayat,
-          @StringToIntConverter() final int? panjang,
-          @JsonKey(includeToJson: false) final int? maxAyat}) =
-      _$AyahsThroughoutPaginationImpl;
+  const factory _AyahsThroughoutPagination({
+    @StringToIntConverter() final int? surat,
+    @StringToIntConverter() final int? ayat,
+    @StringToIntConverter() final int? panjang,
+    @JsonKey(includeToJson: false) final int? maxAyat,
+  }) = _$AyahsThroughoutPaginationImpl;
 
   factory _AyahsThroughoutPagination.fromJson(Map<String, dynamic> json) =
       _$AyahsThroughoutPaginationImpl.fromJson;
@@ -242,6 +257,6 @@ abstract class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AyahsThroughoutPaginationImplCopyWith<_$AyahsThroughoutPaginationImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$AyahsThroughoutPaginationImplCopyWith<_$AyahsThroughoutPaginationImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -5,10 +5,7 @@ import '../../../../common/common.dart';
 import '../../../features.dart';
 
 class QuranDetailMenuBottomSheet extends StatelessWidget {
-  const QuranDetailMenuBottomSheet({
-    super.key,
-    required this.quranDetailCubit,
-  });
+  const QuranDetailMenuBottomSheet({super.key, required this.quranDetailCubit});
 
   final QuranDetailCubit quranDetailCubit;
 
@@ -29,16 +26,12 @@ class QuranDetailMenuBottomSheet extends StatelessWidget {
     );
   }
 
-  Future<void> onDetailMenuTap(
-    QuranDetailMenu menu,
-  ) async {
+  Future<void> onDetailMenuTap(QuranDetailMenu menu) async {
     BottomSheetManager.closeCurrentBottomSheet();
     switch (menu.getType()) {
       case QuranDetailMenuType.jumpToAyah:
         BottomSheetManager.showCustomBottomSheet(
-          child: JumpAyahBottomSheet(
-            quranDetailCubit: quranDetailCubit,
-          ),
+          child: JumpAyahBottomSheet(quranDetailCubit: quranDetailCubit),
         );
         break;
       case QuranDetailMenuType.play:
@@ -46,9 +39,7 @@ class QuranDetailMenuBottomSheet extends StatelessWidget {
         break;
       case QuranDetailMenuType.tafseer:
         BottomSheetManager.showCustomBottomSheet(
-          child: TafseerSurahBottomSheet(
-            quranDetailCubit: quranDetailCubit,
-          ),
+          child: TafseerSurahBottomSheet(quranDetailCubit: quranDetailCubit),
         );
         break;
       default:

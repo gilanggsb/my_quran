@@ -30,12 +30,15 @@ final class _EnvStaging {
     3833182547,
   ];
 
-  static final Flavor flavor =
-      Flavor.values.byName(String.fromCharCodes(List<int>.generate(
-    _envieddataflavor.length,
-    (int i) => i,
-    growable: false,
-  ).map((int i) => _envieddataflavor[i] ^ _enviedkeyflavor[i])));
+  static final Flavor flavor = Flavor.values.byName(
+    String.fromCharCodes(
+      List<int>.generate(
+        _envieddataflavor.length,
+        (int i) => i,
+        growable: false,
+      ).map((int i) => _envieddataflavor[i] ^ _enviedkeyflavor[i]),
+    ),
+  );
 
   static const List<int> _enviedkeybaseUrl = <int>[
     485510481,
@@ -89,9 +92,11 @@ final class _EnvStaging {
     2054145220,
   ];
 
-  static final String baseUrl = String.fromCharCodes(List<int>.generate(
-    _envieddatabaseUrl.length,
-    (int i) => i,
-    growable: false,
-  ).map((int i) => _envieddatabaseUrl[i] ^ _enviedkeybaseUrl[i]));
+  static final String baseUrl = String.fromCharCodes(
+    List<int>.generate(
+      _envieddatabaseUrl.length,
+      (int i) => i,
+      growable: false,
+    ).map((int i) => _envieddatabaseUrl[i] ^ _enviedkeybaseUrl[i]),
+  );
 }

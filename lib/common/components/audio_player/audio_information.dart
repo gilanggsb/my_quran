@@ -6,11 +6,7 @@ import '../../common.dart';
 class AudioInformation extends StatelessWidget {
   final String title;
   final String subTitle;
-  const AudioInformation({
-    super.key,
-    required this.title,
-    required this.subTitle,
-  });
+  const AudioInformation({super.key, required this.title, required this.subTitle});
 
   @override
   Widget build(BuildContext context) {

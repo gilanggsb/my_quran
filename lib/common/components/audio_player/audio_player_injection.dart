@@ -1,7 +1,5 @@
 import '../../common.dart';
 
 void audioPlayerInjection() {
-  getIt.registerFactory<PlayerWidgetCubit>(
-    () => PlayerWidgetCubit(),
-  );
+  getIt.registerFactory<PlayerWidgetCubit>(() => PlayerWidgetCubit());
 }

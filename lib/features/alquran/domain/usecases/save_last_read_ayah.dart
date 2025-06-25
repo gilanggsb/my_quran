@@ -6,6 +6,5 @@ class SaveLastReadAyah extends UseCase<void, LastReadAyah> {
 
   SaveLastReadAyah({required this.repository});
   @override
-  Future<void> call(LastReadAyah params) async =>
-      repository.saveLastReadAyah(params);
+  Future<void> call(LastReadAyah params) async => repository.saveLastReadAyah(params);
 }

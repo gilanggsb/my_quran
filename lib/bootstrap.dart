@@ -7,24 +7,19 @@ import 'package:flutter/widgets.dart';
 import 'common/common.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
-  runZonedGuarded<Future<void>>(
-    () async {
-      Env.load();
-      WidgetsFlutterBinding.ensureInitialized();
-      Bloc.observer = MyBlocObserver();
+  runZonedGuarded<Future<void>>(() async {
+    Env.load();
+    WidgetsFlutterBinding.ensureInitialized();
+    Bloc.observer = MyBlocObserver();
 
-      await [
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-          DeviceOrientation.portraitDown,
-        ]),
-        InjectorService.create(),
-      ].wait;
+    await [
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]),
+      InjectorService.create(),
+    ].wait;
 
-      runApp(await builder());
-    },
-    (error, stack) => Logger.logError(
-      'RunzonedGuarded Error :$error \nStackTrace : $stack ',
-    ),
-  );
+    runApp(await builder());
+  }, (error, stack) => Logger.logError('RunzonedGuarded Error :$error \nStackTrace : $stack '));
 }

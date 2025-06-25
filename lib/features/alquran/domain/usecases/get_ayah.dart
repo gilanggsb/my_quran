@@ -6,8 +6,5 @@ class GetAyah extends UseCase<BaseResponse<Ayah?>, int> {
 
   GetAyah({required this.repository});
   @override
-  Future<BaseResponse<Ayah?>> call(
-    int params,
-  ) async =>
-      repository.getAyah(params);
+  Future<BaseResponse<Ayah?>> call(int params) async => repository.getAyah(params);
 }

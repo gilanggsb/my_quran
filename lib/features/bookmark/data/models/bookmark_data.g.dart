@@ -50,9 +50,7 @@ class BookmarkDataAdapter extends TypeAdapter<BookmarkData> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is BookmarkDataAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+      other is BookmarkDataAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }
 
 // **************************************************************************
@@ -60,20 +58,19 @@ class BookmarkDataAdapter extends TypeAdapter<BookmarkData> {
 // **************************************************************************
 
 BookmarkData _$BookmarkDataFromJson(Map<String, dynamic> json) => BookmarkData(
-      title: json['title'] as String?,
-      subtitle: json['subtitle'] as String?,
-      dataId: (json['data_id'] as num?)?.toInt(),
-      categoryId: json['category_id'] as String?,
-      type: json['type'] as String?,
-      id: json['id'] as String?,
-    );
+  title: json['title'] as String?,
+  subtitle: json['subtitle'] as String?,
+  dataId: (json['data_id'] as num?)?.toInt(),
+  categoryId: json['category_id'] as String?,
+  type: json['type'] as String?,
+  id: json['id'] as String?,
+);
 
-Map<String, dynamic> _$BookmarkDataToJson(BookmarkData instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'subtitle': instance.subtitle,
-      'data_id': instance.dataId,
-      'category_id': instance.categoryId,
-      'type': instance.type,
-      'id': instance.id,
-    };
+Map<String, dynamic> _$BookmarkDataToJson(BookmarkData instance) => <String, dynamic>{
+  'title': instance.title,
+  'subtitle': instance.subtitle,
+  'data_id': instance.dataId,
+  'category_id': instance.categoryId,
+  'type': instance.type,
+  'id': instance.id,
+};

@@ -1,8 +1,7 @@
 import '../../../../common/common.dart';
 import '../../../features.dart';
 
-class GetBookmarkCategories
-    extends UseCase<BaseResponse<List<BookmarkCategory>>, NoParams> {
+class GetBookmarkCategories extends UseCase<BaseResponse<List<BookmarkCategory>>, NoParams> {
   final BookmarkRepository repository;
 
   GetBookmarkCategories({required this.repository});

@@ -31,8 +31,7 @@ class JuzCubit extends Cubit<JuzState> {
     try {
       emit(const JuzState.loading());
       // await Future.delayed(const Duration(milliseconds: 500));
-      juzs =
-          originJuz.where((juz) => juz.name.isStringContains(query)).toList();
+      juzs = originJuz.where((juz) => juz.name.isStringContains(query)).toList();
       emit(const JuzState.loaded());
     } on String catch (e) {
       emit(JuzState.failed(e));

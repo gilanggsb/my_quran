@@ -21,14 +21,9 @@ class TabContainer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          DefaultText(
-            tabName,
-            fontSize: 16.sp,
-          ),
+          DefaultText(tabName, fontSize: 16.sp),
           Divider(
-            color: isActive
-                ? context.getColorExt(AppColorType.primary)
-                : AppPalette.transparent,
+            color: isActive ? context.getColorExt(AppColorType.primary) : AppPalette.transparent,
           ),
         ],
       ).onTap(onTap),

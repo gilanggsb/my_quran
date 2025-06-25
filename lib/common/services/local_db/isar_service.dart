@@ -50,7 +50,7 @@
 //       await getCollection<T>().put(data);
 //     });
 //   }
-  
+
 //   @override
 //   Future<void> writeAll<T>(List<T> data) async {
 //     await isar.writeTxn(() async {
@@ -99,7 +99,7 @@
 
 //     await write<T>(object);
 //   }
-  
+
 //   @override
 //   Future<T> writeTXN<T>(Future<T> Function() callback, {bool silent = false}) {
 //     return isar.writeTxn<T>(callback, silent: silent);

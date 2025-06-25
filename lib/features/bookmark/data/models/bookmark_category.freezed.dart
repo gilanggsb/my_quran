@@ -12,7 +12,8 @@ part of 'bookmark_category.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$BookmarkCategory {
@@ -24,14 +25,12 @@ mixin _$BookmarkCategory {
   /// Create a copy of BookmarkCategory
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BookmarkCategoryCopyWith<BookmarkCategory> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BookmarkCategoryCopyWith<BookmarkCategory> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BookmarkCategoryCopyWith<$Res> {
-  factory $BookmarkCategoryCopyWith(
-          BookmarkCategory value, $Res Function(BookmarkCategory) then) =
+  factory $BookmarkCategoryCopyWith(BookmarkCategory value, $Res Function(BookmarkCategory) then) =
       _$BookmarkCategoryCopyWithImpl<$Res, BookmarkCategory>;
   @useResult
   $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
@@ -51,29 +50,31 @@ class _$BookmarkCategoryCopyWithImpl<$Res, $Val extends BookmarkCategory>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? id = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  $Res call({Object? name = freezed, Object? id = freezed}) {
+    return _then(
+      _value.copyWith(
+            name:
+                freezed == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            id:
+                freezed == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
-abstract class _$$BookmarkCategoryImplCopyWith<$Res>
-    implements $BookmarkCategoryCopyWith<$Res> {
-  factory _$$BookmarkCategoryImplCopyWith(_$BookmarkCategoryImpl value,
-          $Res Function(_$BookmarkCategoryImpl) then) =
-      __$$BookmarkCategoryImplCopyWithImpl<$Res>;
+abstract class _$$BookmarkCategoryImplCopyWith<$Res> implements $BookmarkCategoryCopyWith<$Res> {
+  factory _$$BookmarkCategoryImplCopyWith(
+    _$BookmarkCategoryImpl value,
+    $Res Function(_$BookmarkCategoryImpl) then,
+  ) = __$$BookmarkCategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
@@ -83,36 +84,37 @@ abstract class _$$BookmarkCategoryImplCopyWith<$Res>
 class __$$BookmarkCategoryImplCopyWithImpl<$Res>
     extends _$BookmarkCategoryCopyWithImpl<$Res, _$BookmarkCategoryImpl>
     implements _$$BookmarkCategoryImplCopyWith<$Res> {
-  __$$BookmarkCategoryImplCopyWithImpl(_$BookmarkCategoryImpl _value,
-      $Res Function(_$BookmarkCategoryImpl) _then)
-      : super(_value, _then);
+  __$$BookmarkCategoryImplCopyWithImpl(
+    _$BookmarkCategoryImpl _value,
+    $Res Function(_$BookmarkCategoryImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BookmarkCategory
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? id = freezed,
-  }) {
-    return _then(_$BookmarkCategoryImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? name = freezed, Object? id = freezed}) {
+    return _then(
+      _$BookmarkCategoryImpl(
+        name:
+            freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        id:
+            freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$BookmarkCategoryImpl extends _BookmarkCategory {
-  const _$BookmarkCategoryImpl({@HiveField(0) this.name, @HiveField(1) this.id})
-      : super._();
+  const _$BookmarkCategoryImpl({@HiveField(0) this.name, @HiveField(1) this.id}) : super._();
 
   @override
   @HiveField(0)
@@ -144,14 +146,14 @@ class _$BookmarkCategoryImpl extends _BookmarkCategory {
   @override
   @pragma('vm:prefer-inline')
   _$$BookmarkCategoryImplCopyWith<_$BookmarkCategoryImpl> get copyWith =>
-      __$$BookmarkCategoryImplCopyWithImpl<_$BookmarkCategoryImpl>(
-          this, _$identity);
+      __$$BookmarkCategoryImplCopyWithImpl<_$BookmarkCategoryImpl>(this, _$identity);
 }
 
 abstract class _BookmarkCategory extends BookmarkCategory {
-  const factory _BookmarkCategory(
-      {@HiveField(0) final String? name,
-      @HiveField(1) final String? id}) = _$BookmarkCategoryImpl;
+  const factory _BookmarkCategory({
+    @HiveField(0) final String? name,
+    @HiveField(1) final String? id,
+  }) = _$BookmarkCategoryImpl;
   const _BookmarkCategory._() : super._();
 
   @override

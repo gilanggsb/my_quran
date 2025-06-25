@@ -45,11 +45,7 @@ class Logger {
     String resetCode = '\x1B[0m';
     String formattedMessage = '$colorCode${text ?? ''}$resetCode';
 
-    log(
-      formattedMessage,
-      name: name,
-      stackTrace: stackTrace,
-    );
+    log(formattedMessage, name: name, stackTrace: stackTrace);
   }
 
   static void logInfo(String message, {StackTrace? stackTrace}) {
@@ -72,16 +68,7 @@ class Logger {
     debugPrint(message, level: LogLevel.api, stackTrace: stackTrace);
   }
 
-  static void logCustom(
-    String message,
-    String colorCode, {
-    StackTrace? stackTrace,
-  }) {
-    debugPrint(
-      message,
-      level: LogLevel.custom,
-      customColor: colorCode,
-      stackTrace: stackTrace,
-    );
+  static void logCustom(String message, String colorCode, {StackTrace? stackTrace}) {
+    debugPrint(message, level: LogLevel.custom, customColor: colorCode, stackTrace: stackTrace);
   }
 }

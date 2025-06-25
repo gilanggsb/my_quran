@@ -9,9 +9,7 @@ import 'package:my_quran/features/features.dart';
 import '../../main_test.mocks.dart';
 import '../home.dart';
 
-@GenerateNiceMocks([
-  MockSpec<GetJuzs>(onMissingStub: OnMissingStub.returnDefault),
-])
+@GenerateNiceMocks([MockSpec<GetJuzs>(onMissingStub: OnMissingStub.returnDefault)])
 void mainJuzCubit() {
   late MockInjectorService injector;
   late MockGetJuzs getJuzs;
@@ -31,16 +29,13 @@ void mainJuzCubit() {
 
   final responseJuzs = BaseResponse.fromJson(
     juzsMock,
-    (json) => (json as List).toResponseList(
-      (json) => Juz.fromJson(json),
-    ),
+    (json) => (json as List).toResponseList((json) => Juz.fromJson(json)),
   );
 
   blocTest<JuzCubit, JuzState>(
     'emits [JuzsState.loaded] when getData.',
     build: () {
-      when(getJuzs(const NoParams()))
-          .thenAnswer((realInvocation) async => responseJuzs);
+      when(getJuzs(const NoParams())).thenAnswer((realInvocation) async => responseJuzs);
       return cubit;
     },
     act: (cubit) => cubit.getData(),

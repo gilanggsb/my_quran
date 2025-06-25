@@ -12,7 +12,8 @@ part of 'player_widget_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$PlayerWidgetState {
@@ -22,16 +23,14 @@ mixin _$PlayerWidgetState {
     required TResult Function() loading,
     required TResult Function() loaded,
     required TResult Function() updateAudio,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? loaded,
     TResult? Function()? updateAudio,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -39,24 +38,21 @@ mixin _$PlayerWidgetState {
     TResult Function()? loaded,
     TResult Function()? updateAudio,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_UpdateAudioState value) updateAudio,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_UpdateAudioState value)? updateAudio,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -64,15 +60,15 @@ mixin _$PlayerWidgetState {
     TResult Function(_Loaded value)? loaded,
     TResult Function(_UpdateAudioState value)? updateAudio,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PlayerWidgetStateCopyWith<$Res> {
   factory $PlayerWidgetStateCopyWith(
-          PlayerWidgetState value, $Res Function(PlayerWidgetState) then) =
-      _$PlayerWidgetStateCopyWithImpl<$Res, PlayerWidgetState>;
+    PlayerWidgetState value,
+    $Res Function(PlayerWidgetState) then,
+  ) = _$PlayerWidgetStateCopyWithImpl<$Res, PlayerWidgetState>;
 }
 
 /// @nodoc
@@ -91,18 +87,15 @@ class _$PlayerWidgetStateCopyWithImpl<$Res, $Val extends PlayerWidgetState>
 
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+  factory _$$InitialImplCopyWith(_$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$PlayerWidgetStateCopyWithImpl<$Res, _$InitialImpl>
+class __$$InitialImplCopyWithImpl<$Res> extends _$PlayerWidgetStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
+  __$$InitialImplCopyWithImpl(_$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of PlayerWidgetState
   /// with the given fields replaced by the non-null parameter values.
@@ -120,8 +113,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -208,18 +200,15 @@ abstract class _Initial implements PlayerWidgetState {
 
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+  factory _$$LoadingImplCopyWith(_$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
       __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$PlayerWidgetStateCopyWithImpl<$Res, _$LoadingImpl>
+class __$$LoadingImplCopyWithImpl<$Res> extends _$PlayerWidgetStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-      : super(_value, _then);
+  __$$LoadingImplCopyWithImpl(_$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of PlayerWidgetState
   /// with the given fields replaced by the non-null parameter values.
@@ -237,8 +226,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -325,18 +313,15 @@ abstract class _Loading implements PlayerWidgetState {
 
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
-  factory _$$LoadedImplCopyWith(
-          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+  factory _$$LoadedImplCopyWith(_$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$PlayerWidgetStateCopyWithImpl<$Res, _$LoadedImpl>
+class __$$LoadedImplCopyWithImpl<$Res> extends _$PlayerWidgetStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
-  __$$LoadedImplCopyWithImpl(
-      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
-      : super(_value, _then);
+  __$$LoadedImplCopyWithImpl(_$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of PlayerWidgetState
   /// with the given fields replaced by the non-null parameter values.
@@ -354,8 +339,7 @@ class _$LoadedImpl implements _Loaded {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadedImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadedImpl);
   }
 
   @override
@@ -442,18 +426,20 @@ abstract class _Loaded implements PlayerWidgetState {
 
 /// @nodoc
 abstract class _$$UpdateAudioStateImplCopyWith<$Res> {
-  factory _$$UpdateAudioStateImplCopyWith(_$UpdateAudioStateImpl value,
-          $Res Function(_$UpdateAudioStateImpl) then) =
-      __$$UpdateAudioStateImplCopyWithImpl<$Res>;
+  factory _$$UpdateAudioStateImplCopyWith(
+    _$UpdateAudioStateImpl value,
+    $Res Function(_$UpdateAudioStateImpl) then,
+  ) = __$$UpdateAudioStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$UpdateAudioStateImplCopyWithImpl<$Res>
     extends _$PlayerWidgetStateCopyWithImpl<$Res, _$UpdateAudioStateImpl>
     implements _$$UpdateAudioStateImplCopyWith<$Res> {
-  __$$UpdateAudioStateImplCopyWithImpl(_$UpdateAudioStateImpl _value,
-      $Res Function(_$UpdateAudioStateImpl) _then)
-      : super(_value, _then);
+  __$$UpdateAudioStateImplCopyWithImpl(
+    _$UpdateAudioStateImpl _value,
+    $Res Function(_$UpdateAudioStateImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PlayerWidgetState
   /// with the given fields replaced by the non-null parameter values.

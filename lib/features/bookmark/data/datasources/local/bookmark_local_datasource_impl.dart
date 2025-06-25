@@ -8,10 +8,8 @@ class BookmarkLocalDataSourceImpl extends BookmarkLocalDataSource {
   @override
   Future<BaseResponse<List<BookmarkCategory>>> getBookmarkCategories() async {
     try {
-      final bookmarkCategoryBox =
-          localDBService.getCollection<BookmarkCategory>();
-      final bookmarks = bookmarkCategoryBox.values
-          .toList(); // Retrieve all bookmark categories
+      final bookmarkCategoryBox = localDBService.getCollection<BookmarkCategory>();
+      final bookmarks = bookmarkCategoryBox.values.toList(); // Retrieve all bookmark categories
 
       return BaseResponse.success<List<BookmarkCategory>>(data: bookmarks);
     } on String catch (_) {
@@ -24,16 +22,15 @@ class BookmarkLocalDataSourceImpl extends BookmarkLocalDataSource {
   }
 
   @override
-  Future<BaseResponse<List<BookmarkData>>> getBookmarks(
-    String? categoryId,
-  ) async {
+  Future<BaseResponse<List<BookmarkData>>> getBookmarks(String? categoryId) async {
     try {
       final bookmarkCollection = localDBService.getCollection<BookmarkData>();
       List<BookmarkData> bookmarks = [];
       if (categoryId != null) {
-        bookmarks = bookmarkCollection.values
-            .where((bookmark) => bookmark.categoryId == categoryId)
-            .toList();
+        bookmarks =
+            bookmarkCollection.values
+                .where((bookmark) => bookmark.categoryId == categoryId)
+                .toList();
       } else {
         bookmarks = bookmarkCollection.values.toList();
       }
@@ -91,9 +88,7 @@ class BookmarkLocalDataSourceImpl extends BookmarkLocalDataSource {
   }
 
   @override
-  Future<BaseResponse<bool>> addBookmarkCategory(
-    BookmarkCategory category,
-  ) async {
+  Future<BaseResponse<bool>> addBookmarkCategory(BookmarkCategory category) async {
     try {
       await localDBService.write<BookmarkCategory>(category);
       return BaseResponse.success<bool>();
@@ -109,8 +104,7 @@ class BookmarkLocalDataSourceImpl extends BookmarkLocalDataSource {
   @override
   Future<BaseResponse<bool>> deleteBookmarkCategory(String categoryId) async {
     try {
-      final bookmarkCategoryCollection =
-          localDBService.getCollection<BookmarkCategory>();
+      final bookmarkCategoryCollection = localDBService.getCollection<BookmarkCategory>();
       await bookmarkCategoryCollection.delete(categoryId);
       return BaseResponse.success<bool>();
     } on String catch (_) {

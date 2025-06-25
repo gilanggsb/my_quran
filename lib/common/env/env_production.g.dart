@@ -36,12 +36,15 @@ final class _EnvProduction {
     1530001829,
   ];
 
-  static final Flavor flavor =
-      Flavor.values.byName(String.fromCharCodes(List<int>.generate(
-    _envieddataflavor.length,
-    (int i) => i,
-    growable: false,
-  ).map((int i) => _envieddataflavor[i] ^ _enviedkeyflavor[i])));
+  static final Flavor flavor = Flavor.values.byName(
+    String.fromCharCodes(
+      List<int>.generate(
+        _envieddataflavor.length,
+        (int i) => i,
+        growable: false,
+      ).map((int i) => _envieddataflavor[i] ^ _enviedkeyflavor[i]),
+    ),
+  );
 
   static const List<int> _enviedkeybaseUrl = <int>[
     1840016734,
@@ -95,9 +98,11 @@ final class _EnvProduction {
     380161492,
   ];
 
-  static final String baseUrl = String.fromCharCodes(List<int>.generate(
-    _envieddatabaseUrl.length,
-    (int i) => i,
-    growable: false,
-  ).map((int i) => _envieddatabaseUrl[i] ^ _enviedkeybaseUrl[i]));
+  static final String baseUrl = String.fromCharCodes(
+    List<int>.generate(
+      _envieddatabaseUrl.length,
+      (int i) => i,
+      growable: false,
+    ).map((int i) => _envieddatabaseUrl[i] ^ _enviedkeybaseUrl[i]),
+  );
 }

@@ -13,12 +13,8 @@ class BookmarkScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (_) => getIt.get<BookmarkBloc>(),
-        ),
-        BlocProvider(
-          create: (_) => getIt.get<BookmarkCategoryCubit>()..getData(),
-        ),
+        BlocProvider(create: (_) => getIt.get<BookmarkBloc>()),
+        BlocProvider(create: (_) => getIt.get<BookmarkCategoryCubit>()..getData()),
       ],
       child: BookmarkView(),
     );

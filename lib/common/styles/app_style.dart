@@ -13,14 +13,10 @@ class AppStyle {
     return ThemeData(
       brightness: brightness,
       fontFamily: _baseTextStyle.fontFamily,
-      scaffoldBackgroundColor:
-          isLight ? AppPalette.background.base : AppPalette.background.dark,
+      scaffoldBackgroundColor: isLight ? AppPalette.background.base : AppPalette.background.dark,
       useMaterial3: true,
       primarySwatch: AppPalette.primary.base.toMaterialColor(),
-      extensions: [
-        _createAppColors(isLight),
-        _createTextTheme(isLight),
-      ],
+      extensions: [_createAppColors(isLight), _createTextTheme(isLight)],
     );
   }
 
@@ -38,10 +34,8 @@ class AppStyle {
         AppColorType.primaryLight2: AppPalette.primary.light2,
         AppColorType.primaryLight3: AppPalette.primary.light3,
         AppColorType.primaryLight4: AppPalette.primary.light4,
-        AppColorType.background:
-            isLight ? AppPalette.background.base : AppPalette.background.dark,
-        AppColorType.text:
-            isLight ? AppPalette.primary.base : AppPalette.white.base,
+        AppColorType.background: isLight ? AppPalette.background.base : AppPalette.background.dark,
+        AppColorType.text: isLight ? AppPalette.primary.base : AppPalette.white.base,
         AppColorType.textLight: AppPalette.white.white50,
         AppColorType.textDark: AppPalette.grey.grey60,
         AppColorType.transparent: AppPalette.transparent,
@@ -69,66 +63,21 @@ class AppStyle {
     TextStyle baseTextStyle = _baseTextStyle.copyWith(color: textColor);
 
     return AppTextThemeExtension(
-      displayLarge: baseTextStyle.copyWith(
-        fontSize: 57.0,
-        fontWeight: FontWeight.bold,
-      ),
-      displayMedium: baseTextStyle.copyWith(
-        fontSize: 45.0,
-        fontWeight: FontWeight.bold,
-      ),
-      displaySmall: baseTextStyle.copyWith(
-        fontSize: 36.0,
-        fontWeight: FontWeight.bold,
-      ),
-      headlineLarge: baseTextStyle.copyWith(
-        fontSize: 32.0,
-        fontWeight: FontWeight.bold,
-      ),
-      headlineMedium: baseTextStyle.copyWith(
-        fontSize: 28.0,
-        fontWeight: FontWeight.w500,
-      ),
-      headlineSmall: baseTextStyle.copyWith(
-        fontSize: 24.0,
-        fontWeight: FontWeight.normal,
-      ),
-      titleLarge: baseTextStyle.copyWith(
-        fontSize: 22.0,
-        fontWeight: FontWeight.normal,
-      ),
-      titleMedium: baseTextStyle.copyWith(
-        fontSize: 16.0,
-        fontWeight: FontWeight.w500,
-      ),
-      titleSmall: baseTextStyle.copyWith(
-        fontSize: 14.0,
-        fontWeight: FontWeight.normal,
-      ),
-      bodyLarge: baseTextStyle.copyWith(
-        fontSize: 16.0,
-        fontWeight: FontWeight.normal,
-      ),
-      bodyMedium: baseTextStyle.copyWith(
-        fontSize: 14.0,
-        fontWeight: FontWeight.normal,
-      ),
-      bodySmall: baseTextStyle.copyWith(
-        fontSize: 12.0,
-        fontWeight: FontWeight.normal,
-      ),
-      labelLarge: baseTextStyle.copyWith(
-        fontSize: 14.0,
-        fontWeight: FontWeight.normal,
-      ),
-      labelMedium: baseTextStyle.copyWith(
-        fontSize: 12.0,
-        fontWeight: FontWeight.normal,
-      ),
-      labelSmall: baseTextStyle.copyWith(
-        fontSize: 11.0,
-        fontWeight: FontWeight.normal,
-      ),
+      displayLarge: baseTextStyle.copyWith(fontSize: 57.0, fontWeight: FontWeight.bold),
+      displayMedium: baseTextStyle.copyWith(fontSize: 45.0, fontWeight: FontWeight.bold),
+      displaySmall: baseTextStyle.copyWith(fontSize: 36.0, fontWeight: FontWeight.bold),
+      headlineLarge: baseTextStyle.copyWith(fontSize: 32.0, fontWeight: FontWeight.bold),
+      headlineMedium: baseTextStyle.copyWith(fontSize: 28.0, fontWeight: FontWeight.w500),
+      headlineSmall: baseTextStyle.copyWith(fontSize: 24.0, fontWeight: FontWeight.normal),
+      titleLarge: baseTextStyle.copyWith(fontSize: 22.0, fontWeight: FontWeight.normal),
+      titleMedium: baseTextStyle.copyWith(fontSize: 16.0, fontWeight: FontWeight.w500),
+      titleSmall: baseTextStyle.copyWith(fontSize: 14.0, fontWeight: FontWeight.normal),
+      bodyLarge: baseTextStyle.copyWith(fontSize: 16.0, fontWeight: FontWeight.normal),
+      bodyMedium: baseTextStyle.copyWith(fontSize: 14.0, fontWeight: FontWeight.normal),
+      bodySmall: baseTextStyle.copyWith(fontSize: 12.0, fontWeight: FontWeight.normal),
+      labelLarge: baseTextStyle.copyWith(fontSize: 14.0, fontWeight: FontWeight.normal),
+      labelMedium: baseTextStyle.copyWith(fontSize: 12.0, fontWeight: FontWeight.normal),
+      labelSmall: baseTextStyle.copyWith(fontSize: 11.0, fontWeight: FontWeight.normal),
     );
   }
 

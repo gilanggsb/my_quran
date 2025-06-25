@@ -22,13 +22,7 @@ class HiveServiceImpl extends HiveService {
   late Box<BookmarkData> bookmarkDataBox; // Assuming BookmarkData is another model
 
   static List<String> get hiveBoxNames {
-    return [
-      'ayahs',
-      'surahs',
-      'juzs',
-      'bookmarkCategories',
-      'bookmarkData',
-    ];
+    return ['ayahs', 'surahs', 'juzs', 'bookmarkCategories', 'bookmarkData'];
   }
 
   @override
@@ -39,13 +33,14 @@ class HiveServiceImpl extends HiveService {
     Hive.registerAdapter(SurahAdapter());
     Hive.registerAdapter(BookmarkCategoryAdapter());
     Hive.registerAdapter(BookmarkDataAdapter());
-    final [resAyahBox, resJusBox, resSurahBox, resBookmarkCategoryBox, resBookmarkDataBox] = await [
-      Hive.openBox<Ayah>(ayahBoxName),
-      Hive.openBox<Juz>(juzBoxName),
-      Hive.openBox<Surah>(surahBoxName),
-      Hive.openBox<BookmarkCategory>(bookmarkCategoryBoxName),
-      Hive.openBox<BookmarkData>(bookmarkDataBoxName),
-    ].wait;
+    final [resAyahBox, resJusBox, resSurahBox, resBookmarkCategoryBox, resBookmarkDataBox] =
+        await [
+          Hive.openBox<Ayah>(ayahBoxName),
+          Hive.openBox<Juz>(juzBoxName),
+          Hive.openBox<Surah>(surahBoxName),
+          Hive.openBox<BookmarkCategory>(bookmarkCategoryBoxName),
+          Hive.openBox<BookmarkData>(bookmarkDataBoxName),
+        ].wait;
 
     ayahBox = resAyahBox as Box<Ayah>;
     juzBox = resJusBox as Box<Juz>;

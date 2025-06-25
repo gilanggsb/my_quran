@@ -18,11 +18,7 @@ abstract class SnackBarWidget {
     double? elevation,
   }) {
     final snackBar = SnackBar(
-      content: DefaultText(
-        message,
-        style: textStyle,
-        color: textStyle?.color,
-      ),
+      content: DefaultText(message, style: textStyle, color: textStyle?.color),
       backgroundColor: backgroundColor,
       behavior: behavior ?? SnackBarBehavior.floating,
       duration: duration ?? const Duration(seconds: 4),
@@ -36,10 +32,7 @@ abstract class SnackBarWidget {
   }
 
   // Public method for showing a success snack bar
-  static void showSuccess(
-    String message, {
-    BuildContext? context,
-  }) {
+  static void showSuccess(String message, {BuildContext? context}) {
     _showSnackBar(
       context: context,
       message,
@@ -59,10 +52,7 @@ abstract class SnackBarWidget {
   }
 
   // Public method for showing a neutral snack bar
-  static void showNeutral(
-    String message, {
-    BuildContext? context,
-  }) {
+  static void showNeutral(String message, {BuildContext? context}) {
     _showSnackBar(
       context: context,
       message,

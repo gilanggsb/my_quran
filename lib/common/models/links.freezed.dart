@@ -12,7 +12,8 @@ part of 'links.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$Links {
@@ -32,15 +33,13 @@ mixin _$Links {
 
 /// @nodoc
 abstract class $LinksCopyWith<$Res> {
-  factory $LinksCopyWith(Links value, $Res Function(Links) then) =
-      _$LinksCopyWithImpl<$Res, Links>;
+  factory $LinksCopyWith(Links value, $Res Function(Links) then) = _$LinksCopyWithImpl<$Res, Links>;
   @useResult
   $Res call({String? first, String? last, dynamic prev, String? next});
 }
 
 /// @nodoc
-class _$LinksCopyWithImpl<$Res, $Val extends Links>
-    implements $LinksCopyWith<$Res> {
+class _$LinksCopyWithImpl<$Res, $Val extends Links> implements $LinksCopyWith<$Res> {
   _$LinksCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -58,31 +57,37 @@ class _$LinksCopyWithImpl<$Res, $Val extends Links>
     Object? prev = freezed,
     Object? next = freezed,
   }) {
-    return _then(_value.copyWith(
-      first: freezed == first
-          ? _value.first
-          : first // ignore: cast_nullable_to_non_nullable
-              as String?,
-      last: freezed == last
-          ? _value.last
-          : last // ignore: cast_nullable_to_non_nullable
-              as String?,
-      prev: freezed == prev
-          ? _value.prev
-          : prev // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      next: freezed == next
-          ? _value.next
-          : next // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            first:
+                freezed == first
+                    ? _value.first
+                    : first // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            last:
+                freezed == last
+                    ? _value.last
+                    : last // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            prev:
+                freezed == prev
+                    ? _value.prev
+                    : prev // ignore: cast_nullable_to_non_nullable
+                        as dynamic,
+            next:
+                freezed == next
+                    ? _value.next
+                    : next // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$LinksImplCopyWith<$Res> implements $LinksCopyWith<$Res> {
-  factory _$$LinksImplCopyWith(
-          _$LinksImpl value, $Res Function(_$LinksImpl) then) =
+  factory _$$LinksImplCopyWith(_$LinksImpl value, $Res Function(_$LinksImpl) then) =
       __$$LinksImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -90,12 +95,10 @@ abstract class _$$LinksImplCopyWith<$Res> implements $LinksCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LinksImplCopyWithImpl<$Res>
-    extends _$LinksCopyWithImpl<$Res, _$LinksImpl>
+class __$$LinksImplCopyWithImpl<$Res> extends _$LinksCopyWithImpl<$Res, _$LinksImpl>
     implements _$$LinksImplCopyWith<$Res> {
-  __$$LinksImplCopyWithImpl(
-      _$LinksImpl _value, $Res Function(_$LinksImpl) _then)
-      : super(_value, _then);
+  __$$LinksImplCopyWithImpl(_$LinksImpl _value, $Res Function(_$LinksImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of Links
   /// with the given fields replaced by the non-null parameter values.
@@ -107,24 +110,30 @@ class __$$LinksImplCopyWithImpl<$Res>
     Object? prev = freezed,
     Object? next = freezed,
   }) {
-    return _then(_$LinksImpl(
-      first: freezed == first
-          ? _value.first
-          : first // ignore: cast_nullable_to_non_nullable
-              as String?,
-      last: freezed == last
-          ? _value.last
-          : last // ignore: cast_nullable_to_non_nullable
-              as String?,
-      prev: freezed == prev
-          ? _value.prev
-          : prev // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      next: freezed == next
-          ? _value.next
-          : next // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$LinksImpl(
+        first:
+            freezed == first
+                ? _value.first
+                : first // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        last:
+            freezed == last
+                ? _value.last
+                : last // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        prev:
+            freezed == prev
+                ? _value.prev
+                : prev // ignore: cast_nullable_to_non_nullable
+                    as dynamic,
+        next:
+            freezed == next
+                ? _value.next
+                : next // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
@@ -160,8 +169,8 @@ class _$LinksImpl implements _Links {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, first, last,
-      const DeepCollectionEquality().hash(prev), next);
+  int get hashCode =>
+      Object.hash(runtimeType, first, last, const DeepCollectionEquality().hash(prev), next);
 
   /// Create a copy of Links
   /// with the given fields replaced by the non-null parameter values.
@@ -173,18 +182,17 @@ class _$LinksImpl implements _Links {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LinksImplToJson(
-      this,
-    );
+    return _$$LinksImplToJson(this);
   }
 }
 
 abstract class _Links implements Links {
-  const factory _Links(
-      {final String? first,
-      final String? last,
-      final dynamic prev,
-      final String? next}) = _$LinksImpl;
+  const factory _Links({
+    final String? first,
+    final String? last,
+    final dynamic prev,
+    final String? next,
+  }) = _$LinksImpl;
 
   @override
   String? get first;
@@ -199,6 +207,5 @@ abstract class _Links implements Links {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LinksImplCopyWith<_$LinksImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LinksImplCopyWith<_$LinksImpl> get copyWith => throw _privateConstructorUsedError;
 }

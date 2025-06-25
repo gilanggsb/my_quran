@@ -8,11 +8,7 @@ import '../../../../common/common.dart';
 import '../../../features.dart';
 
 class DetailAyahBottomSheet extends StatelessWidget {
-  const DetailAyahBottomSheet({
-    super.key,
-    this.quranDetailParams,
-    this.ayah,
-  });
+  const DetailAyahBottomSheet({super.key, this.quranDetailParams, this.ayah});
 
   final QuranDetailParams? quranDetailParams;
   final Ayah? ayah;
@@ -20,19 +16,15 @@ class DetailAyahBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt.get<DetailAyahCubit>()
-        ..init(
-          ayah: ayah,
-          params: quranDetailParams,
-        ),
+      create:
+          (context) => getIt.get<DetailAyahCubit>()..init(ayah: ayah, params: quranDetailParams),
       child: BlocBuilder<DetailAyahCubit, DetailAyahState>(
         builder: (context, state) {
           final isLoading = state.whenOrNull(loading: () => true) ?? false;
           final detailAyahCubit = context.read<DetailAyahCubit>();
           final surah = detailAyahCubit.surah;
           final title = "QS. ${surah?.nameId ?? ''}: Ayat ${ayah?.ayah ?? ''}";
-          final currentMenus =
-              quranDetailParams?.lastReadAyah != null ? readAyahAsmenus : menus;
+          final currentMenus = quranDetailParams?.lastReadAyah != null ? readAyahAsmenus : menus;
 
           return Column(
             mainAxisSize: MainAxisSize.min,
@@ -47,10 +39,7 @@ class DetailAyahBottomSheet extends StatelessWidget {
                       color: context.getColorExt(AppColorType.text),
                     ),
                   ),
-                  Divider(
-                    thickness: 2,
-                    color: context.getColorExt(AppColorType.primary),
-                  ),
+                  Divider(thickness: 2, color: context.getColorExt(AppColorType.primary)),
                 ],
               ),
               Skeletonizer(
@@ -75,10 +64,7 @@ class DetailAyahBottomSheet extends StatelessWidget {
     );
   }
 
-  Future<void> onDetailMenuTap(
-    BuildContext context,
-    QuranDetailMenu menu,
-  ) async {
+  Future<void> onDetailMenuTap(BuildContext context, QuranDetailMenu menu) async {
     final detailAyahCubit = context.read<DetailAyahCubit>();
     BottomSheetManager.closeCurrentBottomSheet();
     switch (menu.getType()) {
@@ -98,17 +84,14 @@ class DetailAyahBottomSheet extends StatelessWidget {
       case QuranDetailMenuType.bookmark:
         BottomSheetManager.showCustomBottomSheet(
           padding: const EdgeInsets.all(8),
-          child: BookmarkCategoryBottomSheet(
-            ayah: detailAyahCubit.currentAyah,
-          ),
+          child: BookmarkCategoryBottomSheet(ayah: detailAyahCubit.currentAyah),
         );
         break;
       case QuranDetailMenuType.readAsSurah:
         detailAyahCubit.getParamsDataReadAsSurah().then(
-              (paramsData) => context.mounted
-                  ? context.pushRoute(QuranDetailRoute(params: paramsData))
-                  : null,
-            );
+          (paramsData) =>
+              context.mounted ? context.pushRoute(QuranDetailRoute(params: paramsData)) : null,
+        );
         // context.pushRoute(QuranDetailRoute(params: paramsData));
         break;
       case QuranDetailMenuType.readAsJuz:
@@ -123,34 +106,22 @@ class DetailAyahBottomSheet extends StatelessWidget {
 final menus = [
   QuranDetailMenu(
     id: QuranDetailMenuType.play.id,
-    icon: Icon(
-      Icons.play_arrow_rounded,
-      color: globalContext.getColorExt(AppColorType.primary),
-    ),
+    icon: Icon(Icons.play_arrow_rounded, color: globalContext.getColorExt(AppColorType.primary)),
     name: 'Play Ayat',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.copy.id,
-    icon: Icon(
-      Icons.copy,
-      color: globalContext.getColorExt(AppColorType.primary),
-    ),
+    icon: Icon(Icons.copy, color: globalContext.getColorExt(AppColorType.primary)),
     name: 'Copy Ayat',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.bookmark.id,
-    icon: Icon(
-      Icons.bookmark,
-      color: globalContext.getColorExt(AppColorType.primary),
-    ),
+    icon: Icon(Icons.bookmark, color: globalContext.getColorExt(AppColorType.primary)),
     name: 'Tambahkan ke bookmark',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.lastread.id,
-    icon: Icon(
-      Icons.link,
-      color: globalContext.getColorExt(AppColorType.primary),
-    ),
+    icon: Icon(Icons.link, color: globalContext.getColorExt(AppColorType.primary)),
     name: 'Tandai sebagai terakhir di baca',
   ),
 ];
@@ -158,18 +129,12 @@ final menus = [
 final readAyahAsmenus = [
   QuranDetailMenu(
     id: QuranDetailMenuType.readAsSurah.id,
-    icon: Icon(
-      Icons.auto_stories,
-      color: globalContext.getColorExt(AppColorType.primary),
-    ),
+    icon: Icon(Icons.auto_stories, color: globalContext.getColorExt(AppColorType.primary)),
     name: 'Baca sebagai surat',
   ),
   QuranDetailMenu(
     id: QuranDetailMenuType.readAsJuz.id,
-    icon: Icon(
-      Icons.chrome_reader_mode,
-      color: globalContext.getColorExt(AppColorType.primary),
-    ),
+    icon: Icon(Icons.chrome_reader_mode, color: globalContext.getColorExt(AppColorType.primary)),
     name: 'Baca sebagai jus',
   ),
 ];

@@ -18,46 +18,47 @@ class SearchSurahOrJuzBottomSheet extends StatelessWidget {
         final juzs = jumpAyahCubit.tempJuzs;
         return CustomScrollView(
           slivers: [
-            SliverToBoxAdapter(
-              child: 12.heightBox,
-            ),
+            SliverToBoxAdapter(child: 12.heightBox),
             SliverAppBar(
               pinned: true,
               leading: Icon(
                 Icons.search,
-                color: context.isLightTheme
-                    ? context.getColorExt(AppColorType.text)
-                    : context.getColorExt(AppColorType.background),
+                color:
+                    context.isLightTheme
+                        ? context.getColorExt(AppColorType.text)
+                        : context.getColorExt(AppColorType.background),
               ),
               backgroundColor: Colors.transparent,
               flexibleSpace: DefaultTextField(
                 prefix: 32.widthBox,
                 hintTextStyle: AppStyle.text(
-                  fontColor: context.isLightTheme
-                      ? context.getColorExt(AppColorType.text)
-                      : context.getColorExt(AppColorType.background),
+                  fontColor:
+                      context.isLightTheme
+                          ? context.getColorExt(AppColorType.text)
+                          : context.getColorExt(AppColorType.background),
                 ),
                 textStyle: AppStyle.text(
-                  fontColor: context.isLightTheme
-                      ? context.getColorExt(AppColorType.text)
-                      : context.getColorExt(AppColorType.background),
+                  fontColor:
+                      context.isLightTheme
+                          ? context.getColorExt(AppColorType.text)
+                          : context.getColorExt(AppColorType.background),
                 ),
                 hintText: 'Search ${isSurahType ? "Surah" : "Juz"}',
                 controller: jumpAyahCubit.searchController,
                 onChanged: jumpAyahCubit.filterSurahOrJuz,
-                suffix: jumpAyahCubit.searchController.text.isEmpty
-                    ? null
-                    : Icon(
-                        Icons.clear,
-                        color: context.isLightTheme
-                            ? context.getColorExt(AppColorType.text)
-                            : context.getColorExt(AppColorType.background),
-                      ).onTap(jumpAyahCubit.clearfilterSurahOrJuz),
+                suffix:
+                    jumpAyahCubit.searchController.text.isEmpty
+                        ? null
+                        : Icon(
+                          Icons.clear,
+                          color:
+                              context.isLightTheme
+                                  ? context.getColorExt(AppColorType.text)
+                                  : context.getColorExt(AppColorType.background),
+                        ).onTap(jumpAyahCubit.clearfilterSurahOrJuz),
               ),
             ),
-            SliverToBoxAdapter(
-              child: 12.heightBox,
-            ),
+            SliverToBoxAdapter(child: 12.heightBox),
             SliverList.separated(
               itemCount: isSurahType ? surahs.length : juzs.length,
               itemBuilder: (context, index) {
@@ -74,9 +75,7 @@ class SearchSurahOrJuzBottomSheet extends StatelessWidget {
                   },
                 );
               },
-              separatorBuilder: (ctx, idx) => const Divider(
-                thickness: 0.2,
-              ),
+              separatorBuilder: (ctx, idx) => const Divider(thickness: 0.2),
             ),
           ],
         );

@@ -12,7 +12,8 @@ part of 'surah.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$Surah {
@@ -55,29 +56,28 @@ mixin _$Surah {
 
 /// @nodoc
 abstract class $SurahCopyWith<$Res> {
-  factory $SurahCopyWith(Surah value, $Res Function(Surah) then) =
-      _$SurahCopyWithImpl<$Res, Surah>;
+  factory $SurahCopyWith(Surah value, $Res Function(Surah) then) = _$SurahCopyWithImpl<$Res, Surah>;
   @useResult
-  $Res call(
-      {@HiveField(0) String? audioUrl,
-      @HiveField(1) String? nameEn,
-      @HiveField(2) String? nameId,
-      @HiveField(3) String? nameLong,
-      @HiveField(4) String? nameShort,
-      @HiveField(5) @StringToIntConverter() int? number,
-      @HiveField(6) @StringToIntConverter() int? numberOfVerses,
-      @HiveField(7) String? revelation,
-      @HiveField(8) String? revelationEn,
-      @HiveField(9) String? revelationId,
-      @HiveField(10) String? sequence,
-      @HiveField(11) String? tafsir,
-      @HiveField(12) String? translationEn,
-      @HiveField(13) String? translationId});
+  $Res call({
+    @HiveField(0) String? audioUrl,
+    @HiveField(1) String? nameEn,
+    @HiveField(2) String? nameId,
+    @HiveField(3) String? nameLong,
+    @HiveField(4) String? nameShort,
+    @HiveField(5) @StringToIntConverter() int? number,
+    @HiveField(6) @StringToIntConverter() int? numberOfVerses,
+    @HiveField(7) String? revelation,
+    @HiveField(8) String? revelationEn,
+    @HiveField(9) String? revelationId,
+    @HiveField(10) String? sequence,
+    @HiveField(11) String? tafsir,
+    @HiveField(12) String? translationEn,
+    @HiveField(13) String? translationId,
+  });
 }
 
 /// @nodoc
-class _$SurahCopyWithImpl<$Res, $Val extends Surah>
-    implements $SurahCopyWith<$Res> {
+class _$SurahCopyWithImpl<$Res, $Val extends Surah> implements $SurahCopyWith<$Res> {
   _$SurahCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -105,98 +105,113 @@ class _$SurahCopyWithImpl<$Res, $Val extends Surah>
     Object? translationEn = freezed,
     Object? translationId = freezed,
   }) {
-    return _then(_value.copyWith(
-      audioUrl: freezed == audioUrl
-          ? _value.audioUrl
-          : audioUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameEn: freezed == nameEn
-          ? _value.nameEn
-          : nameEn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameId: freezed == nameId
-          ? _value.nameId
-          : nameId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameLong: freezed == nameLong
-          ? _value.nameLong
-          : nameLong // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameShort: freezed == nameShort
-          ? _value.nameShort
-          : nameShort // ignore: cast_nullable_to_non_nullable
-              as String?,
-      number: freezed == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      numberOfVerses: freezed == numberOfVerses
-          ? _value.numberOfVerses
-          : numberOfVerses // ignore: cast_nullable_to_non_nullable
-              as int?,
-      revelation: freezed == revelation
-          ? _value.revelation
-          : revelation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      revelationEn: freezed == revelationEn
-          ? _value.revelationEn
-          : revelationEn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      revelationId: freezed == revelationId
-          ? _value.revelationId
-          : revelationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tafsir: freezed == tafsir
-          ? _value.tafsir
-          : tafsir // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translationEn: freezed == translationEn
-          ? _value.translationEn
-          : translationEn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translationId: freezed == translationId
-          ? _value.translationId
-          : translationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            audioUrl:
+                freezed == audioUrl
+                    ? _value.audioUrl
+                    : audioUrl // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nameEn:
+                freezed == nameEn
+                    ? _value.nameEn
+                    : nameEn // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nameId:
+                freezed == nameId
+                    ? _value.nameId
+                    : nameId // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nameLong:
+                freezed == nameLong
+                    ? _value.nameLong
+                    : nameLong // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nameShort:
+                freezed == nameShort
+                    ? _value.nameShort
+                    : nameShort // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            number:
+                freezed == number
+                    ? _value.number
+                    : number // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            numberOfVerses:
+                freezed == numberOfVerses
+                    ? _value.numberOfVerses
+                    : numberOfVerses // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            revelation:
+                freezed == revelation
+                    ? _value.revelation
+                    : revelation // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            revelationEn:
+                freezed == revelationEn
+                    ? _value.revelationEn
+                    : revelationEn // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            revelationId:
+                freezed == revelationId
+                    ? _value.revelationId
+                    : revelationId // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            sequence:
+                freezed == sequence
+                    ? _value.sequence
+                    : sequence // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            tafsir:
+                freezed == tafsir
+                    ? _value.tafsir
+                    : tafsir // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            translationEn:
+                freezed == translationEn
+                    ? _value.translationEn
+                    : translationEn // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            translationId:
+                freezed == translationId
+                    ? _value.translationId
+                    : translationId // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$SurahImplCopyWith<$Res> implements $SurahCopyWith<$Res> {
-  factory _$$SurahImplCopyWith(
-          _$SurahImpl value, $Res Function(_$SurahImpl) then) =
+  factory _$$SurahImplCopyWith(_$SurahImpl value, $Res Function(_$SurahImpl) then) =
       __$$SurahImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@HiveField(0) String? audioUrl,
-      @HiveField(1) String? nameEn,
-      @HiveField(2) String? nameId,
-      @HiveField(3) String? nameLong,
-      @HiveField(4) String? nameShort,
-      @HiveField(5) @StringToIntConverter() int? number,
-      @HiveField(6) @StringToIntConverter() int? numberOfVerses,
-      @HiveField(7) String? revelation,
-      @HiveField(8) String? revelationEn,
-      @HiveField(9) String? revelationId,
-      @HiveField(10) String? sequence,
-      @HiveField(11) String? tafsir,
-      @HiveField(12) String? translationEn,
-      @HiveField(13) String? translationId});
+  $Res call({
+    @HiveField(0) String? audioUrl,
+    @HiveField(1) String? nameEn,
+    @HiveField(2) String? nameId,
+    @HiveField(3) String? nameLong,
+    @HiveField(4) String? nameShort,
+    @HiveField(5) @StringToIntConverter() int? number,
+    @HiveField(6) @StringToIntConverter() int? numberOfVerses,
+    @HiveField(7) String? revelation,
+    @HiveField(8) String? revelationEn,
+    @HiveField(9) String? revelationId,
+    @HiveField(10) String? sequence,
+    @HiveField(11) String? tafsir,
+    @HiveField(12) String? translationEn,
+    @HiveField(13) String? translationId,
+  });
 }
 
 /// @nodoc
-class __$$SurahImplCopyWithImpl<$Res>
-    extends _$SurahCopyWithImpl<$Res, _$SurahImpl>
+class __$$SurahImplCopyWithImpl<$Res> extends _$SurahCopyWithImpl<$Res, _$SurahImpl>
     implements _$$SurahImplCopyWith<$Res> {
-  __$$SurahImplCopyWithImpl(
-      _$SurahImpl _value, $Res Function(_$SurahImpl) _then)
-      : super(_value, _then);
+  __$$SurahImplCopyWithImpl(_$SurahImpl _value, $Res Function(_$SurahImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of Surah
   /// with the given fields replaced by the non-null parameter values.
@@ -218,86 +233,102 @@ class __$$SurahImplCopyWithImpl<$Res>
     Object? translationEn = freezed,
     Object? translationId = freezed,
   }) {
-    return _then(_$SurahImpl(
-      audioUrl: freezed == audioUrl
-          ? _value.audioUrl
-          : audioUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameEn: freezed == nameEn
-          ? _value.nameEn
-          : nameEn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameId: freezed == nameId
-          ? _value.nameId
-          : nameId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameLong: freezed == nameLong
-          ? _value.nameLong
-          : nameLong // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameShort: freezed == nameShort
-          ? _value.nameShort
-          : nameShort // ignore: cast_nullable_to_non_nullable
-              as String?,
-      number: freezed == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      numberOfVerses: freezed == numberOfVerses
-          ? _value.numberOfVerses
-          : numberOfVerses // ignore: cast_nullable_to_non_nullable
-              as int?,
-      revelation: freezed == revelation
-          ? _value.revelation
-          : revelation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      revelationEn: freezed == revelationEn
-          ? _value.revelationEn
-          : revelationEn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      revelationId: freezed == revelationId
-          ? _value.revelationId
-          : revelationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tafsir: freezed == tafsir
-          ? _value.tafsir
-          : tafsir // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translationEn: freezed == translationEn
-          ? _value.translationEn
-          : translationEn // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translationId: freezed == translationId
-          ? _value.translationId
-          : translationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$SurahImpl(
+        audioUrl:
+            freezed == audioUrl
+                ? _value.audioUrl
+                : audioUrl // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nameEn:
+            freezed == nameEn
+                ? _value.nameEn
+                : nameEn // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nameId:
+            freezed == nameId
+                ? _value.nameId
+                : nameId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nameLong:
+            freezed == nameLong
+                ? _value.nameLong
+                : nameLong // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nameShort:
+            freezed == nameShort
+                ? _value.nameShort
+                : nameShort // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        number:
+            freezed == number
+                ? _value.number
+                : number // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        numberOfVerses:
+            freezed == numberOfVerses
+                ? _value.numberOfVerses
+                : numberOfVerses // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        revelation:
+            freezed == revelation
+                ? _value.revelation
+                : revelation // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        revelationEn:
+            freezed == revelationEn
+                ? _value.revelationEn
+                : revelationEn // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        revelationId:
+            freezed == revelationId
+                ? _value.revelationId
+                : revelationId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        sequence:
+            freezed == sequence
+                ? _value.sequence
+                : sequence // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        tafsir:
+            freezed == tafsir
+                ? _value.tafsir
+                : tafsir // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        translationEn:
+            freezed == translationEn
+                ? _value.translationEn
+                : translationEn // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        translationId:
+            freezed == translationId
+                ? _value.translationId
+                : translationId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$SurahImpl extends _Surah {
-  const _$SurahImpl(
-      {@HiveField(0) this.audioUrl,
-      @HiveField(1) this.nameEn,
-      @HiveField(2) this.nameId,
-      @HiveField(3) this.nameLong,
-      @HiveField(4) this.nameShort,
-      @HiveField(5) @StringToIntConverter() this.number,
-      @HiveField(6) @StringToIntConverter() this.numberOfVerses,
-      @HiveField(7) this.revelation,
-      @HiveField(8) this.revelationEn,
-      @HiveField(9) this.revelationId,
-      @HiveField(10) this.sequence,
-      @HiveField(11) this.tafsir,
-      @HiveField(12) this.translationEn,
-      @HiveField(13) this.translationId})
-      : super._();
+  const _$SurahImpl({
+    @HiveField(0) this.audioUrl,
+    @HiveField(1) this.nameEn,
+    @HiveField(2) this.nameId,
+    @HiveField(3) this.nameLong,
+    @HiveField(4) this.nameShort,
+    @HiveField(5) @StringToIntConverter() this.number,
+    @HiveField(6) @StringToIntConverter() this.numberOfVerses,
+    @HiveField(7) this.revelation,
+    @HiveField(8) this.revelationEn,
+    @HiveField(9) this.revelationId,
+    @HiveField(10) this.sequence,
+    @HiveField(11) this.tafsir,
+    @HiveField(12) this.translationEn,
+    @HiveField(13) this.translationId,
+  }) : super._();
 
   @override
   @HiveField(0)
@@ -354,25 +385,18 @@ class _$SurahImpl extends _Surah {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SurahImpl &&
-            (identical(other.audioUrl, audioUrl) ||
-                other.audioUrl == audioUrl) &&
+            (identical(other.audioUrl, audioUrl) || other.audioUrl == audioUrl) &&
             (identical(other.nameEn, nameEn) || other.nameEn == nameEn) &&
             (identical(other.nameId, nameId) || other.nameId == nameId) &&
-            (identical(other.nameLong, nameLong) ||
-                other.nameLong == nameLong) &&
-            (identical(other.nameShort, nameShort) ||
-                other.nameShort == nameShort) &&
+            (identical(other.nameLong, nameLong) || other.nameLong == nameLong) &&
+            (identical(other.nameShort, nameShort) || other.nameShort == nameShort) &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.numberOfVerses, numberOfVerses) ||
                 other.numberOfVerses == numberOfVerses) &&
-            (identical(other.revelation, revelation) ||
-                other.revelation == revelation) &&
-            (identical(other.revelationEn, revelationEn) ||
-                other.revelationEn == revelationEn) &&
-            (identical(other.revelationId, revelationId) ||
-                other.revelationId == revelationId) &&
-            (identical(other.sequence, sequence) ||
-                other.sequence == sequence) &&
+            (identical(other.revelation, revelation) || other.revelation == revelation) &&
+            (identical(other.revelationEn, revelationEn) || other.revelationEn == revelationEn) &&
+            (identical(other.revelationId, revelationId) || other.revelationId == revelationId) &&
+            (identical(other.sequence, sequence) || other.sequence == sequence) &&
             (identical(other.tafsir, tafsir) || other.tafsir == tafsir) &&
             (identical(other.translationEn, translationEn) ||
                 other.translationEn == translationEn) &&
@@ -382,21 +406,22 @@ class _$SurahImpl extends _Surah {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      audioUrl,
-      nameEn,
-      nameId,
-      nameLong,
-      nameShort,
-      number,
-      numberOfVerses,
-      revelation,
-      revelationEn,
-      revelationId,
-      sequence,
-      tafsir,
-      translationEn,
-      translationId);
+    runtimeType,
+    audioUrl,
+    nameEn,
+    nameId,
+    nameLong,
+    nameShort,
+    number,
+    numberOfVerses,
+    revelation,
+    revelationEn,
+    revelationId,
+    sequence,
+    tafsir,
+    translationEn,
+    translationId,
+  );
 
   /// Create a copy of Surah
   /// with the given fields replaced by the non-null parameter values.
@@ -408,21 +433,22 @@ class _$SurahImpl extends _Surah {
 }
 
 abstract class _Surah extends Surah {
-  const factory _Surah(
-      {@HiveField(0) final String? audioUrl,
-      @HiveField(1) final String? nameEn,
-      @HiveField(2) final String? nameId,
-      @HiveField(3) final String? nameLong,
-      @HiveField(4) final String? nameShort,
-      @HiveField(5) @StringToIntConverter() final int? number,
-      @HiveField(6) @StringToIntConverter() final int? numberOfVerses,
-      @HiveField(7) final String? revelation,
-      @HiveField(8) final String? revelationEn,
-      @HiveField(9) final String? revelationId,
-      @HiveField(10) final String? sequence,
-      @HiveField(11) final String? tafsir,
-      @HiveField(12) final String? translationEn,
-      @HiveField(13) final String? translationId}) = _$SurahImpl;
+  const factory _Surah({
+    @HiveField(0) final String? audioUrl,
+    @HiveField(1) final String? nameEn,
+    @HiveField(2) final String? nameId,
+    @HiveField(3) final String? nameLong,
+    @HiveField(4) final String? nameShort,
+    @HiveField(5) @StringToIntConverter() final int? number,
+    @HiveField(6) @StringToIntConverter() final int? numberOfVerses,
+    @HiveField(7) final String? revelation,
+    @HiveField(8) final String? revelationEn,
+    @HiveField(9) final String? revelationId,
+    @HiveField(10) final String? sequence,
+    @HiveField(11) final String? tafsir,
+    @HiveField(12) final String? translationEn,
+    @HiveField(13) final String? translationId,
+  }) = _$SurahImpl;
   const _Surah._() : super._();
 
   @override
@@ -474,6 +500,5 @@ abstract class _Surah extends Surah {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SurahImplCopyWith<_$SurahImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SurahImplCopyWith<_$SurahImpl> get copyWith => throw _privateConstructorUsedError;
 }

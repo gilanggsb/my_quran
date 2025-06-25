@@ -4,10 +4,5 @@ class DownloadProgress {
   final int? receivedBytes;
   final int? totalBytes;
 
-  DownloadProgress({
-    this.percentage,
-    this.progress,
-    this.receivedBytes,
-    this.totalBytes,
-  });
+  DownloadProgress({this.percentage, this.progress, this.receivedBytes, this.totalBytes});
 }

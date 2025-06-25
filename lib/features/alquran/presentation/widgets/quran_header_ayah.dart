@@ -5,14 +5,10 @@ import '../../../../common/common.dart';
 import '../../../features.dart';
 
 class QuranHeaderAyah extends StatelessWidget {
-  QuranHeaderAyah({
-    super.key,
-    required this.surah,
-  });
+  QuranHeaderAyah({super.key, required this.surah});
 
   final Surah? surah;
-  final ValueNotifier valHeaderSize =
-      ValueNotifier<Size>(Size(globalContext.getWidth * 0.4, 54));
+  final ValueNotifier valHeaderSize = ValueNotifier<Size>(Size(globalContext.getWidth * 0.4, 54));
 
   @override
   Widget build(BuildContext context) {
@@ -80,11 +76,7 @@ class QuranHeaderAyah extends StatelessWidget {
                       fontSize: 14.sp,
                       color: AppPalette.white.base,
                     ),
-                    DefaultText(
-                      'Ayat',
-                      fontSize: 14.sp,
-                      color: AppPalette.white.base,
-                    ),
+                    DefaultText('Ayat', fontSize: 14.sp, color: AppPalette.white.base),
                   ],
                 ),
               ),

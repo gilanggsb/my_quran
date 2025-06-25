@@ -33,13 +33,9 @@ abstract class NetworkingUtils {
     return FormData.fromMap(formDataMap);
   }
 
-  static BaseResponse<T> parseResponse<T>(
-    Response response,
-    FromJsonT<T> fromJsonT,
-  ) {
+  static BaseResponse<T> parseResponse<T>(Response response, FromJsonT<T> fromJsonT) {
     try {
-      final BaseResponse<T> baseResponse =
-          BaseResponse.fromJson(response.data, fromJsonT);
+      final BaseResponse<T> baseResponse = BaseResponse.fromJson(response.data, fromJsonT);
       // if (baseResponse.status == 200) {
       return baseResponse;
       // }
@@ -92,8 +88,7 @@ abstract class NetworkingUtils {
       if (e.response?.statusCode == 522) {
         throw BadResponse(
           error: true,
-          message:
-              'Connection timed out. Please check your internet connection and try again.',
+          message: 'Connection timed out. Please check your internet connection and try again.',
         );
       }
 

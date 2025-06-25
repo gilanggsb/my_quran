@@ -88,9 +88,7 @@ class DefaultTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return isDynamicHeight
-        ? _buildDynamicHeightTextField()
-        : _buildTextField(context: context);
+    return isDynamicHeight ? _buildDynamicHeightTextField() : _buildTextField(context: context);
   }
 
   Widget _buildDynamicHeightTextField() {
@@ -98,8 +96,7 @@ class DefaultTextField extends StatelessWidget {
       builder: (context, size) {
         TextSpan text = TextSpan(
           text: controller?.text,
-          style: textStyle ??
-              AppStyle.text(type: TextStyleType.regular, fontSize: 16.sp),
+          style: textStyle ?? AppStyle.text(type: TextStyleType.regular, fontSize: 16.sp),
         );
 
         TextPainter tp = TextPainter(
@@ -112,25 +109,18 @@ class DefaultTextField extends StatelessWidget {
         int lines = (tp.size.height / tp.preferredLineHeight).ceil();
         int maxLines = this.maxLines ?? 10;
 
-        return _buildTextField(
-          lines: lines,
-          maxLines: maxLines,
-          context: context,
-        );
+        return _buildTextField(lines: lines, maxLines: maxLines, context: context);
       },
     );
   }
 
-  Widget _buildTextField({
-    int lines = 1,
-    int? maxLines,
-    BuildContext? context,
-  }) {
+  Widget _buildTextField({int lines = 1, int? maxLines, BuildContext? context}) {
     return Stack(
       alignment: Alignment.centerRight,
       children: [
         TextField(
-          style: textStyle ??
+          style:
+              textStyle ??
               AppStyle.text(
                 type: TextStyleType.regular,
                 fontSize: 20.sp,
@@ -145,8 +135,7 @@ class DefaultTextField extends StatelessWidget {
           keyboardType: keyboardType,
           obscureText: obscureText,
           onEditingComplete: onEditingComplete,
-          maxLines:
-              maxLines ?? (lines < (this.maxLines ?? 1) ? null : this.maxLines),
+          maxLines: maxLines ?? (lines < (this.maxLines ?? 1) ? null : this.maxLines),
           minLines: minLines,
           autofocus: autofocus,
           readOnly: readOnly,
@@ -158,20 +147,15 @@ class DefaultTextField extends StatelessWidget {
             prefix: prefix,
             hintText: hintText,
             enabled: isEnabled,
-            hintStyle: hintTextStyle ??
-                AppStyle.text(
-                  type: TextStyleType.regular,
-                  fontSize: 16.sp,
-                ),
+            hintStyle: hintTextStyle ?? AppStyle.text(type: TextStyleType.regular, fontSize: 16.sp),
             filled: true,
-            contentPadding: contentPadding ??
-                const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-            focusedBorder: focusedBorder ??
+            contentPadding:
+                contentPadding ?? const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+            focusedBorder:
+                focusedBorder ??
                 OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.r)),
-                  borderSide: BorderSide(
-                    color: enabledBorderColor ?? AppPalette.primary.base,
-                  ),
+                  borderSide: BorderSide(color: enabledBorderColor ?? AppPalette.primary.base),
                 ),
             fillColor: filledColor ?? AppPalette.background.base,
             focusColor: focusColor ?? AppPalette.background.base,
@@ -179,19 +163,17 @@ class DefaultTextField extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(6.r)),
               borderSide: BorderSide(color: AppPalette.primary.base),
             ),
-            enabledBorder: enabledBorder ??
+            enabledBorder:
+                enabledBorder ??
                 OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.r)),
-                  borderSide: BorderSide(
-                    color: enabledBorderColor ?? AppPalette.primary.base,
-                  ),
+                  borderSide: BorderSide(color: enabledBorderColor ?? AppPalette.primary.base),
                 ),
-            disabledBorder: disabledBorder ??
+            disabledBorder:
+                disabledBorder ??
                 OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(6.r)),
-                  borderSide: BorderSide(
-                    color: disabledBorderColor ?? AppPalette.primary.base,
-                  ),
+                  borderSide: BorderSide(color: disabledBorderColor ?? AppPalette.primary.base),
                 ),
             errorText: errorText,
             helperText: helperText,
@@ -202,10 +184,7 @@ class DefaultTextField extends StatelessWidget {
         if (suffix != null)
           Align(
             alignment: Alignment.centerRight,
-            child: Padding(
-              padding: EdgeInsets.only(right: 16.w),
-              child: suffix,
-            ),
+            child: Padding(padding: EdgeInsets.only(right: 16.w), child: suffix),
           ),
       ],
     );

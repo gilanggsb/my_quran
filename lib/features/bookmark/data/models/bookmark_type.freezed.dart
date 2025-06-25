@@ -12,7 +12,8 @@ part of 'bookmark_type.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$BookmarkType {
@@ -24,14 +25,12 @@ mixin _$BookmarkType {
   /// Create a copy of BookmarkType
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BookmarkTypeCopyWith<BookmarkType> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BookmarkTypeCopyWith<BookmarkType> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BookmarkTypeCopyWith<$Res> {
-  factory $BookmarkTypeCopyWith(
-          BookmarkType value, $Res Function(BookmarkType) then) =
+  factory $BookmarkTypeCopyWith(BookmarkType value, $Res Function(BookmarkType) then) =
       _$BookmarkTypeCopyWithImpl<$Res, BookmarkType>;
   @useResult
   $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
@@ -51,29 +50,31 @@ class _$BookmarkTypeCopyWithImpl<$Res, $Val extends BookmarkType>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? id = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  $Res call({Object? name = freezed, Object? id = freezed}) {
+    return _then(
+      _value.copyWith(
+            name:
+                freezed == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            id:
+                freezed == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
-abstract class _$$BookmarkTypeImplCopyWith<$Res>
-    implements $BookmarkTypeCopyWith<$Res> {
+abstract class _$$BookmarkTypeImplCopyWith<$Res> implements $BookmarkTypeCopyWith<$Res> {
   factory _$$BookmarkTypeImplCopyWith(
-          _$BookmarkTypeImpl value, $Res Function(_$BookmarkTypeImpl) then) =
-      __$$BookmarkTypeImplCopyWithImpl<$Res>;
+    _$BookmarkTypeImpl value,
+    $Res Function(_$BookmarkTypeImpl) then,
+  ) = __$$BookmarkTypeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
@@ -84,35 +85,36 @@ class __$$BookmarkTypeImplCopyWithImpl<$Res>
     extends _$BookmarkTypeCopyWithImpl<$Res, _$BookmarkTypeImpl>
     implements _$$BookmarkTypeImplCopyWith<$Res> {
   __$$BookmarkTypeImplCopyWithImpl(
-      _$BookmarkTypeImpl _value, $Res Function(_$BookmarkTypeImpl) _then)
-      : super(_value, _then);
+    _$BookmarkTypeImpl _value,
+    $Res Function(_$BookmarkTypeImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BookmarkType
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? id = freezed,
-  }) {
-    return _then(_$BookmarkTypeImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? name = freezed, Object? id = freezed}) {
+    return _then(
+      _$BookmarkTypeImpl(
+        name:
+            freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        id:
+            freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$BookmarkTypeImpl extends _BookmarkType {
-  const _$BookmarkTypeImpl({@HiveField(0) this.name, @HiveField(1) this.id})
-      : super._();
+  const _$BookmarkTypeImpl({@HiveField(0) this.name, @HiveField(1) this.id}) : super._();
 
   @override
   @HiveField(0)
@@ -148,9 +150,8 @@ class _$BookmarkTypeImpl extends _BookmarkType {
 }
 
 abstract class _BookmarkType extends BookmarkType {
-  const factory _BookmarkType(
-      {@HiveField(0) final String? name,
-      @HiveField(1) final String? id}) = _$BookmarkTypeImpl;
+  const factory _BookmarkType({@HiveField(0) final String? name, @HiveField(1) final String? id}) =
+      _$BookmarkTypeImpl;
   const _BookmarkType._() : super._();
 
   @override

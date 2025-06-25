@@ -34,10 +34,7 @@ abstract class BaseApiService {
     bool addLogger = false,
   });
 
-  Future<Response> downloadFile(
-    DownloadFile downloadFile, {
-    bool addLogger = false,
-  });
+  Future<Response> downloadFile(DownloadFile downloadFile, {bool addLogger = false});
 
   Future<BaseResponse<T>> uploadFormData<T>(
     String path, {
@@ -89,10 +86,7 @@ abstract class ApiService extends BaseApiService {
   });
 
   @override
-  Future<Response> downloadFile(
-    DownloadFile downloadFile, {
-    bool addLogger = false,
-  });
+  Future<Response> downloadFile(DownloadFile downloadFile, {bool addLogger = false});
 
   @override
   Future<BaseResponse<T>> uploadFormData<T>(

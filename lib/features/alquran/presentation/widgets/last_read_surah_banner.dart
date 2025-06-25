@@ -7,9 +7,7 @@ import '../../../../common/common.dart';
 import '../../../features.dart';
 
 class LastReadSurahBanner extends StatelessWidget {
-  const LastReadSurahBanner({
-    super.key,
-  });
+  const LastReadSurahBanner({super.key});
 
   void onBannerTap(LastReadAyah? lastReadAyah) {
     if (lastReadAyah == null) return;
@@ -18,10 +16,7 @@ class LastReadSurahBanner extends StatelessWidget {
       lastReadAyah: lastReadAyah,
     );
     BottomSheetManager.showCustomBottomSheet(
-      child: DetailAyahBottomSheet(
-        quranDetailParams: params,
-        ayah: lastReadAyah.ayah,
-      ),
+      child: DetailAyahBottomSheet(quranDetailParams: params, ayah: lastReadAyah.ayah),
     );
   }
 
@@ -47,8 +42,7 @@ class LastReadSurahBanner extends StatelessWidget {
                 builder: (context, state) {
                   final homeBloc = context.read<HomeBloc>();
                   final lastReadAyah = homeBloc.lastReadAyah;
-                  final isLoading =
-                      state.whenOrNull(loading: () => true) ?? false;
+                  final isLoading = state.whenOrNull(loading: () => true) ?? false;
                   return Skeletonizer(
                     enabled: isLoading,
                     child: Column(

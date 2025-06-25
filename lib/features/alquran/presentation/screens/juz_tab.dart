@@ -14,9 +14,7 @@ class JuzTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<JuzCubit, JuzState>(
       listener: (context, state) {
-        state.whenOrNull(
-          failed: (message) => SnackBarWidget.showFailed(message),
-        );
+        state.whenOrNull(failed: (message) => SnackBarWidget.showFailed(message));
       },
       builder: (context, state) {
         final juzCubit = context.read<JuzCubit>();
@@ -24,10 +22,7 @@ class JuzTab extends StatelessWidget {
         final juzs = isLoading ? BoneMockData.fakeJuzs : juzCubit.juzs;
         final failedMessage = state.whenOrNull(failed: (data) => data);
         if (failedMessage != null) {
-          return EmptyStateWidget(
-            title: 'Gagal memuat data',
-            message: failedMessage,
-          );
+          return EmptyStateWidget(title: 'Gagal memuat data', message: failedMessage);
         }
         return RefreshIndicator(
           color: context.getColorExt(AppColorType.primary),
@@ -44,14 +39,15 @@ class JuzTab extends StatelessWidget {
                     title: juz.name,
                     subtitle: "${juz.nameStartId} • ${juz.nameEndId}",
                   ),
-                  onTap: () => context.pushRoute(
-                    QuranDetailRoute(
-                      params: QuranDetailParams(
-                        juzNumber: juz.number,
-                        detailType: QuranDetailTypeEnum.byJuzs,
+                  onTap:
+                      () => context.pushRoute(
+                        QuranDetailRoute(
+                          params: QuranDetailParams(
+                            juzNumber: juz.number,
+                            detailType: QuranDetailTypeEnum.byJuzs,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
                 );
               },
             ),

@@ -28,10 +28,8 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
   late ListObserverController observerController;
   BuildContext? sliverContext;
 
-  QuranDetailCubit({
-    required this.getAyahsJuz,
-    required this.getFullAyahs,
-  }) : super(const QuranDetailState.initial());
+  QuranDetailCubit({required this.getAyahsJuz, required this.getFullAyahs})
+    : super(const QuranDetailState.initial());
 
   void init(QuranDetailParams params) async {
     initController();
@@ -59,9 +57,7 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
   }
 
   void initController() {
-    observerController = ListObserverController(
-      controller: scrollController,
-    );
+    observerController = ListObserverController(controller: scrollController);
   }
 
   void jumpToAyah({
@@ -75,11 +71,10 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
       await getAyahs(params);
     }
 
-    final ayahIndex = lastReadAyah != null
-        ? ayahs.indexWhere(
-            (ayah) => ayah.ayah == lastReadAyah.ayah?.ayah,
-          )
-        : ayahsIndex;
+    final ayahIndex =
+        lastReadAyah != null
+            ? ayahs.indexWhere((ayah) => ayah.ayah == lastReadAyah.ayah?.ayah)
+            : ayahsIndex;
 
     await Future.delayed(const Duration(milliseconds: 150));
 
@@ -127,10 +122,10 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     final ayahUrl = surah?.audioUrl;
     if (ayahUrl == null) return;
     globalContext.read<PlayerWidgetCubit>().playTrack(
-          source: UrlSource(ayahUrl),
-          newTitle: surah?.nameId,
-          newSubTitle: '${surah?.translateRevelationId} • ${surah?.numberOfVerses} Ayat',
-        );
+      source: UrlSource(ayahUrl),
+      newTitle: surah?.nameId,
+      newSubTitle: '${surah?.translateRevelationId} • ${surah?.numberOfVerses} Ayat',
+    );
   }
 
   @override

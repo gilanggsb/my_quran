@@ -27,24 +27,18 @@ void mainSurahCubit() {
 
   final responseSurahs = BaseResponse.fromJson(
     surahsMock,
-    (json) => (json as List).toResponseList(
-      (json) => Surah.fromJson(json),
-    ),
+    (json) => (json as List).toResponseList((json) => Surah.fromJson(json)),
   );
 
   blocTest<SurahCubit, SurahState>(
     'emits [SurahState.loaded] when getData.',
     build: () {
-      when(getSurahs(const NoParams()))
-          .thenAnswer((realInvocation) async => responseSurahs);
+      when(getSurahs(const NoParams())).thenAnswer((realInvocation) async => responseSurahs);
       return cubit;
     },
     act: (cubit) => cubit.getData(),
     expect: () async {
-      return <SurahState>[
-        const SurahState.loading(),
-        const SurahState.loaded(),
-      ];
+      return <SurahState>[const SurahState.loading(), const SurahState.loaded()];
     },
   );
 }

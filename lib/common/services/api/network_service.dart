@@ -10,6 +10,5 @@ class NetworkServiceImpl extends NetworkService {
   NetworkServiceImpl(this.connection, {this.isTesting = false});
 
   @override
-  Future<bool> get hasConnection async =>
-      isTesting ? true : await connection.hasConnection;
+  Future<bool> get hasConnection async => isTesting ? true : await connection.hasConnection;
 }

@@ -71,9 +71,7 @@ class JuzAdapter extends TypeAdapter<Juz> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is JuzAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+      other is JuzAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }
 
 // **************************************************************************
@@ -81,36 +79,33 @@ class JuzAdapter extends TypeAdapter<Juz> {
 // **************************************************************************
 
 Juz _$JuzFromJson(Map<String, dynamic> json) => Juz(
-      ayatArab: json['ayat_arab'] as String?,
-      ayatIndo: json['ayat_indo'] as String?,
-      ayatLatin: json['ayat_latin'] as String?,
-      name: json['name'] as String?,
-      nameEndArab: json['name_end_arab'] as String?,
-      nameEndId: json['name_end_id'] as String?,
-      nameStartArab: json['name_start_arab'] as String?,
-      nameStartId: json['name_start_id'] as String?,
-      number: const StringToIntConverter().fromJson(json['number'] as String?),
-      surahIdEnd: const StringToIntConverter()
-          .fromJson(json['surah_id_end'] as String?),
-      surahIdStart: const StringToIntConverter()
-          .fromJson(json['surah_id_start'] as String?),
-      verseEnd: json['verse_end'] as String?,
-      verseStart: json['verse_start'] as String?,
-    );
+  ayatArab: json['ayat_arab'] as String?,
+  ayatIndo: json['ayat_indo'] as String?,
+  ayatLatin: json['ayat_latin'] as String?,
+  name: json['name'] as String?,
+  nameEndArab: json['name_end_arab'] as String?,
+  nameEndId: json['name_end_id'] as String?,
+  nameStartArab: json['name_start_arab'] as String?,
+  nameStartId: json['name_start_id'] as String?,
+  number: const StringToIntConverter().fromJson(json['number'] as String?),
+  surahIdEnd: const StringToIntConverter().fromJson(json['surah_id_end'] as String?),
+  surahIdStart: const StringToIntConverter().fromJson(json['surah_id_start'] as String?),
+  verseEnd: json['verse_end'] as String?,
+  verseStart: json['verse_start'] as String?,
+);
 
 Map<String, dynamic> _$JuzToJson(Juz instance) => <String, dynamic>{
-      'ayat_arab': instance.ayatArab,
-      'ayat_indo': instance.ayatIndo,
-      'ayat_latin': instance.ayatLatin,
-      'name': instance.name,
-      'name_end_arab': instance.nameEndArab,
-      'name_end_id': instance.nameEndId,
-      'name_start_arab': instance.nameStartArab,
-      'name_start_id': instance.nameStartId,
-      'number': const StringToIntConverter().toJson(instance.number),
-      'surah_id_end': const StringToIntConverter().toJson(instance.surahIdEnd),
-      'surah_id_start':
-          const StringToIntConverter().toJson(instance.surahIdStart),
-      'verse_end': instance.verseEnd,
-      'verse_start': instance.verseStart,
-    };
+  'ayat_arab': instance.ayatArab,
+  'ayat_indo': instance.ayatIndo,
+  'ayat_latin': instance.ayatLatin,
+  'name': instance.name,
+  'name_end_arab': instance.nameEndArab,
+  'name_end_id': instance.nameEndId,
+  'name_start_arab': instance.nameStartArab,
+  'name_start_id': instance.nameStartId,
+  'number': const StringToIntConverter().toJson(instance.number),
+  'surah_id_end': const StringToIntConverter().toJson(instance.surahIdEnd),
+  'surah_id_start': const StringToIntConverter().toJson(instance.surahIdStart),
+  'verse_end': instance.verseEnd,
+  'verse_start': instance.verseStart,
+};

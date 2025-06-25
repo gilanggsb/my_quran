@@ -28,21 +28,16 @@ class AudioPlayerMenuBottomSheet extends StatelessWidget {
                 const Spacer(),
                 IconButton(
                   key: const Key('play_button'),
-                  onPressed: isPlaying
-                      ? playerWidgetCubit.pause
-                      : playerWidgetCubit.play,
+                  onPressed: isPlaying ? playerWidgetCubit.pause : playerWidgetCubit.play,
                   iconSize: 40,
-                  icon: Icon(
-                    isPlaying ? Icons.pause : Icons.play_arrow,
-                  ),
+                  icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
                   color: context.getColorExt(AppColorType.primary),
                   padding: EdgeInsets.zero,
                 ),
                 IconButton(
                   key: const Key('stop_button'),
-                  onPressed: isPlaying || playerWidgetCubit.isPaused
-                      ? playerWidgetCubit.stop
-                      : null,
+                  onPressed:
+                      isPlaying || playerWidgetCubit.isPaused ? playerWidgetCubit.stop : null,
                   iconSize: 40,
                   icon: const Icon(Icons.stop),
                   color: context.getColorExt(AppColorType.primary),
@@ -70,10 +65,7 @@ class AudioPlayerMenuBottomSheet extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                DefaultText(position),
-                DefaultText(duration),
-              ],
+              children: [DefaultText(position), DefaultText(duration)],
             ),
           ],
         );

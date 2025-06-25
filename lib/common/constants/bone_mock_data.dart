@@ -27,28 +27,16 @@ abstract class BoneMockData {
 
   static final List<Juz> fakeJuzs = List.filled(
     10,
-    const Juz(
-      number: 1,
-      name: "Juz 1",
-      nameStartId: "Al-Fatihah",
-      nameEndId: "Al-Baqarah",
-    ),
+    const Juz(number: 1, name: "Juz 1", nameStartId: "Al-Fatihah", nameEndId: "Al-Baqarah"),
   );
 
   static final List<BookmarkCategory> fakeCategories = List.filled(
     10,
-    const BookmarkCategory(
-      name: "Doa",
-      id: "1",
-    ),
+    const BookmarkCategory(name: "Doa", id: "1"),
   );
 
   static final List<BookmarkData> fakeBookmarks = List.filled(
     10,
-    const BookmarkData(
-      title: "Terbaik",
-      subtitle: "asdasd",
-      id: "1",
-    ),
+    const BookmarkData(title: "Terbaik", subtitle: "asdasd", id: "1"),
   );
 }

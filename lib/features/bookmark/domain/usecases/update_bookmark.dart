@@ -6,6 +6,5 @@ class UpdateBookmark extends UseCase<BaseResponse<bool>, BookmarkData> {
 
   UpdateBookmark({required this.repository});
   @override
-  Future<BaseResponse<bool>> call(BookmarkData params) async =>
-      repository.updateBookmark(params);
+  Future<BaseResponse<bool>> call(BookmarkData params) async => repository.updateBookmark(params);
 }

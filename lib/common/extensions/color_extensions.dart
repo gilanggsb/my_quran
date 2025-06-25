@@ -8,6 +8,7 @@ extension ColorExt on Color {
       return '';
     }
   }
+
   String get colorHexString {
     final red = (r * 255).toInt().toRadixString(16).padLeft(2, '0');
     final green = (g * 255).toInt().toRadixString(16).padLeft(2, '0');

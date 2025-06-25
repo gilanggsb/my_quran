@@ -12,9 +12,7 @@ final formats = [
   DateFormat("MMMM d yyyy"),
   DateFormat("d MMMM yyyy"),
   DateFormat("dd MMM yyyy"),
-  DateFormat(
-    "yyyy-MM-ddTHH:mm:ss.SSSSSS",
-  ), // Correct format for your specific date string
+  DateFormat("yyyy-MM-ddTHH:mm:ss.SSSSSS"), // Correct format for your specific date string
 ];
 
 extension StringExtension on String {
@@ -28,17 +26,14 @@ extension StringExtension on String {
 
   bool get parseBool => this == 'true' ? true : false;
 
-  bool get isValidEmail => RegExp(
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
-      ).hasMatch(this);
+  bool get isValidEmail =>
+      RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(this);
 
   bool get isValidPassword => length >= 6;
 
   String get capitalFirstChar {
     if (length == 0) return this;
-    return split(" ")
-        .map((str) => str[0].toUpperCase() + str.substring(1))
-        .join(" ");
+    return split(" ").map((str) => str[0].toUpperCase() + str.substring(1)).join(" ");
   }
 
   bool get isValidName => contains(RegExp(r'[0-9]'));
@@ -62,9 +57,8 @@ extension StringExtension on String {
   }
 
   /// Format numeric currency
-  String get numCurrency => NumberFormat.currency(customPattern: "#,##0.00")
-      .format(double.tryParse(this))
-      .toString();
+  String get numCurrency =>
+      NumberFormat.currency(customPattern: "#,##0.00").format(double.tryParse(this)).toString();
 
   /// Check whether a string is a number or not
   /// ```dart
@@ -111,9 +105,9 @@ extension StringExtension on String {
 
   /// from fooBar to foo_bar
   String get snakeCase => replaceAllMapped(
-        _camelCaseMatcher,
-        (match) => '${match.start == 0 ? '' : '_'}${match[0]!.toLowerCase()}',
-      );
+    _camelCaseMatcher,
+    (match) => '${match.start == 0 ? '' : '_'}${match[0]!.toLowerCase()}',
+  );
 
   /// Base64 encryption
   String get toEncodedBase64 => base64Encode(utf8.encode(this));
@@ -193,8 +187,7 @@ extension StringExtension on String {
   /// ```dart
   /// String foo = 'foo';
   /// foo.isContainHtmlTags; // returns false
-  bool get isContainHtmlTags =>
-      RegExp(r"<[^>]*>", multiLine: true).hasMatch(this);
+  bool get isContainHtmlTags => RegExp(r"<[^>]*>", multiLine: true).hasMatch(this);
 
   DateTime? toDate({DateTime? defaultDate}) {
     try {

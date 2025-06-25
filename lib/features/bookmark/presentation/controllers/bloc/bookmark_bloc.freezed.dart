@@ -12,7 +12,8 @@ part of 'bookmark_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$BookmarkEvent {
@@ -22,16 +23,14 @@ mixin _$BookmarkEvent {
     required TResult Function(String? categoryId) getData,
     required TResult Function(String? bookmarkId) deleteBookmark,
     required TResult Function(BookmarkData? bookmark) getBookmarkDetail,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(String? categoryId)? getData,
     TResult? Function(String? bookmarkId)? deleteBookmark,
     TResult? Function(BookmarkData? bookmark)? getBookmarkDetail,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
@@ -39,24 +38,21 @@ mixin _$BookmarkEvent {
     TResult Function(String? bookmarkId)? deleteBookmark,
     TResult Function(BookmarkData? bookmark)? getBookmarkDetail,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
     required TResult Function(_DeleteBookmark value) deleteBookmark,
     required TResult Function(_GetBookmarkDetail value) getBookmarkDetail,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
     TResult? Function(_DeleteBookmark value)? deleteBookmark,
     TResult? Function(_GetBookmarkDetail value)? getBookmarkDetail,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
@@ -64,14 +60,12 @@ mixin _$BookmarkEvent {
     TResult Function(_DeleteBookmark value)? deleteBookmark,
     TResult Function(_GetBookmarkDetail value)? getBookmarkDetail,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BookmarkEventCopyWith<$Res> {
-  factory $BookmarkEventCopyWith(
-          BookmarkEvent value, $Res Function(BookmarkEvent) then) =
+  factory $BookmarkEventCopyWith(BookmarkEvent value, $Res Function(BookmarkEvent) then) =
       _$BookmarkEventCopyWithImpl<$Res, BookmarkEvent>;
 }
 
@@ -91,18 +85,15 @@ class _$BookmarkEventCopyWithImpl<$Res, $Val extends BookmarkEvent>
 
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+  factory _$$StartedImplCopyWith(_$StartedImpl value, $Res Function(_$StartedImpl) then) =
       __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$BookmarkEventCopyWithImpl<$Res, _$StartedImpl>
+class __$$StartedImplCopyWithImpl<$Res> extends _$BookmarkEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
-      : super(_value, _then);
+  __$$StartedImplCopyWithImpl(_$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of BookmarkEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -120,8 +111,7 @@ class _$StartedImpl implements _Started {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$StartedImpl);
   }
 
   @override
@@ -208,34 +198,32 @@ abstract class _Started implements BookmarkEvent {
 
 /// @nodoc
 abstract class _$$GetDataImplCopyWith<$Res> {
-  factory _$$GetDataImplCopyWith(
-          _$GetDataImpl value, $Res Function(_$GetDataImpl) then) =
+  factory _$$GetDataImplCopyWith(_$GetDataImpl value, $Res Function(_$GetDataImpl) then) =
       __$$GetDataImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? categoryId});
 }
 
 /// @nodoc
-class __$$GetDataImplCopyWithImpl<$Res>
-    extends _$BookmarkEventCopyWithImpl<$Res, _$GetDataImpl>
+class __$$GetDataImplCopyWithImpl<$Res> extends _$BookmarkEventCopyWithImpl<$Res, _$GetDataImpl>
     implements _$$GetDataImplCopyWith<$Res> {
-  __$$GetDataImplCopyWithImpl(
-      _$GetDataImpl _value, $Res Function(_$GetDataImpl) _then)
-      : super(_value, _then);
+  __$$GetDataImplCopyWithImpl(_$GetDataImpl _value, $Res Function(_$GetDataImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of BookmarkEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? categoryId = freezed,
-  }) {
-    return _then(_$GetDataImpl(
-      categoryId: freezed == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? categoryId = freezed}) {
+    return _then(
+      _$GetDataImpl(
+        categoryId:
+            freezed == categoryId
+                ? _value.categoryId
+                : categoryId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
@@ -257,8 +245,7 @@ class _$GetDataImpl implements _GetData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetDataImpl &&
-            (identical(other.categoryId, categoryId) ||
-                other.categoryId == categoryId));
+            (identical(other.categoryId, categoryId) || other.categoryId == categoryId));
   }
 
   @override
@@ -355,15 +342,15 @@ abstract class _GetData implements BookmarkEvent {
   /// Create a copy of BookmarkEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetDataImplCopyWith<_$GetDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetDataImplCopyWith<_$GetDataImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$DeleteBookmarkImplCopyWith<$Res> {
-  factory _$$DeleteBookmarkImplCopyWith(_$DeleteBookmarkImpl value,
-          $Res Function(_$DeleteBookmarkImpl) then) =
-      __$$DeleteBookmarkImplCopyWithImpl<$Res>;
+  factory _$$DeleteBookmarkImplCopyWith(
+    _$DeleteBookmarkImpl value,
+    $Res Function(_$DeleteBookmarkImpl) then,
+  ) = __$$DeleteBookmarkImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? bookmarkId});
 }
@@ -373,22 +360,24 @@ class __$$DeleteBookmarkImplCopyWithImpl<$Res>
     extends _$BookmarkEventCopyWithImpl<$Res, _$DeleteBookmarkImpl>
     implements _$$DeleteBookmarkImplCopyWith<$Res> {
   __$$DeleteBookmarkImplCopyWithImpl(
-      _$DeleteBookmarkImpl _value, $Res Function(_$DeleteBookmarkImpl) _then)
-      : super(_value, _then);
+    _$DeleteBookmarkImpl _value,
+    $Res Function(_$DeleteBookmarkImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BookmarkEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? bookmarkId = freezed,
-  }) {
-    return _then(_$DeleteBookmarkImpl(
-      bookmarkId: freezed == bookmarkId
-          ? _value.bookmarkId
-          : bookmarkId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+  $Res call({Object? bookmarkId = freezed}) {
+    return _then(
+      _$DeleteBookmarkImpl(
+        bookmarkId:
+            freezed == bookmarkId
+                ? _value.bookmarkId
+                : bookmarkId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
@@ -410,8 +399,7 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeleteBookmarkImpl &&
-            (identical(other.bookmarkId, bookmarkId) ||
-                other.bookmarkId == bookmarkId));
+            (identical(other.bookmarkId, bookmarkId) || other.bookmarkId == bookmarkId));
   }
 
   @override
@@ -423,8 +411,7 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteBookmarkImplCopyWith<_$DeleteBookmarkImpl> get copyWith =>
-      __$$DeleteBookmarkImplCopyWithImpl<_$DeleteBookmarkImpl>(
-          this, _$identity);
+      __$$DeleteBookmarkImplCopyWithImpl<_$DeleteBookmarkImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,8 +489,7 @@ class _$DeleteBookmarkImpl implements _DeleteBookmark {
 }
 
 abstract class _DeleteBookmark implements BookmarkEvent {
-  const factory _DeleteBookmark({final String? bookmarkId}) =
-      _$DeleteBookmarkImpl;
+  const factory _DeleteBookmark({final String? bookmarkId}) = _$DeleteBookmarkImpl;
 
   String? get bookmarkId;
 
@@ -516,9 +502,10 @@ abstract class _DeleteBookmark implements BookmarkEvent {
 
 /// @nodoc
 abstract class _$$GetBookmarkDetailImplCopyWith<$Res> {
-  factory _$$GetBookmarkDetailImplCopyWith(_$GetBookmarkDetailImpl value,
-          $Res Function(_$GetBookmarkDetailImpl) then) =
-      __$$GetBookmarkDetailImplCopyWithImpl<$Res>;
+  factory _$$GetBookmarkDetailImplCopyWith(
+    _$GetBookmarkDetailImpl value,
+    $Res Function(_$GetBookmarkDetailImpl) then,
+  ) = __$$GetBookmarkDetailImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BookmarkData? bookmark});
 
@@ -529,23 +516,25 @@ abstract class _$$GetBookmarkDetailImplCopyWith<$Res> {
 class __$$GetBookmarkDetailImplCopyWithImpl<$Res>
     extends _$BookmarkEventCopyWithImpl<$Res, _$GetBookmarkDetailImpl>
     implements _$$GetBookmarkDetailImplCopyWith<$Res> {
-  __$$GetBookmarkDetailImplCopyWithImpl(_$GetBookmarkDetailImpl _value,
-      $Res Function(_$GetBookmarkDetailImpl) _then)
-      : super(_value, _then);
+  __$$GetBookmarkDetailImplCopyWithImpl(
+    _$GetBookmarkDetailImpl _value,
+    $Res Function(_$GetBookmarkDetailImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BookmarkEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? bookmark = freezed,
-  }) {
-    return _then(_$GetBookmarkDetailImpl(
-      bookmark: freezed == bookmark
-          ? _value.bookmark
-          : bookmark // ignore: cast_nullable_to_non_nullable
-              as BookmarkData?,
-    ));
+  $Res call({Object? bookmark = freezed}) {
+    return _then(
+      _$GetBookmarkDetailImpl(
+        bookmark:
+            freezed == bookmark
+                ? _value.bookmark
+                : bookmark // ignore: cast_nullable_to_non_nullable
+                    as BookmarkData?,
+      ),
+    );
   }
 
   /// Create a copy of BookmarkEvent
@@ -581,8 +570,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetBookmarkDetailImpl &&
-            (identical(other.bookmark, bookmark) ||
-                other.bookmark == bookmark));
+            (identical(other.bookmark, bookmark) || other.bookmark == bookmark));
   }
 
   @override
@@ -594,8 +582,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
   @override
   @pragma('vm:prefer-inline')
   _$$GetBookmarkDetailImplCopyWith<_$GetBookmarkDetailImpl> get copyWith =>
-      __$$GetBookmarkDetailImplCopyWithImpl<_$GetBookmarkDetailImpl>(
-          this, _$identity);
+      __$$GetBookmarkDetailImplCopyWithImpl<_$GetBookmarkDetailImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -673,8 +660,7 @@ class _$GetBookmarkDetailImpl implements _GetBookmarkDetail {
 }
 
 abstract class _GetBookmarkDetail implements BookmarkEvent {
-  const factory _GetBookmarkDetail({final BookmarkData? bookmark}) =
-      _$GetBookmarkDetailImpl;
+  const factory _GetBookmarkDetail({final BookmarkData? bookmark}) = _$GetBookmarkDetailImpl;
 
   BookmarkData? get bookmark;
 
@@ -696,8 +682,7 @@ mixin _$BookmarkState {
     required TResult Function() detailAyahLoading,
     required TResult Function(Ayah? ayah) detailAyahLoaded,
     required TResult Function() deleteBookmarkSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -707,8 +692,7 @@ mixin _$BookmarkState {
     TResult? Function()? detailAyahLoading,
     TResult? Function(Ayah? ayah)? detailAyahLoaded,
     TResult? Function()? deleteBookmarkSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -719,8 +703,7 @@ mixin _$BookmarkState {
     TResult Function(Ayah? ayah)? detailAyahLoaded,
     TResult Function()? deleteBookmarkSuccess,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -729,10 +712,8 @@ mixin _$BookmarkState {
     required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_DeleteBookmarkSuccess value)
-        deleteBookmarkSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
+    required TResult Function(_DeleteBookmarkSuccess value) deleteBookmarkSuccess,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -742,8 +723,7 @@ mixin _$BookmarkState {
     TResult? Function(_DetailAyahLoading value)? detailAyahLoading,
     TResult? Function(_DetailAyahLoaded value)? detailAyahLoaded,
     TResult? Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -754,14 +734,12 @@ mixin _$BookmarkState {
     TResult Function(_DetailAyahLoaded value)? detailAyahLoaded,
     TResult Function(_DeleteBookmarkSuccess value)? deleteBookmarkSuccess,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BookmarkStateCopyWith<$Res> {
-  factory $BookmarkStateCopyWith(
-          BookmarkState value, $Res Function(BookmarkState) then) =
+  factory $BookmarkStateCopyWith(BookmarkState value, $Res Function(BookmarkState) then) =
       _$BookmarkStateCopyWithImpl<$Res, BookmarkState>;
 }
 
@@ -781,18 +759,15 @@ class _$BookmarkStateCopyWithImpl<$Res, $Val extends BookmarkState>
 
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+  factory _$$InitialImplCopyWith(_$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$BookmarkStateCopyWithImpl<$Res, _$InitialImpl>
+class __$$InitialImplCopyWithImpl<$Res> extends _$BookmarkStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
+  __$$InitialImplCopyWithImpl(_$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of BookmarkState
   /// with the given fields replaced by the non-null parameter values.
@@ -810,8 +785,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -872,8 +846,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_DeleteBookmarkSuccess value)
-        deleteBookmarkSuccess,
+    required TResult Function(_DeleteBookmarkSuccess value) deleteBookmarkSuccess,
   }) {
     return initial(this);
   }
@@ -917,18 +890,15 @@ abstract class _Initial implements BookmarkState {
 
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+  factory _$$LoadingImplCopyWith(_$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
       __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$BookmarkStateCopyWithImpl<$Res, _$LoadingImpl>
+class __$$LoadingImplCopyWithImpl<$Res> extends _$BookmarkStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-      : super(_value, _then);
+  __$$LoadingImplCopyWithImpl(_$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of BookmarkState
   /// with the given fields replaced by the non-null parameter values.
@@ -946,8 +916,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -1008,8 +977,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_DeleteBookmarkSuccess value)
-        deleteBookmarkSuccess,
+    required TResult Function(_DeleteBookmarkSuccess value) deleteBookmarkSuccess,
   }) {
     return loading(this);
   }
@@ -1053,18 +1021,15 @@ abstract class _Loading implements BookmarkState {
 
 /// @nodoc
 abstract class _$$LoadedImplCopyWith<$Res> {
-  factory _$$LoadedImplCopyWith(
-          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+  factory _$$LoadedImplCopyWith(_$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$BookmarkStateCopyWithImpl<$Res, _$LoadedImpl>
+class __$$LoadedImplCopyWithImpl<$Res> extends _$BookmarkStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
-  __$$LoadedImplCopyWithImpl(
-      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
-      : super(_value, _then);
+  __$$LoadedImplCopyWithImpl(_$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of BookmarkState
   /// with the given fields replaced by the non-null parameter values.
@@ -1082,8 +1047,7 @@ class _$LoadedImpl implements _Loaded {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadedImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadedImpl);
   }
 
   @override
@@ -1144,8 +1108,7 @@ class _$LoadedImpl implements _Loaded {
     required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_DeleteBookmarkSuccess value)
-        deleteBookmarkSuccess,
+    required TResult Function(_DeleteBookmarkSuccess value) deleteBookmarkSuccess,
   }) {
     return loaded(this);
   }
@@ -1189,34 +1152,31 @@ abstract class _Loaded implements BookmarkState {
 
 /// @nodoc
 abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+  factory _$$ErrorImplCopyWith(_$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
       __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$BookmarkStateCopyWithImpl<$Res, _$ErrorImpl>
+class __$$ErrorImplCopyWithImpl<$Res> extends _$BookmarkStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
-      : super(_value, _then);
+  __$$ErrorImplCopyWithImpl(_$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of BookmarkState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ErrorImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? message = null}) {
+    return _then(
+      _$ErrorImpl(
+        null == message
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -1307,8 +1267,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_DeleteBookmarkSuccess value)
-        deleteBookmarkSuccess,
+    required TResult Function(_DeleteBookmarkSuccess value) deleteBookmarkSuccess,
   }) {
     return failed(this);
   }
@@ -1354,24 +1313,25 @@ abstract class _Error implements BookmarkState {
   /// Create a copy of BookmarkState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$DetailAyahLoadingImplCopyWith<$Res> {
-  factory _$$DetailAyahLoadingImplCopyWith(_$DetailAyahLoadingImpl value,
-          $Res Function(_$DetailAyahLoadingImpl) then) =
-      __$$DetailAyahLoadingImplCopyWithImpl<$Res>;
+  factory _$$DetailAyahLoadingImplCopyWith(
+    _$DetailAyahLoadingImpl value,
+    $Res Function(_$DetailAyahLoadingImpl) then,
+  ) = __$$DetailAyahLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$DetailAyahLoadingImplCopyWithImpl<$Res>
     extends _$BookmarkStateCopyWithImpl<$Res, _$DetailAyahLoadingImpl>
     implements _$$DetailAyahLoadingImplCopyWith<$Res> {
-  __$$DetailAyahLoadingImplCopyWithImpl(_$DetailAyahLoadingImpl _value,
-      $Res Function(_$DetailAyahLoadingImpl) _then)
-      : super(_value, _then);
+  __$$DetailAyahLoadingImplCopyWithImpl(
+    _$DetailAyahLoadingImpl _value,
+    $Res Function(_$DetailAyahLoadingImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BookmarkState
   /// with the given fields replaced by the non-null parameter values.
@@ -1451,8 +1411,7 @@ class _$DetailAyahLoadingImpl implements _DetailAyahLoading {
     required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_DeleteBookmarkSuccess value)
-        deleteBookmarkSuccess,
+    required TResult Function(_DeleteBookmarkSuccess value) deleteBookmarkSuccess,
   }) {
     return detailAyahLoading(this);
   }
@@ -1496,9 +1455,10 @@ abstract class _DetailAyahLoading implements BookmarkState {
 
 /// @nodoc
 abstract class _$$DetailAyahLoadedImplCopyWith<$Res> {
-  factory _$$DetailAyahLoadedImplCopyWith(_$DetailAyahLoadedImpl value,
-          $Res Function(_$DetailAyahLoadedImpl) then) =
-      __$$DetailAyahLoadedImplCopyWithImpl<$Res>;
+  factory _$$DetailAyahLoadedImplCopyWith(
+    _$DetailAyahLoadedImpl value,
+    $Res Function(_$DetailAyahLoadedImpl) then,
+  ) = __$$DetailAyahLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Ayah? ayah});
 
@@ -1509,23 +1469,24 @@ abstract class _$$DetailAyahLoadedImplCopyWith<$Res> {
 class __$$DetailAyahLoadedImplCopyWithImpl<$Res>
     extends _$BookmarkStateCopyWithImpl<$Res, _$DetailAyahLoadedImpl>
     implements _$$DetailAyahLoadedImplCopyWith<$Res> {
-  __$$DetailAyahLoadedImplCopyWithImpl(_$DetailAyahLoadedImpl _value,
-      $Res Function(_$DetailAyahLoadedImpl) _then)
-      : super(_value, _then);
+  __$$DetailAyahLoadedImplCopyWithImpl(
+    _$DetailAyahLoadedImpl _value,
+    $Res Function(_$DetailAyahLoadedImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BookmarkState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? ayah = freezed,
-  }) {
-    return _then(_$DetailAyahLoadedImpl(
-      freezed == ayah
-          ? _value.ayah
-          : ayah // ignore: cast_nullable_to_non_nullable
-              as Ayah?,
-    ));
+  $Res call({Object? ayah = freezed}) {
+    return _then(
+      _$DetailAyahLoadedImpl(
+        freezed == ayah
+            ? _value.ayah
+            : ayah // ignore: cast_nullable_to_non_nullable
+                as Ayah?,
+      ),
+    );
   }
 
   /// Create a copy of BookmarkState
@@ -1573,8 +1534,7 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
   @override
   @pragma('vm:prefer-inline')
   _$$DetailAyahLoadedImplCopyWith<_$DetailAyahLoadedImpl> get copyWith =>
-      __$$DetailAyahLoadedImplCopyWithImpl<_$DetailAyahLoadedImpl>(
-          this, _$identity);
+      __$$DetailAyahLoadedImplCopyWithImpl<_$DetailAyahLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1631,8 +1591,7 @@ class _$DetailAyahLoadedImpl implements _DetailAyahLoaded {
     required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_DeleteBookmarkSuccess value)
-        deleteBookmarkSuccess,
+    required TResult Function(_DeleteBookmarkSuccess value) deleteBookmarkSuccess,
   }) {
     return detailAyahLoaded(this);
   }
@@ -1685,18 +1644,19 @@ abstract class _DetailAyahLoaded implements BookmarkState {
 /// @nodoc
 abstract class _$$DeleteBookmarkSuccessImplCopyWith<$Res> {
   factory _$$DeleteBookmarkSuccessImplCopyWith(
-          _$DeleteBookmarkSuccessImpl value,
-          $Res Function(_$DeleteBookmarkSuccessImpl) then) =
-      __$$DeleteBookmarkSuccessImplCopyWithImpl<$Res>;
+    _$DeleteBookmarkSuccessImpl value,
+    $Res Function(_$DeleteBookmarkSuccessImpl) then,
+  ) = __$$DeleteBookmarkSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$DeleteBookmarkSuccessImplCopyWithImpl<$Res>
     extends _$BookmarkStateCopyWithImpl<$Res, _$DeleteBookmarkSuccessImpl>
     implements _$$DeleteBookmarkSuccessImplCopyWith<$Res> {
-  __$$DeleteBookmarkSuccessImplCopyWithImpl(_$DeleteBookmarkSuccessImpl _value,
-      $Res Function(_$DeleteBookmarkSuccessImpl) _then)
-      : super(_value, _then);
+  __$$DeleteBookmarkSuccessImplCopyWithImpl(
+    _$DeleteBookmarkSuccessImpl _value,
+    $Res Function(_$DeleteBookmarkSuccessImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BookmarkState
   /// with the given fields replaced by the non-null parameter values.
@@ -1715,8 +1675,7 @@ class _$DeleteBookmarkSuccessImpl implements _DeleteBookmarkSuccess {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteBookmarkSuccessImpl);
+        (other.runtimeType == runtimeType && other is _$DeleteBookmarkSuccessImpl);
   }
 
   @override
@@ -1777,8 +1736,7 @@ class _$DeleteBookmarkSuccessImpl implements _DeleteBookmarkSuccess {
     required TResult Function(_Error value) failed,
     required TResult Function(_DetailAyahLoading value) detailAyahLoading,
     required TResult Function(_DetailAyahLoaded value) detailAyahLoaded,
-    required TResult Function(_DeleteBookmarkSuccess value)
-        deleteBookmarkSuccess,
+    required TResult Function(_DeleteBookmarkSuccess value) deleteBookmarkSuccess,
   }) {
     return deleteBookmarkSuccess(this);
   }

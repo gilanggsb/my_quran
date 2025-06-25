@@ -27,12 +27,7 @@ class ApiServiceImpl extends ApiService {
 
     if (isTesting) return dioClone;
 
-    dioClone.interceptors.add(
-      PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-      ),
-    );
+    dioClone.interceptors.add(PrettyDioLogger(requestHeader: true, requestBody: true));
 
     return dioClone;
   }
@@ -53,8 +48,9 @@ class ApiServiceImpl extends ApiService {
 
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
-      final Response response = await _getDioWithOptionalLogger(addLogger)
-          .post(finalPath, data: jsonEncode(body));
+      final Response response = await _getDioWithOptionalLogger(
+        addLogger,
+      ).post(finalPath, data: jsonEncode(body));
       return NetworkingUtils.parseResponse(response, fromJsonT);
     } on DioException catch (e) {
       return NetworkingUtils.parseError(e);
@@ -79,8 +75,9 @@ class ApiServiceImpl extends ApiService {
 
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
-      final Response response = await _getDioWithOptionalLogger(addLogger)
-          .get(finalPath, queryParameters: queryParams);
+      final Response response = await _getDioWithOptionalLogger(
+        addLogger,
+      ).get(finalPath, queryParameters: queryParams);
       return NetworkingUtils.parseResponse(response, fromJsonT);
     } on DioException catch (e) {
       return NetworkingUtils.parseError(e);
@@ -105,12 +102,9 @@ class ApiServiceImpl extends ApiService {
 
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
-      final Response response =
-          await _getDioWithOptionalLogger(addLogger).delete(
-        finalPath,
-        queryParameters: queryParams,
-        options: options,
-      );
+      final Response response = await _getDioWithOptionalLogger(
+        addLogger,
+      ).delete(finalPath, queryParameters: queryParams, options: options);
       return NetworkingUtils.parseResponse(response, fromJsonT);
     } on DioException catch (e) {
       return NetworkingUtils.parseError(e);
@@ -134,11 +128,9 @@ class ApiServiceImpl extends ApiService {
       // }
       final finalPath = NetworkingUtils.applyPathParams(path, pathParams);
 
-      final Response response = await _getDioWithOptionalLogger(addLogger).put(
-        finalPath,
-        data: jsonEncode(body),
-        options: options,
-      );
+      final Response response = await _getDioWithOptionalLogger(
+        addLogger,
+      ).put(finalPath, data: jsonEncode(body), options: options);
       return NetworkingUtils.parseResponse(response, fromJsonT);
     } on DioException catch (e) {
       return NetworkingUtils.parseError(e);
@@ -175,20 +167,15 @@ class ApiServiceImpl extends ApiService {
   }
 
   @override
-  Future<Response> downloadFile(
-    DownloadFile downloadFile, {
-    bool addLogger = false,
-  }) async {
+  Future<Response> downloadFile(DownloadFile downloadFile, {bool addLogger = false}) async {
     try {
       String path = await AppUtils.getFilePath(downloadFile.fileNameWithExt);
-      final Response response =
-          await _getDioWithOptionalLogger(addLogger).download(
+      final Response response = await _getDioWithOptionalLogger(addLogger).download(
         downloadFile.fullFileUrl,
         path,
         onReceiveProgress: (receivedBytes, totalBytes) {
           if (totalBytes <= 0) return;
-          final percentage =
-              (receivedBytes / totalBytes * 100).toStringAsFixed(0);
+          final percentage = (receivedBytes / totalBytes * 100).toStringAsFixed(0);
           final progress = receivedBytes / totalBytes;
           final DownloadProgress downloadProgress = DownloadProgress(
             percentage: percentage,

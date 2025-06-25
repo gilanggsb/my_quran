@@ -17,24 +17,13 @@ class BaseResponse<T> with _$BaseResponse<T> {
     T? data,
   }) = _BaseResponse<T>;
 
-  factory BaseResponse.fromJson(
-    Map<String, dynamic> json,
-    FromJsonT<T> fromJsonT,
-  ) {
+  factory BaseResponse.fromJson(Map<String, dynamic> json, FromJsonT<T> fromJsonT) {
     return _$BaseResponseFromJson<T>(json, fromJsonT);
   }
 
   static BaseResponse<T> success<T>({T? data, String? message}) =>
-      BaseResponse<T>(
-        data: data,
-        status: true,
-        message: "Success",
-      );
+      BaseResponse<T>(data: data, status: true, message: "Success");
 
   static BaseResponse<T> failed<T>({T? data, String? message}) =>
-      BaseResponse<T>(
-        data: data,
-        status: false,
-        message: message,
-      );
+      BaseResponse<T>(data: data, status: false, message: message);
 }

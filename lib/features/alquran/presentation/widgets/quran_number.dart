@@ -5,10 +5,7 @@ import '../../../../common/common.dart';
 
 class QuranNumber extends StatelessWidget {
   final int? number;
-  const QuranNumber({
-    super.key,
-    required this.number,
-  });
+  const QuranNumber({super.key, required this.number});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +20,7 @@ class QuranNumber extends StatelessWidget {
             height: 40.sp,
             imageType: ImageType.asset,
           ),
-          Center(
-            child: DefaultText(
-              "${number ?? ''}",
-              fontSize: 11.sp,
-            ),
-          ),
+          Center(child: DefaultText("${number ?? ''}", fontSize: 11.sp)),
         ],
       ),
     );

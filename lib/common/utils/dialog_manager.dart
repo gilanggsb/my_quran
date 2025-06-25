@@ -34,7 +34,8 @@ class DialogManager {
           backgroundColor: context.getColorExt(AppColorType.background),
           title: title != null ? Text(title) : null,
           content: message != null ? Text(message) : null,
-          actions: actions ??
+          actions:
+              actions ??
               [
                 TextButton(
                   child: const Text('OK'),
@@ -74,9 +75,7 @@ class DialogManager {
       useSafeArea: useSafeArea,
       builder: (BuildContext context) {
         return Dialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           child: content,
         );
       },
@@ -100,8 +99,7 @@ class DialogManager {
     bool useSafeArea = true,
   }) {
     final validContext = context ?? globalContext;
-    TextEditingController inputController =
-        controller ?? TextEditingController();
+    TextEditingController inputController = controller ?? TextEditingController();
     return _showDialog<bool>(
       context: validContext,
       barrierDismissible: barrierDismissible,
@@ -125,9 +123,7 @@ class DialogManager {
                 controller: inputController,
                 textStyle: validContext.textThemeExt.bodyMedium.copyWith(
                   color: context.getColorExt(
-                    context.isLightTheme
-                        ? AppColorType.textLight
-                        : AppColorType.textDark,
+                    context.isLightTheme ? AppColorType.textLight : AppColorType.textDark,
                   ),
                 ),
               ),

@@ -12,9 +12,5 @@ _$AyahPaginationImpl _$$AyahPaginationImplFromJson(Map<String, dynamic> json) =>
       length: (json['length'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$AyahPaginationImplToJson(
-        _$AyahPaginationImpl instance) =>
-    <String, dynamic>{
-      'page': instance.page,
-      'length': instance.length,
-    };
+Map<String, dynamic> _$$AyahPaginationImplToJson(_$AyahPaginationImpl instance) =>
+    <String, dynamic>{'page': instance.page, 'length': instance.length};

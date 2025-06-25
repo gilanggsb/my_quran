@@ -3,11 +3,7 @@ import '../common.dart';
 
 part 'env_production.g.dart';
 
-@Envied(
-  path: '.env.production',
-  useConstantCase: true,
-  obfuscate: true,
-)
+@Envied(path: '.env.production', useConstantCase: true, obfuscate: true)
 abstract class EnvProduction {
   @EnviedField()
   static Flavor flavor = _EnvProduction.flavor;

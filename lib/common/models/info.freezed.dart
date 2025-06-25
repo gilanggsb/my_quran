@@ -12,7 +12,8 @@ part of 'info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$Info {
@@ -30,15 +31,13 @@ mixin _$Info {
 
 /// @nodoc
 abstract class $InfoCopyWith<$Res> {
-  factory $InfoCopyWith(Info value, $Res Function(Info) then) =
-      _$InfoCopyWithImpl<$Res, Info>;
+  factory $InfoCopyWith(Info value, $Res Function(Info) then) = _$InfoCopyWithImpl<$Res, Info>;
   @useResult
   $Res call({int? min, int? max});
 }
 
 /// @nodoc
-class _$InfoCopyWithImpl<$Res, $Val extends Info>
-    implements $InfoCopyWith<$Res> {
+class _$InfoCopyWithImpl<$Res, $Val extends Info> implements $InfoCopyWith<$Res> {
   _$InfoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -50,27 +49,28 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? min = freezed,
-    Object? max = freezed,
-  }) {
-    return _then(_value.copyWith(
-      min: freezed == min
-          ? _value.min
-          : min // ignore: cast_nullable_to_non_nullable
-              as int?,
-      max: freezed == max
-          ? _value.max
-          : max // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  $Res call({Object? min = freezed, Object? max = freezed}) {
+    return _then(
+      _value.copyWith(
+            min:
+                freezed == min
+                    ? _value.min
+                    : min // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            max:
+                freezed == max
+                    ? _value.max
+                    : max // ignore: cast_nullable_to_non_nullable
+                        as int?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$InfoImplCopyWith<$Res> implements $InfoCopyWith<$Res> {
-  factory _$$InfoImplCopyWith(
-          _$InfoImpl value, $Res Function(_$InfoImpl) then) =
+  factory _$$InfoImplCopyWith(_$InfoImpl value, $Res Function(_$InfoImpl) then) =
       __$$InfoImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -78,30 +78,30 @@ abstract class _$$InfoImplCopyWith<$Res> implements $InfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$InfoImplCopyWithImpl<$Res>
-    extends _$InfoCopyWithImpl<$Res, _$InfoImpl>
+class __$$InfoImplCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$InfoImpl>
     implements _$$InfoImplCopyWith<$Res> {
   __$$InfoImplCopyWithImpl(_$InfoImpl _value, $Res Function(_$InfoImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of Info
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? min = freezed,
-    Object? max = freezed,
-  }) {
-    return _then(_$InfoImpl(
-      min: freezed == min
-          ? _value.min
-          : min // ignore: cast_nullable_to_non_nullable
-              as int?,
-      max: freezed == max
-          ? _value.max
-          : max // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  $Res call({Object? min = freezed, Object? max = freezed}) {
+    return _then(
+      _$InfoImpl(
+        min:
+            freezed == min
+                ? _value.min
+                : min // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        max:
+            freezed == max
+                ? _value.max
+                : max // ignore: cast_nullable_to_non_nullable
+                    as int?,
+      ),
+    );
   }
 }
 
@@ -143,9 +143,7 @@ class _$InfoImpl implements _Info {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$InfoImplToJson(
-      this,
-    );
+    return _$$InfoImplToJson(this);
   }
 }
 
@@ -161,6 +159,5 @@ abstract class _Info implements Info {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InfoImplCopyWith<_$InfoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InfoImplCopyWith<_$InfoImpl> get copyWith => throw _privateConstructorUsedError;
 }

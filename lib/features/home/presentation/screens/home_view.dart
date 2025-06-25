@@ -6,10 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../common/common.dart';
 import '../../../features.dart';
 
-const bodyTab = [
-  SurahRoute(),
-  JuzRoute(),
-];
+const bodyTab = [SurahRoute(), JuzRoute()];
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -30,10 +27,7 @@ class HomeView extends StatelessWidget {
         title: 'Al Quran',
         leading: IconButton(
           onPressed: openDrawer,
-          icon: Icon(
-            Icons.menu,
-            color: context.getColorExt(AppColorType.text),
-          ),
+          icon: Icon(Icons.menu, color: context.getColorExt(AppColorType.text)),
         ),
       ),
       onInit: () => init(context),
@@ -65,10 +59,8 @@ class HomeView extends StatelessWidget {
                           final currentTab = bodyTab[index];
                           final isActive = pageController.index == index;
                           return TabContainer(
-                            tabName:
-                                currentTab.routeName.replaceAll('Route', ''),
-                            isActive:
-                                isActive,
+                            tabName: currentTab.routeName.replaceAll('Route', ''),
+                            isActive: isActive,
                             onTap: () => tabsRouter.setActiveIndex(index),
                           );
                         },

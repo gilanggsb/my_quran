@@ -8,10 +8,6 @@ abstract class QuranRemoteDataSource {
   Future<BaseResponse<Juz?>> getJuz(int juzNumber);
   Future<BaseResponse<List<Ayah>?>> getAyahs(AyahPagination pagination);
   Future<BaseResponse<List<Ayah>?>> getAyahsJuz(int juzNumber);
-  Future<BaseResponse<List<Ayah>?>> getAyahsThroughout(
-    AyahsThroughoutPagination ayahsThroughout,
-  );
-  Future<BaseResponse<List<Ayah>?>> getFullAyahs(
-    AyahsThroughoutPagination ayahsThroughout,
-  );
+  Future<BaseResponse<List<Ayah>?>> getAyahsThroughout(AyahsThroughoutPagination ayahsThroughout);
+  Future<BaseResponse<List<Ayah>?>> getFullAyahs(AyahsThroughoutPagination ayahsThroughout);
 }

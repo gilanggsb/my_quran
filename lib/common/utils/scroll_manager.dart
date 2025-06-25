@@ -9,8 +9,7 @@ class ScrollManager<T> {
   final Map<T, int> modelToIndex = {};
   final bool Function(T, T) compare;
 
-  ScrollManager({required this.compare})
-      : scrollController = ScrollController();
+  ScrollManager({required this.compare}) : scrollController = ScrollController();
 
   void registerItems(List<T> items) {
     for (int i = 0; i < items.length; i++) {
@@ -27,11 +26,7 @@ class ScrollManager<T> {
   }
 
   void scrollToModel(T item) {
-    int? index = modelToIndex.entries
-        .firstWhereOrNull(
-          (entry) => compare(entry.key, item),
-        )
-        ?.value;
+    int? index = modelToIndex.entries.firstWhereOrNull((entry) => compare(entry.key, item))?.value;
     if (index != null) {
       scrollToIndex(index);
     }
@@ -66,9 +61,7 @@ class ScrollManager<T> {
     for (var entry in itemHeights.entries) {
       totalHeight += entry.value;
       if (totalHeight > offset) {
-        return modelToIndex.keys.firstWhereOrNull(
-          (key) => modelToIndex[key] == entry.key,
-        );
+        return modelToIndex.keys.firstWhereOrNull((key) => modelToIndex[key] == entry.key);
       }
     }
     return null;

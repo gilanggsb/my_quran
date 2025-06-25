@@ -16,10 +16,7 @@ class BookmarkCategoryAdapter extends TypeAdapter<BookmarkCategory> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return BookmarkCategory(
-      name: fields[0] as String?,
-      id: fields[1] as String?,
-    );
+    return BookmarkCategory(name: fields[0] as String?, id: fields[1] as String?);
   }
 
   @override
@@ -48,13 +45,9 @@ class BookmarkCategoryAdapter extends TypeAdapter<BookmarkCategory> {
 // **************************************************************************
 
 BookmarkCategory _$BookmarkCategoryFromJson(Map<String, dynamic> json) =>
-    BookmarkCategory(
-      name: json['name'] as String?,
-      id: json['id'] as String?,
-    );
+    BookmarkCategory(name: json['name'] as String?, id: json['id'] as String?);
 
-Map<String, dynamic> _$BookmarkCategoryToJson(BookmarkCategory instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'id': instance.id,
-    };
+Map<String, dynamic> _$BookmarkCategoryToJson(BookmarkCategory instance) => <String, dynamic>{
+  'name': instance.name,
+  'id': instance.id,
+};

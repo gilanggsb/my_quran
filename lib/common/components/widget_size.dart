@@ -4,11 +4,7 @@ import 'package:flutter/scheduler.dart';
 class WidgetSize extends StatefulWidget {
   final Widget child;
   final Function onChange;
-  const WidgetSize({
-    super.key,
-    required this.onChange,
-    required this.child,
-  }) : super();
+  const WidgetSize({super.key, required this.onChange, required this.child}) : super();
 
   @override
   WidgetSizeState createState() => WidgetSizeState();
@@ -18,10 +14,7 @@ class WidgetSizeState extends State<WidgetSize> {
   @override
   Widget build(BuildContext context) {
     SchedulerBinding.instance.addPostFrameCallback(postFrameCallback);
-    return Container(
-      key: widgetKey,
-      child: widget.child,
-    );
+    return Container(key: widgetKey, child: widget.child);
   }
 
   var widgetKey = GlobalKey();

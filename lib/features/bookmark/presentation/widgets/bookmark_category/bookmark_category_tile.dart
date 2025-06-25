@@ -21,10 +21,7 @@ class BookmarkCategoryTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final finalText = title ?? category?.name ?? '';
     return ListTile(
-      leading: Icon(
-        icon ?? Icons.folder,
-        color: context.getColorExt(AppColorType.primary),
-      ),
+      leading: Icon(icon ?? Icons.folder, color: context.getColorExt(AppColorType.primary)),
       splashColor: context.getColorExt(AppColorType.primaryLight),
       title: DefaultText(finalText.capitalFirstChar),
       onTap: onPress,

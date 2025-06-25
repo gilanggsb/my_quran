@@ -43,9 +43,10 @@ class Surah with _$Surah {
 }
 
 extension SurahExt on Surah {
-  String get translateRevelationId => revelationId == null
-      ? ''
-      : revelationId!.contains('Madaniyyah')
+  String get translateRevelationId =>
+      revelationId == null
+          ? ''
+          : revelationId!.contains('Madaniyyah')
           ? 'Madinah'
           : 'Mekkah';
 }

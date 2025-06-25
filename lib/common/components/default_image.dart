@@ -48,8 +48,7 @@ class DefaultImage extends StatelessWidget {
         fit: fit,
         cacheHeight: height?.toInt(),
         cacheWidth: width?.toInt(),
-        errorBuilder: (context, error, stackTrace) =>
-            errorWidget ?? const Icon(Icons.error),
+        errorBuilder: (context, error, stackTrace) => errorWidget ?? const Icon(Icons.error),
       );
     }
 
@@ -63,8 +62,7 @@ class DefaultImage extends StatelessWidget {
         fit: fit,
         cacheHeight: height?.toInt(),
         cacheWidth: width?.toInt(),
-        errorBuilder: (context, error, stackTrace) =>
-            errorWidget ?? const Icon(Icons.error),
+        errorBuilder: (context, error, stackTrace) => errorWidget ?? const Icon(Icons.error),
       );
     }
 
@@ -76,34 +74,30 @@ class DefaultImage extends StatelessWidget {
       alignment: alignment ?? Alignment.center,
       color: color,
       fit: fit,
-      imageBuilder: imageBuilder ??
+      imageBuilder:
+          imageBuilder ??
           (context, imageProvider) => Container(
-                width: width,
-                height: height,
-                decoration: BoxDecoration(
-                  border: decoration?.border,
-                  borderRadius: decoration?.borderRadius,
-                  shape: decoration?.shape ?? BoxShape.rectangle,
-                  image: DecorationImage(
-                    image: imageProvider,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+            width: width,
+            height: height,
+            decoration: BoxDecoration(
+              border: decoration?.border,
+              borderRadius: decoration?.borderRadius,
+              shape: decoration?.shape ?? BoxShape.rectangle,
+              image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
+            ),
+          ),
       cacheManager: cm.CacheManager(
         cm.Config(
           cacheManagerKey ?? imageUrl,
           stalePeriod: staleImagePeriod ?? const Duration(days: 1),
         ),
       ),
-      progressIndicatorBuilder: (context, url, progress) => CircleAvatar(
-        backgroundColor: Colors.transparent,
-        child: DefaultCircularProgressIndicator(
-          value: progress.progress,
-        ),
-      ),
-      errorWidget: (context, url, error) =>
-          errorWidget ?? const Icon(Icons.error),
+      progressIndicatorBuilder:
+          (context, url, progress) => CircleAvatar(
+            backgroundColor: Colors.transparent,
+            child: DefaultCircularProgressIndicator(value: progress.progress),
+          ),
+      errorWidget: (context, url, error) => errorWidget ?? const Icon(Icons.error),
     );
   }
 }

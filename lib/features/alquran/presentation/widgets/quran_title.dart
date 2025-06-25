@@ -7,10 +7,7 @@ import '../../../features.dart';
 
 class QuranTitle extends StatelessWidget {
   final Quran? quran;
-  const QuranTitle({
-    super.key,
-    this.quran,
-  });
+  const QuranTitle({super.key, this.quran});
 
   @override
   Widget build(BuildContext context) {
@@ -45,18 +42,14 @@ class QuranTitle extends StatelessWidget {
                   quran?.title ?? '',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
-                  color: isArabic
-                      ? context.getColorExt(AppColorType.primary)
-                      : null,
+                  color: isArabic ? context.getColorExt(AppColorType.primary) : null,
                 ),
               if (!isPreviewMode)
                 DefaultText(
                   quran?.subtitle ?? '',
                   fontSize: 14.sp,
                   color: context.getColorExt(
-                    context.isLightTheme
-                        ? AppColorType.textDark
-                        : AppColorType.textLight,
+                    context.isLightTheme ? AppColorType.textDark : AppColorType.textLight,
                   ),
                   fontWeight: FontWeight.w100,
                 ),
@@ -65,11 +58,7 @@ class QuranTitle extends StatelessWidget {
         ),
         if (!isArabic && !isPreviewMode) ...[
           24.widthBox,
-          DefaultText(
-            quran?.titleAr ?? '',
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w600,
-          ),
+          DefaultText(quran?.titleAr ?? '', fontSize: 18.sp, fontWeight: FontWeight.w600),
         ],
       ],
     );

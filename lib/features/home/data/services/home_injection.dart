@@ -3,29 +3,21 @@ import '../../home.dart';
 
 void homeInjection() {
   //bloc
-  getIt.registerFactory<HomeBloc>(
-    () => HomeBloc(
-      repository: getIt(),
-      getLastReadAyah: getIt(),
-    ),
-  );
+  getIt.registerFactory<HomeBloc>(() => HomeBloc(repository: getIt(), getLastReadAyah: getIt()));
   //repository
   getIt.registerLazySingleton<HomeRepository>(
-    () => HomeRepositoryImpl(
-      localDataSource: getIt(),
-      remoteDataSource: getIt(),
-    ),
+    () => HomeRepositoryImpl(localDataSource: getIt(), remoteDataSource: getIt()),
   );
   //datasource
   getIt.registerLazySingleton<HomeRemoteDataSource>(
     () => HomeRemoteDataSourceImpl(
-        // service: getIt(),
-        ),
+      // service: getIt(),
+    ),
   );
   getIt.registerLazySingleton<HomeLocalDataSource>(
     () => HomeLocalDataSourceImpl(
-        // service: getIt(),
-        ),
+      // service: getIt(),
+    ),
   );
 
   //usecase

@@ -25,8 +25,7 @@ class AyahsThroughoutPagination with _$AyahsThroughoutPagination {
     @StringToIntConverter() int? surat,
     @StringToIntConverter() int? ayat,
     @StringToIntConverter() int? panjang,
-    @JsonKey(includeToJson: false)
-    int? maxAyat,
+    @JsonKey(includeToJson: false) int? maxAyat,
   }) = _AyahsThroughoutPagination;
 
   factory AyahsThroughoutPagination.fromJson(Map<String, dynamic> json) =>

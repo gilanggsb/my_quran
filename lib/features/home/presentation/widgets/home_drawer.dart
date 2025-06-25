@@ -5,9 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../common/common.dart';
 
 class HomeDrawer extends StatelessWidget {
-  const HomeDrawer({
-    super.key,
-  });
+  const HomeDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +19,7 @@ class HomeDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           ListTile(
-            leading: Icon(
-              Icons.bookmark,
-              color: context.getColorExt(AppColorType.text),
-            ),
+            leading: Icon(Icons.bookmark, color: context.getColorExt(AppColorType.text)),
             title: const DefaultText('Bookmark'),
             onTap: () {
               Scaffold.of(context).closeDrawer();

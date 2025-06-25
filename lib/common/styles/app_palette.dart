@@ -44,12 +44,7 @@ class _WhiteColors {
 
 class _GradientColors {
   _GradientColors();
-  final primary = LinearGradient(
-    colors: [
-      AppPalette.primary.light,
-      AppPalette.primary.base,
-    ],
-  );
+  final primary = LinearGradient(colors: [AppPalette.primary.light, AppPalette.primary.base]);
 }
 
 class _BlackColors {

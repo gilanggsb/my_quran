@@ -15,18 +15,12 @@ class BookmarkCategoryTitle extends StatelessWidget {
         final mode = bookmarkCatgeoryCubit.mode;
         return Row(
           children: [
-            const DefaultText(
-              "Category",
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
+            const DefaultText("Category", fontSize: 22, fontWeight: FontWeight.bold),
             IconButton(
               onPressed: () {
                 mode.isViewMode
-                    ? bookmarkCatgeoryCubit
-                        .changeMode(BookmarkCategoryMode.edit)
-                    : bookmarkCatgeoryCubit
-                        .changeMode(BookmarkCategoryMode.view);
+                    ? bookmarkCatgeoryCubit.changeMode(BookmarkCategoryMode.edit)
+                    : bookmarkCatgeoryCubit.changeMode(BookmarkCategoryMode.view);
               },
               icon: Icon(
                 renderIcon(mode),

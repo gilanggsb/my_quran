@@ -12,7 +12,8 @@ part of 'quran.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 Quran _$QuranFromJson(Map<String, dynamic> json) {
   return _Quran.fromJson(json);
@@ -40,22 +41,21 @@ mixin _$Quran {
 
 /// @nodoc
 abstract class $QuranCopyWith<$Res> {
-  factory $QuranCopyWith(Quran value, $Res Function(Quran) then) =
-      _$QuranCopyWithImpl<$Res, Quran>;
+  factory $QuranCopyWith(Quran value, $Res Function(Quran) then) = _$QuranCopyWithImpl<$Res, Quran>;
   @useResult
-  $Res call(
-      {@StringToIntConverter() int? number,
-      String? title,
-      String? arabic,
-      int? arabicMaxLine,
-      String? subtitle,
-      String? titleAr,
-      bool? isPreview});
+  $Res call({
+    @StringToIntConverter() int? number,
+    String? title,
+    String? arabic,
+    int? arabicMaxLine,
+    String? subtitle,
+    String? titleAr,
+    bool? isPreview,
+  });
 }
 
 /// @nodoc
-class _$QuranCopyWithImpl<$Res, $Val extends Quran>
-    implements $QuranCopyWith<$Res> {
+class _$QuranCopyWithImpl<$Res, $Val extends Quran> implements $QuranCopyWith<$Res> {
   _$QuranCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -76,63 +76,71 @@ class _$QuranCopyWithImpl<$Res, $Val extends Quran>
     Object? titleAr = freezed,
     Object? isPreview = freezed,
   }) {
-    return _then(_value.copyWith(
-      number: freezed == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      arabic: freezed == arabic
-          ? _value.arabic
-          : arabic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      arabicMaxLine: freezed == arabicMaxLine
-          ? _value.arabicMaxLine
-          : arabicMaxLine // ignore: cast_nullable_to_non_nullable
-              as int?,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      titleAr: freezed == titleAr
-          ? _value.titleAr
-          : titleAr // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isPreview: freezed == isPreview
-          ? _value.isPreview
-          : isPreview // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            number:
+                freezed == number
+                    ? _value.number
+                    : number // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            title:
+                freezed == title
+                    ? _value.title
+                    : title // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            arabic:
+                freezed == arabic
+                    ? _value.arabic
+                    : arabic // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            arabicMaxLine:
+                freezed == arabicMaxLine
+                    ? _value.arabicMaxLine
+                    : arabicMaxLine // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            subtitle:
+                freezed == subtitle
+                    ? _value.subtitle
+                    : subtitle // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            titleAr:
+                freezed == titleAr
+                    ? _value.titleAr
+                    : titleAr // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            isPreview:
+                freezed == isPreview
+                    ? _value.isPreview
+                    : isPreview // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$QuranImplCopyWith<$Res> implements $QuranCopyWith<$Res> {
-  factory _$$QuranImplCopyWith(
-          _$QuranImpl value, $Res Function(_$QuranImpl) then) =
+  factory _$$QuranImplCopyWith(_$QuranImpl value, $Res Function(_$QuranImpl) then) =
       __$$QuranImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@StringToIntConverter() int? number,
-      String? title,
-      String? arabic,
-      int? arabicMaxLine,
-      String? subtitle,
-      String? titleAr,
-      bool? isPreview});
+  $Res call({
+    @StringToIntConverter() int? number,
+    String? title,
+    String? arabic,
+    int? arabicMaxLine,
+    String? subtitle,
+    String? titleAr,
+    bool? isPreview,
+  });
 }
 
 /// @nodoc
-class __$$QuranImplCopyWithImpl<$Res>
-    extends _$QuranCopyWithImpl<$Res, _$QuranImpl>
+class __$$QuranImplCopyWithImpl<$Res> extends _$QuranCopyWithImpl<$Res, _$QuranImpl>
     implements _$$QuranImplCopyWith<$Res> {
-  __$$QuranImplCopyWithImpl(
-      _$QuranImpl _value, $Res Function(_$QuranImpl) _then)
-      : super(_value, _then);
+  __$$QuranImplCopyWithImpl(_$QuranImpl _value, $Res Function(_$QuranImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of Quran
   /// with the given fields replaced by the non-null parameter values.
@@ -147,53 +155,62 @@ class __$$QuranImplCopyWithImpl<$Res>
     Object? titleAr = freezed,
     Object? isPreview = freezed,
   }) {
-    return _then(_$QuranImpl(
-      number: freezed == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      arabic: freezed == arabic
-          ? _value.arabic
-          : arabic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      arabicMaxLine: freezed == arabicMaxLine
-          ? _value.arabicMaxLine
-          : arabicMaxLine // ignore: cast_nullable_to_non_nullable
-              as int?,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      titleAr: freezed == titleAr
-          ? _value.titleAr
-          : titleAr // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isPreview: freezed == isPreview
-          ? _value.isPreview
-          : isPreview // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
+    return _then(
+      _$QuranImpl(
+        number:
+            freezed == number
+                ? _value.number
+                : number // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        title:
+            freezed == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        arabic:
+            freezed == arabic
+                ? _value.arabic
+                : arabic // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        arabicMaxLine:
+            freezed == arabicMaxLine
+                ? _value.arabicMaxLine
+                : arabicMaxLine // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        subtitle:
+            freezed == subtitle
+                ? _value.subtitle
+                : subtitle // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        titleAr:
+            freezed == titleAr
+                ? _value.titleAr
+                : titleAr // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        isPreview:
+            freezed == isPreview
+                ? _value.isPreview
+                : isPreview // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$QuranImpl implements _Quran {
-  const _$QuranImpl(
-      {@StringToIntConverter() this.number,
-      this.title,
-      this.arabic,
-      this.arabicMaxLine,
-      this.subtitle,
-      this.titleAr,
-      this.isPreview});
+  const _$QuranImpl({
+    @StringToIntConverter() this.number,
+    this.title,
+    this.arabic,
+    this.arabicMaxLine,
+    this.subtitle,
+    this.titleAr,
+    this.isPreview,
+  });
 
-  factory _$QuranImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuranImplFromJson(json);
+  factory _$QuranImpl.fromJson(Map<String, dynamic> json) => _$$QuranImplFromJson(json);
 
   @override
   @StringToIntConverter()
@@ -226,17 +243,15 @@ class _$QuranImpl implements _Quran {
             (identical(other.arabic, arabic) || other.arabic == arabic) &&
             (identical(other.arabicMaxLine, arabicMaxLine) ||
                 other.arabicMaxLine == arabicMaxLine) &&
-            (identical(other.subtitle, subtitle) ||
-                other.subtitle == subtitle) &&
+            (identical(other.subtitle, subtitle) || other.subtitle == subtitle) &&
             (identical(other.titleAr, titleAr) || other.titleAr == titleAr) &&
-            (identical(other.isPreview, isPreview) ||
-                other.isPreview == isPreview));
+            (identical(other.isPreview, isPreview) || other.isPreview == isPreview));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, number, title, arabic,
-      arabicMaxLine, subtitle, titleAr, isPreview);
+  int get hashCode =>
+      Object.hash(runtimeType, number, title, arabic, arabicMaxLine, subtitle, titleAr, isPreview);
 
   /// Create a copy of Quran
   /// with the given fields replaced by the non-null parameter values.
@@ -248,21 +263,20 @@ class _$QuranImpl implements _Quran {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$QuranImplToJson(
-      this,
-    );
+    return _$$QuranImplToJson(this);
   }
 }
 
 abstract class _Quran implements Quran {
-  const factory _Quran(
-      {@StringToIntConverter() final int? number,
-      final String? title,
-      final String? arabic,
-      final int? arabicMaxLine,
-      final String? subtitle,
-      final String? titleAr,
-      final bool? isPreview}) = _$QuranImpl;
+  const factory _Quran({
+    @StringToIntConverter() final int? number,
+    final String? title,
+    final String? arabic,
+    final int? arabicMaxLine,
+    final String? subtitle,
+    final String? titleAr,
+    final bool? isPreview,
+  }) = _$QuranImpl;
 
   factory _Quran.fromJson(Map<String, dynamic> json) = _$QuranImpl.fromJson;
 
@@ -286,6 +300,5 @@ abstract class _Quran implements Quran {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$QuranImplCopyWith<_$QuranImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$QuranImplCopyWith<_$QuranImpl> get copyWith => throw _privateConstructorUsedError;
 }

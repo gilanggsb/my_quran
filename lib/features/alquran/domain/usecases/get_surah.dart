@@ -6,6 +6,5 @@ class GetSurah extends UseCase<BaseResponse<Surah?>, int> {
 
   GetSurah({required this.repository});
   @override
-  Future<BaseResponse<Surah?>> call(int params) async =>
-      repository.getSurah(params);
+  Future<BaseResponse<Surah?>> call(int params) async => repository.getSurah(params);
 }

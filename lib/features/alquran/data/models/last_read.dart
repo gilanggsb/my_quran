@@ -10,11 +10,7 @@ part 'last_read.g.dart';
 class LastReadAyah with _$LastReadAyah {
   const LastReadAyah._();
 
-  const factory LastReadAyah({
-    Ayah? ayah,
-    Surah? surah,
-  }) = _LastReadAyah;
+  const factory LastReadAyah({Ayah? ayah, Surah? surah}) = _LastReadAyah;
 
-  factory LastReadAyah.fromJson(Map<String, dynamic> json) =>
-      _$LastReadAyahFromJson(json);
+  factory LastReadAyah.fromJson(Map<String, dynamic> json) => _$LastReadAyahFromJson(json);
 }

@@ -8,9 +8,7 @@ import 'package:my_quran/features/features.dart';
 import '../../main_test.mocks.dart';
 import '../home.dart';
 
-@GenerateNiceMocks([
-  MockSpec<GetSurahs>(onMissingStub: OnMissingStub.returnDefault),
-])
+@GenerateNiceMocks([MockSpec<GetSurahs>(onMissingStub: OnMissingStub.returnDefault)])
 void mainGetSurahUseCase() {
   late MockInjectorService injector;
   late MockGetSurahs getSurahs;
@@ -27,9 +25,7 @@ void mainGetSurahUseCase() {
     when(getSurahs(const NoParams())).thenAnswer(
       (realInvocation) async => BaseResponse<List<Surah>?>.fromJson(
         surahsMock,
-        (json) => (json as List).toResponseList<Surah>(
-          (element) => Surah.fromJson(element),
-        ),
+        (json) => (json as List).toResponseList<Surah>((element) => Surah.fromJson(element)),
       ),
     );
     // act

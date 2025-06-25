@@ -4,6 +4,10 @@ A new Flutter project.
 
 ---
 
+# Requirements
+1. flutter version 3.32.4
+2. jdk version 19.0
+
 ## Getting Started 🚀
 
 This project contains 3 flavors:

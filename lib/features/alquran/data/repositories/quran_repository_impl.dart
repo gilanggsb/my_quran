@@ -4,10 +4,7 @@ import '../../../features.dart';
 class QuranRepositoryImpl extends QuranRepository {
   final QuranRemoteDataSource remoteDataSource;
   final QuranLocalDataSource localDataSource;
-  QuranRepositoryImpl({
-    required this.localDataSource,
-    required this.remoteDataSource,
-  });
+  QuranRepositoryImpl({required this.localDataSource, required this.remoteDataSource});
 
   @override
   Future<BaseResponse<Surah?>> getSurah(int surahNumber) async {
@@ -82,8 +79,7 @@ class QuranRepositoryImpl extends QuranRepository {
   Future<BaseResponse<List<Ayah>?>> getAyahsThroughout(
     AyahsThroughoutPagination ayahsThroughout,
   ) async {
-    final cachedAyahs =
-        await localDataSource.getCachedAyahsThroughout(ayahsThroughout);
+    final cachedAyahs = await localDataSource.getCachedAyahsThroughout(ayahsThroughout);
     if (cachedAyahs.isNotEmpty) {
       return BaseResponse(status: true, data: cachedAyahs);
     }
@@ -94,15 +90,14 @@ class QuranRepositoryImpl extends QuranRepository {
   }
 
   @override
-  Future<BaseResponse<List<Ayah>?>> getFullAyahs(
-    AyahsThroughoutPagination ayahsThroughout,
-  ) async {
+  Future<BaseResponse<List<Ayah>?>> getFullAyahs(AyahsThroughoutPagination ayahsThroughout) async {
     final surah = await getSurah(ayahsThroughout.surat ?? 0);
     final totalSurah = surah.data?.numberOfVerses ?? 3;
-    final mappedAyahsThroughout =
-        ayahsThroughout.copyWith(maxAyat: totalSurah, panjang: totalSurah);
-    final cachedAyahs =
-        await localDataSource.getCachedAyahsThroughout(mappedAyahsThroughout);
+    final mappedAyahsThroughout = ayahsThroughout.copyWith(
+      maxAyat: totalSurah,
+      panjang: totalSurah,
+    );
+    final cachedAyahs = await localDataSource.getCachedAyahsThroughout(mappedAyahsThroughout);
 
     if (cachedAyahs.isNotEmpty) {
       return BaseResponse(status: true, data: cachedAyahs);

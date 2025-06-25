@@ -12,7 +12,8 @@ part of 'juz.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$Juz {
@@ -54,23 +55,23 @@ mixin _$Juz {
 
 /// @nodoc
 abstract class $JuzCopyWith<$Res> {
-  factory $JuzCopyWith(Juz value, $Res Function(Juz) then) =
-      _$JuzCopyWithImpl<$Res, Juz>;
+  factory $JuzCopyWith(Juz value, $Res Function(Juz) then) = _$JuzCopyWithImpl<$Res, Juz>;
   @useResult
-  $Res call(
-      {@HiveField(0) String? ayatArab,
-      @HiveField(1) String? ayatIndo,
-      @HiveField(2) String? ayatLatin,
-      @HiveField(3) String? name,
-      @HiveField(4) String? nameEndArab,
-      @HiveField(5) String? nameEndId,
-      @HiveField(6) String? nameStartArab,
-      @HiveField(7) String? nameStartId,
-      @HiveField(8) @StringToIntConverter() int? number,
-      @HiveField(9) @StringToIntConverter() int? surahIdEnd,
-      @HiveField(10) @StringToIntConverter() int? surahIdStart,
-      @HiveField(11) String? verseEnd,
-      @HiveField(12) String? verseStart});
+  $Res call({
+    @HiveField(0) String? ayatArab,
+    @HiveField(1) String? ayatIndo,
+    @HiveField(2) String? ayatLatin,
+    @HiveField(3) String? name,
+    @HiveField(4) String? nameEndArab,
+    @HiveField(5) String? nameEndId,
+    @HiveField(6) String? nameStartArab,
+    @HiveField(7) String? nameStartId,
+    @HiveField(8) @StringToIntConverter() int? number,
+    @HiveField(9) @StringToIntConverter() int? surahIdEnd,
+    @HiveField(10) @StringToIntConverter() int? surahIdStart,
+    @HiveField(11) String? verseEnd,
+    @HiveField(12) String? verseStart,
+  });
 }
 
 /// @nodoc
@@ -101,60 +102,76 @@ class _$JuzCopyWithImpl<$Res, $Val extends Juz> implements $JuzCopyWith<$Res> {
     Object? verseEnd = freezed,
     Object? verseStart = freezed,
   }) {
-    return _then(_value.copyWith(
-      ayatArab: freezed == ayatArab
-          ? _value.ayatArab
-          : ayatArab // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ayatIndo: freezed == ayatIndo
-          ? _value.ayatIndo
-          : ayatIndo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ayatLatin: freezed == ayatLatin
-          ? _value.ayatLatin
-          : ayatLatin // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameEndArab: freezed == nameEndArab
-          ? _value.nameEndArab
-          : nameEndArab // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameEndId: freezed == nameEndId
-          ? _value.nameEndId
-          : nameEndId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameStartArab: freezed == nameStartArab
-          ? _value.nameStartArab
-          : nameStartArab // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameStartId: freezed == nameStartId
-          ? _value.nameStartId
-          : nameStartId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      number: freezed == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      surahIdEnd: freezed == surahIdEnd
-          ? _value.surahIdEnd
-          : surahIdEnd // ignore: cast_nullable_to_non_nullable
-              as int?,
-      surahIdStart: freezed == surahIdStart
-          ? _value.surahIdStart
-          : surahIdStart // ignore: cast_nullable_to_non_nullable
-              as int?,
-      verseEnd: freezed == verseEnd
-          ? _value.verseEnd
-          : verseEnd // ignore: cast_nullable_to_non_nullable
-              as String?,
-      verseStart: freezed == verseStart
-          ? _value.verseStart
-          : verseStart // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            ayatArab:
+                freezed == ayatArab
+                    ? _value.ayatArab
+                    : ayatArab // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            ayatIndo:
+                freezed == ayatIndo
+                    ? _value.ayatIndo
+                    : ayatIndo // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            ayatLatin:
+                freezed == ayatLatin
+                    ? _value.ayatLatin
+                    : ayatLatin // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            name:
+                freezed == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nameEndArab:
+                freezed == nameEndArab
+                    ? _value.nameEndArab
+                    : nameEndArab // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nameEndId:
+                freezed == nameEndId
+                    ? _value.nameEndId
+                    : nameEndId // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nameStartArab:
+                freezed == nameStartArab
+                    ? _value.nameStartArab
+                    : nameStartArab // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nameStartId:
+                freezed == nameStartId
+                    ? _value.nameStartId
+                    : nameStartId // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            number:
+                freezed == number
+                    ? _value.number
+                    : number // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            surahIdEnd:
+                freezed == surahIdEnd
+                    ? _value.surahIdEnd
+                    : surahIdEnd // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            surahIdStart:
+                freezed == surahIdStart
+                    ? _value.surahIdStart
+                    : surahIdStart // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            verseEnd:
+                freezed == verseEnd
+                    ? _value.verseEnd
+                    : verseEnd // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            verseStart:
+                freezed == verseStart
+                    ? _value.verseStart
+                    : verseStart // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -164,27 +181,27 @@ abstract class _$$JuzImplCopyWith<$Res> implements $JuzCopyWith<$Res> {
       __$$JuzImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@HiveField(0) String? ayatArab,
-      @HiveField(1) String? ayatIndo,
-      @HiveField(2) String? ayatLatin,
-      @HiveField(3) String? name,
-      @HiveField(4) String? nameEndArab,
-      @HiveField(5) String? nameEndId,
-      @HiveField(6) String? nameStartArab,
-      @HiveField(7) String? nameStartId,
-      @HiveField(8) @StringToIntConverter() int? number,
-      @HiveField(9) @StringToIntConverter() int? surahIdEnd,
-      @HiveField(10) @StringToIntConverter() int? surahIdStart,
-      @HiveField(11) String? verseEnd,
-      @HiveField(12) String? verseStart});
+  $Res call({
+    @HiveField(0) String? ayatArab,
+    @HiveField(1) String? ayatIndo,
+    @HiveField(2) String? ayatLatin,
+    @HiveField(3) String? name,
+    @HiveField(4) String? nameEndArab,
+    @HiveField(5) String? nameEndId,
+    @HiveField(6) String? nameStartArab,
+    @HiveField(7) String? nameStartId,
+    @HiveField(8) @StringToIntConverter() int? number,
+    @HiveField(9) @StringToIntConverter() int? surahIdEnd,
+    @HiveField(10) @StringToIntConverter() int? surahIdStart,
+    @HiveField(11) String? verseEnd,
+    @HiveField(12) String? verseStart,
+  });
 }
 
 /// @nodoc
 class __$$JuzImplCopyWithImpl<$Res> extends _$JuzCopyWithImpl<$Res, _$JuzImpl>
     implements _$$JuzImplCopyWith<$Res> {
-  __$$JuzImplCopyWithImpl(_$JuzImpl _value, $Res Function(_$JuzImpl) _then)
-      : super(_value, _then);
+  __$$JuzImplCopyWithImpl(_$JuzImpl _value, $Res Function(_$JuzImpl) _then) : super(_value, _then);
 
   /// Create a copy of Juz
   /// with the given fields replaced by the non-null parameter values.
@@ -205,81 +222,96 @@ class __$$JuzImplCopyWithImpl<$Res> extends _$JuzCopyWithImpl<$Res, _$JuzImpl>
     Object? verseEnd = freezed,
     Object? verseStart = freezed,
   }) {
-    return _then(_$JuzImpl(
-      ayatArab: freezed == ayatArab
-          ? _value.ayatArab
-          : ayatArab // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ayatIndo: freezed == ayatIndo
-          ? _value.ayatIndo
-          : ayatIndo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ayatLatin: freezed == ayatLatin
-          ? _value.ayatLatin
-          : ayatLatin // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameEndArab: freezed == nameEndArab
-          ? _value.nameEndArab
-          : nameEndArab // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameEndId: freezed == nameEndId
-          ? _value.nameEndId
-          : nameEndId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameStartArab: freezed == nameStartArab
-          ? _value.nameStartArab
-          : nameStartArab // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nameStartId: freezed == nameStartId
-          ? _value.nameStartId
-          : nameStartId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      number: freezed == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      surahIdEnd: freezed == surahIdEnd
-          ? _value.surahIdEnd
-          : surahIdEnd // ignore: cast_nullable_to_non_nullable
-              as int?,
-      surahIdStart: freezed == surahIdStart
-          ? _value.surahIdStart
-          : surahIdStart // ignore: cast_nullable_to_non_nullable
-              as int?,
-      verseEnd: freezed == verseEnd
-          ? _value.verseEnd
-          : verseEnd // ignore: cast_nullable_to_non_nullable
-              as String?,
-      verseStart: freezed == verseStart
-          ? _value.verseStart
-          : verseStart // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$JuzImpl(
+        ayatArab:
+            freezed == ayatArab
+                ? _value.ayatArab
+                : ayatArab // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        ayatIndo:
+            freezed == ayatIndo
+                ? _value.ayatIndo
+                : ayatIndo // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        ayatLatin:
+            freezed == ayatLatin
+                ? _value.ayatLatin
+                : ayatLatin // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        name:
+            freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nameEndArab:
+            freezed == nameEndArab
+                ? _value.nameEndArab
+                : nameEndArab // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nameEndId:
+            freezed == nameEndId
+                ? _value.nameEndId
+                : nameEndId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nameStartArab:
+            freezed == nameStartArab
+                ? _value.nameStartArab
+                : nameStartArab // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nameStartId:
+            freezed == nameStartId
+                ? _value.nameStartId
+                : nameStartId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        number:
+            freezed == number
+                ? _value.number
+                : number // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        surahIdEnd:
+            freezed == surahIdEnd
+                ? _value.surahIdEnd
+                : surahIdEnd // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        surahIdStart:
+            freezed == surahIdStart
+                ? _value.surahIdStart
+                : surahIdStart // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        verseEnd:
+            freezed == verseEnd
+                ? _value.verseEnd
+                : verseEnd // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        verseStart:
+            freezed == verseStart
+                ? _value.verseStart
+                : verseStart // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$JuzImpl extends _Juz {
-  const _$JuzImpl(
-      {@HiveField(0) this.ayatArab,
-      @HiveField(1) this.ayatIndo,
-      @HiveField(2) this.ayatLatin,
-      @HiveField(3) this.name,
-      @HiveField(4) this.nameEndArab,
-      @HiveField(5) this.nameEndId,
-      @HiveField(6) this.nameStartArab,
-      @HiveField(7) this.nameStartId,
-      @HiveField(8) @StringToIntConverter() this.number,
-      @HiveField(9) @StringToIntConverter() this.surahIdEnd,
-      @HiveField(10) @StringToIntConverter() this.surahIdStart,
-      @HiveField(11) this.verseEnd,
-      @HiveField(12) this.verseStart})
-      : super._();
+  const _$JuzImpl({
+    @HiveField(0) this.ayatArab,
+    @HiveField(1) this.ayatIndo,
+    @HiveField(2) this.ayatLatin,
+    @HiveField(3) this.name,
+    @HiveField(4) this.nameEndArab,
+    @HiveField(5) this.nameEndId,
+    @HiveField(6) this.nameStartArab,
+    @HiveField(7) this.nameStartId,
+    @HiveField(8) @StringToIntConverter() this.number,
+    @HiveField(9) @StringToIntConverter() this.surahIdEnd,
+    @HiveField(10) @StringToIntConverter() this.surahIdStart,
+    @HiveField(11) this.verseEnd,
+    @HiveField(12) this.verseStart,
+  }) : super._();
 
   @override
   @HiveField(0)
@@ -334,48 +366,39 @@ class _$JuzImpl extends _Juz {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$JuzImpl &&
-            (identical(other.ayatArab, ayatArab) ||
-                other.ayatArab == ayatArab) &&
-            (identical(other.ayatIndo, ayatIndo) ||
-                other.ayatIndo == ayatIndo) &&
-            (identical(other.ayatLatin, ayatLatin) ||
-                other.ayatLatin == ayatLatin) &&
+            (identical(other.ayatArab, ayatArab) || other.ayatArab == ayatArab) &&
+            (identical(other.ayatIndo, ayatIndo) || other.ayatIndo == ayatIndo) &&
+            (identical(other.ayatLatin, ayatLatin) || other.ayatLatin == ayatLatin) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.nameEndArab, nameEndArab) ||
-                other.nameEndArab == nameEndArab) &&
-            (identical(other.nameEndId, nameEndId) ||
-                other.nameEndId == nameEndId) &&
+            (identical(other.nameEndArab, nameEndArab) || other.nameEndArab == nameEndArab) &&
+            (identical(other.nameEndId, nameEndId) || other.nameEndId == nameEndId) &&
             (identical(other.nameStartArab, nameStartArab) ||
                 other.nameStartArab == nameStartArab) &&
-            (identical(other.nameStartId, nameStartId) ||
-                other.nameStartId == nameStartId) &&
+            (identical(other.nameStartId, nameStartId) || other.nameStartId == nameStartId) &&
             (identical(other.number, number) || other.number == number) &&
-            (identical(other.surahIdEnd, surahIdEnd) ||
-                other.surahIdEnd == surahIdEnd) &&
-            (identical(other.surahIdStart, surahIdStart) ||
-                other.surahIdStart == surahIdStart) &&
-            (identical(other.verseEnd, verseEnd) ||
-                other.verseEnd == verseEnd) &&
-            (identical(other.verseStart, verseStart) ||
-                other.verseStart == verseStart));
+            (identical(other.surahIdEnd, surahIdEnd) || other.surahIdEnd == surahIdEnd) &&
+            (identical(other.surahIdStart, surahIdStart) || other.surahIdStart == surahIdStart) &&
+            (identical(other.verseEnd, verseEnd) || other.verseEnd == verseEnd) &&
+            (identical(other.verseStart, verseStart) || other.verseStart == verseStart));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      ayatArab,
-      ayatIndo,
-      ayatLatin,
-      name,
-      nameEndArab,
-      nameEndId,
-      nameStartArab,
-      nameStartId,
-      number,
-      surahIdEnd,
-      surahIdStart,
-      verseEnd,
-      verseStart);
+    runtimeType,
+    ayatArab,
+    ayatIndo,
+    ayatLatin,
+    name,
+    nameEndArab,
+    nameEndId,
+    nameStartArab,
+    nameStartId,
+    number,
+    surahIdEnd,
+    surahIdStart,
+    verseEnd,
+    verseStart,
+  );
 
   /// Create a copy of Juz
   /// with the given fields replaced by the non-null parameter values.
@@ -387,20 +410,21 @@ class _$JuzImpl extends _Juz {
 }
 
 abstract class _Juz extends Juz {
-  const factory _Juz(
-      {@HiveField(0) final String? ayatArab,
-      @HiveField(1) final String? ayatIndo,
-      @HiveField(2) final String? ayatLatin,
-      @HiveField(3) final String? name,
-      @HiveField(4) final String? nameEndArab,
-      @HiveField(5) final String? nameEndId,
-      @HiveField(6) final String? nameStartArab,
-      @HiveField(7) final String? nameStartId,
-      @HiveField(8) @StringToIntConverter() final int? number,
-      @HiveField(9) @StringToIntConverter() final int? surahIdEnd,
-      @HiveField(10) @StringToIntConverter() final int? surahIdStart,
-      @HiveField(11) final String? verseEnd,
-      @HiveField(12) final String? verseStart}) = _$JuzImpl;
+  const factory _Juz({
+    @HiveField(0) final String? ayatArab,
+    @HiveField(1) final String? ayatIndo,
+    @HiveField(2) final String? ayatLatin,
+    @HiveField(3) final String? name,
+    @HiveField(4) final String? nameEndArab,
+    @HiveField(5) final String? nameEndId,
+    @HiveField(6) final String? nameStartArab,
+    @HiveField(7) final String? nameStartId,
+    @HiveField(8) @StringToIntConverter() final int? number,
+    @HiveField(9) @StringToIntConverter() final int? surahIdEnd,
+    @HiveField(10) @StringToIntConverter() final int? surahIdStart,
+    @HiveField(11) final String? verseEnd,
+    @HiveField(12) final String? verseStart,
+  }) = _$JuzImpl;
   const _Juz._() : super._();
 
   @override
@@ -450,6 +474,5 @@ abstract class _Juz extends Juz {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$JuzImplCopyWith<_$JuzImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$JuzImplCopyWith<_$JuzImpl> get copyWith => throw _privateConstructorUsedError;
 }

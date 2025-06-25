@@ -8,10 +8,7 @@ import '../../../../features.dart';
 class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   final HiveService localDBService;
   final StorageService storageService;
-  QuranLocalDataSourceImpl({
-    required this.storageService,
-    required this.localDBService,
-  });
+  QuranLocalDataSourceImpl({required this.storageService, required this.localDBService});
 
   @override
   Future<LastReadAyah?> getLastReadAyah() async {
@@ -32,10 +29,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   @override
   Future<void> saveLastReadAyah(LastReadAyah lastRead) async {
     try {
-      await storageService.save(
-        key: StorageKeys.lastRead,
-        value: jsonEncode(lastRead.toJson()),
-      );
+      await storageService.save(key: StorageKeys.lastRead, value: jsonEncode(lastRead.toJson()));
     } on String catch (_) {
       rethrow;
     } on CacheFailure catch (e) {
@@ -163,10 +157,11 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<List<Ayah>> getCachedAyahs(AyahPagination pagination) async {
     try {
       final ayahBox = localDBService.getCollection<Ayah>(); // Get the Hive box for Ayah
-      final ayahs = ayahBox.values
-          .where((ayah) => ayah.id == pagination.page) // Filter by id
-          .take(pagination.page ?? 0) // Limit the results based on pagination
-          .toList(); // Convert to a list
+      final ayahs =
+          ayahBox.values
+              .where((ayah) => ayah.id == pagination.page) // Filter by id
+              .take(pagination.page ?? 0) // Limit the results based on pagination
+              .toList(); // Convert to a list
       return ayahs;
     } on String catch (_) {
       rethrow;
@@ -182,21 +177,21 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   }
 
   @override
-  Future<List<Ayah>> getCachedAyahsThroughout(
-    AyahsThroughoutPagination ayahsThroughout,
-  ) async {
+  Future<List<Ayah>> getCachedAyahsThroughout(AyahsThroughoutPagination ayahsThroughout) async {
     try {
       final ayahBox = localDBService.getCollection<Ayah>(); // Get the Hive box for Ayah
 
-// Retrieve all Ayahs from the box
+      // Retrieve all Ayahs from the box
       final allAyahs = ayahBox.values.toList();
 
-// Filter the Ayahs based on the conditions
-      final ayahs = allAyahs.where((ayah) {
-        return ayah.surah == ayahsThroughout.surat && // Assuming surahInt is the field for surah
-            (ayah.ayah ?? 0) >= (ayahsThroughout.ayat ?? 0) && // Ensure ayahInt is not null
-            (ayah.ayah ?? 0) <= (ayahsThroughout.panjang ?? 0); // Ensure ayahInt is not null
-      }).toList();
+      // Filter the Ayahs based on the conditions
+      final ayahs =
+          allAyahs.where((ayah) {
+            return ayah.surah ==
+                    ayahsThroughout.surat && // Assuming surahInt is the field for surah
+                (ayah.ayah ?? 0) >= (ayahsThroughout.ayat ?? 0) && // Ensure ayahInt is not null
+                (ayah.ayah ?? 0) <= (ayahsThroughout.panjang ?? 0); // Ensure ayahInt is not null
+          }).toList();
 
       return ayahs;
     } on String catch (_) {
@@ -231,9 +226,10 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
         final allAyahs = ayahCollection.values.toList();
 
         // Filter the Ayahs based on the surah number and juz number
-        final ayahs = allAyahs.where((ayah) {
-          return ayah.surah == surah.number && ayah.juz == juzNumber;
-        }).toList();
+        final ayahs =
+            allAyahs.where((ayah) {
+              return ayah.surah == surah.number && ayah.juz == juzNumber;
+            }).toList();
 
         if (ayahs.isEmpty) {
           resAyahs.clear();

@@ -12,7 +12,8 @@ part of 'last_read.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$LastReadAyah {
@@ -25,14 +26,12 @@ mixin _$LastReadAyah {
   /// Create a copy of LastReadAyah
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LastReadAyahCopyWith<LastReadAyah> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LastReadAyahCopyWith<LastReadAyah> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LastReadAyahCopyWith<$Res> {
-  factory $LastReadAyahCopyWith(
-          LastReadAyah value, $Res Function(LastReadAyah) then) =
+  factory $LastReadAyahCopyWith(LastReadAyah value, $Res Function(LastReadAyah) then) =
       _$LastReadAyahCopyWithImpl<$Res, LastReadAyah>;
   @useResult
   $Res call({Ayah? ayah, Surah? surah});
@@ -55,20 +54,22 @@ class _$LastReadAyahCopyWithImpl<$Res, $Val extends LastReadAyah>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? ayah = freezed,
-    Object? surah = freezed,
-  }) {
-    return _then(_value.copyWith(
-      ayah: freezed == ayah
-          ? _value.ayah
-          : ayah // ignore: cast_nullable_to_non_nullable
-              as Ayah?,
-      surah: freezed == surah
-          ? _value.surah
-          : surah // ignore: cast_nullable_to_non_nullable
-              as Surah?,
-    ) as $Val);
+  $Res call({Object? ayah = freezed, Object? surah = freezed}) {
+    return _then(
+      _value.copyWith(
+            ayah:
+                freezed == ayah
+                    ? _value.ayah
+                    : ayah // ignore: cast_nullable_to_non_nullable
+                        as Ayah?,
+            surah:
+                freezed == surah
+                    ? _value.surah
+                    : surah // ignore: cast_nullable_to_non_nullable
+                        as Surah?,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of LastReadAyah
@@ -101,11 +102,11 @@ class _$LastReadAyahCopyWithImpl<$Res, $Val extends LastReadAyah>
 }
 
 /// @nodoc
-abstract class _$$LastReadAyahImplCopyWith<$Res>
-    implements $LastReadAyahCopyWith<$Res> {
+abstract class _$$LastReadAyahImplCopyWith<$Res> implements $LastReadAyahCopyWith<$Res> {
   factory _$$LastReadAyahImplCopyWith(
-          _$LastReadAyahImpl value, $Res Function(_$LastReadAyahImpl) then) =
-      __$$LastReadAyahImplCopyWithImpl<$Res>;
+    _$LastReadAyahImpl value,
+    $Res Function(_$LastReadAyahImpl) then,
+  ) = __$$LastReadAyahImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Ayah? ayah, Surah? surah});
@@ -121,27 +122,29 @@ class __$$LastReadAyahImplCopyWithImpl<$Res>
     extends _$LastReadAyahCopyWithImpl<$Res, _$LastReadAyahImpl>
     implements _$$LastReadAyahImplCopyWith<$Res> {
   __$$LastReadAyahImplCopyWithImpl(
-      _$LastReadAyahImpl _value, $Res Function(_$LastReadAyahImpl) _then)
-      : super(_value, _then);
+    _$LastReadAyahImpl _value,
+    $Res Function(_$LastReadAyahImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LastReadAyah
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? ayah = freezed,
-    Object? surah = freezed,
-  }) {
-    return _then(_$LastReadAyahImpl(
-      ayah: freezed == ayah
-          ? _value.ayah
-          : ayah // ignore: cast_nullable_to_non_nullable
-              as Ayah?,
-      surah: freezed == surah
-          ? _value.surah
-          : surah // ignore: cast_nullable_to_non_nullable
-              as Surah?,
-    ));
+  $Res call({Object? ayah = freezed, Object? surah = freezed}) {
+    return _then(
+      _$LastReadAyahImpl(
+        ayah:
+            freezed == ayah
+                ? _value.ayah
+                : ayah // ignore: cast_nullable_to_non_nullable
+                    as Ayah?,
+        surah:
+            freezed == surah
+                ? _value.surah
+                : surah // ignore: cast_nullable_to_non_nullable
+                    as Surah?,
+      ),
+    );
   }
 }
 
@@ -183,15 +186,12 @@ class _$LastReadAyahImpl extends _LastReadAyah {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LastReadAyahImplToJson(
-      this,
-    );
+    return _$$LastReadAyahImplToJson(this);
   }
 }
 
 abstract class _LastReadAyah extends LastReadAyah {
-  const factory _LastReadAyah({final Ayah? ayah, final Surah? surah}) =
-      _$LastReadAyahImpl;
+  const factory _LastReadAyah({final Ayah? ayah, final Surah? surah}) = _$LastReadAyahImpl;
   const _LastReadAyah._() : super._();
 
   @override

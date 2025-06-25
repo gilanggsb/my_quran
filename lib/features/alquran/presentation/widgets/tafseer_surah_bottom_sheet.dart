@@ -29,12 +29,7 @@ class TafseerSurahBottomSheet extends StatelessWidget {
             automaticallyImplyLeading: false,
             pinned: true,
           ),
-          SliverToBoxAdapter(
-            child: DefaultText(
-              surah?.tafsir ?? '',
-              textAlign: TextAlign.justify,
-            ),
-          ),
+          SliverToBoxAdapter(child: DefaultText(surah?.tafsir ?? '', textAlign: TextAlign.justify)),
         ],
       ),
     );

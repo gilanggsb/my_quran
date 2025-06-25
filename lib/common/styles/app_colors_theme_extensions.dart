@@ -10,9 +10,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   Color? getColor(AppColorType key) => colors[key];
 
   @override
-  ThemeExtension<AppColorsExtension> copyWith({
-    Map<AppColorType, Color>? colors,
-  }) {
+  ThemeExtension<AppColorsExtension> copyWith({Map<AppColorType, Color>? colors}) {
     return AppColorsExtension(colors: {...this.colors, ...?colors});
   }
 

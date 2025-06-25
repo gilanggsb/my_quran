@@ -39,9 +39,7 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
     }
     playerState = audioPlayer.state;
     audioPlayer.getDuration().then((value) => duration = value);
-    audioPlayer.getCurrentPosition().then(
-          (value) => position = value,
-        );
+    audioPlayer.getCurrentPosition().then((value) => position = value);
     _initStreams();
     isInitialized = true;
     emit(const PlayerWidgetState.loaded());
@@ -98,11 +96,7 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
     });
   }
 
-  Future<void> playTrack({
-    Source? source,
-    String? newTitle,
-    String? newSubTitle,
-  }) async {
+  Future<void> playTrack({Source? source, String? newTitle, String? newSubTitle}) async {
     emit(const PlayerWidgetState.loading());
     showPlayerWidget();
     setInformation(newTitle: newTitle, newSubTitle: newSubTitle);
@@ -135,10 +129,7 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
   double get sliderValue {
     final finPosition = position?.inMilliseconds ?? 0;
     final finDuration = duration?.inMilliseconds ?? 0;
-    return (position != null &&
-            duration != null &&
-            finPosition > 0 &&
-            finPosition < finDuration)
+    return (position != null && duration != null && finPosition > 0 && finPosition < finDuration)
         ? finPosition / finDuration
         : 0.0;
   }
@@ -188,8 +179,7 @@ class PlayerWidgetCubit extends Cubit<PlayerWidgetState> {
       });
     });
 
-    playerStateChangeSubscription =
-        audioPlayer.onPlayerStateChanged.listen((state) {
+    playerStateChangeSubscription = audioPlayer.onPlayerStateChanged.listen((state) {
       changeAudioState(() => playerState = state);
     });
   }

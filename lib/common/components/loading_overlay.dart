@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import '../common.dart';
 
 class LoadingOverlayAlt extends StatelessWidget {
-  LoadingOverlayAlt({super.key, required this.child})
-      : _isLoadingNotifier = ValueNotifier(false);
+  LoadingOverlayAlt({super.key, required this.child}) : _isLoadingNotifier = ValueNotifier(false);
 
   final ValueNotifier<bool> _isLoadingNotifier;
   final Widget child;
@@ -31,10 +30,7 @@ class LoadingOverlayAlt extends StatelessWidget {
           children: [
             child!,
             if (isLoading)
-              ModalBarrier(
-                dismissible: false,
-                color: Colors.black.withValues(alpha: 0.5),
-              ),
+              ModalBarrier(dismissible: false, color: Colors.black.withValues(alpha: 0.5)),
             if (isLoading)
               Center(
                 child: Container(
@@ -48,9 +44,7 @@ class LoadingOverlayAlt extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const DefaultCircularProgressIndicator(),
-                      const SizedBox(
-                        height: 14,
-                      ),
+                      const SizedBox(height: 14),
                       DefaultText(
                         'Mohon Tunggu...',
                         fontSize: 14,

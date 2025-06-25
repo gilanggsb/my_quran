@@ -23,16 +23,13 @@ import 'package:my_quran/features/features.dart' as _i2;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeQuranRepository_0 extends _i1.SmartFake
-    implements _i2.QuranRepository {
+class _FakeQuranRepository_0 extends _i1.SmartFake implements _i2.QuranRepository {
   _FakeQuranRepository_0(Object parent, Invocation parentInvocation)
     : super(parent, parentInvocation);
 }
 
-class _FakeBaseResponse_1<T> extends _i1.SmartFake
-    implements _i3.BaseResponse<T> {
-  _FakeBaseResponse_1(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+class _FakeBaseResponse_1<T> extends _i1.SmartFake implements _i3.BaseResponse<T> {
+  _FakeBaseResponse_1(Object parent, Invocation parentInvocation) : super(parent, parentInvocation);
 }
 
 /// A class which mocks [GetJuzs].
@@ -43,14 +40,8 @@ class MockGetJuzs extends _i1.Mock implements _i2.GetJuzs {
   _i2.QuranRepository get repository =>
       (super.noSuchMethod(
             Invocation.getter(#repository),
-            returnValue: _FakeQuranRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
-            returnValueForMissingStub: _FakeQuranRepository_0(
-              this,
-              Invocation.getter(#repository),
-            ),
+            returnValue: _FakeQuranRepository_0(this, Invocation.getter(#repository)),
+            returnValueForMissingStub: _FakeQuranRepository_0(this, Invocation.getter(#repository)),
           )
           as _i2.QuranRepository);
 
@@ -59,18 +50,11 @@ class MockGetJuzs extends _i1.Mock implements _i2.GetJuzs {
       (super.noSuchMethod(
             Invocation.method(#call, [params]),
             returnValue: _i4.Future<_i3.BaseResponse<List<_i2.Juz>?>>.value(
-              _FakeBaseResponse_1<List<_i2.Juz>?>(
-                this,
-                Invocation.method(#call, [params]),
-              ),
+              _FakeBaseResponse_1<List<_i2.Juz>?>(this, Invocation.method(#call, [params])),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i3.BaseResponse<List<_i2.Juz>?>>.value(
-                  _FakeBaseResponse_1<List<_i2.Juz>?>(
-                    this,
-                    Invocation.method(#call, [params]),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i3.BaseResponse<List<_i2.Juz>?>>.value(
+              _FakeBaseResponse_1<List<_i2.Juz>?>(this, Invocation.method(#call, [params])),
+            ),
           )
           as _i4.Future<_i3.BaseResponse<List<_i2.Juz>?>>);
 }

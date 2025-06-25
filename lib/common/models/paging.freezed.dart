@@ -12,7 +12,8 @@ part of 'paging.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$Paging {
@@ -40,21 +41,21 @@ abstract class $PagingCopyWith<$Res> {
   factory $PagingCopyWith(Paging value, $Res Function(Paging) then) =
       _$PagingCopyWithImpl<$Res, Paging>;
   @useResult
-  $Res call(
-      {int? totalItems,
-      int? currentPage,
-      int? pageSize,
-      int? totalPages,
-      int? startPage,
-      int? endPage,
-      int? startIndex,
-      int? endIndex,
-      List<int>? pages});
+  $Res call({
+    int? totalItems,
+    int? currentPage,
+    int? pageSize,
+    int? totalPages,
+    int? startPage,
+    int? endPage,
+    int? startIndex,
+    int? endIndex,
+    List<int>? pages,
+  });
 }
 
 /// @nodoc
-class _$PagingCopyWithImpl<$Res, $Val extends Paging>
-    implements $PagingCopyWith<$Res> {
+class _$PagingCopyWithImpl<$Res, $Val extends Paging> implements $PagingCopyWith<$Res> {
   _$PagingCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -77,73 +78,83 @@ class _$PagingCopyWithImpl<$Res, $Val extends Paging>
     Object? endIndex = freezed,
     Object? pages = freezed,
   }) {
-    return _then(_value.copyWith(
-      totalItems: freezed == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
-      currentPage: freezed == currentPage
-          ? _value.currentPage
-          : currentPage // ignore: cast_nullable_to_non_nullable
-              as int?,
-      pageSize: freezed == pageSize
-          ? _value.pageSize
-          : pageSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-      totalPages: freezed == totalPages
-          ? _value.totalPages
-          : totalPages // ignore: cast_nullable_to_non_nullable
-              as int?,
-      startPage: freezed == startPage
-          ? _value.startPage
-          : startPage // ignore: cast_nullable_to_non_nullable
-              as int?,
-      endPage: freezed == endPage
-          ? _value.endPage
-          : endPage // ignore: cast_nullable_to_non_nullable
-              as int?,
-      startIndex: freezed == startIndex
-          ? _value.startIndex
-          : startIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
-      endIndex: freezed == endIndex
-          ? _value.endIndex
-          : endIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
-      pages: freezed == pages
-          ? _value.pages
-          : pages // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            totalItems:
+                freezed == totalItems
+                    ? _value.totalItems
+                    : totalItems // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            currentPage:
+                freezed == currentPage
+                    ? _value.currentPage
+                    : currentPage // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            pageSize:
+                freezed == pageSize
+                    ? _value.pageSize
+                    : pageSize // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            totalPages:
+                freezed == totalPages
+                    ? _value.totalPages
+                    : totalPages // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            startPage:
+                freezed == startPage
+                    ? _value.startPage
+                    : startPage // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            endPage:
+                freezed == endPage
+                    ? _value.endPage
+                    : endPage // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            startIndex:
+                freezed == startIndex
+                    ? _value.startIndex
+                    : startIndex // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            endIndex:
+                freezed == endIndex
+                    ? _value.endIndex
+                    : endIndex // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            pages:
+                freezed == pages
+                    ? _value.pages
+                    : pages // ignore: cast_nullable_to_non_nullable
+                        as List<int>?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$PagingImplCopyWith<$Res> implements $PagingCopyWith<$Res> {
-  factory _$$PagingImplCopyWith(
-          _$PagingImpl value, $Res Function(_$PagingImpl) then) =
+  factory _$$PagingImplCopyWith(_$PagingImpl value, $Res Function(_$PagingImpl) then) =
       __$$PagingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int? totalItems,
-      int? currentPage,
-      int? pageSize,
-      int? totalPages,
-      int? startPage,
-      int? endPage,
-      int? startIndex,
-      int? endIndex,
-      List<int>? pages});
+  $Res call({
+    int? totalItems,
+    int? currentPage,
+    int? pageSize,
+    int? totalPages,
+    int? startPage,
+    int? endPage,
+    int? startIndex,
+    int? endIndex,
+    List<int>? pages,
+  });
 }
 
 /// @nodoc
-class __$$PagingImplCopyWithImpl<$Res>
-    extends _$PagingCopyWithImpl<$Res, _$PagingImpl>
+class __$$PagingImplCopyWithImpl<$Res> extends _$PagingCopyWithImpl<$Res, _$PagingImpl>
     implements _$$PagingImplCopyWith<$Res> {
-  __$$PagingImplCopyWithImpl(
-      _$PagingImpl _value, $Res Function(_$PagingImpl) _then)
-      : super(_value, _then);
+  __$$PagingImplCopyWithImpl(_$PagingImpl _value, $Res Function(_$PagingImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of Paging
   /// with the given fields replaced by the non-null parameter values.
@@ -160,61 +171,72 @@ class __$$PagingImplCopyWithImpl<$Res>
     Object? endIndex = freezed,
     Object? pages = freezed,
   }) {
-    return _then(_$PagingImpl(
-      totalItems: freezed == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
-      currentPage: freezed == currentPage
-          ? _value.currentPage
-          : currentPage // ignore: cast_nullable_to_non_nullable
-              as int?,
-      pageSize: freezed == pageSize
-          ? _value.pageSize
-          : pageSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-      totalPages: freezed == totalPages
-          ? _value.totalPages
-          : totalPages // ignore: cast_nullable_to_non_nullable
-              as int?,
-      startPage: freezed == startPage
-          ? _value.startPage
-          : startPage // ignore: cast_nullable_to_non_nullable
-              as int?,
-      endPage: freezed == endPage
-          ? _value.endPage
-          : endPage // ignore: cast_nullable_to_non_nullable
-              as int?,
-      startIndex: freezed == startIndex
-          ? _value.startIndex
-          : startIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
-      endIndex: freezed == endIndex
-          ? _value.endIndex
-          : endIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
-      pages: freezed == pages
-          ? _value._pages
-          : pages // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ));
+    return _then(
+      _$PagingImpl(
+        totalItems:
+            freezed == totalItems
+                ? _value.totalItems
+                : totalItems // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        currentPage:
+            freezed == currentPage
+                ? _value.currentPage
+                : currentPage // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        pageSize:
+            freezed == pageSize
+                ? _value.pageSize
+                : pageSize // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        totalPages:
+            freezed == totalPages
+                ? _value.totalPages
+                : totalPages // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        startPage:
+            freezed == startPage
+                ? _value.startPage
+                : startPage // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        endPage:
+            freezed == endPage
+                ? _value.endPage
+                : endPage // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        startIndex:
+            freezed == startIndex
+                ? _value.startIndex
+                : startIndex // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        endIndex:
+            freezed == endIndex
+                ? _value.endIndex
+                : endIndex // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        pages:
+            freezed == pages
+                ? _value._pages
+                : pages // ignore: cast_nullable_to_non_nullable
+                    as List<int>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable(createFactory: false)
 class _$PagingImpl implements _Paging {
-  const _$PagingImpl(
-      {this.totalItems,
-      this.currentPage,
-      this.pageSize,
-      this.totalPages,
-      this.startPage,
-      this.endPage,
-      this.startIndex,
-      this.endIndex,
-      final List<int>? pages})
-      : _pages = pages;
+  const _$PagingImpl({
+    this.totalItems,
+    this.currentPage,
+    this.pageSize,
+    this.totalPages,
+    this.startPage,
+    this.endPage,
+    this.startIndex,
+    this.endIndex,
+    final List<int>? pages,
+  }) : _pages = pages;
 
   @override
   final int? totalItems;
@@ -252,37 +274,31 @@ class _$PagingImpl implements _Paging {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PagingImpl &&
-            (identical(other.totalItems, totalItems) ||
-                other.totalItems == totalItems) &&
-            (identical(other.currentPage, currentPage) ||
-                other.currentPage == currentPage) &&
-            (identical(other.pageSize, pageSize) ||
-                other.pageSize == pageSize) &&
-            (identical(other.totalPages, totalPages) ||
-                other.totalPages == totalPages) &&
-            (identical(other.startPage, startPage) ||
-                other.startPage == startPage) &&
+            (identical(other.totalItems, totalItems) || other.totalItems == totalItems) &&
+            (identical(other.currentPage, currentPage) || other.currentPage == currentPage) &&
+            (identical(other.pageSize, pageSize) || other.pageSize == pageSize) &&
+            (identical(other.totalPages, totalPages) || other.totalPages == totalPages) &&
+            (identical(other.startPage, startPage) || other.startPage == startPage) &&
             (identical(other.endPage, endPage) || other.endPage == endPage) &&
-            (identical(other.startIndex, startIndex) ||
-                other.startIndex == startIndex) &&
-            (identical(other.endIndex, endIndex) ||
-                other.endIndex == endIndex) &&
+            (identical(other.startIndex, startIndex) || other.startIndex == startIndex) &&
+            (identical(other.endIndex, endIndex) || other.endIndex == endIndex) &&
             const DeepCollectionEquality().equals(other._pages, _pages));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      totalItems,
-      currentPage,
-      pageSize,
-      totalPages,
-      startPage,
-      endPage,
-      startIndex,
-      endIndex,
-      const DeepCollectionEquality().hash(_pages));
+    runtimeType,
+    totalItems,
+    currentPage,
+    pageSize,
+    totalPages,
+    startPage,
+    endPage,
+    startIndex,
+    endIndex,
+    const DeepCollectionEquality().hash(_pages),
+  );
 
   /// Create a copy of Paging
   /// with the given fields replaced by the non-null parameter values.
@@ -294,23 +310,22 @@ class _$PagingImpl implements _Paging {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PagingImplToJson(
-      this,
-    );
+    return _$$PagingImplToJson(this);
   }
 }
 
 abstract class _Paging implements Paging {
-  const factory _Paging(
-      {final int? totalItems,
-      final int? currentPage,
-      final int? pageSize,
-      final int? totalPages,
-      final int? startPage,
-      final int? endPage,
-      final int? startIndex,
-      final int? endIndex,
-      final List<int>? pages}) = _$PagingImpl;
+  const factory _Paging({
+    final int? totalItems,
+    final int? currentPage,
+    final int? pageSize,
+    final int? totalPages,
+    final int? startPage,
+    final int? endPage,
+    final int? startIndex,
+    final int? endIndex,
+    final List<int>? pages,
+  }) = _$PagingImpl;
 
   @override
   int? get totalItems;
@@ -335,6 +350,5 @@ abstract class _Paging implements Paging {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PagingImplCopyWith<_$PagingImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PagingImplCopyWith<_$PagingImpl> get copyWith => throw _privateConstructorUsedError;
 }

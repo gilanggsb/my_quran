@@ -12,7 +12,8 @@ part of 'base_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$BaseResponse<T> {
@@ -26,23 +27,15 @@ mixin _$BaseResponse<T> {
   /// Create a copy of BaseResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BaseResponseCopyWith<T, BaseResponse<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BaseResponseCopyWith<T, BaseResponse<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BaseResponseCopyWith<T, $Res> {
-  factory $BaseResponseCopyWith(
-          BaseResponse<T> value, $Res Function(BaseResponse<T>) then) =
+  factory $BaseResponseCopyWith(BaseResponse<T> value, $Res Function(BaseResponse<T>) then) =
       _$BaseResponseCopyWithImpl<T, $Res, BaseResponse<T>>;
   @useResult
-  $Res call(
-      {bool? status,
-      String? message,
-      Request? request,
-      Info? info,
-      Paging? paging,
-      T? data});
+  $Res call({bool? status, String? message, Request? request, Info? info, Paging? paging, T? data});
 
   $RequestCopyWith<$Res>? get request;
   $InfoCopyWith<$Res>? get info;
@@ -71,32 +64,41 @@ class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
     Object? paging = freezed,
     Object? data = freezed,
   }) {
-    return _then(_value.copyWith(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      request: freezed == request
-          ? _value.request
-          : request // ignore: cast_nullable_to_non_nullable
-              as Request?,
-      info: freezed == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as Info?,
-      paging: freezed == paging
-          ? _value.paging
-          : paging // ignore: cast_nullable_to_non_nullable
-              as Paging?,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            status:
+                freezed == status
+                    ? _value.status
+                    : status // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            message:
+                freezed == message
+                    ? _value.message
+                    : message // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            request:
+                freezed == request
+                    ? _value.request
+                    : request // ignore: cast_nullable_to_non_nullable
+                        as Request?,
+            info:
+                freezed == info
+                    ? _value.info
+                    : info // ignore: cast_nullable_to_non_nullable
+                        as Info?,
+            paging:
+                freezed == paging
+                    ? _value.paging
+                    : paging // ignore: cast_nullable_to_non_nullable
+                        as Paging?,
+            data:
+                freezed == data
+                    ? _value.data
+                    : data // ignore: cast_nullable_to_non_nullable
+                        as T?,
+          )
+          as $Val,
+    );
   }
 
   /// Create a copy of BaseResponse
@@ -143,20 +145,14 @@ class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
 }
 
 /// @nodoc
-abstract class _$$BaseResponseImplCopyWith<T, $Res>
-    implements $BaseResponseCopyWith<T, $Res> {
-  factory _$$BaseResponseImplCopyWith(_$BaseResponseImpl<T> value,
-          $Res Function(_$BaseResponseImpl<T>) then) =
-      __$$BaseResponseImplCopyWithImpl<T, $Res>;
+abstract class _$$BaseResponseImplCopyWith<T, $Res> implements $BaseResponseCopyWith<T, $Res> {
+  factory _$$BaseResponseImplCopyWith(
+    _$BaseResponseImpl<T> value,
+    $Res Function(_$BaseResponseImpl<T>) then,
+  ) = __$$BaseResponseImplCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call(
-      {bool? status,
-      String? message,
-      Request? request,
-      Info? info,
-      Paging? paging,
-      T? data});
+  $Res call({bool? status, String? message, Request? request, Info? info, Paging? paging, T? data});
 
   @override
   $RequestCopyWith<$Res>? get request;
@@ -171,8 +167,9 @@ class __$$BaseResponseImplCopyWithImpl<T, $Res>
     extends _$BaseResponseCopyWithImpl<T, $Res, _$BaseResponseImpl<T>>
     implements _$$BaseResponseImplCopyWith<T, $Res> {
   __$$BaseResponseImplCopyWithImpl(
-      _$BaseResponseImpl<T> _value, $Res Function(_$BaseResponseImpl<T>) _then)
-      : super(_value, _then);
+    _$BaseResponseImpl<T> _value,
+    $Res Function(_$BaseResponseImpl<T>) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BaseResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -186,45 +183,54 @@ class __$$BaseResponseImplCopyWithImpl<T, $Res>
     Object? paging = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$BaseResponseImpl<T>(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      request: freezed == request
-          ? _value.request
-          : request // ignore: cast_nullable_to_non_nullable
-              as Request?,
-      info: freezed == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as Info?,
-      paging: freezed == paging
-          ? _value.paging
-          : paging // ignore: cast_nullable_to_non_nullable
-              as Paging?,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T?,
-    ));
+    return _then(
+      _$BaseResponseImpl<T>(
+        status:
+            freezed == status
+                ? _value.status
+                : status // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        message:
+            freezed == message
+                ? _value.message
+                : message // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        request:
+            freezed == request
+                ? _value.request
+                : request // ignore: cast_nullable_to_non_nullable
+                    as Request?,
+        info:
+            freezed == info
+                ? _value.info
+                : info // ignore: cast_nullable_to_non_nullable
+                    as Info?,
+        paging:
+            freezed == paging
+                ? _value.paging
+                : paging // ignore: cast_nullable_to_non_nullable
+                    as Paging?,
+        data:
+            freezed == data
+                ? _value.data
+                : data // ignore: cast_nullable_to_non_nullable
+                    as T?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$BaseResponseImpl<T> implements _BaseResponse<T> {
-  const _$BaseResponseImpl(
-      {this.status,
-      this.message,
-      this.request,
-      this.info,
-      this.paging,
-      this.data});
+  const _$BaseResponseImpl({
+    this.status,
+    this.message,
+    this.request,
+    this.info,
+    this.paging,
+    this.data,
+  });
 
   @override
   final bool? status;
@@ -258,8 +264,15 @@ class _$BaseResponseImpl<T> implements _BaseResponse<T> {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, message, request, info,
-      paging, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(
+    runtimeType,
+    status,
+    message,
+    request,
+    info,
+    paging,
+    const DeepCollectionEquality().hash(data),
+  );
 
   /// Create a copy of BaseResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -267,18 +280,18 @@ class _$BaseResponseImpl<T> implements _BaseResponse<T> {
   @override
   @pragma('vm:prefer-inline')
   _$$BaseResponseImplCopyWith<T, _$BaseResponseImpl<T>> get copyWith =>
-      __$$BaseResponseImplCopyWithImpl<T, _$BaseResponseImpl<T>>(
-          this, _$identity);
+      __$$BaseResponseImplCopyWithImpl<T, _$BaseResponseImpl<T>>(this, _$identity);
 }
 
 abstract class _BaseResponse<T> implements BaseResponse<T> {
-  const factory _BaseResponse(
-      {final bool? status,
-      final String? message,
-      final Request? request,
-      final Info? info,
-      final Paging? paging,
-      final T? data}) = _$BaseResponseImpl<T>;
+  const factory _BaseResponse({
+    final bool? status,
+    final String? message,
+    final Request? request,
+    final Info? info,
+    final Paging? paging,
+    final T? data,
+  }) = _$BaseResponseImpl<T>;
 
   @override
   bool? get status;

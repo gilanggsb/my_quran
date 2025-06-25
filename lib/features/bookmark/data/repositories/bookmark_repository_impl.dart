@@ -5,10 +5,7 @@ import "../data.dart";
 class BookmarkRepositoryImpl extends BookmarkRepository {
   final BookmarkLocalDataSource localDataSource;
   final BookmarkRemoteDataSource remoteDataSource;
-  BookmarkRepositoryImpl({
-    required this.localDataSource,
-    required this.remoteDataSource,
-  });
+  BookmarkRepositoryImpl({required this.localDataSource, required this.remoteDataSource});
 
   @override
   Future<BaseResponse<bool>> addBookmark(BookmarkData bookmark) {

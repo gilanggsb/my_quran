@@ -23,10 +23,8 @@ import 'package:my_quran/features/features.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeBaseResponse_0<T> extends _i1.SmartFake
-    implements _i2.BaseResponse<T> {
-  _FakeBaseResponse_0(Object parent, Invocation parentInvocation)
-    : super(parent, parentInvocation);
+class _FakeBaseResponse_0<T> extends _i1.SmartFake implements _i2.BaseResponse<T> {
+  _FakeBaseResponse_0(Object parent, Invocation parentInvocation) : super(parent, parentInvocation);
 }
 
 /// A class which mocks [QuranRepository].
@@ -38,18 +36,11 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
       (super.noSuchMethod(
             Invocation.method(#getSurahs, []),
             returnValue: _i4.Future<_i2.BaseResponse<List<_i3.Surah>?>>.value(
-              _FakeBaseResponse_0<List<_i3.Surah>?>(
-                this,
-                Invocation.method(#getSurahs, []),
-              ),
+              _FakeBaseResponse_0<List<_i3.Surah>?>(this, Invocation.method(#getSurahs, [])),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<List<_i3.Surah>?>>.value(
-                  _FakeBaseResponse_0<List<_i3.Surah>?>(
-                    this,
-                    Invocation.method(#getSurahs, []),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<List<_i3.Surah>?>>.value(
+              _FakeBaseResponse_0<List<_i3.Surah>?>(this, Invocation.method(#getSurahs, [])),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<List<_i3.Surah>?>>);
 
@@ -58,18 +49,11 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
       (super.noSuchMethod(
             Invocation.method(#getSurah, [surahNumber]),
             returnValue: _i4.Future<_i2.BaseResponse<_i3.Surah?>>.value(
-              _FakeBaseResponse_0<_i3.Surah?>(
-                this,
-                Invocation.method(#getSurah, [surahNumber]),
-              ),
+              _FakeBaseResponse_0<_i3.Surah?>(this, Invocation.method(#getSurah, [surahNumber])),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<_i3.Surah?>>.value(
-                  _FakeBaseResponse_0<_i3.Surah?>(
-                    this,
-                    Invocation.method(#getSurah, [surahNumber]),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<_i3.Surah?>>.value(
+              _FakeBaseResponse_0<_i3.Surah?>(this, Invocation.method(#getSurah, [surahNumber])),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<_i3.Surah?>>);
 
@@ -78,18 +62,11 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
       (super.noSuchMethod(
             Invocation.method(#getJuzs, []),
             returnValue: _i4.Future<_i2.BaseResponse<List<_i3.Juz>?>>.value(
-              _FakeBaseResponse_0<List<_i3.Juz>?>(
-                this,
-                Invocation.method(#getJuzs, []),
-              ),
+              _FakeBaseResponse_0<List<_i3.Juz>?>(this, Invocation.method(#getJuzs, [])),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<List<_i3.Juz>?>>.value(
-                  _FakeBaseResponse_0<List<_i3.Juz>?>(
-                    this,
-                    Invocation.method(#getJuzs, []),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<List<_i3.Juz>?>>.value(
+              _FakeBaseResponse_0<List<_i3.Juz>?>(this, Invocation.method(#getJuzs, [])),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<List<_i3.Juz>?>>);
 
@@ -98,18 +75,11 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
       (super.noSuchMethod(
             Invocation.method(#getJuz, [juzNumber]),
             returnValue: _i4.Future<_i2.BaseResponse<_i3.Juz?>>.value(
-              _FakeBaseResponse_0<_i3.Juz?>(
-                this,
-                Invocation.method(#getJuz, [juzNumber]),
-              ),
+              _FakeBaseResponse_0<_i3.Juz?>(this, Invocation.method(#getJuz, [juzNumber])),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<_i3.Juz?>>.value(
-                  _FakeBaseResponse_0<_i3.Juz?>(
-                    this,
-                    Invocation.method(#getJuz, [juzNumber]),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<_i3.Juz?>>.value(
+              _FakeBaseResponse_0<_i3.Juz?>(this, Invocation.method(#getJuz, [juzNumber])),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<_i3.Juz?>>);
 
@@ -118,25 +88,16 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
       (super.noSuchMethod(
             Invocation.method(#getAyah, [ayahId]),
             returnValue: _i4.Future<_i2.BaseResponse<_i3.Ayah?>>.value(
-              _FakeBaseResponse_0<_i3.Ayah?>(
-                this,
-                Invocation.method(#getAyah, [ayahId]),
-              ),
+              _FakeBaseResponse_0<_i3.Ayah?>(this, Invocation.method(#getAyah, [ayahId])),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<_i3.Ayah?>>.value(
-                  _FakeBaseResponse_0<_i3.Ayah?>(
-                    this,
-                    Invocation.method(#getAyah, [ayahId]),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<_i3.Ayah?>>.value(
+              _FakeBaseResponse_0<_i3.Ayah?>(this, Invocation.method(#getAyah, [ayahId])),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<_i3.Ayah?>>);
 
   @override
-  _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>> getAyahs(
-    _i3.AyahPagination? pagination,
-  ) =>
+  _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>> getAyahs(_i3.AyahPagination? pagination) =>
       (super.noSuchMethod(
             Invocation.method(#getAyahs, [pagination]),
             returnValue: _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
@@ -145,13 +106,12 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
                 Invocation.method(#getAyahs, [pagination]),
               ),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
-                  _FakeBaseResponse_0<List<_i3.Ayah>?>(
-                    this,
-                    Invocation.method(#getAyahs, [pagination]),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
+              _FakeBaseResponse_0<List<_i3.Ayah>?>(
+                this,
+                Invocation.method(#getAyahs, [pagination]),
+              ),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>);
 
@@ -165,13 +125,12 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
                 Invocation.method(#getAyahsJuz, [juzNumber]),
               ),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
-                  _FakeBaseResponse_0<List<_i3.Ayah>?>(
-                    this,
-                    Invocation.method(#getAyahsJuz, [juzNumber]),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
+              _FakeBaseResponse_0<List<_i3.Ayah>?>(
+                this,
+                Invocation.method(#getAyahsJuz, [juzNumber]),
+              ),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>);
 
@@ -187,13 +146,12 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
                 Invocation.method(#getAyahsThroughout, [ayahsThroughout]),
               ),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
-                  _FakeBaseResponse_0<List<_i3.Ayah>?>(
-                    this,
-                    Invocation.method(#getAyahsThroughout, [ayahsThroughout]),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
+              _FakeBaseResponse_0<List<_i3.Ayah>?>(
+                this,
+                Invocation.method(#getAyahsThroughout, [ayahsThroughout]),
+              ),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>);
 
@@ -209,13 +167,12 @@ class MockQuranRepository extends _i1.Mock implements _i3.QuranRepository {
                 Invocation.method(#getFullAyahs, [ayahsThroughout]),
               ),
             ),
-            returnValueForMissingStub:
-                _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
-                  _FakeBaseResponse_0<List<_i3.Ayah>?>(
-                    this,
-                    Invocation.method(#getFullAyahs, [ayahsThroughout]),
-                  ),
-                ),
+            returnValueForMissingStub: _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>.value(
+              _FakeBaseResponse_0<List<_i3.Ayah>?>(
+                this,
+                Invocation.method(#getFullAyahs, [ayahsThroughout]),
+              ),
+            ),
           )
           as _i4.Future<_i2.BaseResponse<List<_i3.Ayah>?>>);
 

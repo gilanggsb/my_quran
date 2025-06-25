@@ -17,11 +17,7 @@ class BookmarkView extends StatelessWidget {
         title: 'Bookmark',
         leading: IconButton(
           onPressed: context.back,
-          icon: Icon(
-            Icons.chevron_left,
-            color: context.getColorExt(AppColorType.text),
-            size: 32,
-          ),
+          icon: Icon(Icons.chevron_left, color: context.getColorExt(AppColorType.text), size: 32),
         ),
       ),
       body: CustomScrollView(
@@ -34,9 +30,7 @@ class BookmarkView extends StatelessWidget {
             expandedHeight: 110.sp,
             title: const BookmarkCategoryTitle(),
             centerTitle: false,
-            flexibleSpace: const FlexibleSpaceBar(
-              background: BookmarkCategoryFilter(),
-            ),
+            flexibleSpace: const FlexibleSpaceBar(background: BookmarkCategoryFilter()),
           ),
           const SliverToBoxAdapter(child: BookmarkListView()),
         ],

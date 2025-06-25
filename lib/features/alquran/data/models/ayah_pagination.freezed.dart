@@ -12,7 +12,8 @@ part of 'ayah_pagination.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 AyahPagination _$AyahPaginationFromJson(Map<String, dynamic> json) {
   return _AyahPagination.fromJson(json);
@@ -29,14 +30,12 @@ mixin _$AyahPagination {
   /// Create a copy of AyahPagination
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AyahPaginationCopyWith<AyahPagination> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AyahPaginationCopyWith<AyahPagination> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AyahPaginationCopyWith<$Res> {
-  factory $AyahPaginationCopyWith(
-          AyahPagination value, $Res Function(AyahPagination) then) =
+  factory $AyahPaginationCopyWith(AyahPagination value, $Res Function(AyahPagination) then) =
       _$AyahPaginationCopyWithImpl<$Res, AyahPagination>;
   @useResult
   $Res call({int? page, int? length});
@@ -56,29 +55,31 @@ class _$AyahPaginationCopyWithImpl<$Res, $Val extends AyahPagination>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? page = freezed,
-    Object? length = freezed,
-  }) {
-    return _then(_value.copyWith(
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      length: freezed == length
-          ? _value.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  $Res call({Object? page = freezed, Object? length = freezed}) {
+    return _then(
+      _value.copyWith(
+            page:
+                freezed == page
+                    ? _value.page
+                    : page // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            length:
+                freezed == length
+                    ? _value.length
+                    : length // ignore: cast_nullable_to_non_nullable
+                        as int?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
-abstract class _$$AyahPaginationImplCopyWith<$Res>
-    implements $AyahPaginationCopyWith<$Res> {
-  factory _$$AyahPaginationImplCopyWith(_$AyahPaginationImpl value,
-          $Res Function(_$AyahPaginationImpl) then) =
-      __$$AyahPaginationImplCopyWithImpl<$Res>;
+abstract class _$$AyahPaginationImplCopyWith<$Res> implements $AyahPaginationCopyWith<$Res> {
+  factory _$$AyahPaginationImplCopyWith(
+    _$AyahPaginationImpl value,
+    $Res Function(_$AyahPaginationImpl) then,
+  ) = __$$AyahPaginationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? page, int? length});
@@ -89,27 +90,29 @@ class __$$AyahPaginationImplCopyWithImpl<$Res>
     extends _$AyahPaginationCopyWithImpl<$Res, _$AyahPaginationImpl>
     implements _$$AyahPaginationImplCopyWith<$Res> {
   __$$AyahPaginationImplCopyWithImpl(
-      _$AyahPaginationImpl _value, $Res Function(_$AyahPaginationImpl) _then)
-      : super(_value, _then);
+    _$AyahPaginationImpl _value,
+    $Res Function(_$AyahPaginationImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of AyahPagination
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? page = freezed,
-    Object? length = freezed,
-  }) {
-    return _then(_$AyahPaginationImpl(
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      length: freezed == length
-          ? _value.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
+  $Res call({Object? page = freezed, Object? length = freezed}) {
+    return _then(
+      _$AyahPaginationImpl(
+        page:
+            freezed == page
+                ? _value.page
+                : page // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        length:
+            freezed == length
+                ? _value.length
+                : length // ignore: cast_nullable_to_non_nullable
+                    as int?,
+      ),
+    );
   }
 }
 
@@ -150,23 +153,18 @@ class _$AyahPaginationImpl implements _AyahPagination {
   @override
   @pragma('vm:prefer-inline')
   _$$AyahPaginationImplCopyWith<_$AyahPaginationImpl> get copyWith =>
-      __$$AyahPaginationImplCopyWithImpl<_$AyahPaginationImpl>(
-          this, _$identity);
+      __$$AyahPaginationImplCopyWithImpl<_$AyahPaginationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AyahPaginationImplToJson(
-      this,
-    );
+    return _$$AyahPaginationImplToJson(this);
   }
 }
 
 abstract class _AyahPagination implements AyahPagination {
-  const factory _AyahPagination({final int? page, final int? length}) =
-      _$AyahPaginationImpl;
+  const factory _AyahPagination({final int? page, final int? length}) = _$AyahPaginationImpl;
 
-  factory _AyahPagination.fromJson(Map<String, dynamic> json) =
-      _$AyahPaginationImpl.fromJson;
+  factory _AyahPagination.fromJson(Map<String, dynamic> json) = _$AyahPaginationImpl.fromJson;
 
   @override
   int? get page;

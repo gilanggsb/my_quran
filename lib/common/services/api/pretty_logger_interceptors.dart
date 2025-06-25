@@ -76,9 +76,10 @@ class PrettyDioLogger extends Interceptor {
       if (data != null) {
         if (data is Map) _printMapAsTable(options.data as Map?, header: 'Body');
         if (data is FormData) {
-          final formDataMap = <String, dynamic>{}
-            ..addEntries(data.fields)
-            ..addEntries(data.files);
+          final formDataMap =
+              <String, dynamic>{}
+                ..addEntries(data.fields)
+                ..addEntries(data.files);
           _printMapAsTable(formDataMap, header: 'Form data | ${data.boundary}');
         } else {
           _printBlock(data.toString());
@@ -94,8 +95,7 @@ class PrettyDioLogger extends Interceptor {
       if (err.type == DioExceptionType.badResponse) {
         final uri = err.response?.requestOptions.uri;
         _printBoxed(
-          header:
-              'DioError ║ Status: ${err.response?.statusCode} ${err.response?.statusMessage}',
+          header: 'DioError ║ Status: ${err.response?.statusCode} ${err.response?.statusMessage}',
           text: uri.toString(),
         );
         if (err.response != null && err.response?.data != null) {
@@ -116,8 +116,7 @@ class PrettyDioLogger extends Interceptor {
     _printResponseHeader(response);
     if (responseHeader) {
       final responseHeaders = <String, String>{};
-      response.headers
-          .forEach((k, list) => responseHeaders[k] = list.toString());
+      response.headers.forEach((k, list) => responseHeaders[k] = list.toString());
       _printMapAsTable(responseHeaders, header: 'Headers');
     }
 
@@ -160,8 +159,7 @@ class PrettyDioLogger extends Interceptor {
     final uri = response.requestOptions.uri;
     final method = response.requestOptions.method;
     _printBoxed(
-      header:
-          'Response ║ $method ║ Status: ${response.statusCode} ${response.statusMessage}',
+      header: 'Response ║ $method ║ Status: ${response.statusCode} ${response.statusMessage}',
       text: uri.toString(),
     );
   }
@@ -172,8 +170,7 @@ class PrettyDioLogger extends Interceptor {
     _printBoxed(header: 'Request ║ $method ', text: uri.toString());
   }
 
-  void _printLine([String pre = '', String suf = '╝']) =>
-      logPrint('$pre${'═' * maxWidth}$suf');
+  void _printLine([String pre = '', String suf = '╝']) => logPrint('$pre${'═' * maxWidth}$suf');
 
   void _printKV(String? key, Object? v) {
     final pre = '╟ $key: ';
@@ -192,10 +189,7 @@ class PrettyDioLogger extends Interceptor {
     for (var i = 0; i < lines; ++i) {
       logPrint(
         (i >= 0 ? '║ ' : '') +
-            msg.substring(
-              i * maxWidth,
-              math.min<int>(i * maxWidth + maxWidth, msg.length),
-            ),
+            msg.substring(i * maxWidth, math.min<int>(i * maxWidth + maxWidth, msg.length)),
       );
     }
   }
@@ -263,12 +257,7 @@ class PrettyDioLogger extends Interceptor {
         if (compact && _canFlattenMap(e)) {
           logPrint('║${_indent(tabs)}  $e${!isLast ? ',' : ''}');
         } else {
-          _printPrettyMap(
-            e,
-            initialTab: tabs + 1,
-            isListItem: true,
-            isLast: isLast,
-          );
+          _printPrettyMap(e, initialTab: tabs + 1, isListItem: true, isLast: isLast);
         }
       } else {
         logPrint('║${_indent(tabs + 2)} $e${isLast ? '' : ','}');
@@ -279,12 +268,7 @@ class PrettyDioLogger extends Interceptor {
   void _printUint8List(Uint8List list, {int tabs = kInitialTab}) {
     var chunks = [];
     for (var i = 0; i < list.length; i += chunkSize) {
-      chunks.add(
-        list.sublist(
-          i,
-          i + chunkSize > list.length ? list.length : i + chunkSize,
-        ),
-      );
+      chunks.add(list.sublist(i, i + chunkSize > list.length ? list.length : i + chunkSize));
     }
     for (var element in chunks) {
       logPrint('║${_indent(tabs)} ${element.join(", ")}');
@@ -292,9 +276,7 @@ class PrettyDioLogger extends Interceptor {
   }
 
   bool _canFlattenMap(Map map) {
-    return map.values
-            .where((dynamic val) => val is Map || val is List)
-            .isEmpty &&
+    return map.values.where((dynamic val) => val is Map || val is List).isEmpty &&
         map.toString().length < maxWidth;
   }
 
@@ -305,9 +287,7 @@ class PrettyDioLogger extends Interceptor {
   void _printMapAsTable(Map? map, {String? header}) {
     if (map == null || map.isEmpty) return;
     logPrint('╔ $header ');
-    map.forEach(
-      (dynamic key, dynamic value) => _printKV(key.toString(), value),
-    );
+    map.forEach((dynamic key, dynamic value) => _printKV(key.toString(), value));
     _printLine('╚');
   }
 }

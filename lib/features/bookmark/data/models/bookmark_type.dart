@@ -10,16 +10,13 @@ part 'bookmark_type.g.dart';
 class BookmarkType with _$BookmarkType {
   const BookmarkType._();
 
-  const factory BookmarkType({
-    @HiveField(0) String? name,
-    @HiveField(1) String? id,
-  }) = _BookmarkType;
+  const factory BookmarkType({@HiveField(0) String? name, @HiveField(1) String? id}) =
+      _BookmarkType;
 
   // Removed Isar-specific code
   // Id get isarId => Isar.autoIncrement;
 
-  factory BookmarkType.fromJson(Map<String, dynamic> json) =>
-      _$BookmarkTypeFromJson(json);
+  factory BookmarkType.fromJson(Map<String, dynamic> json) => _$BookmarkTypeFromJson(json);
 
   Map<String, dynamic> toJson() => _$BookmarkTypeToJson(this);
 

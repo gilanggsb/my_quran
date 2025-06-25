@@ -5,8 +5,7 @@ import 'package:intl/intl.dart' as intl;
 
 extension NumExt on num {
   /// Does it contain [other]
-  bool contains(Pattern other, [int startIndex = 0]) =>
-      toString().contains(other);
+  bool contains(Pattern other, [int startIndex = 0]) => toString().contains(other);
 
   T max<T extends num>(T value) => math.max(this as T, value);
 
@@ -22,9 +21,7 @@ extension NumExt on num {
   /// Use this extension method to get precised values after decimal with defined length.
   ///
   String toDoubleStringAsPrecised({int length = 4}) {
-    return ((this * math.pow(10, length)).truncateToDouble() /
-            math.pow(10, length))
-        .toString();
+    return ((this * math.pow(10, length)).truncateToDouble() / math.pow(10, length)).toString();
   }
 
   /// num long
@@ -49,35 +46,25 @@ extension NumExt on num {
   bool get isNegative => this < 0;
 
   /// Format numeric currency
-  String get numCurrency =>
-      intl.NumberFormat.currency(customPattern: "#,##0.00").format(this);
+  String get numCurrency => intl.NumberFormat.currency(customPattern: "#,##0.00").format(this);
 
   /// Format numeric currency with provided locale
   String numCurrencyWithLocale({String locale = "en_US"}) =>
-      intl.NumberFormat.currency(
-        locale: locale,
-      ).format(this);
+      intl.NumberFormat.currency(locale: locale).format(this);
 
   ///Widgets
   ///
   ///Converts the number into a [SizedBox] with the width as that number.
   ///
-  Widget get widthBox => SizedBox(
-        width: toDouble(),
-      );
+  Widget get widthBox => SizedBox(width: toDouble());
 
   ///
   ///Converts the number into a [SizedBox] with the height as that number.
   ///
-  Widget get heightBox => SizedBox(
-        height: toDouble(),
-      );
+  Widget get heightBox => SizedBox(height: toDouble());
 
   ///
   ///Converts the number into a [SizedBox] with the width & height as that number.
   ///
-  Widget get squareBox => SizedBox(
-        height: toDouble(),
-        width: toDouble(),
-      );
+  Widget get squareBox => SizedBox(height: toDouble(), width: toDouble());
 }

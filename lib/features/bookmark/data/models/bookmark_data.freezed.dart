@@ -12,7 +12,8 @@ part of 'bookmark_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$BookmarkData {
@@ -32,23 +33,22 @@ mixin _$BookmarkData {
   /// Create a copy of BookmarkData
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BookmarkDataCopyWith<BookmarkData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BookmarkDataCopyWith<BookmarkData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BookmarkDataCopyWith<$Res> {
-  factory $BookmarkDataCopyWith(
-          BookmarkData value, $Res Function(BookmarkData) then) =
+  factory $BookmarkDataCopyWith(BookmarkData value, $Res Function(BookmarkData) then) =
       _$BookmarkDataCopyWithImpl<$Res, BookmarkData>;
   @useResult
-  $Res call(
-      {@HiveField(0) String? title,
-      @HiveField(1) String? subtitle,
-      @HiveField(2) int? dataId,
-      @HiveField(3) String? categoryId,
-      @HiveField(4) String? type,
-      @HiveField(5) String? id});
+  $Res call({
+    @HiveField(0) String? title,
+    @HiveField(1) String? subtitle,
+    @HiveField(2) int? dataId,
+    @HiveField(3) String? categoryId,
+    @HiveField(4) String? type,
+    @HiveField(5) String? id,
+  });
 }
 
 /// @nodoc
@@ -73,50 +73,60 @@ class _$BookmarkDataCopyWithImpl<$Res, $Val extends BookmarkData>
     Object? type = freezed,
     Object? id = freezed,
   }) {
-    return _then(_value.copyWith(
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dataId: freezed == dataId
-          ? _value.dataId
-          : dataId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      categoryId: freezed == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            title:
+                freezed == title
+                    ? _value.title
+                    : title // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            subtitle:
+                freezed == subtitle
+                    ? _value.subtitle
+                    : subtitle // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            dataId:
+                freezed == dataId
+                    ? _value.dataId
+                    : dataId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            categoryId:
+                freezed == categoryId
+                    ? _value.categoryId
+                    : categoryId // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            type:
+                freezed == type
+                    ? _value.type
+                    : type // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            id:
+                freezed == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
-abstract class _$$BookmarkDataImplCopyWith<$Res>
-    implements $BookmarkDataCopyWith<$Res> {
+abstract class _$$BookmarkDataImplCopyWith<$Res> implements $BookmarkDataCopyWith<$Res> {
   factory _$$BookmarkDataImplCopyWith(
-          _$BookmarkDataImpl value, $Res Function(_$BookmarkDataImpl) then) =
-      __$$BookmarkDataImplCopyWithImpl<$Res>;
+    _$BookmarkDataImpl value,
+    $Res Function(_$BookmarkDataImpl) then,
+  ) = __$$BookmarkDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@HiveField(0) String? title,
-      @HiveField(1) String? subtitle,
-      @HiveField(2) int? dataId,
-      @HiveField(3) String? categoryId,
-      @HiveField(4) String? type,
-      @HiveField(5) String? id});
+  $Res call({
+    @HiveField(0) String? title,
+    @HiveField(1) String? subtitle,
+    @HiveField(2) int? dataId,
+    @HiveField(3) String? categoryId,
+    @HiveField(4) String? type,
+    @HiveField(5) String? id,
+  });
 }
 
 /// @nodoc
@@ -124,8 +134,9 @@ class __$$BookmarkDataImplCopyWithImpl<$Res>
     extends _$BookmarkDataCopyWithImpl<$Res, _$BookmarkDataImpl>
     implements _$$BookmarkDataImplCopyWith<$Res> {
   __$$BookmarkDataImplCopyWithImpl(
-      _$BookmarkDataImpl _value, $Res Function(_$BookmarkDataImpl) _then)
-      : super(_value, _then);
+    _$BookmarkDataImpl _value,
+    $Res Function(_$BookmarkDataImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of BookmarkData
   /// with the given fields replaced by the non-null parameter values.
@@ -139,46 +150,54 @@ class __$$BookmarkDataImplCopyWithImpl<$Res>
     Object? type = freezed,
     Object? id = freezed,
   }) {
-    return _then(_$BookmarkDataImpl(
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      subtitle: freezed == subtitle
-          ? _value.subtitle
-          : subtitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dataId: freezed == dataId
-          ? _value.dataId
-          : dataId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      categoryId: freezed == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$BookmarkDataImpl(
+        title:
+            freezed == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        subtitle:
+            freezed == subtitle
+                ? _value.subtitle
+                : subtitle // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        dataId:
+            freezed == dataId
+                ? _value.dataId
+                : dataId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        categoryId:
+            freezed == categoryId
+                ? _value.categoryId
+                : categoryId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        type:
+            freezed == type
+                ? _value.type
+                : type // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        id:
+            freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$BookmarkDataImpl extends _BookmarkData {
-  const _$BookmarkDataImpl(
-      {@HiveField(0) this.title,
-      @HiveField(1) this.subtitle,
-      @HiveField(2) this.dataId,
-      @HiveField(3) this.categoryId,
-      @HiveField(4) this.type,
-      @HiveField(5) this.id})
-      : super._();
+  const _$BookmarkDataImpl({
+    @HiveField(0) this.title,
+    @HiveField(1) this.subtitle,
+    @HiveField(2) this.dataId,
+    @HiveField(3) this.categoryId,
+    @HiveField(4) this.type,
+    @HiveField(5) this.id,
+  }) : super._();
 
   @override
   @HiveField(0)
@@ -210,18 +229,15 @@ class _$BookmarkDataImpl extends _BookmarkData {
         (other.runtimeType == runtimeType &&
             other is _$BookmarkDataImpl &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.subtitle, subtitle) ||
-                other.subtitle == subtitle) &&
+            (identical(other.subtitle, subtitle) || other.subtitle == subtitle) &&
             (identical(other.dataId, dataId) || other.dataId == dataId) &&
-            (identical(other.categoryId, categoryId) ||
-                other.categoryId == categoryId) &&
+            (identical(other.categoryId, categoryId) || other.categoryId == categoryId) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, title, subtitle, dataId, categoryId, type, id);
+  int get hashCode => Object.hash(runtimeType, title, subtitle, dataId, categoryId, type, id);
 
   /// Create a copy of BookmarkData
   /// with the given fields replaced by the non-null parameter values.
@@ -233,13 +249,14 @@ class _$BookmarkDataImpl extends _BookmarkData {
 }
 
 abstract class _BookmarkData extends BookmarkData {
-  const factory _BookmarkData(
-      {@HiveField(0) final String? title,
-      @HiveField(1) final String? subtitle,
-      @HiveField(2) final int? dataId,
-      @HiveField(3) final String? categoryId,
-      @HiveField(4) final String? type,
-      @HiveField(5) final String? id}) = _$BookmarkDataImpl;
+  const factory _BookmarkData({
+    @HiveField(0) final String? title,
+    @HiveField(1) final String? subtitle,
+    @HiveField(2) final int? dataId,
+    @HiveField(3) final String? categoryId,
+    @HiveField(4) final String? type,
+    @HiveField(5) final String? id,
+  }) = _$BookmarkDataImpl;
   const _BookmarkData._() : super._();
 
   @override

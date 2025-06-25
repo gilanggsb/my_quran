@@ -7,12 +7,7 @@ class QuranTile extends StatelessWidget {
   final Quran? quran;
   final Widget? rightIcon;
   final VoidCallback? onTap;
-  const QuranTile({
-    super.key,
-    this.quran,
-    this.rightIcon,
-    this.onTap,
-  });
+  const QuranTile({super.key, this.quran, this.rightIcon, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +21,7 @@ class QuranTile extends StatelessWidget {
         children: [
           QuranNumber(number: quran?.number),
           8.widthBox,
-          Expanded(
-            child: QuranTitle(quran: quran),
-          ),
+          Expanded(child: QuranTitle(quran: quran)),
         ],
       ),
       trailing: rightIcon,

@@ -12,7 +12,8 @@ part of 'home_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$HomeEvent {
@@ -22,16 +23,14 @@ mixin _$HomeEvent {
     required TResult Function() getData,
     required TResult Function(String query) searchSurahJuz,
     required TResult Function() clearSearch,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getData,
     TResult? Function(String query)? searchSurahJuz,
     TResult? Function()? clearSearch,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
@@ -39,24 +38,21 @@ mixin _$HomeEvent {
     TResult Function(String query)? searchSurahJuz,
     TResult Function()? clearSearch,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetData value) getData,
     required TResult Function(_SearchSurahJuz value) searchSurahJuz,
     required TResult Function(_ClearSearch value) clearSearch,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetData value)? getData,
     TResult? Function(_SearchSurahJuz value)? searchSurahJuz,
     TResult? Function(_ClearSearch value)? clearSearch,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
@@ -64,8 +60,7 @@ mixin _$HomeEvent {
     TResult Function(_SearchSurahJuz value)? searchSurahJuz,
     TResult Function(_ClearSearch value)? clearSearch,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -75,8 +70,7 @@ abstract class $HomeEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
-    implements $HomeEventCopyWith<$Res> {
+class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent> implements $HomeEventCopyWith<$Res> {
   _$HomeEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -90,18 +84,15 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
 
 /// @nodoc
 abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+  factory _$$StartedImplCopyWith(_$StartedImpl value, $Res Function(_$StartedImpl) then) =
       __$$StartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$StartedImpl>
+class __$$StartedImplCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
-      : super(_value, _then);
+  __$$StartedImplCopyWithImpl(_$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -119,8 +110,7 @@ class _$StartedImpl implements _Started {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$StartedImpl);
   }
 
   @override
@@ -207,18 +197,15 @@ abstract class _Started implements HomeEvent {
 
 /// @nodoc
 abstract class _$$GetDataImplCopyWith<$Res> {
-  factory _$$GetDataImplCopyWith(
-          _$GetDataImpl value, $Res Function(_$GetDataImpl) then) =
+  factory _$$GetDataImplCopyWith(_$GetDataImpl value, $Res Function(_$GetDataImpl) then) =
       __$$GetDataImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetDataImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$GetDataImpl>
+class __$$GetDataImplCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res, _$GetDataImpl>
     implements _$$GetDataImplCopyWith<$Res> {
-  __$$GetDataImplCopyWithImpl(
-      _$GetDataImpl _value, $Res Function(_$GetDataImpl) _then)
-      : super(_value, _then);
+  __$$GetDataImplCopyWithImpl(_$GetDataImpl _value, $Res Function(_$GetDataImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -236,8 +223,7 @@ class _$GetDataImpl implements _GetData {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetDataImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetDataImpl);
   }
 
   @override
@@ -324,9 +310,10 @@ abstract class _GetData implements HomeEvent {
 
 /// @nodoc
 abstract class _$$SearchSurahJuzImplCopyWith<$Res> {
-  factory _$$SearchSurahJuzImplCopyWith(_$SearchSurahJuzImpl value,
-          $Res Function(_$SearchSurahJuzImpl) then) =
-      __$$SearchSurahJuzImplCopyWithImpl<$Res>;
+  factory _$$SearchSurahJuzImplCopyWith(
+    _$SearchSurahJuzImpl value,
+    $Res Function(_$SearchSurahJuzImpl) then,
+  ) = __$$SearchSurahJuzImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String query});
 }
@@ -336,22 +323,23 @@ class __$$SearchSurahJuzImplCopyWithImpl<$Res>
     extends _$HomeEventCopyWithImpl<$Res, _$SearchSurahJuzImpl>
     implements _$$SearchSurahJuzImplCopyWith<$Res> {
   __$$SearchSurahJuzImplCopyWithImpl(
-      _$SearchSurahJuzImpl _value, $Res Function(_$SearchSurahJuzImpl) _then)
-      : super(_value, _then);
+    _$SearchSurahJuzImpl _value,
+    $Res Function(_$SearchSurahJuzImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? query = null,
-  }) {
-    return _then(_$SearchSurahJuzImpl(
-      null == query
-          ? _value.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? query = null}) {
+    return _then(
+      _$SearchSurahJuzImpl(
+        null == query
+            ? _value.query
+            : query // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -385,8 +373,7 @@ class _$SearchSurahJuzImpl implements _SearchSurahJuz {
   @override
   @pragma('vm:prefer-inline')
   _$$SearchSurahJuzImplCopyWith<_$SearchSurahJuzImpl> get copyWith =>
-      __$$SearchSurahJuzImplCopyWithImpl<_$SearchSurahJuzImpl>(
-          this, _$identity);
+      __$$SearchSurahJuzImplCopyWithImpl<_$SearchSurahJuzImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -478,17 +465,16 @@ abstract class _SearchSurahJuz implements HomeEvent {
 /// @nodoc
 abstract class _$$ClearSearchImplCopyWith<$Res> {
   factory _$$ClearSearchImplCopyWith(
-          _$ClearSearchImpl value, $Res Function(_$ClearSearchImpl) then) =
-      __$$ClearSearchImplCopyWithImpl<$Res>;
+    _$ClearSearchImpl value,
+    $Res Function(_$ClearSearchImpl) then,
+  ) = __$$ClearSearchImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ClearSearchImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$ClearSearchImpl>
+class __$$ClearSearchImplCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res, _$ClearSearchImpl>
     implements _$$ClearSearchImplCopyWith<$Res> {
-  __$$ClearSearchImplCopyWithImpl(
-      _$ClearSearchImpl _value, $Res Function(_$ClearSearchImpl) _then)
-      : super(_value, _then);
+  __$$ClearSearchImplCopyWithImpl(_$ClearSearchImpl _value, $Res Function(_$ClearSearchImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -602,8 +588,7 @@ mixin _$HomeState {
     required TResult Function() searching,
     required TResult Function(String query) searchedSurahJuz,
     required TResult Function(String message) failed,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -612,8 +597,7 @@ mixin _$HomeState {
     TResult? Function()? searching,
     TResult? Function(String query)? searchedSurahJuz,
     TResult? Function(String message)? failed,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -623,8 +607,7 @@ mixin _$HomeState {
     TResult Function(String query)? searchedSurahJuz,
     TResult Function(String message)? failed,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -633,8 +616,7 @@ mixin _$HomeState {
     required TResult Function(_Searching value) searching,
     required TResult Function(_SearchedSurahJuz value) searchedSurahJuz,
     required TResult Function(_Error value) failed,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -643,8 +625,7 @@ mixin _$HomeState {
     TResult? Function(_Searching value)? searching,
     TResult? Function(_SearchedSurahJuz value)? searchedSurahJuz,
     TResult? Function(_Error value)? failed,
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -654,8 +635,7 @@ mixin _$HomeState {
     TResult Function(_SearchedSurahJuz value)? searchedSurahJuz,
     TResult Function(_Error value)? failed,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -665,8 +645,7 @@ abstract class $HomeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
+class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState> implements $HomeStateCopyWith<$Res> {
   _$HomeStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -680,18 +659,15 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+  factory _$$InitialImplCopyWith(_$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
+class __$$InitialImplCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
+  __$$InitialImplCopyWithImpl(_$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -709,8 +685,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -809,18 +784,15 @@ abstract class _Initial implements HomeState {
 
 /// @nodoc
 abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+  factory _$$LoadingImplCopyWith(_$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
       __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$LoadingImpl>
+class __$$LoadingImplCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-      : super(_value, _then);
+  __$$LoadingImplCopyWithImpl(_$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -838,8 +810,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -938,18 +909,15 @@ abstract class _Loading implements HomeState {
 
 /// @nodoc
 abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+  factory _$$SuccessImplCopyWith(_$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$SuccessImpl>
+class __$$SuccessImplCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
-      : super(_value, _then);
+  __$$SuccessImplCopyWithImpl(_$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -967,8 +935,7 @@ class _$SuccessImpl implements _Success {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
@@ -1067,18 +1034,15 @@ abstract class _Success implements HomeState {
 
 /// @nodoc
 abstract class _$$SearchingImplCopyWith<$Res> {
-  factory _$$SearchingImplCopyWith(
-          _$SearchingImpl value, $Res Function(_$SearchingImpl) then) =
+  factory _$$SearchingImplCopyWith(_$SearchingImpl value, $Res Function(_$SearchingImpl) then) =
       __$$SearchingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SearchingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$SearchingImpl>
+class __$$SearchingImplCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$SearchingImpl>
     implements _$$SearchingImplCopyWith<$Res> {
-  __$$SearchingImplCopyWithImpl(
-      _$SearchingImpl _value, $Res Function(_$SearchingImpl) _then)
-      : super(_value, _then);
+  __$$SearchingImplCopyWithImpl(_$SearchingImpl _value, $Res Function(_$SearchingImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1096,8 +1060,7 @@ class _$SearchingImpl implements _Searching {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SearchingImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SearchingImpl);
   }
 
   @override
@@ -1196,9 +1159,10 @@ abstract class _Searching implements HomeState {
 
 /// @nodoc
 abstract class _$$SearchedSurahJuzImplCopyWith<$Res> {
-  factory _$$SearchedSurahJuzImplCopyWith(_$SearchedSurahJuzImpl value,
-          $Res Function(_$SearchedSurahJuzImpl) then) =
-      __$$SearchedSurahJuzImplCopyWithImpl<$Res>;
+  factory _$$SearchedSurahJuzImplCopyWith(
+    _$SearchedSurahJuzImpl value,
+    $Res Function(_$SearchedSurahJuzImpl) then,
+  ) = __$$SearchedSurahJuzImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String query});
 }
@@ -1207,23 +1171,24 @@ abstract class _$$SearchedSurahJuzImplCopyWith<$Res> {
 class __$$SearchedSurahJuzImplCopyWithImpl<$Res>
     extends _$HomeStateCopyWithImpl<$Res, _$SearchedSurahJuzImpl>
     implements _$$SearchedSurahJuzImplCopyWith<$Res> {
-  __$$SearchedSurahJuzImplCopyWithImpl(_$SearchedSurahJuzImpl _value,
-      $Res Function(_$SearchedSurahJuzImpl) _then)
-      : super(_value, _then);
+  __$$SearchedSurahJuzImplCopyWithImpl(
+    _$SearchedSurahJuzImpl _value,
+    $Res Function(_$SearchedSurahJuzImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? query = null,
-  }) {
-    return _then(_$SearchedSurahJuzImpl(
-      null == query
-          ? _value.query
-          : query // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? query = null}) {
+    return _then(
+      _$SearchedSurahJuzImpl(
+        null == query
+            ? _value.query
+            : query // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -1257,8 +1222,7 @@ class _$SearchedSurahJuzImpl implements _SearchedSurahJuz {
   @override
   @pragma('vm:prefer-inline')
   _$$SearchedSurahJuzImplCopyWith<_$SearchedSurahJuzImpl> get copyWith =>
-      __$$SearchedSurahJuzImplCopyWithImpl<_$SearchedSurahJuzImpl>(
-          this, _$identity);
+      __$$SearchedSurahJuzImplCopyWithImpl<_$SearchedSurahJuzImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1361,34 +1325,31 @@ abstract class _SearchedSurahJuz implements HomeState {
 
 /// @nodoc
 abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+  factory _$$ErrorImplCopyWith(_$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
       __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$ErrorImpl>
+class __$$ErrorImplCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
-      : super(_value, _then);
+  __$$ErrorImplCopyWithImpl(_$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$ErrorImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? message = null}) {
+    return _then(
+      _$ErrorImpl(
+        null == message
+            ? _value.message
+            : message // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -1519,6 +1480,5 @@ abstract class _Error implements HomeState {
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }

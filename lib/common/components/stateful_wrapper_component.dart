@@ -21,8 +21,7 @@ class StatefulWrapper extends StatefulWidget {
   StatefulWrapperState createState() => StatefulWrapperState();
 }
 
-class StatefulWrapperState extends State<StatefulWrapper>
-    with WidgetsBindingObserver {
+class StatefulWrapperState extends State<StatefulWrapper> with WidgetsBindingObserver {
   @override
   void initState() {
     if (widget.onInit != null) {

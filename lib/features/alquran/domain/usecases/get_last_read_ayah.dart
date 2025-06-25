@@ -6,6 +6,5 @@ class GetLastReadAyah extends UseCase<LastReadAyah?, NoParams> {
 
   GetLastReadAyah({required this.repository});
   @override
-  Future<LastReadAyah?> call(NoParams params) async =>
-      repository.getLastReadAyah();
+  Future<LastReadAyah?> call(NoParams params) async => repository.getLastReadAyah();
 }

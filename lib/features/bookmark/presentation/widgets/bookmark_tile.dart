@@ -19,17 +19,10 @@ class BookmarkTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onPress,
-      title: DefaultText(
-        title ?? '',
-        fontWeight: FontWeight.bold,
-        fontSize: 18,
-      ),
+      title: DefaultText(title ?? '', fontWeight: FontWeight.bold, fontSize: 18),
       subtitle: DefaultText(subtitle),
       trailing: IconButton(
-        icon: Icon(
-          Icons.delete,
-          color: context.getColorExt(AppColorType.primary),
-        ),
+        icon: Icon(Icons.delete, color: context.getColorExt(AppColorType.primary)),
         onPressed: onDeletePress,
       ),
     );

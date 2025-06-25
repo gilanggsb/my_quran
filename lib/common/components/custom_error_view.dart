@@ -18,8 +18,7 @@ class CustomErrorView extends StatelessWidget {
               Image.asset("error_image".toPng),
               DefaultText(
                 kDebugMode
-                    ? flutterErrorDetails?.exceptionAsString() ??
-                        "Flutter null Error"
+                    ? flutterErrorDetails?.exceptionAsString() ?? "Flutter null Error"
                     : "Sorry! Something went wrong!",
                 textAlign: TextAlign.center,
                 color: Colors.red[700],

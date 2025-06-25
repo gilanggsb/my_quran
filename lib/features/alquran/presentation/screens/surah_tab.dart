@@ -14,9 +14,7 @@ class SurahTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SurahCubit, SurahState>(
       listener: (context, state) {
-        state.whenOrNull(
-          failed: (message) => SnackBarWidget.showFailed(message),
-        );
+        state.whenOrNull(failed: (message) => SnackBarWidget.showFailed(message));
       },
       builder: (context, state) {
         final surahCubit = context.read<SurahCubit>();
@@ -24,10 +22,7 @@ class SurahTab extends StatelessWidget {
         final surahs = isLoading ? BoneMockData.fakeSurahs : surahCubit.surahs;
         final failedMessage = state.whenOrNull(failed: (data) => data);
         if (failedMessage != null) {
-          return EmptyStateWidget(
-            title: 'Gagal memuat data',
-            message: failedMessage,
-          );
+          return EmptyStateWidget(title: 'Gagal memuat data', message: failedMessage);
         }
 
         return RefreshIndicator(
@@ -44,8 +39,7 @@ class SurahTab extends StatelessWidget {
                     number: surah.number,
                     title: surah.nameId,
                     titleAr: surah.nameShort,
-                    subtitle:
-                        '${surah.translateRevelationId} • ${surah.numberOfVerses} Ayat',
+                    subtitle: '${surah.translateRevelationId} • ${surah.numberOfVerses} Ayat',
                   ),
                   // rightIcon: QuranStatus(
                   //   onTap: () {},

@@ -6,6 +6,5 @@ class GetJuz extends UseCase<BaseResponse<Juz?>, int> {
 
   GetJuz({required this.repository});
   @override
-  Future<BaseResponse<Juz?>> call(int params) async =>
-      repository.getJuz(params);
+  Future<BaseResponse<Juz?>> call(int params) async => repository.getJuz(params);
 }

@@ -43,12 +43,7 @@ class BookmarkCategoryCubit extends Cubit<BookmarkCategoryState> {
   void addCategory(String name) async {
     try {
       _emitLoading();
-      await addBookmarkCategory(
-        BookmarkCategory(
-          name: name,
-          id: AppUtils.generateUUIDv4(),
-        ),
-      );
+      await addBookmarkCategory(BookmarkCategory(name: name, id: AppUtils.generateUUIDv4()));
       getData();
       _emitLoaded();
     } on ServerFailure catch (e) {
