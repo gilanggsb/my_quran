@@ -40,14 +40,14 @@ class JuzTab extends StatelessWidget {
                 final juz = juzs[index];
                 return QuranTile(
                   quran: Quran(
-                    number: juz.number,
+                    number: juz.number.toString(),
                     title: juz.name,
                     subtitle: "${juz.nameStartId} • ${juz.nameEndId}",
                   ),
                   onTap: () => context.pushRoute(
                     QuranDetailRoute(
                       params: QuranDetailParams(
-                        juzNumber: juz.number?.tryParseInt,
+                        juzNumber: juz.number,
                         detailType: QuranDetailTypeEnum.byJuzs,
                       ),
                     ),

@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_ce/hive.dart';
 
+import '../../../../common/common.dart';
+
 part 'surah.freezed.dart';
 part 'surah.g.dart';
 
@@ -22,7 +24,7 @@ class Surah with _$Surah {
     @HiveField(2) String? nameId,
     @HiveField(3) String? nameLong,
     @HiveField(4) String? nameShort,
-    @HiveField(5) String? number,
+    @HiveField(5) @StringToIntConverter() int? number,
     @HiveField(6) String? numberOfVerses,
     @HiveField(7) String? revelation,
     @HiveField(8) String? revelationEn,

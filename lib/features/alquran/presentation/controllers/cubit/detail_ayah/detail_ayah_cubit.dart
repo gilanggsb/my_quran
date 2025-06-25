@@ -66,17 +66,16 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
   }
 
   Future<void> copyAyah() async {
-    final copySurahData =
-        '${currentAyah?.arab}\n${currentAyah?.latin}\n${currentAyah?.text}';
+    final copySurahData = '${currentAyah?.arab}\n${currentAyah?.latin}\n${currentAyah?.text}';
     AppUtils.copyLink(data: copySurahData, successMessage: 'Success copy ayah');
   }
 
   Future<QuranDetailParams> getParamsDataReadAsSurah() async {
-    Surah? surah = paramsData?.lastReadAyah?.surah ??
-        findSurah(paramsData?.lastReadAyah?.ayah?.surah);
+    Surah? surah =
+        paramsData?.lastReadAyah?.surah ?? findSurah(paramsData?.lastReadAyah?.ayah?.surah);
     final pagination = AyahsThroughoutPagination(
       ayat: "1",
-      surat: surah?.number,
+      surat: surah?.number.toString(),
       panjang: "10",
     );
     return QuranDetailParams(
@@ -108,8 +107,7 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
   Surah? get surah => findSurah(currentAyah?.surah);
 
   Surah? findSurah(String? surahId) =>
-      surahs.firstWhereOrNull((surah) => surah.number == surahId);
+      surahs.firstWhereOrNull((surah) => surah.number == int.tryParse(surahId ?? "0"));
 
-  bool get isSurahType =>
-      paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
+  bool get isSurahType => paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
 }

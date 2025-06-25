@@ -75,8 +75,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<Surah?> getCachedSurah(int surahNumber) async {
     try {
       final surahCollection = localDBService.getCollection<Surah>();
-      final surah = surahCollection.values
-          .firstWhereOrNull((e) => int.parse(e.number ?? "0") == surahNumber);
+      final surah = surahCollection.values.firstWhereOrNull((e) => e.number == surahNumber);
       return surah;
     } on String catch (_) {
       rethrow;
@@ -117,8 +116,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<Juz?> getCachedJuz(int juzNumber) async {
     try {
       final juzCollection = localDBService.getCollection<Juz>();
-      final juz = juzCollection.values
-          .firstWhereOrNull((e) => int.tryParse(e.number ?? "0") == juzNumber);
+      final juz = juzCollection.values.firstWhereOrNull((e) => e.number == juzNumber);
       return juz;
     } on String catch (_) {
       rethrow;
@@ -150,8 +148,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   Future<Ayah?> getCachedAyah(int ayahId) async {
     try {
       final ayahCollection = localDBService.getCollection<Ayah>();
-      final ayah =
-          ayahCollection.values.firstWhereOrNull((e) => e.idInt == ayahId);
+      final ayah = ayahCollection.values.firstWhereOrNull((e) => e.idInt == ayahId);
       return ayah;
     } on String catch (_) {
       rethrow;
@@ -165,8 +162,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
   @override
   Future<List<Ayah>> getCachedAyahs(AyahPagination pagination) async {
     try {
-      final ayahBox =
-          localDBService.getCollection<Ayah>(); // Get the Hive box for Ayah
+      final ayahBox = localDBService.getCollection<Ayah>(); // Get the Hive box for Ayah
       final ayahs = ayahBox.values
           .where((ayah) => ayah.id == "${pagination.page}") // Filter by id
           .take(pagination.page!) // Limit the results based on pagination
@@ -190,21 +186,16 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
     AyahsThroughoutPagination ayahsThroughout,
   ) async {
     try {
-      final ayahBox =
-          localDBService.getCollection<Ayah>(); // Get the Hive box for Ayah
+      final ayahBox = localDBService.getCollection<Ayah>(); // Get the Hive box for Ayah
 
 // Retrieve all Ayahs from the box
       final allAyahs = ayahBox.values.toList();
 
 // Filter the Ayahs based on the conditions
       final ayahs = allAyahs.where((ayah) {
-        return ayah.surah ==
-                ayahsThroughout
-                    .surat && // Assuming surahInt is the field for surah
-            ayah.ayahInt! >=
-                ayahsThroughout.ayat!.parseInt && // Ensure ayahInt is not null
-            ayah.ayahInt! <=
-                ayahsThroughout.panjang!.parseInt; // Ensure ayahInt is not null
+        return ayah.surah == ayahsThroughout.surat && // Assuming surahInt is the field for surah
+            ayah.ayahInt! >= ayahsThroughout.ayat!.parseInt && // Ensure ayahInt is not null
+            ayah.ayahInt! <= ayahsThroughout.panjang!.parseInt; // Ensure ayahInt is not null
       }).toList();
 
       return ayahs;
@@ -241,7 +232,7 @@ class QuranLocalDataSourceImpl extends QuranLocalDataSource {
 
         // Filter the Ayahs based on the surah number and juz number
         final ayahs = allAyahs.where((ayah) {
-          return ayah.surah == surah.number && ayah.juzInt == juzNumber;
+          return ayah.surah == surah.number.toString() && ayah.juzInt == juzNumber;
         }).toList();
 
         if (ayahs.isEmpty) {

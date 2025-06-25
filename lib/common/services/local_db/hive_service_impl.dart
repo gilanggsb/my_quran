@@ -9,13 +9,17 @@ import '../../common.dart';
 // const collectionFreezed = Collection(ignore: {'copyWith'});
 
 class HiveServiceImpl extends HiveService {
+  final ayahBoxName = 'ayah_box';
+  final juzBoxName = 'juz_box';
+  final surahBoxName = 'surah_box';
+  final bookmarkCategoryBoxName = 'bookmark_category_box';
+  final bookmarkDataBoxName = 'bookmark_data_box';
+
   late Box<Ayah> ayahBox; // Assuming Ayah is one of your models
   late Box<Surah> surahBox; // Assuming Surah is another model
   late Box<Juz> juzBox; // Assuming Juz is another model
-  late Box<BookmarkCategory>
-      bookmarkCategoryBox; // Assuming BookmarkCategory is another model
-  late Box<BookmarkData>
-      bookmarkDataBox; // Assuming BookmarkData is another model
+  late Box<BookmarkCategory> bookmarkCategoryBox; // Assuming BookmarkCategory is another model
+  late Box<BookmarkData> bookmarkDataBox; // Assuming BookmarkData is another model
 
   static List<String> get hiveBoxNames {
     return [
@@ -29,18 +33,25 @@ class HiveServiceImpl extends HiveService {
 
   @override
   Future<T?> init<T>() async {
+    await Hive.initFlutter();
     Hive.registerAdapter(AyahAdapter());
     Hive.registerAdapter(JuzAdapter());
     Hive.registerAdapter(SurahAdapter());
     Hive.registerAdapter(BookmarkCategoryAdapter());
     Hive.registerAdapter(BookmarkDataAdapter());
+    final [resAyahBox, resJusBox, resSurahBox, resBookmarkCategoryBox, resBookmarkDataBox] = await [
+      Hive.openBox<Ayah>(ayahBoxName),
+      Hive.openBox<Juz>(juzBoxName),
+      Hive.openBox<Surah>(surahBoxName),
+      Hive.openBox<BookmarkCategory>(bookmarkCategoryBoxName),
+      Hive.openBox<BookmarkData>(bookmarkDataBoxName),
+    ].wait;
 
-    ayahBox = await Hive.openBox<Ayah>('ayah_box');
-    juzBox = await Hive.openBox<Juz>('juz_box');
-    surahBox = await Hive.openBox<Surah>('surah_box');
-    bookmarkCategoryBox =
-        await Hive.openBox<BookmarkCategory>('bookmark_category_box');
-    bookmarkDataBox = await Hive.openBox<BookmarkData>('bookmark_data_box');
+    ayahBox = resAyahBox as Box<Ayah>;
+    juzBox = resJusBox as Box<Juz>;
+    surahBox = resSurahBox as Box<Surah>;
+    bookmarkCategoryBox = resBookmarkCategoryBox as Box<BookmarkCategory>;
+    bookmarkDataBox = resBookmarkDataBox as Box<BookmarkData>;
 
     return null;
   }
@@ -60,9 +71,9 @@ class HiveServiceImpl extends HiveService {
     if (data is Ayah) {
       await ayahBox.put(data.idInt ?? 0, data);
     } else if (data is Juz) {
-      await juzBox.put(data.number ?? '0', data);
+      await juzBox.put(data.number, data);
     } else if (data is Surah) {
-      await surahBox.put(data.number ?? '0', data);
+      await surahBox.put(data.number, data);
     } else if (data is BookmarkCategory) {
       await bookmarkCategoryBox.put(data.id, data);
     } else if (data is BookmarkData) {
@@ -94,8 +105,7 @@ class HiveServiceImpl extends HiveService {
 
   @override
   Future<void> update<T>(T data) async {
-    await getCollection<T>()
-        .put((data as dynamic).id, data); // Assuming each model has a unique id
+    await getCollection<T>().put((data as dynamic).id, data); // Assuming each model has a unique id
   }
 
   @override

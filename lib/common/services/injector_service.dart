@@ -13,8 +13,8 @@ class InjectorService {
 
   static Future<void> create({bool isTesting = false}) async {
     const injectorService = InjectorService();
-    await GetStorage.init();
-    await injectorService.setupLocator(isTesting: isTesting);
+    injectorService.setupLocator(isTesting: isTesting);
+    await getIt.allReady();
   }
 
   Future<void> setupLocator({bool isTesting = false}) async {
@@ -31,11 +31,6 @@ class InjectorService {
   }
 
   void serviceInjection({bool isTesting = false}) {
-    getIt.registerSingletonAsync<HiveService>(() async {
-      HiveService db = HiveServiceImpl();
-      await db.init();
-      return db;
-    });
     getIt.registerLazySingleton<ApiService>(
       () => ApiServiceImpl(
         dio: getIt(),
@@ -50,13 +45,19 @@ class InjectorService {
     getIt.registerLazySingleton<NetworkService>(
       () => NetworkServiceImpl(getIt(), isTesting: isTesting),
     );
+    getIt.registerSingletonAsync<HiveService>(() async {
+      HiveService db = HiveServiceImpl();
+      await db.init();
+      return db;
+    });
   }
 
   void moduleInjection({bool isTesting = false}) {
     if (!isTesting) {
-      getIt.registerLazySingleton<GetStorage>(
-        () => GetStorage(),
-      );
+      getIt.registerSingletonAsync<GetStorage>(() async {
+        await GetStorage.init();
+        return GetStorage();
+      });
     }
     getIt.registerLazySingleton<Dio>(
       () => Dio(),

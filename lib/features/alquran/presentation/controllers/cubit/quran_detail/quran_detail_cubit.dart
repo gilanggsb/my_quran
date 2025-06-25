@@ -119,7 +119,7 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
 
   Surah? findSurah(Ayah ayah) {
     return surahCubit.surahs
-        .firstWhereOrNull((surah) => surah.number == ayah.surah);
+        .firstWhereOrNull((surah) => surah.number == int.tryParse(ayah.surah ?? "0"));
   }
 
   Surah? get surah => findSurah(ayahs.first);
@@ -130,8 +130,7 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     globalContext.read<PlayerWidgetCubit>().playTrack(
           source: UrlSource(ayahUrl),
           newTitle: surah?.nameId,
-          newSubTitle:
-              '${surah?.translateRevelationId} • ${surah?.numberOfVerses} Ayat',
+          newSubTitle: '${surah?.translateRevelationId} • ${surah?.numberOfVerses} Ayat',
         );
   }
 
@@ -141,6 +140,5 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     return super.close();
   }
 
-  bool get isSurahsType =>
-      paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
+  bool get isSurahsType => paramsData?.detailType == QuranDetailTypeEnum.bySurahs;
 }

@@ -66,12 +66,12 @@ class SearchSurahOrJuzBottomSheet extends StatelessWidget {
                 return QuranTile(
                   quran: Quran(
                     title: isSurahType ? surah?.nameId : juz?.name,
-                    number: isSurahType ? surah?.number : juz?.number,
+                    number: isSurahType ? surah?.number.toString() : juz?.number.toString(),
                   ),
                   onTap: () {
                     BottomSheetManager.closeCurrentBottomSheet();
                     jumpAyahCubit.changeSurahOrJuz(
-                      isSurahType ? surah?.number : juz?.number,
+                      isSurahType ? surah?.number.toString() : juz?.number.toString(),
                     );
                   },
                 );

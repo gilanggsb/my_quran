@@ -17,7 +17,7 @@ abstract class BoneMockData {
   static final List<Surah> fakeSurahs = List.filled(
     10,
     const Surah(
-      number: "1",
+      number: 1,
       nameId: "Al-Ma'idah",
       nameShort: "المائدة",
       revelationId: "Mekkah",
@@ -28,7 +28,7 @@ abstract class BoneMockData {
   static final List<Juz> fakeJuzs = List.filled(
     10,
     const Juz(
-      number: "1",
+      number: 1,
       name: "Juz 1",
       nameStartId: "Al-Fatihah",
       nameEndId: "Al-Baqarah",

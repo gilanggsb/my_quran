@@ -33,7 +33,8 @@ mixin _$Juz {
   @HiveField(7)
   String? get nameStartId => throw _privateConstructorUsedError;
   @HiveField(8)
-  String? get number => throw _privateConstructorUsedError;
+  @StringToIntConverter()
+  int? get number => throw _privateConstructorUsedError;
   @HiveField(9)
   String? get surahIdEnd => throw _privateConstructorUsedError;
   @HiveField(10)
@@ -63,7 +64,7 @@ abstract class $JuzCopyWith<$Res> {
       @HiveField(5) String? nameEndId,
       @HiveField(6) String? nameStartArab,
       @HiveField(7) String? nameStartId,
-      @HiveField(8) String? number,
+      @HiveField(8) @StringToIntConverter() int? number,
       @HiveField(9) String? surahIdEnd,
       @HiveField(10) String? surahIdStart,
       @HiveField(11) String? verseEnd,
@@ -134,7 +135,7 @@ class _$JuzCopyWithImpl<$Res, $Val extends Juz> implements $JuzCopyWith<$Res> {
       number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       surahIdEnd: freezed == surahIdEnd
           ? _value.surahIdEnd
           : surahIdEnd // ignore: cast_nullable_to_non_nullable
@@ -170,7 +171,7 @@ abstract class _$$JuzImplCopyWith<$Res> implements $JuzCopyWith<$Res> {
       @HiveField(5) String? nameEndId,
       @HiveField(6) String? nameStartArab,
       @HiveField(7) String? nameStartId,
-      @HiveField(8) String? number,
+      @HiveField(8) @StringToIntConverter() int? number,
       @HiveField(9) String? surahIdEnd,
       @HiveField(10) String? surahIdStart,
       @HiveField(11) String? verseEnd,
@@ -238,7 +239,7 @@ class __$$JuzImplCopyWithImpl<$Res> extends _$JuzCopyWithImpl<$Res, _$JuzImpl>
       number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       surahIdEnd: freezed == surahIdEnd
           ? _value.surahIdEnd
           : surahIdEnd // ignore: cast_nullable_to_non_nullable
@@ -271,7 +272,7 @@ class _$JuzImpl extends _Juz {
       @HiveField(5) this.nameEndId,
       @HiveField(6) this.nameStartArab,
       @HiveField(7) this.nameStartId,
-      @HiveField(8) this.number,
+      @HiveField(8) @StringToIntConverter() this.number,
       @HiveField(9) this.surahIdEnd,
       @HiveField(10) this.surahIdStart,
       @HiveField(11) this.verseEnd,
@@ -304,7 +305,8 @@ class _$JuzImpl extends _Juz {
   final String? nameStartId;
   @override
   @HiveField(8)
-  final String? number;
+  @StringToIntConverter()
+  final int? number;
   @override
   @HiveField(9)
   final String? surahIdEnd;
@@ -390,7 +392,7 @@ abstract class _Juz extends Juz {
       @HiveField(5) final String? nameEndId,
       @HiveField(6) final String? nameStartArab,
       @HiveField(7) final String? nameStartId,
-      @HiveField(8) final String? number,
+      @HiveField(8) @StringToIntConverter() final int? number,
       @HiveField(9) final String? surahIdEnd,
       @HiveField(10) final String? surahIdStart,
       @HiveField(11) final String? verseEnd,
@@ -423,7 +425,8 @@ abstract class _Juz extends Juz {
   String? get nameStartId;
   @override
   @HiveField(8)
-  String? get number;
+  @StringToIntConverter()
+  int? get number;
   @override
   @HiveField(9)
   String? get surahIdEnd;

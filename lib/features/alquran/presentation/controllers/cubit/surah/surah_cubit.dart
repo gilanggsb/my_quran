@@ -18,6 +18,12 @@ class SurahCubit extends Cubit<SurahState> {
       emit(const SurahState.loading());
       final response = await getSurahs(const NoParams());
       surahs = response.data ?? [];
+
+      Logger.logInfo("========================================");
+      for (Surah surah in surahs) {
+        Logger.logInfo("SURAHS ${surah.number} ${surah.nameId}");
+      }
+      Logger.logInfo("========================================");
       originSurahs = response.data ?? [];
       emit(const SurahState.loaded());
     } on String catch (e) {
@@ -31,9 +37,7 @@ class SurahCubit extends Cubit<SurahState> {
     try {
       emit(const SurahState.loading());
       // await Future.delayed(const Duration(milliseconds: 500));
-      surahs = originSurahs
-          .where((surah) => surah.nameId.isStringContains(query))
-          .toList();
+      surahs = originSurahs.where((surah) => surah.nameId.isStringContains(query)).toList();
       emit(const SurahState.loaded());
     } on String catch (e) {
       emit(SurahState.failed(e));

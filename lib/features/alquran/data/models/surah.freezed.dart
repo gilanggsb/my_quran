@@ -27,7 +27,8 @@ mixin _$Surah {
   @HiveField(4)
   String? get nameShort => throw _privateConstructorUsedError;
   @HiveField(5)
-  String? get number => throw _privateConstructorUsedError;
+  @StringToIntConverter()
+  int? get number => throw _privateConstructorUsedError;
   @HiveField(6)
   String? get numberOfVerses => throw _privateConstructorUsedError;
   @HiveField(7)
@@ -62,7 +63,7 @@ abstract class $SurahCopyWith<$Res> {
       @HiveField(2) String? nameId,
       @HiveField(3) String? nameLong,
       @HiveField(4) String? nameShort,
-      @HiveField(5) String? number,
+      @HiveField(5) @StringToIntConverter() int? number,
       @HiveField(6) String? numberOfVerses,
       @HiveField(7) String? revelation,
       @HiveField(8) String? revelationEn,
@@ -127,7 +128,7 @@ class _$SurahCopyWithImpl<$Res, $Val extends Surah>
       number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       numberOfVerses: freezed == numberOfVerses
           ? _value.numberOfVerses
           : numberOfVerses // ignore: cast_nullable_to_non_nullable
@@ -177,7 +178,7 @@ abstract class _$$SurahImplCopyWith<$Res> implements $SurahCopyWith<$Res> {
       @HiveField(2) String? nameId,
       @HiveField(3) String? nameLong,
       @HiveField(4) String? nameShort,
-      @HiveField(5) String? number,
+      @HiveField(5) @StringToIntConverter() int? number,
       @HiveField(6) String? numberOfVerses,
       @HiveField(7) String? revelation,
       @HiveField(8) String? revelationEn,
@@ -240,7 +241,7 @@ class __$$SurahImplCopyWithImpl<$Res>
       number: freezed == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       numberOfVerses: freezed == numberOfVerses
           ? _value.numberOfVerses
           : numberOfVerses // ignore: cast_nullable_to_non_nullable
@@ -286,7 +287,7 @@ class _$SurahImpl extends _Surah {
       @HiveField(2) this.nameId,
       @HiveField(3) this.nameLong,
       @HiveField(4) this.nameShort,
-      @HiveField(5) this.number,
+      @HiveField(5) @StringToIntConverter() this.number,
       @HiveField(6) this.numberOfVerses,
       @HiveField(7) this.revelation,
       @HiveField(8) this.revelationEn,
@@ -314,7 +315,8 @@ class _$SurahImpl extends _Surah {
   final String? nameShort;
   @override
   @HiveField(5)
-  final String? number;
+  @StringToIntConverter()
+  final int? number;
   @override
   @HiveField(6)
   final String? numberOfVerses;
@@ -410,7 +412,7 @@ abstract class _Surah extends Surah {
       @HiveField(2) final String? nameId,
       @HiveField(3) final String? nameLong,
       @HiveField(4) final String? nameShort,
-      @HiveField(5) final String? number,
+      @HiveField(5) @StringToIntConverter() final int? number,
       @HiveField(6) final String? numberOfVerses,
       @HiveField(7) final String? revelation,
       @HiveField(8) final String? revelationEn,
@@ -438,7 +440,8 @@ abstract class _Surah extends Surah {
   String? get nameShort;
   @override
   @HiveField(5)
-  String? get number;
+  @StringToIntConverter()
+  int? get number;
   @override
   @HiveField(6)
   String? get numberOfVerses;

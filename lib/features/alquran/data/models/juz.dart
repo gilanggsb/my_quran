@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive_ce/hive.dart';
 
+import '../../../../common/common.dart';
+
 part 'juz.freezed.dart';
 part 'juz.g.dart';
 
@@ -25,7 +27,7 @@ class Juz with _$Juz {
     @HiveField(5) String? nameEndId,
     @HiveField(6) String? nameStartArab,
     @HiveField(7) String? nameStartId,
-    @HiveField(8) String? number,
+    @HiveField(8) @StringToIntConverter() int? number,
     @HiveField(9) String? surahIdEnd,
     @HiveField(10) String? surahIdStart,
     @HiveField(11) String? verseEnd,

@@ -7,5 +7,6 @@ export 'dialog_manager.dart';
 export 'networking_utils.dart';
 export 'scroll_manager.dart';
 export 'snackbar_manager.dart';
+export 'string_to_int_converter.dart';
 export 'typedefs.dart';
 export 'usecase.dart';
