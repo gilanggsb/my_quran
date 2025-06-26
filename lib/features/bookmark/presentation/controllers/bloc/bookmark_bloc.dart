@@ -15,15 +15,15 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
   GetAyah getAyah;
   DeleteBookmark deleteBookmark;
   BookmarkBloc({required this.getBookmarks, required this.getAyah, required this.deleteBookmark})
-    : super(const _Initial()) {
-    on<_GetData>(_getData);
-    on<_GetBookmarkDetail>(_getBookmarkDetail);
-    on<_DeleteBookmark>(_deleteBookmark);
+    : super(const BookmarkInitialState()) {
+    on<BookmarkGetDataEvent>(_getData);
+    on<BookmarkGetBookmarkDetailEvent>(_getBookmarkDetail);
+    on<BookmarkDeleteBookmarkEvent>(_deleteBookmark);
   }
 
   List<BookmarkData> bookmarks = [];
 
-  FutureOr<void> _getData(_GetData event, emit) async {
+  FutureOr<void> _getData(BookmarkGetDataEvent event, emit) async {
     try {
       final categoryId = event.categoryId;
       emit(const BookmarkState.loading());
@@ -38,7 +38,7 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
     }
   }
 
-  Future<void> _getBookmarkDetail(_GetBookmarkDetail event, emit) async {
+  Future<void> _getBookmarkDetail(BookmarkGetBookmarkDetailEvent event, emit) async {
     try {
       final bookmark = event.bookmark;
       final isAyahType = bookmark?.type == BookmarkType.ayah().id;
@@ -68,7 +68,7 @@ class BookmarkBloc extends Bloc<BookmarkEvent, BookmarkState> {
     }
   }
 
-  Future<void> _deleteBookmark(_DeleteBookmark event, emit) async {
+  Future<void> _deleteBookmark(BookmarkDeleteBookmarkEvent event, emit) async {
     try {
       emit(const BookmarkState.detailAyahLoading());
       await deleteBookmark(event.bookmarkId ?? "0");

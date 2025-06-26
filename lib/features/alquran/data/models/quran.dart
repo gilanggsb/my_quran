@@ -6,7 +6,7 @@ import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../common/common.dart';
+import '../../../../lib.dart';
 
 part 'quran.freezed.dart';
 part 'quran.g.dart';
@@ -15,8 +15,9 @@ Quran quranFromJson(String str) => Quran.fromJson(json.decode(str));
 
 String quranToJson(Quran data) => json.encode(data.toJson());
 
-@freezed
-class Quran with _$Quran {
+@customFreezed
+abstract class Quran with _$Quran {
+  @customJsonSerializable
   const factory Quran({
     @StringToIntConverter() int? number,
     String? title,

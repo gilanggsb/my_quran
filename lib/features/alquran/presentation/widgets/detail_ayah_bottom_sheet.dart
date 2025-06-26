@@ -4,8 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../common/common.dart';
-import '../../../features.dart';
+import '../../../../lib.dart';
 
 class DetailAyahBottomSheet extends StatelessWidget {
   const DetailAyahBottomSheet({super.key, this.quranDetailParams, this.ayah});
@@ -20,7 +19,10 @@ class DetailAyahBottomSheet extends StatelessWidget {
           (context) => getIt.get<DetailAyahCubit>()..init(ayah: ayah, params: quranDetailParams),
       child: BlocBuilder<DetailAyahCubit, DetailAyahState>(
         builder: (context, state) {
-          final isLoading = state.whenOrNull(loading: () => true) ?? false;
+          final isLoading = switch (state) {
+            DetailAyahLoadingState() => true,
+            _ => false,
+          };
           final detailAyahCubit = context.read<DetailAyahCubit>();
           final surah = detailAyahCubit.surah;
           final title = "QS. ${surah?.nameId ?? ''}: Ayat ${ayah?.ayah ?? ''}";

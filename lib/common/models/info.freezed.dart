@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,155 +10,142 @@ part of 'info.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
 
 /// @nodoc
 mixin _$Info {
-  int? get min => throw _privateConstructorUsedError;
-  int? get max => throw _privateConstructorUsedError;
+
+ int? get min; int? get max;
+/// Create a copy of Info
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InfoCopyWith<Info> get copyWith => _$InfoCopyWithImpl<Info>(this as Info, _$identity);
 
   /// Serializes this Info to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of Info
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $InfoCopyWith<Info> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Info&&(identical(other.min, min) || other.min == min)&&(identical(other.max, max) || other.max == max));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,min,max);
+
+@override
+String toString() {
+  return 'Info(min: $min, max: $max)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $InfoCopyWith<$Res> {
-  factory $InfoCopyWith(Info value, $Res Function(Info) then) = _$InfoCopyWithImpl<$Res, Info>;
-  @useResult
-  $Res call({int? min, int? max});
+abstract mixin class $InfoCopyWith<$Res>  {
+  factory $InfoCopyWith(Info value, $Res Function(Info) _then) = _$InfoCopyWithImpl;
+@useResult
+$Res call({
+ int? min, int? max
+});
+
+
+
+
+}
+/// @nodoc
+class _$InfoCopyWithImpl<$Res>
+    implements $InfoCopyWith<$Res> {
+  _$InfoCopyWithImpl(this._self, this._then);
+
+  final Info _self;
+  final $Res Function(Info) _then;
+
+/// Create a copy of Info
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? min = freezed,Object? max = freezed,}) {
+  return _then(_self.copyWith(
+min: freezed == min ? _self.min : min // ignore: cast_nullable_to_non_nullable
+as int?,max: freezed == max ? _self.max : max // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// @nodoc
+
+@customJsonSerializable
+class _Info implements Info {
+  const _Info({this.min, this.max});
+  factory _Info.fromJson(Map<String, dynamic> json) => _$InfoFromJson(json);
+
+@override final  int? min;
+@override final  int? max;
+
+/// Create a copy of Info
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InfoCopyWith<_Info> get copyWith => __$InfoCopyWithImpl<_Info>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$InfoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Info&&(identical(other.min, min) || other.min == min)&&(identical(other.max, max) || other.max == max));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,min,max);
+
+@override
+String toString() {
+  return 'Info(min: $min, max: $max)';
+}
+
+
 }
 
 /// @nodoc
-class _$InfoCopyWithImpl<$Res, $Val extends Info> implements $InfoCopyWith<$Res> {
-  _$InfoCopyWithImpl(this._value, this._then);
+abstract mixin class _$InfoCopyWith<$Res> implements $InfoCopyWith<$Res> {
+  factory _$InfoCopyWith(_Info value, $Res Function(_Info) _then) = __$InfoCopyWithImpl;
+@override @useResult
+$Res call({
+ int? min, int? max
+});
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
 
-  /// Create a copy of Info
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? min = freezed, Object? max = freezed}) {
-    return _then(
-      _value.copyWith(
-            min:
-                freezed == min
-                    ? _value.min
-                    : min // ignore: cast_nullable_to_non_nullable
-                        as int?,
-            max:
-                freezed == max
-                    ? _value.max
-                    : max // ignore: cast_nullable_to_non_nullable
-                        as int?,
-          )
-          as $Val,
-    );
-  }
+
+
 }
-
 /// @nodoc
-abstract class _$$InfoImplCopyWith<$Res> implements $InfoCopyWith<$Res> {
-  factory _$$InfoImplCopyWith(_$InfoImpl value, $Res Function(_$InfoImpl) then) =
-      __$$InfoImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int? min, int? max});
+class __$InfoCopyWithImpl<$Res>
+    implements _$InfoCopyWith<$Res> {
+  __$InfoCopyWithImpl(this._self, this._then);
+
+  final _Info _self;
+  final $Res Function(_Info) _then;
+
+/// Create a copy of Info
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? min = freezed,Object? max = freezed,}) {
+  return _then(_Info(
+min: freezed == min ? _self.min : min // ignore: cast_nullable_to_non_nullable
+as int?,max: freezed == max ? _self.max : max // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
 }
 
-/// @nodoc
-class __$$InfoImplCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$InfoImpl>
-    implements _$$InfoImplCopyWith<$Res> {
-  __$$InfoImplCopyWithImpl(_$InfoImpl _value, $Res Function(_$InfoImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of Info
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? min = freezed, Object? max = freezed}) {
-    return _then(
-      _$InfoImpl(
-        min:
-            freezed == min
-                ? _value.min
-                : min // ignore: cast_nullable_to_non_nullable
-                    as int?,
-        max:
-            freezed == max
-                ? _value.max
-                : max // ignore: cast_nullable_to_non_nullable
-                    as int?,
-      ),
-    );
-  }
 }
 
-/// @nodoc
-@JsonSerializable(createFactory: false)
-class _$InfoImpl implements _Info {
-  const _$InfoImpl({this.min, this.max});
-
-  @override
-  final int? min;
-  @override
-  final int? max;
-
-  @override
-  String toString() {
-    return 'Info(min: $min, max: $max)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InfoImpl &&
-            (identical(other.min, min) || other.min == min) &&
-            (identical(other.max, max) || other.max == max));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, min, max);
-
-  /// Create a copy of Info
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InfoImplCopyWith<_$InfoImpl> get copyWith =>
-      __$$InfoImplCopyWithImpl<_$InfoImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InfoImplToJson(this);
-  }
-}
-
-abstract class _Info implements Info {
-  const factory _Info({final int? min, final int? max}) = _$InfoImpl;
-
-  @override
-  int? get min;
-  @override
-  int? get max;
-
-  /// Create a copy of Info
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InfoImplCopyWith<_$InfoImpl> get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

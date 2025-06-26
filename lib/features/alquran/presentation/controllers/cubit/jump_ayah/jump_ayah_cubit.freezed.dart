@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,718 +10,230 @@ part of 'jump_ayah_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
 /// @nodoc
 mixin _$JumpAyahState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() loaded,
-    required TResult Function() searchingSurahOrJuz,
-    required TResult Function(String message) failed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? loaded,
-    TResult? Function()? searchingSurahOrJuz,
-    TResult? Function(String message)? failed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? loaded,
-    TResult Function()? searchingSurahOrJuz,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
-    required TResult Function(_Failed value) failed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult? Function(_Failed value)? failed,
-  }) => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'JumpAyahState()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $JumpAyahStateCopyWith<$Res> {
-  factory $JumpAyahStateCopyWith(JumpAyahState value, $Res Function(JumpAyahState) then) =
-      _$JumpAyahStateCopyWithImpl<$Res, JumpAyahState>;
+class $JumpAyahStateCopyWith<$Res>  {
+$JumpAyahStateCopyWith(JumpAyahState _, $Res Function(JumpAyahState) __);
 }
 
-/// @nodoc
-class _$JumpAyahStateCopyWithImpl<$Res, $Val extends JumpAyahState>
-    implements $JumpAyahStateCopyWith<$Res> {
-  _$JumpAyahStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of JumpAyahState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(_$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res> extends _$JumpAyahStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(_$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-    : super(_value, _then);
-
-  /// Create a copy of JumpAyahState
-  /// with the given fields replaced by the non-null parameter values.
-}
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
 
-  @override
-  String toString() {
-    return 'JumpAyahState.initial()';
-  }
+class JumpAyahInitialState implements JumpAyahState {
+  const JumpAyahInitialState();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() loaded,
-    required TResult Function() searchingSurahOrJuz,
-    required TResult Function(String message) failed,
-  }) {
-    return initial();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? loaded,
-    TResult? Function()? searchingSurahOrJuz,
-    TResult? Function(String message)? failed,
-  }) {
-    return initial?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? loaded,
-    TResult Function()? searchingSurahOrJuz,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahInitialState);
 }
 
-abstract class _Initial implements JumpAyahState {
-  const factory _Initial() = _$InitialImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'JumpAyahState.initial()';
 }
 
-/// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(_$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res> extends _$JumpAyahStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(_$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of JumpAyahState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
 
-  @override
-  String toString() {
-    return 'JumpAyahState.loading()';
-  }
+class JumpAyahLoadingState implements JumpAyahState {
+  const JumpAyahLoadingState();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadingImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() loaded,
-    required TResult Function() searchingSurahOrJuz,
-    required TResult Function(String message) failed,
-  }) {
-    return loading();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? loaded,
-    TResult? Function()? searchingSurahOrJuz,
-    TResult? Function(String message)? failed,
-  }) {
-    return loading?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? loaded,
-    TResult Function()? searchingSurahOrJuz,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahLoadingState);
 }
 
-abstract class _Loading implements JumpAyahState {
-  const factory _Loading() = _$LoadingImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'JumpAyahState.loading()';
 }
 
-/// @nodoc
-abstract class _$$LoadedImplCopyWith<$Res> {
-  factory _$$LoadedImplCopyWith(_$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
-      __$$LoadedImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$LoadedImplCopyWithImpl<$Res> extends _$JumpAyahStateCopyWithImpl<$Res, _$LoadedImpl>
-    implements _$$LoadedImplCopyWith<$Res> {
-  __$$LoadedImplCopyWithImpl(_$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of JumpAyahState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl();
 
-  @override
-  String toString() {
-    return 'JumpAyahState.loaded()';
-  }
+class JumpAyahLoadedState implements JumpAyahState {
+  const JumpAyahLoadedState();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$LoadedImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() loaded,
-    required TResult Function() searchingSurahOrJuz,
-    required TResult Function(String message) failed,
-  }) {
-    return loaded();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? loaded,
-    TResult? Function()? searchingSurahOrJuz,
-    TResult? Function(String message)? failed,
-  }) {
-    return loaded?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? loaded,
-    TResult Function()? searchingSurahOrJuz,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return loaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return loaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (loaded != null) {
-      return loaded(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahLoadedState);
 }
 
-abstract class _Loaded implements JumpAyahState {
-  const factory _Loaded() = _$LoadedImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'JumpAyahState.loaded()';
 }
 
-/// @nodoc
-abstract class _$$SearchingSurahOrJuzImplCopyWith<$Res> {
-  factory _$$SearchingSurahOrJuzImplCopyWith(
-    _$SearchingSurahOrJuzImpl value,
-    $Res Function(_$SearchingSurahOrJuzImpl) then,
-  ) = __$$SearchingSurahOrJuzImplCopyWithImpl<$Res>;
+
 }
 
-/// @nodoc
-class __$$SearchingSurahOrJuzImplCopyWithImpl<$Res>
-    extends _$JumpAyahStateCopyWithImpl<$Res, _$SearchingSurahOrJuzImpl>
-    implements _$$SearchingSurahOrJuzImplCopyWith<$Res> {
-  __$$SearchingSurahOrJuzImplCopyWithImpl(
-    _$SearchingSurahOrJuzImpl _value,
-    $Res Function(_$SearchingSurahOrJuzImpl) _then,
-  ) : super(_value, _then);
 
-  /// Create a copy of JumpAyahState
-  /// with the given fields replaced by the non-null parameter values.
-}
+
 
 /// @nodoc
 
-class _$SearchingSurahOrJuzImpl implements _SearchingSurahOrJuz {
-  const _$SearchingSurahOrJuzImpl();
 
-  @override
-  String toString() {
-    return 'JumpAyahState.searchingSurahOrJuz()';
-  }
+class JumpAyahSearchingSurahOrJuzState implements JumpAyahState {
+  const JumpAyahSearchingSurahOrJuzState();
+  
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SearchingSurahOrJuzImpl);
-  }
 
-  @override
-  int get hashCode => runtimeType.hashCode;
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() loaded,
-    required TResult Function() searchingSurahOrJuz,
-    required TResult Function(String message) failed,
-  }) {
-    return searchingSurahOrJuz();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? loaded,
-    TResult? Function()? searchingSurahOrJuz,
-    TResult? Function(String message)? failed,
-  }) {
-    return searchingSurahOrJuz?.call();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? loaded,
-    TResult Function()? searchingSurahOrJuz,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (searchingSurahOrJuz != null) {
-      return searchingSurahOrJuz();
-    }
-    return orElse();
-  }
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return searchingSurahOrJuz(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return searchingSurahOrJuz?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (searchingSurahOrJuz != null) {
-      return searchingSurahOrJuz(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahSearchingSurahOrJuzState);
 }
 
-abstract class _SearchingSurahOrJuz implements JumpAyahState {
-  const factory _SearchingSurahOrJuz() = _$SearchingSurahOrJuzImpl;
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'JumpAyahState.searchingSurahOrJuz()';
 }
 
-/// @nodoc
-abstract class _$$FailedImplCopyWith<$Res> {
-  factory _$$FailedImplCopyWith(_$FailedImpl value, $Res Function(_$FailedImpl) then) =
-      __$$FailedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
+
 }
 
-/// @nodoc
-class __$$FailedImplCopyWithImpl<$Res> extends _$JumpAyahStateCopyWithImpl<$Res, _$FailedImpl>
-    implements _$$FailedImplCopyWith<$Res> {
-  __$$FailedImplCopyWithImpl(_$FailedImpl _value, $Res Function(_$FailedImpl) _then)
-    : super(_value, _then);
 
-  /// Create a copy of JumpAyahState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? message = null}) {
-    return _then(
-      _$FailedImpl(
-        null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                as String,
-      ),
-    );
-  }
-}
+
 
 /// @nodoc
 
-class _$FailedImpl implements _Failed {
-  const _$FailedImpl(this.message);
 
-  @override
-  final String message;
+class JumpAyahFailedState implements JumpAyahState {
+  const JumpAyahFailedState(this.message);
+  
 
-  @override
-  String toString() {
-    return 'JumpAyahState.failed(message: $message)';
-  }
+ final  String message;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FailedImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
+/// Create a copy of JumpAyahState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$JumpAyahFailedStateCopyWith<JumpAyahFailedState> get copyWith => _$JumpAyahFailedStateCopyWithImpl<JumpAyahFailedState>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of JumpAyahState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
-      __$$FailedImplCopyWithImpl<_$FailedImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() loaded,
-    required TResult Function() searchingSurahOrJuz,
-    required TResult Function(String message) failed,
-  }) {
-    return failed(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? loaded,
-    TResult? Function()? searchingSurahOrJuz,
-    TResult? Function(String message)? failed,
-  }) {
-    return failed?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? loaded,
-    TResult Function()? searchingSurahOrJuz,
-    TResult Function(String message)? failed,
-    required TResult orElse(),
-  }) {
-    if (failed != null) {
-      return failed(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_SearchingSurahOrJuz value) searchingSurahOrJuz,
-    required TResult Function(_Failed value) failed,
-  }) {
-    return failed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult? Function(_Failed value)? failed,
-  }) {
-    return failed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_SearchingSurahOrJuz value)? searchingSurahOrJuz,
-    TResult Function(_Failed value)? failed,
-    required TResult orElse(),
-  }) {
-    if (failed != null) {
-      return failed(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahFailedState&&(identical(other.message, message) || other.message == message));
 }
 
-abstract class _Failed implements JumpAyahState {
-  const factory _Failed(final String message) = _$FailedImpl;
 
-  String get message;
+@override
+int get hashCode => Object.hash(runtimeType,message);
 
-  /// Create a copy of JumpAyahState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FailedImplCopyWith<_$FailedImpl> get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'JumpAyahState.failed(message: $message)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class $JumpAyahFailedStateCopyWith<$Res> implements $JumpAyahStateCopyWith<$Res> {
+  factory $JumpAyahFailedStateCopyWith(JumpAyahFailedState value, $Res Function(JumpAyahFailedState) _then) = _$JumpAyahFailedStateCopyWithImpl;
+@useResult
+$Res call({
+ String message
+});
+
+
+
+
+}
+/// @nodoc
+class _$JumpAyahFailedStateCopyWithImpl<$Res>
+    implements $JumpAyahFailedStateCopyWith<$Res> {
+  _$JumpAyahFailedStateCopyWithImpl(this._self, this._then);
+
+  final JumpAyahFailedState _self;
+  final $Res Function(JumpAyahFailedState) _then;
+
+/// Create a copy of JumpAyahState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+  return _then(JumpAyahFailedState(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

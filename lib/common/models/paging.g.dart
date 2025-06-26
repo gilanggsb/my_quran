@@ -6,31 +6,22 @@ part of 'paging.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Paging _$PagingFromJson(Map<String, dynamic> json) => Paging(
-  totalItems: (json['total_items'] as num?)?.toInt(),
-  currentPage: (json['current_page'] as num?)?.toInt(),
-  pageSize: (json['page_size'] as num?)?.toInt(),
-  totalPages: (json['total_pages'] as num?)?.toInt(),
-  startPage: (json['start_page'] as num?)?.toInt(),
-  endPage: (json['end_page'] as num?)?.toInt(),
-  startIndex: (json['start_index'] as num?)?.toInt(),
-  endIndex: (json['end_index'] as num?)?.toInt(),
-  pages: (json['pages'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+_Paging _$PagingFromJson(Map<String, dynamic> json) => _Paging(
+  totalItems: (json['totalItems'] as num?)?.toInt(),
+  currentPage: (json['currentPage'] as num?)?.toInt(),
+  pageSize: (json['pageSize'] as num?)?.toInt(),
+  totalPages: (json['totalPages'] as num?)?.toInt(),
+  startPage: (json['startPage'] as num?)?.toInt(),
+  endPage: (json['endPage'] as num?)?.toInt(),
+  startIndex: (json['startIndex'] as num?)?.toInt(),
+  endIndex: (json['endIndex'] as num?)?.toInt(),
+  pages:
+      (json['pages'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
 );
 
-Map<String, dynamic> _$PagingToJson(Paging instance) => <String, dynamic>{
-  'total_items': instance.totalItems,
-  'current_page': instance.currentPage,
-  'page_size': instance.pageSize,
-  'total_pages': instance.totalPages,
-  'start_page': instance.startPage,
-  'end_page': instance.endPage,
-  'start_index': instance.startIndex,
-  'end_index': instance.endIndex,
-  'pages': instance.pages,
-};
-
-Map<String, dynamic> _$$PagingImplToJson(_$PagingImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$PagingToJson(_Paging instance) => <String, dynamic>{
   'totalItems': instance.totalItems,
   'currentPage': instance.currentPage,
   'pageSize': instance.pageSize,

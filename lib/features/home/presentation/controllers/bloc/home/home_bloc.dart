@@ -17,10 +17,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   LastReadAyah? lastReadAyah;
   final TextEditingController searchController = TextEditingController();
 
-  HomeBloc({required this.getLastReadAyah, required this.repository}) : super(const _Initial()) {
-    on<_GetData>(_getData);
-    on<_SearchSurahJuz>(_searchSurahJuz);
-    on<_ClearSearch>(_clearSearch);
+  HomeBloc({required this.getLastReadAyah, required this.repository})
+    : super(const HomeInitialState()) {
+    on<HomeGetDataEvent>(_getData);
+    on<HomeSearchSurahJuzEvent>(_searchSurahJuz);
+    on<HomeClearSearchEvent>(_clearSearch);
   }
 
   FutureOr<void> _getData(HomeEvent event, Emitter<HomeState> emit) async {
@@ -36,7 +37,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-  FutureOr<void> _searchSurahJuz(_SearchSurahJuz event, emit) async {
+  FutureOr<void> _searchSurahJuz(HomeSearchSurahJuzEvent event, emit) async {
     try {
       emit(const HomeState.searching());
       // await Future.delayed(const Duration(milliseconds: 500));
@@ -48,7 +49,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
   }
 
-  FutureOr<void> _clearSearch(_ClearSearch event, emit) async {
+  FutureOr<void> _clearSearch(HomeClearSearchEvent event, emit) async {
     try {
       emit(const HomeState.searching());
       // await Future.delayed(const Duration(milliseconds: 500));

@@ -10,13 +10,21 @@ class BookmarkCategoryFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
     return BlocConsumer<BookmarkCategoryCubit, BookmarkCategoryState>(
-      listener:
-          (context, state) =>
-              state.whenOrNull(failed: (message) => SnackBarWidget.showFailed(message)),
+      listener: (context, state) {
+        switch (state) {
+          case BookmarkCategoryFailedState(:final message):
+            SnackBarWidget.showFailed(message);
+            break;
+          default:
+        }
+      },
       builder: (context, state) {
-        final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
-        final isLoading = state.whenOrNull(loading: () => true) ?? false;
+        final isLoading = switch (state) {
+          BookmarkCategoryLoadingState() => true,
+          _ => false,
+        };
         final categories =
             isLoading ? BoneMockData.fakeCategories : bookmarkCategoryCubit.categories;
         final selectedCategory = bookmarkCategoryCubit.selectedCategory;

@@ -108,6 +108,16 @@ class QuranDetailRouteArgs {
   String toString() {
     return 'QuranDetailRouteArgs{key: $key, params: $params}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! QuranDetailRouteArgs) return false;
+    return key == other.key && params == other.params;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ params.hashCode;
 }
 
 /// generated route for

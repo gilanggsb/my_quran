@@ -8,7 +8,7 @@ part of 'bookmark_category.dart';
 
 class BookmarkCategoryAdapter extends TypeAdapter<BookmarkCategory> {
   @override
-  final int typeId = 3;
+  final typeId = 3;
 
   @override
   BookmarkCategory read(BinaryReader reader) {
@@ -16,7 +16,10 @@ class BookmarkCategoryAdapter extends TypeAdapter<BookmarkCategory> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return BookmarkCategory(name: fields[0] as String?, id: fields[1] as String?);
+    return BookmarkCategory(
+      name: fields[0] as String?,
+      id: fields[1] as String?,
+    );
   }
 
   @override
@@ -44,10 +47,8 @@ class BookmarkCategoryAdapter extends TypeAdapter<BookmarkCategory> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-BookmarkCategory _$BookmarkCategoryFromJson(Map<String, dynamic> json) =>
-    BookmarkCategory(name: json['name'] as String?, id: json['id'] as String?);
+_BookmarkCategory _$BookmarkCategoryFromJson(Map<String, dynamic> json) =>
+    _BookmarkCategory(name: json['name'] as String?, id: json['id'] as String?);
 
-Map<String, dynamic> _$BookmarkCategoryToJson(BookmarkCategory instance) => <String, dynamic>{
-  'name': instance.name,
-  'id': instance.id,
-};
+Map<String, dynamic> _$BookmarkCategoryToJson(_BookmarkCategory instance) =>
+    <String, dynamic>{'name': instance.name, 'id': instance.id};

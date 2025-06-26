@@ -11,12 +11,12 @@ part 'ayah.g.dart';
 Ayah ayahFromJson(String str) => Ayah.fromJson(json.decode(str));
 String ayahToJson(Ayah data) => json.encode(data.toJson());
 
-@Freezed(fromJson: false, toJson: false)
+@customFreezed
 @HiveType(typeId: 0) // Assign a unique typeId for Hive
-@JsonSerializable(fieldRename: FieldRename.snake)
-class Ayah with _$Ayah {
+abstract class Ayah with _$Ayah {
   const Ayah._();
 
+  @customJsonSerializable
   const factory Ayah({
     @HiveField(0) @StringToIntConverter() int? id,
     // @HiveField(1) int? idInt,
@@ -37,6 +37,4 @@ class Ayah with _$Ayah {
   }) = _Ayah;
 
   factory Ayah.fromJson(Map<String, dynamic> json) => _$AyahFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AyahToJson(this);
 }

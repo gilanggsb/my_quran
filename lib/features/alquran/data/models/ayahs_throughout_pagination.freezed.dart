@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,254 +10,148 @@ part of 'ayahs_throughout_pagination.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
-AyahsThroughoutPagination _$AyahsThroughoutPaginationFromJson(Map<String, dynamic> json) {
-  return _AyahsThroughoutPagination.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AyahsThroughoutPagination {
-  @StringToIntConverter()
-  int? get surat => throw _privateConstructorUsedError;
-  @StringToIntConverter()
-  int? get ayat => throw _privateConstructorUsedError;
-  @StringToIntConverter()
-  int? get panjang => throw _privateConstructorUsedError;
-  @JsonKey(includeToJson: false)
-  int? get maxAyat => throw _privateConstructorUsedError;
+
+@StringToIntConverter() int? get surat;@StringToIntConverter() int? get ayat;@StringToIntConverter() int? get panjang;@JsonKey(includeToJson: false) int? get maxAyat;
+/// Create a copy of AyahsThroughoutPagination
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AyahsThroughoutPaginationCopyWith<AyahsThroughoutPagination> get copyWith => _$AyahsThroughoutPaginationCopyWithImpl<AyahsThroughoutPagination>(this as AyahsThroughoutPagination, _$identity);
 
   /// Serializes this AyahsThroughoutPagination to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of AyahsThroughoutPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AyahsThroughoutPaginationCopyWith<AyahsThroughoutPagination> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AyahsThroughoutPagination&&(identical(other.surat, surat) || other.surat == surat)&&(identical(other.ayat, ayat) || other.ayat == ayat)&&(identical(other.panjang, panjang) || other.panjang == panjang)&&(identical(other.maxAyat, maxAyat) || other.maxAyat == maxAyat));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,surat,ayat,panjang,maxAyat);
+
+@override
+String toString() {
+  return 'AyahsThroughoutPagination(surat: $surat, ayat: $ayat, panjang: $panjang, maxAyat: $maxAyat)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AyahsThroughoutPaginationCopyWith<$Res> {
-  factory $AyahsThroughoutPaginationCopyWith(
-    AyahsThroughoutPagination value,
-    $Res Function(AyahsThroughoutPagination) then,
-  ) = _$AyahsThroughoutPaginationCopyWithImpl<$Res, AyahsThroughoutPagination>;
-  @useResult
-  $Res call({
-    @StringToIntConverter() int? surat,
-    @StringToIntConverter() int? ayat,
-    @StringToIntConverter() int? panjang,
-    @JsonKey(includeToJson: false) int? maxAyat,
-  });
-}
+abstract mixin class $AyahsThroughoutPaginationCopyWith<$Res>  {
+  factory $AyahsThroughoutPaginationCopyWith(AyahsThroughoutPagination value, $Res Function(AyahsThroughoutPagination) _then) = _$AyahsThroughoutPaginationCopyWithImpl;
+@useResult
+$Res call({
+@StringToIntConverter() int? surat,@StringToIntConverter() int? ayat,@StringToIntConverter() int? panjang,@JsonKey(includeToJson: false) int? maxAyat
+});
 
+
+
+
+}
 /// @nodoc
-class _$AyahsThroughoutPaginationCopyWithImpl<$Res, $Val extends AyahsThroughoutPagination>
+class _$AyahsThroughoutPaginationCopyWithImpl<$Res>
     implements $AyahsThroughoutPaginationCopyWith<$Res> {
-  _$AyahsThroughoutPaginationCopyWithImpl(this._value, this._then);
+  _$AyahsThroughoutPaginationCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AyahsThroughoutPagination _self;
+  final $Res Function(AyahsThroughoutPagination) _then;
 
-  /// Create a copy of AyahsThroughoutPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? surat = freezed,
-    Object? ayat = freezed,
-    Object? panjang = freezed,
-    Object? maxAyat = freezed,
-  }) {
-    return _then(
-      _value.copyWith(
-            surat:
-                freezed == surat
-                    ? _value.surat
-                    : surat // ignore: cast_nullable_to_non_nullable
-                        as int?,
-            ayat:
-                freezed == ayat
-                    ? _value.ayat
-                    : ayat // ignore: cast_nullable_to_non_nullable
-                        as int?,
-            panjang:
-                freezed == panjang
-                    ? _value.panjang
-                    : panjang // ignore: cast_nullable_to_non_nullable
-                        as int?,
-            maxAyat:
-                freezed == maxAyat
-                    ? _value.maxAyat
-                    : maxAyat // ignore: cast_nullable_to_non_nullable
-                        as int?,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of AyahsThroughoutPagination
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? surat = freezed,Object? ayat = freezed,Object? panjang = freezed,Object? maxAyat = freezed,}) {
+  return _then(_self.copyWith(
+surat: freezed == surat ? _self.surat : surat // ignore: cast_nullable_to_non_nullable
+as int?,ayat: freezed == ayat ? _self.ayat : ayat // ignore: cast_nullable_to_non_nullable
+as int?,panjang: freezed == panjang ? _self.panjang : panjang // ignore: cast_nullable_to_non_nullable
+as int?,maxAyat: freezed == maxAyat ? _self.maxAyat : maxAyat // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// @nodoc
+
+@customJsonSerializable
+class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
+  const _AyahsThroughoutPagination({@StringToIntConverter() this.surat, @StringToIntConverter() this.ayat, @StringToIntConverter() this.panjang, @JsonKey(includeToJson: false) this.maxAyat});
+  factory _AyahsThroughoutPagination.fromJson(Map<String, dynamic> json) => _$AyahsThroughoutPaginationFromJson(json);
+
+@override@StringToIntConverter() final  int? surat;
+@override@StringToIntConverter() final  int? ayat;
+@override@StringToIntConverter() final  int? panjang;
+@override@JsonKey(includeToJson: false) final  int? maxAyat;
+
+/// Create a copy of AyahsThroughoutPagination
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AyahsThroughoutPaginationCopyWith<_AyahsThroughoutPagination> get copyWith => __$AyahsThroughoutPaginationCopyWithImpl<_AyahsThroughoutPagination>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AyahsThroughoutPaginationToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AyahsThroughoutPagination&&(identical(other.surat, surat) || other.surat == surat)&&(identical(other.ayat, ayat) || other.ayat == ayat)&&(identical(other.panjang, panjang) || other.panjang == panjang)&&(identical(other.maxAyat, maxAyat) || other.maxAyat == maxAyat));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,surat,ayat,panjang,maxAyat);
+
+@override
+String toString() {
+  return 'AyahsThroughoutPagination(surat: $surat, ayat: $ayat, panjang: $panjang, maxAyat: $maxAyat)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$AyahsThroughoutPaginationImplCopyWith<$Res>
-    implements $AyahsThroughoutPaginationCopyWith<$Res> {
-  factory _$$AyahsThroughoutPaginationImplCopyWith(
-    _$AyahsThroughoutPaginationImpl value,
-    $Res Function(_$AyahsThroughoutPaginationImpl) then,
-  ) = __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({
-    @StringToIntConverter() int? surat,
-    @StringToIntConverter() int? ayat,
-    @StringToIntConverter() int? panjang,
-    @JsonKey(includeToJson: false) int? maxAyat,
-  });
-}
+abstract mixin class _$AyahsThroughoutPaginationCopyWith<$Res> implements $AyahsThroughoutPaginationCopyWith<$Res> {
+  factory _$AyahsThroughoutPaginationCopyWith(_AyahsThroughoutPagination value, $Res Function(_AyahsThroughoutPagination) _then) = __$AyahsThroughoutPaginationCopyWithImpl;
+@override @useResult
+$Res call({
+@StringToIntConverter() int? surat,@StringToIntConverter() int? ayat,@StringToIntConverter() int? panjang,@JsonKey(includeToJson: false) int? maxAyat
+});
 
+
+
+
+}
 /// @nodoc
-class __$$AyahsThroughoutPaginationImplCopyWithImpl<$Res>
-    extends _$AyahsThroughoutPaginationCopyWithImpl<$Res, _$AyahsThroughoutPaginationImpl>
-    implements _$$AyahsThroughoutPaginationImplCopyWith<$Res> {
-  __$$AyahsThroughoutPaginationImplCopyWithImpl(
-    _$AyahsThroughoutPaginationImpl _value,
-    $Res Function(_$AyahsThroughoutPaginationImpl) _then,
-  ) : super(_value, _then);
+class __$AyahsThroughoutPaginationCopyWithImpl<$Res>
+    implements _$AyahsThroughoutPaginationCopyWith<$Res> {
+  __$AyahsThroughoutPaginationCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of AyahsThroughoutPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? surat = freezed,
-    Object? ayat = freezed,
-    Object? panjang = freezed,
-    Object? maxAyat = freezed,
-  }) {
-    return _then(
-      _$AyahsThroughoutPaginationImpl(
-        surat:
-            freezed == surat
-                ? _value.surat
-                : surat // ignore: cast_nullable_to_non_nullable
-                    as int?,
-        ayat:
-            freezed == ayat
-                ? _value.ayat
-                : ayat // ignore: cast_nullable_to_non_nullable
-                    as int?,
-        panjang:
-            freezed == panjang
-                ? _value.panjang
-                : panjang // ignore: cast_nullable_to_non_nullable
-                    as int?,
-        maxAyat:
-            freezed == maxAyat
-                ? _value.maxAyat
-                : maxAyat // ignore: cast_nullable_to_non_nullable
-                    as int?,
-      ),
-    );
-  }
+  final _AyahsThroughoutPagination _self;
+  final $Res Function(_AyahsThroughoutPagination) _then;
+
+/// Create a copy of AyahsThroughoutPagination
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? surat = freezed,Object? ayat = freezed,Object? panjang = freezed,Object? maxAyat = freezed,}) {
+  return _then(_AyahsThroughoutPagination(
+surat: freezed == surat ? _self.surat : surat // ignore: cast_nullable_to_non_nullable
+as int?,ayat: freezed == ayat ? _self.ayat : ayat // ignore: cast_nullable_to_non_nullable
+as int?,panjang: freezed == panjang ? _self.panjang : panjang // ignore: cast_nullable_to_non_nullable
+as int?,maxAyat: freezed == maxAyat ? _self.maxAyat : maxAyat // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
 }
 
-/// @nodoc
-@JsonSerializable()
-class _$AyahsThroughoutPaginationImpl implements _AyahsThroughoutPagination {
-  const _$AyahsThroughoutPaginationImpl({
-    @StringToIntConverter() this.surat,
-    @StringToIntConverter() this.ayat,
-    @StringToIntConverter() this.panjang,
-    @JsonKey(includeToJson: false) this.maxAyat,
-  });
 
-  factory _$AyahsThroughoutPaginationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AyahsThroughoutPaginationImplFromJson(json);
-
-  @override
-  @StringToIntConverter()
-  final int? surat;
-  @override
-  @StringToIntConverter()
-  final int? ayat;
-  @override
-  @StringToIntConverter()
-  final int? panjang;
-  @override
-  @JsonKey(includeToJson: false)
-  final int? maxAyat;
-
-  @override
-  String toString() {
-    return 'AyahsThroughoutPagination(surat: $surat, ayat: $ayat, panjang: $panjang, maxAyat: $maxAyat)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AyahsThroughoutPaginationImpl &&
-            (identical(other.surat, surat) || other.surat == surat) &&
-            (identical(other.ayat, ayat) || other.ayat == ayat) &&
-            (identical(other.panjang, panjang) || other.panjang == panjang) &&
-            (identical(other.maxAyat, maxAyat) || other.maxAyat == maxAyat));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, surat, ayat, panjang, maxAyat);
-
-  /// Create a copy of AyahsThroughoutPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AyahsThroughoutPaginationImplCopyWith<_$AyahsThroughoutPaginationImpl> get copyWith =>
-      __$$AyahsThroughoutPaginationImplCopyWithImpl<_$AyahsThroughoutPaginationImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AyahsThroughoutPaginationImplToJson(this);
-  }
 }
 
-abstract class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
-  const factory _AyahsThroughoutPagination({
-    @StringToIntConverter() final int? surat,
-    @StringToIntConverter() final int? ayat,
-    @StringToIntConverter() final int? panjang,
-    @JsonKey(includeToJson: false) final int? maxAyat,
-  }) = _$AyahsThroughoutPaginationImpl;
-
-  factory _AyahsThroughoutPagination.fromJson(Map<String, dynamic> json) =
-      _$AyahsThroughoutPaginationImpl.fromJson;
-
-  @override
-  @StringToIntConverter()
-  int? get surat;
-  @override
-  @StringToIntConverter()
-  int? get ayat;
-  @override
-  @StringToIntConverter()
-  int? get panjang;
-  @override
-  @JsonKey(includeToJson: false)
-  int? get maxAyat;
-
-  /// Create a copy of AyahsThroughoutPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AyahsThroughoutPaginationImplCopyWith<_$AyahsThroughoutPaginationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

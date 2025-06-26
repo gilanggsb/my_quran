@@ -10,72 +10,75 @@ class BookmarkListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bookmarkBloc = context.read<BookmarkBloc>();
+    final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
     return BlocListener<BookmarkCategoryCubit, BookmarkCategoryState>(
       listener: (context, state) {
-        final bookmarkBloc = context.read<BookmarkBloc>();
-        final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
         final selectedCategory = bookmarkCategoryCubit.selectedCategory;
         if (!selectedCategory.isNull) {
           return bookmarkBloc.add(BookmarkEvent.getData(categoryId: selectedCategory?.id));
         }
       },
-      child: BlocConsumer<BookmarkBloc, BookmarkState>(
+      child: BlocListener<BookmarkBloc, BookmarkState>(
         listener: (context, state) {
-          final bookmarkBloc = context.read<BookmarkBloc>();
-
-          state.whenOrNull(
-            detailAyahLoaded: (detailAyah) => onDetailAyahLoaded(detailAyah!),
-            failed: (message) => SnackBarWidget.showFailed(message),
-            deleteBookmarkSuccess: () {
+          switch (state) {
+            case BookmarkDetailAyahLoadedState(:Ayah? ayah):
+              onDetailAyahLoaded(ayah);
+              break;
+            case BookmarkErrorState(:final message):
+              SnackBarWidget.showFailed(message);
+            case BookmarkDeleteBookmarkSuccessState():
               SnackBarWidget.showSuccess("Success delete bookmark");
               bookmarkBloc.add(const BookmarkEvent.getData());
-            },
-          );
+            default:
+          }
         },
-        builder: (context, state) {
-          final bookmarkBloc = context.read<BookmarkBloc>();
-          final isLoading = state.whenOrNull(loading: () => true) ?? false;
-          final bookmarks = isLoading ? BoneMockData.fakeBookmarks : bookmarkBloc.bookmarks;
+        child: BlocSelector<BookmarkBloc, BookmarkState, (List<BookmarkData>, bool)>(
+          selector: (state) => (bookmarkBloc.bookmarks, state is BookmarkLoadingState),
+          builder: (context, tuple) {
+            final (plainBookmarks, isLoading) = tuple;
+            final bookmarks = isLoading ? BoneMockData.fakeBookmarks : plainBookmarks;
 
-          return Skeletonizer(
-            enabled: isLoading,
-            child:
-                bookmarks.isEmpty
-                    ? SizedBox(
-                      height: context.getHeight * 0.5,
-                      child: const EmptyStateWidget(
-                        title: "You don't have any bookmark",
-                        message: '',
-                      ),
-                    )
-                    : ListView.separated(
-                      itemCount: bookmarks.length,
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      separatorBuilder: (context, index) => const Divider(),
-                      itemBuilder: (context, index) {
-                        final bookmark = bookmarks[index];
-                        return Column(
-                          children: [
-                            BookmarkTile(
-                              title: bookmark.title,
-                              subtitle: bookmark.subtitle ?? '',
-                              onPress:
-                                  () => onBookmarkDataPress(
-                                    bookmarkBloc: bookmarkBloc,
-                                    bookmark: bookmark,
-                                  ),
-                              onDeletePress:
-                                  () => bookmarkBloc.add(
-                                    BookmarkEvent.deleteBookmark(bookmarkId: bookmark.id),
-                                  ),
-                            ),
-                          ],
-                        );
-                      },
-                    ).paddingSymmetric(horizontal: 16),
-          );
-        },
+            return Skeletonizer(
+              enabled: isLoading,
+              child:
+                  bookmarks.isEmpty
+                      ? SizedBox(
+                        height: context.getHeight * 0.5,
+                        child: const EmptyStateWidget(
+                          title: "You don't have any bookmark",
+                          message: '',
+                        ),
+                      )
+                      : ListView.separated(
+                        itemCount: bookmarks.length,
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        separatorBuilder: (context, index) => const Divider(),
+                        itemBuilder: (context, index) {
+                          final bookmark = bookmarks[index];
+                          return Column(
+                            children: [
+                              BookmarkTile(
+                                title: bookmark.title,
+                                subtitle: bookmark.subtitle ?? '',
+                                onPress:
+                                    () => onBookmarkDataPress(
+                                      bookmarkBloc: bookmarkBloc,
+                                      bookmark: bookmark,
+                                    ),
+                                onDeletePress:
+                                    () => bookmarkBloc.add(
+                                      BookmarkEvent.deleteBookmark(bookmarkId: bookmark.id),
+                                    ),
+                              ),
+                            ],
+                          );
+                        },
+                      ).paddingSymmetric(horizontal: 16),
+            );
+          },
+        ),
       ),
     );
   }

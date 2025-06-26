@@ -5,8 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scrollview_observer/scrollview_observer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../common/common.dart';
-import '../../../features.dart';
+import '../../../../lib.dart';
 
 class QuranDetailView extends StatelessWidget {
   final QuranDetailParams params;
@@ -36,8 +35,14 @@ class QuranDetailView extends StatelessWidget {
       onInit: () => context.read<QuranDetailCubit>().init(params),
       body: BlocBuilder<QuranDetailCubit, QuranDetailState>(
         builder: (context, state) {
-          final isLoading = state.whenOrNull(loading: () => true) ?? false;
-          final isLoadingRetrieveMoreData = state.whenOrNull(loadingMoreData: () => true) ?? false;
+          final isLoading = switch (state) {
+            QuranDetailLoadingState() => true,
+            _ => false,
+          };
+          final isLoadingRetrieveMoreData = switch (state) {
+            QuranDetailLoadingMoreDataState() => true,
+            _ => false,
+          };
           final ayahs = isLoading ? BoneMockData.fakeAyahs : quranDetailCubit.ayahs;
           final sliverCtx = quranDetailCubit.sliverContext;
 

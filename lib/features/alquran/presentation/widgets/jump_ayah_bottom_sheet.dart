@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../common/common.dart';
-import '../../../features.dart';
+import '../../../../lib.dart';
+
 
 class JumpAyahBottomSheet extends StatelessWidget {
   const JumpAyahBottomSheet({super.key, required this.quranDetailCubit});
@@ -19,7 +19,10 @@ class JumpAyahBottomSheet extends StatelessWidget {
                 ..init(params: quranDetailCubit.paramsData, ayahs: quranDetailCubit.ayahs),
       child: BlocBuilder<JumpAyahCubit, JumpAyahState>(
         builder: (context, state) {
-          final isLoading = state.whenOrNull(loading: () => true) ?? false;
+          final isLoading = switch (state) {
+            JumpAyahLoadingState() => true,
+            _ => false,
+          };
           final jumpAyahCubit = context.read<JumpAyahCubit>();
           final jumpAyahTitle = jumpAyahCubit.jumpAyahTitle;
           final ayahs = isLoading ? BoneMockData.fakeAyahs : jumpAyahCubit.ayahs;
