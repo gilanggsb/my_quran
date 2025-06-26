@@ -9,51 +9,85 @@ class SearchSurahJuz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<HomeBloc, HomeState>(
+    final homeBloc = context.read<HomeBloc>();
+    return BlocListener<HomeBloc, HomeState>(
       listener: (context, state) {
-        state.whenOrNull(
-          searchedSurahJuz: (query) {
+        switch (state) {
+          case HomeSearchedSurahJuzState(:final query):
             context.read<JuzCubit>().searchJuz(query);
             context.read<SurahCubit>().searchJuz(query);
-          },
-        );
+            break;
+          default:
+        }
       },
-      builder: (context, state) {
-        final homeBloc = context.read<HomeBloc>();
-        return DefaultTextField(
-          hintTextStyle: AppStyle.text(
-            fontColor:
-                context.isLightTheme
-                    ? context.getColorExt(AppColorType.text)
-                    : context.getColorExt(AppColorType.background),
-          ),
-          textStyle: AppStyle.text(
-            fontColor:
-                context.isLightTheme
-                    ? context.getColorExt(AppColorType.text)
-                    : context.getColorExt(AppColorType.background),
-          ),
-          hintText: 'Search',
-          controller: homeBloc.searchController,
-          onChanged: (query) => homeBloc.add(HomeEvent.searchSurahJuz(query)),
-          suffix:
-              homeBloc.searchController.text.isEmpty
-                  ? Icon(
-                    Icons.search,
-                    color:
-                        context.isLightTheme
-                            ? context.getColorExt(AppColorType.text)
-                            : context.getColorExt(AppColorType.background),
-                  )
-                  : Icon(
-                    Icons.clear,
-                    color:
-                        context.isLightTheme
-                            ? context.getColorExt(AppColorType.text)
-                            : context.getColorExt(AppColorType.background),
-                  ).onTap(() => homeBloc.add(const HomeEvent.clearSearch())),
-        );
-      },
+      child: DefaultTextField(
+        hintTextStyle: AppStyle.text(
+          fontColor:
+              context.isLightTheme
+                  ? context.getColorExt(AppColorType.text)
+                  : context.getColorExt(AppColorType.background),
+        ),
+        textStyle: AppStyle.text(
+          fontColor:
+              context.isLightTheme
+                  ? context.getColorExt(AppColorType.text)
+                  : context.getColorExt(AppColorType.background),
+        ),
+        hintText: 'Search',
+        controller: homeBloc.searchController,
+        onChanged: (query) => homeBloc.add(HomeEvent.searchSurahJuz(query)),
+        suffix:
+            homeBloc.searchController.text.isEmpty
+                ? Icon(
+                  Icons.search,
+                  color:
+                      context.isLightTheme
+                          ? context.getColorExt(AppColorType.text)
+                          : context.getColorExt(AppColorType.background),
+                )
+                : Icon(
+                  Icons.clear,
+                  color:
+                      context.isLightTheme
+                          ? context.getColorExt(AppColorType.text)
+                          : context.getColorExt(AppColorType.background),
+                ).onTap(() => homeBloc.add(const HomeEvent.clearSearch())),
+      ),
+      // builder: (context, state) {
+      //   return DefaultTextField(
+      //     hintTextStyle: AppStyle.text(
+      //       fontColor:
+      //           context.isLightTheme
+      //               ? context.getColorExt(AppColorType.text)
+      //               : context.getColorExt(AppColorType.background),
+      //     ),
+      //     textStyle: AppStyle.text(
+      //       fontColor:
+      //           context.isLightTheme
+      //               ? context.getColorExt(AppColorType.text)
+      //               : context.getColorExt(AppColorType.background),
+      //     ),
+      //     hintText: 'Search',
+      //     controller: homeBloc.searchController,
+      //     onChanged: (query) => homeBloc.add(HomeEvent.searchSurahJuz(query)),
+      //     suffix:
+      //         homeBloc.searchController.text.isEmpty
+      //             ? Icon(
+      //               Icons.search,
+      //               color:
+      //                   context.isLightTheme
+      //                       ? context.getColorExt(AppColorType.text)
+      //                       : context.getColorExt(AppColorType.background),
+      //             )
+      //             : Icon(
+      //               Icons.clear,
+      //               color:
+      //                   context.isLightTheme
+      //                       ? context.getColorExt(AppColorType.text)
+      //                       : context.getColorExt(AppColorType.background),
+      //             ).onTap(() => homeBloc.add(const HomeEvent.clearSearch())),
+      //   );
+      // },
     );
   }
 }

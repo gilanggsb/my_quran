@@ -6,6 +6,8 @@ import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../lib.dart';
+
 part 'ayah_pagination.freezed.dart';
 part 'ayah_pagination.g.dart';
 
@@ -13,8 +15,9 @@ AyahPagination ayahPaginationFromJson(String str) => AyahPagination.fromJson(jso
 
 String ayahPaginationToJson(AyahPagination data) => json.encode(data.toJson());
 
-@freezed
-class AyahPagination with _$AyahPagination {
+@customFreezed
+abstract class AyahPagination with _$AyahPagination {
+  @customJsonSerializable
   const factory AyahPagination({int? page, int? length}) = _AyahPagination;
 
   factory AyahPagination.fromJson(Map<String, dynamic> json) => _$AyahPaginationFromJson(json);

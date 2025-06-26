@@ -51,8 +51,8 @@ $QuranDetailStateCopyWith(QuranDetailState _, $Res Function(QuranDetailState) __
 /// @nodoc
 
 
-class _Initial with DiagnosticableTreeMixin implements QuranDetailState {
-  const _Initial();
+class QuranDetailInitialState with DiagnosticableTreeMixin implements QuranDetailState {
+  const QuranDetailInitialState();
   
 
 
@@ -68,7 +68,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranDetailInitialState);
 }
 
 
@@ -89,8 +89,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _Loading with DiagnosticableTreeMixin implements QuranDetailState {
-  const _Loading();
+class QuranDetailLoadingState with DiagnosticableTreeMixin implements QuranDetailState {
+  const QuranDetailLoadingState();
   
 
 
@@ -106,7 +106,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranDetailLoadingState);
 }
 
 
@@ -127,8 +127,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _LoadingMoreData with DiagnosticableTreeMixin implements QuranDetailState {
-  const _LoadingMoreData();
+class QuranDetailLoadingMoreDataState with DiagnosticableTreeMixin implements QuranDetailState {
+  const QuranDetailLoadingMoreDataState();
   
 
 
@@ -144,7 +144,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LoadingMoreData);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranDetailLoadingMoreDataState);
 }
 
 
@@ -165,8 +165,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _Loaded with DiagnosticableTreeMixin implements QuranDetailState {
-  const _Loaded();
+class QuranDetailLoadedState with DiagnosticableTreeMixin implements QuranDetailState {
+  const QuranDetailLoadedState();
   
 
 
@@ -182,7 +182,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranDetailLoadedState);
 }
 
 
@@ -203,8 +203,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
-class _Failed with DiagnosticableTreeMixin implements QuranDetailState {
-  const _Failed(this.message);
+class QuranDetailFailedState with DiagnosticableTreeMixin implements QuranDetailState {
+  const QuranDetailFailedState(this.message);
   
 
  final  String message;
@@ -213,7 +213,7 @@ class _Failed with DiagnosticableTreeMixin implements QuranDetailState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$FailedCopyWith<_Failed> get copyWith => __$FailedCopyWithImpl<_Failed>(this, _$identity);
+$QuranDetailFailedStateCopyWith<QuranDetailFailedState> get copyWith => _$QuranDetailFailedStateCopyWithImpl<QuranDetailFailedState>(this, _$identity);
 
 
 @override
@@ -225,7 +225,7 @@ void debugFillProperties(DiagnosticPropertiesBuilder properties) {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Failed&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranDetailFailedState&&(identical(other.message, message) || other.message == message));
 }
 
 
@@ -241,8 +241,8 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 }
 
 /// @nodoc
-abstract mixin class _$FailedCopyWith<$Res> implements $QuranDetailStateCopyWith<$Res> {
-  factory _$FailedCopyWith(_Failed value, $Res Function(_Failed) _then) = __$FailedCopyWithImpl;
+abstract mixin class $QuranDetailFailedStateCopyWith<$Res> implements $QuranDetailStateCopyWith<$Res> {
+  factory $QuranDetailFailedStateCopyWith(QuranDetailFailedState value, $Res Function(QuranDetailFailedState) _then) = _$QuranDetailFailedStateCopyWithImpl;
 @useResult
 $Res call({
  String message
@@ -253,17 +253,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$FailedCopyWithImpl<$Res>
-    implements _$FailedCopyWith<$Res> {
-  __$FailedCopyWithImpl(this._self, this._then);
+class _$QuranDetailFailedStateCopyWithImpl<$Res>
+    implements $QuranDetailFailedStateCopyWith<$Res> {
+  _$QuranDetailFailedStateCopyWithImpl(this._self, this._then);
 
-  final _Failed _self;
-  final $Res Function(_Failed) _then;
+  final QuranDetailFailedState _self;
+  final $Res Function(QuranDetailFailedState) _then;
 
 /// Create a copy of QuranDetailState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
-  return _then(_Failed(
+  return _then(QuranDetailFailedState(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));

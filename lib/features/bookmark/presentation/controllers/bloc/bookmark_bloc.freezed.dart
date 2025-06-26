@@ -45,8 +45,8 @@ $BookmarkEventCopyWith(BookmarkEvent _, $Res Function(BookmarkEvent) __);
 /// @nodoc
 
 
-class _Started implements BookmarkEvent {
-  const _Started();
+class BookmarkStartedEvent implements BookmarkEvent {
+  const BookmarkStartedEvent();
   
 
 
@@ -56,7 +56,7 @@ class _Started implements BookmarkEvent {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Started);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkStartedEvent);
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 /// @nodoc
 
 
-class _GetData implements BookmarkEvent {
-  const _GetData({this.categoryId});
+class BookmarkGetDataEvent implements BookmarkEvent {
+  const BookmarkGetDataEvent({this.categoryId});
   
 
  final  String? categoryId;
@@ -87,13 +87,13 @@ class _GetData implements BookmarkEvent {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$GetDataCopyWith<_GetData> get copyWith => __$GetDataCopyWithImpl<_GetData>(this, _$identity);
+$BookmarkGetDataEventCopyWith<BookmarkGetDataEvent> get copyWith => _$BookmarkGetDataEventCopyWithImpl<BookmarkGetDataEvent>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetData&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkGetDataEvent&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId));
 }
 
 
@@ -109,8 +109,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$GetDataCopyWith<$Res> implements $BookmarkEventCopyWith<$Res> {
-  factory _$GetDataCopyWith(_GetData value, $Res Function(_GetData) _then) = __$GetDataCopyWithImpl;
+abstract mixin class $BookmarkGetDataEventCopyWith<$Res> implements $BookmarkEventCopyWith<$Res> {
+  factory $BookmarkGetDataEventCopyWith(BookmarkGetDataEvent value, $Res Function(BookmarkGetDataEvent) _then) = _$BookmarkGetDataEventCopyWithImpl;
 @useResult
 $Res call({
  String? categoryId
@@ -121,17 +121,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$GetDataCopyWithImpl<$Res>
-    implements _$GetDataCopyWith<$Res> {
-  __$GetDataCopyWithImpl(this._self, this._then);
+class _$BookmarkGetDataEventCopyWithImpl<$Res>
+    implements $BookmarkGetDataEventCopyWith<$Res> {
+  _$BookmarkGetDataEventCopyWithImpl(this._self, this._then);
 
-  final _GetData _self;
-  final $Res Function(_GetData) _then;
+  final BookmarkGetDataEvent _self;
+  final $Res Function(BookmarkGetDataEvent) _then;
 
 /// Create a copy of BookmarkEvent
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? categoryId = freezed,}) {
-  return _then(_GetData(
+  return _then(BookmarkGetDataEvent(
 categoryId: freezed == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -143,8 +143,8 @@ as String?,
 /// @nodoc
 
 
-class _DeleteBookmark implements BookmarkEvent {
-  const _DeleteBookmark({this.bookmarkId});
+class BookmarkDeleteBookmarkEvent implements BookmarkEvent {
+  const BookmarkDeleteBookmarkEvent({this.bookmarkId});
   
 
  final  String? bookmarkId;
@@ -153,13 +153,13 @@ class _DeleteBookmark implements BookmarkEvent {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$DeleteBookmarkCopyWith<_DeleteBookmark> get copyWith => __$DeleteBookmarkCopyWithImpl<_DeleteBookmark>(this, _$identity);
+$BookmarkDeleteBookmarkEventCopyWith<BookmarkDeleteBookmarkEvent> get copyWith => _$BookmarkDeleteBookmarkEventCopyWithImpl<BookmarkDeleteBookmarkEvent>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeleteBookmark&&(identical(other.bookmarkId, bookmarkId) || other.bookmarkId == bookmarkId));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkDeleteBookmarkEvent&&(identical(other.bookmarkId, bookmarkId) || other.bookmarkId == bookmarkId));
 }
 
 
@@ -175,8 +175,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$DeleteBookmarkCopyWith<$Res> implements $BookmarkEventCopyWith<$Res> {
-  factory _$DeleteBookmarkCopyWith(_DeleteBookmark value, $Res Function(_DeleteBookmark) _then) = __$DeleteBookmarkCopyWithImpl;
+abstract mixin class $BookmarkDeleteBookmarkEventCopyWith<$Res> implements $BookmarkEventCopyWith<$Res> {
+  factory $BookmarkDeleteBookmarkEventCopyWith(BookmarkDeleteBookmarkEvent value, $Res Function(BookmarkDeleteBookmarkEvent) _then) = _$BookmarkDeleteBookmarkEventCopyWithImpl;
 @useResult
 $Res call({
  String? bookmarkId
@@ -187,17 +187,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$DeleteBookmarkCopyWithImpl<$Res>
-    implements _$DeleteBookmarkCopyWith<$Res> {
-  __$DeleteBookmarkCopyWithImpl(this._self, this._then);
+class _$BookmarkDeleteBookmarkEventCopyWithImpl<$Res>
+    implements $BookmarkDeleteBookmarkEventCopyWith<$Res> {
+  _$BookmarkDeleteBookmarkEventCopyWithImpl(this._self, this._then);
 
-  final _DeleteBookmark _self;
-  final $Res Function(_DeleteBookmark) _then;
+  final BookmarkDeleteBookmarkEvent _self;
+  final $Res Function(BookmarkDeleteBookmarkEvent) _then;
 
 /// Create a copy of BookmarkEvent
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? bookmarkId = freezed,}) {
-  return _then(_DeleteBookmark(
+  return _then(BookmarkDeleteBookmarkEvent(
 bookmarkId: freezed == bookmarkId ? _self.bookmarkId : bookmarkId // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -209,8 +209,8 @@ as String?,
 /// @nodoc
 
 
-class _GetBookmarkDetail implements BookmarkEvent {
-  const _GetBookmarkDetail({this.bookmark});
+class BookmarkGetBookmarkDetailEvent implements BookmarkEvent {
+  const BookmarkGetBookmarkDetailEvent({this.bookmark});
   
 
  final  BookmarkData? bookmark;
@@ -219,13 +219,13 @@ class _GetBookmarkDetail implements BookmarkEvent {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$GetBookmarkDetailCopyWith<_GetBookmarkDetail> get copyWith => __$GetBookmarkDetailCopyWithImpl<_GetBookmarkDetail>(this, _$identity);
+$BookmarkGetBookmarkDetailEventCopyWith<BookmarkGetBookmarkDetailEvent> get copyWith => _$BookmarkGetBookmarkDetailEventCopyWithImpl<BookmarkGetBookmarkDetailEvent>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBookmarkDetail&&(identical(other.bookmark, bookmark) || other.bookmark == bookmark));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkGetBookmarkDetailEvent&&(identical(other.bookmark, bookmark) || other.bookmark == bookmark));
 }
 
 
@@ -241,8 +241,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$GetBookmarkDetailCopyWith<$Res> implements $BookmarkEventCopyWith<$Res> {
-  factory _$GetBookmarkDetailCopyWith(_GetBookmarkDetail value, $Res Function(_GetBookmarkDetail) _then) = __$GetBookmarkDetailCopyWithImpl;
+abstract mixin class $BookmarkGetBookmarkDetailEventCopyWith<$Res> implements $BookmarkEventCopyWith<$Res> {
+  factory $BookmarkGetBookmarkDetailEventCopyWith(BookmarkGetBookmarkDetailEvent value, $Res Function(BookmarkGetBookmarkDetailEvent) _then) = _$BookmarkGetBookmarkDetailEventCopyWithImpl;
 @useResult
 $Res call({
  BookmarkData? bookmark
@@ -253,17 +253,17 @@ $BookmarkDataCopyWith<$Res>? get bookmark;
 
 }
 /// @nodoc
-class __$GetBookmarkDetailCopyWithImpl<$Res>
-    implements _$GetBookmarkDetailCopyWith<$Res> {
-  __$GetBookmarkDetailCopyWithImpl(this._self, this._then);
+class _$BookmarkGetBookmarkDetailEventCopyWithImpl<$Res>
+    implements $BookmarkGetBookmarkDetailEventCopyWith<$Res> {
+  _$BookmarkGetBookmarkDetailEventCopyWithImpl(this._self, this._then);
 
-  final _GetBookmarkDetail _self;
-  final $Res Function(_GetBookmarkDetail) _then;
+  final BookmarkGetBookmarkDetailEvent _self;
+  final $Res Function(BookmarkGetBookmarkDetailEvent) _then;
 
 /// Create a copy of BookmarkEvent
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? bookmark = freezed,}) {
-  return _then(_GetBookmarkDetail(
+  return _then(BookmarkGetBookmarkDetailEvent(
 bookmark: freezed == bookmark ? _self.bookmark : bookmark // ignore: cast_nullable_to_non_nullable
 as BookmarkData?,
   ));
@@ -317,8 +317,8 @@ $BookmarkStateCopyWith(BookmarkState _, $Res Function(BookmarkState) __);
 /// @nodoc
 
 
-class _Initial implements BookmarkState {
-  const _Initial();
+class BookmarkInitialState implements BookmarkState {
+  const BookmarkInitialState();
   
 
 
@@ -328,7 +328,7 @@ class _Initial implements BookmarkState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkInitialState);
 }
 
 
@@ -349,8 +349,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loading implements BookmarkState {
-  const _Loading();
+class BookmarkLoadingState implements BookmarkState {
+  const BookmarkLoadingState();
   
 
 
@@ -360,7 +360,7 @@ class _Loading implements BookmarkState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkLoadingState);
 }
 
 
@@ -381,8 +381,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loaded implements BookmarkState {
-  const _Loaded();
+class BookmarkLoadedState implements BookmarkState {
+  const BookmarkLoadedState();
   
 
 
@@ -392,7 +392,7 @@ class _Loaded implements BookmarkState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkLoadedState);
 }
 
 
@@ -413,8 +413,8 @@ String toString() {
 /// @nodoc
 
 
-class _Error implements BookmarkState {
-  const _Error(this.message);
+class BookmarkErrorState implements BookmarkState {
+  const BookmarkErrorState(this.message);
   
 
  final  String message;
@@ -423,13 +423,13 @@ class _Error implements BookmarkState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$ErrorCopyWith<_Error> get copyWith => __$ErrorCopyWithImpl<_Error>(this, _$identity);
+$BookmarkErrorStateCopyWith<BookmarkErrorState> get copyWith => _$BookmarkErrorStateCopyWithImpl<BookmarkErrorState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Error&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkErrorState&&(identical(other.message, message) || other.message == message));
 }
 
 
@@ -445,8 +445,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$ErrorCopyWith<$Res> implements $BookmarkStateCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) _then) = __$ErrorCopyWithImpl;
+abstract mixin class $BookmarkErrorStateCopyWith<$Res> implements $BookmarkStateCopyWith<$Res> {
+  factory $BookmarkErrorStateCopyWith(BookmarkErrorState value, $Res Function(BookmarkErrorState) _then) = _$BookmarkErrorStateCopyWithImpl;
 @useResult
 $Res call({
  String message
@@ -457,17 +457,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(this._self, this._then);
+class _$BookmarkErrorStateCopyWithImpl<$Res>
+    implements $BookmarkErrorStateCopyWith<$Res> {
+  _$BookmarkErrorStateCopyWithImpl(this._self, this._then);
 
-  final _Error _self;
-  final $Res Function(_Error) _then;
+  final BookmarkErrorState _self;
+  final $Res Function(BookmarkErrorState) _then;
 
 /// Create a copy of BookmarkState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
-  return _then(_Error(
+  return _then(BookmarkErrorState(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));
@@ -479,8 +479,8 @@ as String,
 /// @nodoc
 
 
-class _DetailAyahLoading implements BookmarkState {
-  const _DetailAyahLoading();
+class BookmarkDetailAyahLoadingState implements BookmarkState {
+  const BookmarkDetailAyahLoadingState();
   
 
 
@@ -490,7 +490,7 @@ class _DetailAyahLoading implements BookmarkState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DetailAyahLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkDetailAyahLoadingState);
 }
 
 
@@ -511,8 +511,8 @@ String toString() {
 /// @nodoc
 
 
-class _DetailAyahLoaded implements BookmarkState {
-  const _DetailAyahLoaded(this.ayah);
+class BookmarkDetailAyahLoadedState implements BookmarkState {
+  const BookmarkDetailAyahLoadedState(this.ayah);
   
 
  final  Ayah? ayah;
@@ -521,13 +521,13 @@ class _DetailAyahLoaded implements BookmarkState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$DetailAyahLoadedCopyWith<_DetailAyahLoaded> get copyWith => __$DetailAyahLoadedCopyWithImpl<_DetailAyahLoaded>(this, _$identity);
+$BookmarkDetailAyahLoadedStateCopyWith<BookmarkDetailAyahLoadedState> get copyWith => _$BookmarkDetailAyahLoadedStateCopyWithImpl<BookmarkDetailAyahLoadedState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DetailAyahLoaded&&(identical(other.ayah, ayah) || other.ayah == ayah));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkDetailAyahLoadedState&&(identical(other.ayah, ayah) || other.ayah == ayah));
 }
 
 
@@ -543,8 +543,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$DetailAyahLoadedCopyWith<$Res> implements $BookmarkStateCopyWith<$Res> {
-  factory _$DetailAyahLoadedCopyWith(_DetailAyahLoaded value, $Res Function(_DetailAyahLoaded) _then) = __$DetailAyahLoadedCopyWithImpl;
+abstract mixin class $BookmarkDetailAyahLoadedStateCopyWith<$Res> implements $BookmarkStateCopyWith<$Res> {
+  factory $BookmarkDetailAyahLoadedStateCopyWith(BookmarkDetailAyahLoadedState value, $Res Function(BookmarkDetailAyahLoadedState) _then) = _$BookmarkDetailAyahLoadedStateCopyWithImpl;
 @useResult
 $Res call({
  Ayah? ayah
@@ -555,17 +555,17 @@ $AyahCopyWith<$Res>? get ayah;
 
 }
 /// @nodoc
-class __$DetailAyahLoadedCopyWithImpl<$Res>
-    implements _$DetailAyahLoadedCopyWith<$Res> {
-  __$DetailAyahLoadedCopyWithImpl(this._self, this._then);
+class _$BookmarkDetailAyahLoadedStateCopyWithImpl<$Res>
+    implements $BookmarkDetailAyahLoadedStateCopyWith<$Res> {
+  _$BookmarkDetailAyahLoadedStateCopyWithImpl(this._self, this._then);
 
-  final _DetailAyahLoaded _self;
-  final $Res Function(_DetailAyahLoaded) _then;
+  final BookmarkDetailAyahLoadedState _self;
+  final $Res Function(BookmarkDetailAyahLoadedState) _then;
 
 /// Create a copy of BookmarkState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? ayah = freezed,}) {
-  return _then(_DetailAyahLoaded(
+  return _then(BookmarkDetailAyahLoadedState(
 freezed == ayah ? _self.ayah : ayah // ignore: cast_nullable_to_non_nullable
 as Ayah?,
   ));
@@ -589,8 +589,8 @@ $AyahCopyWith<$Res>? get ayah {
 /// @nodoc
 
 
-class _DeleteBookmarkSuccess implements BookmarkState {
-  const _DeleteBookmarkSuccess();
+class BookmarkDeleteBookmarkSuccessState implements BookmarkState {
+  const BookmarkDeleteBookmarkSuccessState();
   
 
 
@@ -600,7 +600,7 @@ class _DeleteBookmarkSuccess implements BookmarkState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeleteBookmarkSuccess);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkDeleteBookmarkSuccessState);
 }
 
 

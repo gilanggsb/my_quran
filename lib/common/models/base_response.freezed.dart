@@ -116,7 +116,7 @@ $PagingCopyWith<$Res>? get paging {
 
 /// @nodoc
 
-
+@JsonSerializable(genericArgumentFactories: true)
 class _BaseResponse<T> implements BaseResponse<T> {
   const _BaseResponse({this.status, this.message, this.request, this.info, this.paging, this.data});
   

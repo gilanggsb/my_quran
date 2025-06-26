@@ -45,8 +45,8 @@ $DetailAyahStateCopyWith(DetailAyahState _, $Res Function(DetailAyahState) __);
 /// @nodoc
 
 
-class _Initial implements DetailAyahState {
-  const _Initial();
+class DetailAyahInitialState implements DetailAyahState {
+  const DetailAyahInitialState();
   
 
 
@@ -56,7 +56,7 @@ class _Initial implements DetailAyahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DetailAyahInitialState);
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loading implements DetailAyahState {
-  const _Loading();
+class DetailAyahLoadingState implements DetailAyahState {
+  const DetailAyahLoadingState();
   
 
 
@@ -88,7 +88,7 @@ class _Loading implements DetailAyahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DetailAyahLoadingState);
 }
 
 
@@ -109,8 +109,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loaded implements DetailAyahState {
-  const _Loaded();
+class DetailAyahLoadedState implements DetailAyahState {
+  const DetailAyahLoadedState();
   
 
 
@@ -120,7 +120,7 @@ class _Loaded implements DetailAyahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DetailAyahLoadedState);
 }
 
 
@@ -141,8 +141,8 @@ String toString() {
 /// @nodoc
 
 
-class _Failed implements DetailAyahState {
-  const _Failed(this.message);
+class DetailAyahFailedState implements DetailAyahState {
+  const DetailAyahFailedState(this.message);
   
 
  final  String message;
@@ -151,13 +151,13 @@ class _Failed implements DetailAyahState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$FailedCopyWith<_Failed> get copyWith => __$FailedCopyWithImpl<_Failed>(this, _$identity);
+$DetailAyahFailedStateCopyWith<DetailAyahFailedState> get copyWith => _$DetailAyahFailedStateCopyWithImpl<DetailAyahFailedState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Failed&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DetailAyahFailedState&&(identical(other.message, message) || other.message == message));
 }
 
 
@@ -173,8 +173,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$FailedCopyWith<$Res> implements $DetailAyahStateCopyWith<$Res> {
-  factory _$FailedCopyWith(_Failed value, $Res Function(_Failed) _then) = __$FailedCopyWithImpl;
+abstract mixin class $DetailAyahFailedStateCopyWith<$Res> implements $DetailAyahStateCopyWith<$Res> {
+  factory $DetailAyahFailedStateCopyWith(DetailAyahFailedState value, $Res Function(DetailAyahFailedState) _then) = _$DetailAyahFailedStateCopyWithImpl;
 @useResult
 $Res call({
  String message
@@ -185,17 +185,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$FailedCopyWithImpl<$Res>
-    implements _$FailedCopyWith<$Res> {
-  __$FailedCopyWithImpl(this._self, this._then);
+class _$DetailAyahFailedStateCopyWithImpl<$Res>
+    implements $DetailAyahFailedStateCopyWith<$Res> {
+  _$DetailAyahFailedStateCopyWithImpl(this._self, this._then);
 
-  final _Failed _self;
-  final $Res Function(_Failed) _then;
+  final DetailAyahFailedState _self;
+  final $Res Function(DetailAyahFailedState) _then;
 
 /// Create a copy of DetailAyahState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
-  return _then(_Failed(
+  return _then(DetailAyahFailedState(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));

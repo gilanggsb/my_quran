@@ -45,8 +45,8 @@ $HomeEventCopyWith(HomeEvent _, $Res Function(HomeEvent) __);
 /// @nodoc
 
 
-class _Started implements HomeEvent {
-  const _Started();
+class HomeStartedEvent implements HomeEvent {
+  const HomeStartedEvent();
   
 
 
@@ -56,7 +56,7 @@ class _Started implements HomeEvent {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Started);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeStartedEvent);
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 /// @nodoc
 
 
-class _GetData implements HomeEvent {
-  const _GetData();
+class HomeGetDataEvent implements HomeEvent {
+  const HomeGetDataEvent();
   
 
 
@@ -88,7 +88,7 @@ class _GetData implements HomeEvent {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetData);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeGetDataEvent);
 }
 
 
@@ -109,8 +109,8 @@ String toString() {
 /// @nodoc
 
 
-class _SearchSurahJuz implements HomeEvent {
-  const _SearchSurahJuz(this.query);
+class HomeSearchSurahJuzEvent implements HomeEvent {
+  const HomeSearchSurahJuzEvent(this.query);
   
 
  final  String query;
@@ -119,13 +119,13 @@ class _SearchSurahJuz implements HomeEvent {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$SearchSurahJuzCopyWith<_SearchSurahJuz> get copyWith => __$SearchSurahJuzCopyWithImpl<_SearchSurahJuz>(this, _$identity);
+$HomeSearchSurahJuzEventCopyWith<HomeSearchSurahJuzEvent> get copyWith => _$HomeSearchSurahJuzEventCopyWithImpl<HomeSearchSurahJuzEvent>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SearchSurahJuz&&(identical(other.query, query) || other.query == query));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeSearchSurahJuzEvent&&(identical(other.query, query) || other.query == query));
 }
 
 
@@ -141,8 +141,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$SearchSurahJuzCopyWith<$Res> implements $HomeEventCopyWith<$Res> {
-  factory _$SearchSurahJuzCopyWith(_SearchSurahJuz value, $Res Function(_SearchSurahJuz) _then) = __$SearchSurahJuzCopyWithImpl;
+abstract mixin class $HomeSearchSurahJuzEventCopyWith<$Res> implements $HomeEventCopyWith<$Res> {
+  factory $HomeSearchSurahJuzEventCopyWith(HomeSearchSurahJuzEvent value, $Res Function(HomeSearchSurahJuzEvent) _then) = _$HomeSearchSurahJuzEventCopyWithImpl;
 @useResult
 $Res call({
  String query
@@ -153,17 +153,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$SearchSurahJuzCopyWithImpl<$Res>
-    implements _$SearchSurahJuzCopyWith<$Res> {
-  __$SearchSurahJuzCopyWithImpl(this._self, this._then);
+class _$HomeSearchSurahJuzEventCopyWithImpl<$Res>
+    implements $HomeSearchSurahJuzEventCopyWith<$Res> {
+  _$HomeSearchSurahJuzEventCopyWithImpl(this._self, this._then);
 
-  final _SearchSurahJuz _self;
-  final $Res Function(_SearchSurahJuz) _then;
+  final HomeSearchSurahJuzEvent _self;
+  final $Res Function(HomeSearchSurahJuzEvent) _then;
 
 /// Create a copy of HomeEvent
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? query = null,}) {
-  return _then(_SearchSurahJuz(
+  return _then(HomeSearchSurahJuzEvent(
 null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
 as String,
   ));
@@ -175,8 +175,8 @@ as String,
 /// @nodoc
 
 
-class _ClearSearch implements HomeEvent {
-  const _ClearSearch();
+class HomeClearSearchEvent implements HomeEvent {
+  const HomeClearSearchEvent();
   
 
 
@@ -186,7 +186,7 @@ class _ClearSearch implements HomeEvent {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ClearSearch);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeClearSearchEvent);
 }
 
 
@@ -237,8 +237,8 @@ $HomeStateCopyWith(HomeState _, $Res Function(HomeState) __);
 /// @nodoc
 
 
-class _Initial implements HomeState {
-  const _Initial();
+class HomeInitialState implements HomeState {
+  const HomeInitialState();
   
 
 
@@ -248,7 +248,7 @@ class _Initial implements HomeState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeInitialState);
 }
 
 
@@ -269,8 +269,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loading implements HomeState {
-  const _Loading();
+class HomeLoadingState implements HomeState {
+  const HomeLoadingState();
   
 
 
@@ -280,7 +280,7 @@ class _Loading implements HomeState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeLoadingState);
 }
 
 
@@ -301,8 +301,8 @@ String toString() {
 /// @nodoc
 
 
-class _Success implements HomeState {
-  const _Success();
+class HomeSuccessState implements HomeState {
+  const HomeSuccessState();
   
 
 
@@ -312,7 +312,7 @@ class _Success implements HomeState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Success);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeSuccessState);
 }
 
 
@@ -333,8 +333,8 @@ String toString() {
 /// @nodoc
 
 
-class _Searching implements HomeState {
-  const _Searching();
+class HomeSearchingState implements HomeState {
+  const HomeSearchingState();
   
 
 
@@ -344,7 +344,7 @@ class _Searching implements HomeState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Searching);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeSearchingState);
 }
 
 
@@ -365,8 +365,8 @@ String toString() {
 /// @nodoc
 
 
-class _SearchedSurahJuz implements HomeState {
-  const _SearchedSurahJuz(this.query);
+class HomeSearchedSurahJuzState implements HomeState {
+  const HomeSearchedSurahJuzState(this.query);
   
 
  final  String query;
@@ -375,13 +375,13 @@ class _SearchedSurahJuz implements HomeState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$SearchedSurahJuzCopyWith<_SearchedSurahJuz> get copyWith => __$SearchedSurahJuzCopyWithImpl<_SearchedSurahJuz>(this, _$identity);
+$HomeSearchedSurahJuzStateCopyWith<HomeSearchedSurahJuzState> get copyWith => _$HomeSearchedSurahJuzStateCopyWithImpl<HomeSearchedSurahJuzState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SearchedSurahJuz&&(identical(other.query, query) || other.query == query));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeSearchedSurahJuzState&&(identical(other.query, query) || other.query == query));
 }
 
 
@@ -397,8 +397,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$SearchedSurahJuzCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
-  factory _$SearchedSurahJuzCopyWith(_SearchedSurahJuz value, $Res Function(_SearchedSurahJuz) _then) = __$SearchedSurahJuzCopyWithImpl;
+abstract mixin class $HomeSearchedSurahJuzStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
+  factory $HomeSearchedSurahJuzStateCopyWith(HomeSearchedSurahJuzState value, $Res Function(HomeSearchedSurahJuzState) _then) = _$HomeSearchedSurahJuzStateCopyWithImpl;
 @useResult
 $Res call({
  String query
@@ -409,17 +409,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$SearchedSurahJuzCopyWithImpl<$Res>
-    implements _$SearchedSurahJuzCopyWith<$Res> {
-  __$SearchedSurahJuzCopyWithImpl(this._self, this._then);
+class _$HomeSearchedSurahJuzStateCopyWithImpl<$Res>
+    implements $HomeSearchedSurahJuzStateCopyWith<$Res> {
+  _$HomeSearchedSurahJuzStateCopyWithImpl(this._self, this._then);
 
-  final _SearchedSurahJuz _self;
-  final $Res Function(_SearchedSurahJuz) _then;
+  final HomeSearchedSurahJuzState _self;
+  final $Res Function(HomeSearchedSurahJuzState) _then;
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? query = null,}) {
-  return _then(_SearchedSurahJuz(
+  return _then(HomeSearchedSurahJuzState(
 null == query ? _self.query : query // ignore: cast_nullable_to_non_nullable
 as String,
   ));
@@ -431,8 +431,8 @@ as String,
 /// @nodoc
 
 
-class _Error implements HomeState {
-  const _Error(this.message);
+class HomeErrorState implements HomeState {
+  const HomeErrorState(this.message);
   
 
  final  String message;
@@ -441,13 +441,13 @@ class _Error implements HomeState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$ErrorCopyWith<_Error> get copyWith => __$ErrorCopyWithImpl<_Error>(this, _$identity);
+$HomeErrorStateCopyWith<HomeErrorState> get copyWith => _$HomeErrorStateCopyWithImpl<HomeErrorState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Error&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeErrorState&&(identical(other.message, message) || other.message == message));
 }
 
 
@@ -463,8 +463,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$ErrorCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) _then) = __$ErrorCopyWithImpl;
+abstract mixin class $HomeErrorStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
+  factory $HomeErrorStateCopyWith(HomeErrorState value, $Res Function(HomeErrorState) _then) = _$HomeErrorStateCopyWithImpl;
 @useResult
 $Res call({
  String message
@@ -475,17 +475,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(this._self, this._then);
+class _$HomeErrorStateCopyWithImpl<$Res>
+    implements $HomeErrorStateCopyWith<$Res> {
+  _$HomeErrorStateCopyWithImpl(this._self, this._then);
 
-  final _Error _self;
-  final $Res Function(_Error) _then;
+  final HomeErrorState _self;
+  final $Res Function(HomeErrorState) _then;
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
-  return _then(_Error(
+  return _then(HomeErrorState(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));

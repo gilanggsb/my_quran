@@ -2,9 +2,9 @@ part of 'jump_ayah_cubit.dart';
 
 @freezed
 class JumpAyahState with _$JumpAyahState {
-  const factory JumpAyahState.initial() = _Initial;
-  const factory JumpAyahState.loading() = _Loading;
-  const factory JumpAyahState.loaded() = _Loaded;
-  const factory JumpAyahState.searchingSurahOrJuz() = _SearchingSurahOrJuz;
-  const factory JumpAyahState.failed(String message) = _Failed;
+  const factory JumpAyahState.initial() = JumpAyahInitialState;
+  const factory JumpAyahState.loading() = JumpAyahLoadingState;
+  const factory JumpAyahState.loaded() = JumpAyahLoadedState;
+  const factory JumpAyahState.searchingSurahOrJuz() = JumpAyahSearchingSurahOrJuzState;
+  const factory JumpAyahState.failed(String message) = JumpAyahFailedState;
 }

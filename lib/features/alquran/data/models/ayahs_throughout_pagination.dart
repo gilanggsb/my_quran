@@ -19,8 +19,9 @@ AyahsThroughoutPagination ayahsThroughoutPaginationFromJson(String str) =>
 String ayahsThroughoutPaginationToJson(AyahsThroughoutPagination data) =>
     json.encode(data.toJson());
 
-@freezed
-class AyahsThroughoutPagination with _$AyahsThroughoutPagination {
+@customFreezed
+abstract class AyahsThroughoutPagination with _$AyahsThroughoutPagination {
+  @customJsonSerializable
   const factory AyahsThroughoutPagination({
     @StringToIntConverter() int? surat,
     @StringToIntConverter() int? ayat,

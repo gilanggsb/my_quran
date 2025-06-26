@@ -1,13 +1,11 @@
 import 'dart:collection';
 import 'dart:io';
 
-import 'package:flutter/widgets.dart';
-
 void main() async {
   final List<File> dartFiles = listDartFiles();
   final UnmodifiableListView<MigrationHandler> unmodifiableListView = UnmodifiableListView([
     MigrationBlocFreezedHandler(),
-    MigrationModelFreezedHandler(),
+    // MigrationModelFreezedHandler(),
   ]);
   fileLoop:
   for (final file in dartFiles) {
@@ -79,7 +77,6 @@ class MigrationBlocFreezedHandler extends MigrationHandler {
     final eventName = line.split('_')[1].replaceAll('State', '').replaceAll(';', '');
 
     final fullFreezedEventName = '$classNameWithoutEventKeyword${eventName}State';
-    print("appendStateKeyword $fullFreezedEventName");
 
     file.writeAsStringSync(
       '${line.replaceAll('_$eventName', fullFreezedEventName).replaceAll('StateState', 'State').replaceAll(';', '')};\n',
@@ -92,7 +89,6 @@ class MigrationBlocFreezedHandler extends MigrationHandler {
     final eventName = line.split('_')[1].replaceAll('Event', '').replaceAll(';', '');
 
     final fullFreezedEventName = '$classNameWithoutEventKeyword${eventName}Event';
-    print("appendStateKeyword $fullFreezedEventName");
 
     file.writeAsStringSync(
       '${line.replaceAll('_$eventName', fullFreezedEventName).replaceAll('EventEvent', 'Event').replaceAll(';', '')};\n',

@@ -11,18 +11,26 @@ class BookmarkCategoryBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bgColor = context.getColorExt(AppColorType.background);
+    final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
 
     return BlocProvider(
       create: (context) => getIt.get<BookmarkCategoryCubit>()..getData(),
       child: BlocConsumer<BookmarkCategoryCubit, BookmarkCategoryState>(
-        listener:
-            (context, state) => state.whenOrNull(
-              failed: (message) => SnackBarWidget.showFailed(message),
-              successAddToBookmark: () => SnackBarWidget.showSuccess("Success Add to bookmark"),
-            ),
+        listener: (context, state) {
+          switch (state) {
+            case BookmarkCategoryFailedState(:final message):
+              SnackBarWidget.showFailed(message);
+              break;
+            case BookmarkCategorySuccessAddToBookmarkState():
+              SnackBarWidget.showSuccess("Success Add to bookmark");
+            default:
+          }
+        },
         builder: (context, state) {
-          final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
-          final isLoading = state.whenOrNull(loading: () => true) ?? false;
+          final isLoading = switch (state) {
+            BookmarkCategoryLoadingState() => true,
+            _ => false,
+          };
           final categories =
               isLoading ? BoneMockData.fakeCategories : bookmarkCategoryCubit.categories;
           return CustomScrollView(

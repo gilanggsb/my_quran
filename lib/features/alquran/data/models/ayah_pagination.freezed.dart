@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,172 +10,142 @@ part of 'ayah_pagination.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
-
-AyahPagination _$AyahPaginationFromJson(Map<String, dynamic> json) {
-  return _AyahPagination.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AyahPagination {
-  int? get page => throw _privateConstructorUsedError;
-  int? get length => throw _privateConstructorUsedError;
+
+ int? get page; int? get length;
+/// Create a copy of AyahPagination
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AyahPaginationCopyWith<AyahPagination> get copyWith => _$AyahPaginationCopyWithImpl<AyahPagination>(this as AyahPagination, _$identity);
 
   /// Serializes this AyahPagination to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of AyahPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AyahPaginationCopyWith<AyahPagination> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AyahPagination&&(identical(other.page, page) || other.page == page)&&(identical(other.length, length) || other.length == length));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,page,length);
+
+@override
+String toString() {
+  return 'AyahPagination(page: $page, length: $length)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AyahPaginationCopyWith<$Res> {
-  factory $AyahPaginationCopyWith(AyahPagination value, $Res Function(AyahPagination) then) =
-      _$AyahPaginationCopyWithImpl<$Res, AyahPagination>;
-  @useResult
-  $Res call({int? page, int? length});
-}
+abstract mixin class $AyahPaginationCopyWith<$Res>  {
+  factory $AyahPaginationCopyWith(AyahPagination value, $Res Function(AyahPagination) _then) = _$AyahPaginationCopyWithImpl;
+@useResult
+$Res call({
+ int? page, int? length
+});
 
+
+
+
+}
 /// @nodoc
-class _$AyahPaginationCopyWithImpl<$Res, $Val extends AyahPagination>
+class _$AyahPaginationCopyWithImpl<$Res>
     implements $AyahPaginationCopyWith<$Res> {
-  _$AyahPaginationCopyWithImpl(this._value, this._then);
+  _$AyahPaginationCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AyahPagination _self;
+  final $Res Function(AyahPagination) _then;
 
-  /// Create a copy of AyahPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? page = freezed, Object? length = freezed}) {
-    return _then(
-      _value.copyWith(
-            page:
-                freezed == page
-                    ? _value.page
-                    : page // ignore: cast_nullable_to_non_nullable
-                        as int?,
-            length:
-                freezed == length
-                    ? _value.length
-                    : length // ignore: cast_nullable_to_non_nullable
-                        as int?,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of AyahPagination
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? page = freezed,Object? length = freezed,}) {
+  return _then(_self.copyWith(
+page: freezed == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// @nodoc
+
+@customJsonSerializable
+class _AyahPagination implements AyahPagination {
+  const _AyahPagination({this.page, this.length});
+  factory _AyahPagination.fromJson(Map<String, dynamic> json) => _$AyahPaginationFromJson(json);
+
+@override final  int? page;
+@override final  int? length;
+
+/// Create a copy of AyahPagination
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AyahPaginationCopyWith<_AyahPagination> get copyWith => __$AyahPaginationCopyWithImpl<_AyahPagination>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AyahPaginationToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AyahPagination&&(identical(other.page, page) || other.page == page)&&(identical(other.length, length) || other.length == length));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,page,length);
+
+@override
+String toString() {
+  return 'AyahPagination(page: $page, length: $length)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$AyahPaginationImplCopyWith<$Res> implements $AyahPaginationCopyWith<$Res> {
-  factory _$$AyahPaginationImplCopyWith(
-    _$AyahPaginationImpl value,
-    $Res Function(_$AyahPaginationImpl) then,
-  ) = __$$AyahPaginationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int? page, int? length});
-}
+abstract mixin class _$AyahPaginationCopyWith<$Res> implements $AyahPaginationCopyWith<$Res> {
+  factory _$AyahPaginationCopyWith(_AyahPagination value, $Res Function(_AyahPagination) _then) = __$AyahPaginationCopyWithImpl;
+@override @useResult
+$Res call({
+ int? page, int? length
+});
 
+
+
+
+}
 /// @nodoc
-class __$$AyahPaginationImplCopyWithImpl<$Res>
-    extends _$AyahPaginationCopyWithImpl<$Res, _$AyahPaginationImpl>
-    implements _$$AyahPaginationImplCopyWith<$Res> {
-  __$$AyahPaginationImplCopyWithImpl(
-    _$AyahPaginationImpl _value,
-    $Res Function(_$AyahPaginationImpl) _then,
-  ) : super(_value, _then);
+class __$AyahPaginationCopyWithImpl<$Res>
+    implements _$AyahPaginationCopyWith<$Res> {
+  __$AyahPaginationCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of AyahPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? page = freezed, Object? length = freezed}) {
-    return _then(
-      _$AyahPaginationImpl(
-        page:
-            freezed == page
-                ? _value.page
-                : page // ignore: cast_nullable_to_non_nullable
-                    as int?,
-        length:
-            freezed == length
-                ? _value.length
-                : length // ignore: cast_nullable_to_non_nullable
-                    as int?,
-      ),
-    );
-  }
+  final _AyahPagination _self;
+  final $Res Function(_AyahPagination) _then;
+
+/// Create a copy of AyahPagination
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? page = freezed,Object? length = freezed,}) {
+  return _then(_AyahPagination(
+page: freezed == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
 }
 
-/// @nodoc
-@JsonSerializable()
-class _$AyahPaginationImpl implements _AyahPagination {
-  const _$AyahPaginationImpl({this.page, this.length});
 
-  factory _$AyahPaginationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AyahPaginationImplFromJson(json);
-
-  @override
-  final int? page;
-  @override
-  final int? length;
-
-  @override
-  String toString() {
-    return 'AyahPagination(page: $page, length: $length)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AyahPaginationImpl &&
-            (identical(other.page, page) || other.page == page) &&
-            (identical(other.length, length) || other.length == length));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, page, length);
-
-  /// Create a copy of AyahPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AyahPaginationImplCopyWith<_$AyahPaginationImpl> get copyWith =>
-      __$$AyahPaginationImplCopyWithImpl<_$AyahPaginationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AyahPaginationImplToJson(this);
-  }
 }
 
-abstract class _AyahPagination implements AyahPagination {
-  const factory _AyahPagination({final int? page, final int? length}) = _$AyahPaginationImpl;
-
-  factory _AyahPagination.fromJson(Map<String, dynamic> json) = _$AyahPaginationImpl.fromJson;
-
-  @override
-  int? get page;
-  @override
-  int? get length;
-
-  /// Create a copy of AyahPagination
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AyahPaginationImplCopyWith<_$AyahPaginationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

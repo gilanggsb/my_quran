@@ -45,8 +45,8 @@ $PlayerWidgetStateCopyWith(PlayerWidgetState _, $Res Function(PlayerWidgetState)
 /// @nodoc
 
 
-class _Initial implements PlayerWidgetState {
-  const _Initial();
+class PlayerWidgetInitialState implements PlayerWidgetState {
+  const PlayerWidgetInitialState();
   
 
 
@@ -56,7 +56,7 @@ class _Initial implements PlayerWidgetState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlayerWidgetInitialState);
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loading implements PlayerWidgetState {
-  const _Loading();
+class PlayerWidgetLoadingState implements PlayerWidgetState {
+  const PlayerWidgetLoadingState();
   
 
 
@@ -88,7 +88,7 @@ class _Loading implements PlayerWidgetState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlayerWidgetLoadingState);
 }
 
 
@@ -109,8 +109,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loaded implements PlayerWidgetState {
-  const _Loaded();
+class PlayerWidgetLoadedState implements PlayerWidgetState {
+  const PlayerWidgetLoadedState();
   
 
 
@@ -120,7 +120,7 @@ class _Loaded implements PlayerWidgetState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlayerWidgetLoadedState);
 }
 
 
@@ -141,8 +141,8 @@ String toString() {
 /// @nodoc
 
 
-class _UpdateAudioState implements PlayerWidgetState {
-  const _UpdateAudioState();
+class PlayerWidgetUpdateAudioStateState implements PlayerWidgetState {
+  const PlayerWidgetUpdateAudioStateState();
   
 
 
@@ -152,7 +152,7 @@ class _UpdateAudioState implements PlayerWidgetState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateAudioState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlayerWidgetUpdateAudioStateState);
 }
 
 

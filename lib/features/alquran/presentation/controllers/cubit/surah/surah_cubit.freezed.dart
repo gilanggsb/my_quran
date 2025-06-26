@@ -45,8 +45,8 @@ $SurahStateCopyWith(SurahState _, $Res Function(SurahState) __);
 /// @nodoc
 
 
-class _Initial implements SurahState {
-  const _Initial();
+class SurahInitialState implements SurahState {
+  const SurahInitialState();
   
 
 
@@ -56,7 +56,7 @@ class _Initial implements SurahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SurahInitialState);
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loading implements SurahState {
-  const _Loading();
+class SurahLoadingState implements SurahState {
+  const SurahLoadingState();
   
 
 
@@ -88,7 +88,7 @@ class _Loading implements SurahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SurahLoadingState);
 }
 
 
@@ -109,8 +109,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loaded implements SurahState {
-  const _Loaded();
+class SurahLoadedState implements SurahState {
+  const SurahLoadedState();
   
 
 
@@ -120,7 +120,7 @@ class _Loaded implements SurahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SurahLoadedState);
 }
 
 
@@ -141,8 +141,8 @@ String toString() {
 /// @nodoc
 
 
-class _Failed implements SurahState {
-  const _Failed(this.message);
+class SurahFailedState implements SurahState {
+  const SurahFailedState(this.message);
   
 
  final  String message;
@@ -151,13 +151,13 @@ class _Failed implements SurahState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$FailedCopyWith<_Failed> get copyWith => __$FailedCopyWithImpl<_Failed>(this, _$identity);
+$SurahFailedStateCopyWith<SurahFailedState> get copyWith => _$SurahFailedStateCopyWithImpl<SurahFailedState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Failed&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SurahFailedState&&(identical(other.message, message) || other.message == message));
 }
 
 
@@ -173,8 +173,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$FailedCopyWith<$Res> implements $SurahStateCopyWith<$Res> {
-  factory _$FailedCopyWith(_Failed value, $Res Function(_Failed) _then) = __$FailedCopyWithImpl;
+abstract mixin class $SurahFailedStateCopyWith<$Res> implements $SurahStateCopyWith<$Res> {
+  factory $SurahFailedStateCopyWith(SurahFailedState value, $Res Function(SurahFailedState) _then) = _$SurahFailedStateCopyWithImpl;
 @useResult
 $Res call({
  String message
@@ -185,17 +185,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$FailedCopyWithImpl<$Res>
-    implements _$FailedCopyWith<$Res> {
-  __$FailedCopyWithImpl(this._self, this._then);
+class _$SurahFailedStateCopyWithImpl<$Res>
+    implements $SurahFailedStateCopyWith<$Res> {
+  _$SurahFailedStateCopyWithImpl(this._self, this._then);
 
-  final _Failed _self;
-  final $Res Function(_Failed) _then;
+  final SurahFailedState _self;
+  final $Res Function(SurahFailedState) _then;
 
 /// Create a copy of SurahState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
-  return _then(_Failed(
+  return _then(SurahFailedState(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));

@@ -77,6 +77,32 @@ class AyahAdapter extends TypeAdapter<Ayah> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah();
+_Ayah _$AyahFromJson(Map<String, dynamic> json) => _Ayah(
+  id: const StringToIntConverter().fromJson(json['id'] as String?),
+  arab: json['arab'] as String?,
+  asbab: json['asbab'] as String?,
+  audio: json['audio'] as String?,
+  ayah: const StringToIntConverter().fromJson(json['ayah'] as String?),
+  juz: const StringToIntConverter().fromJson(json['juz'] as String?),
+  surah: const StringToIntConverter().fromJson(json['surah'] as String?),
+  latin: json['latin'] as String?,
+  notes: json['notes'] as String?,
+  page: json['page'] as String?,
+  text: json['text'] as String?,
+  theme: json['theme'] as String?,
+);
 
-Map<String, dynamic> _$AyahToJson(Ayah instance) => <String, dynamic>{};
+Map<String, dynamic> _$AyahToJson(_Ayah instance) => <String, dynamic>{
+  'id': const StringToIntConverter().toJson(instance.id),
+  'arab': instance.arab,
+  'asbab': instance.asbab,
+  'audio': instance.audio,
+  'ayah': const StringToIntConverter().toJson(instance.ayah),
+  'juz': const StringToIntConverter().toJson(instance.juz),
+  'surah': const StringToIntConverter().toJson(instance.surah),
+  'latin': instance.latin,
+  'notes': instance.notes,
+  'page': instance.page,
+  'text': instance.text,
+  'theme': instance.theme,
+};

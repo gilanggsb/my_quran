@@ -45,8 +45,8 @@ $JumpAyahStateCopyWith(JumpAyahState _, $Res Function(JumpAyahState) __);
 /// @nodoc
 
 
-class _Initial implements JumpAyahState {
-  const _Initial();
+class JumpAyahInitialState implements JumpAyahState {
+  const JumpAyahInitialState();
   
 
 
@@ -56,7 +56,7 @@ class _Initial implements JumpAyahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahInitialState);
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loading implements JumpAyahState {
-  const _Loading();
+class JumpAyahLoadingState implements JumpAyahState {
+  const JumpAyahLoadingState();
   
 
 
@@ -88,7 +88,7 @@ class _Loading implements JumpAyahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahLoadingState);
 }
 
 
@@ -109,8 +109,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loaded implements JumpAyahState {
-  const _Loaded();
+class JumpAyahLoadedState implements JumpAyahState {
+  const JumpAyahLoadedState();
   
 
 
@@ -120,7 +120,7 @@ class _Loaded implements JumpAyahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahLoadedState);
 }
 
 
@@ -141,8 +141,8 @@ String toString() {
 /// @nodoc
 
 
-class _SearchingSurahOrJuz implements JumpAyahState {
-  const _SearchingSurahOrJuz();
+class JumpAyahSearchingSurahOrJuzState implements JumpAyahState {
+  const JumpAyahSearchingSurahOrJuzState();
   
 
 
@@ -152,7 +152,7 @@ class _SearchingSurahOrJuz implements JumpAyahState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SearchingSurahOrJuz);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahSearchingSurahOrJuzState);
 }
 
 
@@ -173,8 +173,8 @@ String toString() {
 /// @nodoc
 
 
-class _Failed implements JumpAyahState {
-  const _Failed(this.message);
+class JumpAyahFailedState implements JumpAyahState {
+  const JumpAyahFailedState(this.message);
   
 
  final  String message;
@@ -183,13 +183,13 @@ class _Failed implements JumpAyahState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$FailedCopyWith<_Failed> get copyWith => __$FailedCopyWithImpl<_Failed>(this, _$identity);
+$JumpAyahFailedStateCopyWith<JumpAyahFailedState> get copyWith => _$JumpAyahFailedStateCopyWithImpl<JumpAyahFailedState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Failed&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JumpAyahFailedState&&(identical(other.message, message) || other.message == message));
 }
 
 
@@ -205,8 +205,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$FailedCopyWith<$Res> implements $JumpAyahStateCopyWith<$Res> {
-  factory _$FailedCopyWith(_Failed value, $Res Function(_Failed) _then) = __$FailedCopyWithImpl;
+abstract mixin class $JumpAyahFailedStateCopyWith<$Res> implements $JumpAyahStateCopyWith<$Res> {
+  factory $JumpAyahFailedStateCopyWith(JumpAyahFailedState value, $Res Function(JumpAyahFailedState) _then) = _$JumpAyahFailedStateCopyWithImpl;
 @useResult
 $Res call({
  String message
@@ -217,17 +217,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$FailedCopyWithImpl<$Res>
-    implements _$FailedCopyWith<$Res> {
-  __$FailedCopyWithImpl(this._self, this._then);
+class _$JumpAyahFailedStateCopyWithImpl<$Res>
+    implements $JumpAyahFailedStateCopyWith<$Res> {
+  _$JumpAyahFailedStateCopyWithImpl(this._self, this._then);
 
-  final _Failed _self;
-  final $Res Function(_Failed) _then;
+  final JumpAyahFailedState _self;
+  final $Res Function(JumpAyahFailedState) _then;
 
 /// Create a copy of JumpAyahState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
-  return _then(_Failed(
+  return _then(JumpAyahFailedState(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));

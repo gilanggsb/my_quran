@@ -12,6 +12,7 @@ part of 'surah.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
+
 /// @nodoc
 mixin _$Surah {
 
@@ -22,6 +23,8 @@ mixin _$Surah {
 @pragma('vm:prefer-inline')
 $SurahCopyWith<Surah> get copyWith => _$SurahCopyWithImpl<Surah>(this as Surah, _$identity);
 
+  /// Serializes this Surah to a JSON map.
+  Map<String, dynamic> toJson();
 
 
 @override
@@ -29,7 +32,7 @@ bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is Surah&&(identical(other.audioUrl, audioUrl) || other.audioUrl == audioUrl)&&(identical(other.nameEn, nameEn) || other.nameEn == nameEn)&&(identical(other.nameId, nameId) || other.nameId == nameId)&&(identical(other.nameLong, nameLong) || other.nameLong == nameLong)&&(identical(other.nameShort, nameShort) || other.nameShort == nameShort)&&(identical(other.number, number) || other.number == number)&&(identical(other.numberOfVerses, numberOfVerses) || other.numberOfVerses == numberOfVerses)&&(identical(other.revelation, revelation) || other.revelation == revelation)&&(identical(other.revelationEn, revelationEn) || other.revelationEn == revelationEn)&&(identical(other.revelationId, revelationId) || other.revelationId == revelationId)&&(identical(other.sequence, sequence) || other.sequence == sequence)&&(identical(other.tafsir, tafsir) || other.tafsir == tafsir)&&(identical(other.translationEn, translationEn) || other.translationEn == translationEn)&&(identical(other.translationId, translationId) || other.translationId == translationId));
 }
 
-
+@JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode => Object.hash(runtimeType,audioUrl,nameEn,nameId,nameLong,nameShort,number,numberOfVerses,revelation,revelationEn,revelationId,sequence,tafsir,translationEn,translationId);
 
@@ -88,10 +91,10 @@ as String?,
 
 /// @nodoc
 
-
+@customJsonSerializable
 class _Surah extends Surah {
   const _Surah({@HiveField(0) this.audioUrl, @HiveField(1) this.nameEn, @HiveField(2) this.nameId, @HiveField(3) this.nameLong, @HiveField(4) this.nameShort, @HiveField(5)@StringToIntConverter() this.number, @HiveField(6)@StringToIntConverter() this.numberOfVerses, @HiveField(7) this.revelation, @HiveField(8) this.revelationEn, @HiveField(9) this.revelationId, @HiveField(10) this.sequence, @HiveField(11) this.tafsir, @HiveField(12) this.translationEn, @HiveField(13) this.translationId}): super._();
-  
+  factory _Surah.fromJson(Map<String, dynamic> json) => _$SurahFromJson(json);
 
 @override@HiveField(0) final  String? audioUrl;
 @override@HiveField(1) final  String? nameEn;
@@ -114,14 +117,17 @@ class _Surah extends Surah {
 @pragma('vm:prefer-inline')
 _$SurahCopyWith<_Surah> get copyWith => __$SurahCopyWithImpl<_Surah>(this, _$identity);
 
-
+@override
+Map<String, dynamic> toJson() {
+  return _$SurahToJson(this, );
+}
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is _Surah&&(identical(other.audioUrl, audioUrl) || other.audioUrl == audioUrl)&&(identical(other.nameEn, nameEn) || other.nameEn == nameEn)&&(identical(other.nameId, nameId) || other.nameId == nameId)&&(identical(other.nameLong, nameLong) || other.nameLong == nameLong)&&(identical(other.nameShort, nameShort) || other.nameShort == nameShort)&&(identical(other.number, number) || other.number == number)&&(identical(other.numberOfVerses, numberOfVerses) || other.numberOfVerses == numberOfVerses)&&(identical(other.revelation, revelation) || other.revelation == revelation)&&(identical(other.revelationEn, revelationEn) || other.revelationEn == revelationEn)&&(identical(other.revelationId, revelationId) || other.revelationId == revelationId)&&(identical(other.sequence, sequence) || other.sequence == sequence)&&(identical(other.tafsir, tafsir) || other.tafsir == tafsir)&&(identical(other.translationEn, translationEn) || other.translationEn == translationEn)&&(identical(other.translationId, translationId) || other.translationId == translationId));
 }
 
-
+@JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode => Object.hash(runtimeType,audioUrl,nameEn,nameId,nameLong,nameShort,number,numberOfVerses,revelation,revelationEn,revelationId,sequence,tafsir,translationEn,translationId);
 

@@ -80,6 +80,38 @@ class JuzAdapter extends TypeAdapter<Juz> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Juz _$JuzFromJson(Map<String, dynamic> json) => Juz();
+_Juz _$JuzFromJson(Map<String, dynamic> json) => _Juz(
+  ayatArab: json['ayatArab'] as String?,
+  ayatIndo: json['ayatIndo'] as String?,
+  ayatLatin: json['ayatLatin'] as String?,
+  name: json['name'] as String?,
+  nameEndArab: json['nameEndArab'] as String?,
+  nameEndId: json['nameEndId'] as String?,
+  nameStartArab: json['nameStartArab'] as String?,
+  nameStartId: json['nameStartId'] as String?,
+  number: const StringToIntConverter().fromJson(json['number'] as String?),
+  surahIdEnd: const StringToIntConverter().fromJson(
+    json['surahIdEnd'] as String?,
+  ),
+  surahIdStart: const StringToIntConverter().fromJson(
+    json['surahIdStart'] as String?,
+  ),
+  verseEnd: json['verseEnd'] as String?,
+  verseStart: json['verseStart'] as String?,
+);
 
-Map<String, dynamic> _$JuzToJson(Juz instance) => <String, dynamic>{};
+Map<String, dynamic> _$JuzToJson(_Juz instance) => <String, dynamic>{
+  'ayatArab': instance.ayatArab,
+  'ayatIndo': instance.ayatIndo,
+  'ayatLatin': instance.ayatLatin,
+  'name': instance.name,
+  'nameEndArab': instance.nameEndArab,
+  'nameEndId': instance.nameEndId,
+  'nameStartArab': instance.nameStartArab,
+  'nameStartId': instance.nameStartId,
+  'number': const StringToIntConverter().toJson(instance.number),
+  'surahIdEnd': const StringToIntConverter().toJson(instance.surahIdEnd),
+  'surahIdStart': const StringToIntConverter().toJson(instance.surahIdStart),
+  'verseEnd': instance.verseEnd,
+  'verseStart': instance.verseStart,
+};

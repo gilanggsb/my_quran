@@ -45,8 +45,8 @@ $BookmarkCategoryStateCopyWith(BookmarkCategoryState _, $Res Function(BookmarkCa
 /// @nodoc
 
 
-class _Initial implements BookmarkCategoryState {
-  const _Initial();
+class BookmarkCategoryInitialState implements BookmarkCategoryState {
+  const BookmarkCategoryInitialState();
   
 
 
@@ -56,7 +56,7 @@ class _Initial implements BookmarkCategoryState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkCategoryInitialState);
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loading implements BookmarkCategoryState {
-  const _Loading();
+class BookmarkCategoryLoadingState implements BookmarkCategoryState {
+  const BookmarkCategoryLoadingState();
   
 
 
@@ -88,7 +88,7 @@ class _Loading implements BookmarkCategoryState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkCategoryLoadingState);
 }
 
 
@@ -109,8 +109,8 @@ String toString() {
 /// @nodoc
 
 
-class _UpdateState implements BookmarkCategoryState {
-  const _UpdateState();
+class BookmarkCategoryUpdateStateState implements BookmarkCategoryState {
+  const BookmarkCategoryUpdateStateState();
   
 
 
@@ -120,7 +120,7 @@ class _UpdateState implements BookmarkCategoryState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkCategoryUpdateStateState);
 }
 
 
@@ -141,8 +141,8 @@ String toString() {
 /// @nodoc
 
 
-class _Loaded implements BookmarkCategoryState {
-  const _Loaded();
+class BookmarkCategoryLoadedState implements BookmarkCategoryState {
+  const BookmarkCategoryLoadedState();
   
 
 
@@ -152,7 +152,7 @@ class _Loaded implements BookmarkCategoryState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkCategoryLoadedState);
 }
 
 
@@ -173,8 +173,8 @@ String toString() {
 /// @nodoc
 
 
-class _SuccessAddToBookmark implements BookmarkCategoryState {
-  const _SuccessAddToBookmark();
+class BookmarkCategorySuccessAddToBookmarkState implements BookmarkCategoryState {
+  const BookmarkCategorySuccessAddToBookmarkState();
   
 
 
@@ -184,7 +184,7 @@ class _SuccessAddToBookmark implements BookmarkCategoryState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SuccessAddToBookmark);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkCategorySuccessAddToBookmarkState);
 }
 
 
@@ -205,8 +205,8 @@ String toString() {
 /// @nodoc
 
 
-class _Failed implements BookmarkCategoryState {
-  const _Failed(this.message);
+class BookmarkCategoryFailedState implements BookmarkCategoryState {
+  const BookmarkCategoryFailedState(this.message);
   
 
  final  String message;
@@ -215,13 +215,13 @@ class _Failed implements BookmarkCategoryState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$FailedCopyWith<_Failed> get copyWith => __$FailedCopyWithImpl<_Failed>(this, _$identity);
+$BookmarkCategoryFailedStateCopyWith<BookmarkCategoryFailedState> get copyWith => _$BookmarkCategoryFailedStateCopyWithImpl<BookmarkCategoryFailedState>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Failed&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkCategoryFailedState&&(identical(other.message, message) || other.message == message));
 }
 
 
@@ -237,8 +237,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$FailedCopyWith<$Res> implements $BookmarkCategoryStateCopyWith<$Res> {
-  factory _$FailedCopyWith(_Failed value, $Res Function(_Failed) _then) = __$FailedCopyWithImpl;
+abstract mixin class $BookmarkCategoryFailedStateCopyWith<$Res> implements $BookmarkCategoryStateCopyWith<$Res> {
+  factory $BookmarkCategoryFailedStateCopyWith(BookmarkCategoryFailedState value, $Res Function(BookmarkCategoryFailedState) _then) = _$BookmarkCategoryFailedStateCopyWithImpl;
 @useResult
 $Res call({
  String message
@@ -249,17 +249,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$FailedCopyWithImpl<$Res>
-    implements _$FailedCopyWith<$Res> {
-  __$FailedCopyWithImpl(this._self, this._then);
+class _$BookmarkCategoryFailedStateCopyWithImpl<$Res>
+    implements $BookmarkCategoryFailedStateCopyWith<$Res> {
+  _$BookmarkCategoryFailedStateCopyWithImpl(this._self, this._then);
 
-  final _Failed _self;
-  final $Res Function(_Failed) _then;
+  final BookmarkCategoryFailedState _self;
+  final $Res Function(BookmarkCategoryFailedState) _then;
 
 /// Create a copy of BookmarkCategoryState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
-  return _then(_Failed(
+  return _then(BookmarkCategoryFailedState(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));

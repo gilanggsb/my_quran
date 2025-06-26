@@ -83,6 +83,40 @@ class SurahAdapter extends TypeAdapter<Surah> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-Surah _$SurahFromJson(Map<String, dynamic> json) => Surah();
+_Surah _$SurahFromJson(Map<String, dynamic> json) => _Surah(
+  audioUrl: json['audioUrl'] as String?,
+  nameEn: json['nameEn'] as String?,
+  nameId: json['nameId'] as String?,
+  nameLong: json['nameLong'] as String?,
+  nameShort: json['nameShort'] as String?,
+  number: const StringToIntConverter().fromJson(json['number'] as String?),
+  numberOfVerses: const StringToIntConverter().fromJson(
+    json['numberOfVerses'] as String?,
+  ),
+  revelation: json['revelation'] as String?,
+  revelationEn: json['revelationEn'] as String?,
+  revelationId: json['revelationId'] as String?,
+  sequence: json['sequence'] as String?,
+  tafsir: json['tafsir'] as String?,
+  translationEn: json['translationEn'] as String?,
+  translationId: json['translationId'] as String?,
+);
 
-Map<String, dynamic> _$SurahToJson(Surah instance) => <String, dynamic>{};
+Map<String, dynamic> _$SurahToJson(_Surah instance) => <String, dynamic>{
+  'audioUrl': instance.audioUrl,
+  'nameEn': instance.nameEn,
+  'nameId': instance.nameId,
+  'nameLong': instance.nameLong,
+  'nameShort': instance.nameShort,
+  'number': const StringToIntConverter().toJson(instance.number),
+  'numberOfVerses': const StringToIntConverter().toJson(
+    instance.numberOfVerses,
+  ),
+  'revelation': instance.revelation,
+  'revelationEn': instance.revelationEn,
+  'revelationId': instance.revelationId,
+  'sequence': instance.sequence,
+  'tafsir': instance.tafsir,
+  'translationEn': instance.translationEn,
+  'translationId': instance.translationId,
+};

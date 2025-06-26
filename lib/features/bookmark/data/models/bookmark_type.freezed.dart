@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,162 +10,142 @@ part of 'bookmark_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
 
 /// @nodoc
 mixin _$BookmarkType {
-  @HiveField(0)
-  String? get name => throw _privateConstructorUsedError;
-  @HiveField(1)
-  String? get id => throw _privateConstructorUsedError;
 
-  /// Create a copy of BookmarkType
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $BookmarkTypeCopyWith<BookmarkType> get copyWith => throw _privateConstructorUsedError;
+@HiveField(0) String? get name;@HiveField(1) String? get id;
+/// Create a copy of BookmarkType
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$BookmarkTypeCopyWith<BookmarkType> get copyWith => _$BookmarkTypeCopyWithImpl<BookmarkType>(this as BookmarkType, _$identity);
+
+  /// Serializes this BookmarkType to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BookmarkType&&(identical(other.name, name) || other.name == name)&&(identical(other.id, id) || other.id == id));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name,id);
+
+@override
+String toString() {
+  return 'BookmarkType(name: $name, id: $id)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $BookmarkTypeCopyWith<$Res> {
-  factory $BookmarkTypeCopyWith(BookmarkType value, $Res Function(BookmarkType) then) =
-      _$BookmarkTypeCopyWithImpl<$Res, BookmarkType>;
-  @useResult
-  $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
-}
+abstract mixin class $BookmarkTypeCopyWith<$Res>  {
+  factory $BookmarkTypeCopyWith(BookmarkType value, $Res Function(BookmarkType) _then) = _$BookmarkTypeCopyWithImpl;
+@useResult
+$Res call({
+@HiveField(0) String? name,@HiveField(1) String? id
+});
 
+
+
+
+}
 /// @nodoc
-class _$BookmarkTypeCopyWithImpl<$Res, $Val extends BookmarkType>
+class _$BookmarkTypeCopyWithImpl<$Res>
     implements $BookmarkTypeCopyWith<$Res> {
-  _$BookmarkTypeCopyWithImpl(this._value, this._then);
+  _$BookmarkTypeCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final BookmarkType _self;
+  final $Res Function(BookmarkType) _then;
 
-  /// Create a copy of BookmarkType
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? name = freezed, Object? id = freezed}) {
-    return _then(
-      _value.copyWith(
-            name:
-                freezed == name
-                    ? _value.name
-                    : name // ignore: cast_nullable_to_non_nullable
-                        as String?,
-            id:
-                freezed == id
-                    ? _value.id
-                    : id // ignore: cast_nullable_to_non_nullable
-                        as String?,
-          )
-          as $Val,
-    );
-  }
+/// Create a copy of BookmarkType
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = freezed,Object? id = freezed,}) {
+  return _then(_self.copyWith(
+name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$BookmarkTypeImplCopyWith<$Res> implements $BookmarkTypeCopyWith<$Res> {
-  factory _$$BookmarkTypeImplCopyWith(
-    _$BookmarkTypeImpl value,
-    $Res Function(_$BookmarkTypeImpl) then,
-  ) = __$$BookmarkTypeImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@HiveField(0) String? name, @HiveField(1) String? id});
 }
 
-/// @nodoc
-class __$$BookmarkTypeImplCopyWithImpl<$Res>
-    extends _$BookmarkTypeCopyWithImpl<$Res, _$BookmarkTypeImpl>
-    implements _$$BookmarkTypeImplCopyWith<$Res> {
-  __$$BookmarkTypeImplCopyWithImpl(
-    _$BookmarkTypeImpl _value,
-    $Res Function(_$BookmarkTypeImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of BookmarkType
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? name = freezed, Object? id = freezed}) {
-    return _then(
-      _$BookmarkTypeImpl(
-        name:
-            freezed == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                    as String?,
-        id:
-            freezed == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                    as String?,
-      ),
-    );
-  }
-}
 
 /// @nodoc
 
-class _$BookmarkTypeImpl extends _BookmarkType {
-  const _$BookmarkTypeImpl({@HiveField(0) this.name, @HiveField(1) this.id}) : super._();
+@customJsonSerializable
+class _BookmarkType extends BookmarkType {
+  const _BookmarkType({@HiveField(0) this.name, @HiveField(1) this.id}): super._();
+  factory _BookmarkType.fromJson(Map<String, dynamic> json) => _$BookmarkTypeFromJson(json);
 
-  @override
-  @HiveField(0)
-  final String? name;
-  @override
-  @HiveField(1)
-  final String? id;
+@override@HiveField(0) final  String? name;
+@override@HiveField(1) final  String? id;
 
-  @override
-  String toString() {
-    return 'BookmarkType(name: $name, id: $id)';
-  }
+/// Create a copy of BookmarkType
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$BookmarkTypeCopyWith<_BookmarkType> get copyWith => __$BookmarkTypeCopyWithImpl<_BookmarkType>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BookmarkTypeImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, name, id);
-
-  /// Create a copy of BookmarkType
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BookmarkTypeImplCopyWith<_$BookmarkTypeImpl> get copyWith =>
-      __$$BookmarkTypeImplCopyWithImpl<_$BookmarkTypeImpl>(this, _$identity);
+@override
+Map<String, dynamic> toJson() {
+  return _$BookmarkTypeToJson(this, );
 }
 
-abstract class _BookmarkType extends BookmarkType {
-  const factory _BookmarkType({@HiveField(0) final String? name, @HiveField(1) final String? id}) =
-      _$BookmarkTypeImpl;
-  const _BookmarkType._() : super._();
-
-  @override
-  @HiveField(0)
-  String? get name;
-  @override
-  @HiveField(1)
-  String? get id;
-
-  /// Create a copy of BookmarkType
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BookmarkTypeImplCopyWith<_$BookmarkTypeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BookmarkType&&(identical(other.name, name) || other.name == name)&&(identical(other.id, id) || other.id == id));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name,id);
+
+@override
+String toString() {
+  return 'BookmarkType(name: $name, id: $id)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$BookmarkTypeCopyWith<$Res> implements $BookmarkTypeCopyWith<$Res> {
+  factory _$BookmarkTypeCopyWith(_BookmarkType value, $Res Function(_BookmarkType) _then) = __$BookmarkTypeCopyWithImpl;
+@override @useResult
+$Res call({
+@HiveField(0) String? name,@HiveField(1) String? id
+});
+
+
+
+
+}
+/// @nodoc
+class __$BookmarkTypeCopyWithImpl<$Res>
+    implements _$BookmarkTypeCopyWith<$Res> {
+  __$BookmarkTypeCopyWithImpl(this._self, this._then);
+
+  final _BookmarkType _self;
+  final $Res Function(_BookmarkType) _then;
+
+/// Create a copy of BookmarkType
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = freezed,Object? id = freezed,}) {
+  return _then(_BookmarkType(
+name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

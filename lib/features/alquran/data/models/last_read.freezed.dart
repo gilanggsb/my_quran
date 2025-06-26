@@ -12,6 +12,7 @@ part of 'last_read.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
+
 /// @nodoc
 mixin _$LastReadAyah {
 
@@ -101,11 +102,11 @@ $SurahCopyWith<$Res>? get surah {
 
 
 /// @nodoc
-@JsonSerializable(createFactory: false)
 
+@customJsonSerializable
 class _LastReadAyah extends LastReadAyah {
   const _LastReadAyah({this.ayah, this.surah}): super._();
-  
+  factory _LastReadAyah.fromJson(Map<String, dynamic> json) => _$LastReadAyahFromJson(json);
 
 @override final  Ayah? ayah;
 @override final  Surah? surah;

@@ -12,6 +12,7 @@ part of 'ayah.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
+
 /// @nodoc
 mixin _$Ayah {
 
@@ -29,6 +30,8 @@ mixin _$Ayah {
 @pragma('vm:prefer-inline')
 $AyahCopyWith<Ayah> get copyWith => _$AyahCopyWithImpl<Ayah>(this as Ayah, _$identity);
 
+  /// Serializes this Ayah to a JSON map.
+  Map<String, dynamic> toJson();
 
 
 @override
@@ -36,7 +39,7 @@ bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is Ayah&&(identical(other.id, id) || other.id == id)&&(identical(other.arab, arab) || other.arab == arab)&&(identical(other.asbab, asbab) || other.asbab == asbab)&&(identical(other.audio, audio) || other.audio == audio)&&(identical(other.ayah, ayah) || other.ayah == ayah)&&(identical(other.juz, juz) || other.juz == juz)&&(identical(other.surah, surah) || other.surah == surah)&&(identical(other.latin, latin) || other.latin == latin)&&(identical(other.notes, notes) || other.notes == notes)&&(identical(other.page, page) || other.page == page)&&(identical(other.text, text) || other.text == text)&&(identical(other.theme, theme) || other.theme == theme));
 }
 
-
+@JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode => Object.hash(runtimeType,id,arab,asbab,audio,ayah,juz,surah,latin,notes,page,text,theme);
 
@@ -93,10 +96,10 @@ as String?,
 
 /// @nodoc
 
-
+@customJsonSerializable
 class _Ayah extends Ayah {
   const _Ayah({@HiveField(0)@StringToIntConverter() this.id, @HiveField(1) this.arab, @HiveField(2) this.asbab, @HiveField(3) this.audio, @HiveField(4)@StringToIntConverter() this.ayah, @HiveField(5)@StringToIntConverter() this.juz, @HiveField(6)@StringToIntConverter() this.surah, @HiveField(7) this.latin, @HiveField(8) this.notes, @HiveField(9) this.page, @HiveField(10) this.text, @HiveField(11) this.theme}): super._();
-  
+  factory _Ayah.fromJson(Map<String, dynamic> json) => _$AyahFromJson(json);
 
 @override@HiveField(0)@StringToIntConverter() final  int? id;
 // @HiveField(1) int? idInt,
@@ -124,14 +127,17 @@ class _Ayah extends Ayah {
 @pragma('vm:prefer-inline')
 _$AyahCopyWith<_Ayah> get copyWith => __$AyahCopyWithImpl<_Ayah>(this, _$identity);
 
-
+@override
+Map<String, dynamic> toJson() {
+  return _$AyahToJson(this, );
+}
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is _Ayah&&(identical(other.id, id) || other.id == id)&&(identical(other.arab, arab) || other.arab == arab)&&(identical(other.asbab, asbab) || other.asbab == asbab)&&(identical(other.audio, audio) || other.audio == audio)&&(identical(other.ayah, ayah) || other.ayah == ayah)&&(identical(other.juz, juz) || other.juz == juz)&&(identical(other.surah, surah) || other.surah == surah)&&(identical(other.latin, latin) || other.latin == latin)&&(identical(other.notes, notes) || other.notes == notes)&&(identical(other.page, page) || other.page == page)&&(identical(other.text, text) || other.text == text)&&(identical(other.theme, theme) || other.theme == theme));
 }
 
-
+@JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode => Object.hash(runtimeType,id,arab,asbab,audio,ayah,juz,surah,latin,notes,page,text,theme);
 

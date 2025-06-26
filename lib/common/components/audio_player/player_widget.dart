@@ -19,7 +19,10 @@ class PlayerWidget extends StatelessWidget {
               (_, isBottomSheetShown, _) => BlocBuilder<PlayerWidgetCubit, PlayerWidgetState>(
                 builder: (context, state) {
                   final playerWidgetCubit = context.read<PlayerWidgetCubit>();
-                  final isLoading = state.whenOrNull(loading: () => true) ?? false;
+                  final isLoading = switch (state) {
+                    PlayerWidgetLoadingState() => true,
+                    _ => false,
+                  };
                   final showPlayer = playerWidgetCubit.showPlayer && !isBottomSheetShown;
                   final sliderValue = playerWidgetCubit.sliderValue;
 

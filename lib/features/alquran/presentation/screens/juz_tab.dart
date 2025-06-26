@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../common/common.dart';
-import '../../../features.dart';
+import '../../../../lib.dart';
 
 @RoutePage(name: 'JuzRoute')
 class JuzTab extends StatelessWidget {
@@ -14,16 +13,25 @@ class JuzTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<JuzCubit, JuzState>(
       listener: (context, state) {
-        state.whenOrNull(failed: (message) => SnackBarWidget.showFailed(message));
+        // state.whenOrNull(failed: (message) => SnackBarWidget.showFailed(message));
+        switch (state) {
+          case JuzFailedState(:final message):
+            SnackBarWidget.showFailed(message);
+            break;
+          default:
+        }
       },
       builder: (context, state) {
         final juzCubit = context.read<JuzCubit>();
-        final isLoading = state.whenOrNull(loading: () => true) ?? false;
+        final isLoading = switch (state) {
+          JuzLoadingState() => true,
+          _ => false,
+        };
         final juzs = isLoading ? BoneMockData.fakeJuzs : juzCubit.juzs;
-        final failedMessage = state.whenOrNull(failed: (data) => data);
-        if (failedMessage != null) {
-          return EmptyStateWidget(title: 'Gagal memuat data', message: failedMessage);
-        }
+        // final failedMessage = state.whenOrNull(failed: (data) => data);
+        // if (failedMessage != null) {
+        //   return EmptyStateWidget(title: 'Gagal memuat data', message: failedMessage);
+        // }
         return RefreshIndicator(
           color: context.getColorExt(AppColorType.primary),
           onRefresh: () async => juzCubit.getData(),

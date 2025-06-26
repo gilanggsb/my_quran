@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../common/common.dart';
-import '../../../features.dart';
+import '../../../../lib.dart';
 
 class LastReadSurahBanner extends StatelessWidget {
   const LastReadSurahBanner({super.key});
@@ -42,7 +41,10 @@ class LastReadSurahBanner extends StatelessWidget {
                 builder: (context, state) {
                   final homeBloc = context.read<HomeBloc>();
                   final lastReadAyah = homeBloc.lastReadAyah;
-                  final isLoading = state.whenOrNull(loading: () => true) ?? false;
+                  final isLoading = switch (state) {
+                    HomeLoadingState() => true,
+                    _ => false,
+                  };
                   return Skeletonizer(
                     enabled: isLoading,
                     child: Column(

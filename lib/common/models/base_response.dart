@@ -5,9 +5,9 @@ import '../../lib.dart';
 part 'base_response.freezed.dart';
 part 'base_response.g.dart';
 
-@customFreezed
+@freezed
 abstract class BaseResponse<T> with _$BaseResponse<T> {
-  @customJsonSerializable
+  @JsonSerializable(genericArgumentFactories: true)
   const factory BaseResponse({
     bool? status,
     String? message,

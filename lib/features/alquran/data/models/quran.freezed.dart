@@ -83,8 +83,8 @@ as bool?,
 
 
 /// @nodoc
-@JsonSerializable()
 
+@customJsonSerializable
 class _Quran implements Quran {
   const _Quran({@StringToIntConverter() this.number, this.title, this.arabic, this.arabicMaxLine, this.subtitle, this.titleAr, this.isPreview});
   factory _Quran.fromJson(Map<String, dynamic> json) => _$QuranFromJson(json);

@@ -80,8 +80,8 @@ as int?,
 
 
 /// @nodoc
-@JsonSerializable()
 
+@customJsonSerializable
 class _AyahsThroughoutPagination implements AyahsThroughoutPagination {
   const _AyahsThroughoutPagination({@StringToIntConverter() this.surat, @StringToIntConverter() this.ayat, @StringToIntConverter() this.panjang, @JsonKey(includeToJson: false) this.maxAyat});
   factory _AyahsThroughoutPagination.fromJson(Map<String, dynamic> json) => _$AyahsThroughoutPaginationFromJson(json);

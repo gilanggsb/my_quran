@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../common/common.dart';
-import '../../../features.dart';
+import '../../../../lib.dart';
 
 @RoutePage(name: 'SurahRoute')
 class SurahTab extends StatelessWidget {
@@ -12,18 +11,27 @@ class SurahTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final surahCubit = context.read<SurahCubit>();
     return BlocConsumer<SurahCubit, SurahState>(
       listener: (context, state) {
-        state.whenOrNull(failed: (message) => SnackBarWidget.showFailed(message));
+        // state.whenOrNull(failed: (message) => SnackBarWidget.showFailed(message));
+        switch (state) {
+          case SurahFailedState(:final message):
+            SnackBarWidget.showFailed(message);
+            break;
+          default:
+        }
       },
       builder: (context, state) {
-        final surahCubit = context.read<SurahCubit>();
-        final isLoading = state.whenOrNull(loading: () => true) ?? false;
+        final isLoading = switch (state) {
+          SurahLoadingState() => true,
+          _ => false,
+        };
         final surahs = isLoading ? BoneMockData.fakeSurahs : surahCubit.surahs;
-        final failedMessage = state.whenOrNull(failed: (data) => data);
-        if (failedMessage != null) {
-          return EmptyStateWidget(title: 'Gagal memuat data', message: failedMessage);
-        }
+        // final failedMessage = state.whenOrNull(failed: (data) => data);
+        // if (failedMessage != null) {
+        //   return EmptyStateWidget(title: 'Gagal memuat data', message: failedMessage);
+        // }
 
         return RefreshIndicator(
           onRefresh: () async => surahCubit.getData(),

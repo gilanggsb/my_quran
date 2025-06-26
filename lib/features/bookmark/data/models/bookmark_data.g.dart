@@ -8,7 +8,7 @@ part of 'bookmark_data.dart';
 
 class BookmarkDataAdapter extends TypeAdapter<BookmarkData> {
   @override
-  final int typeId = 4;
+  final typeId = 4;
 
   @override
   BookmarkData read(BinaryReader reader) {
@@ -50,27 +50,31 @@ class BookmarkDataAdapter extends TypeAdapter<BookmarkData> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is BookmarkDataAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
+      other is BookmarkDataAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
 }
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-BookmarkData _$BookmarkDataFromJson(Map<String, dynamic> json) => BookmarkData(
-  title: json['title'] as String?,
-  subtitle: json['subtitle'] as String?,
-  dataId: (json['data_id'] as num?)?.toInt(),
-  categoryId: json['category_id'] as String?,
-  type: json['type'] as String?,
-  id: json['id'] as String?,
-);
+_BookmarkData _$BookmarkDataFromJson(Map<String, dynamic> json) =>
+    _BookmarkData(
+      title: json['title'] as String?,
+      subtitle: json['subtitle'] as String?,
+      dataId: (json['dataId'] as num?)?.toInt(),
+      categoryId: json['categoryId'] as String?,
+      type: json['type'] as String?,
+      id: json['id'] as String?,
+    );
 
-Map<String, dynamic> _$BookmarkDataToJson(BookmarkData instance) => <String, dynamic>{
-  'title': instance.title,
-  'subtitle': instance.subtitle,
-  'data_id': instance.dataId,
-  'category_id': instance.categoryId,
-  'type': instance.type,
-  'id': instance.id,
-};
+Map<String, dynamic> _$BookmarkDataToJson(_BookmarkData instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'subtitle': instance.subtitle,
+      'dataId': instance.dataId,
+      'categoryId': instance.categoryId,
+      'type': instance.type,
+      'id': instance.id,
+    };

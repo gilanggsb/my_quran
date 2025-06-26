@@ -12,6 +12,7 @@ part of 'juz.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
+
 /// @nodoc
 mixin _$Juz {
 
@@ -22,6 +23,8 @@ mixin _$Juz {
 @pragma('vm:prefer-inline')
 $JuzCopyWith<Juz> get copyWith => _$JuzCopyWithImpl<Juz>(this as Juz, _$identity);
 
+  /// Serializes this Juz to a JSON map.
+  Map<String, dynamic> toJson();
 
 
 @override
@@ -29,7 +32,7 @@ bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is Juz&&(identical(other.ayatArab, ayatArab) || other.ayatArab == ayatArab)&&(identical(other.ayatIndo, ayatIndo) || other.ayatIndo == ayatIndo)&&(identical(other.ayatLatin, ayatLatin) || other.ayatLatin == ayatLatin)&&(identical(other.name, name) || other.name == name)&&(identical(other.nameEndArab, nameEndArab) || other.nameEndArab == nameEndArab)&&(identical(other.nameEndId, nameEndId) || other.nameEndId == nameEndId)&&(identical(other.nameStartArab, nameStartArab) || other.nameStartArab == nameStartArab)&&(identical(other.nameStartId, nameStartId) || other.nameStartId == nameStartId)&&(identical(other.number, number) || other.number == number)&&(identical(other.surahIdEnd, surahIdEnd) || other.surahIdEnd == surahIdEnd)&&(identical(other.surahIdStart, surahIdStart) || other.surahIdStart == surahIdStart)&&(identical(other.verseEnd, verseEnd) || other.verseEnd == verseEnd)&&(identical(other.verseStart, verseStart) || other.verseStart == verseStart));
 }
 
-
+@JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode => Object.hash(runtimeType,ayatArab,ayatIndo,ayatLatin,name,nameEndArab,nameEndId,nameStartArab,nameStartId,number,surahIdEnd,surahIdStart,verseEnd,verseStart);
 
@@ -87,10 +90,10 @@ as String?,
 
 /// @nodoc
 
-
+@customJsonSerializable
 class _Juz extends Juz {
   const _Juz({@HiveField(0) this.ayatArab, @HiveField(1) this.ayatIndo, @HiveField(2) this.ayatLatin, @HiveField(3) this.name, @HiveField(4) this.nameEndArab, @HiveField(5) this.nameEndId, @HiveField(6) this.nameStartArab, @HiveField(7) this.nameStartId, @HiveField(8)@StringToIntConverter() this.number, @HiveField(9)@StringToIntConverter() this.surahIdEnd, @HiveField(10)@StringToIntConverter() this.surahIdStart, @HiveField(11) this.verseEnd, @HiveField(12) this.verseStart}): super._();
-  
+  factory _Juz.fromJson(Map<String, dynamic> json) => _$JuzFromJson(json);
 
 @override@HiveField(0) final  String? ayatArab;
 @override@HiveField(1) final  String? ayatIndo;
@@ -112,14 +115,17 @@ class _Juz extends Juz {
 @pragma('vm:prefer-inline')
 _$JuzCopyWith<_Juz> get copyWith => __$JuzCopyWithImpl<_Juz>(this, _$identity);
 
-
+@override
+Map<String, dynamic> toJson() {
+  return _$JuzToJson(this, );
+}
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is _Juz&&(identical(other.ayatArab, ayatArab) || other.ayatArab == ayatArab)&&(identical(other.ayatIndo, ayatIndo) || other.ayatIndo == ayatIndo)&&(identical(other.ayatLatin, ayatLatin) || other.ayatLatin == ayatLatin)&&(identical(other.name, name) || other.name == name)&&(identical(other.nameEndArab, nameEndArab) || other.nameEndArab == nameEndArab)&&(identical(other.nameEndId, nameEndId) || other.nameEndId == nameEndId)&&(identical(other.nameStartArab, nameStartArab) || other.nameStartArab == nameStartArab)&&(identical(other.nameStartId, nameStartId) || other.nameStartId == nameStartId)&&(identical(other.number, number) || other.number == number)&&(identical(other.surahIdEnd, surahIdEnd) || other.surahIdEnd == surahIdEnd)&&(identical(other.surahIdStart, surahIdStart) || other.surahIdStart == surahIdStart)&&(identical(other.verseEnd, verseEnd) || other.verseEnd == verseEnd)&&(identical(other.verseStart, verseStart) || other.verseStart == verseStart));
 }
 
-
+@JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode => Object.hash(runtimeType,ayatArab,ayatIndo,ayatLatin,name,nameEndArab,nameEndId,nameStartArab,nameStartId,number,surahIdEnd,surahIdStart,verseEnd,verseStart);
 
