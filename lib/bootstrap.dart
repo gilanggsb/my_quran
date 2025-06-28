@@ -21,5 +21,5 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     ].wait;
 
     runApp(await builder());
-  }, (error, stack) => Logger.logError('RunzonedGuarded Error :$error \nStackTrace : $stack '));
+  }, (error, stack) => Logger.logError('RunzonedGuarded Error :$error \nStackTrace : $stack '),);
 }

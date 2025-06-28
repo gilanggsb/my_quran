@@ -47,15 +47,17 @@ class JuzTab extends StatelessWidget {
                     title: juz.name,
                     subtitle: "${juz.nameStartId} • ${juz.nameEndId}",
                   ),
-                  onTap:
-                      () => context.pushRoute(
-                        QuranDetailRoute(
-                          params: QuranDetailParams(
-                            juzNumber: juz.number,
-                            detailType: QuranDetailTypeEnum.byJuzs,
-                          ),
+                  onTap: () {
+                    context.pushRoute(
+                      QuranDetailRoute(
+                        params: QuranDetailParams(
+                          juzNumber: juz.number,
+                          detailType: QuranDetailTypeEnum.byJuzs,
                         ),
                       ),
+                    );
+                    context.hideKeyboard();
+                  },
                 );
               },
             ),
