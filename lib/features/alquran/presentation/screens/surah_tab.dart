@@ -66,6 +66,7 @@ class SurahTab extends StatelessWidget {
                         ),
                       ),
                     );
+                    context.hideKeyboard();
                   },
                 );
               },
