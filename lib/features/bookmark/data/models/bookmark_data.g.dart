@@ -63,8 +63,8 @@ _BookmarkData _$BookmarkDataFromJson(Map<String, dynamic> json) =>
     _BookmarkData(
       title: json['title'] as String?,
       subtitle: json['subtitle'] as String?,
-      dataId: (json['dataId'] as num?)?.toInt(),
-      categoryId: json['categoryId'] as String?,
+      dataId: (json['data_id'] as num?)?.toInt(),
+      categoryId: json['category_id'] as String?,
       type: json['type'] as String?,
       id: json['id'] as String?,
     );
@@ -73,8 +73,8 @@ Map<String, dynamic> _$BookmarkDataToJson(_BookmarkData instance) =>
     <String, dynamic>{
       'title': instance.title,
       'subtitle': instance.subtitle,
-      'dataId': instance.dataId,
-      'categoryId': instance.categoryId,
+      'data_id': instance.dataId,
+      'category_id': instance.categoryId,
       'type': instance.type,
       'id': instance.id,
     };

@@ -67,4 +67,4 @@ class AppUtils {
 }
 
 const customFreezed = Freezed(fromJson: true, toJson: true, unionValueCase: FreezedUnionCase.snake);
-const customJsonSerializable = JsonSerializable();
+const customJsonSerializable = JsonSerializable(fieldRename: FieldRename.snake);

@@ -2,5 +2,5 @@
   "editor.formatOnSaveMode": "modifications",
   "editor.formatOnSave": true,
   "files.exclude": {},
-  "dart.flutterSdkPath": ".fvm/versions/3.32.4"
+  "dart.flutterSdkPath": ".fvm/versions/3.32.5"
 }

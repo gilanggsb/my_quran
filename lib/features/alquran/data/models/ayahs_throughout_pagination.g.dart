@@ -12,7 +12,7 @@ _AyahsThroughoutPagination _$AyahsThroughoutPaginationFromJson(
   surat: const StringToIntConverter().fromJson(json['surat'] as String?),
   ayat: const StringToIntConverter().fromJson(json['ayat'] as String?),
   panjang: const StringToIntConverter().fromJson(json['panjang'] as String?),
-  maxAyat: (json['maxAyat'] as num?)?.toInt(),
+  maxAyat: (json['max_ayat'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$AyahsThroughoutPaginationToJson(
