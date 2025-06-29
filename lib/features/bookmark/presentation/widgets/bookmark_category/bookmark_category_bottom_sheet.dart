@@ -4,17 +4,29 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../common/common.dart';
 import '../../../../features.dart';
 
-class BookmarkCategoryBottomSheet extends StatelessWidget {
+class BookmarkCategoryBottomSheet extends StatefulWidget {
   const BookmarkCategoryBottomSheet({super.key, this.ayah});
   final Ayah? ayah;
 
   @override
+  State<BookmarkCategoryBottomSheet> createState() => _BookmarkCategoryBottomSheetState();
+}
+
+class _BookmarkCategoryBottomSheetState extends State<BookmarkCategoryBottomSheet> {
+  late BookmarkCategoryCubit bookmarkCategoryCubit;
+
+  @override
+  void initState() {
+    bookmarkCategoryCubit = getIt.get<BookmarkCategoryCubit>()..getData();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final bgColor = context.getColorExt(AppColorType.background);
-    final bookmarkCategoryCubit = context.read<BookmarkCategoryCubit>();
 
     return BlocProvider(
-      create: (context) => getIt.get<BookmarkCategoryCubit>()..getData(),
+      create: (context) => bookmarkCategoryCubit,
       child: BlocConsumer<BookmarkCategoryCubit, BookmarkCategoryState>(
         listener: (context, state) {
           switch (state) {
@@ -91,7 +103,7 @@ class BookmarkCategoryBottomSheet extends StatelessWidget {
                               () => addAyahToBookmark(
                                 bookmarkCategoryCubit: bookmarkCategoryCubit,
                                 category: category,
-                                ayah: ayah,
+                                ayah: widget.ayah,
                               ),
                         ),
                       ],
