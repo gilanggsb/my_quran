@@ -5,13 +5,14 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../../common/common.dart';
 import '../../../../../features.dart';
 
-part 'jump_ayah_state.dart';
-part 'jump_ayah_cubit.freezed.dart';
+part 'preview_ayah_cubit.freezed.dart';
+part 'preview_ayah_state.dart';
 
-class JumpAyahCubit extends Cubit<JumpAyahState> {
+class PreviewAyahCubit extends Cubit<PreviewAyahState> {
   final GetSurahs getSurahs;
   final GetJuzs getJuzs;
   final GetFullAyahs getFullAyahs;
@@ -26,34 +27,34 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
   QuranDetailParams? paramsData;
   Surah? currentSurah;
   Juz? currentJuz;
-  String jumpAyahTitle = '';
+  String previewAyahTitle = '';
   String searchText = '';
 
-  JumpAyahCubit({
+  PreviewAyahCubit({
     required this.getJuzs,
     required this.getSurahs,
     required this.getFullAyahs,
     required this.getAyahsJuz,
-  }) : super(const JumpAyahState.initial());
+  }) : super(const PreviewAyahState.initial());
 
   void init({QuranDetailParams? params, List<Ayah>? ayahs}) async {
     try {
       ayahs = ayahs;
       paramsData = params;
-      emit(const JumpAyahState.loading());
+      emit(const PreviewAyahState.loading());
 
       await Future.wait([_getJuzs(), _getSurahs()]);
 
-      emit(const JumpAyahState.loaded());
+      emit(const PreviewAyahState.loaded());
 
       final surahOrJuzNumber =
           isSurahsType ? paramsData?.ayahsThroughoutPagination?.surat : paramsData?.juzNumber;
 
       changeSurahOrJuz(surahOrJuzNumber);
     } on String catch (e) {
-      emit(JumpAyahState.failed(e));
+      emit(PreviewAyahState.failed(e));
     } catch (e) {
-      emit(JumpAyahState.failed(e.toString()));
+      emit(PreviewAyahState.failed(e.toString()));
     }
   }
 
@@ -71,7 +72,7 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
 
   Future<void> _getFullAyahs() async {
     try {
-      emit(const JumpAyahState.loading());
+      emit(const PreviewAyahState.loading());
       if (!isSurahsType) {
         final response = await getAyahsJuz(currentJuz!.number ?? 0);
         ayahs = response.data ?? [];
@@ -85,22 +86,22 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
 
       ayahs = response.data ?? [];
     } finally {
-      emit(const JumpAyahState.loaded());
+      emit(const PreviewAyahState.loaded());
     }
   }
 
   void setCurrentSurah({Ayah? ayah, int? surahNumber}) {
-    emit(const JumpAyahState.loading());
+    emit(const PreviewAyahState.loading());
     currentSurah = surahs.firstWhereOrNull((surah) => surah.number == (ayah?.surah ?? surahNumber));
-    jumpAyahTitle = currentSurah?.nameId ?? "";
-    emit(const JumpAyahState.loaded());
+    previewAyahTitle = currentSurah?.nameId ?? "";
+    emit(const PreviewAyahState.loaded());
   }
 
   void setCurrentJuz({Ayah? ayah, int? juzNumber}) {
-    emit(const JumpAyahState.loading());
+    emit(const PreviewAyahState.loading());
     currentJuz = juzs.firstWhereOrNull((juz) => juz.number == (ayah?.juz ?? juzNumber));
-    jumpAyahTitle = currentJuz?.name ?? "";
-    emit(const JumpAyahState.loaded());
+    previewAyahTitle = currentJuz?.name ?? "";
+    emit(const PreviewAyahState.loaded());
   }
 
   void next() {
@@ -122,21 +123,21 @@ class JumpAyahCubit extends Cubit<JumpAyahState> {
   }
 
   void filterSurahOrJuz(String text) {
-    emit(const JumpAyahState.searchingSurahOrJuz());
+    emit(const PreviewAyahState.searchingSurahOrJuz());
     if (isSurahsType) {
       tempSurahs = surahs.where((surah) => surah.nameId?.isStringContains(text) ?? false).toList();
     } else {
       tempJuzs = juzs.where((juz) => juz.name?.isStringContains(text) ?? false).toList();
     }
-    emit(const JumpAyahState.loaded());
+    emit(const PreviewAyahState.loaded());
   }
 
   void clearfilterSurahOrJuz() {
-    emit(const JumpAyahState.searchingSurahOrJuz());
+    emit(const PreviewAyahState.searchingSurahOrJuz());
     tempJuzs = juzs;
     tempSurahs = surahs;
     searchController.clear();
-    emit(const JumpAyahState.loaded());
+    emit(const PreviewAyahState.loaded());
   }
 
   void changeSurahOrJuz(int? surahOrJuzNumber) {

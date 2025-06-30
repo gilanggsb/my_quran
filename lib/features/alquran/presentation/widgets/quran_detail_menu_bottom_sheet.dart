@@ -28,9 +28,9 @@ class QuranDetailMenuBottomSheet extends StatelessWidget {
   Future<void> onDetailMenuTap(QuranDetailMenu menu) async {
     BottomSheetManager.closeCurrentBottomSheet();
     switch (menu.getType()) {
-      case QuranDetailMenuType.jumpToAyah:
+      case QuranDetailMenuType.previewAyah:
         BottomSheetManager.showCustomBottomSheet(
-          child: JumpAyahBottomSheet(quranDetailCubit: quranDetailCubit),
+          child: PreviewAyahBottomSheet(quranDetailCubit: quranDetailCubit),
         );
         break;
       case QuranDetailMenuType.play:
@@ -49,15 +49,13 @@ class QuranDetailMenuBottomSheet extends StatelessWidget {
 List<QuranDetailMenu> getMenus(bool isSurahType) {
   return [
     QuranDetailMenu(
-      id: QuranDetailMenuType.jumpToAyah.id,
-      icon: DefaultImage(
-        imageUrl: AppAssets.icJumpTo,
+      id: QuranDetailMenuType.previewAyah.id,
+      icon: Icon(
+        Icons.preview_sharp,
         color: globalContext.getColorExt(AppColorType.primary),
-        width: 26.sp,
-        height: 26.sp,
-        imageType: ImageType.asset,
+        size: 30,
       ),
-      name: 'Loncat ke ayat',
+      name: 'Preview surat',
     ),
     QuranDetailMenu(
       id: QuranDetailMenuType.play.id,

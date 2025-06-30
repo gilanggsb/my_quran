@@ -94,7 +94,7 @@ class QuranDetailView extends StatelessWidget {
   void showBottomSheetJumpToAyah(BuildContext context) {
     BottomSheetManager.showCustomBottomSheet(
       context: context,
-      child: JumpAyahBottomSheet(quranDetailCubit: context.read<QuranDetailCubit>()),
+      child: PreviewAyahBottomSheet(quranDetailCubit: context.read<QuranDetailCubit>()),
     );
   }
 

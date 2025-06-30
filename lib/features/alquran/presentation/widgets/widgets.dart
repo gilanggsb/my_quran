@@ -1,7 +1,7 @@
 export 'ayah_player_bottom_sheet.dart';
 export 'detail_ayah_bottom_sheet.dart';
-export 'jump_ayah_bottom_sheet.dart';
 export 'last_read_surah_banner.dart';
+export 'preview_ayah_bottom_sheet.dart';
 export 'quran_detail_menu_bottom_sheet.dart';
 export 'quran_header_ayah.dart';
 export 'quran_number.dart';
