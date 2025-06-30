@@ -12,6 +12,8 @@
 import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:flutter/material.dart' as _i9;
 import 'package:my_quran/common/routes/root_wrapper.dart' as _i5;
+import 'package:my_quran/features/alquran/presentation/screens/home/home_screen.dart'
+    as _i2;
 import 'package:my_quran/features/alquran/presentation/screens/juz_tab.dart'
     as _i3;
 import 'package:my_quran/features/alquran/presentation/screens/quran_detail_screen.dart'
@@ -21,8 +23,6 @@ import 'package:my_quran/features/alquran/presentation/screens/surah_tab.dart'
 import 'package:my_quran/features/bookmark/presentation/screens/bookmark_screen.dart'
     as _i1;
 import 'package:my_quran/features/features.dart' as _i10;
-import 'package:my_quran/features/home/presentation/screens/home_screen.dart'
-    as _i2;
 import 'package:my_quran/features/splash/splash_screen.dart' as _i6;
 
 /// generated route for

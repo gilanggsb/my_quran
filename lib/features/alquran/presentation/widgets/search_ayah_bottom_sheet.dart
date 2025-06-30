@@ -6,11 +6,11 @@ import '../../../features.dart';
 
 class SearchSurahOrJuzBottomSheet extends StatelessWidget {
   const SearchSurahOrJuzBottomSheet({super.key, required this.jumpAyahCubit});
-  final JumpAyahCubit jumpAyahCubit;
+  final PreviewAyahCubit jumpAyahCubit;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<JumpAyahCubit, JumpAyahState>(
+    return BlocBuilder<PreviewAyahCubit, PreviewAyahState>(
       bloc: jumpAyahCubit,
       builder: (context, state) {
         final isSurahType = jumpAyahCubit.isSurahsType;

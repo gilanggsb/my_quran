@@ -5,8 +5,8 @@ import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../lib.dart';
 
 
-class JumpAyahBottomSheet extends StatelessWidget {
-  const JumpAyahBottomSheet({super.key, required this.quranDetailCubit});
+class PreviewAyahBottomSheet extends StatelessWidget {
+  const PreviewAyahBottomSheet({super.key, required this.quranDetailCubit});
   final QuranDetailCubit quranDetailCubit;
 
   @override
@@ -14,17 +14,17 @@ class JumpAyahBottomSheet extends StatelessWidget {
     return BlocProvider(
       create:
           (context) =>
-              getIt.get<JumpAyahCubit>()
+              getIt.get<PreviewAyahCubit>()
                 ..init(params: quranDetailCubit.paramsData, ayahs: quranDetailCubit.ayahs),
-      child: BlocBuilder<JumpAyahCubit, JumpAyahState>(
+      child: BlocBuilder<PreviewAyahCubit, PreviewAyahState>(
         builder: (context, state) {
           final isLoading = switch (state) {
-            JumpAyahLoadingState() => true,
+            PreviewAyahLoadingState() => true,
             _ => false,
           };
-          final jumpAyahCubit = context.read<JumpAyahCubit>();
-          final jumpAyahTitle = jumpAyahCubit.jumpAyahTitle;
-          final ayahs = isLoading ? BoneMockData.fakeAyahs : jumpAyahCubit.ayahs;
+          final previewAyahCubit = context.read<PreviewAyahCubit>();
+          final jumpAyahTitle = previewAyahCubit.previewAyahTitle;
+          final ayahs = isLoading ? BoneMockData.fakeAyahs : previewAyahCubit.ayahs;
 
           return Column(
             mainAxisSize: MainAxisSize.min,
@@ -37,7 +37,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconButton(
-                          onPressed: jumpAyahCubit.next,
+                          onPressed: previewAyahCubit.next,
                           icon: const Icon(Icons.chevron_left),
                           color: context.getColorExt(AppColorType.text),
                         ),
@@ -47,7 +47,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
                           color: context.getColorExt(AppColorType.text),
                         ),
                         IconButton(
-                          onPressed: jumpAyahCubit.prev,
+                          onPressed: previewAyahCubit.prev,
                           icon: const Icon(Icons.chevron_right),
                           color: context.getColorExt(AppColorType.text),
                         ),
@@ -76,7 +76,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
                               isPreview: true,
                               arabicMaxLine: 1,
                             ),
-                            onTap: () => onSurahTap(index, ayah, jumpAyahCubit),
+                            onTap: () => onSurahTap(index, ayah, previewAyahCubit),
                           ).paddingSymmetric(horizontal: 10);
                         },
                       ),
@@ -91,7 +91,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
     );
   }
 
-  void onSurahTap(int index, Ayah ayah, JumpAyahCubit jumpAyahCubit) {
+  void onSurahTap(int index, Ayah ayah, PreviewAyahCubit jumpAyahCubit) {
     BottomSheetManager.closeCurrentBottomSheet();
     final newParams = jumpAyahCubit.getNewParamsData(ayah);
     quranDetailCubit.jumpToAyah(ayahsIndex: index, params: newParams);
@@ -100,7 +100,7 @@ class JumpAyahBottomSheet extends StatelessWidget {
   void showBottomSheetSearchSurahOrJuz(BuildContext context) {
     BottomSheetManager.showCustomBottomSheet(
       height: context.getHeight * 0.4,
-      child: SearchSurahOrJuzBottomSheet(jumpAyahCubit: context.read<JumpAyahCubit>()),
+      child: SearchSurahOrJuzBottomSheet(jumpAyahCubit: context.read<PreviewAyahCubit>()),
     );
   }
 }
