@@ -1,85 +1,106 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../../common/common.dart';
-import '../../../features.dart';
+import '../../../../lib.dart';
 
-class SearchSurahOrJuzBottomSheet extends StatelessWidget {
-  const SearchSurahOrJuzBottomSheet({super.key, required this.jumpAyahCubit});
-  final PreviewAyahCubit jumpAyahCubit;
+
+class SearchAyahBottomSheet extends StatelessWidget {
+  const SearchAyahBottomSheet({super.key, required this.quranDetailCubit});
+  final QuranDetailCubit quranDetailCubit;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PreviewAyahCubit, PreviewAyahState>(
-      bloc: jumpAyahCubit,
-      builder: (context, state) {
-        final isSurahType = jumpAyahCubit.isSurahsType;
-        final surahs = jumpAyahCubit.tempSurahs;
-        final juzs = jumpAyahCubit.tempJuzs;
-        return CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(child: 12.heightBox),
-            SliverAppBar(
-              pinned: true,
-              leading: Icon(
-                Icons.search,
-                color:
-                    context.isLightTheme
-                        ? context.getColorExt(AppColorType.text)
-                        : context.getColorExt(AppColorType.background),
-              ),
-              backgroundColor: Colors.transparent,
-              flexibleSpace: DefaultTextField(
-                prefix: 32.widthBox,
-                hintTextStyle: AppStyle.text(
-                  fontColor:
-                      context.isLightTheme
-                          ? context.getColorExt(AppColorType.text)
-                          : context.getColorExt(AppColorType.background),
-                ),
-                textStyle: AppStyle.text(
-                  fontColor:
-                      context.isLightTheme
-                          ? context.getColorExt(AppColorType.text)
-                          : context.getColorExt(AppColorType.background),
-                ),
-                hintText: 'Search ${isSurahType ? "Surah" : "Juz"}',
-                controller: jumpAyahCubit.searchController,
-                onChanged: jumpAyahCubit.filterSurahOrJuz,
-                suffix:
-                    jumpAyahCubit.searchController.text.isEmpty
-                        ? null
-                        : Icon(
-                          Icons.clear,
-                          color:
-                              context.isLightTheme
-                                  ? context.getColorExt(AppColorType.text)
-                                  : context.getColorExt(AppColorType.background),
-                        ).onTap(jumpAyahCubit.clearfilterSurahOrJuz),
-              ),
-            ),
-            SliverToBoxAdapter(child: 12.heightBox),
-            SliverList.separated(
-              itemCount: isSurahType ? surahs.length : juzs.length,
-              itemBuilder: (context, index) {
-                final juz = index < juzs.length ? juzs[index] : null;
-                final surah = index < surahs.length ? surahs[index] : null;
-                return QuranTile(
-                  quran: Quran(
-                    title: isSurahType ? surah?.nameId : juz?.name,
-                    number: isSurahType ? surah?.number : juz?.number,
+    return BlocProvider(
+      create:
+          (context) =>
+              getIt.get<SearchAyahCubit>()
+                ..init(params: quranDetailCubit.paramsData, ayahs: quranDetailCubit.ayahs),
+      child: BlocBuilder<SearchAyahCubit, SearchAyahState>(
+        builder: (context, state) {
+          final isLoading = switch (state) {
+            PreviewAyahLoadingState() => true,
+            _ => false,
+          };
+          final searchAyahCubit = context.read<SearchAyahCubit>();
+          final jumpAyahTitle = searchAyahCubit.previewAyahTitle;
+          final ayahs = isLoading ? BoneMockData.fakeAyahs : searchAyahCubit.ayahs;
+
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Column(
+                children: [
+                  Skeletonizer(
+                    enabled: isLoading,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          onPressed: searchAyahCubit.next,
+                          icon: const Icon(Icons.chevron_left),
+                          color: context.getColorExt(AppColorType.text),
+                        ),
+                        DefaultText(
+                          isLoading ? BoneMock.name : jumpAyahTitle,
+                          fontSize: 20.sp,
+                          color: context.getColorExt(AppColorType.text),
+                        ),
+                        IconButton(
+                          onPressed: searchAyahCubit.prev,
+                          icon: const Icon(Icons.chevron_right),
+                          color: context.getColorExt(AppColorType.text),
+                        ),
+                      ],
+                    ).onTap(() => showBottomSheetSearchSurahOrJuz(context)),
                   ),
-                  onTap: () {
-                    BottomSheetManager.closeCurrentBottomSheet();
-                    jumpAyahCubit.changeSurahOrJuz(isSurahType ? surah?.number : juz?.number);
-                  },
-                );
-              },
-              separatorBuilder: (ctx, idx) => const Divider(thickness: 0.2),
-            ),
-          ],
-        );
-      },
+                  Divider(thickness: 2, color: context.getColorExt(AppColorType.primary)),
+                ],
+              ),
+              Expanded(
+                child: CustomScrollView(
+                  shrinkWrap: true,
+                  slivers: [
+                    Skeletonizer.sliver(
+                      enabled: isLoading,
+                      child: SliverList.separated(
+                        separatorBuilder: (ctx, idx) => const Divider(thickness: 0.2),
+                        itemCount: ayahs.length,
+                        itemBuilder: (context, index) {
+                          final ayah = ayahs[index];
+
+                          return QuranTile(
+                            quran: Quran(
+                              number: ayah.ayah,
+                              arabic: ayah.arab,
+                              isPreview: true,
+                              arabicMaxLine: 1,
+                            ),
+                            onTap: () => onSurahTap(index, ayah, searchAyahCubit),
+                          ).paddingSymmetric(horizontal: 10);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        },
+      ),
     );
+  }
+
+  void onSurahTap(int index, Ayah ayah, SearchAyahCubit jumpAyahCubit) {
+    BottomSheetManager.closeCurrentBottomSheet();
+    final newParams = jumpAyahCubit.getNewParamsData(ayah);
+    quranDetailCubit.jumpToAyah(ayahsIndex: index, params: newParams);
+  }
+
+  void showBottomSheetSearchSurahOrJuz(BuildContext context) {
+    // BottomSheetManager.showCustomBottomSheet(
+    //   height: context.getHeight * 0.4,
+    //   child: SearchSurahOrJuzBottomSheet(jumpAyahCubit: context.read<SearchAyahCubit>()),
+    // );
   }
 }

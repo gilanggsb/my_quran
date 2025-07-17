@@ -64,6 +64,7 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     QuranDetailParams? params,
     int ayahsIndex = 1,
     LastReadAyah? lastReadAyah,
+    int? ayah,
   }) async {
     if (params != null) {
       ayahs = [];
@@ -72,9 +73,15 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
     }
 
     final ayahIndex =
-        lastReadAyah != null
-            ? ayahs.indexWhere((ayah) => ayah.ayah == lastReadAyah.ayah?.ayah)
+        lastReadAyah != null || ayah != null
+            ? ayahs.indexWhere((e) => e.ayah == (lastReadAyah?.ayah?.ayah ?? ayah))
             : ayahsIndex;
+
+    if (ayahIndex == -1) {
+      emit(QuranDetailState.updateState());
+      emit(QuranDetailState.failed("Ayat tidak ditemukan!"));
+      return;
+    }
 
     await Future.delayed(const Duration(milliseconds: 150));
 
@@ -130,6 +137,7 @@ class QuranDetailCubit extends Cubit<QuranDetailState> {
 
   @override
   Future<void> close() {
+    scrollController.dispose();
     observerController.controller?.dispose();
     return super.close();
   }

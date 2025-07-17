@@ -33,7 +33,15 @@ class QuranDetailView extends StatelessWidget {
         ),
       ),
       onInit: () => context.read<QuranDetailCubit>().init(params),
-      body: BlocBuilder<QuranDetailCubit, QuranDetailState>(
+      body: BlocConsumer<QuranDetailCubit, QuranDetailState>(
+        listener: (context, state) {
+          switch (state) {
+            case QuranDetailFailedState(:final message):
+              SnackbarManager.showErrorSnackbar(message: message);
+              break;
+            default:
+          }
+        },
         builder: (context, state) {
           final isLoading = switch (state) {
             QuranDetailLoadingState() => true,
@@ -91,7 +99,7 @@ class QuranDetailView extends StatelessWidget {
     );
   }
 
-  void showBottomSheetJumpToAyah(BuildContext context) {
+  void showBottomSheetPreviewAyah(BuildContext context) {
     BottomSheetManager.showCustomBottomSheet(
       context: context,
       child: PreviewAyahBottomSheet(quranDetailCubit: context.read<QuranDetailCubit>()),

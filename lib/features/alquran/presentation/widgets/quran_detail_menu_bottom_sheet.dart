@@ -33,6 +33,15 @@ class QuranDetailMenuBottomSheet extends StatelessWidget {
           child: PreviewAyahBottomSheet(quranDetailCubit: quranDetailCubit),
         );
         break;
+      case QuranDetailMenuType.searchAyah:
+        final hintText =
+            '${quranDetailCubit.ayahs.first.ayah} - ${quranDetailCubit.ayahs.last.ayah}';
+        DialogManager.showInputDialog(
+          title: 'Cari surat',
+          hintText: hintText,
+          onOK: (result) => quranDetailCubit.jumpToAyah(ayah: result.tryParseInt ?? 0),
+        );
+        break;
       case QuranDetailMenuType.play:
         quranDetailCubit.playSurah();
         break;
@@ -58,13 +67,22 @@ List<QuranDetailMenu> getMenus(bool isSurahType) {
       name: 'Preview surat',
     ),
     QuranDetailMenu(
+      id: QuranDetailMenuType.searchAyah.id,
+      icon: Icon(
+        Icons.search_outlined,
+        color: globalContext.getColorExt(AppColorType.primary),
+        size: 30,
+      ),
+      name: 'Cari surat',
+    ),
+    QuranDetailMenu(
       id: QuranDetailMenuType.play.id,
       icon: Icon(
         Icons.play_arrow,
         size: 30,
         color: globalContext.getColorExt(AppColorType.primary),
       ),
-      name: 'Play surat',
+      name: 'Putar surat',
     ),
     if (isSurahType)
       QuranDetailMenu(

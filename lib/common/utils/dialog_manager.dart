@@ -95,6 +95,7 @@ class DialogManager {
     String? barrierLabel,
     RouteSettings? routeSettings,
     TraversalEdgeBehavior? traversalEdgeBehavior,
+    String? hintText,
     bool useRootNavigator = false,
     bool useSafeArea = true,
   }) {
@@ -104,7 +105,10 @@ class DialogManager {
       context: validContext,
       barrierDismissible: barrierDismissible,
       barrierColor: barrierColor,
-      onClose: onClose,
+      onClose: () {
+        onClose?.call();
+        Future.delayed(Duration(milliseconds: 250), () => inputController.dispose());
+      },
       anchorPoint: anchorPoint,
       barrierLabel: barrierLabel,
       routeSettings: routeSettings,
@@ -121,6 +125,7 @@ class DialogManager {
               if (message != null) Text(message),
               DefaultTextField(
                 controller: inputController,
+                hintText: hintText,
                 textStyle: validContext.textThemeExt.bodyMedium.copyWith(
                   color: context.getColorExt(
                     context.isLightTheme ? AppColorType.textLight : AppColorType.textDark,

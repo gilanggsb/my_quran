@@ -19,6 +19,14 @@ void quranInjection() {
       getAyahsJuz: getIt(),
     ),
   );
+  getIt.registerFactory<SearchAyahCubit>(
+    () => SearchAyahCubit(
+      getSurahs: getIt(),
+      getJuzs: getIt(),
+      getFullAyahs: getIt(),
+      getAyahsJuz: getIt(),
+    ),
+  );
   //repository
   getIt.registerLazySingleton<QuranRepository>(
     () => QuranRepositoryImpl(localDataSource: getIt(), remoteDataSource: getIt()),

@@ -9,4 +9,5 @@ export 'quran_status.dart';
 export 'quran_tile.dart';
 export 'quran_title.dart';
 export 'search_ayah_bottom_sheet.dart';
+export 'search_surah_or_juz_bottom_sheet.dart';
 export 'tafseer_surah_bottom_sheet.dart';
