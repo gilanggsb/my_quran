@@ -246,6 +246,7 @@ class DefaultButton extends StatelessWidget {
     Color? inactiveColor,
     double? width,
     double? height,
+    Color? borderColor,
   }) {
     return DefaultButton(
       inactiveColor: inactiveColor,
@@ -256,6 +257,7 @@ class DefaultButton extends StatelessWidget {
       padding: padding,
       onPress: onPress,
       text: text,
+      borderColor: borderColor,
       backgroundColor: backgroundColor ?? globalContext.getColorExt(AppColorType.primary),
       fontColor: textColor ?? globalContext.getColorExt(AppColorType.text),
       borderRadius: borderRadius ?? 10,

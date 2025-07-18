@@ -19,8 +19,8 @@ void quranInjection() {
       getAyahsJuz: getIt(),
     ),
   );
-  getIt.registerFactory<SearchAyahCubit>(
-    () => SearchAyahCubit(
+  getIt.registerFactory<JumpToAyahCubit>(
+    () => JumpToAyahCubit(
       getSurahs: getIt(),
       getJuzs: getIt(),
       getFullAyahs: getIt(),

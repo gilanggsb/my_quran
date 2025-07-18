@@ -42,6 +42,7 @@ class DefaultTextField extends StatelessWidget {
   final String? counterText;
   final String? initialValue;
   final FormFieldValidator<String>? validator;
+  final TextAlign? textAlign;
 
   const DefaultTextField({
     super.key,
@@ -83,6 +84,7 @@ class DefaultTextField extends StatelessWidget {
     this.counterText,
     this.initialValue,
     this.validator,
+    this.textAlign,
   });
 
   @override
@@ -142,6 +144,7 @@ class DefaultTextField extends StatelessWidget {
           inputFormatters: inputFormatters,
           autocorrect: autocorrect,
           autofillHints: autofillHints,
+          textAlign: textAlign ?? TextAlign.start,
           decoration: InputDecoration(
             prefix: prefix,
             hintText: hintText,

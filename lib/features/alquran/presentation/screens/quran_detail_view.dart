@@ -32,7 +32,7 @@ class QuranDetailView extends StatelessWidget {
           icon: Icon(Icons.chevron_left, color: context.getColorExt(AppColorType.text), size: 32),
         ),
       ),
-      onInit: () => context.read<QuranDetailCubit>().init(params),
+      onInit: () => context.read<QuranDetailCubit>().init(params: params),
       body: BlocConsumer<QuranDetailCubit, QuranDetailState>(
         listener: (context, state) {
           switch (state) {
@@ -53,7 +53,7 @@ class QuranDetailView extends StatelessWidget {
           };
           final ayahs = isLoading ? BoneMockData.fakeAyahs : quranDetailCubit.ayahs;
           final sliverCtx = quranDetailCubit.sliverContext;
-
+      
           return ListViewObserver(
             controller: quranDetailCubit.observerController,
             sliverListContexts: () => [if (sliverCtx != null) sliverCtx],
@@ -73,7 +73,7 @@ class QuranDetailView extends StatelessWidget {
                       final surah = surahCubit.surahs.firstWhereOrNull(
                         (surah) => surah.number == (ayah.surah ?? 0),
                       );
-
+      
                       return Column(
                         children: [
                           if (ayah.ayah == 1 && !isLoading) QuranHeaderAyah(surah: surah),
