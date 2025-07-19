@@ -34,6 +34,7 @@ class QuranDetailMenuBottomSheet extends StatelessWidget {
         break;
       case QuranDetailMenuType.jumpToAyah:
         BottomSheetManager.showCustomBottomSheet(
+          isScrollControlled: true,
           child: JumpToAyahBottomSheet(quranDetailCubit: quranDetailCubit),
         );
         break;
