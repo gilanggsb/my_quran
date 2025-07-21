@@ -26,7 +26,7 @@ void mainQuranRemoteDataSource() {
       when(remoteDataSource.getSurahs()).thenAnswer(
         (realInvocation) async => BaseResponse<List<Surah>>.fromJson(
           surahsMock,
-          (json) => (json as List).toResponseList<Surah>((element) => Surah.fromJson(element)),
+          (json) => (json as List).toResponseList((element) => Surah.fromJson(element)),
         ),
       );
       // act

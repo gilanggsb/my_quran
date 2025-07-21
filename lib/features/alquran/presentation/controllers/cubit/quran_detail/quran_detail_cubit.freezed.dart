@@ -127,6 +127,44 @@ String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
 /// @nodoc
 
 
+class QuranDetaiUpdateState with DiagnosticableTreeMixin implements QuranDetailState {
+  const QuranDetaiUpdateState();
+  
+
+
+
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'QuranDetailState.updateState'))
+    ;
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QuranDetaiUpdateState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'QuranDetailState.updateState()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
 class QuranDetailLoadingMoreDataState with DiagnosticableTreeMixin implements QuranDetailState {
   const QuranDetailLoadingMoreDataState();
   

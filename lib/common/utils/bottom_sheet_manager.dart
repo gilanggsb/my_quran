@@ -155,9 +155,7 @@ class BottomSheetManager {
         .closed
         .then((_) {
           isBottomSheetShownNotifier.value = false;
-          if (onClose != null) {
-            onClose();
-          }
+          onClose?.call();
         });
   }
 
@@ -182,30 +180,29 @@ class BottomSheetManager {
       clipBehavior: clipBehavior,
       isDismissible: isDismissible,
       enableDrag: enableDrag,
-      // useRootNavigator: true,
       builder: (BuildContext context) {
-        return Padding(
-          padding: MediaQuery.of(context).viewInsets,
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              return ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: height ?? constraints.maxHeight * 0.9),
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            return ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: height ?? constraints.maxHeight * 0.9),
+              child: SingleChildScrollView(
+                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     if (showDragHandle ?? true)
                       Container(
                         margin: const EdgeInsets.only(top: 10),
-                        color: context.getColorExt(AppColorType.primary),
                         height: 4.sp,
                         width: context.getWidth * 0.1,
+                        color: context.getColorExt(AppColorType.primary),
                       ),
-                    Flexible(child: child),
+                    child, // ← NOT wrapped in Flexible or Expanded anymore!
                   ],
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         );
       },
     ).whenComplete(() {
@@ -215,8 +212,6 @@ class BottomSheetManager {
   }
 
   static void closeCurrentBottomSheet({BuildContext? context}) {
-    // final finalContext = context ?? globalContext;
-    // finalContext.r
     Navigator.pop(context ?? globalContext);
   }
 

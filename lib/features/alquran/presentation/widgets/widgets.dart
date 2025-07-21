@@ -1,5 +1,6 @@
 export 'ayah_player_bottom_sheet.dart';
 export 'detail_ayah_bottom_sheet.dart';
+export 'jump_to_ayah_bottom_sheet.dart';
 export 'last_read_surah_banner.dart';
 export 'preview_ayah_bottom_sheet.dart';
 export 'quran_detail_menu_bottom_sheet.dart';
@@ -8,5 +9,5 @@ export 'quran_number.dart';
 export 'quran_status.dart';
 export 'quran_tile.dart';
 export 'quran_title.dart';
-export 'search_ayah_bottom_sheet.dart';
+export 'search_surah_or_juz_bottom_sheet.dart';
 export 'tafseer_surah_bottom_sheet.dart';

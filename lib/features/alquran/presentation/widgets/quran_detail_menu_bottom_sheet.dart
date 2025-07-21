@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../common/common.dart';
-import '../../../features.dart';
+import '../../../../lib.dart';
 
 class QuranDetailMenuBottomSheet extends StatelessWidget {
   const QuranDetailMenuBottomSheet({super.key, required this.quranDetailCubit});
@@ -33,6 +32,12 @@ class QuranDetailMenuBottomSheet extends StatelessWidget {
           child: PreviewAyahBottomSheet(quranDetailCubit: quranDetailCubit),
         );
         break;
+      case QuranDetailMenuType.jumpToAyah:
+        BottomSheetManager.showCustomBottomSheet(
+          isScrollControlled: true,
+          child: JumpToAyahBottomSheet(quranDetailCubit: quranDetailCubit),
+        );
+        break;
       case QuranDetailMenuType.play:
         quranDetailCubit.playSurah();
         break;
@@ -58,13 +63,22 @@ List<QuranDetailMenu> getMenus(bool isSurahType) {
       name: 'Preview surat',
     ),
     QuranDetailMenu(
+      id: QuranDetailMenuType.jumpToAyah.id,
+      icon: Icon(
+        Icons.search_outlined,
+        color: globalContext.getColorExt(AppColorType.primary),
+        size: 30,
+      ),
+      name: 'Loncat ke ayat',
+    ),
+    QuranDetailMenu(
       id: QuranDetailMenuType.play.id,
       icon: Icon(
         Icons.play_arrow,
         size: 30,
         color: globalContext.getColorExt(AppColorType.primary),
       ),
-      name: 'Play surat',
+      name: 'Putar surat',
     ),
     if (isSurahType)
       QuranDetailMenu(
