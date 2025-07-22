@@ -5,7 +5,6 @@ import 'package:hive_ce/hive.dart';
 
 import '../../../../lib.dart';
 
-
 part 'surah.freezed.dart';
 part 'surah.g.dart';
 
@@ -14,7 +13,7 @@ Surah surahFromJson(String str) => Surah.fromJson(json.decode(str));
 String surahToJson(Surah data) => json.encode(data.toJson());
 
 @customFreezed
-@HiveType(typeId: 2) // Assign a unique typeId for Hive
+@HiveType(typeId: 2, adapterName: "IgnoreSurah") // Assign a unique typeId for Hive
 abstract class Surah with _$Surah {
   const Surah._();
   @customJsonSerializable

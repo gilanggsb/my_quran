@@ -9,9 +9,9 @@ part of 'ayahs_throughout_pagination.dart';
 _AyahsThroughoutPagination _$AyahsThroughoutPaginationFromJson(
   Map<String, dynamic> json,
 ) => _AyahsThroughoutPagination(
-  surat: const StringToIntConverter().fromJson(json['surat'] as String?),
-  ayat: const StringToIntConverter().fromJson(json['ayat'] as String?),
-  panjang: const StringToIntConverter().fromJson(json['panjang'] as String?),
+  surat: const StringToIntConverter().fromJson(json['surat']),
+  ayat: const StringToIntConverter().fromJson(json['ayat']),
+  panjang: const StringToIntConverter().fromJson(json['panjang']),
   maxAyat: (json['max_ayat'] as num?)?.toInt(),
 );
 

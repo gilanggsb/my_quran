@@ -7,7 +7,7 @@ part 'bookmark_data.freezed.dart';
 part 'bookmark_data.g.dart';
 
 @customFreezed
-@HiveType(typeId: 4) // Assign a unique typeId for Hive
+@HiveType(typeId: 4, adapterName: "IgnoreBookmarkData") // Assign a unique typeId for Hive
 abstract class BookmarkData with _$BookmarkData {
   const BookmarkData._();
 

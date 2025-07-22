@@ -6,7 +6,7 @@ part of 'juz.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class JuzAdapter extends TypeAdapter<Juz> {
+class IgnoreJuz extends TypeAdapter<Juz> {
   @override
   final typeId = 1;
 
@@ -71,7 +71,7 @@ class JuzAdapter extends TypeAdapter<Juz> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is JuzAdapter &&
+      other is IgnoreJuz &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -89,13 +89,9 @@ _Juz _$JuzFromJson(Map<String, dynamic> json) => _Juz(
   nameEndId: json['name_end_id'] as String?,
   nameStartArab: json['name_start_arab'] as String?,
   nameStartId: json['name_start_id'] as String?,
-  number: const StringToIntConverter().fromJson(json['number'] as String?),
-  surahIdEnd: const StringToIntConverter().fromJson(
-    json['surah_id_end'] as String?,
-  ),
-  surahIdStart: const StringToIntConverter().fromJson(
-    json['surah_id_start'] as String?,
-  ),
+  number: const StringToIntConverter().fromJson(json['number']),
+  surahIdEnd: const StringToIntConverter().fromJson(json['surah_id_end']),
+  surahIdStart: const StringToIntConverter().fromJson(json['surah_id_start']),
   verseEnd: json['verse_end'] as String?,
   verseStart: json['verse_start'] as String?,
 );

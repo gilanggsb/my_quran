@@ -6,7 +6,7 @@ part of 'ayah.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class AyahAdapter extends TypeAdapter<Ayah> {
+class Ignore extends TypeAdapter<Ayah> {
   @override
   final typeId = 0;
 
@@ -68,7 +68,7 @@ class AyahAdapter extends TypeAdapter<Ayah> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is AyahAdapter &&
+      other is Ignore &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -78,13 +78,13 @@ class AyahAdapter extends TypeAdapter<Ayah> {
 // **************************************************************************
 
 _Ayah _$AyahFromJson(Map<String, dynamic> json) => _Ayah(
-  id: const StringToIntConverter().fromJson(json['id'] as String?),
+  id: const StringToIntConverter().fromJson(json['id']),
   arab: json['arab'] as String?,
   asbab: json['asbab'] as String?,
   audio: json['audio'] as String?,
-  ayah: const StringToIntConverter().fromJson(json['ayah'] as String?),
-  juz: const StringToIntConverter().fromJson(json['juz'] as String?),
-  surah: const StringToIntConverter().fromJson(json['surah'] as String?),
+  ayah: const StringToIntConverter().fromJson(json['ayah']),
+  juz: const StringToIntConverter().fromJson(json['juz']),
+  surah: const StringToIntConverter().fromJson(json['surah']),
   latin: json['latin'] as String?,
   notes: json['notes'] as String?,
   page: json['page'] as String?,

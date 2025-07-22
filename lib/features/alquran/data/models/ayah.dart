@@ -12,7 +12,7 @@ Ayah ayahFromJson(String str) => Ayah.fromJson(json.decode(str));
 String ayahToJson(Ayah data) => json.encode(data.toJson());
 
 @customFreezed
-@HiveType(typeId: 0) // Assign a unique typeId for Hive
+@HiveType(typeId: 0, adapterName: "Ignore") // Assign a unique typeId for Hive
 abstract class Ayah with _$Ayah {
   const Ayah._();
 

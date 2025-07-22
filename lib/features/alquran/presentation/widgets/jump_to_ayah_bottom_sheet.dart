@@ -28,12 +28,14 @@ class JumpToAyahBottomSheet extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
-                  "Loncat ke Ayat",
-                  style: AppStyle.text(
-                    fontSize: 28,
-                    fontColor: context.getColorExt(AppColorType.primaryLight),
-                    type: TextStyleType.bold,
+                Center(
+                  child: Text(
+                    "Loncat ke Ayat",
+                    style: AppStyle.text(
+                      fontSize: 28,
+                      fontColor: context.getColorExt(AppColorType.primaryLight),
+                      type: TextStyleType.bold,
+                    ),
                   ),
                 ),
                 Divider(thickness: 2, color: context.getColorExt(AppColorType.primary)),

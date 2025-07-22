@@ -1,9 +1,12 @@
 export 'ayah.dart';
+export 'ayah_adapter.dart';
 export 'ayah_pagination.dart';
 export 'ayahs_throughout_pagination.dart';
 export 'juz.dart';
+export 'juz_adapter.dart';
 export 'last_read.dart';
 export 'quran.dart';
 export 'quran_detail_menu.dart';
 export 'quran_detail_params.dart';
 export 'surah.dart';
+export 'surah_adapter.dart';

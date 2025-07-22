@@ -12,22 +12,22 @@ import 'package:my_quran/features/bookmark/data/models/bookmark_type.dart';
 
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {
-    registerAdapter(AyahAdapter());
-    registerAdapter(BookmarkCategoryAdapter());
-    registerAdapter(BookmarkDataAdapter());
-    registerAdapter(BookmarkTypeAdapter());
-    registerAdapter(JuzAdapter());
-    registerAdapter(SurahAdapter());
+    registerAdapter(Ignore());
+    registerAdapter(IgnoreBookmarkCategory());
+    registerAdapter(IgnoreBookmarkData());
+    registerAdapter(IgnoreBookmarkType());
+    registerAdapter(IgnoreJuz());
+    registerAdapter(IgnoreSurah());
   }
 }
 
 extension IsolatedHiveRegistrar on IsolatedHiveInterface {
   void registerAdapters() {
-    registerAdapter(AyahAdapter());
-    registerAdapter(BookmarkCategoryAdapter());
-    registerAdapter(BookmarkDataAdapter());
-    registerAdapter(BookmarkTypeAdapter());
-    registerAdapter(JuzAdapter());
-    registerAdapter(SurahAdapter());
+    registerAdapter(Ignore());
+    registerAdapter(IgnoreBookmarkCategory());
+    registerAdapter(IgnoreBookmarkData());
+    registerAdapter(IgnoreBookmarkType());
+    registerAdapter(IgnoreJuz());
+    registerAdapter(IgnoreSurah());
   }
 }

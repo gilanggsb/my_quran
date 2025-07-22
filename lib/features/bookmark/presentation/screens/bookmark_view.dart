@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/common.dart';
@@ -14,10 +13,6 @@ class BookmarkView extends StatelessWidget {
       onDispose: () => controller.dispose(),
       appBar: DefaultAppBar(
         title: 'Bookmark',
-        leading: IconButton(
-          onPressed: context.back,
-          icon: Icon(Icons.chevron_left, color: context.getColorExt(AppColorType.text), size: 32),
-        ),
       ),
       body: CustomScrollView(
         slivers: [

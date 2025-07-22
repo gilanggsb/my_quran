@@ -120,7 +120,6 @@ class QuranDetailView extends StatelessWidget {
   void showBottomSheetDetailQuran(BuildContext context) {
     BottomSheetManager.showCustomBottomSheet(
       context: context,
-      isScrollControlled: true,
       child: QuranDetailMenuBottomSheet(quranDetailCubit: context.read<QuranDetailCubit>()),
     );
   }

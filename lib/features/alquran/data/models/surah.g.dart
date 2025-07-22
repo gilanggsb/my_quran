@@ -6,7 +6,7 @@ part of 'surah.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class SurahAdapter extends TypeAdapter<Surah> {
+class IgnoreSurah extends TypeAdapter<Surah> {
   @override
   final typeId = 2;
 
@@ -74,7 +74,7 @@ class SurahAdapter extends TypeAdapter<Surah> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SurahAdapter &&
+      other is IgnoreSurah &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
@@ -89,9 +89,9 @@ _Surah _$SurahFromJson(Map<String, dynamic> json) => _Surah(
   nameId: json['name_id'] as String?,
   nameLong: json['name_long'] as String?,
   nameShort: json['name_short'] as String?,
-  number: const StringToIntConverter().fromJson(json['number'] as String?),
+  number: const StringToIntConverter().fromJson(json['number']),
   numberOfVerses: const StringToIntConverter().fromJson(
-    json['number_of_verses'] as String?,
+    json['number_of_verses'],
   ),
   revelation: json['revelation'] as String?,
   revelationEn: json['revelation_en'] as String?,

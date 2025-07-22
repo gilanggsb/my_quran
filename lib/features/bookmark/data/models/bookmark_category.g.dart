@@ -6,7 +6,7 @@ part of 'bookmark_category.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class BookmarkCategoryAdapter extends TypeAdapter<BookmarkCategory> {
+class IgnoreBookmarkCategory extends TypeAdapter<BookmarkCategory> {
   @override
   final typeId = 3;
 
@@ -38,7 +38,7 @@ class BookmarkCategoryAdapter extends TypeAdapter<BookmarkCategory> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is BookmarkCategoryAdapter &&
+      other is IgnoreBookmarkCategory &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

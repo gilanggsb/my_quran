@@ -40,7 +40,7 @@ class BookmarkCategoryFilter extends StatelessWidget {
               SizedBox(
                 height: 50,
                 child:
-                    categories.isEmpty
+                    categories.isEmpty && mode.isEditMode
                         ? EmptyStateCategory(
                           onPressAddCategory: () => addCategoryDialog(bookmarkCategoryCubit),
                         )

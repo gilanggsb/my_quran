@@ -183,9 +183,11 @@ class BottomSheetManager {
       builder: (BuildContext context) {
         return LayoutBuilder(
           builder: (context, constraints) {
+            final maxHeight = height ?? constraints.maxHeight * 0.9;
+
             return ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: height ?? constraints.maxHeight * 0.9),
-              child: SingleChildScrollView(
+              constraints: BoxConstraints(maxHeight: maxHeight),
+              child: Padding(
                 padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -197,7 +199,10 @@ class BottomSheetManager {
                         width: context.getWidth * 0.1,
                         color: context.getColorExt(AppColorType.primary),
                       ),
-                    child, // ← NOT wrapped in Flexible or Expanded anymore!
+                    Flexible(
+                      // ✅ Safe for both scrollable and static content
+                      child: child,
+                    ),
                   ],
                 ),
               ),
