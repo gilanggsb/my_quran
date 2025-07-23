@@ -3,6 +3,49 @@ import 'package:flutter/material.dart';
 import '../common.dart';
 
 class DialogManager {
+  static Future<void> showConfirmDialog({
+    BuildContext? context,
+    String? title,
+    String? message,
+    String? okTitle,
+    String? cancleTitle,
+    VoidCallback? onOKPress,
+    VoidCallback? onCancelPress,
+    List<Widget>? actions,
+    bool barrierDismissible = true,
+    Color? barrierColor,
+    VoidCallback? onClose,
+    Offset? anchorPoint,
+    String? barrierLabel,
+    RouteSettings? routeSettings,
+    TraversalEdgeBehavior? traversalEdgeBehavior,
+    bool useRootNavigator = false,
+    bool useSafeArea = true,
+  }) {
+    return DialogManager.showSimpleDialog(
+      title: title,
+      message: message,
+      actions: [
+        DefaultButton.outlineButton(
+          onPress: () {
+            onCancelPress?.call();
+            DialogManager.closeCurrentDialog();
+          },
+          text: cancleTitle ?? 'Tidak',
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        ),
+        DefaultButton.textButton(
+          onPress: () {
+            onOKPress?.call();
+            DialogManager.closeCurrentDialog();
+          },
+          text: okTitle ?? 'Ya',
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        ),
+      ],
+    );
+  }
+
   static Future<void> showSimpleDialog({
     BuildContext? context,
     String? title,
@@ -32,13 +75,13 @@ class DialogManager {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: context.getColorExt(AppColorType.background),
-          title: title != null ? Text(title) : null,
-          content: message != null ? Text(message) : null,
+          title: title != null ? Text(title, style: AppStyle.text(type: TextStyleType.bold)) : null,
+          content: message != null ? Text(message, style: AppStyle.text(fontSize: 16)) : null,
           actions:
               actions ??
               [
                 TextButton(
-                  child: const Text('OK'),
+                  child: Text('OK', style: AppStyle.text(fontSize: 16)),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -134,21 +177,21 @@ class DialogManager {
               ),
             ],
           ),
-          actions: <Widget>[
+          actions: [
+            DefaultButton.outlineButton(
+              text: 'Cancel',
+              onPress: () {
+                Navigator.of(context).pop(); // Return false for Cancel
+              },
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+            ),
             DefaultButton.textButton(
               text: 'OK',
               onPress: () {
                 onOK?.call(inputController.text);
                 Navigator.of(context).pop(); // Return true for OK
               },
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-            ),
-            DefaultButton.textButton(
-              text: 'Cancel',
-              onPress: () {
-                Navigator.of(context).pop(); // Return false for Cancel
-              },
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
             ),
           ],
         );

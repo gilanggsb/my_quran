@@ -65,7 +65,16 @@ class BookmarkCategoryFilter extends StatelessWidget {
                                     isActive: category.id == selectedCategory?.id,
                                     onPress: () {
                                       if (mode.isEditMode) {
-                                        bookmarkCategoryCubit.deleteCategory(category.id!);
+                                        DialogManager.showConfirmDialog(
+                                          title: "Hapus bookmark",
+                                          message: "Apakah anda yakin ingin menghapus ini?",
+                                          onOKPress: () {
+                                            bookmarkCategoryCubit.deleteCategory(category.id!);
+                                            SnackbarManager.showSuccessSnackbar(
+                                              message: "Kategori berhasil dihapus",
+                                            );
+                                          },
+                                        );
                                         return;
                                       }
 
@@ -88,6 +97,12 @@ class BookmarkCategoryFilter extends StatelessWidget {
   }
 
   void addCategoryDialog(BookmarkCategoryCubit bookmarkCategoryCubit) {
-    DialogManager.showInputDialog(title: 'New Category', onOK: bookmarkCategoryCubit.addCategory);
+    DialogManager.showInputDialog(
+      title: 'New Category',
+      onOK: (result) {
+        bookmarkCategoryCubit.addCategory(result);
+        SnackbarManager.showSuccessSnackbar(message: "Kategori berhasil ditambahkan");
+      },
+    );
   }
 }

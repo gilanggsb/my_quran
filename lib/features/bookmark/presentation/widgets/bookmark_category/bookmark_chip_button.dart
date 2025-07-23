@@ -21,8 +21,10 @@ class BookmarkChipButton extends StatelessWidget {
     return DefaultButton(
       borderRadius: 24,
       onPress: onPress,
-      isActive: isActive,
-      inactiveColor: context.getColorExt(AppColorType.primaryDark1),
+      backgroundColor: context.getColorExt(
+        isActive ? AppColorType.primary : AppColorType.primaryDark1,
+      ),
+      borderColor: context.getColorExt(AppColorType.primaryDark1),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child:
           mode.isAddMode

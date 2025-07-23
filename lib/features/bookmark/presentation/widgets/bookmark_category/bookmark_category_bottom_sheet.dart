@@ -126,25 +126,13 @@ class _BookmarkCategoryBottomSheetState extends State<BookmarkCategoryBottomShee
     required BookmarkCategory category,
     Ayah? ayah,
   }) {
-    DialogManager.showSimpleDialog(
+    DialogManager.showConfirmDialog(
       title: 'Bookmark',
       message: 'Apakah anda yakin ingin menambahkan ini?',
-      actions: [
-        DefaultButton.textButton(
-          onPress: () {
-            DialogManager.closeCurrentDialog();
-            BottomSheetManager.closeCurrentBottomSheet();
-            bookmarkCategoryCubit.addToBookmark(ayah: ayah, category: category);
-          },
-          text: 'Ya',
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-        ),
-        DefaultButton.textButton(
-          onPress: () => DialogManager.closeCurrentDialog(),
-          text: 'Tidak',
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-        ),
-      ],
+      onOKPress: () {
+        BottomSheetManager.closeCurrentBottomSheet();
+        bookmarkCategoryCubit.addToBookmark(ayah: ayah, category: category);
+      },
     );
   }
 }

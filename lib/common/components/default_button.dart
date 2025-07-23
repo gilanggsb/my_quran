@@ -22,8 +22,8 @@ class DefaultButton extends StatelessWidget {
     this.boxShadow,
     this.boxDecoration,
     this.disabled = false,
-    this.disableColor,
-    this.isActive = true,
+    // this.disableColor,
+    // this.isActive = true,
     this.activeColor,
     this.inactiveColor,
   });
@@ -44,8 +44,8 @@ class DefaultButton extends StatelessWidget {
   final List<BoxShadow>? boxShadow;
   final BoxDecoration? boxDecoration;
   final bool disabled;
-  final Color? disableColor;
-  final bool isActive;
+  // final Color? disableColor;
+  // final bool isActive;
   final Color? activeColor;
   final Color? inactiveColor;
 
@@ -53,13 +53,15 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color effectiveBackgroundColor =
         disabled
-            ? disableColor ?? Colors.grey
-            : isActive
-            ? activeColor ?? context.getColorExt(AppColorType.primary)!
-            : inactiveColor ?? backgroundColor ?? context.getColorExt(AppColorType.primary)!;
+            ? inactiveColor ?? backgroundColor ?? context.getColorExt(AppColorType.grey40)!
+            : activeColor ?? backgroundColor ?? context.getColorExt(AppColorType.primary)!;
 
     final Color effectiveFontColor =
-        disabled ? Colors.white70 : fontColor ?? context.getColorExt(AppColorType.text)!;
+        fontColor != null
+            ? fontColor!
+            : disabled
+            ? Colors.white70
+            : context.getColorExt(AppColorType.text)!;
 
     return InkWell(
       onTap: disabled ? null : onPress,
@@ -74,7 +76,7 @@ class DefaultButton extends StatelessWidget {
             boxDecoration ??
             BoxDecoration(
               color: effectiveBackgroundColor,
-              border: Border.all(color: borderColor ?? AppPalette.transparent),
+              border: Border.all(color: borderColor ?? context.getColorExt(AppColorType.primary)!),
               borderRadius: BorderRadius.circular(borderRadius ?? 10),
               boxShadow: boxShadow,
             ),
@@ -97,11 +99,12 @@ class DefaultButton extends StatelessWidget {
     required Function() onPress,
     required String text,
     Color? textColor,
+    Color? backgroundColor,
     double? fontSize,
     FontWeight? fontWeight,
     EdgeInsets? padding,
     bool disabled = false,
-    Color? disableColor,
+    // Color? disableColor,
     bool isActive = true,
     Color? activeColor,
     Color? inactiveColor,
@@ -110,16 +113,16 @@ class DefaultButton extends StatelessWidget {
   }) {
     return DefaultButton(
       inactiveColor: inactiveColor,
-      isActive: isActive,
-      activeColor: activeColor ?? globalContext.getColorExt(AppColorType.primary),
+      // isActive: isActive,
+      activeColor: activeColor,
       disabled: disabled,
-      disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
+      // disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
       padding: padding,
       onPress: onPress,
       text: text,
-      backgroundColor: Colors.transparent,
+      backgroundColor: backgroundColor,
       borderColor: Colors.transparent,
-      fontColor: textColor ?? globalContext.getColorExt(AppColorType.text),
+      fontColor: textColor,
       fontSize: fontSize ?? 16,
       fontWeight: fontWeight ?? FontWeight.normal,
       width: width,
@@ -136,7 +139,7 @@ class DefaultButton extends StatelessWidget {
     double? borderRadius,
     EdgeInsets? padding,
     bool disabled = false,
-    Color? disableColor,
+    // Color? disableColor,
     bool isActive = true,
     Color? activeColor,
     Color? inactiveColor,
@@ -145,16 +148,16 @@ class DefaultButton extends StatelessWidget {
   }) {
     return DefaultButton(
       inactiveColor: inactiveColor,
-      isActive: isActive,
-      activeColor: activeColor ?? globalContext.getColorExt(AppColorType.primary),
+      // isActive: isActive,
+      activeColor: activeColor,
       disabled: disabled,
-      disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
+      // disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
       padding: padding,
       onPress: onPress,
       text: text,
-      backgroundColor: backgroundColor ?? globalContext.getColorExt(AppColorType.primary),
+      backgroundColor: backgroundColor,
       borderRadius: borderRadius ?? 20,
-      fontColor: textColor ?? globalContext.getColorExt(AppColorType.text),
+      fontColor: textColor,
       width: width,
       height: height,
     );
@@ -170,7 +173,7 @@ class DefaultButton extends StatelessWidget {
     FontWeight? fontWeight,
     EdgeInsets? padding,
     bool disabled = false,
-    Color? disableColor,
+    // Color? disableColor,
     bool isActive = true,
     Color? activeColor,
     Color? inactiveColor,
@@ -179,16 +182,16 @@ class DefaultButton extends StatelessWidget {
   }) {
     return DefaultButton(
       inactiveColor: inactiveColor,
-      isActive: isActive,
-      activeColor: activeColor ?? globalContext.getColorExt(AppColorType.primary),
+      // isActive: isActive,
+      activeColor: activeColor,
       disabled: disabled,
-      disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
+      // disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
       padding: padding,
       onPress: onPress,
       text: text,
       backgroundColor: Colors.transparent,
-      borderColor: borderColor ?? Colors.blue,
-      fontColor: textColor ?? globalContext.getColorExt(AppColorType.text),
+      borderColor: borderColor,
+      fontColor: textColor,
       fontSize: fontSize ?? 16,
       fontWeight: fontWeight ?? FontWeight.normal,
       width: width,
@@ -206,7 +209,7 @@ class DefaultButton extends StatelessWidget {
     double? borderRadius,
     EdgeInsets? padding,
     bool disabled = false,
-    Color? disableColor,
+    // Color? disableColor,
     bool isActive = true,
     Color? activeColor,
     Color? inactiveColor,
@@ -215,13 +218,13 @@ class DefaultButton extends StatelessWidget {
   }) {
     return DefaultButton(
       inactiveColor: inactiveColor,
-      isActive: isActive,
-      activeColor: activeColor ?? globalContext.getColorExt(AppColorType.primary),
+      // isActive: isActive,
+      activeColor: activeColor,
       disabled: disabled,
-      disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
+      // disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
       padding: padding,
       onPress: onPress,
-      backgroundColor: backgroundColor ?? globalContext.getColorExt(AppColorType.primary),
+      backgroundColor: backgroundColor,
       borderRadius: borderRadius ?? 10,
       width: width,
       height: height,
@@ -240,7 +243,7 @@ class DefaultButton extends StatelessWidget {
     FontWeight? fontWeight,
     EdgeInsets? padding,
     bool disabled = false,
-    Color? disableColor,
+    // Color? disableColor,
     bool isActive = true,
     Color? activeColor,
     Color? inactiveColor,
@@ -250,16 +253,16 @@ class DefaultButton extends StatelessWidget {
   }) {
     return DefaultButton(
       inactiveColor: inactiveColor,
-      isActive: isActive,
-      activeColor: activeColor ?? globalContext.getColorExt(AppColorType.primary),
+      // isActive: isActive,
+      activeColor: activeColor,
       disabled: disabled,
-      disableColor: disableColor ?? globalContext.getColorExt(AppColorType.grey60),
+      // disableColor: disableColor,
       padding: padding,
       onPress: onPress,
       text: text,
       borderColor: borderColor,
-      backgroundColor: backgroundColor ?? globalContext.getColorExt(AppColorType.primary),
-      fontColor: textColor ?? globalContext.getColorExt(AppColorType.text),
+      backgroundColor: backgroundColor,
+      fontColor: textColor,
       borderRadius: borderRadius ?? 10,
       fontSize: fontSize ?? 16,
       fontWeight: fontWeight ?? FontWeight.bold,

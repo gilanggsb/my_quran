@@ -23,7 +23,6 @@ class JumpToAyahBottomSheet extends StatelessWidget {
               bottom: MediaQuery.of(context).viewInsets.bottom,
               left: 16,
               right: 16,
-              top: 16,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -122,7 +121,7 @@ class JumpToAyahBottomSheet extends StatelessWidget {
                           return DefaultButton.elevatedButton(
                             borderRadius: 10,
                             disabled: searchController.text.tryParseInt == null,
-                            disableColor: context.getColorExt(AppColorType.primaryDark2),
+                            inactiveColor: context.getColorExt(AppColorType.primaryDark3),
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             onPress: () {
                               final ayahId = searchController.text.tryParseInt;
