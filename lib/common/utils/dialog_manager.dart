@@ -23,8 +23,8 @@ class DialogManager {
     bool useSafeArea = true,
   }) {
     return DialogManager.showSimpleDialog(
-      title: title,
-      message: message,
+      title: title ?? "Confirm",
+      message: message ?? "Apakah anda yakin ingin memproses ini?",
       actions: [
         DefaultButton.outlineButton(
           onPress: () {

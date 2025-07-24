@@ -16,7 +16,21 @@ class DetailAyahBottomSheet extends StatelessWidget {
     return BlocProvider(
       create:
           (context) => getIt.get<DetailAyahCubit>()..init(ayah: ayah, params: quranDetailParams),
-      child: BlocBuilder<DetailAyahCubit, DetailAyahState>(
+      child: BlocConsumer<DetailAyahCubit, DetailAyahState>(
+        listener: (context, state) {
+          switch (state) {
+            case DetailAyahFailedState(:final message):
+              SnackbarManager.showErrorSnackbar(message: message);
+              break;
+            case DetailAyahLastReadMarkedState(:final message):
+              BottomSheetManager.closeCurrentBottomSheet();
+              SnackbarManager.showSuccessSnackbar(message: message);
+              if (globalContext.mounted) {
+                globalContext.read<HomeBloc>().add(const HomeEvent.getData());
+              }
+            default:
+          }
+        },
         builder: (context, state) {
           final isLoading = switch (state) {
             DetailAyahLoadingState() => true,
@@ -67,28 +81,31 @@ class DetailAyahBottomSheet extends StatelessWidget {
 
   Future<void> onDetailMenuTap(BuildContext context, QuranDetailMenu menu) async {
     final detailAyahCubit = context.read<DetailAyahCubit>();
-    BottomSheetManager.closeCurrentBottomSheet();
     switch (menu.getType()) {
       case QuranDetailMenuType.lastread:
-        detailAyahCubit.saveAyah().then((a) {
-          if (globalContext.mounted) {
-            globalContext.read<HomeBloc>().add(const HomeEvent.getData());
-          }
-        });
+        DialogManager.showConfirmDialog(
+          title: "Tandai terakhir dibaca",
+          message: "Apakah anda yakin ingin menandai ini sebagai terakhir dibaca?",
+          onOKPress: detailAyahCubit.saveAyahToLastRead,
+        );
         break;
       case QuranDetailMenuType.copy:
+        BottomSheetManager.closeCurrentBottomSheet();
         detailAyahCubit.copyAyah();
         break;
       case QuranDetailMenuType.play:
+        BottomSheetManager.closeCurrentBottomSheet();
         detailAyahCubit.playAyah();
         break;
       case QuranDetailMenuType.bookmark:
+        BottomSheetManager.closeCurrentBottomSheet();
         BottomSheetManager.showCustomBottomSheet(
           padding: const EdgeInsets.all(8),
           child: BookmarkCategoryBottomSheet(ayah: detailAyahCubit.currentAyah),
         );
         break;
       case QuranDetailMenuType.readAsSurah:
+        BottomSheetManager.closeCurrentBottomSheet();
         detailAyahCubit.getParamsDataReadAsSurah().then(
           (paramsData) =>
               context.mounted ? context.pushRoute(QuranDetailRoute(params: paramsData)) : null,
@@ -96,6 +113,7 @@ class DetailAyahBottomSheet extends StatelessWidget {
         // context.pushRoute(QuranDetailRoute(params: paramsData));
         break;
       case QuranDetailMenuType.readAsJuz:
+        BottomSheetManager.closeCurrentBottomSheet();
         final paramsData = detailAyahCubit.getParamsDataReadAsJuz();
         context.pushRoute(QuranDetailRoute(params: paramsData));
         break;

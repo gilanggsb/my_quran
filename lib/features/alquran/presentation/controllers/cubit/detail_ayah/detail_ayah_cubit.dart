@@ -41,7 +41,7 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
   Future<void> onDetailPress(QuranDetailMenu menu) async {
     switch (menu.getType()) {
       case QuranDetailMenuType.lastread:
-        saveAyah();
+        saveAyahToLastRead();
         break;
       case QuranDetailMenuType.copy:
         copyAyah();
@@ -50,13 +50,15 @@ class DetailAyahCubit extends Cubit<DetailAyahState> {
     }
   }
 
-  Future<void> saveAyah() async {
+  Future<void> saveAyahToLastRead() async {
     try {
+      if (state is DetailAyahLastReadMarkedState) emit(DetailAyahState.updating());
       LastReadAyah lastReadAyah = LastReadAyah(ayah: currentAyah, surah: surah);
       await saveLastReadAyah(lastReadAyah);
-      SnackbarManager.showSuccessSnackbar(message: 'Success mark to last read');
+      emit(DetailAyahState.lastReadMarked('Success mark to last read'));
     } catch (e) {
       Logger.logError(e.toString());
+      emit(DetailAyahState.failed(e.toString()));
     }
   }
 

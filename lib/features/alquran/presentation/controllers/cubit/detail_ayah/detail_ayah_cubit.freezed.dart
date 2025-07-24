@@ -109,6 +109,38 @@ String toString() {
 /// @nodoc
 
 
+class DetailAyahUpdatingState implements DetailAyahState {
+  const DetailAyahUpdatingState();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DetailAyahUpdatingState);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DetailAyahState.updating()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
 class DetailAyahLoadedState implements DetailAyahState {
   const DetailAyahLoadedState();
   
@@ -196,6 +228,72 @@ class _$DetailAyahFailedStateCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
   return _then(DetailAyahFailedState(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class DetailAyahLastReadMarkedState implements DetailAyahState {
+  const DetailAyahLastReadMarkedState(this.message);
+  
+
+ final  String message;
+
+/// Create a copy of DetailAyahState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DetailAyahLastReadMarkedStateCopyWith<DetailAyahLastReadMarkedState> get copyWith => _$DetailAyahLastReadMarkedStateCopyWithImpl<DetailAyahLastReadMarkedState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DetailAyahLastReadMarkedState&&(identical(other.message, message) || other.message == message));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,message);
+
+@override
+String toString() {
+  return 'DetailAyahState.lastReadMarked(message: $message)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $DetailAyahLastReadMarkedStateCopyWith<$Res> implements $DetailAyahStateCopyWith<$Res> {
+  factory $DetailAyahLastReadMarkedStateCopyWith(DetailAyahLastReadMarkedState value, $Res Function(DetailAyahLastReadMarkedState) _then) = _$DetailAyahLastReadMarkedStateCopyWithImpl;
+@useResult
+$Res call({
+ String message
+});
+
+
+
+
+}
+/// @nodoc
+class _$DetailAyahLastReadMarkedStateCopyWithImpl<$Res>
+    implements $DetailAyahLastReadMarkedStateCopyWith<$Res> {
+  _$DetailAyahLastReadMarkedStateCopyWithImpl(this._self, this._then);
+
+  final DetailAyahLastReadMarkedState _self;
+  final $Res Function(DetailAyahLastReadMarkedState) _then;
+
+/// Create a copy of DetailAyahState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+  return _then(DetailAyahLastReadMarkedState(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));
